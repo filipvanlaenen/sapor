@@ -4,13 +4,8 @@ Statistical Analysis of Polling Results (SAPoR)
 Installation
 ------------
 
-You can install this by cloning this repository, and then executing the
+You can install this program by cloning this repository, and then executing the
 following commands in the directory where it got cloned:
-
-  bin/create_installation_package.sh 
-  tar -xzf sapor-0.1a1.tar.gz
-  cd sapor-0.1a1/
-  sudo ./install.sh
 
 Usage
 -----
