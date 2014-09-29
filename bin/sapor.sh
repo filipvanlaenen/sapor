@@ -34,6 +34,15 @@ VERSION="0.1a1"
 COPYRIGHTYEAR="2014"
 
 case "$ACTION" in
+  analyze)
+    if [ ! -d "$LOCALSAPORDIR" ]; then
+      mkdir "$LOCALSAPORDIR"
+    fi
+    if [ ! -d "${LOCALSAPORDIR}/cache" ]; then
+      mkdir "${LOCALSAPORDIR}/cache"
+    fi
+    $RUBY -I "${SAPORDIR}/lib" "${SAPORDIR}/sapor.rb" "${LOCALSAPORDIR}" $2
+    ;;
   help)
     echo "Statistical Analysis of Polling Results (SAPoR) v${VERSION}"
     echo "Copyright © ${COPYRIGHTYEAR} Filip van Laenen <f.a.vanlaenen@ieee.org>"
@@ -42,10 +51,11 @@ case "$ACTION" in
     echo "  sapor action [parameters]"
     echo
     echo "where actions and parameters include:"
-    echo "  help              show this message"
-    echo "  version           show the version information"
-    echo "  copyright         show the copyright information"
-    echo "  warranty          show the warranty information"
+    echo "  analyze <poll-file>  run an analysis on the poll file"
+    echo "  help                 show this message"
+    echo "  version              show the version information"
+    echo "  copyright            show the copyright information"
+    echo "  warranty             show the warranty information"
     ;;
   version)
     echo "Statistical Analysis of Polling Results (SAPoR) v${VERSION}"
@@ -87,7 +97,7 @@ case "$ACTION" in
     echo "Statistical Analysis of Polling Results (SAPoR) v${VERSION}"
     echo "Copyright © ${COPYRIGHTYEAR} Filip van Laenen <f.a.vanlaenen@ieee.org>"
     echo
-    echo "Usage: sapor {help|version|warranty|copyright}" >&2
+    echo "Usage: sapor {analyze|help|version|warranty|copyright}" >&2
     echo "Type 'sapor help' to get more information."
     exit 1
     ;;

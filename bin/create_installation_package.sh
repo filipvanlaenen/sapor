@@ -37,6 +37,11 @@ mkdir "$TEMPDIR"
 BINDIR=${SCRIPTDIR}/../bin
 cp ${BINDIR}/install.sh "$TEMPDIR"
 cp ${BINDIR}/sapor.sh "$TEMPDIR"
+cp ${BINDIR}/sapor.rb "$TEMPDIR"
+
+LIBDIR=${SCRIPTDIR}/../lib
+mkdir "${TEMPDIR}/lib"
+cp ${LIBDIR}/*.rb "${TEMPDIR}/lib"
 
 # Creates the archive file
 
