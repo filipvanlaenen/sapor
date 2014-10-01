@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- encoding: utf-8 -*-
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2014 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -17,17 +17,20 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
-module Sapor
-  # Main entry point
-  class Sapor
-    def initialize(path)
-    end
+Gem::Specification.new do |gem|
+  gem.name = 'sapor'
+  gem.version = '0.1a1'
+  gem.authors = ['Filip van Laenen']
+  gem.email = ['f.a.vanlaenen@ieee.org']
 
-    def analyze(filename)
-      Poll.from_file(filename).analyze
-    end
-  end
+  gem.description = 'SAPoR'
+  gem.summary = 'Statistical Analysis of Polling Results'
+  gem.homepage = 'https://github.com/filipvanlaenen/sapor'
+  gem.license = 'GPL'
+
+  gem.require_paths = ['lib']
+  gem.files = `git ls-files`.split("\n")
+  gem.test_files = `git ls-files -- spec`.split("\n")
+  gem.extra_rdoc_files = %w[LICENSE README.md]
+
 end
-
-require 'sapor/poll'

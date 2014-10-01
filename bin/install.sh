@@ -29,9 +29,6 @@ if [ -d "$SAPORDIR" ]; then
 fi
 
 mkdir "$SAPORDIR"
-mkdir "$SAPORDIR/lib"
-
-cp lib/*.rb "$SAPORDIR/lib"
 
 cp sapor* "$SAPORDIR"
 chmod a+x "$SAPORDIR/sapor.sh"
@@ -40,4 +37,9 @@ ln -f "$SAPORDIR/sapor.sh" /usr/bin/sapor
 LOG4R=$(gem list log4r | awk '/log4r/ {print $1}')
 if [ ${#LOG4R[@]} -eq "0" ]; then
 	gem install -r log4r
+fi
+
+SAPORGEM=$(gem list sapor | awk '/sapor/ {print $1}')
+if [ ${#SAPORGEM[@]} -eq "0" ]; then
+	gem install -r sapor
 fi

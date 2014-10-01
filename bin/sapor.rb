@@ -19,4 +19,4 @@
 
 require 'sapor'
 
-SAPOR.new(ARGV[0]).analyze(ARGV[1])
+Sapor::Sapor.new(ARGV[0]).analyze(ARGV[1])
