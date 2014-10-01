@@ -22,8 +22,18 @@ require 'spec_helper'
 SAMPLE_FILE = 'spec/integration/sample.poll'
 
 describe Sapor::Poll, '#from_file' do
-  it 'reads a poll in from a file' do
+  it 'reads a poll from a file and extracts area' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    expect(poll.region).to eq('Flanders')
+    expect(poll.area).to eq('Foo')
+  end
+
+  it 'reads a poll from a file and extracts first result' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    expect(poll.result('Red')).to eq(1)
+  end
+
+  it 'reads a poll from a file and extracts last result' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    expect(poll.result('Blue')).to eq(3)
   end
 end

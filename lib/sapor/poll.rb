@@ -22,7 +22,9 @@ module Sapor
   # Represents a poll.
   #
   class Poll
-    attr_reader :region
+    attr_reader :area
+
+    AREA_KEY = 'Area'
 
     def self.read_file(filename)
       file = File.open(filename, 'r')
@@ -37,7 +39,7 @@ module Sapor
     end
 
     def self.line_to_hash(line, current, metadata, results)
-      if line == '=='
+      if line.chomp == '=='
         current = results
       else
         elements = line.chomp.split('=')
@@ -68,7 +70,20 @@ module Sapor
     end
 
     def initialize(metadata, results)
-      @region = metadata['Region']
+      @area = metadata.delete(AREA_KEY)
+      @results = interpret(results)
+    end
+
+    def interpret(results)
+      interpreted = {}
+      results.each_pair do |key, value|
+        interpreted[key] = value.to_i
+      end
+      interpreted
+    end
+
+    def result(choice)
+      @results[choice]
     end
   end
 end
