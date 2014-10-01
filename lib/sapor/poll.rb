@@ -26,19 +26,7 @@ module Sapor
 
     AREA_KEY = 'Area'
 
-    def self.read_file(filename)
-      file = File.open(filename, 'r')
-      lines = []
-      line = file.gets
-      while line
-        lines << line
-        line = file.gets
-      end
-      file.close
-      lines
-    end
-
-    def self.line_to_hash(line, current, metadata, results)
+    def self.line_to_hash(line, current, results)
       if line.chomp == '=='
         current = results
       else
@@ -53,7 +41,7 @@ module Sapor
       results = {}
       current = metadata
       lines.each do | line |
-        current = line_to_hash(line, current, metadata, results)
+        current = line_to_hash(line, current, results)
       end
       [metadata, results]
     end
@@ -66,7 +54,7 @@ module Sapor
     end
 
     def self.from_file(filename)
-      from_lines(read_file(filename))
+      from_lines(File.open(filename))
     end
 
     def initialize(metadata, results)

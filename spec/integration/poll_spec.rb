@@ -19,7 +19,7 @@
 
 require 'spec_helper'
 
-SAMPLE_FILE = 'spec/integration/sample.poll'
+SAMPLE_FILE = File.join('spec', 'integration', 'sample.poll')
 
 describe Sapor::Poll, '#from_file' do
   it 'reads a poll from a file and extracts area' do
