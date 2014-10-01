@@ -17,8 +17,15 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
-module Sapor
-end
+$LOAD_PATH << 'lib'
+require 'sapor'
 
-require 'sapor/poll'
+require 'timeout'
+
+RSpec.configure do |config|
+  config.around do |example|
+    Timeout.timeout(1) do
+      example.run
+    end
+  end
+end

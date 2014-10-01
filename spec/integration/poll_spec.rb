@@ -17,8 +17,13 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
-module Sapor
-end
+require 'spec_helper'
 
-require 'sapor/poll'
+SAMPLE_FILE = 'spec/integration/sample.poll'
+
+describe Sapor::Poll, '#from_file' do
+  it 'reads a poll in from a file' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    expect(poll.region).to eq('Flanders')
+  end
+end

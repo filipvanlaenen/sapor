@@ -17,8 +17,23 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
-module Sapor
-end
+require 'spec_helper'
 
-require 'sapor/poll'
+SAMPLE_POLL_ARRAY = ['foo=bar', 'baz=qux', '==', 'a=1', 'b=2']
+
+describe Sapor::Poll, '#as_hashes' do
+  it 'converts an array of lines into an array with two hashes' do
+    hashes = Sapor::Poll.as_hashes(SAMPLE_POLL_ARRAY)
+    expect(hashes.size).to eq(2)
+  end
+
+  it 'extracts the metadata into the first array' do
+    hashes = Sapor::Poll.as_hashes(SAMPLE_POLL_ARRAY)
+    expect(hashes[0]).to eq('foo' => 'bar', 'baz' => 'qux')
+  end
+
+  it 'extracts the results into the second array' do
+    hashes = Sapor::Poll.as_hashes(SAMPLE_POLL_ARRAY)
+    expect(hashes[1]).to eq('a' => '1', 'b' => '2')
+  end
+end
