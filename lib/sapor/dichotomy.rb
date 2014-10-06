@@ -91,7 +91,7 @@ module Sapor
       if @values.size == @population_size + 1
         0
       else
-        0.0001 # TODO
+        1.to_f / @values.size
       end
     end
 
