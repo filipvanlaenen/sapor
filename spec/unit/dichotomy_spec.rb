@@ -110,6 +110,14 @@ describe Sapor::Dichotomy, '#refine' do
     expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
   end
 
+  it 'fills up the values when population size is reached' do
+    dichotomy = Sapor::Dichotomy.new(2, 5, 11)
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+  end
+
   it 'adds combinations after a refinement' do
     dichotomy = dichotomy_of_thousand
     dichotomy.refine
