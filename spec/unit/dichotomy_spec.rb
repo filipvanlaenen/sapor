@@ -136,3 +136,13 @@ describe Sapor::Dichotomy, '#most_probable_value' do
     expect(dichotomy.most_probable_value).to eq(3)
   end
 end
+
+describe Sapor::Dichotomy, '#error_estimate' do
+  it 'returns 0 when population size is reached' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.error_estimate).to eq(0)
+  end
+end

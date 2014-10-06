@@ -95,9 +95,7 @@ module Sapor
     end
 
     def estimate_error
-      if @combinations.size == 1
-        1
-      elsif @combinations.size == @population_size
+      if @values.size == @population_size + 1
         0
       else
         0.0001 # TODO
