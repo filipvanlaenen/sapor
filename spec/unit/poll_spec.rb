@@ -20,6 +20,9 @@
 require 'spec_helper'
 
 SAMPLE_POLL_ARRAY = ['foo=bar', 'baz=qux', '==', 'a=1', 'b=2']
+SAMPLE_METADATA = { 'Area' => 'Foo' }
+SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3 }
+SAMPLE_POLL = Sapor::Poll.new(SAMPLE_METADATA, SAMPLE_RESULTS)
 
 describe Sapor::Poll, '#as_hashes' do
   it 'converts an array of lines into an array with two hashes' do
@@ -35,5 +38,28 @@ describe Sapor::Poll, '#as_hashes' do
   it 'extracts the results into the second array' do
     hashes = Sapor::Poll.as_hashes(SAMPLE_POLL_ARRAY)
     expect(hashes[1]).to eq('a' => '1', 'b' => '2')
+  end
+end
+
+describe Sapor::Poll, '#new' do
+  it 'sets the area' do
+    expect(SAMPLE_POLL.area).to eq('Foo')
+  end
+
+  it 'sets the results' do
+    expect(SAMPLE_POLL.result('Red')).to eq(1)
+    expect(SAMPLE_POLL.result('Green')).to eq(2)
+    expect(SAMPLE_POLL.result('Blue')).to eq(3)
+  end
+end
+
+describe Sapor::Poll, '#most_probable_value' do
+  it 'returns nil if no analysis has been run' do
+    expect(SAMPLE_POLL.most_probable_value('Blue')).to be_nil
+  end
+
+  it 'gets the most probable value after analysis' do
+    SAMPLE_POLL.analyze
+    expect(SAMPLE_POLL.most_probable_value('Blue')).to be_within(0.001).of(0.5)
   end
 end

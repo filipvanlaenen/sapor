@@ -73,5 +73,18 @@ module Sapor
     def result(choice)
       @results[choice]
     end
+
+    def most_probable_value(choice)
+      @analysis.most_probable_value(choice) unless @analysis.nil?
+    end
+
+    def population_size
+      1_000_000 # TODO: Should be looked up using @area
+    end
+
+    def analyze(max_error = 0.001)
+      @analysis = Dichotomies.new(@results, population_size)
+      @analysis.refine while @analysis.error_estimate > max_error
+    end
   end
 end

@@ -17,19 +17,34 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
 module Sapor
-  # Main entry point
-  class Sapor
-    def initialize(path)
+  #
+  # Represents a set of dichotomies.
+  #
+  class Dichotomies
+    def initialize(results, population_size)
+      sample_size = results.values.inject(0, :+)
+      @dichotomy_hash = {}
+      results.each_pair do |choice, number|
+        @dichotomy_hash[choice] = Dichotomy.new(number, sample_size,
+                                                population_size)
+      end
     end
 
-    def analyze(filename)
-      Poll.from_file(filename).analyze
+    def refine
+      @dichotomy_hash.values.each { | dichotomy | dichotomy.refine }
+    end
+
+    def error_estimate
+      dichotomies = @dichotomy_hash.values
+      error_estimates = dichotomies.map do | dichotomy |
+        dichotomy.error_estimate
+      end
+      error_estimates.max
+    end
+
+    def most_probable_value(choice)
+      @dichotomy_hash[choice].most_probable_value
     end
   end
 end
-
-require 'sapor/dichotomies'
-require 'sapor/dichotomy'
-require 'sapor/poll'
