@@ -61,10 +61,16 @@ describe Sapor::Poll, '#most_probable_value' do
     expect(sample_poll.most_probable_value('Blue')).to be_nil
   end
 
-  it 'gets the most probable value after analysis' do
+  it 'gets the most probable value after analysis (50%)' do
     poll = sample_poll
     poll.analyze
     expect(poll.most_probable_value('Blue')).to be_within(1_000).of(500_000)
+  end
+
+  it 'gets the most probable value after analysis (33%)' do
+    poll = sample_poll
+    poll.analyze
+    expect(poll.most_probable_value('Green')).to be_within(1_000).of(333_333)
   end
 end
 
@@ -73,9 +79,15 @@ describe Sapor::Poll, '#most_probable_fraction' do
     expect(sample_poll.most_probable_fraction('Blue')).to be_nil
   end
 
-  it 'gets the most probable fraction after analysis' do
+  it 'gets the most probable fraction after analysis (50%)' do
     poll = sample_poll
     poll.analyze
     expect(poll.most_probable_fraction('Blue')).to be_within(0.001).of(0.5)
+  end
+
+  it 'gets the most probable fraction after analysis (33%)' do
+    poll = sample_poll
+    poll.analyze
+    expect(poll.most_probable_fraction('Green')).to be_within(0.001).of(0.333)
   end
 end
