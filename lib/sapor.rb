@@ -21,9 +21,6 @@
 module Sapor
   # Main entry point
   class Sapor
-    def initialize(path)
-    end
-
     def analyze(filename)
       Poll.from_file(filename).analyze
     end
