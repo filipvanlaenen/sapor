@@ -37,7 +37,6 @@ module Sapor
 
     def reset_cached_values
       @error_estimate = nil
-      @most_probable_value = nil
     end
 
     def combinations_for(value)
@@ -103,10 +102,7 @@ module Sapor
     end
 
     def most_probable_value
-      if @most_probable_value.nil?
-        @most_probable_value = calculate_most_probable_value
-      end
-      @most_probable_value
+      calculate_most_probable_value
     end
 
     def calculate_most_probable_value
