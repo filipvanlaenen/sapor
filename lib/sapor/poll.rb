@@ -78,6 +78,10 @@ module Sapor
       @analysis.most_probable_value(choice) unless @analysis.nil?
     end
 
+    def most_probable_fraction(choice)
+      @analysis.most_probable_fraction(choice) unless @analysis.nil?
+    end
+
     def population_size
       1_000_000 # TODO: Should be looked up using @area
     end

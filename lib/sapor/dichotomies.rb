@@ -23,7 +23,7 @@ module Sapor
   #
   class Dichotomies
     def initialize(results, population_size)
-      sample_size = results.values.inject(0, :+)
+      sample_size = results.values.inject(:+)
       @dichotomy_hash = {}
       results.each_pair do |choice, number|
         @dichotomy_hash[choice] = Dichotomy.new(number, sample_size,
@@ -45,6 +45,10 @@ module Sapor
 
     def most_probable_value(choice)
       @dichotomy_hash[choice].most_probable_value
+    end
+
+    def most_probable_fraction(choice)
+      @dichotomy_hash[choice].most_probable_fraction
     end
   end
 end

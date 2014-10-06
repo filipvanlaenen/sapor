@@ -102,5 +102,9 @@ module Sapor
     def calculate_most_probable_value
       @values[@combinations.each_with_index.max[1]]
     end
+
+    def most_probable_fraction
+      most_probable_value.to_f / @population_size
+    end
   end
 end

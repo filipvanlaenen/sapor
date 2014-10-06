@@ -137,6 +137,25 @@ describe Sapor::Dichotomy, '#most_probable_value' do
   end
 end
 
+describe Sapor::Dichotomy, '#most_probable_fraction' do
+  it 'returns the fraction of the single value after new' do
+    expect(dichotomy_of_eight.most_probable_fraction).to eq(0.5)
+  end
+
+  it 'returns the one probable value after one refinement' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    expect(dichotomy.most_probable_fraction).to eq(0.5)
+  end
+
+  it 'returns the new most probable value after two refinements' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.most_probable_fraction).to eq(0.375)
+  end
+end
+
 describe Sapor::Dichotomy, '#error_estimate' do
   it 'is 0 when population size is reached' do
     dichotomy = dichotomy_of_eight
