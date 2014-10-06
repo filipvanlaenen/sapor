@@ -63,8 +63,8 @@ module Sapor
     def insert_values_at(i)
       low_value = @values[i]
       high_value = @values[i + 1]
-      new_low_value = ((2.to_f * low_value + high_value) / 3).round
-      new_high_value = ((2.to_f * high_value + low_value) / 3).round
+      new_low_value = ((2 * low_value + high_value).to_f / 3).round
+      new_high_value = ((2 * high_value + low_value).to_f / 3).round
       unless new_high_value == high_value
         insert_new_value(i + 1, new_high_value)
       end

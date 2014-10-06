@@ -80,6 +80,13 @@ describe Sapor::Dichotomy, '#refine' do
   end
 
   it 'adds values after two refinements (small population)' do
+    dichotomy = Sapor::Dichotomy.new(2, 5, 60)
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.values).to eq([3, 10, 17, 23, 30, 37, 43, 50, 57])
+  end
+
+  it 'adds values after two refinements (large population)' do
     dichotomy = dichotomy_of_thousand
     dichotomy.refine
     dichotomy.refine
