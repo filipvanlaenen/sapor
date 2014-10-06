@@ -32,11 +32,6 @@ module Sapor
       @population_size = population_size
       @values = [@population_size / 2]
       @combinations = [combinations_for(@values.first)]
-      reset_cached_values
-    end
-
-    def reset_cached_values
-      @error_estimate = nil
     end
 
     def combinations_for(value)
@@ -89,8 +84,7 @@ module Sapor
     end
 
     def error_estimate
-      @error_estimate = estimate_error if @error_estimate.nil?
-      @error_estimate
+      estimate_error
     end
 
     def estimate_error
