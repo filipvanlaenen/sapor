@@ -19,11 +19,8 @@
 
 # Library namespace
 module Sapor
-  # Main entry point
-  class Sapor
-    def analyze(filename)
-      Poll.from_file(filename).analyze
-    end
+  def self.analyze(filename)
+    Poll.from_file(filename).analyze
   end
 end
 
