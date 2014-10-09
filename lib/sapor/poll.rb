@@ -82,6 +82,10 @@ module Sapor
       @analysis.most_probable_fraction(choice) unless @analysis.nil?
     end
 
+    def confidence_interval(choice, level = 0.95)
+      @analysis.confidence_interval(choice, level) unless @analysis.nil?
+    end
+
     def population_size
       1_000_000 # TODO: Should be looked up using @area
     end

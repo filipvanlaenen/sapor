@@ -50,5 +50,9 @@ module Sapor
     def most_probable_fraction(choice)
       @dichotomy_hash[choice].most_probable_fraction
     end
+
+    def confidence_interval(choice, level)
+      @dichotomy_hash[choice].confidence_interval(level)
+    end
   end
 end

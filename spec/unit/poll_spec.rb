@@ -91,3 +91,17 @@ describe Sapor::Poll, '#most_probable_fraction' do
     expect(poll.most_probable_fraction('Green')).to be_within(0.001).of(0.333)
   end
 end
+
+describe Sapor::Poll, '#confidence_interval' do
+  it 'returns nil if no analysis has been run' do
+    expect(sample_poll.confidence_interval('Blue')).to be_nil
+  end
+
+  it 'gets by default the 95% confidence interval after analysis' do
+    poll = sample_poll
+    poll.analyze
+    default_confidence_interval = poll.confidence_interval('Blue')
+    confidence_interval_for_95 = poll.confidence_interval('Blue', 0.95)
+    expect(default_confidence_interval).to eq(confidence_interval_for_95)
+  end
+end
