@@ -225,11 +225,48 @@ describe Sapor::Dichotomy, '#value_confidence_interval' do
     dichotomy.refine
     expect(dichotomy.value_confidence_interval).to eq([112, 777])
   end
+
+  it 'can return a confidence interval starting at 0 after refinements' do
+    dichotomy = Sapor::Dichotomy.new(0, 5, 1000)
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.value_confidence_interval).to eq([0, 555])
+  end
+
+  it 'can return a confidence interval ending at population size after ' \
+     'refinements' do
+    dichotomy = Sapor::Dichotomy.new(5, 5, 1000)
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.value_confidence_interval).to eq([445, 1000])
+  end
 end
 
 describe Sapor::Dichotomy, '#confidence_interval' do
   it 'returns [0%, 100%] after new for default level 95%' do
     expect(dichotomy_of_eight.confidence_interval).to eq([0.0, 1.0])
+  end
+
+  it 'returns the default 95% confidence interval after one refinement' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    expect(dichotomy.confidence_interval).to eq([0.375, 0.625])
+  end
+
+  it 'returns the default 95% confidence interval after three refinements' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.confidence_interval).to eq([0.112, 0.777])
+  end
+
+  it 'returns the 80% confidence interval after three refinements' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.confidence_interval(0.8)).to eq([0.186, 0.666])
   end
 end
 

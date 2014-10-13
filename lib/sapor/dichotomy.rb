@@ -158,16 +158,12 @@ module Sapor
     end
 
     def calculate_value_confidence_interval(level)
-      if @values.size == 1
-        [0, @population_size]
-      else
-        rest = (1.to_f - level) / 2
-        all_combinations = combinations.inject(:+)
-        rest_combinations = all_combinations * rest
-        bottom = calculate_confidence_interval_bottom(rest_combinations)
-        top = calculate_confidence_interval_top(rest_combinations)
-        [bottom, top]
-      end
+      rest = (1 - level) / 2
+      all_combinations = combinations.inject(:+)
+      rest_combinations = all_combinations * rest
+      bottom = calculate_confidence_interval_bottom(rest_combinations)
+      top = calculate_confidence_interval_top(rest_combinations)
+      [bottom, top]
     end
   end
 end
