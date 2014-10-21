@@ -104,4 +104,16 @@ describe Sapor::Poll, '#confidence_interval' do
     confidence_interval_for_95 = poll.confidence_interval('Blue', 0.95)
     expect(default_confidence_interval).to eq(confidence_interval_for_95)
   end
+
+  it "gets a 90% confidence interval that's inside the default 95%" \
+     " confidence interval" do
+    poll = sample_poll
+    poll.analyze
+    default_confidence_interval = poll.confidence_interval('Blue')
+    confidence_interval_for_90 = poll.confidence_interval('Blue', 0.9)
+    expect(default_confidence_interval.first).to be < \
+      confidence_interval_for_90.first
+    expect(default_confidence_interval.last).to be > \
+      confidence_interval_for_90.last
+  end
 end
