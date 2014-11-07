@@ -13,6 +13,6 @@ end
 desc 'Run Mutant'
 task :mutant do
   require 'mutant'
-  status = Mutant::CLI.run(['::Sapor*', '--rspec'])
+  status = Mutant::CLI.run(['-I', 'lib', '-r', 'sapor', '--use', 'rspec', 'Sapor*'])
   abort 'Mutant task is not successful' if status.nonzero?
 end
