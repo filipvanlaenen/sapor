@@ -27,11 +27,11 @@ module Sapor
     AREA_KEY = 'Area'
 
     def self.line_to_hash(line, current, results)
-      if line.chomp == '=='
+      if line.chomp.eql?('==')
         current = results
       else
         elements = line.chomp.split('=')
-        current[elements[0]] = elements[1]
+        current[elements.first] = elements.last
       end
       current
     end
@@ -48,8 +48,8 @@ module Sapor
 
     def self.from_lines(lines)
       hashes = as_hashes(lines)
-      metadata = hashes[0]
-      results = hashes[1]
+      metadata = hashes.first
+      results = hashes.last
       new(metadata, results)
     end
 
