@@ -4,5 +4,5 @@ Technical Documentation
 Class Diagram
 -------------
 
-![alt text](Class+Diagram.png "Class diagram")
+![Class diagram](Class%20Diagram.png "Class diagram")
 

@@ -21,7 +21,7 @@ program.
 Technical Documentation
 -----------------------
 
-See [this](Technical+Documentation.md) page.
+See [this](Technical%20Documentation.md) page.
 
 License
 -------
