@@ -18,6 +18,11 @@ Usage
 Simply call `sapor` or `sapor help` to get instructions on how to use the
 program.
 
+Technical Documentation
+-----------------------
+
+See [this](Technical+Documentation.md) page.
+
 License
 -------
 
