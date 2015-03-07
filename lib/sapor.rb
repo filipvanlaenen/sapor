@@ -24,9 +24,9 @@ module Sapor
   end
 end
 
+require 'sapor/percentage_formatter'
 require 'sapor/dichotomies'
 require 'sapor/dichotomy'
 require 'sapor/log4r_logger'
 require 'sapor/log_facade'
-require 'sapor/percentage_formatter'
 require 'sapor/poll'

@@ -33,5 +33,9 @@ module Sapor
         sprintf('%.3f', number * 100) + '%'
       end
     end
+
+    def as_table_percentage(number)
+      sprintf('%5.1f', number * 100) + '%'
+    end
   end
 end
