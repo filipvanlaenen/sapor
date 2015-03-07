@@ -58,11 +58,20 @@ module Sapor
     end
 
     def report
-      max_choice_width = @dichotomy_hash.keys.collect { | choice | choice.length}.max
-      sorted_choices = @dichotomy_hash.keys.sort { | a, b | @dichotomy_hash[b].most_probable_value <=> @dichotomy_hash[a].most_probable_value}
-      lines = sorted_choices.collect do | choice | 
-        choice.ljust(max_choice_width) + " #{as_table_percentage(@dichotomy_hash[choice].most_probable_fraction)} (#{as_table_percentage(@dichotomy_hash[choice].confidence_interval.first)}–#{as_table_percentage(@dichotomy_hash[choice].confidence_interval.last)})" 
-      end 
+      choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
+      max_choice_width = choice_lengths.max
+      sorted_choices = @dichotomy_hash.keys.sort do | a, b |
+        @dichotomy_hash[b].most_probable_value <=> @dichotomy_hash[a].most_probable_value
+      end
+      lines = sorted_choices.map do | choice |
+        choice.ljust(max_choice_width) + ' ' \
+        + as_table_percentage(@dichotomy_hash[choice].most_probable_fraction) \
+        + ' (' \
+        + as_table_percentage(@dichotomy_hash[choice].confidence_interval.first) \
+        + '–' \
+        + as_table_percentage(@dichotomy_hash[choice].confidence_interval.last) \
+        + ')'
+      end
       lines.join("\n")
     end
   end
