@@ -17,15 +17,33 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
 module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+  #
+  # Builder to create Log4rLoggers.
+  #
+  class Log4rLoggerBuilder
+    def create_logger
+      Log4rLogger.new
+    end
+  end
+
+  require 'rubygems'
+  require 'log4r'
+  #
+  # Logger using Log4r.
+  #
+  class Log4rLogger
+    def initialize
+      @logger = Log4r::Logger.new 'stdout'
+      stdout_outputter = Log4r::Outputter.stdout
+      @logger.outputters = stdout_outputter
+      stdout_format = Log4r::PatternFormatter.new(pattern: '%d %l: %m')
+      stdout_outputter.formatter = stdout_format
+      @logger.level = Log4r::INFO
+    end
+
+    def info(message)
+      @logger.info(message)
+    end
   end
 end
-
-require 'sapor/dichotomies'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/poll'

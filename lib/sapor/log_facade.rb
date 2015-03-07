@@ -17,15 +17,24 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
 module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+  #
+  # A facade for logging.
+  #
+  class LogFacade
+    @logger_builder = nil
+
+    class << self
+      attr_writer :logger_builder
+    end
+
+    def self.builder
+      @logger_builder = Log4rLoggerBuilder.new if @logger_builder.nil?
+      @logger_builder
+    end
+
+    def self.create_logger
+      builder.create_logger
+    end
   end
 end
-
-require 'sapor/dichotomies'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/poll'

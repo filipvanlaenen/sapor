@@ -22,7 +22,7 @@ module Sapor
   # Represents a poll.
   #
   class Poll
-    attr_reader :area
+    attr_reader :area, :logger
 
     AREA_KEY = 'Area'
 
@@ -58,6 +58,7 @@ module Sapor
     end
 
     def initialize(metadata, results)
+      @logger = LogFacade.create_logger
       @area = metadata.delete(AREA_KEY)
       @results = interpret(results)
     end
@@ -93,6 +94,7 @@ module Sapor
     def analyze(max_error = 0.001)
       @analysis = Dichotomies.new(@results, population_size)
       @analysis.refine while @analysis.error_estimate > max_error
+      @logger.info('Done.')
     end
   end
 end

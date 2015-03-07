@@ -21,6 +21,32 @@ require 'spec_helper'
 
 SAMPLE_FILE = File.join('spec', 'integration', 'sample.poll')
 
+#
+# Logger logging messages to an array.
+#
+class ArrayLogger
+  attr_reader :messages
+
+  def initialize
+    @messages = []
+  end
+
+  def info(message)
+    @messages << message
+  end
+end
+
+#
+# LoggerBuilder that creates ArrayLogger instances.
+#
+class ArrayLoggerBuilder
+  def create_logger
+    ArrayLogger.new
+  end
+end
+
+Sapor::LogFacade.logger_builder = ArrayLoggerBuilder.new
+
 describe Sapor::Poll, '#from_file' do
   it 'reads a poll from a file and extracts area' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
@@ -35,5 +61,13 @@ describe Sapor::Poll, '#from_file' do
   it 'reads a poll from a file and extracts last result' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
     expect(poll.result('Blue')).to eq(3)
+  end
+end
+
+describe Sapor::Poll, '#analyze' do
+  it 'logs “Done” at the end' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    poll.analyze
+    expect(poll.logger.messages.last).to eq('Done.')
   end
 end
