@@ -1,0 +1,84 @@
+# encoding: utf-8
+#
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2014 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+require 'spec_helper'
+
+#
+# Test class that mixes in the PercentageFormatter.
+#
+class Formatter
+  include Sapor::PercentageFormatter
+end
+
+describe Sapor::PercentageFormatter, '#as_percentage' do
+  it 'formats 10 as 1000%' do
+    output = Formatter.new.as_percentage(10)
+    expect(output).to eq('1000%')
+  end
+
+  it 'formats 1 as 100%' do
+    output = Formatter.new.as_percentage(1)
+    expect(output).to eq('100%')
+  end
+
+  it 'formats 0.9995 as 100%' do
+    output = Formatter.new.as_percentage(0.9995)
+    expect(output).to eq('100%')
+  end
+
+  it 'formats 0.99949 as 99.9%' do
+    output = Formatter.new.as_percentage(0.99949)
+    expect(output).to eq('99.9%')
+  end
+
+  it 'formats 0.09995 as 10.0%' do
+    output = Formatter.new.as_percentage(0.09995)
+    expect(output).to eq('10.0%')
+  end
+
+  it 'formats 0.099949 as 9.99%' do
+    output = Formatter.new.as_percentage(0.099949)
+    expect(output).to eq('9.99%')
+  end
+
+  it 'formats 0.009995 as 1.00%' do
+    output = Formatter.new.as_percentage(0.009995)
+    expect(output).to eq('1.00%')
+  end
+
+  it 'formats 0.0099949 as 0.999%' do
+    output = Formatter.new.as_percentage(0.0099949)
+    expect(output).to eq('0.999%')
+  end
+
+  it 'formats 0.000005 as 0.001%' do
+    output = Formatter.new.as_percentage(0.000005)
+    expect(output).to eq('0.001%')
+  end
+
+  it 'formats 0.0000049 as 0%' do
+    output = Formatter.new.as_percentage(0.0000049)
+    expect(output).to eq('0%')
+  end
+
+  it 'formats 0 as 0%' do
+    output = Formatter.new.as_percentage(0)
+    expect(output).to eq('0%')
+  end
+end

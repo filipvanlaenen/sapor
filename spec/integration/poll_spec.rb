@@ -65,9 +65,15 @@ describe Sapor::Poll, '#from_file' do
 end
 
 describe Sapor::Poll, '#analyze' do
-  it 'logs “Done” at the end' do
+  it 'logs “Done.” at the end' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
     poll.analyze
     expect(poll.logger.messages.last).to eq('Done.')
+  end
+
+  it 'logs error estimates' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    poll.analyze
+    expect(poll.logger.messages).to include('Error estimate: ε ≤ 33.3%.')
   end
 end

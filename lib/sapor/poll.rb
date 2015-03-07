@@ -22,6 +22,7 @@ module Sapor
   # Represents a poll.
   #
   class Poll
+    include PercentageFormatter
     attr_reader :area, :logger
 
     AREA_KEY = 'Area'
@@ -93,7 +94,11 @@ module Sapor
 
     def analyze(max_error = 0.001)
       @analysis = Dichotomies.new(@results, population_size)
-      @analysis.refine while @analysis.error_estimate > max_error
+      while @analysis.error_estimate > max_error
+        @analysis.refine
+        error_estimate_as_percentage = as_percentage(@analysis.error_estimate)
+        @logger.info("Error estimate: ε ≤ #{error_estimate_as_percentage}.")
+      end
       @logger.info('Done.')
     end
   end

@@ -17,16 +17,21 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
 module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+  #
+  # Module to format percentages.
+  #
+  module PercentageFormatter
+    def as_percentage(number)
+      if number >= 0.9995 || number < 0.000005
+        sprintf('%.0f', number * 100) + '%'
+      elsif number >= 0.09995
+        sprintf('%.1f', number * 100) + '%'
+      elsif number >= 0.009995
+        sprintf('%.2f', number * 100) + '%'
+      else
+        sprintf('%.3f', number * 100) + '%'
+      end
+    end
   end
 end
-
-require 'sapor/dichotomies'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/percentage_formatter'
-require 'sapor/poll'
