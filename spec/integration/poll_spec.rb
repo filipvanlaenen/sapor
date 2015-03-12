@@ -80,6 +80,13 @@ describe Sapor::Poll, '#analyze' do
   it 'logs MPV and CI(95%) reports' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
     poll.analyze
-    expect(poll.logger.messages).to include("Most probable fractions and 95% confidence intervals:\nYellow  50.0% ( 25.1%– 74.9%)\nBlue    25.0% (  9.1%– 53.8%)\nGreen   16.7% (  5.0%– 45.5%)\nRed      8.3% (  1.9%– 36.0%)")
+    expected_report = 'Most probable fractions and 95% confidence' +
+                      " intervals:\n" +
+                      "Choice   MPV      CI(95%)    \n" +
+                      "Yellow  50.0% ( 25.1%– 74.9%)\n" +
+                      "Blue    25.0% (  9.1%– 53.8%)\n" +
+                      "Green   16.7% (  5.0%– 45.5%)\n" +
+                      'Red      8.3% (  1.9%– 36.0%)'
+    expect(poll.logger.messages).to include(expected_report)
   end
 end

@@ -97,7 +97,8 @@ module Sapor
       while @analysis.error_estimate > max_error
         @analysis.refine
         error_estimate_as_percentage = as_percentage(@analysis.error_estimate)
-        @logger.info("Most probable fractions and 95% confidence intervals:\n#{@analysis.report}")
+        @logger.info('Most probable fractions and 95% confidence' + \
+                     " intervals:\n#{@analysis.report}")
         @logger.info("Error estimate: ε ≤ #{error_estimate_as_percentage}.")
       end
       @logger.info('Done.')

@@ -57,22 +57,29 @@ module Sapor
       @dichotomy_hash[choice].confidence_interval(level)
     end
 
+    def sort_choices_by_mpv
+      @dichotomy_hash.keys.sort do | a, b |
+        mpv_a = @dichotomy_hash[a].most_probable_value
+        mpv_b = @dichotomy_hash[b].most_probable_value
+        mpv_b <=> mpv_a
+      end
+    end
+
+    def create_report_line(choice, dichotomy, max_choice_width)
+      choice.ljust(max_choice_width) + ' ' + \
+      as_table_percentage(dichotomy.most_probable_fraction) + ' (' + \
+      as_table_percentage(dichotomy.confidence_interval.first) + '–' + \
+      as_table_percentage(dichotomy.confidence_interval.last) + ')'
+    end
+
     def report
       choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
       max_choice_width = choice_lengths.max
-      sorted_choices = @dichotomy_hash.keys.sort do | a, b |
-        @dichotomy_hash[b].most_probable_value <=> @dichotomy_hash[a].most_probable_value
-      end
+      sorted_choices = sort_choices_by_mpv
       lines = sorted_choices.map do | choice |
-        choice.ljust(max_choice_width) + ' ' \
-        + as_table_percentage(@dichotomy_hash[choice].most_probable_fraction) \
-        + ' (' \
-        + as_table_percentage(@dichotomy_hash[choice].confidence_interval.first) \
-        + '–' \
-        + as_table_percentage(@dichotomy_hash[choice].confidence_interval.last) \
-        + ')'
+        create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
       end
-      lines.join("\n")
+      "Choice   MPV      CI(95%)    \n" + lines.join("\n")
     end
   end
 end
