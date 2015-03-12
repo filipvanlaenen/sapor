@@ -92,15 +92,30 @@ module Sapor
       1_000_000 # TODO: Should be looked up using @area
     end
 
-    def analyze(max_error = 0.001)
-      @analysis = Dichotomies.new(@results, population_size)
+    def analyze_until_convergence(max_error)
       while @analysis.error_estimate > max_error
         @analysis.refine
         error_estimate_as_percentage = as_percentage(@analysis.error_estimate)
-        @logger.info('Most probable fractions and 95% confidence' + \
-                     " intervals:\n#{@analysis.report}")
+        @logger.info(@analysis.report)
         @logger.info("Error estimate: ε ≤ #{error_estimate_as_percentage}.")
       end
+    end
+
+    def analyze_as_dichotomies(max_error)
+      @logger.info('Analyzing as a set of dichotomies...')
+      @analysis = Dichotomies.new(@results, population_size)
+      analyze_until_convergence(max_error)
+    end
+
+    def analyze_as_polychotomy(max_error)
+      @logger.info('Analyzing as a polychotomy...')
+# TODO:      @analysis = Polychotomy.new(@analysis)
+# TODO:     analyze_until_convergence(max_error)
+    end
+
+    def analyze(max_error = 0.001)
+      analyze_as_dichotomies(max_error)
+      analyze_as_polychotomy(max_error)
       @logger.info('Done.')
     end
   end

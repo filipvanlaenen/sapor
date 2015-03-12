@@ -119,6 +119,13 @@ module Sapor
       calculate_value_confidence_interval(level)
     end
 
+    def confidence_interval_values(level = 0.95)
+      interval = calculate_value_confidence_interval(level)
+      @values.reject do | value |
+        value < interval.first || value > interval.last
+      end
+    end
+
     def find_confidence_interval_bottom_index(rest_combinations)
       bottom_sum = 0.to_lf
       bottom_index = -1

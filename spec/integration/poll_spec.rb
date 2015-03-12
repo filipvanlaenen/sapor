@@ -65,6 +65,19 @@ describe Sapor::Poll, '#from_file' do
 end
 
 describe Sapor::Poll, '#analyze' do
+  it 'logs “Analyzing as a set of dichotomies...”' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    poll.analyze
+    expect(poll.logger.messages).to include('Analyzing as a set of' \
+                                            ' dichotomies...')
+  end
+
+  it 'logs “Analyzing as a polychotomy...”' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    poll.analyze
+    expect(poll.logger.messages).to include('Analyzing as a polychotomy...')
+  end
+
   it 'logs “Done.” at the end' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
     poll.analyze
@@ -77,7 +90,7 @@ describe Sapor::Poll, '#analyze' do
     expect(poll.logger.messages).to include('Error estimate: ε ≤ 33.3%.')
   end
 
-  it 'logs MPV and CI(95%) reports' do
+  it 'logs MPV and CI(95%) reports from Dichotomies' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
     poll.analyze
     expected_report = 'Most probable fractions and 95% confidence' +

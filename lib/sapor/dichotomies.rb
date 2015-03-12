@@ -57,6 +57,10 @@ module Sapor
       @dichotomy_hash[choice].confidence_interval(level)
     end
 
+    def confidence_interval_values(choice, level)
+      @dichotomy_hash[choice].confidence_interval_values(level)
+    end
+
     def sort_choices_by_mpv
       @dichotomy_hash.keys.sort do | a, b |
         mpv_a = @dichotomy_hash[a].most_probable_value
@@ -79,7 +83,9 @@ module Sapor
       lines = sorted_choices.map do | choice |
         create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
       end
-      "Choice   MPV      CI(95%)    \n" + lines.join("\n")
+      "Most probable fractions and 95% confidence intervals:\n" +
+      "Choice   MPV      CI(95%)    \n" +
+      lines.join("\n")
     end
   end
 end
