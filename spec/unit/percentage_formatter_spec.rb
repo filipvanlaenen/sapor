@@ -82,3 +82,55 @@ describe Sapor::PercentageFormatter, '#as_percentage' do
     expect(output).to eq('0%')
   end
 end
+
+describe Sapor::PercentageFormatter, '#as_table_percentage' do
+  it 'formats 1 as 100.0%' do
+    output = Formatter.new.as_table_percentage(1)
+    expect(output).to eq('100.0%')
+  end
+
+  it 'formats 0.9995 as 100.0%' do
+    output = Formatter.new.as_table_percentage(0.9995)
+    expect(output).to eq('100.0%')
+  end
+
+  it 'formats 0.99949 as 99.9%' do
+    output = Formatter.new.as_table_percentage(0.99949)
+    expect(output).to eq(' 99.9%')
+  end
+
+  it 'formats 0.0995 as 10.0%' do
+    output = Formatter.new.as_table_percentage(0.0995)
+    expect(output).to eq(' 10.0%')
+  end
+
+  it 'formats 0.09949 as 9.9%' do
+    output = Formatter.new.as_table_percentage(0.09949)
+    expect(output).to eq('  9.9%')
+  end
+
+  it 'formats 0.00951 as 1.0%' do
+    output = Formatter.new.as_table_percentage(0.00951)
+    expect(output).to eq('  1.0%')
+  end
+
+  it 'formats 0.00949 as 0.9%' do
+    output = Formatter.new.as_table_percentage(0.00949)
+    expect(output).to eq('  0.9%')
+  end
+
+  it 'formats 0.0005 as 0.1%' do
+    output = Formatter.new.as_table_percentage(0.0005)
+    expect(output).to eq('  0.1%')
+  end
+
+  it 'formats 0.00049 as 0.0%' do
+    output = Formatter.new.as_table_percentage(0.00049)
+    expect(output).to eq('  0.0%')
+  end
+
+  it 'formats 0 as 0.0%' do
+    output = Formatter.new.as_table_percentage(0)
+    expect(output).to eq('  0.0%')
+  end
+end
