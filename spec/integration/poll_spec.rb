@@ -20,6 +20,7 @@
 require 'spec_helper'
 
 SAMPLE_FILE = File.join('spec', 'integration', 'sample.poll')
+MAX_ERROR = 0.05
 
 #
 # Logger logging messages to an array.
@@ -67,39 +68,40 @@ end
 describe Sapor::Poll, '#analyze' do
   it 'logs “Analyzing as a set of dichotomies...”' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    poll.analyze
+    poll.analyze(MAX_ERROR)
     expect(poll.logger.messages).to include('Analyzing as a set of' \
                                             ' dichotomies...')
   end
 
   it 'logs “Analyzing as a polychotomy...”' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    poll.analyze
+    poll.analyze(MAX_ERROR)
     expect(poll.logger.messages).to include('Analyzing as a polychotomy...')
   end
 
   it 'logs “Done.” at the end' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    poll.analyze
+    poll.analyze(MAX_ERROR)
     expect(poll.logger.messages.last).to eq('Done.')
   end
 
   it 'logs error estimates' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    poll.analyze
+    poll.analyze(MAX_ERROR)
     expect(poll.logger.messages).to include('Error estimate: ε ≤ 33.3%.')
   end
 
   it 'logs MPV and CI(95%) reports from Dichotomies' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    poll.analyze
+    poll.analyze(MAX_ERROR)
     expected_report = 'Most probable fractions and 95% confidence' +
                       " intervals:\n" +
                       "Choice   MPV      CI(95%)    \n" +
-                      "Yellow  50.0% ( 25.1%– 74.9%)\n" +
-                      "Blue    25.0% (  9.1%– 53.8%)\n" +
-                      "Green   16.7% (  5.0%– 45.5%)\n" +
-                      'Red      8.3% (  1.9%– 36.0%)'
+                      "Yellow  46.3% ( 22.2%– 74.1%)\n" +
+                      "Blue    24.1% (  7.4%– 51.9%)\n" +
+                      "Green   16.7% (  3.7%– 44.4%)\n" +
+                      "Red      9.3% (  0.0%– 37.0%)\n" +
+                      'Other    9.3% (  0.0%– 37.0%)'
     expect(poll.logger.messages).to include(expected_report)
   end
 end

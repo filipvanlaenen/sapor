@@ -109,8 +109,8 @@ module Sapor
 
     def analyze_as_polychotomy(max_error)
       @logger.info('Analyzing as a polychotomy...')
-# TODO:      @analysis = Polychotomy.new(@analysis)
-# TODO:     analyze_until_convergence(max_error)
+      @analysis = Polychotomy.new(@results, population_size, @analysis, max_error)
+      analyze_until_convergence(max_error)
     end
 
     def analyze(max_error = 0.001)
