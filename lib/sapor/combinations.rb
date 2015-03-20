@@ -48,7 +48,7 @@ module Sapor
     end
 
     def most_probable_value
-      @combinations.to_a.max { | a, b | a[1] <=> b[1] }[0]
+      @combinations.max { | a, b | a.last <=> b.last }[0]
     end
 
     def confidence_interval_index(sorted_combinations, one_side_threshold)
@@ -62,7 +62,7 @@ module Sapor
     end
 
     def find_confidence_interval_bottom(one_side_threshold, population_size)
-      sorted_combinations = @combinations.to_a.sort { | a, b | a[0] <=> b[0] }
+      sorted_combinations = @combinations.sort
       i = confidence_interval_index(sorted_combinations, one_side_threshold)
       if i == 0
         population_size.nil? ? sorted_combinations[0][0] : 0
@@ -72,7 +72,7 @@ module Sapor
     end
 
     def find_confidence_interval_top(one_side_threshold, population_size)
-      sorted_combinations = @combinations.to_a.sort { | a, b | b[0] <=> a[0] }
+      sorted_combinations = @combinations.sort.reverse
       i = confidence_interval_index(sorted_combinations, one_side_threshold)
       if i == 0
         population_size.nil? ? sorted_combinations[0][0] : population_size

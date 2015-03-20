@@ -26,6 +26,19 @@ describe Sapor::Combinations, '#new' do
   end
 end
 
+describe Sapor::Combinations, '#empty?' do
+  it 'returns true if no value-combination pair has been added' do
+    combinations = Sapor::Combinations.new
+    expect(combinations.empty?).to be true
+  end
+
+  it 'returns false if a value-combination pair has been added' do
+    combinations = Sapor::Combinations.new
+    combinations[1] = 2
+    expect(combinations.empty?).to be false
+  end
+end
+
 describe Sapor::Combinations, '#[]=' do
   it 'sets a value-combinations pair' do
     combinations = Sapor::Combinations.new
@@ -109,6 +122,14 @@ describe Sapor::Combinations, '#confidence_interval' do
     combinations[3] = 2
     combinations[7] = 2
     expect(combinations.confidence_interval(0.95, 10)).to eq([0, 10])
+  end
+
+  it 'returns the full interval if level too high' do
+    combinations = Sapor::Combinations.new
+    combinations[5] = 1
+    combinations[10] = 98
+    combinations[15] = 1
+    expect(combinations.confidence_interval(0.99)).to eq([5, 15])
   end
 
   it 'returns the values in between as boundaries (even)' do
