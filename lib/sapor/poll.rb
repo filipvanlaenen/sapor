@@ -98,6 +98,7 @@ module Sapor
         error_estimate_as_percentage = as_percentage(@analysis.error_estimate)
         @logger.info(@analysis.report)
         @logger.info("Error estimate: ε ≤ #{error_estimate_as_percentage}.")
+        @logger.info(@analysis.progress_report)
       end
     end
 

@@ -87,5 +87,9 @@ module Sapor
       "Choice   MPV      CI(95%)    \n" +
       lines.join("\n")
     end
+
+    def progress_report
+      "Number of data points: #{@dichotomy_hash.values.first.values.size}."
+    end
   end
 end

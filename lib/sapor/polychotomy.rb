@@ -57,7 +57,7 @@ module Sapor
       level = 1 - (max_error**2)
       @choices.each do | choice |
         unless choice == OTHER
-          ranges[choice] = dichotomies.confidence_interval_values(choice, level)
+          ranges[choice] = dichotomies.confidence_interval_values(choice, level).sort
         end
       end
       ranges
@@ -102,6 +102,10 @@ module Sapor
 
     def range(choice)
       @ranges[choice]
+    end
+
+    def space_size
+      @ranges.values.map { | range | range.size }.inject(1, :*)
     end
 
     def incrementer(choice)
@@ -253,5 +257,18 @@ module Sapor
       lines.join("\n")
     end
 
+    def format_large_number(number)
+      number.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
+    end
+
+    def progress_report
+      space_size_ratio = space_size / @no_of_data_points
+      if (space_size_ratio > 10)
+        space_size_ratio = format_large_number(space_size_ratio.round)
+      else
+        space_size_ratio = space_size_ratio.round(1)
+      end
+      "#{@no_of_simulations} simulations out of #{@no_of_data_points} data points, 1 / #{space_size_ratio} of search space size (#{format_large_number(space_size)})."
+    end
   end
 end

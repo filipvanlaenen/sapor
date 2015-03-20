@@ -24,14 +24,21 @@ module Sapor
   # Represents a dichotomy.
   #
   class Dichotomy
-    attr_reader :combinations, :values
-
     def initialize(number, sample_size, population_size)
       @number = number
       @sample_size = sample_size
       @population_size = population_size
-      @values = [@population_size / 2]
-      @combinations = [combinations_for(@values.first)]
+      @combinations = Combinations.new
+      middle = @population_size / 2
+      @combinations[middle] = combinations_for(middle)
+    end
+
+    def values
+      @combinations.values
+    end
+
+    def combinations(value)
+      @combinations[value]
     end
 
     def combinations_for(value)
@@ -45,46 +52,51 @@ module Sapor
       end
     end
 
-    def insert_new_value(position, value)
-      @values.insert(position, value)
-      @combinations.insert(position, combinations_for(value))
-    end
-
-    def insert_value_at_top
-      unless @values.last == @population_size
-        new_value = ((2.to_f * @population_size + @values.last) / 3).round
-        insert_new_value(@values.size, new_value)
+    def find_refinement_value_at_bottom
+      bottom = values.min
+      if bottom == 0
+        []
+      else
+        [(bottom.to_f / 3).round]
       end
     end
 
-    def insert_value_at_bottom
-      unless @values.first == 0
-        new_value = (@values.first.to_f / 3).round
-        insert_new_value(0, new_value)
+    def find_refinement_values_between(low, high)
+      new_low = ((2 * low + high).to_f / 3).round
+      new_high = ((2 * high + low).to_f / 3).round
+      refinement_values = []
+      refinement_values << new_high unless new_high == high
+      refinement_values << new_low unless new_low == new_high || new_low == low
+      refinement_values
+    end
+
+    def find_refinement_values_in_between
+      sorted_values = values.sort
+      refinement_values = (0..(@combinations.size - 2)).to_a.map do | i |
+        find_refinement_values_between(sorted_values[i], sorted_values[i + 1])
+      end
+      refinement_values.flatten
+    end
+
+    def find_refinement_value_at_top
+      top = values.max
+      if top == @population_size
+        []
+      else
+        [((2.to_f * @population_size + top) / 3).round]
       end
     end
 
-    def insert_values_at(i)
-      low_value = @values[i]
-      high_value = @values[i + 1]
-      new_low_value = ((2 * low_value + high_value).to_f / 3).round
-      new_high_value = ((2 * high_value + low_value).to_f / 3).round
-      unless new_high_value == high_value
-        insert_new_value(i + 1, new_high_value)
-      end
-      unless new_low_value == new_high_value || new_low_value == low_value
-        insert_new_value(i + 1, new_low_value)
-      end
-    end
-
-    def insert_values_in_between
-      (0..(@values.size - 2)).to_a.reverse.each { | i | insert_values_at(i) }
+    def find_refinement_values
+      find_refinement_value_at_bottom + find_refinement_values_in_between +
+      find_refinement_value_at_top
     end
 
     def refine
-      insert_values_in_between
-      insert_value_at_top
-      insert_value_at_bottom
+      new_values = find_refinement_values
+      new_values.each do | value |
+        @combinations[value] = combinations_for(value)
+      end
     end
 
     def error_estimate
@@ -92,19 +104,15 @@ module Sapor
     end
 
     def estimate_error
-      if @values.size == @population_size + 1
+      if @combinations.size == @population_size + 1
         0
       else
-        1.to_f / @values.size
+        1.to_f / @combinations.size
       end
     end
 
     def most_probable_value
-      calculate_most_probable_value
-    end
-
-    def calculate_most_probable_value
-      @values[@combinations.each_with_index.max[1]]
+      @combinations.most_probable_value
     end
 
     def most_probable_fraction
@@ -116,61 +124,11 @@ module Sapor
     end
 
     def value_confidence_interval(level = 0.95)
-      calculate_value_confidence_interval(level)
+      @combinations.confidence_interval(level, @population_size)
     end
 
     def confidence_interval_values(level = 0.95)
-      interval = calculate_value_confidence_interval(level)
-      @values.reject do | value |
-        value < interval.first || value > interval.last
-      end
-    end
-
-    def find_confidence_interval_bottom_index(rest_combinations)
-      bottom_sum = 0.to_lf
-      bottom_index = -1
-      while bottom_sum < rest_combinations
-        bottom_index += 1
-        bottom_sum = @combinations[bottom_index] + bottom_sum
-      end
-      bottom_index
-    end
-
-    def calculate_confidence_interval_bottom(rest_combinations)
-      bottom_index = find_confidence_interval_bottom_index(rest_combinations)
-      if bottom_index == 0
-        0
-      else
-        (@values[bottom_index - 1] + @values[bottom_index] + 1) / 2
-      end
-    end
-
-    def find_confidence_interval_top_index(rest_combinations)
-      top_sum = 0.to_lf
-      top_index = @values.size
-      while top_sum < rest_combinations
-        top_index -= 1
-        top_sum = @combinations[top_index] + top_sum
-      end
-      top_index
-    end
-
-    def calculate_confidence_interval_top(rest_combinations)
-      top_index = find_confidence_interval_top_index(rest_combinations)
-      if top_index == @values.size - 1
-        @population_size
-      else
-        (@values[top_index] + @values[top_index + 1]) / 2
-      end
-    end
-
-    def calculate_value_confidence_interval(level)
-      rest = (1 - level) / 2
-      all_combinations = combinations.inject(:+)
-      rest_combinations = all_combinations * rest
-      bottom = calculate_confidence_interval_bottom(rest_combinations)
-      top = calculate_confidence_interval_top(rest_combinations)
-      [bottom, top]
+      @combinations.confidence_interval_values(level)
     end
   end
 end

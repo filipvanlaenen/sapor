@@ -26,6 +26,7 @@ end
 
 require 'sapor/percentage_formatter'
 require 'sapor/dichotomies'
+require 'sapor/combinations'
 require 'sapor/dichotomy'
 require 'sapor/log4r_logger'
 require 'sapor/log_facade'

@@ -46,7 +46,7 @@ describe Sapor::Dichotomy, '#new' do
   end
 
   it 'creates an array with a combination for 50% of the population size' do
-    expect(dichotomy_of_eight.combinations).to eq([24.to_lf])
+    expect(dichotomy_of_eight.combinations(4)).to eq(24.to_lf)
   end
 end
 
@@ -54,48 +54,48 @@ describe Sapor::Dichotomy, '#refine' do
   it 'adds values after one refinement (power of three)' do
     dichotomy = dichotomy_of_eight
     dichotomy.refine
-    expect(dichotomy.values).to eq([1, 4, 7])
+    expect(dichotomy.values.sort).to eq([1, 4, 7])
   end
 
   it 'adds values after one refinement (small population)' do
     dichotomy = dichotomy_of_nine
     dichotomy.refine
-    expect(dichotomy.values).to eq([1, 4, 7])
+    expect(dichotomy.values.sort).to eq([1, 4, 7])
   end
 
   it 'adds values after one refinement (large population)' do
     dichotomy = dichotomy_of_thousand
     dichotomy.refine
-    expect(dichotomy.values).to eq([167, 500, 833])
+    expect(dichotomy.values.sort).to eq([167, 500, 833])
   end
 
   it 'adds values after two refinements (power of three)' do
     dichotomy = dichotomy_of_eight
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    expect(dichotomy.values.sort).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8])
   end
 
   it 'adds values after two refinements (small population)' do
     dichotomy = dichotomy_of_nine
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    expect(dichotomy.values.sort).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8])
   end
 
   it 'adds values after two refinements (small population)' do
     dichotomy = Sapor::Dichotomy.new(2, 5, 60)
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([3, 10, 17, 23, 30, 37, 43, 50, 57])
+    expect(dichotomy.values.sort).to eq([3, 10, 17, 23, 30, 37, 43, 50, 57])
   end
 
   it 'adds values after two refinements (large population)' do
     dichotomy = dichotomy_of_thousand
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([56, 167, 278, 389, 500, 611, 722, 833,
-                                    944])
+    expect(dichotomy.values.sort).to eq([56, 167, 278, 389, 500, 611, 722, 833,
+                                         944])
   end
 
   it "doesn't add values when population size is reached" do
@@ -103,7 +103,7 @@ describe Sapor::Dichotomy, '#refine' do
     dichotomy.refine
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    expect(dichotomy.values.sort).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8])
   end
 
   it 'fills up the values when population size is reached' do
@@ -111,7 +111,7 @@ describe Sapor::Dichotomy, '#refine' do
     dichotomy.refine
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expect(dichotomy.values.sort).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
   end
 
   it 'fills up the values when population size is reached' do
@@ -119,21 +119,21 @@ describe Sapor::Dichotomy, '#refine' do
     dichotomy.refine
     dichotomy.refine
     dichotomy.refine
-    expect(dichotomy.values).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    expect(dichotomy.values.sort).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
   end
 
   it 'adds combinations after a refinement' do
     dichotomy = dichotomy_of_thousand
     dichotomy.refine
-    expect(dichotomy.combinations).to eq([1_330_493_216_416.to_lf,
-                                          2_583_385_375_000.to_lf,
-                                          264_177_353_440.to_lf])
+    expect(dichotomy.combinations(167)).to eq(1_330_493_216_416.to_lf)
+    expect(dichotomy.combinations(833)).to eq(264_177_353_440.to_lf)
   end
 
   it 'adds combinations of zero for impossible values' do
     dichotomy = dichotomy_of_eight
     dichotomy.refine
-    expect(dichotomy.combinations).to eq([0.to_lf, 24.to_lf, 0.to_lf])
+    expect(dichotomy.combinations(1)).to eq(0.to_lf)
+    expect(dichotomy.combinations(7)).to eq(0.to_lf)
   end
 end
 
