@@ -47,21 +47,28 @@ module Sapor
       error_estimates.max
     end
 
-    def most_probable_value(choice)
-      @dichotomy_hash[choice].most_probable_value
-    end
-
-    def most_probable_fraction(choice)
-      @dichotomy_hash[choice].most_probable_fraction
-    end
-
-    def confidence_interval(choice, level)
-      @dichotomy_hash[choice].confidence_interval(level)
-    end
-
     def confidence_interval_values(choice, level)
       @dichotomy_hash[choice].confidence_interval_values(level)
     end
+
+    def report
+      choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
+      choice_lengths << 6
+      max_choice_width = choice_lengths.max
+      sorted_choices = sort_choices_by_mpv
+      lines = sorted_choices.map do | choice |
+        create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
+      end
+      "Most probable fractions and 95% confidence intervals:\n" +
+      "Choice   MPF      CI(95%)\n" +
+      lines.join("\n")
+    end
+
+    def progress_report
+      "Number of data points: #{@dichotomy_hash.values.first.values.size}."
+    end
+
+    private
 
     def sort_choices_by_mpv
       @dichotomy_hash.keys.sort do | a, b |
@@ -82,23 +89,6 @@ module Sapor
       as_table_percentage(dichotomy.most_probable_fraction) + ' (' + \
       as_table_percentage(dichotomy.confidence_interval.first) + '–' + \
       as_table_percentage(dichotomy.confidence_interval.last) + ')'
-    end
-
-    def report
-      choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
-      choice_lengths << 6
-      max_choice_width = choice_lengths.max
-      sorted_choices = sort_choices_by_mpv
-      lines = sorted_choices.map do | choice |
-        create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
-      end
-      "Most probable fractions and 95% confidence intervals:\n" +
-      "Choice   MPF      CI(95%)\n" +
-      lines.join("\n")
-    end
-
-    def progress_report
-      "Number of data points: #{@dichotomy_hash.values.first.values.size}."
     end
   end
 end
