@@ -51,6 +51,25 @@ module Sapor
       @combinations.max { | a, b | a.last <=> b.last }[0]
     end
 
+    def confidence_interval(level, population_size = nil)
+      combinations_sum = @combinations.values.inject(:+)
+      one_side_level = (1 - level) / 2
+      one_side_threshold = combinations_sum * one_side_level
+      bottom = find_confidence_interval_bottom(one_side_threshold,
+                                               population_size)
+      top = find_confidence_interval_top(one_side_threshold, population_size)
+      [bottom, top]
+    end
+
+    def confidence_interval_values(level)
+      interval = confidence_interval(level)
+      @combinations.keys.reject do | value |
+        value < interval.first || value > interval.last
+      end
+    end
+
+    private
+
     def confidence_interval_index(sorted_combinations, one_side_threshold)
       i = 0
       sum_to_i = sorted_combinations[i][1]
@@ -78,23 +97,6 @@ module Sapor
         population_size.nil? ? sorted_combinations[0][0] : population_size
       else
         (sorted_combinations[i - 1][0] + sorted_combinations[i][0]) / 2
-      end
-    end
-
-    def confidence_interval(level, population_size = nil)
-      combinations_sum = @combinations.values.inject(:+)
-      one_side_level = (1 - level) / 2
-      one_side_threshold = combinations_sum * one_side_level
-      bottom = find_confidence_interval_bottom(one_side_threshold,
-                                               population_size)
-      top = find_confidence_interval_top(one_side_threshold, population_size)
-      [bottom, top]
-    end
-
-    def confidence_interval_values(level)
-      interval = confidence_interval(level)
-      @combinations.keys.reject do | value |
-        value < interval.first || value > interval.last
       end
     end
   end
