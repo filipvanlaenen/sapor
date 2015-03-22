@@ -24,6 +24,8 @@ module Sapor
   class Dichotomies
     include PercentageFormatter
 
+    OTHER = 'Other'
+
     def initialize(results, population_size)
       sample_size = results.values.inject(:+)
       @dichotomy_hash = {}
@@ -63,9 +65,15 @@ module Sapor
 
     def sort_choices_by_mpv
       @dichotomy_hash.keys.sort do | a, b |
-        mpv_a = @dichotomy_hash[a].most_probable_value
-        mpv_b = @dichotomy_hash[b].most_probable_value
-        mpv_b <=> mpv_a
+        if a == OTHER
+          1
+        elsif b == OTHER
+          -1
+        else
+          mpv_a = @dichotomy_hash[a].most_probable_value
+          mpv_b = @dichotomy_hash[b].most_probable_value
+          mpv_a == mpv_b ? a <=> b : mpv_b <=> mpv_a
+        end
       end
     end
 
@@ -78,13 +86,14 @@ module Sapor
 
     def report
       choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
+      choice_lengths << 6
       max_choice_width = choice_lengths.max
       sorted_choices = sort_choices_by_mpv
       lines = sorted_choices.map do | choice |
         create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
       end
       "Most probable fractions and 95% confidence intervals:\n" +
-      "Choice   MPV      CI(95%)    \n" +
+      "Choice   MPF      CI(95%)\n" +
       lines.join("\n")
     end
 

@@ -96,7 +96,7 @@ describe Sapor::Poll, '#analyze' do
     poll.analyze(MAX_ERROR)
     expected_report = 'Most probable fractions and 95% confidence' +
                       " intervals:\n" +
-                      "Choice   MPV      CI(95%)    \n" +
+                      "Choice   MPF      CI(95%)\n" +
                       "Yellow  46.3% ( 22.2%– 74.1%)\n" +
                       "Blue    24.1% (  7.4%– 51.9%)\n" +
                       "Green   16.7% (  3.7%– 44.4%)\n" +
