@@ -19,40 +19,40 @@
 
 module Sapor
   #
-  # Represents the number of combinations for a set of values. This is
+  # Represents the distribution of combinations over a set of values. This is
   # basically a simple hash with some helper methods for the Sapor domain.
   #
-  class Combinations
+  class CombinationsDistribution
     def initialize
-      @combinations = {}
+      @distribution = {}
     end
 
     def []=(value, combinations)
-      @combinations[value] = combinations
+      @distribution[value] = combinations
     end
 
     def [](value)
-      @combinations[value]
+      @distribution[value]
     end
 
     def empty?
-      @combinations.empty?
+      @distribution.empty?
     end
 
     def size
-      @combinations.size
+      @distribution.size
     end
 
     def values
-      @combinations.keys
+      @distribution.keys
     end
 
     def most_probable_value
-      @combinations.max { | a, b | a.last <=> b.last }[0]
+      @distribution.max { | a, b | a.last <=> b.last }[0]
     end
 
     def confidence_interval(level, population_size = nil)
-      combinations_sum = @combinations.values.inject(:+)
+      combinations_sum = @distribution.values.inject(:+)
       one_side_level = (1 - level) / 2
       one_side_threshold = combinations_sum * one_side_level
       bottom = find_confidence_interval_bottom(one_side_threshold,
@@ -63,7 +63,7 @@ module Sapor
 
     def confidence_interval_values(level)
       interval = confidence_interval(level)
-      @combinations.keys.reject do | value |
+      @distribution.keys.reject do | value |
         value < interval.first || value > interval.last
       end
     end
@@ -81,7 +81,7 @@ module Sapor
     end
 
     def find_confidence_interval_bottom(one_side_threshold, population_size)
-      sorted_combinations = @combinations.sort
+      sorted_combinations = @distribution.sort
       i = confidence_interval_index(sorted_combinations, one_side_threshold)
       if i == 0
         population_size.nil? ? sorted_combinations[0][0] : 0
@@ -91,7 +91,7 @@ module Sapor
     end
 
     def find_confidence_interval_top(one_side_threshold, population_size)
-      sorted_combinations = @combinations.sort.reverse
+      sorted_combinations = @distribution.sort.reverse
       i = confidence_interval_index(sorted_combinations, one_side_threshold)
       if i == 0
         population_size.nil? ? sorted_combinations[0][0] : population_size

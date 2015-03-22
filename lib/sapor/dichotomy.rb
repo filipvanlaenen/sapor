@@ -28,17 +28,17 @@ module Sapor
       @number = number
       @sample_size = sample_size
       @population_size = population_size
-      @combinations = Combinations.new
+      @distribution = CombinationsDistribution.new
       middle = @population_size / 2
-      @combinations[middle] = combinations_for(middle)
+      @distribution[middle] = combinations_for(middle)
     end
 
     def values
-      @combinations.values
+      @distribution.values
     end
 
     def combinations(value)
-      @combinations[value]
+      @distribution[value]
     end
 
     def combinations_for(value)
@@ -72,7 +72,7 @@ module Sapor
 
     def find_refinement_values_in_between
       sorted_values = values.sort
-      refinement_values = (0..(@combinations.size - 2)).to_a.map do | i |
+      refinement_values = (0..(@distribution.size - 2)).to_a.map do | i |
         find_refinement_values_between(sorted_values[i], sorted_values[i + 1])
       end
       refinement_values.flatten
@@ -95,7 +95,7 @@ module Sapor
     def refine
       new_values = find_refinement_values
       new_values.each do | value |
-        @combinations[value] = combinations_for(value)
+        @distribution[value] = combinations_for(value)
       end
     end
 
@@ -104,15 +104,15 @@ module Sapor
     end
 
     def estimate_error
-      if @combinations.size == @population_size + 1
+      if @distribution.size == @population_size + 1
         0
       else
-        1.to_f / @combinations.size
+        1.to_f / @distribution.size
       end
     end
 
     def most_probable_value
-      @combinations.most_probable_value
+      @distribution.most_probable_value
     end
 
     def most_probable_fraction
@@ -124,11 +124,11 @@ module Sapor
     end
 
     def value_confidence_interval(level = 0.95)
-      @combinations.confidence_interval(level, @population_size)
+      @distribution.confidence_interval(level, @population_size)
     end
 
     def confidence_interval_values(level = 0.95)
-      @combinations.confidence_interval_values(level)
+      @distribution.confidence_interval_values(level)
     end
   end
 end
