@@ -22,6 +22,14 @@ require 'spec_helper'
 SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
 SAMPLE_POPULATION_SIZE = 1_000_000
 
+describe Sapor::Dichotomies, '#error_estimate' do
+  it 'returns the maximum error estimate of the underlying Dichotomy objects' do
+    dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
+                                         SAMPLE_POPULATION_SIZE)
+    expect(dichotomies.error_estimate).to eq(1)
+  end
+end
+
 describe Sapor::Dichotomies, '#progress_report' do
   it 'reports progress as 1 data point by default' do
     dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
