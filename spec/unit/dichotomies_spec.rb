@@ -22,6 +22,23 @@ require 'spec_helper'
 SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
 SAMPLE_POPULATION_SIZE = 1_000_000
 
+describe Sapor::Dichotomies, '#confidence_interval_values' do
+  it 'returns the confidence interval values' do
+    dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
+                                         SAMPLE_POPULATION_SIZE)
+    expect(dichotomies.confidence_interval_values('Red', 0.95)).to \
+    eq([500_000])
+  end
+
+  it 'returns the non-default confidence interval values' do
+    dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
+                                         SAMPLE_POPULATION_SIZE)
+    dichotomies.refine
+    expect(dichotomies.confidence_interval_values('Red', 0.9999).sort).to \
+    eq([166_667, 500_000, 833_333])
+  end
+end
+
 describe Sapor::Dichotomies, '#error_estimate' do
   it 'returns the largest error estimate of the underlying Dichotomy ' \
      'objects' do
@@ -89,7 +106,7 @@ describe Sapor::Dichotomies, '#report' do
     expect(dichotomies.report).to eq(expected_report)
   end
 
-  it 'sorts the choices according to MPF' do
+  it 'sorts the choices according to MPV' do
     dichotomies = Sapor::Dichotomies.new({ 'Red' => 3, 'Green' => 2,
                                            'Blue' => 1, 'Other' => 1 },
                                          SAMPLE_POPULATION_SIZE)
