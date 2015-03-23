@@ -102,24 +102,4 @@ describe Sapor::Poll, '#confidence_interval' do
   it 'returns nil if no analysis has been run' do
     expect(sample_poll.confidence_interval('Blue')).to be_nil
   end
-
-  it 'gets by default the 95% confidence interval after analysis' do
-    poll = sample_poll
-    poll.analyze(MAX_ERROR)
-# TODO    default_confidence_interval = poll.confidence_interval('Blue')
-# TODO    confidence_interval_for_95 = poll.confidence_interval('Blue', 0.95)
-# TODO    expect(default_confidence_interval).to eq(confidence_interval_for_95)
-  end
-
-  it "gets a 90% confidence interval that's inside the default 95%" \
-     " confidence interval" do
-    poll = sample_poll
-    poll.analyze(MAX_ERROR)
-# TODO    default_confidence_interval = poll.confidence_interval('Blue')
-# TODO    confidence_interval_for_90 = poll.confidence_interval('Blue', 0.9)
-# TODO    expect(default_confidence_interval.first).to be < \
-# TODO      confidence_interval_for_90.first
-# TODO    expect(default_confidence_interval.last).to be > \
-# TODO      confidence_interval_for_90.last
-  end
 end
