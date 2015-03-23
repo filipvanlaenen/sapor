@@ -28,8 +28,6 @@ module Sapor
 
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 
-    OTHER = 'Other'
-
     def initialize(results, population_size, dichotomies, max_error)
       @results = results
       @choices = results.keys

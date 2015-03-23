@@ -24,8 +24,6 @@ module Sapor
   class Dichotomies
     include PercentageFormatter
 
-    OTHER = 'Other'
-
     def initialize(results, population_size)
       sample_size = results.values.inject(:+)
       @dichotomy_hash = {}

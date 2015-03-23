@@ -18,6 +18,8 @@
 #
 
 module Sapor
+  OTHER = 'Other'
+
   #
   # Represents a poll.
   #
