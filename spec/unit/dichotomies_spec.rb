@@ -38,10 +38,11 @@ describe Sapor::Dichotomies, '#progress_report' do
 end
 
 describe Sapor::Dichotomies, '#report' do
-  it 'produces a report by default' do
+  it 'produces a report by default for short choice labels' do
     dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
                                          SAMPLE_POPULATION_SIZE)
-    expected_report = "Most probable fractions and 95% confidence intervals:\n" + 
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
                       "Choice   MPF      CI(95%)\n" +
                       "Blue    50.0% (  0.0%–100.0%)\n" +
                       "Green   50.0% (  0.0%–100.0%)\n" +
@@ -50,11 +51,27 @@ describe Sapor::Dichotomies, '#report' do
     expect(dichotomies.report).to eq(expected_report)
   end
 
+  it 'produces a report by default for long choice labels' do
+    dichotomies = Sapor::Dichotomies.new({ 'Dark Red' => 1,
+                                           'Light Green' => 2,
+                                           'Medium Blue' => 3, 'Other' => 1 },
+                                         SAMPLE_POPULATION_SIZE)
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
+                      "Choice        MPF      CI(95%)\n" +
+                      "Dark Red     50.0% (  0.0%–100.0%)\n" +
+                      "Light Green  50.0% (  0.0%–100.0%)\n" +
+                      "Medium Blue  50.0% (  0.0%–100.0%)\n" +
+                      'Other        50.0% (  0.0%–100.0%)'
+    expect(dichotomies.report).to eq(expected_report)
+  end
+
   it 'produces a report after the first refinement' do
     dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
                                          SAMPLE_POPULATION_SIZE)
     dichotomies.refine
-    expected_report = "Most probable fractions and 95% confidence intervals:\n" + 
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
                       "Choice   MPF      CI(95%)\n" +
                       "Blue    50.0% (  0.0%–100.0%)\n" +
                       "Green   16.7% (  0.0%– 66.7%)\n" +

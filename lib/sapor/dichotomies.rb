@@ -60,7 +60,7 @@ module Sapor
         create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
       end
       "Most probable fractions and 95% confidence intervals:\n" +
-      "Choice   MPF      CI(95%)\n" +
+      'Choice'.ljust(max_choice_width) + "   MPF      CI(95%)\n" +
       lines.join("\n")
     end
 
