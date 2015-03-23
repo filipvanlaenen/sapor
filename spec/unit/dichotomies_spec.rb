@@ -23,7 +23,8 @@ SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
 SAMPLE_POPULATION_SIZE = 1_000_000
 
 describe Sapor::Dichotomies, '#error_estimate' do
-  it 'returns the maximum error estimate of the underlying Dichotomy objects' do
+  it 'returns the largest error estimate of the underlying Dichotomy ' \
+     'objects' do
     dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
                                          SAMPLE_POPULATION_SIZE)
     expect(dichotomies.error_estimate).to eq(1)
@@ -85,6 +86,21 @@ describe Sapor::Dichotomies, '#report' do
                       "Green   16.7% (  0.0%– 66.7%)\n" +
                       "Red     16.7% (  0.0%– 66.7%)\n" +
                       'Other   16.7% (  0.0%– 66.7%)'
+    expect(dichotomies.report).to eq(expected_report)
+  end
+
+  it "puts Other on the last line, even if it's listed first and largest" do
+    dichotomies = Sapor::Dichotomies.new({ 'Other' => 4, 'Red' => 1,
+                                           'Green' => 2, 'Blue' => 3 },
+                                         SAMPLE_POPULATION_SIZE)
+    dichotomies.refine
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
+                      "Choice   MPF      CI(95%)\n" +
+                      "Blue    16.7% (  0.0%– 66.7%)\n" +
+                      "Green   16.7% (  0.0%– 66.7%)\n" +
+                      "Red     16.7% (  0.0%– 66.7%)\n" +
+                      'Other   50.0% (  0.0%– 66.7%)'
     expect(dichotomies.report).to eq(expected_report)
   end
 end
