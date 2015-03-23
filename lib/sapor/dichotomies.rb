@@ -55,7 +55,7 @@ module Sapor
       choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
       choice_lengths << 6
       max_choice_width = choice_lengths.max
-      sorted_choices = sort_choices_by_mpv
+      sorted_choices = sort_choices_by_label_and_mpv
       lines = sorted_choices.map do | choice |
         create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
       end
@@ -70,17 +70,21 @@ module Sapor
 
     private
 
-    def sort_choices_by_mpv
+    def compare_choices_by_label_and_mpv(a, b)
+      if a == OTHER
+        1
+      elsif b == OTHER
+        -1
+      else
+        mpv_a = @dichotomy_hash[a].most_probable_value
+        mpv_b = @dichotomy_hash[b].most_probable_value
+        mpv_a == mpv_b ? a <=> b : mpv_b <=> mpv_a
+      end
+    end
+
+    def sort_choices_by_label_and_mpv
       @dichotomy_hash.keys.sort do | a, b |
-        if a == OTHER
-          1
-        elsif b == OTHER
-          -1
-        else
-          mpv_a = @dichotomy_hash[a].most_probable_value
-          mpv_b = @dichotomy_hash[b].most_probable_value
-          mpv_a == mpv_b ? a <=> b : mpv_b <=> mpv_a
-        end
+        compare_choices_by_label_and_mpv(a, b)
       end
     end
 
