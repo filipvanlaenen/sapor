@@ -89,6 +89,21 @@ describe Sapor::Dichotomies, '#report' do
     expect(dichotomies.report).to eq(expected_report)
   end
 
+  it 'sorts the choices according to MPF' do
+    dichotomies = Sapor::Dichotomies.new({ 'Red' => 3, 'Green' => 2,
+                                           'Blue' => 1, 'Other' => 1 },
+                                         SAMPLE_POPULATION_SIZE)
+    dichotomies.refine
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
+                      "Choice   MPF      CI(95%)\n" +
+                      "Red     50.0% (  0.0%–100.0%)\n" +
+                      "Blue    16.7% (  0.0%– 66.7%)\n" +
+                      "Green   16.7% (  0.0%– 66.7%)\n" +
+                      'Other   16.7% (  0.0%– 66.7%)'
+    expect(dichotomies.report).to eq(expected_report)
+  end
+
   it "puts Other on the last line, even if it's listed first and largest" do
     dichotomies = Sapor::Dichotomies.new({ 'Other' => 4, 'Red' => 1,
                                            'Green' => 2, 'Blue' => 3 },
