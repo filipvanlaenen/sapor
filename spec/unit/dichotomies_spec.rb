@@ -69,11 +69,11 @@ describe Sapor::Dichotomies, '#report' do
                                          SAMPLE_POPULATION_SIZE)
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
-                      "Choice   MPF      CI(95%)\n" +
-                      "Blue    50.0% (  0.0%–100.0%)\n" +
-                      "Green   50.0% (  0.0%–100.0%)\n" +
-                      "Red     50.0% (  0.0%–100.0%)\n" +
-                      'Other   50.0% (  0.0%–100.0%)'
+                      "Choice    MPF      CI(95%)\n" +
+                      "Blue     50.0%    0.0%–100.0%\n" +
+                      "Green    50.0%    0.0%–100.0%\n" +
+                      "Red      50.0%    0.0%–100.0%\n" +
+                      'Other    50.0%    0.0%–100.0%'
     expect(dichotomies.report).to eq(expected_report)
   end
 
@@ -84,11 +84,11 @@ describe Sapor::Dichotomies, '#report' do
                                          SAMPLE_POPULATION_SIZE)
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
-                      "Choice        MPF      CI(95%)\n" +
-                      "Dark Red     50.0% (  0.0%–100.0%)\n" +
-                      "Light Green  50.0% (  0.0%–100.0%)\n" +
-                      "Medium Blue  50.0% (  0.0%–100.0%)\n" +
-                      'Other        50.0% (  0.0%–100.0%)'
+                      "Choice         MPF      CI(95%)\n" +
+                      "Dark Red      50.0%    0.0%–100.0%\n" +
+                      "Light Green   50.0%    0.0%–100.0%\n" +
+                      "Medium Blue   50.0%    0.0%–100.0%\n" +
+                      'Other         50.0%    0.0%–100.0%'
     expect(dichotomies.report).to eq(expected_report)
   end
 
@@ -98,11 +98,11 @@ describe Sapor::Dichotomies, '#report' do
     dichotomies.refine
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
-                      "Choice   MPF      CI(95%)\n" +
-                      "Blue    50.0% (  0.0%–100.0%)\n" +
-                      "Green   16.7% (  0.0%– 66.7%)\n" +
-                      "Red     16.7% (  0.0%– 66.7%)\n" +
-                      'Other   16.7% (  0.0%– 66.7%)'
+                      "Choice    MPF      CI(95%)\n" +
+                      "Blue     50.0%    0.0%–100.0%\n" +
+                      "Green    16.7%    0.0%– 66.7%\n" +
+                      "Red      16.7%    0.0%– 66.7%\n" +
+                      'Other    16.7%    0.0%– 66.7%'
     expect(dichotomies.report).to eq(expected_report)
   end
 
@@ -113,11 +113,11 @@ describe Sapor::Dichotomies, '#report' do
     dichotomies.refine
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
-                      "Choice   MPF      CI(95%)\n" +
-                      "Red     50.0% (  0.0%–100.0%)\n" +
-                      "Blue    16.7% (  0.0%– 66.7%)\n" +
-                      "Green   16.7% (  0.0%– 66.7%)\n" +
-                      'Other   16.7% (  0.0%– 66.7%)'
+                      "Choice    MPF      CI(95%)\n" +
+                      "Red      50.0%    0.0%–100.0%\n" +
+                      "Blue     16.7%    0.0%– 66.7%\n" +
+                      "Green    16.7%    0.0%– 66.7%\n" +
+                      'Other    16.7%    0.0%– 66.7%'
     expect(dichotomies.report).to eq(expected_report)
   end
 
@@ -128,11 +128,11 @@ describe Sapor::Dichotomies, '#report' do
     dichotomies.refine
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
-                      "Choice   MPF      CI(95%)\n" +
-                      "Blue    16.7% (  0.0%– 66.7%)\n" +
-                      "Green   16.7% (  0.0%– 66.7%)\n" +
-                      "Red     16.7% (  0.0%– 66.7%)\n" +
-                      'Other   50.0% (  0.0%– 66.7%)'
+                      "Choice    MPF      CI(95%)\n" +
+                      "Blue     16.7%    0.0%– 66.7%\n" +
+                      "Green    16.7%    0.0%– 66.7%\n" +
+                      "Red      16.7%    0.0%– 66.7%\n" +
+                      'Other    50.0%    0.0%– 66.7%'
     expect(dichotomies.report).to eq(expected_report)
   end
 end
