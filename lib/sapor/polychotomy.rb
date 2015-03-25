@@ -66,13 +66,13 @@ module Sapor
       if @no_of_simulations == 0
         nil
       else
-        calculate_most_probable_value(choice, @distributions)
+        @distributions[choice].most_probable_value
       end
     end
 
     def calculate_most_probable_fraction(choice, distributions)
       # TODO: Should rather aggregate per intervals of max_error
-      calculate_most_probable_value(choice, distributions).to_f / @population_size
+      distributions[choice].most_probable_value.to_f / @population_size
     end
 
     def most_probable_fraction(choice)
@@ -230,11 +230,6 @@ module Sapor
           distributions[choice][@ranges[choice][@counters[choice]]] += combinations
         end
       end
-    end
-
-    # TODO: Eliminate
-    def calculate_most_probable_value(choice, distributions)
-      distributions[choice].most_probable_value
     end
 
     def calculate_error_estimate(new_simulations)
