@@ -276,7 +276,7 @@ module Sapor
 
     def create_report_line(choice, max_choice_width)
       choice.ljust(max_choice_width) + ' ' + \
-      as_table_percentage(most_probable_fraction(choice))
+      six_char_percentage(most_probable_fraction(choice))
     end
   end
 end

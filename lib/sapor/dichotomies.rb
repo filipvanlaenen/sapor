@@ -88,9 +88,9 @@ module Sapor
 
     def create_report_line(choice, dichotomy, max_choice_width)
       choice.ljust(max_choice_width) + '  ' + \
-      as_table_percentage(dichotomy.most_probable_fraction) + '  ' + \
-      as_table_percentage(dichotomy.confidence_interval.first) + '–' + \
-      as_table_percentage(dichotomy.confidence_interval.last)
+      six_char_percentage(dichotomy.most_probable_fraction) + '  ' + \
+      six_char_percentage(dichotomy.confidence_interval.first) + '–' + \
+      six_char_percentage(dichotomy.confidence_interval.last)
     end
   end
 end

@@ -22,7 +22,7 @@ module Sapor
   # Module to format numbers.
   #
   module NumberFormatter
-    def as_percentage(number)
+    def three_digits_percentage(number)
       if number >= 0.9995 || number < 0.000005
         sprintf('%.0f', number * 100) + '%'
       elsif number >= 0.09995
@@ -34,7 +34,7 @@ module Sapor
       end
     end
 
-    def as_table_percentage(number)
+    def six_char_percentage(number)
       sprintf('%5.1f', number * 100) + '%'
     end
   end

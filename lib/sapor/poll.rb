@@ -97,9 +97,9 @@ module Sapor
     def analyze_until_convergence(max_error)
       while @analysis.error_estimate > max_error
         @analysis.refine
-        error_estimate_as_percentage = as_percentage(@analysis.error_estimate)
         @logger.info(@analysis.report)
-        @logger.info("Error estimate: ε ≤ #{error_estimate_as_percentage}.")
+        @logger.info('Error estimate: ε ≤' +
+                     " #{three_digits_percentage(@analysis.error_estimate)}.")
         @logger.info(@analysis.progress_report)
       end
     end
