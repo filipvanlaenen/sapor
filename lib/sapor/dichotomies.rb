@@ -63,7 +63,8 @@ module Sapor
     end
 
     def progress_report
-      "Number of data points: #{@dichotomy_hash.values.first.values.size}."
+      size = @dichotomy_hash.values.first.values.size
+      "Number of data points: #{with_thousands_separator(size)}."
     end
 
     private

@@ -119,20 +119,17 @@ module Sapor
     def progress_report
       space_size_ratio = space_size / @no_of_data_points
       if space_size_ratio > 10
-        space_size_ratio = format_large_number(space_size_ratio.round)
+        space_size_ratio = with_thousands_separator(space_size_ratio.round)
       else
         space_size_ratio = space_size_ratio.round(1)
       end
-      "#{@no_of_simulations} simulations out of #{@no_of_data_points} data" +
+      "#{with_thousands_separator(@no_of_simulations)} simulations out of " +
+      "#{with_thousands_separator(@no_of_data_points)} data" +
       " points, 1 / #{space_size_ratio} of search space size" +
-      " (#{format_large_number(space_size)})."
+      " (#{with_thousands_separator(space_size)})."
     end
 
     private
-
-    def format_large_number(number)
-      number.to_s.reverse.gsub(/...(?=.)/, '\&,').reverse
-    end
 
     def extract_ranges_from_dichotomies(dichotomies, max_error)
       ranges = {}

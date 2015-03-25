@@ -134,3 +134,40 @@ describe Sapor::NumberFormatter, '#six_char_percentage' do
     expect(output).to eq('  0.0%')
   end
 end
+
+describe Sapor::NumberFormatter, '#with_thousands_separator' do
+  it 'formats 0 as 0' do
+    output = Formatter.new.with_thousands_separator(0)
+    expect(output).to eq('0')
+  end
+
+  it 'formats 1 as 1' do
+    output = Formatter.new.with_thousands_separator(1)
+    expect(output).to eq('1')
+  end
+
+  it 'formats 999 as 999' do
+    output = Formatter.new.with_thousands_separator(999)
+    expect(output).to eq('999')
+  end
+
+  it 'formats 1_000 as 1,000' do
+    output = Formatter.new.with_thousands_separator(1_000)
+    expect(output).to eq('1,000')
+  end
+
+  it 'formats 999_999 as 999,999' do
+    output = Formatter.new.with_thousands_separator(999_999)
+    expect(output).to eq('999,999')
+  end
+
+  it 'formats 1_000_000 as 1,000,000' do
+    output = Formatter.new.with_thousands_separator(1_000_000)
+    expect(output).to eq('1,000,000')
+  end
+
+  it 'formats 999_999_999 as 999,999,999' do
+    output = Formatter.new.with_thousands_separator(999_999_999)
+    expect(output).to eq('999,999,999')
+  end
+end

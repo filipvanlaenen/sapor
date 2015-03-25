@@ -37,5 +37,9 @@ module Sapor
     def six_char_percentage(number)
       sprintf('%5.1f', number * 100) + '%'
     end
+
+    def with_thousands_separator(integer)
+      integer.to_s.reverse.gsub(/...(?=.)/, '\&,').reverse
+    end
   end
 end
