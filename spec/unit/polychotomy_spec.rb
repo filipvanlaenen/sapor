@@ -217,4 +217,21 @@ describe Sapor::Polychotomy, '#report' do
                       'Dark Red       5.6%    3.8%–  7.4%'
     expect(polychotomy.report).to eq(expected_report)
   end
+
+  it 'produces a report by default for short choice labels' do
+    results = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
+    dichotomies = Sapor::Dichotomies.new(results, 1000)
+    dichotomies.refine
+    dichotomies.refine
+    dichotomies.refine
+    polychotomy = Sapor::Polychotomy.new(results, 1000, dichotomies, 0.01)
+    polychotomy.refine
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
+                      "Choice    MPF      CI(95%)\n" +
+                      "Blue     27.8%   26.0%– 29.6%\n" +
+                      "Green    20.4%   18.6%– 22.2%\n" +
+                      'Red       5.6%    3.8%–  7.4%'
+    expect(polychotomy.report).to eq(expected_report)
+  end
 end
