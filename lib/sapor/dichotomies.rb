@@ -22,7 +22,7 @@ module Sapor
   # Represents a set of dichotomies.
   #
   class Dichotomies
-    include PercentageFormatter
+    include NumberFormatter
 
     def initialize(results, population_size)
       sample_size = results.values.inject(:+)

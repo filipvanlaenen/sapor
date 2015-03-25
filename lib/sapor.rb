@@ -24,7 +24,7 @@ module Sapor
   end
 end
 
-require 'sapor/percentage_formatter'
+require 'sapor/number_formatter'
 require 'sapor/dichotomies'
 require 'sapor/combinations_distribution'
 require 'sapor/dichotomy'

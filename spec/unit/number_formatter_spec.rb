@@ -23,10 +23,10 @@ require 'spec_helper'
 # Test class that mixes in the PercentageFormatter.
 #
 class Formatter
-  include Sapor::PercentageFormatter
+  include Sapor::NumberFormatter
 end
 
-describe Sapor::PercentageFormatter, '#as_percentage' do
+describe Sapor::NumberFormatter, '#as_percentage' do
   it 'formats 10 as 1000%' do
     output = Formatter.new.as_percentage(10)
     expect(output).to eq('1000%')
@@ -83,7 +83,7 @@ describe Sapor::PercentageFormatter, '#as_percentage' do
   end
 end
 
-describe Sapor::PercentageFormatter, '#as_table_percentage' do
+describe Sapor::NumberFormatter, '#as_table_percentage' do
   it 'formats 1 as 100.0%' do
     output = Formatter.new.as_table_percentage(1)
     expect(output).to eq('100.0%')

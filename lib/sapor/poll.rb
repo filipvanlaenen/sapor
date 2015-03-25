@@ -24,7 +24,7 @@ module Sapor
   # Represents a poll.
   #
   class Poll
-    include PercentageFormatter
+    include NumberFormatter
     attr_reader :area, :logger
 
     AREA_KEY = 'Area'

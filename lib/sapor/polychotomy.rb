@@ -24,7 +24,7 @@ module Sapor
   # Represents a polychotomy.
   #
   class Polychotomy
-    include PercentageFormatter
+    include NumberFormatter
 
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 

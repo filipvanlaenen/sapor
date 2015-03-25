@@ -19,9 +19,9 @@
 
 module Sapor
   #
-  # Module to format percentages.
+  # Module to format numbers.
   #
-  module PercentageFormatter
+  module NumberFormatter
     def as_percentage(number)
       if number >= 0.9995 || number < 0.000005
         sprintf('%.0f', number * 100) + '%'
