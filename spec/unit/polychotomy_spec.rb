@@ -52,7 +52,8 @@ describe Sapor::Polychotomy, '#new' do
     expect(pentachotomy.incrementer('Yellow')).to eq(13)
   end
 
-  # TODO: A test case where one or more ranges have to be extended
+  # TODO: A test case where one range has to be extended
+  # TODO: A test case where two ranges have to be extended
 end
 
 describe Sapor::Polychotomy, '#no_of_simulations' do
@@ -82,7 +83,7 @@ describe Sapor::Polychotomy, '#no_of_simulations' do
     expect(polychotomy.no_of_simulations).to eq(4)
   end
 
-  # TODO: A test case that runs all simulations
+  # TODO: A test case runs all possible simulations (until counters are 0 again)
 end
 
 describe Sapor::Polychotomy, '#no_of_data_points' do

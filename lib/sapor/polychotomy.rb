@@ -30,8 +30,8 @@ module Sapor
 
     def initialize(results, population_size, dichotomies, max_error)
       @results = results
-      @choices = results.keys
       @population_size = population_size
+      @choices = results.keys
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
       @choices.sort! do | a, b |
         if a == OTHER
@@ -48,6 +48,115 @@ module Sapor
       @no_of_data_points = 0
       @distributions = create_new_distributions
       @error_estimate = 1.0
+    end
+
+    def range(choice)
+      @ranges[choice]
+    end
+
+    def space_size
+      @ranges.values.map { | range | range.size }.inject(1, :*)
+    end
+
+    def incrementer(choice)
+      @incrementers[choice]
+    end
+
+    def most_probable_value(choice)
+      if @no_of_simulations == 0
+        nil
+      else
+        calculate_most_probable_value(choice, @distributions)
+      end
+    end
+
+    def calculate_most_probable_fraction(choice, distributions)
+      # TODO: Should rather aggregate per intervals of max_error
+      calculate_most_probable_value(choice, distributions).to_f / @population_size
+    end
+
+    def most_probable_fraction(choice)
+      if @no_of_simulations == 0
+        nil
+      else
+        calculate_most_probable_fraction(choice, @distributions)
+      end
+    end
+
+    def refine
+      no_of_new_simulations = 0
+      new_distributions = create_new_distributions
+      while @no_of_data_points == 0 ||
+            (no_of_new_simulations == 0 && !all_counters_back_at_zero?) ||
+            (no_of_new_simulations < @no_of_simulations &&
+             !all_counters_back_at_zero?)
+        increment_counters
+        if valid_simulation?
+          simulate(new_distributions)
+          no_of_new_simulations += 1
+        end
+        @no_of_data_points += 1
+      end
+      unless @no_of_simulations == 0
+        @error_estimate = calculate_error_estimate(new_distributions)
+      end
+      @distributions = merge_distributions(@distributions, new_distributions)
+      @no_of_simulations += no_of_new_simulations
+    end
+
+    def report
+      choice_lengths = @choices.map { | choice | choice.length }
+      max_choice_width = choice_lengths.max
+      sorted_choices = sort_choices_by_mpv
+      lines = sorted_choices.map do | choice |
+        create_report_line(choice, max_choice_width)
+      end
+      "Most probable fractions:\n" +
+      "Choice   MPV  \n" +
+      lines.join("\n")
+    end
+
+    def progress_report
+      space_size_ratio = space_size / @no_of_data_points
+      if space_size_ratio > 10
+        space_size_ratio = format_large_number(space_size_ratio.round)
+      else
+        space_size_ratio = space_size_ratio.round(1)
+      end
+      "#{@no_of_simulations} simulations out of #{@no_of_data_points} data" +
+      " points, 1 / #{space_size_ratio} of search space size" +
+      " (#{format_large_number(space_size)})."
+    end
+
+    private
+
+    def format_large_number(number)
+      number.to_s.reverse.gsub(/...(?=.)/, '\&,').reverse
+    end
+
+    def extract_ranges_from_dichotomies(dichotomies, max_error)
+      ranges = {}
+      level = 1 - (max_error**2)
+      @choices.each do | choice |
+        unless choice == OTHER
+          ranges[choice] = dichotomies.confidence_interval_values(choice,
+                                                                  level).sort
+        end
+      end
+      ranges
+    end
+
+    def create_new_distributions
+      distributions = {}
+      @choices.each do | choice |
+        unless choice == OTHER
+          distributions[choice] = CombinationsDistribution.new
+          @ranges[choice].each do | value |
+            distributions[choice][value] = 0.to_lf
+          end
+        end
+      end
+      distributions
     end
 
     def initialize_counters
@@ -87,18 +196,6 @@ module Sapor
       @ranges.values.map { | range | range.size.gcd(incrementer) }.max == 1
     end
 
-    def range(choice)
-      @ranges[choice]
-    end
-
-    def space_size
-      @ranges.values.map { | range | range.size }.inject(1, :*)
-    end
-
-    def incrementer(choice)
-      @incrementers[choice]
-    end
-
     def increment_counters
       @choices.each do | choice |
         unless choice == OTHER
@@ -115,9 +212,7 @@ module Sapor
     def other_value
       sum = 0
       @choices.each do | choice |
-        unless choice == OTHER
-          sum += @ranges[choice][@counters[choice]]
-        end
+        sum += @ranges[choice][@counters[choice]] unless choice == OTHER
       end
       @population_size - sum
     end
@@ -145,27 +240,6 @@ module Sapor
       distributions[choice].most_probable_value
     end
 
-    def most_probable_value(choice)
-      if @no_of_simulations == 0
-        nil
-      else
-        calculate_most_probable_value(choice, @distributions)
-      end
-    end
-
-    def calculate_most_probable_fraction(choice, distributions)
-      # TODO: Should rather aggregate per intervals of max_error
-      calculate_most_probable_value(choice, distributions).to_f / @population_size
-    end
-
-    def most_probable_fraction(choice)
-      if @no_of_simulations == 0
-        nil
-      else
-        calculate_most_probable_fraction(choice, @distributions)
-      end
-    end
-
     def calculate_error_estimate(new_simulations)
       error_estimate = 0
       @choices.each do | choice |
@@ -184,30 +258,11 @@ module Sapor
         unless choice == OTHER
           merged_distributions[choice] = CombinationsDistribution.new
           @ranges[choice].each do | value |
-            merged_distributions[choice][value] = distributions1[choice][value] + distributions2[choice][value] 
+            merged_distributions[choice][value] = distributions1[choice][value] + distributions2[choice][value]
           end
         end
       end
       merged_distributions
-    end
-
-    def refine
-      no_of_new_simulations = 0
-      new_distributions = create_new_distributions
-      while @no_of_data_points == 0 ||
-            (no_of_new_simulations == 0 && !all_counters_back_at_zero?) ||
-            (no_of_new_simulations < @no_of_simulations &&
-             !all_counters_back_at_zero?)
-        increment_counters
-        if valid_simulation?
-          simulate(new_distributions)
-          no_of_new_simulations += 1
-        end
-        @no_of_data_points += 1
-      end
-      @error_estimate = calculate_error_estimate(new_distributions) unless @no_of_simulations == 0
-      @distributions = merge_distributions(@distributions, new_distributions)
-      @no_of_simulations += no_of_new_simulations
     end
 
     def sort_choices_by_mpv
@@ -222,58 +277,6 @@ module Sapor
     def create_report_line(choice, max_choice_width)
       choice.ljust(max_choice_width) + ' ' + \
       as_table_percentage(most_probable_fraction(choice))
-    end
-
-    def report
-      choice_lengths = @choices.map { | choice | choice.length }
-      max_choice_width = choice_lengths.max
-      sorted_choices = sort_choices_by_mpv
-      lines = sorted_choices.map do | choice |
-        create_report_line(choice, max_choice_width)
-      end
-      "Most probable fractions:\n" +
-      "Choice   MPV  \n" +
-      lines.join("\n")
-    end
-
-    def format_large_number(number)
-      number.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
-    end
-
-    def progress_report
-      space_size_ratio = space_size / @no_of_data_points
-      if (space_size_ratio > 10)
-        space_size_ratio = format_large_number(space_size_ratio.round)
-      else
-        space_size_ratio = space_size_ratio.round(1)
-      end
-      "#{@no_of_simulations} simulations out of #{@no_of_data_points} data points, 1 / #{space_size_ratio} of search space size (#{format_large_number(space_size)})."
-    end
-
-    private
-
-    def extract_ranges_from_dichotomies(dichotomies, max_error)
-      ranges = {}
-      level = 1 - (max_error**2)
-      @choices.each do | choice |
-        unless choice == OTHER
-          ranges[choice] = dichotomies.confidence_interval_values(choice, level).sort
-        end
-      end
-      ranges
-    end
-
-    def create_new_distributions
-      distributions = {}
-      @choices.each do | choice |
-        unless choice == OTHER
-          distributions[choice] = CombinationsDistribution.new
-          @ranges[choice].each do | value |
-            distributions[choice][value] = 0.to_lf
-          end
-        end
-      end
-      distributions
     end
   end
 end
