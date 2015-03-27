@@ -33,17 +33,7 @@ module Sapor
       @population_size = population_size
       @choices = results.keys
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
-      @choices.sort! do | a, b |
-        if a == OTHER
-          1
-        elsif b == OTHER
-          -1
-        else
-          @ranges[a].size <=> @ranges[b].size
-        end
-      end
-      @incrementers = create_incrementers
-      @counters = initialize_counters
+      @enum = PseudoRandomMultiRangeEnumerator.new(@ranges.values.map{|a| a.size}).each
       @no_of_simulations = 0
       @no_of_data_points = 0
       @distributions = create_new_distributions
@@ -55,11 +45,7 @@ module Sapor
     end
 
     def space_size
-      @ranges.values.map { | range | range.size }.inject(1, :*)
-    end
-
-    def incrementer(choice)
-      @incrementers[choice]
+      @enum.size
     end
 
     def most_probable_value(choice)
@@ -86,13 +72,11 @@ module Sapor
     def refine
       no_of_new_simulations = 0
       new_distributions = create_new_distributions
-      while @no_of_data_points == 0 ||
-            (no_of_new_simulations == 0 && !all_counters_back_at_zero?) ||
-            (no_of_new_simulations < @no_of_simulations &&
-             !all_counters_back_at_zero?)
-        increment_counters
-        if valid_simulation?
-          simulate(new_distributions)
+      while @no_of_data_points == 0 || no_of_new_simulations == 0 ||
+            no_of_new_simulations < @no_of_simulations
+        data_point = next_data_point
+        if data_point[OTHER] >= 0
+          simulate(new_distributions, data_point)
           no_of_new_simulations += 1
         end
         @no_of_data_points += 1
@@ -157,78 +141,24 @@ module Sapor
       distributions
     end
 
-    def initialize_counters
-      counters = {}
-      @choices.each do | choice |
-        counters[choice] = 0 unless choice == OTHER
+    def next_data_point
+      indexes = @enum.next
+      data_point = {}
+      indexes.each_with_index do | ix, i |
+        data_point[@ranges.keys[i]] = @ranges.values[i][ix]
       end
-      counters
+      data_point[OTHER] = @population_size - data_point.values.inject(:+)
+      data_point
     end
 
-    def create_incrementers
-      incrementers = {}
-      incrementer = 0
-      @choices.each do | choice |
+    def simulate(distributions, data_point)
+      combinations = 1.to_lf
+      data_point.each do | choice, value |
+        combinations *= value.large_float_binomial_by_product_of_divisions(@results[choice])
+      end
+      data_point.each do | choice, value |
         unless choice == OTHER
-          incrementer = next_incrementer(incrementer)
-          incrementers[choice] = incrementer
-        end
-      end
-      incrementers
-    end
-
-    def next_incrementer(incrementer)
-      incrementer += 1
-      while incrementer > 1 &&
-            (!prime?(incrementer) || !relative_prime?(incrementer))
-        incrementer += 1
-      end
-      incrementer
-    end
-
-    def prime?(number)
-      Prime.instance.prime?(number)
-    end
-
-    def relative_prime?(incrementer)
-      @ranges.values.map { | range | range.size.gcd(incrementer) }.max == 1
-    end
-
-    def increment_counters
-      @choices.each do | choice |
-        unless choice == OTHER
-          @counters[choice] += @incrementers[choice]
-          @counters[choice] = @counters[choice].modulo(@ranges[choice].size)
-        end
-      end
-    end
-
-    def all_counters_back_at_zero?
-      @counters.max == 0
-    end
-
-    def other_value
-      sum = 0
-      @choices.each do | choice |
-        sum += @ranges[choice][@counters[choice]] unless choice == OTHER
-      end
-      @population_size - sum
-    end
-
-    def valid_simulation?
-      other_value >= 0
-    end
-
-    def simulate(distributions)
-      combinations = other_value.large_float_binomial_by_product_of_divisions(@results[OTHER])
-      @choices.each do | choice |
-        unless choice == OTHER
-          combinations *= @ranges[choice][@counters[choice]].large_float_binomial_by_product_of_divisions(@results[choice])
-        end
-      end
-      @choices.each do | choice |
-        unless choice == OTHER
-          distributions[choice][@ranges[choice][@counters[choice]]] += combinations
+          distributions[choice][value] += combinations
         end
       end
     end

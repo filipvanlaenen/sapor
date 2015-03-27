@@ -45,15 +45,7 @@ describe Sapor::Polychotomy, '#new' do
     expect(pentachotomy(0.001).range('Yellow').size).to eq(25)
   end
 
-  it 'sets the incrementer for every choice' do
-    expect(pentachotomy.incrementer('Red')).to eq(1)
-    expect(pentachotomy.incrementer('Green')).to eq(3)
-    expect(pentachotomy.incrementer('Blue')).to eq(7)
-    expect(pentachotomy.incrementer('Yellow')).to eq(13)
-  end
-
-  # TODO: A test case where one range has to be extended
-  # TODO: A test case where two ranges have to be extended
+  # TODO: A test case where the construction of the enumerator fails
 end
 
 describe Sapor::Polychotomy, '#no_of_simulations' do
@@ -83,7 +75,7 @@ describe Sapor::Polychotomy, '#no_of_simulations' do
     expect(polychotomy.no_of_simulations).to eq(4)
   end
 
-  # TODO: A test case runs all possible simulations (until counters are 0 again)
+  # TODO: A test case that runs until the end of the enumerator
 end
 
 describe Sapor::Polychotomy, '#no_of_data_points' do
@@ -92,17 +84,17 @@ describe Sapor::Polychotomy, '#no_of_data_points' do
     expect(polychotomy.no_of_data_points).to eq(0)
   end
 
-  it 'is 7 after 1 refinement' do
+  it 'is 1 after 1 refinement' do
     polychotomy = pentachotomy
     polychotomy.refine
-    expect(polychotomy.no_of_data_points).to eq(7)
+    expect(polychotomy.no_of_data_points).to eq(1)
   end
 
   it 'is 19 after 2 refinements' do
     polychotomy = pentachotomy
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.no_of_data_points).to eq(19)
+    expect(polychotomy.no_of_data_points).to eq(8)
   end
 
   it 'is 38 after 3 refinements' do
@@ -110,7 +102,7 @@ describe Sapor::Polychotomy, '#no_of_data_points' do
     polychotomy.refine
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.no_of_data_points).to eq(38)
+    expect(polychotomy.no_of_data_points).to eq(27)
   end
 
   # TODO: A test case that runs all the simulations
@@ -128,10 +120,10 @@ describe Sapor::Polychotomy, '#most_probable_fraction' do
   it 'returns a value after the first refinement' do
     polychotomy = pentachotomy
     polychotomy.refine
-    expect(polychotomy.most_probable_fraction('Red').round(2)).to eq(0.28)
-    expect(polychotomy.most_probable_fraction('Green').round(2)).to eq(0.09)
-    expect(polychotomy.most_probable_fraction('Blue').round(2)).to eq(0.35)
-    expect(polychotomy.most_probable_fraction('Yellow').round(2)).to eq(0.20)
+    expect(polychotomy.most_probable_fraction('Red').round(2)).to eq(0.02)
+    expect(polychotomy.most_probable_fraction('Green').round(2)).to eq(0.02)
+    expect(polychotomy.most_probable_fraction('Blue').round(2)).to eq(0.02)
+    expect(polychotomy.most_probable_fraction('Yellow').round(2)).to eq(0.09)
   end
 
   it 'returns an updated value after the second refinement' do
@@ -149,10 +141,10 @@ describe Sapor::Polychotomy, '#most_probable_fraction' do
     polychotomy.refine
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.most_probable_fraction('Red').round(2)).to eq(0.17)
+    expect(polychotomy.most_probable_fraction('Red').round(2)).to eq(0.35)
     expect(polychotomy.most_probable_fraction('Green').round(2)).to eq(0.09)
-    expect(polychotomy.most_probable_fraction('Blue').round(2)).to eq(0.24)
-    expect(polychotomy.most_probable_fraction('Yellow').round(2)).to eq(0.46)
+    expect(polychotomy.most_probable_fraction('Blue').round(2)).to eq(0.09)
+    expect(polychotomy.most_probable_fraction('Yellow').round(2)).to eq(0.39)
   end
 end
 
@@ -173,7 +165,7 @@ describe Sapor::Polychotomy, '#error_estimate' do
     polychotomy = pentachotomy
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.error_estimate.round(3)).to eq(0.185)
+    expect(polychotomy.error_estimate.round(3)).to eq(0.333)
   end
 
   it 'is at least the difference between the most probable fractions (three' \
@@ -187,14 +179,14 @@ describe Sapor::Polychotomy, '#error_estimate' do
 end
 
 describe Sapor::Polychotomy, '#report' do
-  it 'produces a report after firste refinement for short choice labels' do
+  it 'produces a report after first refinement for short choice labels' do
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
                       "Choice    MPF      CI(95%)\n" +
-                      "Blue     35.2%   33.4%– 37.0%\n" +
-                      "Red      27.8%   26.0%– 29.6%\n" +
-                      "Yellow   20.4%   18.6%– 22.2%\n" +
-                      'Green     9.3%    7.5%– 11.1%'
+                      "Yellow    9.3%    9.3%– 11.1%\n" +
+                      "Blue      1.9%    1.9%–  3.7%\n" +
+                      "Green     1.9%    1.9%–  3.7%\n" +
+                      'Red       1.9%    1.9%–  3.7%'
     polychotomy = pentachotomy
     polychotomy.refine
     expect(polychotomy.report).to eq(expected_report)
@@ -212,9 +204,9 @@ describe Sapor::Polychotomy, '#report' do
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
                       "Choice         MPF      CI(95%)\n" +
-                      "Medium Blue   27.8%   26.0%– 29.6%\n" +
-                      "Light Green   20.4%   18.6%– 22.2%\n" +
-                      'Dark Red       5.6%    3.8%–  7.4%'
+                      "Dark Red       1.9%    1.9%–  3.7%\n" +
+                      "Light Green    1.9%    1.9%–  3.7%\n" +
+                      'Medium Blue    1.9%    1.9%–  3.7%'
     expect(polychotomy.report).to eq(expected_report)
   end
 
@@ -229,9 +221,9 @@ describe Sapor::Polychotomy, '#report' do
     expected_report = 'Most probable fractions and 95% confidence ' +
                       "intervals:\n" +
                       "Choice    MPF      CI(95%)\n" +
-                      "Blue     27.8%   26.0%– 29.6%\n" +
-                      "Green    20.4%   18.6%– 22.2%\n" +
-                      'Red       5.6%    3.8%–  7.4%'
+                      "Red       1.9%    1.9%–  3.7%\n" +
+                      "Green     1.9%    1.9%–  3.7%\n" +
+                      'Blue      1.9%    1.9%–  3.7%'
     expect(polychotomy.report).to eq(expected_report)
   end
 end
