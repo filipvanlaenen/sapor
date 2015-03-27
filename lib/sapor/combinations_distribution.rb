@@ -35,6 +35,19 @@ module Sapor
       @distribution[value]
     end
 
+    def +(other)
+      sum = CombinationsDistribution.new
+      @distribution.keys.each { | key | sum[key] = self[key] }
+      other.values.each do | key |
+        if self[key].nil?
+          sum[key] = other[key]
+        else
+          sum[key] += other[key]
+        end
+      end
+      sum
+    end
+
     def empty?
       @distribution.empty?
     end

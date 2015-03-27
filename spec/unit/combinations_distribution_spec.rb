@@ -47,6 +47,28 @@ describe Sapor::CombinationsDistribution, '#[]=' do
   end
 end
 
+describe Sapor::CombinationsDistribution, '#+' do
+  it 'adds two combiation distributions together' do
+    a = Sapor::CombinationsDistribution.new
+    a[10] = 2
+    a[21] = 3
+    a[23] = 11
+    b = Sapor::CombinationsDistribution.new
+    b[10] = 5
+    b[21] = 7
+    b[29] = 13
+    sum = Sapor::CombinationsDistribution.new
+    sum[10] = 7
+    sum[21] = 10
+    sum[23] = 11
+    sum[29] = 13
+    expect((a + b)[10]).to eq(sum[10])
+    expect((a + b)[21]).to eq(sum[21])
+    expect((a + b)[23]).to eq(sum[23])
+    expect((a + b)[29]).to eq(sum[29])
+  end
+end
+
 describe Sapor::CombinationsDistribution, '#size' do
   it 'returns 0 for an empty distribution' do
     distribution = Sapor::CombinationsDistribution.new

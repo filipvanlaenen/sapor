@@ -58,7 +58,6 @@ module Sapor
     end
 
     def calculate_most_probable_fraction(choice, distributions)
-      # TODO: Should rather aggregate per intervals of max_error
       distributions[choice].most_probable_value.to_f / @population_size
     end
 
@@ -183,16 +182,12 @@ module Sapor
       error_estimate
     end
 
-    # TODO: This should be moved to CombinationsDistribution as +
     def merge_distributions(distributions1, distributions2)
       merged_distributions = {}
       @choices.each do | choice |
         unless choice == OTHER
-          merged_distributions[choice] = CombinationsDistribution.new
-          @ranges[choice].each do | value |
-            merged_distributions[choice][value] = \
-            distributions1[choice][value] + distributions2[choice][value]
-          end
+          merged_distributions[choice] = distributions1[choice] + \
+          distributions2[choice]
         end
       end
       merged_distributions
