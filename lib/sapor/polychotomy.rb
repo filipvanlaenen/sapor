@@ -33,7 +33,8 @@ module Sapor
       @population_size = population_size
       @choices = results.keys
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
-      @enum = PseudoRandomMultiRangeEnumerator.new(@ranges.values.map{|a| a.size}).each
+      range_sizes = @ranges.values.map { |a| a.size }
+      @enum = PseudoRandomMultiRangeEnumerator.new(range_sizes).each
       @no_of_simulations = 0
       @no_of_data_points = 0
       @distributions = create_new_distributions
@@ -74,18 +75,25 @@ module Sapor
       new_distributions = create_new_distributions
       while @no_of_data_points == 0 || no_of_new_simulations == 0 ||
             no_of_new_simulations < @no_of_simulations
-        data_point = next_data_point
-        if data_point[OTHER] >= 0
-          simulate(new_distributions, data_point)
-          no_of_new_simulations += 1
-        end
-        @no_of_data_points += 1
+        no_of_new_simulations += try_next_data_point(new_distributions)
       end
       unless @no_of_simulations == 0
         @error_estimate = calculate_error_estimate(new_distributions)
       end
       @distributions = merge_distributions(@distributions, new_distributions)
       @no_of_simulations += no_of_new_simulations
+    end
+
+    def try_next_data_point(new_distributions)
+      data_point = next_data_point
+      if data_point[OTHER] >= 0
+        simulate(new_distributions, data_point)
+        new_simulation = 1
+      else
+        new_simulation = 0
+      end
+      @no_of_data_points += 1
+      new_simulation
     end
 
     def report
@@ -154,12 +162,11 @@ module Sapor
     def simulate(distributions, data_point)
       combinations = 1.to_lf
       data_point.each do | choice, value |
-        combinations *= value.large_float_binomial_by_product_of_divisions(@results[choice])
+        combinations *= \
+        value.large_float_binomial_by_product_of_divisions(@results[choice])
       end
       data_point.each do | choice, value |
-        unless choice == OTHER
-          distributions[choice][value] += combinations
-        end
+        distributions[choice][value] += combinations unless choice == OTHER
       end
     end
 
@@ -167,7 +174,9 @@ module Sapor
       error_estimate = 0
       @choices.each do | choice |
         unless choice == OTHER
-          delta = (calculate_most_probable_fraction(choice, new_simulations) - calculate_most_probable_fraction(choice, @distributions)).abs
+          mpv_new = calculate_most_probable_fraction(choice, new_simulations)
+          mpv_old = calculate_most_probable_fraction(choice, @distributions)
+          delta = (mpv_new - mpv_old).abs
           error_estimate = [error_estimate, delta].max
         end
       end
@@ -181,7 +190,8 @@ module Sapor
         unless choice == OTHER
           merged_distributions[choice] = CombinationsDistribution.new
           @ranges[choice].each do | value |
-            merged_distributions[choice][value] = distributions1[choice][value] + distributions2[choice][value]
+            merged_distributions[choice][value] = \
+            distributions1[choice][value] + distributions2[choice][value]
           end
         end
       end
@@ -198,7 +208,8 @@ module Sapor
     end
 
     def create_report_line(choice, max_choice_width)
-      confidence_interval = @distributions[choice].confidence_interval(0.95).map { | x | x.to_f / @population_size }
+      ci_values = @distributions[choice].confidence_interval(0.95)
+      confidence_interval = ci_values.map { | x | x.to_f / @population_size }
       choice.ljust(max_choice_width) + '  ' + \
       six_char_percentage(most_probable_fraction(choice)) + '  ' + \
       six_char_percentage(confidence_interval.first) + '–' + \
