@@ -161,8 +161,7 @@ module Sapor
     def simulate(distributions, data_point)
       combinations = 1.to_lf
       data_point.each do | choice, value |
-        combinations *= \
-        value.large_float_binomial_by_product_of_divisions(@results[choice])
+        combinations *= BinomialsCache.binomial(value, @results[choice])
       end
       data_point.each do | choice, value |
         distributions[choice][value] += combinations unless choice == OTHER

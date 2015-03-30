@@ -17,20 +17,29 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
+require 'large_binomials'
+
 module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+  #
+  # Caches binomials.
+  #
+  class BinomialsCache
+    include Singleton
+
+    def initialize
+      @cache = {}
+    end
+
+    def self.binomial(k, n)
+      instance.get_binomial(k, n)
+    end
+
+    def get_binomial(k, n)
+      @cache[n] = {} unless @cache.key?(n)
+      unless @cache[n].key?(k)
+        @cache[n][k] = k.large_float_binomial_by_product_of_divisions(n)
+      end
+      @cache[n][k]
+    end
   end
 end
-
-require 'sapor/number_formatter'
-require 'sapor/dichotomies'
-require 'sapor/combinations_distribution'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/pseudorandom_multirange_enumerator'
-require 'sapor/binomials_cache'
-require 'sapor/polychotomy'
-require 'sapor/poll'

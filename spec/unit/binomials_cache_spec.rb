@@ -17,20 +17,18 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
-module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+require 'spec_helper'
+
+describe Sapor::BinomialsCache, '#binomial' do
+  it 'returns the correct binomial' do
+    actual = Sapor::BinomialsCache.binomial(10, 20)
+    expected = 10.large_float_binomial_by_product_of_divisions(20)
+    expect(actual).to eq(expected)
+  end
+
+  it 'returns the same binomial when asked a second time' do
+    first = Sapor::BinomialsCache.binomial(10, 21)
+    second = Sapor::BinomialsCache.binomial(10, 21)
+    expect(second).to eq(first)
   end
 end
-
-require 'sapor/number_formatter'
-require 'sapor/dichotomies'
-require 'sapor/combinations_distribution'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/pseudorandom_multirange_enumerator'
-require 'sapor/binomials_cache'
-require 'sapor/polychotomy'
-require 'sapor/poll'

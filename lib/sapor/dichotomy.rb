@@ -17,8 +17,6 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-require 'large_binomials'
-
 module Sapor
   #
   # Represents a dichotomy.
@@ -47,8 +45,8 @@ module Sapor
       if value < @number || dual_value < dual_number
         0.to_lf
       else
-        value.large_float_binomial_by_product_of_divisions(@number) * \
-        dual_value.large_float_binomial_by_product_of_divisions(dual_number)
+        BinomialsCache.binomial(value, @number) * \
+        BinomialsCache.binomial(dual_value, dual_number)
       end
     end
 
