@@ -178,6 +178,35 @@ describe Sapor::Polychotomy, '#error_estimate' do
   end
 end
 
+describe Sapor::Polychotomy, '#progress_report' do
+  it 'reports progress with the number of simulations and data points,' \
+     ' together with the search space size and the fraction that already has' \
+     ' been searched' do
+    expected_report = '1 simulations out of 1 data points, 1 / 142,120 of' \
+                      ' search space size (142,120).'
+    polychotomy = pentachotomy
+    polychotomy.refine
+    expect(polychotomy.progress_report).to eq(expected_report)
+  end
+
+  it 'reports no of simulations and data points with thousands separator' do
+    expected_report = '1,024 simulations out of 9,287 data points, 1 / 15' \
+                      ' of search space size (142,120).'
+    polychotomy = pentachotomy
+    11.times { polychotomy.refine }
+    expect(polychotomy.progress_report).to eq(expected_report)
+  end
+
+  it 'rounds the fraction of the space size searched with 1 decimal if' \
+     ' larger than one tenth' do
+    expected_report = '2,048 simulations out of 19,433 data points, 1 / 7.0' \
+                      ' of search space size (142,120).'
+    polychotomy = pentachotomy
+    12.times { polychotomy.refine }
+    expect(polychotomy.progress_report).to eq(expected_report)
+  end
+end
+
 describe Sapor::Polychotomy, '#report' do
   it 'produces a report after first refinement for short choice labels' do
     expected_report = 'Most probable fractions and 95% confidence ' +
