@@ -31,13 +31,46 @@ module Sapor
       @distribution[middle] = combinations_for(middle)
     end
 
+    def combinations(value)
+      @distribution[value]
+    end
+
+    def confidence_interval(level = 0.95)
+      value_confidence_interval(level).map { | x | x.to_f / @population_size }
+    end
+
+    def confidence_interval_values(level = 0.95)
+      @distribution.confidence_interval_values(level)
+    end
+
+    def error_estimate
+      estimate_error
+    end
+
+    def most_probable_fraction
+      most_probable_value.to_f / @population_size
+    end
+
+    def most_probable_value
+      @distribution.most_probable_value
+    end
+
+    def refine
+      new_values = find_refinement_values
+      new_values.each do | value |
+        @distribution[value] = combinations_for(value)
+      end
+    end
+
+    def value_confidence_interval(level = 0.95)
+      @distribution.confidence_interval(level, @population_size)
+    end
+
     def values
       @distribution.values
     end
 
-    def combinations(value)
-      @distribution[value]
-    end
+    private
 
     def combinations_for(value)
       dual_value = @population_size - value
@@ -90,43 +123,12 @@ module Sapor
       find_refinement_value_at_top
     end
 
-    def refine
-      new_values = find_refinement_values
-      new_values.each do | value |
-        @distribution[value] = combinations_for(value)
-      end
-    end
-
-    def error_estimate
-      estimate_error
-    end
-
     def estimate_error
       if @distribution.size == @population_size + 1
         0
       else
         1.to_f / @distribution.size
       end
-    end
-
-    def most_probable_value
-      @distribution.most_probable_value
-    end
-
-    def most_probable_fraction
-      most_probable_value.to_f / @population_size
-    end
-
-    def confidence_interval(level = 0.95)
-      value_confidence_interval(level).map { | x | x.to_f / @population_size }
-    end
-
-    def value_confidence_interval(level = 0.95)
-      @distribution.confidence_interval(level, @population_size)
-    end
-
-    def confidence_interval_values(level = 0.95)
-      @distribution.confidence_interval_values(level)
     end
   end
 end
