@@ -29,6 +29,36 @@ module Sapor
 
     AREA_KEY = 'Area'
 
+    def initialize(metadata, results)
+      @logger = LogFacade.create_logger
+      @area = metadata.delete(AREA_KEY)
+      @results = interpret(results)
+    end
+
+    def analyze(max_error = 0.001)
+      analyze_as_dichotomies(max_error)
+      analyze_as_polychotomy(max_error)
+      @logger.info('Done.')
+    end
+
+    def confidence_interval(choice, level = 0.95)
+      @analysis.confidence_interval(choice, level) unless @analysis.nil?
+    end
+
+    def most_probable_fraction(choice)
+      @analysis.most_probable_fraction(choice) unless @analysis.nil?
+    end
+
+    def most_probable_value(choice)
+      @analysis.most_probable_value(choice) unless @analysis.nil?
+    end
+
+    def result(choice)
+      @results[choice]
+    end
+
+    private
+
     def self.line_to_hash(line, current, results)
       if line.chomp.eql?('==')
         current = results
@@ -60,34 +90,12 @@ module Sapor
       from_lines(File.open(filename))
     end
 
-    def initialize(metadata, results)
-      @logger = LogFacade.create_logger
-      @area = metadata.delete(AREA_KEY)
-      @results = interpret(results)
-    end
-
     def interpret(results)
       interpreted = {}
       results.each_pair do |key, value|
         interpreted[key] = value.to_i
       end
       interpreted
-    end
-
-    def result(choice)
-      @results[choice]
-    end
-
-    def most_probable_value(choice)
-      @analysis.most_probable_value(choice) unless @analysis.nil?
-    end
-
-    def most_probable_fraction(choice)
-      @analysis.most_probable_fraction(choice) unless @analysis.nil?
-    end
-
-    def confidence_interval(choice, level = 0.95)
-      @analysis.confidence_interval(choice, level) unless @analysis.nil?
     end
 
     def population_size
@@ -115,12 +123,6 @@ module Sapor
       @analysis = Polychotomy.new(@results, population_size, @analysis,
                                   max_error)
       analyze_until_convergence(max_error)
-    end
-
-    def analyze(max_error = 0.001)
-      analyze_as_dichotomies(max_error)
-      analyze_as_polychotomy(max_error)
-      @logger.info('Done.')
     end
   end
 end
