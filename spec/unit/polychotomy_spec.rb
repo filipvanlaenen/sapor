@@ -48,64 +48,34 @@ describe Sapor::Polychotomy, '#new' do
   # TODO: A test case where the construction of the enumerator fails
 end
 
-describe Sapor::Polychotomy, '#no_of_simulations' do
-  it 'is 0 by default (no refinement)' do
+describe Sapor::Polychotomy, '#error_estimate' do
+  it 'is 1 by default (no refinement)' do
     polychotomy = pentachotomy
-    expect(polychotomy.no_of_simulations).to eq(0)
+    expect(polychotomy.error_estimate).to eq(1.0)
   end
 
-  it 'is 1 after 1 refinement' do
+  it 'is 1 after the first refinement' do
     polychotomy = pentachotomy
     polychotomy.refine
-    expect(polychotomy.no_of_simulations).to eq(1)
+    expect(polychotomy.error_estimate).to eq(1.0)
   end
 
-  it 'is 2 after 2 refinements' do
-    polychotomy = pentachotomy
-    polychotomy.refine
-    polychotomy.refine
-    expect(polychotomy.no_of_simulations).to eq(2)
-  end
-
-  it 'is 4 after 3 refinements' do
+  it 'is at least the difference between the most probable fractions (two' \
+     ' refinements)' do
     polychotomy = pentachotomy
     polychotomy.refine
     polychotomy.refine
-    polychotomy.refine
-    expect(polychotomy.no_of_simulations).to eq(4)
+    expect(polychotomy.error_estimate.round(3)).to eq(0.333)
   end
 
-  # TODO: A test case that runs until the end of the enumerator
-end
-
-describe Sapor::Polychotomy, '#no_of_data_points' do
-  it 'is 0 by default (no refinement)' do
-    polychotomy = pentachotomy
-    expect(polychotomy.no_of_data_points).to eq(0)
-  end
-
-  it 'is 1 after 1 refinement' do
-    polychotomy = pentachotomy
-    polychotomy.refine
-    expect(polychotomy.no_of_data_points).to eq(1)
-  end
-
-  it 'is 19 after 2 refinements' do
-    polychotomy = pentachotomy
-    polychotomy.refine
-    polychotomy.refine
-    expect(polychotomy.no_of_data_points).to eq(8)
-  end
-
-  it 'is 38 after 3 refinements' do
+  it 'is at least the difference between the most probable fractions (three' \
+     ' refinements)' do
     polychotomy = pentachotomy
     polychotomy.refine
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.no_of_data_points).to eq(27)
+    expect(polychotomy.error_estimate.round(3)).to eq(0.259)
   end
-
-  # TODO: A test case that runs all the simulations
 end
 
 describe Sapor::Polychotomy, '#most_probable_fraction' do
@@ -148,34 +118,64 @@ describe Sapor::Polychotomy, '#most_probable_fraction' do
   end
 end
 
-describe Sapor::Polychotomy, '#error_estimate' do
-  it 'is 1 by default (no refinement)' do
+describe Sapor::Polychotomy, '#no_of_data_points' do
+  it 'is 0 by default (no refinement)' do
     polychotomy = pentachotomy
-    expect(polychotomy.error_estimate).to eq(1.0)
+    expect(polychotomy.no_of_data_points).to eq(0)
   end
 
-  it 'is 1 after the first refinement' do
+  it 'is 1 after 1 refinement' do
     polychotomy = pentachotomy
     polychotomy.refine
-    expect(polychotomy.error_estimate).to eq(1.0)
+    expect(polychotomy.no_of_data_points).to eq(1)
   end
 
-  it 'is at least the difference between the most probable fractions (two' \
-     ' refinements)' do
+  it 'is 19 after 2 refinements' do
     polychotomy = pentachotomy
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.error_estimate.round(3)).to eq(0.333)
+    expect(polychotomy.no_of_data_points).to eq(8)
   end
 
-  it 'is at least the difference between the most probable fractions (three' \
-     ' refinements)' do
+  it 'is 38 after 3 refinements' do
     polychotomy = pentachotomy
     polychotomy.refine
     polychotomy.refine
     polychotomy.refine
-    expect(polychotomy.error_estimate.round(3)).to eq(0.259)
+    expect(polychotomy.no_of_data_points).to eq(27)
   end
+
+  # TODO: A test case that runs all the simulations
+end
+
+describe Sapor::Polychotomy, '#no_of_simulations' do
+  it 'is 0 by default (no refinement)' do
+    polychotomy = pentachotomy
+    expect(polychotomy.no_of_simulations).to eq(0)
+  end
+
+  it 'is 1 after 1 refinement' do
+    polychotomy = pentachotomy
+    polychotomy.refine
+    expect(polychotomy.no_of_simulations).to eq(1)
+  end
+
+  it 'is 2 after 2 refinements' do
+    polychotomy = pentachotomy
+    polychotomy.refine
+    polychotomy.refine
+    expect(polychotomy.no_of_simulations).to eq(2)
+  end
+
+  it 'is 4 after 3 refinements' do
+    polychotomy = pentachotomy
+    polychotomy.refine
+    polychotomy.refine
+    polychotomy.refine
+    expect(polychotomy.no_of_simulations).to eq(4)
+  end
+
+  # TODO: A test case that runs until the end of the enumerator
 end
 
 describe Sapor::Polychotomy, '#progress_report' do
@@ -209,13 +209,13 @@ end
 
 describe Sapor::Polychotomy, '#report' do
   it 'produces a report after first refinement for short choice labels' do
-    expected_report = 'Most probable fractions and 95% confidence ' +
-                      "intervals:\n" +
-                      "Choice    MPF      CI(95%)\n" +
-                      "Yellow    9.3%    9.3%– 11.1%\n" +
-                      "Blue      1.9%    1.9%–  3.7%\n" +
-                      "Green     1.9%    1.9%–  3.7%\n" +
-                      'Red       1.9%    1.9%–  3.7%'
+    expected_report = 'Most probable rounded fractions, fractions and 95%' +
+                      " confidence intervals:\n" +
+                      "Choice    MPRF    MPF      CI(95%)\n" +
+                      "Yellow    5.6%    9.3%    9.3%– 11.1%\n" + # TODO: Shouldn't MPRF be 5.6% and CI 9.3%–9.3%?
+                      "Blue      1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Green     1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      'Red       1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?
     polychotomy = pentachotomy
     polychotomy.refine
     expect(polychotomy.report).to eq(expected_report)
@@ -230,12 +230,12 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     polychotomy = Sapor::Polychotomy.new(results, 1000, dichotomies, 0.01)
     polychotomy.refine
-    expected_report = 'Most probable fractions and 95% confidence ' +
-                      "intervals:\n" +
-                      "Choice         MPF      CI(95%)\n" +
-                      "Dark Red       1.9%    1.9%–  3.7%\n" +
-                      "Light Green    1.9%    1.9%–  3.7%\n" +
-                      'Medium Blue    1.9%    1.9%–  3.7%'
+    expected_report = 'Most probable rounded fractions, fractions and 95%' +
+                      " confidence intervals:\n" +
+                      "Choice         MPRF    MPF      CI(95%)\n" +
+                      "Dark Red       1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%? 
+                      "Light Green    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      'Medium Blue    1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?
     expect(polychotomy.report).to eq(expected_report)
   end
 
@@ -247,12 +247,12 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     polychotomy = Sapor::Polychotomy.new(results, 1000, dichotomies, 0.01)
     polychotomy.refine
-    expected_report = 'Most probable fractions and 95% confidence ' +
-                      "intervals:\n" +
-                      "Choice    MPF      CI(95%)\n" +
-                      "Red       1.9%    1.9%–  3.7%\n" +
-                      "Green     1.9%    1.9%–  3.7%\n" +
-                      'Blue      1.9%    1.9%–  3.7%'
+    expected_report = 'Most probable rounded fractions, fractions and 95%' +
+                      " confidence intervals:\n" +
+                      "Choice    MPRF    MPF      CI(95%)\n" +
+                      "Red       1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Green     1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      'Blue      1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?
     expect(polychotomy.report).to eq(expected_report)
   end
 end

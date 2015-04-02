@@ -64,6 +64,16 @@ module Sapor
       @distribution.max { | a, b | a.last <=> b.last }[0]
     end
 
+    # Given all fractions rounded to one decimal, returns the one that has the
+    # highest probability.
+    def most_probable_rounded_fraction(population_size)
+      rf_combinations = \
+      calculate_rounded_fractions_combinations(population_size)
+      max_probability = rf_combinations.values.max
+      opt_rfs = rf_combinations.reject { | k, v | v < max_probability }.keys
+      opt_rfs.sort[opt_rfs.size / 2]
+    end
+
     def confidence_interval(level, population_size = nil)
       combinations_sum = @distribution.values.inject(:+)
       one_side_level = (1 - level) / 2
@@ -111,6 +121,42 @@ module Sapor
       else
         (sorted_combinations[i - 1][0] + sorted_combinations[i][0]) / 2
       end
+    end
+
+    def calculate_rounded_fractions_combinations(population_size)
+      sorted_combinations = @distribution.sort
+      combinations_by_interval = []
+      sorted_combinations.each_with_index do |c, ix|
+        if ix == 0
+          bottom = 0
+        else
+          bottom = combinations_by_interval[ix - 1].first.last + 1
+        end
+        if ix == sorted_combinations.size - 1
+          top = population_size
+        else
+          top = (sorted_combinations[ix].first + sorted_combinations[ix + 1].first)/2
+        end
+        combinations_by_interval << [[bottom, top], c.last]
+      end
+      result = Hash.new(0.to_lf)
+      combinations_by_interval.each do | i_c |
+        bottom = (i_c.first.first.to_f / population_size).round(3) 
+        top = (i_c.first.last.to_f / population_size).round(3)
+        ix = bottom
+        loop do
+          interval_bottom = ((ix - 0.0005) * population_size).ceil
+          interval_top = ((ix + 0.0005) * population_size).ceil - 1
+          if (((interval_bottom + interval_top) / 2).to_f / population_size).round(3) == ix
+            low = [i_c.first.first, interval_bottom].max
+            high = [i_c.first.last, interval_top].min
+            result[ix] += i_c.last * (high + 1 - low)
+          end
+          break if ix == top
+          ix = (ix + 0.001).round(3)
+        end
+      end
+      result
     end
   end
 end

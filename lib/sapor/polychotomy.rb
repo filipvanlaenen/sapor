@@ -103,9 +103,9 @@ module Sapor
       lines = sorted_choices.map do | choice |
         create_report_line(choice, max_choice_width)
       end
-      "Most probable fractions and 95% confidence intervals:\n" +
-      'Choice'.ljust(max_choice_width) + "    MPF      CI(95%)\n" +
-      lines.join("\n")
+      'Most probable rounded fractions, fractions and 95% confidence' +
+      " intervals:\n" + 'Choice'.ljust(max_choice_width) +
+      "    MPRF    MPF      CI(95%)\n" + lines.join("\n")
     end
 
     def progress_report
@@ -205,9 +205,18 @@ module Sapor
       ci_values = @distributions[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { | x | x.to_f / @population_size }
       choice.ljust(max_choice_width) + '  ' + \
+      six_char_percentage(most_probable_rounded_fraction(choice)) + '  ' + \
       six_char_percentage(most_probable_fraction(choice)) + '  ' + \
       six_char_percentage(confidence_interval.first) + '–' + \
       six_char_percentage(confidence_interval.last)
+    end
+
+    def most_probable_rounded_fraction(choice)
+      if @no_of_simulations == 0
+        nil
+      else
+        @distributions[choice].most_probable_rounded_fraction(@population_size)
+      end
     end
   end
 end

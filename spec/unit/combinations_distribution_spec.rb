@@ -26,19 +26,6 @@ describe Sapor::CombinationsDistribution, '#new' do
   end
 end
 
-describe Sapor::CombinationsDistribution, '#empty?' do
-  it 'returns true if no value-combinations pair has been added' do
-    distribution = Sapor::CombinationsDistribution.new
-    expect(distribution.empty?).to be true
-  end
-
-  it 'returns false if a value-combinations pair has been added' do
-    distribution = Sapor::CombinationsDistribution.new
-    distribution[1] = 2
-    expect(distribution.empty?).to be false
-  end
-end
-
 describe Sapor::CombinationsDistribution, '#[]=' do
   it 'sets a value-combinations pair' do
     distribution = Sapor::CombinationsDistribution.new
@@ -66,56 +53,6 @@ describe Sapor::CombinationsDistribution, '#+' do
     expect((a + b)[21]).to eq(sum[21])
     expect((a + b)[23]).to eq(sum[23])
     expect((a + b)[29]).to eq(sum[29])
-  end
-end
-
-describe Sapor::CombinationsDistribution, '#size' do
-  it 'returns 0 for an empty distribution' do
-    distribution = Sapor::CombinationsDistribution.new
-    expect(distribution.size).to eq(0)
-  end
-
-  it 'returns 1 when a value-combinations pair has been added' do
-    distribution = Sapor::CombinationsDistribution.new
-    distribution[1] = 2
-    expect(distribution.size).to eq(1)
-  end
-end
-
-describe Sapor::CombinationsDistribution, '#values' do
-  it 'returns an empty array for an empty distribution' do
-    distribution = Sapor::CombinationsDistribution.new
-    expect(distribution.values).to eq([])
-  end
-
-  it 'returns 1 when a value-combinations pair has been added' do
-    distribution = Sapor::CombinationsDistribution.new
-    distribution[1] = 2
-    expect(distribution.values).to eq([1])
-  end
-end
-
-describe Sapor::CombinationsDistribution, '#most_probable_value' do
-  it "returns the single value if there's only one value" do
-    distribution = Sapor::CombinationsDistribution.new
-    distribution[1] = 2
-    expect(distribution.most_probable_value).to eq(1)
-  end
-
-  it 'returns the first of two values if that has the greatest number ' \
-     'of combinations' do
-    distribution = Sapor::CombinationsDistribution.new
-    distribution[1] = 2
-    distribution[2] = 1
-    expect(distribution.most_probable_value).to eq(1)
-  end
-
-  it 'returns the second of two values if that has the greatest number ' \
-     'of combinations' do
-    distribution = Sapor::CombinationsDistribution.new
-    distribution[1] = 1
-    distribution[2] = 2
-    expect(distribution.most_probable_value).to eq(2)
   end
 end
 
@@ -164,9 +101,9 @@ describe Sapor::CombinationsDistribution, '#confidence_interval' do
 
   it 'returns the values in between as boundaries (odd)' do
     distribution = Sapor::CombinationsDistribution.new
-    distribution[6] = 1
-    distribution[10] = 98
-    distribution[14] = 1
+    distribution[6] = 1.to_lf
+    distribution[10] = 98.to_lf
+    distribution[14] = 1.to_lf
     expect(distribution.confidence_interval(0.95)).to eq([8, 12])
   end
 end
@@ -174,22 +111,102 @@ end
 describe Sapor::CombinationsDistribution, '#confidence_interval_values' do
   it 'extracts the single value as confidence interval value' do
     distribution = Sapor::CombinationsDistribution.new
-    distribution[5] = 2
+    distribution[5] = 2.to_lf
     expect(distribution.confidence_interval_values(0.95)).to eq([5])
   end
 
   it 'extracts all values as confidence intervalue values' do
     distribution = Sapor::CombinationsDistribution.new
-    distribution[3] = 2
-    distribution[7] = 2
+    distribution[3] = 2.to_lf
+    distribution[7] = 2.to_lf
     expect(distribution.confidence_interval_values(0.95).sort).to eq([3, 7])
   end
 
   it 'extracts the middle values as confidence interval values' do
     distribution = Sapor::CombinationsDistribution.new
-    distribution[5] = 1
-    distribution[10] = 98
-    distribution[15] = 1
+    distribution[5] = 1.to_lf
+    distribution[10] = 98.to_lf
+    distribution[15] = 1.to_lf
     expect(distribution.confidence_interval_values(0.95)).to eq([10])
+  end
+end
+
+describe Sapor::CombinationsDistribution, '#empty?' do
+  it 'returns true if no value-combinations pair has been added' do
+    distribution = Sapor::CombinationsDistribution.new
+    expect(distribution.empty?).to be true
+  end
+
+  it 'returns false if a value-combinations pair has been added' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[1] = 2.to_lf
+    expect(distribution.empty?).to be false
+  end
+end
+
+describe Sapor::CombinationsDistribution, '#most_probable_rounded_fraction' do
+  it "returns the median rounded fraction if there's more than one with" +
+     ' maximal probability' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[500] = 2.to_lf
+    expect(distribution.most_probable_rounded_fraction(1000)).to eq(0.5)
+  end
+
+  it 'returns the rounded fraction with the maximal probability' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[199] = 2.to_lf
+    distribution[200] = 3.to_lf
+    distribution[201] = 2.to_lf
+    expect(distribution.most_probable_rounded_fraction(1000)).to eq(0.2)
+  end
+end
+
+describe Sapor::CombinationsDistribution, '#most_probable_value' do
+  it "returns the single value if there's only one value" do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[1] = 2
+    expect(distribution.most_probable_value).to eq(1)
+  end
+
+  it 'returns the first of two values if that has the greatest number ' \
+     'of combinations' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[1] = 2
+    distribution[2] = 1
+    expect(distribution.most_probable_value).to eq(1)
+  end
+
+  it 'returns the second of two values if that has the greatest number ' \
+     'of combinations' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[1] = 1
+    distribution[2] = 2
+    expect(distribution.most_probable_value).to eq(2)
+  end
+end
+
+describe Sapor::CombinationsDistribution, '#size' do
+  it 'returns 0 for an empty distribution' do
+    distribution = Sapor::CombinationsDistribution.new
+    expect(distribution.size).to eq(0)
+  end
+
+  it 'returns 1 when a value-combinations pair has been added' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[1] = 2
+    expect(distribution.size).to eq(1)
+  end
+end
+
+describe Sapor::CombinationsDistribution, '#values' do
+  it 'returns an empty array for an empty distribution' do
+    distribution = Sapor::CombinationsDistribution.new
+    expect(distribution.values).to eq([])
+  end
+
+  it 'returns 1 when a value-combinations pair has been added' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[1] = 2
+    expect(distribution.values).to eq([1])
   end
 end
