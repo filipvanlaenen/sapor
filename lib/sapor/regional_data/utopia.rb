@@ -18,12 +18,26 @@
 #
 
 module Sapor
-
   #
   # The regional data for Utopia, an area for testing purposes.
   #
   class Utopia
     include Singleton
+
+    LAST_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934,
+                             'Blue' => 290_647, 'Yellow' => 356_473 }
+
+    LAST_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
+                                                 },
+                                      'South' => { 'Red' => 70, 'Green' => 50,
+                                                   'Blue' => 100 },
+                                      'East' => { 'Red' => 90, 'Green' => 70,
+                                                  'Blue' => 90 },
+                                      'West' => { 'Red' => 110, 'Green' => 50,
+                                                  'Yellow' => 120 } }
+
+    ELECTORAL_SYSTEM = FirstPastThePost.new(LAST_ELECTION_RESULT,
+                                            LAST_DETAILED_ELECTION_RESULT)
 
     def area_code
       'UT'
@@ -31,6 +45,14 @@ module Sapor
 
     def population_size
       1_000_000
+    end
+
+    def no_of_seats
+      LAST_DETAILED_ELECTION_RESULT.size
+    end
+
+    def seats(simulation)
+      ELECTORAL_SYSTEM.project(simulation)
     end
   end
 end

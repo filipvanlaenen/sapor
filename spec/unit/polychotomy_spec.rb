@@ -19,6 +19,43 @@
 
 require 'spec_helper'
 
+class TestArea
+  include Singleton
+
+  LAST_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934,
+                           'Blue' => 290_647, 'Yellow' => 356_473 }
+
+  LAST_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
+                                               },
+                                    'South' => { 'Red' => 70, 'Green' => 50,
+                                                 'Blue' => 100 },
+                                    'East' => { 'Red' => 90, 'Green' => 70,
+                                                'Blue' => 90 },
+                                    'West' => { 'Red' => 110, 'Green' => 50,
+                                                'Yellow' => 120 } }
+
+  ELECTORAL_SYSTEM = Sapor::FirstPastThePost.new(LAST_ELECTION_RESULT,
+                                                 LAST_DETAILED_ELECTION_RESULT)
+
+  def area_code
+    'TA'
+  end
+
+  def population_size
+    1_000
+  end
+
+  def no_of_seats
+    LAST_DETAILED_ELECTION_RESULT.size
+  end
+
+  def seats(simulation)
+    ELECTORAL_SYSTEM.project(simulation)
+  end
+end
+
+TEST_AREA = TestArea.instance
+
 def pentachotomy(max_error = 0.01)
   results = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Yellow' => 6,
               'Other' => 1 }
@@ -26,7 +63,7 @@ def pentachotomy(max_error = 0.01)
   dichotomies.refine
   dichotomies.refine
   dichotomies.refine
-  Sapor::Polychotomy.new(results, 1000, dichotomies, max_error)
+  Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, max_error)
 end
 
 describe Sapor::Polychotomy, '#new' do
@@ -211,11 +248,11 @@ describe Sapor::Polychotomy, '#report' do
   it 'produces a report after first refinement for short choice labels' do
     expected_report = 'Most probable rounded fractions, fractions and 95%' +
                       " confidence intervals:\n" +
-                      "Choice  Result    MPRF    MPF      CI(95%)\n" +
-                      "Yellow   46.2%    5.6%    9.3%    9.3%– 11.1%\n" + # TODO: Shouldn't MPRF be 5.6% and CI 9.3%–9.3%?
-                      "Blue     23.1%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Green    15.4%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      'Red       7.7%    1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Choice  Result    MPRF    MPF      CI(95%)     Seats\n" +
+                      "Yellow   46.2%    5.6%    9.3%    9.3%– 11.1%   2–2\n" + # TODO: Shouldn't MPRF be 5.6% and CI 9.3%–9.3%?
+                      "Blue     23.1%    1.9%    1.9%    1.9%–  3.7%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Green    15.4%    1.9%    1.9%    1.9%–  3.7%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      'Red       7.7%    1.9%    1.9%    1.9%–  3.7%   0–0' # TODO: Shouldn't CI be 1.9%–1.9%?
     polychotomy = pentachotomy
     polychotomy.refine
     expect(polychotomy.report).to eq(expected_report)
@@ -228,11 +265,11 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     dichotomies.refine
     dichotomies.refine
-    polychotomy = Sapor::Polychotomy.new(results, 1000, dichotomies, 0.01)
+    polychotomy = Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, 0.01)
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' +
                       " confidence intervals:\n" +
-                      "Choice       Result    MPRF    MPF      CI(95%)\n" +
+                      "Choice       Result    MPRF    MPF      CI(95%)     Seats\n" +
                       "Medium Blue   42.9%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%? 
                       "Light Green   28.6%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       'Dark Red      14.3%    1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?
@@ -245,11 +282,11 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     dichotomies.refine
     dichotomies.refine
-    polychotomy = Sapor::Polychotomy.new(results, 1000, dichotomies, 0.01)
+    polychotomy = Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, 0.01)
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' +
                       " confidence intervals:\n" +
-                      "Choice  Result    MPRF    MPF      CI(95%)\n" +
+                      "Choice  Result    MPRF    MPF      CI(95%)     Seats\n" +
                       "Blue     42.9%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       "Green    28.6%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       'Red      14.3%    1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?
@@ -262,11 +299,11 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     dichotomies.refine
     dichotomies.refine
-    polychotomy = Sapor::Polychotomy.new(results, 1000, dichotomies, 0.01)
+    polychotomy = Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, 0.01)
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' +
                       " confidence intervals:\n" +
-                      "Choice  Result    MPRF    MPF      CI(95%)\n" +
+                      "Choice  Result    MPRF    MPF      CI(95%)     Seats\n" +
                       "Blue     25.0%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       "Green    25.0%    1.9%    1.9%    1.9%–  3.7%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       'Red      25.0%    1.9%    1.9%    1.9%–  3.7%' # TODO: Shouldn't CI be 1.9%–1.9%?

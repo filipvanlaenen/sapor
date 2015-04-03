@@ -28,16 +28,17 @@ module Sapor
 
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 
-    def initialize(results, population_size, dichotomies, max_error)
+    def initialize(results, area, dichotomies, max_error)
       @results = results
-      @population_size = population_size
+      @area = area
       @choices = results.keys
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
       range_sizes = @ranges.values.map { |a| a.size }
       @enum = PseudoRandomMultiRangeEnumerator.new(range_sizes).each
       @no_of_simulations = 0
       @no_of_data_points = 0
-      @distributions = create_new_distributions
+      @distributions = create_new_votes_distributions # TODO: Rename to @votes
+      @seats = create_new_seats_distributions
       @error_estimate = 1.0
     end
 
@@ -58,7 +59,7 @@ module Sapor
     end
 
     def calculate_most_probable_fraction(choice, distributions)
-      distributions[choice].most_probable_value.to_f / @population_size
+      distributions[choice].most_probable_value.to_f / @area.population_size
     end
 
     def most_probable_fraction(choice)
@@ -71,22 +72,24 @@ module Sapor
 
     def refine
       no_of_new_simulations = 0
-      new_distributions = create_new_distributions
+      new_votes = create_new_votes_distributions
+      new_seats = create_new_seats_distributions
       while @no_of_data_points == 0 || no_of_new_simulations == 0 ||
             no_of_new_simulations < @no_of_simulations
-        no_of_new_simulations += try_next_data_point(new_distributions)
+        no_of_new_simulations += try_next_data_point(new_votes, new_seats)
       end
       unless @no_of_simulations == 0
-        @error_estimate = calculate_error_estimate(new_distributions)
+        @error_estimate = calculate_error_estimate(new_votes)
       end
-      @distributions = merge_distributions(@distributions, new_distributions)
+      @distributions = merge_distributions(@distributions, new_votes)
+      @seats = merge_distributions(@seats, new_seats)
       @no_of_simulations += no_of_new_simulations
     end
 
-    def try_next_data_point(new_distributions)
+    def try_next_data_point(new_votes, new_seats)
       data_point = next_data_point
       if data_point[OTHER] >= 0
-        simulate(new_distributions, data_point)
+        simulate(new_votes, new_seats, data_point)
         new_simulation = 1
       else
         new_simulation = 0
@@ -105,7 +108,7 @@ module Sapor
       end
       'Most probable rounded fractions, fractions and 95% confidence' +
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
-      "  Result    MPRF    MPF      CI(95%)\n" + lines.join("\n")
+      "  Result    MPRF    MPF      CI(95%)     Seats\n" + lines.join("\n")
     end
 
     def progress_report
@@ -135,7 +138,18 @@ module Sapor
       ranges
     end
 
-    def create_new_distributions
+    def create_new_seats_distributions
+      distributions = {}
+      @choices.each do | choice |
+        distributions[choice] = CombinationsDistribution.new
+        Range.new(0, @area.no_of_seats).each do | value |
+          distributions[choice][value] = 0.to_lf
+        end
+      end
+      distributions
+    end
+
+    def create_new_votes_distributions
       distributions = {}
       @choices.each do | choice |
         unless choice == OTHER
@@ -154,17 +168,25 @@ module Sapor
       indexes.each_with_index do | ix, i |
         data_point[@ranges.keys[i]] = @ranges.values[i][ix]
       end
-      data_point[OTHER] = @population_size - data_point.values.inject(:+)
+      data_point[OTHER] = @area.population_size - data_point.values.inject(:+)
       data_point
     end
 
-    def simulate(distributions, data_point)
+    def simulate(votes, seats, data_point)
       combinations = 1.to_lf
       data_point.each do | choice, value |
         combinations *= BinomialsCache.binomial(value, @results[choice])
       end
       data_point.each do | choice, value |
-        distributions[choice][value] += combinations unless choice == OTHER
+        votes[choice][value] += combinations unless choice == OTHER
+      end
+      projection = @area.seats(data_point)
+      data_point.each_key do | choice |
+        if projection.key?(choice)
+          seats[choice][projection[choice]] += combinations
+        else
+          seats[choice][0] += combinations
+        end
       end
     end
 
@@ -210,20 +232,22 @@ module Sapor
 
     def create_report_line(choice, max_choice_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
-      confidence_interval = ci_values.map { | x | x.to_f / @population_size }
+      confidence_interval = ci_values.map { | x | x.to_f / @area.population_size }
+      ci_seats = @seats[choice].confidence_interval(0.95)
       choice.ljust(max_choice_width) + '  ' + \
       six_char_percentage(result(choice)) + '  ' + \
       six_char_percentage(most_probable_rounded_fraction(choice)) + '  ' + \
       six_char_percentage(most_probable_fraction(choice)) + '  ' + \
       six_char_percentage(confidence_interval.first) + '–' + \
-      six_char_percentage(confidence_interval.last)
+      six_char_percentage(confidence_interval.last) + '  ' + \
+      ci_seats.first.to_s + '–' + ci_seats.last.to_s
     end
 
     def most_probable_rounded_fraction(choice)
       if @no_of_simulations == 0
         nil
       else
-        @distributions[choice].most_probable_rounded_fraction(@population_size)
+        @distributions[choice].most_probable_rounded_fraction(@area.population_size)
       end
     end
   end
