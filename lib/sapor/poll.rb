@@ -28,10 +28,12 @@ module Sapor
     attr_reader :area, :logger
 
     AREA_KEY = 'Area'
+    AREAS_MAP = {}
+    [UnitedKingdom.instance, Utopia.instance].map { | area | AREAS_MAP[area.area_code] = area }
 
     def initialize(metadata, results)
       @logger = LogFacade.create_logger
-      @area = metadata.delete(AREA_KEY)
+      @area = lookup_area(metadata.delete(AREA_KEY))
       @results = interpret(results)
     end
 
@@ -98,8 +100,12 @@ module Sapor
       interpreted
     end
 
+    def lookup_area(area_code)
+      AREAS_MAP[area_code]
+    end
+
     def population_size
-      1_000_000 # TODO: Should be looked up using @area
+      @area.population_size
     end
 
     def analyze_until_convergence(max_error)

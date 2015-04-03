@@ -17,22 +17,22 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
 module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+
+  #
+  # The regional data for the United Kingdom.
+  #
+  class UnitedKingdom
+    include Singleton
+
+    def area_code
+      'UK'
+    end
+
+    def population_size
+      # Source: BBC News Election 2010 Results, retrieved on 3 April 2015.
+      # URL: http://news.bbc.co.uk/2/shared/election2010/results/
+      29_691_380
+    end
   end
 end
-
-require 'sapor/number_formatter'
-require 'sapor/dichotomies'
-require 'sapor/combinations_distribution'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/pseudorandom_multirange_enumerator'
-require 'sapor/binomials_cache'
-require 'sapor/polychotomy'
-require 'sapor/regional_data/united_kingdom'
-require 'sapor/regional_data/utopia'
-require 'sapor/poll'

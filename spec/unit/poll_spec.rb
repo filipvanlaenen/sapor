@@ -20,13 +20,13 @@
 require 'spec_helper'
 
 SAMPLE_POLL_ARRAY = ['foo=bar', 'baz=qux', '==', 'a=1', 'b=2']
-SAMPLE_METADATA = { 'Area' => 'Foo' }
+SAMPLE_METADATA = { 'Area' => 'UT' }
 SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
 MAX_ERROR = 0.05
 MAX_VALUE_ERROR = 50_000
 
 def sample_poll
-  Sapor::Poll.new(SAMPLE_METADATA, SAMPLE_RESULTS)
+  Sapor::Poll.new(SAMPLE_METADATA.dup, SAMPLE_RESULTS.dup)
 end
 
 describe Sapor::Poll, '#as_hashes' do
@@ -48,7 +48,7 @@ end
 
 describe Sapor::Poll, '#new' do
   it 'sets the area' do
-    expect(sample_poll.area).to eq('Foo')
+    expect(sample_poll.area.area_code).to eq('UT')
   end
 
   it 'sets the results' do

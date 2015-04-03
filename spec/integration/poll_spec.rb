@@ -51,7 +51,7 @@ Sapor::LogFacade.logger_builder = ArrayLoggerBuilder.new
 describe Sapor::Poll, '#from_file' do
   it 'reads a poll from a file and extracts area' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
-    expect(poll.area).to eq('Foo')
+    expect(poll.area.area_code).to eq('UT')
   end
 
   it 'reads a poll from a file and extracts first result' do
