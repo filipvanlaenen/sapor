@@ -56,6 +56,7 @@ module Sapor
     # TODO: Local parties in Northern Ireland are hidden in Other
     # URL: http://www.electoralcalculus.co.uk/electdata_2010uc.txt
     LAST_DETAILED_ELECTION_RESULT = {
+      # England
       'Aldershot' => { 'Conservative' => 21203, 'Labour' => 5489, 'Liberal Democrat' => 15617, 'UK Independence Party' => 2041, 'Other' => 1034} ,
       'Aldridge-Brownhills' => { 'Conservative' => 22913, 'Labour' => 7647, 'Liberal Democrat' => 6833, 'UK Independence Party' => 0, 'Other' => 1241} ,
       'Altrincham and Sale West' => { 'Conservative' => 24176, 'Labour' => 11073, 'Liberal Democrat' => 12581, 'UK Independence Party' => 1563, 'Other' => 0} ,
@@ -589,6 +590,7 @@ module Sapor
       'York Central' => { 'Conservative' => 12122, 'Labour' => 18573, 'Liberal Democrat' => 11694, 'UK Independence Party' => 1100, 'Other' => 2994} ,
       'York Outer' => { 'Conservative' => 22912, 'Labour' => 9108, 'Liberal Democrat' => 19224, 'UK Independence Party' => 1100, 'Other' => 956} ,
       'Yorkshire East' => { 'Conservative' => 24328, 'Labour' => 10401, 'Liberal Democrat' => 10842, 'UK Independence Party' => 2142, 'Other' => 3541} ,
+      # Wales
       'Aberavon' => { 'Conservative' => 4411, 'Labour' => 16073, 'Liberal Democrat' => 5034, 'UK Independence Party' => 489, 'Plaid Cymru' => 2198, 'Other' => 2753} ,
       'Aberconwy' => { 'Conservative' => 10734, 'Labour' => 7336, 'Liberal Democrat' => 5786, 'UK Independence Party' => 632, 'Plaid Cymru' => 5341, 'Other' => 137} ,
       'Alyn and Deeside' => { 'Conservative' => 12885, 'Labour' => 15804, 'Liberal Democrat' => 7308, 'UK Independence Party' => 1009, 'Plaid Cymru' => 1549, 'Other' => 1368} ,
@@ -629,6 +631,7 @@ module Sapor
       'Vale of Glamorgan' => { 'Conservative' => 20341, 'Labour' => 16034, 'Liberal Democrat' => 7403, 'UK Independence Party' => 1529, 'Plaid Cymru' => 2667, 'Other' => 693} ,
       'Wrexham' => { 'Conservative' => 8375, 'Labour' => 12161, 'Liberal Democrat' => 8503, 'UK Independence Party' => 774, 'Plaid Cymru' => 2029, 'Other' => 1134} ,
       'Ynys Mon' => { 'Conservative' => 7744, 'Labour' => 11490, 'Liberal Democrat' => 2592, 'UK Independence Party' => 1201, 'Plaid Cymru' => 9029, 'Other' => 2388} ,
+      # Scotland
       'Aberdeen North' => { 'Conservative' => 4666, 'Labour' => 16746, 'Liberal Democrat' => 7001, 'UK Independence Party' => 0, 'Scottish National Party' => 8385, 'Other' => 903} ,
       'Aberdeen South' => { 'Conservative' => 8914, 'Labour' => 15722, 'Liberal Democrat' => 12216, 'UK Independence Party' => 0, 'Scottish National Party' => 5102, 'Other' => 1080} ,
       'Aberdeenshire West and Kincardine' => { 'Conservative' => 13678, 'Labour' => 6159, 'Liberal Democrat' => 17362, 'UK Independence Party' => 397, 'Scottish National Party' => 7086, 'Other' => 513} ,
@@ -688,6 +691,7 @@ module Sapor
       'Ross Skye and Lochaber' => { 'Conservative' => 4260, 'Labour' => 5265, 'Liberal Democrat' => 18335, 'UK Independence Party' => 659, 'Scottish National Party' => 5263, 'Other' => 1056} ,
       'Rutherglen and Hamilton West' => { 'Conservative' => 4540, 'Labour' => 28566, 'Liberal Democrat' => 5636, 'UK Independence Party' => 675, 'Scottish National Party' => 7564, 'Other' => 0} ,
       'Stirling' => { 'Conservative' => 11254, 'Labour' => 19558, 'Liberal Democrat' => 6797, 'UK Independence Party' => 395, 'Scottish National Party' => 8091, 'Other' => 746} ,
+      # Northern-Ireland
       'Antrim East' => { 'Conservative' => 7223, 'Labour' => 2019, 'Liberal Democrat' => 13993, 'UK Independence Party' => 0, 'Other' => 5203} ,
       'Antrim North' => { 'Conservative' => 4634, 'Labour' => 3738, 'Liberal Democrat' => 19672, 'UK Independence Party' => 0, 'Other' => 9088} ,
       'Antrim South' => { 'Conservative' => 10353, 'Labour' => 2955, 'Liberal Democrat' => 11536, 'UK Independence Party' => 0, 'Other' => 4436} ,
