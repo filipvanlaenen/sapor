@@ -18,14 +18,14 @@
 #
 
 module Sapor
-
   #
   # The regional data for Norway.
   #
   class Norway
     include Singleton
 
-    # Source: NSD European Election Database, Parliamentary election of 2013, retrieved on 14 April 2015.
+    # Source: NSD European Election Database, Parliamentary election of 2013,\
+    # retrieved on 14 April 2015.
     # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_value&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubset=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1&nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual&measure=common&top=yes
     LAST_ELECTION_RESULT = { 'Arbeiderpartiet' => 874_769,
                              'Høyre' => 760_232,
@@ -38,7 +38,8 @@ module Sapor
                              'Rødt' => 30_751,
                              'De Kristne' => 17_731,                             'Pensjonistpartiet' => 11_865,                             'Piratpartiet' => 9_869,                             'Kystpartiet' => 3_311,                             'Demokratene i Norge' => 2_214,                             'Kristent Samlingsparti' => 1_722,                             'Det Liberale Folkepartiet' => 909,                             'Norges Kommunistiske Parti' => 611,                             'Sykehus til Alta' => 467,                             'Samfunnspartiet' => 295,                             'Folkeliste mot oljeboring i Lofoten, Vesterålen og Senja' => 268,                             'Folkemakten' => 175 }
 
-    # Source: NSD European Election Database, Parliamentary election of 2013, retrieved on 14 April 2015.
+    # Source: NSD European Election Database, Parliamentary election of 2013,
+    # retrieved on 14 April 2015.
     # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_value&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubset=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1&nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual&measure=common&top=yes
     LAST_DETAILED_ELECTION_RESULT = {
       'Oslo' => { 'Arbeiderpartiet' => 106_001,
@@ -53,7 +54,7 @@ module Sapor
                   'De Kristne' => 734,                  'Pensjonistpartiet' => 1_172,                  'Piratpartiet' => 1_357,                  'Kystpartiet' => 126,                  'Demokratene i Norge' => 236,                  'Kristent Samlingsparti' => 97,                  'Det Liberale Folkepartiet' => 267,                  'Norges Kommunistiske Parti' => 143,                  'Samfunnspartiet' => 70 }
     }
 
-    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved 16 April 2015 
+    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
     SEAT_DISTRIBUTION = { 'Akershus' => 19,
                           'Hordaland' => 17,
@@ -72,7 +73,8 @@ module Sapor
     end
 
     def population_size
-      # Source: NSD European Election Database, Norway, retrieved on 14 April 2015.
+      # Source: NSD European Election Database, Norway, retrieved on 14 April
+      # 2015.
       # URL: http://www.nsd.uib.no/european_election_database/country/norway/
       2_836_029
     end
