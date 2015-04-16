@@ -29,7 +29,7 @@ module Sapor
 
     AREA_KEY = 'Area'
     AREAS_MAP = {}
-    [UnitedKingdom.instance, Utopia.instance].map { | area | AREAS_MAP[area.area_code] = area }
+    [Norway.instance, UnitedKingdom.instance, Utopia.instance].map { | area | AREAS_MAP[area.area_code] = area }
 
     def initialize(metadata, results)
       @logger = LogFacade.create_logger
