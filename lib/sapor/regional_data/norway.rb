@@ -53,9 +53,19 @@ module Sapor
                   'De Kristne' => 734,                  'Pensjonistpartiet' => 1_172,                  'Piratpartiet' => 1_357,                  'Kystpartiet' => 126,                  'Demokratene i Norge' => 236,                  'Kristent Samlingsparti' => 97,                  'Det Liberale Folkepartiet' => 267,                  'Norges Kommunistiske Parti' => 143,                  'Samfunnspartiet' => 70 }
     }
 
+    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved 16 April 2015 
+    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
+    SEAT_DISTRIBUTION = { 'Akershus' => 19,
+                          'Hordaland' => 17,
+                          'Oslo' => 21,
+                          'Rogaland' => 15,
+                          'Sør-Trøndelag' => 10,
+                          'Østfold' => 9 }
+
     # TODO: Change to NorwegianElectoralSystem
-    ELECTORAL_SYSTEM = FirstPastThePost.new(LAST_ELECTION_RESULT,
-                                            LAST_DETAILED_ELECTION_RESULT)
+    ELECTORAL_SYSTEM = Proportional.new(LAST_ELECTION_RESULT,
+                                        LAST_DETAILED_ELECTION_RESULT,
+                                        SEAT_DISTRIBUTION)
 
     def area_code
       'NO'

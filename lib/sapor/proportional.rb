@@ -35,7 +35,6 @@ module Sapor
       @last_detailed_election_result.each_pair do | name, local_last_result |
         no_of_seats = @seat_distribution[name]
         seats = local_seats(no_of_seats, local_last_result, multiplicators)
-puts seats
         seats.each do | seat |
           if result.key?(seat)
             result[seat] += 1
