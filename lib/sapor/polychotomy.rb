@@ -102,9 +102,10 @@ module Sapor
       choice_lengths = @choices.map { | choice | choice.length }
       choice_lengths << 6
       max_choice_width = choice_lengths.max
+      max_seats_width = @area.no_of_seats.to_s.size
       sorted_choices = sort_choices_by_result
       lines = sorted_choices.map do | choice |
-        create_report_line(choice, max_choice_width)
+        create_report_line(choice, max_choice_width, max_seats_width)
       end
       'Most probable rounded fractions, fractions and 95% confidence' +
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
@@ -181,7 +182,7 @@ module Sapor
         votes[choice][value] += combinations unless choice == OTHER
       end
       projection = @area.seats(data_point)
-      data_point.each_key do | choice |
+      seats.each_key do | choice |
         if projection.key?(choice)
           seats[choice][projection[choice]] += combinations
         else
@@ -230,7 +231,7 @@ module Sapor
       @results[choice].to_f / @results.values.inject(:+)
     end
 
-    def create_report_line(choice, max_choice_width)
+    def create_report_line(choice, max_choice_width, max_seats_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { | x | x.to_f / @area.population_size }
       ci_seats = @seats[choice].confidence_interval(0.95)
@@ -240,7 +241,9 @@ module Sapor
       six_char_percentage(most_probable_fraction(choice)) + '  ' + \
       six_char_percentage(confidence_interval.first) + '–' + \
       six_char_percentage(confidence_interval.last) + '  ' + \
-      ci_seats.first.to_s + '–' + ci_seats.last.to_s
+      (max_seats_width == 1 ? ' ' : '') + \
+      ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
+      ci_seats.last.to_s.rjust(max_seats_width)
     end
 
     def most_probable_rounded_fraction(choice)
