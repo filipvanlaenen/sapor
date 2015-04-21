@@ -198,6 +198,35 @@ describe Sapor::CombinationsDistribution, '#size' do
   end
 end
 
+describe Sapor::CombinationsDistribution, '#threshold_probability' do
+  it 'returns 1 if the single value is above the threshold' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[5] = 2.to_lf
+    expect(distribution.threshold_probability(0.1, 10)).to eq(1)
+  end
+
+  it 'returns 0 if the single value is below the threshold' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[5] = 2.to_lf
+    expect(distribution.threshold_probability(0.6, 10)).to eq(0)
+  end
+
+  it 'returns 0.8 if the threshold is between combinations 2 and 8' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[2] = 2.to_lf
+    distribution[7] = 8.to_lf
+    expect(distribution.threshold_probability(0.5, 10)).to eq(0.8)
+  end
+
+  it 'includes the probability at the threshold' do
+    distribution = Sapor::CombinationsDistribution.new
+    distribution[2] = 2.to_lf
+    distribution[5] = 5.to_lf
+    distribution[7] = 3.to_lf
+    expect(distribution.threshold_probability(0.5, 10)).to eq(0.8)
+  end
+end
+
 describe Sapor::CombinationsDistribution, '#values' do
   it 'returns an empty array for an empty distribution' do
     distribution = Sapor::CombinationsDistribution.new

@@ -37,8 +37,8 @@ module Sapor
 
     def +(other)
       sum = CombinationsDistribution.new
-      @distribution.keys.each { | key | sum[key] = self[key] }
-      other.values.each do | key |
+      @distribution.keys.each { |key| sum[key] = self[key] }
+      other.values.each do |key|
         if self[key].nil?
           sum[key] = other[key]
         else
@@ -52,6 +52,21 @@ module Sapor
       @distribution.empty?
     end
 
+    def threshold_probability(threshold, population_size)
+      total = @distribution.values.inject(:+)
+      threshold_value = population_size * threshold
+      distribution_over_threshold = @distribution.select do |k, _|
+        k >= threshold_value
+      end
+      if distribution_over_threshold.empty?
+        0
+      else
+        over_threshold = distribution_over_threshold.values.inject(:+)
+        probability = over_threshold / total
+        probability.mantissa * (10**probability.exponent)
+      end
+    end
+
     def size
       @distribution.size
     end
@@ -61,7 +76,7 @@ module Sapor
     end
 
     def most_probable_value
-      @distribution.max { | a, b | a.last <=> b.last }[0]
+      @distribution.max { |a, b| a.last <=> b.last }[0]
     end
 
     # Given all fractions rounded to one decimal, returns the one that has the
@@ -70,7 +85,7 @@ module Sapor
       rf_combinations = \
       calculate_rounded_fractions_combinations(population_size)
       max_probability = rf_combinations.values.max
-      opt_rfs = rf_combinations.reject { | k, v | v < max_probability }.keys
+      opt_rfs = rf_combinations.reject { |_, v| v < max_probability }.keys
       opt_rfs.sort[opt_rfs.size / 2]
     end
 
@@ -86,7 +101,7 @@ module Sapor
 
     def confidence_interval_values(level)
       interval = confidence_interval(level)
-      @distribution.keys.reject do | value |
+      @distribution.keys.reject do |value|
         value < interval.first || value > interval.last
       end
     end
@@ -135,13 +150,13 @@ module Sapor
         if ix == sorted_combinations.size - 1
           top = population_size
         else
-          top = (sorted_combinations[ix].first + sorted_combinations[ix + 1].first)/2
+          top = (sorted_combinations[ix].first + sorted_combinations[ix + 1].first) / 2
         end
         combinations_by_interval << [[bottom, top], c.last]
       end
       result = Hash.new(0.to_lf)
-      combinations_by_interval.each do | i_c |
-        bottom = (i_c.first.first.to_f / population_size).round(3) 
+      combinations_by_interval.each do |i_c|
+        bottom = (i_c.first.first.to_f / population_size).round(3)
         top = (i_c.first.last.to_f / population_size).round(3)
         ix = bottom
         loop do
