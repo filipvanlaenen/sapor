@@ -185,9 +185,9 @@ describe Sapor::Dichotomy, '#value_confidence_interval' do
   end
 
   it 'returns the value confidence interval after one refinement' do
-    dichotomy = dichotomy_of_eight
+    dichotomy = Sapor::Dichotomy.new(20, 50, 80)
     dichotomy.refine
-    expect(dichotomy.value_confidence_interval).to eq([3, 5])
+    expect(dichotomy.value_confidence_interval).to eq([27, 53])
   end
 
   it 'returns the value confidence interval after full refinement' do
@@ -248,9 +248,9 @@ describe Sapor::Dichotomy, '#confidence_interval' do
   end
 
   it 'returns the default 95% confidence interval after one refinement' do
-    dichotomy = dichotomy_of_eight
+    dichotomy = Sapor::Dichotomy.new(20, 50, 80)
     dichotomy.refine
-    expect(dichotomy.confidence_interval).to eq([0.375, 0.625])
+    expect(dichotomy.confidence_interval).to eq([0.3375, 0.6625])
   end
 
   it 'returns the default 95% confidence interval after three refinements' do
