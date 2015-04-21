@@ -26,12 +26,7 @@ module Sapor
 
     # Source: NSD European Election Database, Parliamentary election of 2013,\
     # retrieved on 14 April 2015.
-    # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A
-    # %2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_val
-    # ue&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubse
-    # t=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1
-    # &nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual
-    # &measure=common&top=yes
+    # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_value&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubset=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1&nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual&measure=common&top=yes
     LAST_ELECTION_RESULT = { 'Arbeiderpartiet' => 874_769,
                              'Høyre' => 760_232,
                              'Fremskrittspartiet' => 463_560,
@@ -41,28 +36,11 @@ module Sapor
                              'Sosialistisk Venstreparti' => 116_021,
                              'Miljøpartiet de Grønne' => 79_152,
                              'Rødt' => 30_751,
-                             'De Kristne' => 17_731,
-                             'Pensjonistpartiet' => 11_865,
-                             'Piratpartiet' => 9_869,
-                             'Kystpartiet' => 3_311,
-                             'Demokratene i Norge' => 2_214,
-                             'Kristent Samlingsparti' => 1_722,
-                             'Det Liberale Folkepartiet' => 909,
-                             'Norges Kommunistiske Parti' => 611,
-                             'Sykehus til Alta' => 467,
-                             'Samfunnspartiet' => 295,
-                             'Folkeliste mot oljeboring i Lofoten,' \
-                             ' Vesterålen og Senja' => 268,
-                             'Folkemakten' => 175 }
+                             'De Kristne' => 17_731,                             'Pensjonistpartiet' => 11_865,                             'Piratpartiet' => 9_869,                             'Kystpartiet' => 3_311,                             'Demokratene i Norge' => 2_214,                             'Kristent Samlingsparti' => 1_722,                             'Det Liberale Folkepartiet' => 909,                             'Norges Kommunistiske Parti' => 611,                             'Sykehus til Alta' => 467,                             'Samfunnspartiet' => 295,                             'Folkeliste mot oljeboring i Lofoten, Vesterålen og Senja' => 268,                             'Folkemakten' => 175 }
 
     # Source: NSD European Election Database, Parliamentary election of 2013,
     # retrieved on 14 April 2015.
-    # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A
-    # %2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_val
-    # ue&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubse
-    # t=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1
-    # &nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual
-    # &measure=common&top=yes
+    # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_value&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubset=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1&nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual&measure=common&top=yes
     LAST_DETAILED_ELECTION_RESULT = {
       'Akershus' => { 'Arbeiderpartiet' => 91_364,
                       'Høyre' => 108_860,
@@ -73,14 +51,7 @@ module Sapor
                       'Sosialistisk Venstreparti' => 11_305,
                       'Miljøpartiet de Grønne' => 9_804,
                       'Rødt' => 2_365,
-                      'De Kristne' => 792,
-                      'Pensjonistpartiet' => 1_557,
-                      'Piratpartiet' => 1_106,
-                      'Kystpartiet' => 149,
-                      'Demokratene i Norge' => 115,
-                      'Kristent Samlingsparti' => 197,
-                      'Det Liberale Folkepartiet' => 195,
-                      'Samfunnspartiet' => 77 },
+                      'De Kristne' => 792,                      'Pensjonistpartiet' => 1_557,                      'Piratpartiet' => 1_106,                      'Kystpartiet' => 149,                      'Demokratene i Norge' => 115,                      'Kristent Samlingsparti' => 197,                      'Det Liberale Folkepartiet' => 195,                      'Samfunnspartiet' => 77 },
       'Aust-Agder' => { 'Arbeiderpartiet' => 17_623,
                         'Høyre' => 16_303,
                         'Fremskrittspartiet' => 11_278,
@@ -90,12 +61,7 @@ module Sapor
                         'Sosialistisk Venstreparti' => 1_652,
                         'Miljøpartiet de Grønne' => 1_242,
                         'Rødt' => 345,
-                        'De Kristne' => 862,
-                        'Pensjonistpartiet' => 354,
-                        'Piratpartiet' => 176,
-                        'Kystpartiet' => 35,
-                        'Demokratene i Norge' => 46,
-                        'Kristent Samlingsparti' => 117 },
+                        'De Kristne' => 862,                        'Pensjonistpartiet' => 354,                        'Piratpartiet' => 176,                        'Kystpartiet' => 35,                        'Demokratene i Norge' => 46,                        'Kristent Samlingsparti' => 117 },
       'Buskerud' => { 'Arbeiderpartiet' => 47_572,
                       'Høyre' => 43_515,
                       'Fremskrittspartiet' => 27_854,
@@ -105,12 +71,7 @@ module Sapor
                       'Sosialistisk Venstreparti' => 4_094,
                       'Miljøpartiet de Grønne' => 3_345,
                       'Rødt' => 905,
-                      'De Kristne' => 736,
-                      'Piratpartiet' => 508,
-                      'Kystpartiet' => 135,
-                      'Demokratene i Norge' => 80,
-                      'Kristent Samlingsparti' => 125,
-                      'Samfunnspartiet' => 56 },
+                      'De Kristne' => 736,                      'Piratpartiet' => 508,                      'Kystpartiet' => 135,                      'Demokratene i Norge' => 80,                      'Kristent Samlingsparti' => 125,                      'Samfunnspartiet' => 56 },
       'Finnmark' => { 'Arbeiderpartiet' => 15_003,
                       'Høyre' => 8_032,
                       'Fremskrittspartiet' => 6_038,
@@ -270,7 +231,7 @@ module Sapor
                      'Sosialistisk Venstreparti' => 3_668,
                      'Miljøpartiet de Grønne' => 3_168,
                      'Rødt' => 1_149,
-                     'De Kristne' => 1_123,                     'Pensjonistpartiet' => 956,                     'Piratpartiet' => 516,                     'Kystpartiet' => 68,                     'Demokratene i Norge' => 99,                     'Kristent Samlingsparti' => 145 } }
+                     'De Kristne' => 1_123,                     'Pensjonistpartiet' => 956,                     'Piratpartiet' => 516,                     'Kystpartiet' => 68,                     'Demokratene i Norge' => 99,                     'Kristent Samlingsparti' => 145 }}
 
     # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
@@ -298,7 +259,7 @@ module Sapor
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
     NO_OF_LEVELING_SEATS = 19
 
-    # TODO: Should use SAINTE-LAGUE
+    # TODO: Should use SAINTE-LAGUË
     # TODO: Should add leveling seats
     ELECTORAL_SYSTEM = Proportional.new(LAST_ELECTION_RESULT,
                                         LAST_DETAILED_ELECTION_RESULT,
