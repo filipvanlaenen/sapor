@@ -50,6 +50,93 @@ describe Sapor::Dichotomy, '#new' do
   end
 end
 
+describe Sapor::Dichotomy, '#confidence_interval' do
+  it 'returns [0%, 100%] after new for default level 95%' do
+    expect(dichotomy_of_eight.confidence_interval).to eq([0.0, 1.0])
+  end
+
+  it 'returns the default 95% confidence interval after one refinement' do
+    dichotomy = Sapor::Dichotomy.new(20, 50, 80)
+    dichotomy.refine
+    expect(dichotomy.confidence_interval).to eq([0.3375, 0.6625])
+  end
+
+  it 'returns the default 95% confidence interval after three refinements' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.confidence_interval).to eq([0.112, 0.777])
+  end
+
+  it 'returns the 80% confidence interval after three refinements' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.confidence_interval(0.8)).to eq([0.186, 0.666])
+  end
+end
+
+describe Sapor::Dichotomy, '#error_estimate' do
+  it 'is 0 when population size is reached' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.error_estimate).to eq(0)
+  end
+
+  it 'is at least the resolution (no refinement)' do
+    dichotomy = dichotomy_of_eight
+    expect(dichotomy.error_estimate).to eq(1.0)
+  end
+
+  it 'is at least the resolution (one refinement)' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    expect(dichotomy.error_estimate).to eq(1.to_f / 3)
+  end
+end
+
+describe Sapor::Dichotomy, '#most_probable_fraction' do
+  it 'returns the fraction of the single value after new' do
+    expect(dichotomy_of_eight.most_probable_fraction).to eq(0.5)
+  end
+
+  it 'returns the one probable value after one refinement' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    expect(dichotomy.most_probable_fraction).to eq(0.5)
+  end
+
+  it 'returns the new most probable value after two refinements' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.most_probable_fraction).to eq(0.375)
+  end
+end
+
+describe Sapor::Dichotomy, '#most_probable_value' do
+  it 'returns the single value after new' do
+    expect(dichotomy_of_eight.most_probable_value).to eq(4)
+  end
+
+  it 'returns the one probable value after one refinement' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    expect(dichotomy.most_probable_value).to eq(4)
+  end
+
+  it 'returns the new most probable value after two refinements' do
+    dichotomy = dichotomy_of_eight
+    dichotomy.refine
+    dichotomy.refine
+    expect(dichotomy.most_probable_value).to eq(3)
+  end
+end
+
 describe Sapor::Dichotomy, '#refine' do
   it 'adds values after one refinement (power of three)' do
     dichotomy = dichotomy_of_eight
@@ -137,44 +224,6 @@ describe Sapor::Dichotomy, '#refine' do
   end
 end
 
-describe Sapor::Dichotomy, '#most_probable_value' do
-  it 'returns the single value after new' do
-    expect(dichotomy_of_eight.most_probable_value).to eq(4)
-  end
-
-  it 'returns the one probable value after one refinement' do
-    dichotomy = dichotomy_of_eight
-    dichotomy.refine
-    expect(dichotomy.most_probable_value).to eq(4)
-  end
-
-  it 'returns the new most probable value after two refinements' do
-    dichotomy = dichotomy_of_eight
-    dichotomy.refine
-    dichotomy.refine
-    expect(dichotomy.most_probable_value).to eq(3)
-  end
-end
-
-describe Sapor::Dichotomy, '#most_probable_fraction' do
-  it 'returns the fraction of the single value after new' do
-    expect(dichotomy_of_eight.most_probable_fraction).to eq(0.5)
-  end
-
-  it 'returns the one probable value after one refinement' do
-    dichotomy = dichotomy_of_eight
-    dichotomy.refine
-    expect(dichotomy.most_probable_fraction).to eq(0.5)
-  end
-
-  it 'returns the new most probable value after two refinements' do
-    dichotomy = dichotomy_of_eight
-    dichotomy.refine
-    dichotomy.refine
-    expect(dichotomy.most_probable_fraction).to eq(0.375)
-  end
-end
-
 describe Sapor::Dichotomy, '#value_confidence_interval' do
   it 'returns [0, population_size] values after new for default level 95%' do
     expect(dichotomy_of_eight.value_confidence_interval).to eq([0, 8])
@@ -239,54 +288,5 @@ describe Sapor::Dichotomy, '#value_confidence_interval' do
     dichotomy.refine
     dichotomy.refine
     expect(dichotomy.value_confidence_interval).to eq([445, 1000])
-  end
-end
-
-describe Sapor::Dichotomy, '#confidence_interval' do
-  it 'returns [0%, 100%] after new for default level 95%' do
-    expect(dichotomy_of_eight.confidence_interval).to eq([0.0, 1.0])
-  end
-
-  it 'returns the default 95% confidence interval after one refinement' do
-    dichotomy = Sapor::Dichotomy.new(20, 50, 80)
-    dichotomy.refine
-    expect(dichotomy.confidence_interval).to eq([0.3375, 0.6625])
-  end
-
-  it 'returns the default 95% confidence interval after three refinements' do
-    dichotomy = dichotomy_of_thousand
-    dichotomy.refine
-    dichotomy.refine
-    dichotomy.refine
-    expect(dichotomy.confidence_interval).to eq([0.112, 0.777])
-  end
-
-  it 'returns the 80% confidence interval after three refinements' do
-    dichotomy = dichotomy_of_thousand
-    dichotomy.refine
-    dichotomy.refine
-    dichotomy.refine
-    expect(dichotomy.confidence_interval(0.8)).to eq([0.186, 0.666])
-  end
-end
-
-describe Sapor::Dichotomy, '#error_estimate' do
-  it 'is 0 when population size is reached' do
-    dichotomy = dichotomy_of_eight
-    dichotomy.refine
-    dichotomy.refine
-    dichotomy.refine
-    expect(dichotomy.error_estimate).to eq(0)
-  end
-
-  it 'is at least the resolution (no refinement)' do
-    dichotomy = dichotomy_of_eight
-    expect(dichotomy.error_estimate).to eq(1.0)
-  end
-
-  it 'is at least the resolution (one refinement)' do
-    dichotomy = dichotomy_of_eight
-    dichotomy.refine
-    expect(dichotomy.error_estimate).to eq(1.to_f / 3)
   end
 end
