@@ -62,6 +62,10 @@ module Sapor
       end
     end
 
+    def threshold_probability(threshold)
+      @distribution.threshold_probability(threshold, @population_size)
+    end
+
     def value_confidence_interval(level = 0.95)
       @distribution.confidence_interval(level, @population_size)
     end

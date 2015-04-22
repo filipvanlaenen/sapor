@@ -224,6 +224,34 @@ describe Sapor::Dichotomy, '#refine' do
   end
 end
 
+describe Sapor::Dichotomy, '#threshold_probability' do
+  it 'returns 100% after new for a 50% threshold' do
+    expect(dichotomy_of_thousand.threshold_probability(0.5)).to eq(1)
+  end
+
+  it 'returns 0% after new for a 51% threshold' do
+    expect(dichotomy_of_thousand.threshold_probability(0.51)).to eq(0)
+  end
+
+  it 'returns 100% for a 5% threshold after one refinement' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    expect(dichotomy.threshold_probability(0.05)).to eq(1)
+  end
+
+  it 'returns 68% (after rounding) for a 50% threshold after one refinement' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    expect(dichotomy.threshold_probability(0.5).round(2)).to eq(0.68)
+  end
+
+  it 'returns 0% for a 95% threshold after one refinement' do
+    dichotomy = dichotomy_of_thousand
+    dichotomy.refine
+    expect(dichotomy.threshold_probability(0.95)).to eq(0)
+  end
+end
+
 describe Sapor::Dichotomy, '#value_confidence_interval' do
   it 'returns [0, population_size] values after new for default level 95%' do
     expect(dichotomy_of_eight.value_confidence_interval).to eq([0, 8])
