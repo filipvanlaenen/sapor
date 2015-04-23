@@ -47,6 +47,10 @@ module Sapor
       1_000_000
     end
 
+    def threshold
+      nil
+    end
+
     def no_of_seats
       LAST_DETAILED_ELECTION_RESULT.size
     end

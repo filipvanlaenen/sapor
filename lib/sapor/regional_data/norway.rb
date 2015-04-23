@@ -280,6 +280,10 @@ module Sapor
       169
     end
 
+    def threshold
+      0.04
+    end
+
     def seats(simulation)
       ELECTORAL_SYSTEM.project(simulation)
     end

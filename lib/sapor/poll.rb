@@ -108,6 +108,10 @@ module Sapor
       @area.population_size
     end
 
+    def threshold
+      @area.threshold
+    end
+
     def analyze_until_convergence(max_error)
       while @analysis.error_estimate > max_error
         @analysis.refine
@@ -120,7 +124,7 @@ module Sapor
 
     def analyze_as_dichotomies(max_error)
       @logger.info('Analyzing as a set of dichotomies...')
-      @analysis = Dichotomies.new(@results, population_size)
+      @analysis = Dichotomies.new(@results, population_size, threshold)
       analyze_until_convergence(max_error)
     end
 
