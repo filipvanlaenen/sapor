@@ -135,4 +135,20 @@ describe Sapor::Dichotomies, '#report' do
                       'Other    50.0%    0.0%– 66.7%'
     expect(dichotomies.report).to eq(expected_report)
   end
+
+  it 'includes threshold probabilities when a threshold provided' do
+    dichotomies = Sapor::Dichotomies.new(SAMPLE_RESULTS,
+                                         SAMPLE_POPULATION_SIZE,
+                                         0.15)
+    dichotomies.refine
+    dichotomies.refine
+    expected_report = 'Most probable fractions and 95% confidence ' +
+                      "intervals:\n" +
+                      "Choice    MPF      CI(95%)     P(≥15%)\n" +
+                      "Blue     38.9%   11.1%– 77.8%   99.6%\n" +
+                      "Green    27.8%    0.0%– 66.7%   95.7%\n" +
+                      "Red      16.7%    0.0%– 55.6%   76.1%\n" +
+                      'Other    16.7%    0.0%– 55.6%   76.1%'
+    expect(dichotomies.report).to eq(expected_report)
+  end
 end

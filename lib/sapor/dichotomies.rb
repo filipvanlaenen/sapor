@@ -24,25 +24,22 @@ module Sapor
   class Dichotomies
     include NumberFormatter
 
-    def initialize(results, population_size)
+    def initialize(results, population_size, threshold = nil)
       sample_size = results.values.inject(:+)
       @dichotomy_hash = {}
       results.each_pair do |choice, number|
         @dichotomy_hash[choice] = Dichotomy.new(number, sample_size,
                                                 population_size)
       end
+      @threshold = threshold
     end
 
     def refine
-      @dichotomy_hash.values.each { | dichotomy | dichotomy.refine }
+      @dichotomy_hash.values.each(&:refine)
     end
 
     def error_estimate
-      dichotomies = @dichotomy_hash.values
-      error_estimates = dichotomies.map do | dichotomy |
-        dichotomy.error_estimate
-      end
-      error_estimates.max
+      @dichotomy_hash.values.map(&:error_estimate).max
     end
 
     def confidence_interval_values(choice, level)
@@ -50,16 +47,18 @@ module Sapor
     end
 
     def report
-      choice_lengths = @dichotomy_hash.keys.map { | choice | choice.length }
+      choice_lengths = @dichotomy_hash.keys.map(&:length)
       choice_lengths << 6
       max_choice_width = choice_lengths.max
       sorted_choices = sort_choices_by_label_and_mpv
-      lines = sorted_choices.map do | choice |
+      lines = sorted_choices.map do |choice|
         create_report_line(choice, @dichotomy_hash[choice], max_choice_width)
       end
       "Most probable fractions and 95% confidence intervals:\n" +
-      'Choice'.ljust(max_choice_width) + "    MPF      CI(95%)\n" +
-      lines.join("\n")
+        'Choice'.ljust(max_choice_width) + '    MPF      CI(95%)' +
+        (@threshold.nil? ? '' : '     P(≥' + (100 * @threshold).to_i.to_s +
+         '%)') +
+        "\n" + lines.join("\n")
     end
 
     def progress_report
@@ -82,16 +81,18 @@ module Sapor
     end
 
     def sort_choices_by_label_and_mpv
-      @dichotomy_hash.keys.sort do | a, b |
+      @dichotomy_hash.keys.sort do |a, b|
         compare_choices_by_label_and_mpv(a, b)
       end
     end
 
     def create_report_line(choice, dichotomy, max_choice_width)
       choice.ljust(max_choice_width) + '  ' + \
-      six_char_percentage(dichotomy.most_probable_fraction) + '  ' + \
-      six_char_percentage(dichotomy.confidence_interval.first) + '–' + \
-      six_char_percentage(dichotomy.confidence_interval.last)
+        six_char_percentage(dichotomy.most_probable_fraction) + '  ' + \
+        six_char_percentage(dichotomy.confidence_interval.first) + '–' + \
+        six_char_percentage(dichotomy.confidence_interval.last) +
+        (@threshold.nil? ? '' : '  ' +
+         six_char_percentage(dichotomy.threshold_probability(@threshold)))
     end
   end
 end
