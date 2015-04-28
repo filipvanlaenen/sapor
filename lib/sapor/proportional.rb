@@ -32,10 +32,10 @@ module Sapor
     def project(simulation)
       multiplicators = calculate_multiplicators(simulation)
       result = create_empty_result(simulation)
-      @last_detailed_election_result.each_pair do | name, local_last_result |
+      @last_detailed_election_result.each_pair do |name, local_last_result|
         no_of_seats = @seat_distribution[name]
         seats = local_seats(no_of_seats, local_last_result, multiplicators)
-        seats.each do | seat |
+        seats.each do |seat|
           if result.key?(seat)
             result[seat] += 1
           else
@@ -52,7 +52,7 @@ module Sapor
       simulation_sum = simulation.values.inject(:+)
       last_election_sum = @last_election_result.values.inject(:+)
       multiplicators = {}
-      simulation.each_key do | choice |
+      simulation.each_key do |choice|
         new_fraction = simulation[choice].to_f / simulation_sum
         last_fraction = @last_election_result[choice].to_f / last_election_sum
         multiplicators[choice] = new_fraction / last_fraction
@@ -62,29 +62,33 @@ module Sapor
 
     def create_empty_result(simulation)
       result = {}
-      simulation.each_key do | choice |
+      simulation.each_key do |choice|
         result[choice] = 0
       end
       result[OTHER] = 0
       result
     end
 
+    def denominators(no_of_seats)
+      Range.new(1, no_of_seats)
+    end
+
     def local_seats(no_of_seats, local_last_result, multiplicators)
       new_local_result = {}
-      local_last_result.each_pair do | choice, votes |
+      local_last_result.each_pair do |choice, votes|
         if multiplicators.key?(choice)
           new_local_result[choice] = votes * multiplicators[choice]
         else
           new_local_result[choice] = votes
-        end 
+        end
       end
       quotients = []
-      new_local_result.each_pair do | choice, new_value |
-        Range.new(1, no_of_seats).each do | d |
+      new_local_result.each_pair do |choice, new_value|
+        denominators(no_of_seats).each do |d|
           quotients << [choice, new_value.to_f / d]
         end
       end
-      quotients.sort { | a, b| b.last <=> a.last }.map { | a | a.first }.slice(0, no_of_seats)
+      quotients.sort { |a, b| b.last <=> a.last }.map(&:first).slice(0, no_of_seats)
     end
   end
 end
