@@ -70,7 +70,7 @@ module Sapor
     end
 
     def denominators(no_of_seats)
-      Range.new(1, no_of_seats)
+      DhondtDenominators.get(no_of_seats)
     end
 
     def local_seats(no_of_seats, local_last_result, multiplicators)
@@ -89,6 +89,24 @@ module Sapor
         end
       end
       quotients.sort { |a, b| b.last <=> a.last }.map(&:first).slice(0, no_of_seats)
+    end
+  end
+
+  #
+  # Class building the denominators for D'Hondt.
+  #
+  class DhondtDenominators
+    def self.get(size)
+      Range.new(1, size)
+    end
+  end
+
+  #
+  # Class building the denominators for modified Sainte-Lague.
+  #
+  class SainteLague14Denominators
+    def self.get(size)
+      Range.new(1, size).map { |a| a.equal?(1) ? 1.4 : a * 2 - 1 }
     end
   end
 end
