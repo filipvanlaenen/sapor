@@ -231,7 +231,7 @@ module Sapor
                      'Sosialistisk Venstreparti' => 3_668,
                      'Miljøpartiet de Grønne' => 3_168,
                      'Rødt' => 1_149,
-                     'De Kristne' => 1_123,                     'Pensjonistpartiet' => 956,                     'Piratpartiet' => 516,                     'Kystpartiet' => 68,                     'Demokratene i Norge' => 99,                     'Kristent Samlingsparti' => 145 }}
+                     'De Kristne' => 1_123,                     'Pensjonistpartiet' => 956,                     'Piratpartiet' => 516,                     'Kystpartiet' => 68,                     'Demokratene i Norge' => 99,                     'Kristent Samlingsparti' => 145 } }
 
     # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
