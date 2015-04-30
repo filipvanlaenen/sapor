@@ -259,11 +259,15 @@ module Sapor
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
     NO_OF_LEVELING_SEATS = 19
 
+    LEVELING_THRESHOLD = 0.04
+
     # TODO: Should use SAINTE-LAGUË
     # TODO: Should add leveling seats
-    ELECTORAL_SYSTEM = Proportional.new(LAST_ELECTION_RESULT,
-                                        LAST_DETAILED_ELECTION_RESULT,
-                                        DIRECT_SEAT_DISTRIBUTION)
+    ELECTORAL_SYSTEM = LeveledProportional.new(LAST_ELECTION_RESULT,
+                                               LAST_DETAILED_ELECTION_RESULT,
+                                               DIRECT_SEAT_DISTRIBUTION,
+                                               NO_OF_LEVELING_SEATS,
+                                               LEVELING_THRESHOLD)
 
     def area_code
       'NO'
