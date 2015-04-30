@@ -37,10 +37,9 @@ module Sapor
       threshold = @leveling_threshold * simulation.values.inject(:+)
       quotients = []
       simulation.each_pair do |choice, votes|
-        if votes >= threshold
-          denominators(result[choice]).each do |d|
-            quotients << [choice, votes.to_f / d]
-          end
+        next if votes >= threshold
+        denominators(result[choice]).each do |d|
+          quotients << [choice, votes.to_f / d]
         end
       end
       seats = quotients.sort { |a, b| b.last <=> a.last }.map(&:first).slice(0, @leveling_seats)
