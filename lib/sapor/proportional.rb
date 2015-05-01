@@ -23,10 +23,11 @@ module Sapor
   #
   class Proportional
     def initialize(last_election_result, last_detailed_election_result,
-                   seat_distribution)
+                   seat_distribution, denominators_class)
       @last_election_result = last_election_result
       @last_detailed_election_result = last_detailed_election_result
       @seat_distribution = seat_distribution
+      @denominators_class = denominators_class
     end
 
     def project(simulation)
@@ -69,10 +70,6 @@ module Sapor
       result
     end
 
-    def denominators(no_of_seats)
-      DhondtDenominators.get(no_of_seats)
-    end
-
     def local_seats(no_of_seats, local_last_result, multiplicators)
       new_local_result = {}
       local_last_result.each_pair do |choice, votes|
@@ -84,7 +81,7 @@ module Sapor
       end
       quotients = []
       new_local_result.each_pair do |choice, new_value|
-        denominators(no_of_seats).each do |d|
+        @denominators_class.get(no_of_seats).each do |d|
           quotients << [choice, new_value.to_f / d]
         end
       end

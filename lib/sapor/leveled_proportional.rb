@@ -24,12 +24,14 @@ module Sapor
   #
   class LeveledProportional
     def initialize(last_election_result, last_detailed_election_result,
-                   seat_distribution, leveling_seats, leveling_threshold)
+                   seat_distribution, leveling_seats, leveling_threshold,
+                   denominators_class)
       @proportional = Proportional.new(last_election_result,
                                        last_detailed_election_result,
-                                       seat_distribution)
+                                       seat_distribution, denominators_class)
       @leveling_seats = leveling_seats
       @leveling_threshold = leveling_threshold
+      @denominators_class = denominators_class
     end
 
     def project(simulation)
@@ -37,7 +39,7 @@ module Sapor
       threshold = @leveling_threshold * simulation.values.inject(:+)
       quotients = []
       simulation.each_pair do |choice, votes|
-        next if votes >= threshold
+        next if votes < threshold
         denominators(result[choice]).each do |d|
           quotients << [choice, votes.to_f / d]
         end
@@ -56,7 +58,7 @@ module Sapor
     private
 
     def denominators(seats)
-      DhondtDenominators.get(seats + @leveling_seats).reverse_each.take(@leveling_seats)
+      @denominators_class.get(seats + @leveling_seats).reverse_each.take(@leveling_seats)
     end
   end
 end

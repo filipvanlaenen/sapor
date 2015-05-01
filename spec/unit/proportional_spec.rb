@@ -28,7 +28,8 @@ SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
 
 PROPORTIONAL = Sapor::Proportional.new(SAMPLE_ELECTION_RESULT,
                                        SAMPLE_DETAILED_ELECTION_RESULT,
-                                       SAMPLE_SEAT_DISTRIBUTION)
+                                       SAMPLE_SEAT_DISTRIBUTION,
+                                       Sapor::DhondtDenominators)
 
 describe Sapor::Proportional, '#project' do
   it 'projects same result as last result if fed with last election result' do

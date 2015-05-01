@@ -38,7 +38,8 @@ LEVELED = Sapor::LeveledProportional.new(SAMPLE_ELECTION_RESULT,
                                          SAMPLE_DETAILED_ELECTION_RESULT,
                                          SAMPLE_SEAT_DISTRIBUTION,
                                          SAMPLE_LEVELING_SEATS,
-                                         SAMPLE_LEVELING_THRESHOLD)
+                                         SAMPLE_LEVELING_THRESHOLD,
+                                         Sapor::SainteLague14Denominators)
 
 describe Sapor::LeveledProportional, '#project' do
   it 'projects same result as last result if fed with last election result' do
