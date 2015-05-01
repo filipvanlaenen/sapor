@@ -347,26 +347,26 @@ module Sapor
                      'Demokratene i Norge' => 99,
                      'Kristent Samlingsparti' => 145 } }
 
-    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
+    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 1 May 2015.
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
-    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 18,
+    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 16,
                                  'Aust-Agder' => 3,
                                  'Buskerud' => 8,
-                                 'Finnmark' => 1,
+                                 'Finnmark' => 4,
                                  'Hedmark' => 6,
-                                 'Hordaland' => 16,
+                                 'Hordaland' => 15,
                                  'Møre og Romsdal' => 8,
-                                 'Nord-Trøndelag' => 3,
-                                 'Nordland' => 7,
-                                 'Oppland' => 5,
-                                 'Oslo' => 20,
-                                 'Rogaland' => 14,
+                                 'Nord-Trøndelag' => 4,
+                                 'Nordland' => 8,
+                                 'Oppland' => 6,
+                                 'Oslo' => 18,
+                                 'Rogaland' => 13,
                                  'Sogn og Fjordane' => 3,
                                  'Sør-Trøndelag' => 9,
                                  'Telemark' => 5,
-                                 'Troms' => 7,
+                                 'Troms' => 5,
                                  'Vest-Agder' => 5,
-                                 'Vestfold' => 7,
+                                 'Vestfold' => 6,
                                  'Østfold' => 8 }
 
     # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
