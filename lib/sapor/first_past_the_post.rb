@@ -31,7 +31,7 @@ module Sapor
     def project(simulation)
       multiplicators = calculate_multiplicators(simulation)
       result = create_empty_result(simulation)
-      @last_detailed_election_result.each_value do | local_last_result |
+      @last_detailed_election_result.each_value do |local_last_result|
         winner = local_winner(local_last_result, multiplicators)
         result[winner] += 1
       end
@@ -44,7 +44,7 @@ module Sapor
       simulation_sum = simulation.values.inject(:+)
       last_election_sum = @last_election_result.values.inject(:+)
       multiplicators = {}
-      simulation.each_key do | choice |
+      simulation.each_key do |choice|
         new_fraction = simulation[choice].to_f / simulation_sum
         last_fraction = @last_election_result[choice].to_f / last_election_sum
         multiplicators[choice] = new_fraction / last_fraction
@@ -54,7 +54,7 @@ module Sapor
 
     def create_empty_result(simulation)
       result = {}
-      simulation.each_key do | choice |
+      simulation.each_key do |choice|
         result[choice] = 0
       end
       result[OTHER] = 0
@@ -63,15 +63,15 @@ module Sapor
 
     def local_winner(local_last_result, multiplicators)
       new_local_result = {}
-      local_last_result.each_pair do | choice, votes |
+      local_last_result.each_pair do |choice, votes|
         if multiplicators.key?(choice)
           new_local_result[choice] = votes * multiplicators[choice]
         else
           new_local_result[choice] = votes
-        end 
+        end
       end
       max_votes = new_local_result.values.max
-      winner = new_local_result.select { | k, v | v.equal?(max_votes) }.keys.first
+      winner = new_local_result.select { |_k, v| v.equal?(max_votes) }.keys.first
       multiplicators.key?(winner) ? winner : OTHER
     end
   end

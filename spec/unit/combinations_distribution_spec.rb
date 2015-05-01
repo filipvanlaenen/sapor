@@ -145,7 +145,7 @@ describe Sapor::CombinationsDistribution, '#empty?' do
 end
 
 describe Sapor::CombinationsDistribution, '#most_probable_rounded_fraction' do
-  it "returns the median rounded fraction if there's more than one with" +
+  it "returns the median rounded fraction if there's more than one with" \
      ' maximal probability' do
     distribution = Sapor::CombinationsDistribution.new
     distribution[500] = 2.to_lf

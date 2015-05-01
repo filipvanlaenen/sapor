@@ -21,8 +21,8 @@ SAMPLE_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }
 
 SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
                                              },
-                                  'South' => { 'Red' => 70, 'Green' => 50,
-                                               'Blue' => 100 } }
+                                    'South' => { 'Red' => 70, 'Green' => 50,
+                                                 'Blue' => 100 } }
 
 SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
 
@@ -33,7 +33,7 @@ PROPORTIONAL = Sapor::Proportional.new(SAMPLE_ELECTION_RESULT,
 
 describe Sapor::Proportional, '#project' do
   it 'projects same result as last result if fed with last election result' do
-    projection = PROPORTIONAL.project(SAMPLE_ELECTION_RESULT) 
+    projection = PROPORTIONAL.project(SAMPLE_ELECTION_RESULT)
     expect(projection['Red']).to eq(3)
     expect(projection['Green']).to eq(3)
     expect(projection['Blue']).to eq(2)

@@ -77,6 +77,6 @@ describe Sapor::PseudoRandomMultiRangeEnumerator, '#each' do
 
   it "raises an ArgumentError when it can't construct incrementers" do
     expect { Sapor::PseudoRandomMultiRangeEnumerator.new([3, 2]) }.to \
-    raise_error(ArgumentError, 'Could not construct suitable incrementers.')
+      raise_error(ArgumentError, 'Could not construct suitable incrementers.')
   end
 end

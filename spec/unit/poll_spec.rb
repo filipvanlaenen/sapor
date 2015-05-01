@@ -67,14 +67,14 @@ describe Sapor::Poll, '#most_probable_value' do
     poll = sample_poll
     poll.analyze(MAX_ERROR)
     expect(poll.most_probable_value('Blue')).to \
-    be_within(MAX_VALUE_ERROR).of(428_571)
+      be_within(MAX_VALUE_ERROR).of(428_571)
   end
 
   it 'gets the most probable value after analysis (33%)' do
     poll = sample_poll
     poll.analyze(MAX_ERROR)
     expect(poll.most_probable_value('Green')).to \
-    be_within(MAX_VALUE_ERROR).of(285_714)
+      be_within(MAX_VALUE_ERROR).of(285_714)
   end
 end
 
@@ -87,14 +87,14 @@ describe Sapor::Poll, '#most_probable_fraction' do
     poll = sample_poll
     poll.analyze(MAX_ERROR)
     expect(poll.most_probable_fraction('Blue')).to \
-    be_within(MAX_ERROR).of(3.to_f / 7.to_f)
+      be_within(MAX_ERROR).of(3.to_f / 7.to_f)
   end
 
   it 'gets the most probable fraction after analysis (33%)' do
     poll = sample_poll
     poll.analyze(MAX_ERROR)
     expect(poll.most_probable_fraction('Green')).to \
-    be_within(MAX_ERROR).of(2.to_f / 7.to_f)
+      be_within(MAX_ERROR).of(2.to_f / 7.to_f)
   end
 end
 

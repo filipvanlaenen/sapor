@@ -19,7 +19,7 @@
 
 describe Sapor::Norway, '#seats' do
   it 'calculates the number of seats for the election of 2013 correctly' do
-    seats = Sapor::Norway.instance.seats(Sapor::Norway::LAST_ELECTION_RESULT) 
+    seats = Sapor::Norway.instance.seats(Sapor::Norway::LAST_ELECTION_RESULT)
     expect(seats['Arbeiderpartiet']).to eq(55)
     expect(seats['Høyre']).to eq(48)
     expect(seats['Fremskrittspartiet']).to eq(29)
@@ -30,9 +30,8 @@ describe Sapor::Norway, '#seats' do
     expect(seats['Miljøpartiet de Grønne']).to eq(1)
     expect(seats['Rødt']).to eq(0)
     expect(seats['De Kristne']).to eq(0)
-# TODO:   expect(seats['Pensjonistpartiet']).to eq(0)    expect(seats['Piratpartiet']).to eq(0)    expect(seats['Kystpartiet']).to eq(0)    expect(seats['Demokratene i Norge']).to eq(0)    expect(seats['Kristent Samlingsparti']).to eq(0)    expect(seats['Det Liberale Folkepartiet']).to eq(0)    expect(seats['Norges Kommunistiske Parti']).to eq(0)    expect(seats['Samfunnspartiet']).to eq(0)
+    # TODO:   expect(seats['Pensjonistpartiet']).to eq(0)    expect(seats['Piratpartiet']).to eq(0)    expect(seats['Kystpartiet']).to eq(0)    expect(seats['Demokratene i Norge']).to eq(0)    expect(seats['Kristent Samlingsparti']).to eq(0)    expect(seats['Det Liberale Folkepartiet']).to eq(0)    expect(seats['Norges Kommunistiske Parti']).to eq(0)    expect(seats['Samfunnspartiet']).to eq(0)
   end
 end
 
 # TODO: Sanity check that LAST_DETAILED_ELECTION_RESULT sums up to LAST_ELECTION_RESULT
- 

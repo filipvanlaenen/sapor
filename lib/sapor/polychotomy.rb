@@ -33,7 +33,7 @@ module Sapor
       @area = area
       @choices = results.keys
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
-      range_sizes = @ranges.values.map { |a| a.size }
+      range_sizes = @ranges.values.map(&:size)
       @enum = PseudoRandomMultiRangeEnumerator.new(range_sizes).each
       @no_of_simulations = 0
       @no_of_data_points = 0
@@ -99,17 +99,17 @@ module Sapor
     end
 
     def report
-      choice_lengths = @choices.map { | choice | choice.length }
+      choice_lengths = @choices.map(&:length)
       choice_lengths << 6
       max_choice_width = choice_lengths.max
       max_seats_width = @area.no_of_seats.to_s.size
       sorted_choices = sort_choices_by_result
-      lines = sorted_choices.map do | choice |
+      lines = sorted_choices.map do |choice|
         create_report_line(choice, max_choice_width, max_seats_width)
       end
-      'Most probable rounded fractions, fractions and 95% confidence' +
+      'Most probable rounded fractions, fractions and 95% confidence' \
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
-      "  Result    MPRF    MPF      CI(95%)     Seats\n" + lines.join("\n")
+        "  Result    MPRF    MPF      CI(95%)     Seats\n" + lines.join("\n")
     end
 
     def progress_report
@@ -119,9 +119,9 @@ module Sapor
       else
         space_size_ratio = space_size_ratio.round(1)
       end
-      "#{with_thousands_separator(@no_of_simulations)} simulations out of " +
-      "#{with_thousands_separator(@no_of_data_points)} data" +
-      " points, 1 / #{space_size_ratio} of search space size" +
+      "#{with_thousands_separator(@no_of_simulations)} simulations out of " \
+      "#{with_thousands_separator(@no_of_data_points)} data" \
+      " points, 1 / #{space_size_ratio} of search space size" \
       " (#{with_thousands_separator(space_size)})."
     end
 
@@ -130,7 +130,7 @@ module Sapor
     def extract_ranges_from_dichotomies(dichotomies, max_error)
       ranges = {}
       level = 1 - (max_error**2)
-      @choices.each do | choice |
+      @choices.each do |choice|
         unless choice == OTHER
           ranges[choice] = dichotomies.confidence_interval_values(choice,
                                                                   level).sort
@@ -141,9 +141,9 @@ module Sapor
 
     def create_new_seats_distributions
       distributions = {}
-      @choices.each do | choice |
+      @choices.each do |choice|
         distributions[choice] = CombinationsDistribution.new
-        Range.new(0, @area.no_of_seats).each do | value |
+        Range.new(0, @area.no_of_seats).each do |value|
           distributions[choice][value] = 0.to_lf
         end
       end
@@ -152,10 +152,10 @@ module Sapor
 
     def create_new_votes_distributions
       distributions = {}
-      @choices.each do | choice |
+      @choices.each do |choice|
         unless choice == OTHER
           distributions[choice] = CombinationsDistribution.new
-          @ranges[choice].each do | value |
+          @ranges[choice].each do |value|
             distributions[choice][value] = 0.to_lf
           end
         end
@@ -166,7 +166,7 @@ module Sapor
     def next_data_point
       indexes = @enum.next
       data_point = {}
-      indexes.each_with_index do | ix, i |
+      indexes.each_with_index do |ix, i|
         data_point[@ranges.keys[i]] = @ranges.values[i][ix]
       end
       data_point[OTHER] = @area.population_size - data_point.values.inject(:+)
@@ -175,14 +175,14 @@ module Sapor
 
     def simulate(votes, seats, data_point)
       combinations = 1.to_lf
-      data_point.each do | choice, value |
+      data_point.each do |choice, value|
         combinations *= BinomialsCache.binomial(value, @results[choice])
       end
-      data_point.each do | choice, value |
+      data_point.each do |choice, value|
         votes[choice][value] += combinations unless choice == OTHER
       end
       projection = @area.seats(data_point)
-      seats.each_key do | choice |
+      seats.each_key do |choice|
         if projection.key?(choice)
           seats[choice][projection[choice]] += combinations
         else
@@ -193,7 +193,7 @@ module Sapor
 
     def calculate_error_estimate(new_simulations)
       error_estimate = 0
-      @choices.each do | choice |
+      @choices.each do |choice|
         unless choice == OTHER
           mpv_new = calculate_most_probable_fraction(choice, new_simulations)
           mpv_old = calculate_most_probable_fraction(choice, @distributions)
@@ -206,18 +206,18 @@ module Sapor
 
     def merge_distributions(distributions1, distributions2)
       merged_distributions = {}
-      @choices.each do | choice |
+      @choices.each do |choice|
         unless choice == OTHER
           merged_distributions[choice] = distributions1[choice] + \
-          distributions2[choice]
+                                         distributions2[choice]
         end
       end
       merged_distributions
     end
 
     def sort_choices_by_result
-      sorted_choices = @choices.reject { | choice | choice == OTHER }
-      sorted_choices.sort do | a, b |
+      sorted_choices = @choices.reject { |choice| choice == OTHER }
+      sorted_choices.sort do |a, b|
         comparison = result(b) <=> result(a)
         if comparison == 0
           a <=> b
@@ -233,17 +233,17 @@ module Sapor
 
     def create_report_line(choice, max_choice_width, max_seats_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
-      confidence_interval = ci_values.map { | x | x.to_f / @area.population_size }
+      confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
       ci_seats = @seats[choice].confidence_interval(0.95)
       choice.ljust(max_choice_width) + '  ' + \
-      six_char_percentage(result(choice)) + '  ' + \
-      six_char_percentage(most_probable_rounded_fraction(choice)) + '  ' + \
-      six_char_percentage(most_probable_fraction(choice)) + '  ' + \
-      six_char_percentage(confidence_interval.first) + '–' + \
-      six_char_percentage(confidence_interval.last) + '  ' + \
-      (max_seats_width == 1 ? ' ' : '') + \
-      ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
-      ci_seats.last.to_s.rjust(max_seats_width)
+        six_char_percentage(result(choice)) + '  ' + \
+        six_char_percentage(most_probable_rounded_fraction(choice)) + '  ' + \
+        six_char_percentage(most_probable_fraction(choice)) + '  ' + \
+        six_char_percentage(confidence_interval.first) + '–' + \
+        six_char_percentage(confidence_interval.last) + '  ' + \
+        (max_seats_width == 1 ? ' ' : '') + \
+        ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
+        ci_seats.last.to_s.rjust(max_seats_width)
     end
 
     def most_probable_rounded_fraction(choice)

@@ -36,7 +36,7 @@ module Sapor
     end
 
     def confidence_interval(level = 0.95)
-      value_confidence_interval(level).map { | x | x.to_f / @population_size }
+      value_confidence_interval(level).map { |x| x.to_f / @population_size }
     end
 
     def confidence_interval_values(level = 0.95)
@@ -57,7 +57,7 @@ module Sapor
 
     def refine
       new_values = find_refinement_values
-      new_values.each do | value |
+      new_values.each do |value|
         @distribution[value] = combinations_for(value)
       end
     end
@@ -83,7 +83,7 @@ module Sapor
         0.to_lf
       else
         BinomialsCache.binomial(value, @number) * \
-        BinomialsCache.binomial(dual_value, dual_number)
+          BinomialsCache.binomial(dual_value, dual_number)
       end
     end
 
@@ -107,7 +107,7 @@ module Sapor
 
     def find_refinement_values_in_between
       sorted_values = values.sort
-      refinement_values = (0..(@distribution.size - 2)).to_a.map do | i |
+      refinement_values = (0..(@distribution.size - 2)).to_a.map do |i|
         find_refinement_values_between(sorted_values[i], sorted_values[i + 1])
       end
       refinement_values.flatten
@@ -124,7 +124,7 @@ module Sapor
 
     def find_refinement_values
       find_refinement_value_at_bottom + find_refinement_values_in_between +
-      find_refinement_value_at_top
+        find_refinement_value_at_top
     end
 
     def estimate_error

@@ -29,7 +29,7 @@ module Sapor
 
     AREA_KEY = 'Area'
     AREAS_MAP = {}
-    [Norway.instance, UnitedKingdom.instance, Utopia.instance].map { | area | AREAS_MAP[area.area_code] = area }
+    [Norway.instance, UnitedKingdom.instance, Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
 
     def initialize(metadata, results)
       @logger = LogFacade.create_logger
@@ -75,7 +75,7 @@ module Sapor
       metadata = {}
       results = {}
       current = metadata
-      lines.each do | line |
+      lines.each do |line|
         current = line_to_hash(line, current, results)
       end
       [metadata, results]
@@ -116,7 +116,7 @@ module Sapor
       while @analysis.error_estimate > max_error
         @analysis.refine
         @logger.info(@analysis.report)
-        @logger.info('Error estimate: ε ≤' +
+        @logger.info('Error estimate: ε ≤' \
                      " #{three_digits_percentage(@analysis.error_estimate)}.")
         @logger.info(@analysis.progress_report)
       end

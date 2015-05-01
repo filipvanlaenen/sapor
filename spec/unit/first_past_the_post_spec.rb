@@ -21,31 +21,31 @@ SAMPLE_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }
 
 SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
                                              },
-                                  'South' => { 'Red' => 70, 'Green' => 50,
-                                               'Blue' => 100 } }
+                                    'South' => { 'Red' => 70, 'Green' => 50,
+                                                 'Blue' => 100 } }
 
 FPTP = Sapor::FirstPastThePost.new(SAMPLE_ELECTION_RESULT,
                                    SAMPLE_DETAILED_ELECTION_RESULT)
 
 describe Sapor::FirstPastThePost, '#project' do
   it 'projects same result as last result if fed with last election result' do
-    projection = FPTP.project(SAMPLE_ELECTION_RESULT) 
+    projection = FPTP.project(SAMPLE_ELECTION_RESULT)
     expect(projection['Red']).to eq(0)
     expect(projection['Green']).to eq(1)
     expect(projection['Other']).to eq(1)
   end
 
   it 'it moves a seat to Red if Red is polling well enough' do
-    projection = FPTP.project({ 'Red' => 91_811 * 70 / 49,
-                                'Green' => 190_934 }) 
+    projection = FPTP.project('Red' => 91_811 * 70 / 49,
+                              'Green' => 190_934)
     expect(projection['Red']).to eq(1)
     expect(projection['Green']).to eq(0)
     expect(projection['Other']).to eq(1)
   end
 
   it 'it moves a seat away from Other if Red is polling well enough' do
-    projection = FPTP.project({ 'Red' => 91_811 * 101 / 70,
-                                'Green' => 190_934 * 70 / 101 }) 
+    projection = FPTP.project('Red' => 91_811 * 101 / 70,
+                              'Green' => 190_934 * 70 / 101)
     expect(projection['Red']).to eq(2)
     expect(projection['Green']).to eq(0)
     expect(projection['Other']).to eq(0)

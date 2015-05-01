@@ -37,7 +37,7 @@ module Sapor
       counters = Array.new(@dimensions.size, 0)
       loop do
         yield(counters.dup)
-        @incrementers.each_with_index do | incrementer, i |
+        @incrementers.each_with_index do |incrementer, i|
           counters[i] = (counters[i] + incrementer).modulo(@dimensions[i])
         end
         break if all_zeros?(counters)
@@ -49,7 +49,7 @@ module Sapor
     def calculate_incrementers
       incrementers = []
       incrementer = 0
-      calculate_incrementer_indexes.each do | i |
+      calculate_incrementer_indexes.each do |i|
         incrementer = next_incrementer(incrementer)
         if @dimensions[i] < incrementer
           fail(ArgumentError, 'Could not construct suitable incrementers.')
@@ -60,7 +60,7 @@ module Sapor
     end
 
     def calculate_incrementer_indexes
-      @dimensions.each_with_index.sort.map { | a | a.last }
+      @dimensions.each_with_index.sort.map(&:last)
     end
 
     def next_incrementer(incrementer)
@@ -77,7 +77,7 @@ module Sapor
     end
 
     def relative_prime?(incrementer)
-      @dimensions.map { | dimension | dimension.gcd(incrementer) }.max == 1
+      @dimensions.map { |dimension| dimension.gcd(incrementer) }.max == 1
     end
 
     def all_zeros?(counters)
