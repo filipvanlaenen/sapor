@@ -39,6 +39,13 @@ module Sapor
       @no_of_data_points = 0
       @distributions = create_new_votes_distributions # TODO: Rename to @votes
       @seats = create_new_seats_distributions
+      @comparisons = {}
+      @choices.each do |a|
+        @choices.each do |b|
+          @comparisons[a + '>' + b] = 0.to_lf
+        end
+      end
+      @combinations_sum = 0.to_lf
       @error_estimate = 1.0
     end
 
@@ -104,12 +111,13 @@ module Sapor
       max_choice_width = choice_lengths.max
       max_seats_width = @area.no_of_seats.to_s.size
       sorted_choices = sort_choices_by_result
-      lines = sorted_choices.map do |choice|
-        create_report_line(choice, max_choice_width, max_seats_width)
+      lines = sorted_choices.map.with_index do |choice, i|
+        next_choice = sorted_choices[i + 1]
+        create_report_line(choice, next_choice, max_choice_width, max_seats_width)
       end
       'Most probable rounded fractions, fractions and 95% confidence' \
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
-        "  Result    MPRF    MPF      CI(95%)     Seats\n" + lines.join("\n")
+        "  Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" + lines.join("\n")
     end
 
     def progress_report
@@ -178,8 +186,16 @@ module Sapor
       data_point.each do |choice, value|
         combinations *= BinomialsCache.binomial(value, @results[choice])
       end
+      @combinations_sum += combinations
       data_point.each do |choice, value|
         votes[choice][value] += combinations unless choice == OTHER
+      end
+      @choices.each do |a|
+        @choices.each do |b|
+          if data_point[a] > data_point[b]
+            @comparisons[a + '>' + b] += combinations
+          end
+        end
       end
       projection = @area.seats(data_point)
       seats.each_key do |choice|
@@ -231,7 +247,12 @@ module Sapor
       @results[choice].to_f / @results.values.inject(:+)
     end
 
-    def create_report_line(choice, max_choice_width, max_seats_width)
+    def larger_than(a, b)
+      probability = @comparisons[a + '>' + b] / @combinations_sum
+      probability.mantissa * (10**probability.exponent)
+    end
+
+    def create_report_line(choice, next_choice, max_choice_width, max_seats_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
       ci_seats = @seats[choice].confidence_interval(0.95)
@@ -241,6 +262,7 @@ module Sapor
         six_char_percentage(most_probable_fraction(choice)) + '  ' + \
         six_char_percentage(confidence_interval.first) + '–' + \
         six_char_percentage(confidence_interval.last) + '  ' + \
+        (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice))) + '  ' + \
         (max_seats_width == 1 ? ' ' : '') + \
         ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
         ci_seats.last.to_s.rjust(max_seats_width)
