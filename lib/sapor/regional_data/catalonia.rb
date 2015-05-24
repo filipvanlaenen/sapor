@@ -36,5 +36,24 @@ module Sapor
       end
       @overall_election_results_of_2012
     end
+
+    def seats(simulation)
+      electoral_system.project(simulation)
+    end
+
+    private
+
+    SEAT_DISTRIBUTION = { 'Barcelona' => 85, 'Girona' => 17, 'Lleida' => 15,
+                          'Tarragona' => 18 }
+
+    def electoral_system
+      if @electoral_system.nil?
+        @electoral_system = Proportional.new(overall_election_results_of_2012,
+                                             election_results_of_2012,
+                                             SEAT_DISTRIBUTION,
+                                             DhondtDenominators)
+      end
+      @electoral_system
+    end
   end
 end
