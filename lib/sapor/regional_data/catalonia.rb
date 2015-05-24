@@ -17,28 +17,24 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
 module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+  #
+  # The regional data for Catalonia.
+  #
+  class Catalonia < Area
+    def election_results_of_2012
+      if @election_results_of_2012.nil?
+        @election_results_of_2012 = load_election_results('catalonia-2012.psv')
+      end
+      @election_results_of_2012
+    end
+
+    def overall_election_results_of_2012
+      if @overall_election_results_of_2012.nil?
+        @overall_election_results_of_2012 = \
+          summarize_election_results(election_results_of_2012)
+      end
+      @overall_election_results_of_2012
+    end
   end
 end
-
-require 'sapor/number_formatter'
-require 'sapor/dichotomies'
-require 'sapor/combinations_distribution'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/pseudorandom_multirange_enumerator'
-require 'sapor/binomials_cache'
-require 'sapor/polychotomy'
-require 'sapor/first_past_the_post'
-require 'sapor/proportional'
-require 'sapor/leveled_proportional'
-require 'sapor/regional_data/area'
-require 'sapor/regional_data/catalonia'
-require 'sapor/regional_data/norway'
-require 'sapor/regional_data/united_kingdom'
-require 'sapor/regional_data/utopia'
-require 'sapor/poll'

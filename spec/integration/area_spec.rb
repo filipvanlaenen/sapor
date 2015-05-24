@@ -17,28 +17,12 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-# Library namespace
-module Sapor
-  def self.analyze(filename)
-    Poll.from_file(filename).analyze
+require 'spec_helper'
+
+describe Sapor::Area, '#load_election_results' do
+  it 'loads four constituencies for the 2012 election results for Catalonia' do
+    area = Sapor::Area.instance
+    catalonia_2012 = area.load_election_results('catalonia-2012.psv')
+    expect(catalonia_2012.size).to eq(4)
   end
 end
-
-require 'sapor/number_formatter'
-require 'sapor/dichotomies'
-require 'sapor/combinations_distribution'
-require 'sapor/dichotomy'
-require 'sapor/log4r_logger'
-require 'sapor/log_facade'
-require 'sapor/pseudorandom_multirange_enumerator'
-require 'sapor/binomials_cache'
-require 'sapor/polychotomy'
-require 'sapor/first_past_the_post'
-require 'sapor/proportional'
-require 'sapor/leveled_proportional'
-require 'sapor/regional_data/area'
-require 'sapor/regional_data/catalonia'
-require 'sapor/regional_data/norway'
-require 'sapor/regional_data/united_kingdom'
-require 'sapor/regional_data/utopia'
-require 'sapor/poll'
