@@ -96,3 +96,20 @@ describe Sapor::Area, '#lines_to_election_results' do
                                  "constituency #{NORTH}.")
   end
 end
+
+describe Sapor::Area, '#summarize_election_results' do
+  it 'summarizes one result to one result' do
+    area = Sapor::Area.instance
+    election_results = area.lines_to_election_results(NORTH_RED_LINE)
+    summary = area.summarize_election_results(election_results)
+    expect(summary[RED]).to eq(5)
+  end
+
+  it 'summarizes results of same choice in two constituencies' do
+    area = Sapor::Area.instance
+    lines = [NORTH_RED_LINE, SOUTH_RED_LINE].join("\n")
+    election_results = area.lines_to_election_results(lines)
+    summary = area.summarize_election_results(election_results)
+    expect(summary[RED]).to eq(12)
+  end
+end

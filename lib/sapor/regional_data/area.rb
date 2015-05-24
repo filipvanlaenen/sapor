@@ -38,6 +38,14 @@ module Sapor
       lines_to_election_results(lines)
     end
 
+    def summarize_election_results(election_results)
+      summary = {}
+      election_results.each_value do |local_results|
+        add_local_results_to_summary(summary, local_results)
+      end
+      summary
+    end
+
     private
 
     def add_line_to_election_results(results, line)
@@ -57,6 +65,16 @@ module Sapor
                             "constituency #{constituency}.")
       end
       results[constituency][choice] = votes
+    end
+
+    def add_local_results_to_summary(summary, local_results)
+      local_results.each_pair do |choice, votes|
+        if summary.key?(choice)
+          summary[choice] += votes
+        else
+          summary[choice] = votes
+        end
+      end
     end
   end
 end
