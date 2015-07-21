@@ -23,11 +23,12 @@ module Sapor
   #
   class Proportional
     def initialize(last_election_result, last_detailed_election_result,
-                   seat_distribution, denominators_class)
+                   seat_distribution, denominators_class, threshold = 0)
       @last_election_result = last_election_result
       @last_detailed_election_result = last_detailed_election_result
       @seat_distribution = seat_distribution
       @denominators_class = denominators_class
+      @threshold = threshold
     end
 
     def project(simulation)
@@ -79,10 +80,13 @@ module Sapor
           new_local_result[choice] = votes
         end
       end
+      local_threshold = new_local_result.values.inject(:+).to_f * @threshold
       quotients = []
       new_local_result.each_pair do |choice, new_value|
-        @denominators_class.get(no_of_seats).each do |d|
-          quotients << [choice, new_value.to_f / d]
+        if new_value >= local_threshold
+          @denominators_class.get(no_of_seats).each do |d|
+            quotients << [choice, new_value.to_f / d]
+          end
         end
       end
       quotients.sort { |a, b| b.last <=> a.last }.map(&:first).slice(0, no_of_seats)

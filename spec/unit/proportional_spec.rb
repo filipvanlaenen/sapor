@@ -17,7 +17,7 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-SAMPLE_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }
+SAMPLE_RGB_ELECTION_RESULT = { 'Red' => 120, 'Green' => 120, 'Blue' => 100 }
 
 SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
                                              },
@@ -26,16 +26,38 @@ SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
 
 SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
 
-PROPORTIONAL = Sapor::Proportional.new(SAMPLE_ELECTION_RESULT,
+THRESHOLD = 0.3
+
+PROPORTIONAL = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
                                        SAMPLE_DETAILED_ELECTION_RESULT,
                                        SAMPLE_SEAT_DISTRIBUTION,
                                        Sapor::DhondtDenominators)
 
+PROPORTIONAL_WITH_THRESHOLD = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
+                                                      SAMPLE_DETAILED_ELECTION_RESULT,
+                                                      SAMPLE_SEAT_DISTRIBUTION,
+                                                      Sapor::DhondtDenominators,
+                                                      THRESHOLD)
+
 describe Sapor::Proportional, '#project' do
+  # Seat distribution:
+  # North: Green 1 70, Red 1 50, Green 2 35, (Red 2 25)
+  # South: Blue 1 100, Red 1 70, Green 1 50, Blue 2 50, Red 2 35, (Blue 3 33)
   it 'projects same result as last result if fed with last election result' do
-    projection = PROPORTIONAL.project(SAMPLE_ELECTION_RESULT)
+    projection = PROPORTIONAL.project(SAMPLE_RGB_ELECTION_RESULT)
     expect(projection['Red']).to eq(3)
     expect(projection['Green']).to eq(3)
     expect(projection['Blue']).to eq(2)
+  end
+
+  # Seat distribution:
+  # North: Green 1 70, Red 1 50, Green 2 35 (Red 2 25, Green 3 23)
+  # South: Blue 1 100, Red 1 70, Blue 2 50, Red 2 35, Blue 3 33, (Blue 4 25,
+  #        Red 3 23, Green below threshold)
+  it 'excludes parties below the threshold' do
+    projection = PROPORTIONAL_WITH_THRESHOLD.project(SAMPLE_RGB_ELECTION_RESULT)
+    expect(projection['Red']).to eq(3)
+    expect(projection['Green']).to eq(2)
+    expect(projection['Blue']).to eq(3)
   end
 end

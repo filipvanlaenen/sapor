@@ -17,19 +17,19 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-SAMPLE_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }
+SAMPLE_RG_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }
 
 SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
                                              },
                                     'South' => { 'Red' => 70, 'Green' => 50,
                                                  'Blue' => 100 } }
 
-FPTP = Sapor::FirstPastThePost.new(SAMPLE_ELECTION_RESULT,
+FPTP = Sapor::FirstPastThePost.new(SAMPLE_RG_ELECTION_RESULT,
                                    SAMPLE_DETAILED_ELECTION_RESULT)
 
 describe Sapor::FirstPastThePost, '#project' do
   it 'projects same result as last result if fed with last election result' do
-    projection = FPTP.project(SAMPLE_ELECTION_RESULT)
+    projection = FPTP.project(SAMPLE_RG_ELECTION_RESULT)
     expect(projection['Red']).to eq(0)
     expect(projection['Green']).to eq(1)
     expect(projection['Other']).to eq(1)
