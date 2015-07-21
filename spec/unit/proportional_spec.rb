@@ -26,18 +26,10 @@ SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
 
 SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
 
-THRESHOLD = 0.3
-
 PROPORTIONAL = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
                                        SAMPLE_DETAILED_ELECTION_RESULT,
                                        SAMPLE_SEAT_DISTRIBUTION,
                                        Sapor::DhondtDenominators)
-
-PROPORTIONAL_WITH_THRESHOLD = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
-                                                      SAMPLE_DETAILED_ELECTION_RESULT,
-                                                      SAMPLE_SEAT_DISTRIBUTION,
-                                                      Sapor::DhondtDenominators,
-                                                      THRESHOLD)
 
 describe Sapor::Proportional, '#project' do
   # Seat distribution:
@@ -51,13 +43,44 @@ describe Sapor::Proportional, '#project' do
   end
 
   # Seat distribution:
+  # North: Green 1 62, Red 1 44, Green 2 31, (Red 2 22)
+  # South: Blue 1 128, Red 1 62, Green 1 44, Blue 2 64, Blue 3 42, (Red 2 31)
+  it 'extrapolates the seat distribution according to the new result' do
+    new_result = { 'Red' => 100, 'Green' => 100, 'Blue' => 120 }
+    projection = PROPORTIONAL.project(new_result)
+    expect(projection['Red']).to eq(2)
+    expect(projection['Green']).to eq(3)
+    expect(projection['Blue']).to eq(3)
+  end
+
+  # Seat distribution:
   # North: Green 1 70, Red 1 50, Green 2 35 (Red 2 25, Green 3 23)
   # South: Blue 1 100, Red 1 70, Blue 2 50, Red 2 35, Blue 3 33, (Blue 4 25,
   #        Red 3 23, Green below threshold)
   it 'excludes parties below the threshold' do
-    projection = PROPORTIONAL_WITH_THRESHOLD.project(SAMPLE_RGB_ELECTION_RESULT)
+    proportional = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
+                                           SAMPLE_DETAILED_ELECTION_RESULT,
+                                           SAMPLE_SEAT_DISTRIBUTION,
+                                           Sapor::DhondtDenominators,
+                                           51.to_f / 220)
+    projection = proportional.project(SAMPLE_RGB_ELECTION_RESULT)
     expect(projection['Red']).to eq(3)
     expect(projection['Green']).to eq(2)
     expect(projection['Blue']).to eq(3)
+  end
+
+  # Seat distribution:
+  # North: Green 1 70, Red 1 50, Green 2 35, (Red 2 25)
+  # South: Blue 1 100, Red 1 70, Green 1 50, Blue 2 50, Red 2 35, (Blue 3 33)
+  it 'includes parties at the threshold' do
+    proportional = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
+                                           SAMPLE_DETAILED_ELECTION_RESULT,
+                                           SAMPLE_SEAT_DISTRIBUTION,
+                                           Sapor::DhondtDenominators,
+                                           50.to_f / 220)
+    projection = proportional.project(SAMPLE_RGB_ELECTION_RESULT)
+    expect(projection['Red']).to eq(3)
+    expect(projection['Green']).to eq(3)
+    expect(projection['Blue']).to eq(2)
   end
 end

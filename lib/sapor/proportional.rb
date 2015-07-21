@@ -37,18 +37,22 @@ module Sapor
       @last_detailed_election_result.each_pair do |name, local_last_result|
         no_of_seats = @seat_distribution[name]
         seats = local_seats(no_of_seats, local_last_result, multiplicators)
-        seats.each do |seat|
-          if result.key?(seat)
-            result[seat] += 1
-          else
-            result[seat] = 1
-          end
-        end
+        add_seats_to_result(result, seats)
       end
       result
     end
 
     private
+
+    def add_seats_to_result(result, seats)
+      seats.each do |seat|
+        if result.key?(seat)
+          result[seat] += 1
+        else
+          result[seat] = 1
+        end
+      end
+    end
 
     def calculate_multiplicators(simulation)
       simulation_sum = simulation.values.inject(:+)
