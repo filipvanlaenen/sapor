@@ -71,25 +71,36 @@ module Sapor
       result
     end
 
-    def local_seats(no_of_seats, local_last_result, multiplicators)
-      new_local_result = {}
+    def local_votes(local_last_result, multiplicators)
+      local_votes = {}
       local_last_result.each_pair do |choice, votes|
         if multiplicators.key?(choice)
-          new_local_result[choice] = votes * multiplicators[choice]
+          local_votes[choice] = votes * multiplicators[choice]
         else
-          new_local_result[choice] = votes
+          local_votes[choice] = votes
         end
       end
-      local_threshold = new_local_result.values.inject(:+).to_f * @threshold
-      quotients = []
-      new_local_result.each_pair do |choice, new_value|
-        if new_value >= local_threshold
-          @denominators_class.get(no_of_seats).each do |d|
-            quotients << [choice, new_value.to_f / d]
-          end
+      local_votes
+    end
+
+    def local_quotients(local_votes, local_threshold, no_of_seats)
+      local_quotients = []
+      local_votes.each_pair do |choice, new_value|
+        next if new_value < local_threshold
+        @denominators_class.get(no_of_seats).each do |d|
+          local_quotients << [choice, new_value.to_f / d]
         end
       end
-      quotients.sort { |a, b| b.last <=> a.last }.map(&:first).slice(0, no_of_seats)
+      local_quotients
+    end
+
+    def local_seats(no_of_seats, local_last_result, multiplicators)
+      local_votes = local_votes(local_last_result, multiplicators)
+      local_threshold = local_votes.values.inject(:+).to_f * @threshold
+      local_quotients = local_quotients(local_votes, local_threshold,
+                                        no_of_seats)
+      sorted_quotients = local_quotients.sort { |a, b| b.last <=> a.last }
+      sorted_quotients.map(&:first).slice(0, no_of_seats)
     end
   end
 
