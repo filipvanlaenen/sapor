@@ -1,0 +1,100 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2014 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Argos, Archivo historico electoral, retrieved on 23 May 2015.
+# URL: http://www.argos.gva.es/ahe/index.html
+
+# Adapted from catalonia-2012.psv for the 2015 elections using the following
+# transformation rules:
+# c = Junts pel Sí / (Convergència i Unió + Esquerra Republicana de Catalunya – Catalunya Sí)
+#   = 39.2% / (30.7% + 13.7%)
+#   = 0.882882883
+# Junts pel Sí = c × (Convergència i Unió
+#                     + Esquerra Republicana de Catalunya – Catalunya Sí)
+# Unió Democràtica de Catalunya = (1 - c) × (Convergència i Unió
+#                                            + Esquerra Republicana de Catalunya
+#                                              – Catalunya Sí) 
+# Catalunya Sí que es Pot = Iniciativa per Catalunya Verds – Esquerra Unida i
+#                           Alternativa
+
+Barcelona | Junts pel Sí                                           | 979,373
+Barcelona | Partit dels Socialistes de Catalunya                   | 418,847
+Barcelona | Partit Popular de Catalunya                            | 361,656
+Barcelona | Catalunya Sí que es Pot                                | 303,625
+Barcelona | Ciutadans-Partido de la Ciudadanía                     | 229,746
+Barcelona | Unió Democràtica de Catalunya                          | 129,917
+Barcelona | Candidatura d'Unitat Popular – Alternativa d'Esquerres |  92,794
+Barcelona | Plataforma per Catalunya                               |  51,403
+Barcelona | Solidaritat Catalana per la Independència              |  32,296
+Barcelona | Escons en Blanc                                        |  22,817
+Barcelona | Partido Animalista Contra el Maltrato Animal           |  16,479
+Barcelona | Pirates de Catalunya                                   |  15,241
+Barcelona | Unió, Progrés i Democràcia                             |  12,147
+Barcelona | Farts.cat                                              |   9,185
+Barcelona | Via Democràtica                                        |   5,984
+Barcelona | Unificació Comunista d'Espanya                         |   1,998
+
+Girona    | Junts pel Sí                                           | 185,048
+Girona    | Partit dels Socialistes de Catalunya                   |  34,688
+Girona    | Partit Popular de Catalunya                            |  33,096
+Girona    | Unió Democràtica de Catalunya                          |  24,547
+Girona    | Catalunya Sí que es Pot                                |  20,397
+Girona    | Candidatura d'Unitat Popular – Alternativa d'Esquerres |  14,499
+Girona    | Ciutadans-Partido de la Ciudadanía                     |  12,341
+Girona    | Solidaritat Catalana per la Independència              |   6,011
+Girona    | Plataforma per Catalunya                               |   3,377
+Girona    | Escons en Blanc                                        |   1,946
+Girona    | Partido Animalista Contra el Maltrato Animal           |   1,565
+Girona    | Pirates de Catalunya                                   |   1,137
+Girona    | Farts.cat                                              |     718
+Girona    | Unió, Progrés i Democràcia                             |     701
+Girona    | Partit Republicà d'Esquerra – Izquierda Republicana    |     525
+Girona    | Unificació Comunista d'Espanya                         |     201
+
+Lleida    | Junts pel Sí                                           | 110,401
+Lleida    | Partit Popular de Catalunya                            |  23,338
+Lleida    | Partit dels Socialistes de Catalunya                   |  21,598
+Lleida    | Unió Democràtica de Catalunya                          |  14,645
+Lleida    | Catalunya Sí que es Pot                                |  11,145
+Lleida    | Ciutadans-Partido de la Ciudadanía                     |   6,881
+Lleida    | Candidatura d'Unitat Popular – Alternativa d'Esquerres |   6,302
+Lleida    | Solidaritat Catalana per la Independència              |   3,038
+Lleida    | Escons en Blanc                                        |   1,417
+Lleida    | Plataforma per Catalunya                               |   1,224
+Lleida    | Partido Animalista Contra el Maltrato Animal           |     752
+Lleida    | Pirates de Catalunya                                   |     642
+Lleida    | Farts.cat                                              |     476
+Lleida    | Unió, Progrés i Democràcia                             |     392
+Lleida    | Partit Republicà d'Esquerra – Izquierda Republicana    |     301
+Lleida    | Unificació Comunista d'Espanya                         |      90
+
+Tarragona | Junts pel Sí                                           | 148,104
+Tarragona | Partit Popular de Catalunya                            |  53,591
+Tarragona | Partit dels Socialistes de Catalunya                   |  48,642
+Tarragona | Ciutadans-Partido de la Ciudadanía                     |  26,039
+Tarragona | Catalunya Sí que es Pot                                |  24,538
+Tarragona | Unió Democràtica de Catalunya                          |  19,646
+Tarragona | Candidatura d'Unitat Popular – Alternativa d'Esquerres |  12,840
+Tarragona | Solidaritat Catalana per la Independència              |   5,493
+Tarragona | Plataforma per Catalunya                               |   4,103
+Tarragona | Escons en Blanc                                        |   2,108
+Tarragona | Partido Animalista Contra el Maltrato Animal           |   2,065
+Tarragona | Unió, Progrés i Democràcia                             |   1,373
+Tarragona | Farts.cat                                              |   1,323
+Tarragona | Pirates de Catalunya                                   |   1,199
+Tarragona | Socialistes i Republicans                              |     333
+Tarragona | Unificació Comunista d'Espanya                         |     287
