@@ -22,9 +22,29 @@ module Sapor
   # The regional data for Catalonia.
   #
   class Catalonia < Area
+    def area_code
+      'ES-CAT'
+    end
+
+    def population_size
+      # Voter turnout in 2012
+      # Source: Catalonian parliamentary election, 2012, Wikipedia, retrieved on
+      # 22 July 2015.
+      # URL: https://en.wikipedia.org/wiki/Catalonian_parliamentary_election,_2012
+      3_668_310
+    end
+
+    def threshold
+      THRESHOLD
+    end
+
+    def no_of_seats
+      SEAT_DISTRIBUTION.values.inject(:+)
+    end
+
     def election_results_of_2012
       if @election_results_of_2012.nil?
-        @election_results_of_2012 = load_election_results('catalonia-2012.psv')
+        @election_results_of_2012 = load_election_results('catalonia-2012-2015.psv')
       end
       @election_results_of_2012
     end
