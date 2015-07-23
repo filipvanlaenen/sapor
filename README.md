@@ -21,6 +21,11 @@ Usage
 Simply call `sapor` or `sapor help` to get instructions on how to use the
 program.
 
+Examples
+--------
+
+See [this](Examples.md) page.
+
 Technical Documentation
 -----------------------
 
