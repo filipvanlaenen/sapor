@@ -42,19 +42,12 @@ module Sapor
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def election_results_of_2012
-      if @election_results_of_2012.nil?
-        @election_results_of_2012 = load_election_results('catalonia-2012-2015.psv')
+    def overall_election_results_of_2012_adapted_to_2015
+      if @overall_election_results_of_2012_adapted_to_2015.nil?
+        @overall_election_results_of_2012_adapted_to_2015 = \
+          summarize_election_results(election_results_of_2012_adapted_to_2015)
       end
-      @election_results_of_2012
-    end
-
-    def overall_election_results_of_2012
-      if @overall_election_results_of_2012.nil?
-        @overall_election_results_of_2012 = \
-          summarize_election_results(election_results_of_2012)
-      end
-      @overall_election_results_of_2012
+      @overall_election_results_of_2012_adapted_to_2015
     end
 
     def seats(simulation)
@@ -68,13 +61,22 @@ module Sapor
 
     THRESHOLD = 0.03
 
+    def election_results_of_2012_adapted_to_2015
+      if @election_results_of_2012_adapted_to_2015.nil?
+        @election_results_of_2012_adapted_to_2015 = load_election_results( \
+          'catalonia-2012-2015.psv')
+      end
+      @election_results_of_2012_adapted_to_2015
+    end
+
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = Proportional.new(overall_election_results_of_2012,
-                                             election_results_of_2012,
-                                             SEAT_DISTRIBUTION,
-                                             DhondtDenominators,
-                                             THRESHOLD)
+        @electoral_system = Proportional.new( \
+          overall_election_results_of_2012_adapted_to_2015,
+          election_results_of_2012_adapted_to_2015,
+          SEAT_DISTRIBUTION,
+          DhondtDenominators,
+          THRESHOLD)
       end
       @electoral_system
     end
