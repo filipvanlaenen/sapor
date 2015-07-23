@@ -25,6 +25,15 @@ describe Sapor::Catalonia, '#area_code' do
   end
 end
 
+describe Sapor::Catalonia, '#coalitions' do
+  it 'returns JS and JS+CUP as the coalitions to track' do
+    expect(Sapor::Catalonia.instance.coalitions).to include(['Junts pel Sí'])
+    expect(Sapor::Catalonia.instance.coalitions).to \
+      include(['Junts pel Sí',
+               "Candidatura d'Unitat Popular – Alternativa d'Esquerres"])
+  end
+end
+
 describe Sapor::Catalonia, '#no_of_seats' do
   it 'returns 135 as the number of seats' do
     expect(Sapor::Catalonia.instance.no_of_seats).to eq(135)

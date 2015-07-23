@@ -26,16 +26,10 @@ module Sapor
       'ES-CAT'
     end
 
-    def population_size
-      # Voter turnout in 2012
-      # Source: Catalonian parliamentary election, 2012, Wikipedia, retrieved on
-      # 22 July 2015.
-      # URL: https://en.wikipedia.org/wiki/Catalonian_parliamentary_election,_2012
-      3_668_310
-    end
-
-    def threshold
-      THRESHOLD
+    def coalitions
+      [['Junts pel Sí'],
+       ['Junts pel Sí',
+        "Candidatura d'Unitat Popular – Alternativa d'Esquerres"]]
     end
 
     def no_of_seats
@@ -50,8 +44,20 @@ module Sapor
       @overall_election_results_of_2012_adapted_to_2015
     end
 
+    def population_size
+      # Voter turnout in 2012
+      # Source: Catalonian parliamentary election, 2012, Wikipedia, retrieved on
+      # 22 July 2015.
+      # URL: https://en.wikipedia.org/wiki/Catalonian_parliamentary_election,_2012
+      3_668_310
+    end
+
     def seats(simulation)
       electoral_system.project(simulation)
+    end
+
+    def threshold
+      THRESHOLD
     end
 
     private

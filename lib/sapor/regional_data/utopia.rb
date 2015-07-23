@@ -43,6 +43,10 @@ module Sapor
       'UT'
     end
 
+    def coalitions
+      [['Red', 'Green'], ['Red', 'Blue']]
+    end
+
     def population_size
       1_000_000
     end

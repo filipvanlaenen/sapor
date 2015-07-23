@@ -41,6 +41,10 @@ class TestArea
     'TA'
   end
 
+  def coalitions
+    [['Red', 'Green'], ['Red', 'Blue']]
+  end
+
   def population_size
     1_000
   end
@@ -252,7 +256,10 @@ describe Sapor::Polychotomy, '#report' do
                       "Yellow   46.2%    5.6%    9.3%    9.3%– 11.1%  100.0%   1–1\n" + # TODO: Shouldn't MPRF be 5.6% and CI 9.3%–9.3%?
                       "Blue     23.1%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       "Green    15.4%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      'Red       7.7%    1.9%    1.9%    1.9%–  3.7%           3–3' # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Red       7.7%    1.9%    1.9%    1.9%–  3.7%           3–3\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Coalition    Result    MPRF    MPF      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
+                      "Blue + Red    30.8%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%\n" +
+                      'Green + Red   23.1%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%'
     polychotomy = pentachotomy
     polychotomy.refine
     expect(polychotomy.report).to eq(expected_report)
@@ -272,9 +279,12 @@ describe Sapor::Polychotomy, '#report' do
                       "Choice       Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" \
                       "Medium Blue   42.9%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       "Light Green   28.6%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Dark Red      14.3%    1.9%    1.9%    1.9%–  3.7%           0–0" # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Dark Red      14.3%    1.9%    1.9%    1.9%–  3.7%           0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
 # TODO:                      "Red                                                  3–3\n" \
 # TODO:                      'Yellow                                               1–1'
+                      "Coalition    Result    MPRF    MPF      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
+                      "Blue + Red     0.0%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%\n" +
+                      'Green + Red    0.0%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%'
     expect(polychotomy.report).to eq(expected_report)
   end
 
@@ -291,8 +301,11 @@ describe Sapor::Polychotomy, '#report' do
                       "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" \
                       "Blue     42.9%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       "Green    28.6%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Red      14.3%    1.9%    1.9%    1.9%–  3.7%           3–3" # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Red      14.3%    1.9%    1.9%    1.9%–  3.7%           3–3\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
 # TODO:                      'Yellow                                          1–1'
+                      "Coalition    Result    MPRF    MPF      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
+                      "Blue + Red    57.1%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%\n" +
+                      'Green + Red   42.9%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%'
     expect(polychotomy.report).to eq(expected_report)
   end
 
@@ -309,8 +322,11 @@ describe Sapor::Polychotomy, '#report' do
                       "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" \
                       "Blue     25.0%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
                       "Green    25.0%    1.9%    1.9%    1.9%–  3.7%    0.0%   0–0\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Red      25.0%    1.9%    1.9%    1.9%–  3.7%           3–3" # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Red      25.0%    1.9%    1.9%    1.9%–  3.7%           3–3\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
 # TODO:                      'Yellow                                          1–1'
+                      "Coalition    Result    MPRF    MPF      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
+                      "Blue + Red    50.0%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%\n" +
+                      'Green + Red   50.0%    3.8%    3.8%    3.8%–  7.2%     0.0%   3–3    100.0%'
     expect(polychotomy.report).to eq(expected_report)
   end
 end
