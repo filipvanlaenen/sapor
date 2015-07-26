@@ -52,9 +52,8 @@ module Sapor
       @distribution.empty?
     end
 
-    def threshold_probability(threshold, population_size)
+    def value_threshold_probability(threshold_value)
       total = @distribution.values.inject(:+)
-      threshold_value = population_size * threshold
       distribution_over_threshold = @distribution.select do |k, _|
         k >= threshold_value
       end
@@ -65,6 +64,10 @@ module Sapor
         probability = over_threshold / total
         probability.mantissa * (10**probability.exponent)
       end
+    end
+
+    def threshold_probability(threshold, population_size)
+      value_threshold_probability(population_size * threshold)
     end
 
     def size
