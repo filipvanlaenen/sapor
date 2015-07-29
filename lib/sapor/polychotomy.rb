@@ -219,7 +219,7 @@ module Sapor
         end
       end
       @coalitions.each do |coalition|
-        coalition_value = coalition.map { |choice| data_point[choice]}.inject(:+)
+        coalition_value = coalition.map { |choice| data_point.key?(choice) ? data_point[choice] : 0}.inject(:+)
         if votes[coalition][coalition_value].nil?
           votes[coalition][coalition_value] = combinations
         else

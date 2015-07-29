@@ -283,8 +283,8 @@ describe Sapor::Polychotomy, '#report' do
 # TODO:                      "Red                                                  3–3\n" \
 # TODO:                      'Yellow                                               1–1'
                       "Coalition    Result    MPRF    MPF      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
-                      "Blue + Red     0.0%   50.0%    3.8%    3.8%–  3.8%     0.0%   3–3    100.0%\n" +
-                      'Green + Red    0.0%   50.0%    3.8%    3.8%–  3.8%     0.0%   3–3    100.0%'
+                      "Blue + Red     0.0%   50.0%    0.0%    0.0%–  0.0%     0.0%   0–0      0.0%\n" +
+                      'Green + Red    0.0%   50.0%    0.0%    0.0%–  0.0%     0.0%   0–0      0.0%'
     expect(polychotomy.report).to eq(expected_report)
   end
 
