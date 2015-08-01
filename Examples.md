@@ -4,7 +4,7 @@ Examples
 The following file is a valid poll file for a Catalonian poll. It is based on
 the results of a poll done from 1–3 July 2015 by GAPS for Òmnium Cultural.
 
-    Area=ES-CAT
+    Area=ES-CT
     ==
     Junts pel Sí=262
     Catalunya Sí que es Pot=164
