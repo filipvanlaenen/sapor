@@ -21,7 +21,7 @@ require 'spec_helper'
 
 describe Sapor::Catalonia, '#area_code' do
   it 'returns ES-CAT as the area code' do
-    expect(Sapor::Catalonia.instance.area_code).to eq('ES-CAT')
+    expect(Sapor::Catalonia.instance.area_code).to eq('ES-CT')
   end
 end
 

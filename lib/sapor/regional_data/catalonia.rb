@@ -23,7 +23,7 @@ module Sapor
   #
   class Catalonia < Area
     def area_code
-      'ES-CAT'
+      'ES-CT'
     end
 
     def coalitions
