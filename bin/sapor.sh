@@ -30,7 +30,7 @@ export SAPORDIR="/opt/sapor"
 export LOCALSAPORDIR="${HOME}/.sapor"
 export RUBY="ruby"
 
-VERSION="0.1a1"
+VERSION="0.1b1"
 COPYRIGHTYEAR="2014"
 
 case "$ACTION" in

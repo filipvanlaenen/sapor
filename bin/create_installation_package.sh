@@ -23,7 +23,7 @@
 # Create an empty temporary directory
 
 SCRIPTDIR="$( cd "$( dirname "$0" )" && pwd )"
-VERSION="0.1a1"
+VERSION="0.1b1"
 TEMPDIR="sapor-${VERSION}"
 
 if [ -d "$TEMPDIR" ]; then

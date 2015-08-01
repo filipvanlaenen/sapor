@@ -8,11 +8,11 @@ You can install this program by cloning this repository, and then executing the
 following commands in the directory where it got cloned:
 
     sudo gem build sapor.gemspec 
-    sudo gem install sapor-0.1a1.gem 
+    sudo gem install sapor-0.1b1.gem 
 
     bin/create_installation_package.sh 
-    tar -xzf sapor-0.1a1.tar.gz
-    cd sapor-0.1a1/
+    tar -xzf sapor-0.1b1.tar.gz
+    cd sapor-0.1b1/
     sudo ./install.sh
 
 Usage
