@@ -39,6 +39,10 @@ module Sapor
        ['Arbeiderpartiet', 'Senterpartiet', 'Sosialistisk Venstreparti'],
        ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt', 'Senterpartiet',
         'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Senterpartiet',
+        'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
+        'Sosialistisk Venstreparti'],
        ['Kristelig Folkeparti', 'Senterpartiet','Venstre']]
     end
 
@@ -55,6 +59,11 @@ module Sapor
 
     def seats(simulation)
       ELECTORAL_SYSTEM.project(simulation)
+    end
+
+    # TODO: Remove
+    def threshold
+      1.to_f / NO_OF_SEATS
     end
   end
 end
