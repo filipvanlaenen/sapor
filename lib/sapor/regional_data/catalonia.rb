@@ -77,7 +77,7 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = Proportional.new( \
+        @electoral_system = MultiDistrictProportional.new( \
           overall_election_results_of_2012_adapted_to_2015,
           election_results_of_2012_adapted_to_2015,
           SEAT_DISTRIBUTION,

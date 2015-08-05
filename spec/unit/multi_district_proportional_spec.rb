@@ -26,12 +26,12 @@ SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
 
 SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
 
-PROPORTIONAL = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
+PROPORTIONAL = Sapor::MultiDistrictProportional.new(SAMPLE_RGB_ELECTION_RESULT,
                                        SAMPLE_DETAILED_ELECTION_RESULT,
                                        SAMPLE_SEAT_DISTRIBUTION,
                                        Sapor::DhondtDenominators)
 
-describe Sapor::Proportional, '#project' do
+describe Sapor::MultiDistrictProportional, '#project' do
   # Seat distribution:
   # North: Green 1 70, Red 1 50, Green 2 35, (Red 2 25)
   # South: Blue 1 100, Red 1 70, Green 1 50, Blue 2 50, Red 2 35, (Blue 3 33)
@@ -58,7 +58,7 @@ describe Sapor::Proportional, '#project' do
   # South: Blue 1 100, Red 1 70, Blue 2 50, Red 2 35, Blue 3 33, (Blue 4 25,
   #        Red 3 23, Green below threshold)
   it 'excludes parties below the threshold' do
-    proportional = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
+    proportional = Sapor::MultiDistrictProportional.new(SAMPLE_RGB_ELECTION_RESULT,
                                            SAMPLE_DETAILED_ELECTION_RESULT,
                                            SAMPLE_SEAT_DISTRIBUTION,
                                            Sapor::DhondtDenominators,
@@ -73,7 +73,7 @@ describe Sapor::Proportional, '#project' do
   # North: Green 1 70, Red 1 50, Green 2 35, (Red 2 25)
   # South: Blue 1 100, Red 1 70, Green 1 50, Blue 2 50, Red 2 35, (Blue 3 33)
   it 'includes parties at the threshold' do
-    proportional = Sapor::Proportional.new(SAMPLE_RGB_ELECTION_RESULT,
+    proportional = Sapor::MultiDistrictProportional.new(SAMPLE_RGB_ELECTION_RESULT,
                                            SAMPLE_DETAILED_ELECTION_RESULT,
                                            SAMPLE_SEAT_DISTRIBUTION,
                                            Sapor::DhondtDenominators,

@@ -375,7 +375,7 @@ module Sapor
 
     LEVELING_THRESHOLD = 0.04
 
-    ELECTORAL_SYSTEM = LeveledProportional.new(LAST_ELECTION_RESULT,
+    ELECTORAL_SYSTEM = MultiDistrictLeveledProportional.new(LAST_ELECTION_RESULT,
                                                LAST_DETAILED_ELECTION_RESULT,
                                                DIRECT_SEAT_DISTRIBUTION,
                                                NO_OF_LEVELING_SEATS,

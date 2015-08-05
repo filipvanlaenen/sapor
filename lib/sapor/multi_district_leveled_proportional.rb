@@ -19,14 +19,14 @@
 
 module Sapor
   #
-  # Class representing a proportional electoral system with a second round of
-  # leveling seats.
+  # Class representing a multi-district proportional electoral system with a
+  # second round of leveling seats.
   #
-  class LeveledProportional
+  class MultiDistrictLeveledProportional
     def initialize(last_election_result, last_detailed_election_result,
                    seat_distribution, leveling_seats, leveling_threshold,
                    denominators_class)
-      @proportional = Proportional.new(last_election_result,
+      @proportional = MultiDistrictProportional.new(last_election_result,
                                        last_detailed_election_result,
                                        seat_distribution, denominators_class)
       @leveling_seats = leveling_seats

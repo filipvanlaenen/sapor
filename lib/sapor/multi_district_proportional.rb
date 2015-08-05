@@ -19,9 +19,10 @@
 
 module Sapor
   #
-  # Class representing a proportional electoral system.
+  # Class representing a proportional electoral system with more than one
+  # district.
   #
-  class Proportional
+  class MultiDistrictProportional
     def initialize(last_election_result, last_detailed_election_result,
                    seat_distribution, denominators_class, threshold = 0)
       @last_election_result = last_election_result
@@ -105,24 +106,6 @@ module Sapor
                                         no_of_seats)
       sorted_quotients = local_quotients.sort { |a, b| b.last <=> a.last }
       sorted_quotients.map(&:first).slice(0, no_of_seats)
-    end
-  end
-
-  #
-  # Class building the denominators for D'Hondt.
-  #
-  class DhondtDenominators
-    def self.get(size)
-      Range.new(1, size)
-    end
-  end
-
-  #
-  # Class building the denominators for modified Sainte-Lague.
-  #
-  class SainteLague14Denominators
-    def self.get(size)
-      Range.new(1, size).map { |a| a.equal?(1) ? 1.4 : a * 2 - 1 }
     end
   end
 end
