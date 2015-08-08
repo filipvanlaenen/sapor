@@ -26,10 +26,9 @@ SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
 
 SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
 
-PROPORTIONAL = Sapor::MultiDistrictProportional.new(SAMPLE_RGB_ELECTION_RESULT,
-                                       SAMPLE_DETAILED_ELECTION_RESULT,
-                                       SAMPLE_SEAT_DISTRIBUTION,
-                                       Sapor::DhondtDenominators)
+PROPORTIONAL = Sapor::MultiDistrictProportional.new( \
+  SAMPLE_RGB_ELECTION_RESULT, SAMPLE_DETAILED_ELECTION_RESULT,
+  SAMPLE_SEAT_DISTRIBUTION, Sapor::DhondtDenominators)
 
 describe Sapor::MultiDistrictProportional, '#project' do
   # Seat distribution:
@@ -58,11 +57,9 @@ describe Sapor::MultiDistrictProportional, '#project' do
   # South: Blue 1 100, Red 1 70, Blue 2 50, Red 2 35, Blue 3 33, (Blue 4 25,
   #        Red 3 23, Green below threshold)
   it 'excludes parties below the threshold' do
-    proportional = Sapor::MultiDistrictProportional.new(SAMPLE_RGB_ELECTION_RESULT,
-                                           SAMPLE_DETAILED_ELECTION_RESULT,
-                                           SAMPLE_SEAT_DISTRIBUTION,
-                                           Sapor::DhondtDenominators,
-                                           51.to_f / 220)
+    proportional = Sapor::MultiDistrictProportional.new( \
+      SAMPLE_RGB_ELECTION_RESULT, SAMPLE_DETAILED_ELECTION_RESULT,
+      SAMPLE_SEAT_DISTRIBUTION, Sapor::DhondtDenominators, 51.to_f / 220)
     projection = proportional.project(SAMPLE_RGB_ELECTION_RESULT)
     expect(projection['Red']).to eq(3)
     expect(projection['Green']).to eq(2)
@@ -73,11 +70,9 @@ describe Sapor::MultiDistrictProportional, '#project' do
   # North: Green 1 70, Red 1 50, Green 2 35, (Red 2 25)
   # South: Blue 1 100, Red 1 70, Green 1 50, Blue 2 50, Red 2 35, (Blue 3 33)
   it 'includes parties at the threshold' do
-    proportional = Sapor::MultiDistrictProportional.new(SAMPLE_RGB_ELECTION_RESULT,
-                                           SAMPLE_DETAILED_ELECTION_RESULT,
-                                           SAMPLE_SEAT_DISTRIBUTION,
-                                           Sapor::DhondtDenominators,
-                                           50.to_f / 220)
+    proportional = Sapor::MultiDistrictProportional.new( \
+      SAMPLE_RGB_ELECTION_RESULT, SAMPLE_DETAILED_ELECTION_RESULT,
+      SAMPLE_SEAT_DISTRIBUTION, Sapor::DhondtDenominators, 50.to_f / 220)
     projection = proportional.project(SAMPLE_RGB_ELECTION_RESULT)
     expect(projection['Red']).to eq(3)
     expect(projection['Green']).to eq(3)
