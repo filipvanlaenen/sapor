@@ -26,7 +26,8 @@ module Sapor
 
     NO_OF_SEATS = 59
 
-    ELECTORAL_SYSTEM = SingleDistrictProportional.new(NO_OF_SEATS, SainteLague14Denominators)
+    ELECTORAL_SYSTEM = SingleDistrictProportional.new(NO_OF_SEATS,
+                                                      SainteLague14Denominators)
 
     def area_code
       'NO-0301'
@@ -34,7 +35,7 @@ module Sapor
 
     def coalitions
       [['Høyre', 'Kristelig Folkeparti', 'Venstre'],
-       ['Fremskrittspartiet', 'Høyre'],
+       %w(Fremskrittspartiet Høyre),
        ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Venstre'],
        ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
         'Miljøpartiet de Grønne', 'Venstre'],
@@ -47,7 +48,7 @@ module Sapor
         'Sosialistisk Venstreparti'],
        ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
         'Sosialistisk Venstreparti'],
-       ['Kristelig Folkeparti', 'Senterpartiet','Venstre']]
+       ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']]
     end
 
     def population_size
