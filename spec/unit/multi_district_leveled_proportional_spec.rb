@@ -34,12 +34,10 @@ SAMPLE_LEVELING_THRESHOLD = 0.05
 
 SAMPLE_POLL_RESULT = { 'Red' => 120, 'Green' => 120 }
 
-LEVELED = Sapor::MultiDistrictLeveledProportional.new(SAMPLE_ELECTION_RESULT,
-                                         SAMPLE_DETAILED_ELECTION_RESULT,
-                                         SAMPLE_SEAT_DISTRIBUTION,
-                                         SAMPLE_LEVELING_SEATS,
-                                         SAMPLE_LEVELING_THRESHOLD,
-                                         Sapor::SainteLague14Denominators)
+LEVELED = Sapor::MultiDistrictLeveledProportional.new( \
+  SAMPLE_ELECTION_RESULT, SAMPLE_DETAILED_ELECTION_RESULT,
+  SAMPLE_SEAT_DISTRIBUTION, SAMPLE_LEVELING_SEATS, SAMPLE_LEVELING_THRESHOLD,
+  Sapor::SainteLague14Denominators)
 
 describe Sapor::MultiDistrictLeveledProportional, '#project' do
   it 'projects same result as last result if fed with last election result' do
