@@ -26,24 +26,22 @@ describe Sapor::Oslo, '#area_code' do
 end
 
 describe Sapor::Oslo, '#coalitions' do
-  it 'returns H+KrF+V, H+Frp, Frp+H+KrF+V, Ap+Sp+SV and Ap+Sp+SV+MDG+R as the coalitions to track' do
+  it 'returns H+KrF+V, H+Frp, Frp+H+KrF+V, Ap+Sp+SV and Ap+Sp+SV+MDG+R as' \
+     ' the coalitions to track' do
     expect(Sapor::Oslo.instance.coalitions).to include(['Høyre',
                                                         'Kristelig Folkeparti',
                                                         'Venstre'])
-    expect(Sapor::Oslo.instance.coalitions).to include(['Fremskrittspartiet',
-                                                        'Høyre'])
+    expect(Sapor::Oslo.instance.coalitions).to include(%w(Fremskrittspartiet
+                                                          Høyre))
     expect(Sapor::Oslo.instance.coalitions).to include(['Fremskrittspartiet',
                                                         'Høyre',
                                                         'Kristelig Folkeparti',
                                                         'Venstre'])
-    expect(Sapor::Oslo.instance.coalitions).to include(['Arbeiderpartiet',
-                                                        'Senterpartiet',
-                                                        'Sosialistisk Venstreparti'])
-    expect(Sapor::Oslo.instance.coalitions).to include(['Arbeiderpartiet',
-                                                        'Miljøpartiet de Grønne',
-                                                        'Rødt',
-                                                        'Senterpartiet',
-                                                        'Sosialistisk Venstreparti'])
+    expect(Sapor::Oslo.instance.coalitions).to \
+      include(['Arbeiderpartiet', 'Senterpartiet', 'Sosialistisk Venstreparti'])
+    expect(Sapor::Oslo.instance.coalitions).to \
+      include(['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt',
+               'Senterpartiet', 'Sosialistisk Venstreparti'])
     expect(Sapor::Oslo.instance.coalitions).to include(['Kristelig Folkeparti',
                                                         'Senterpartiet',
                                                         'Venstre'])
@@ -77,18 +75,18 @@ describe Sapor::Oslo, '#seats' do
     seats = oslo.seats(results)
     expect(seats['Høyre']).to eq(22)
     expect(seats['Arbeiderpartiet']).to eq(20)
-    expect(seats['Venstre']).to eq(5)    
-    expect(seats['Fremskrittspartiet']).to eq(4)    
-    expect(seats['Sosialistisk Venstreparti']).to eq(4)    
-    expect(seats['Rødt']).to eq(2)    
-    expect(seats['Kristelig Folkeparti']).to eq(1)    
-    expect(seats['Miljøpartiet de Grønne']).to eq(1)    
-    expect(seats['Senterpartiet']).to eq(0)    
-    expect(seats['Pensjonistpartiet']).to eq(0)    
-    expect(seats['Kristent Samlingsparti']).to eq(0)    
-    expect(seats['Det Liberale Folkepartiet']).to eq(0)    
-    expect(seats['Norges Kommunistiske Parti']).to eq(0)    
-    expect(seats['Demokratene']).to eq(0)    
-    expect(seats['Kystpartiet']).to eq(0)    
+    expect(seats['Venstre']).to eq(5)
+    expect(seats['Fremskrittspartiet']).to eq(4)
+    expect(seats['Sosialistisk Venstreparti']).to eq(4)
+    expect(seats['Rødt']).to eq(2)
+    expect(seats['Kristelig Folkeparti']).to eq(1)
+    expect(seats['Miljøpartiet de Grønne']).to eq(1)
+    expect(seats['Senterpartiet']).to eq(0)
+    expect(seats['Pensjonistpartiet']).to eq(0)
+    expect(seats['Kristent Samlingsparti']).to eq(0)
+    expect(seats['Det Liberale Folkepartiet']).to eq(0)
+    expect(seats['Norges Kommunistiske Parti']).to eq(0)
+    expect(seats['Demokratene']).to eq(0)
+    expect(seats['Kystpartiet']).to eq(0)
   end
 end
