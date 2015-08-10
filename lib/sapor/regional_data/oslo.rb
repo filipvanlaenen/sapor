@@ -68,7 +68,7 @@ module Sapor
 
     # TODO: Remove
     def threshold
-      1.to_f / NO_OF_SEATS
+      nil
     end
   end
 end
