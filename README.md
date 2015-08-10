@@ -1,11 +1,20 @@
-Statistical Analysis of Polling Results (SAPoR)
-===============================================
+# Statistical Analysis of Polling Results (SAPoR)
 
-Installation
-------------
+## Requirements
+
+The program is developed in Ruby, and the scripts to run it are Unix scripts
+using `/bin/sh`.
+
+## Installation
 
 You can install this program by cloning this repository, and then executing the
-following commands in the directory where it got cloned:
+commands from the following sections in the directory where it got cloned.
+
+### Latest Release 
+
+The latest release is a beta version, and has version number 0.1b1. Use the tag
+`v0.1b1` to check it out after you've cloned the repository, and build and
+install the program using the following commands:
 
     sudo gem build sapor.gemspec 
     sudo gem install sapor-0.1b1.gem 
@@ -13,6 +22,20 @@ following commands in the directory where it got cloned:
     bin/create_installation_package.sh 
     tar -xzf sapor-0.1b1.tar.gz
     cd sapor-0.1b1/
+    sudo ./install.sh
+
+### Snapshot
+
+The most recent version, currently under development, is an alpha version. It
+resides in the master branch, and has version number 0.2a1. You can build it
+using the following commands:
+
+    sudo gem build sapor.gemspec 
+    sudo gem install sapor-0.2a1.gem 
+
+    bin/create_installation_package.sh 
+    tar -xzf sapor-0.2a1.tar.gz
+    cd sapor-0.2a1/
     sudo ./install.sh
 
 Usage
