@@ -21,7 +21,7 @@ require 'spec_helper'
 
 describe Sapor::Area, '#load_election_results' do
   it 'loads four constituencies for the 2012 election results for Catalonia' do
-    area = Sapor::Area.instance
+    area = Sapor::Area.new
     catalonia_2012 = area.load_election_results('catalonia-2012.psv')
     expect(catalonia_2012.size).to eq(4)
   end

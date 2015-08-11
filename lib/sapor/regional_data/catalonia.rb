@@ -22,6 +22,7 @@ module Sapor
   # The regional data for Catalonia.
   #
   class Catalonia < Area
+    include Singleton
     def area_code
       'ES-CT'
     end

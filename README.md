@@ -59,7 +59,8 @@ Changelog
 
 **Version 0.2**
 
-* Areas: Added Oslo, local election, 2015
+* Areas: Added Norwegian municipalities Oslo, Bergen and Trondheim, local
+  election, 2015
 
 **Version 0.1**
 

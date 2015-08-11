@@ -21,17 +21,25 @@ module Sapor
   #
   # The regional data for Oslo.
   #
-  class Oslo
-    include Singleton
+  class NorwegianMunicipality < Area
+    attr_reader :area_code, :no_of_seats, :population_size
 
-    NO_OF_SEATS = 59
-
-    ELECTORAL_SYSTEM = SingleDistrictProportional.new(NO_OF_SEATS,
-                                                      SainteLague14Denominators)
-
-    def area_code
-      'NO-0301'
+    def initialize(municipality_key, population_size, no_of_seats)
+      @area_code = 'NO-' + municipality_key
+      @population_size = population_size
+      @no_of_seats = no_of_seats
+      @electoral_system  = SingleDistrictProportional.new( \
+        no_of_seats, SainteLague14Denominators)
     end
+
+    # Population sizes are equal to the electorate of 2013.
+    # Source: https://www.regjeringen.no/html/kmd/valgresultat/2013/bss.html
+    # Exception: Oslo, for which there is a projection for 2015.
+    # Source:
+    # https://www.ssb.no/valg/statistikker/stemmerettkomm/hvert-4-aar-forelopige/2015-04-13?fane=tabell&sort=nummer&tabell=223755
+    BERGEN = NorwegianMunicipality.new('1201', 193_348, 67)
+    OSLO = NorwegianMunicipality.new('0301', 511_400, 59)
+    TRONDHEIM = NorwegianMunicipality.new('1601', 131_524, 67)
 
     def coalitions
       [['Høyre', 'Kristelig Folkeparti', 'Venstre'],
@@ -44,6 +52,8 @@ module Sapor
        ['Arbeiderpartiet', 'Senterpartiet', 'Sosialistisk Venstreparti'],
        ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt', 'Senterpartiet',
         'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Kristelig Folkeparti', 'Miljøpartiet de Grønne',
+        'Senterpartiet', 'Sosialistisk Venstreparti'],
        ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Senterpartiet',
         'Sosialistisk Venstreparti'],
        ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
@@ -51,24 +61,8 @@ module Sapor
        ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']]
     end
 
-    def population_size
-      # Projection for the election of September 2015
-      # Source: Statistics Norway, retrieved on 4 August 2015.
-      # URL: https://www.ssb.no/valg/statistikker/stemmerettkomm/hvert-4-aar-forelopige/2015-04-13?fane=tabell&sort=nummer&tabell=223755
-      511_400
-    end
-
-    def no_of_seats
-      NO_OF_SEATS
-    end
-
     def seats(simulation)
-      ELECTORAL_SYSTEM.project(simulation)
-    end
-
-    # TODO: Remove
-    def threshold
-      nil
+      @electoral_system.project(simulation)
     end
   end
 end

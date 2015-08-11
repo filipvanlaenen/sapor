@@ -23,7 +23,9 @@ module Sapor
   # polls can be registered.
   #
   class Area
-    include Singleton
+    def threshold
+      nil
+    end
 
     def lines_to_election_results(lines)
       results = {}
