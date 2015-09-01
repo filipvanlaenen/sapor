@@ -59,6 +59,7 @@ Changelog
 
 **Version 0.2**
 
+* Areas: Added Greece with a simplified approach to the parliamentary elections
 * Areas: Added Norwegian municipalities Oslo, Bergen and Trondheim, local
   election, 2015
 

@@ -22,10 +22,11 @@ module Sapor
   # Class representing a proportional electoral system with only one district.
   #
   class SingleDistrictProportional
-    def initialize(no_of_seats, denominators_class, threshold = 0)
+    def initialize(no_of_seats, denominators_class, threshold = 0, bonus = 0)
       @no_of_seats = no_of_seats
       @denominators_class = denominators_class
       @threshold = threshold
+      @bonus = bonus
     end
 
     def project(simulation)
@@ -45,6 +46,7 @@ module Sapor
       simulation.each_key do |choice|
         result[choice] = 0
       end
+      result[simulation.max { |a, b| a.last <=> b.last }[0]] = @bonus
       result[OTHER] = 0
       result
     end
