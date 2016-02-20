@@ -26,11 +26,9 @@ describe Sapor::Greece, '#area_code' do
 end
 
 describe Sapor::Greece, '#coalitions' do
-  it 'returns ΣΥΡΙΖΑ and ΣΥΡΙΖΑ+ΑΝΕΛ as the coalitions to track' do
+  it 'returns at least ΣΥΡΙΖΑ and ΣΥΡΙΖΑ+ΑΝΕΛ as the coalitions to track' do
     expect(Sapor::Greece.instance.coalitions).to include(['ΣΥΡΙΖΑ'])
     expect(Sapor::Greece.instance.coalitions).to include(%w(ΣΥΡΙΖΑ ΑΝΕΛ))
-    expect(Sapor::Greece.instance.coalitions).to include(['ΝΔ', 'ΠΑΣΟΚ',
-                                                          'Το Ποτάμι'])
   end
 end
 
