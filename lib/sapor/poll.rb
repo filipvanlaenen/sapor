@@ -16,7 +16,6 @@
 #
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
-
 module Sapor
   OTHER = 'Other'
 
@@ -33,7 +32,10 @@ module Sapor
      NorwegianMunicipality::BERGEN, NorwegianMunicipality::OSLO,
      NorwegianMunicipality::TRONDHEIM, UnitedKingdom.instance,
      Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
+
     TYPE_KEY = 'Type'
+    REFERENDUM_TYPE_VALUE = 'Referendum'
+    ELECTION_TYPE_VALUE = 'Election'
 
     def initialize(metadata, results)
       @logger = LogFacade.create_logger
@@ -113,16 +115,25 @@ module Sapor
       @area.population_size
     end
 
+    def referendum?
+      @type == REFERENDUM_TYPE_VALUE
+    end
+
     def threshold
-      @area.threshold
+      if referendum?
+        0.5
+      else
+        @area.threshold
+      end
     end
 
     def analyze_until_convergence(max_error)
       while @analysis.error_estimate > max_error
         @analysis.refine
         @logger.info(@analysis.report)
-        @logger.info('Error estimate: ε ≤' \
-                     " #{three_digits_percentage(@analysis.error_estimate)}.")
+        @logger.info('Error estimate: ε ≤ ' +
+                     three_digits_percentage(@analysis.error_estimate) +
+                     '.')
         @logger.info(@analysis.progress_report)
       end
     end
