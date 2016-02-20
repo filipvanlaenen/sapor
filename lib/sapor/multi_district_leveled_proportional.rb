@@ -27,8 +27,8 @@ module Sapor
                    seat_distribution, leveling_seats, leveling_threshold,
                    denominators_class)
       @proportional = MultiDistrictProportional.new(last_election_result,
-                                       last_detailed_election_result,
-                                       seat_distribution, denominators_class)
+                                                    last_detailed_election_result,
+                                                    seat_distribution, denominators_class)
       @leveling_seats = leveling_seats
       @leveling_threshold = leveling_threshold
       @denominators_class = denominators_class

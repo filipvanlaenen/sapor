@@ -54,6 +54,11 @@ describe Sapor::Poll, '#from_file' do
     expect(poll.area.area_code).to eq('UT')
   end
 
+  it 'reads a poll from a file and extracts type' do
+    poll = Sapor::Poll.from_file(SAMPLE_FILE)
+    expect(poll.type).to eq('Election')
+  end
+
   it 'reads a poll from a file and extracts first result' do
     poll = Sapor::Poll.from_file(SAMPLE_FILE)
     expect(poll.result('Red')).to eq(1)

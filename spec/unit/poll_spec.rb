@@ -20,7 +20,7 @@
 require 'spec_helper'
 
 SAMPLE_POLL_ARRAY = ['foo=bar', 'baz=qux', '==', 'a=1', 'b=2']
-SAMPLE_METADATA = { 'Area' => 'UT' }
+SAMPLE_METADATA = { 'Area' => 'UT', 'Type' => 'Election' }
 SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
 MAX_ERROR = 0.05
 MAX_VALUE_ERROR = 50_000
@@ -49,6 +49,10 @@ end
 describe Sapor::Poll, '#new' do
   it 'sets the area' do
     expect(sample_poll.area.area_code).to eq('UT')
+  end
+
+  it 'sets the type' do
+    expect(sample_poll.type).to eq('Election')
   end
 
   it 'sets the results' do

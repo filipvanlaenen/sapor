@@ -44,7 +44,7 @@ module Sapor
     end
 
     def coalitions
-      [['Red', 'Green'], ['Red', 'Blue']]
+      [%w(Red Green), %w(Red Blue)]
     end
 
     def population_size

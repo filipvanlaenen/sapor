@@ -25,7 +25,7 @@ module Sapor
   #
   class Poll
     include NumberFormatter
-    attr_reader :area, :logger
+    attr_reader :area, :logger, :type
 
     AREA_KEY = 'Area'
     AREAS_MAP = {}
@@ -33,10 +33,12 @@ module Sapor
      NorwegianMunicipality::BERGEN, NorwegianMunicipality::OSLO,
      NorwegianMunicipality::TRONDHEIM, UnitedKingdom.instance,
      Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
+    TYPE_KEY = 'Type'
 
     def initialize(metadata, results)
       @logger = LogFacade.create_logger
       @area = lookup_area(metadata.delete(AREA_KEY))
+      @type = metadata.delete(TYPE_KEY)
       @results = interpret(results)
     end
 

@@ -24,11 +24,11 @@ module Sapor
   class UnitedKingdom < Area
     include Singleton
 
-#    LAST_DETAILED_ELECTION_RESULT = load_election_results('uk-2015.psv')
-#    LAST_ELECTION_RESULT = summarize_election_results(LAST_DETAILED_ELECTION_RESULT)
+    #    LAST_DETAILED_ELECTION_RESULT = load_election_results('uk-2015.psv')
+    #    LAST_ELECTION_RESULT = summarize_election_results(LAST_DETAILED_ELECTION_RESULT)
 
-#    ELECTORAL_SYSTEM = FirstPastThePost.new(LAST_ELECTION_RESULT,
-#                                            LAST_DETAILED_ELECTION_RESULT)
+    #    ELECTORAL_SYSTEM = FirstPastThePost.new(LAST_ELECTION_RESULT,
+    #                                            LAST_DETAILED_ELECTION_RESULT)
 
     def area_code
       'UK'
@@ -50,6 +50,6 @@ module Sapor
 
     def threshold
       nil
-    end   
+    end
   end
 end

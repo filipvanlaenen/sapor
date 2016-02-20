@@ -127,7 +127,7 @@ module Sapor
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
         "  Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" +
         choice_lines.join("\n") + "\n" +
-        'Coalition'.ljust(max_coalition_width) + "  Result    MPRF    MPF" +
+        'Coalition'.ljust(max_coalition_width) + '  Result    MPRF    MPF' \
         "      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
         coalition_lines.join("\n")
     end
@@ -219,7 +219,7 @@ module Sapor
         end
       end
       @coalitions.each do |coalition|
-        coalition_value = coalition.map { |choice| data_point.key?(choice) ? data_point[choice] : 0}.inject(:+)
+        coalition_value = coalition.map { |choice| data_point.key?(choice) ? data_point[choice] : 0 }.inject(:+)
         if votes[coalition][coalition_value].nil?
           votes[coalition][coalition_value] = combinations
         else
@@ -235,7 +235,7 @@ module Sapor
         end
       end
       @coalitions.each do |coalition|
-        coalition_value = coalition.map { |choice| projection.key?(choice) ? projection[choice] : 0}.inject(:+)
+        coalition_value = coalition.map { |choice| projection.key?(choice) ? projection[choice] : 0 }.inject(:+)
         if seats[coalition][coalition_value].nil?
           seats[coalition][coalition_value] = combinations
         else
