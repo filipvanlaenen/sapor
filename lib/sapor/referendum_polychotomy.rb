@@ -113,12 +113,12 @@ module Sapor
       end
       'Most probable rounded fractions, fractions and 95% confidence' \
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
-        "  Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" +
+        "  Result    MPRF    MPF      CI(95%)      P(>↓)\n" +
         choice_lines.join("\n")
     end
 
     def progress_report
-      space_size_ratio = space_size / @no_of_data_points
+      space_size_ratio = space_size.to_f / @no_of_data_points
       if space_size_ratio > 10
         space_size_ratio = with_thousands_separator(space_size_ratio.round)
       else
