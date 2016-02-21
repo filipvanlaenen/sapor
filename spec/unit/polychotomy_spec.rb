@@ -240,7 +240,7 @@ describe Sapor::Polychotomy, '#progress_report' do
 
   it 'rounds the fraction of the space size searched with 1 decimal if' \
      ' larger than one tenth' do
-    expected_report = '2,048 simulations out of 19,433 data points, 1 / 7.0' \
+    expected_report = '2,048 simulations out of 19,433 data points, 1 / 7.3' \
                       ' of search space size (142,120).'
     polychotomy = pentachotomy
     12.times { polychotomy.refine }
