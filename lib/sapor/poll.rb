@@ -146,7 +146,11 @@ module Sapor
 
     def analyze_as_polychotomy(max_error)
       @logger.info('Analyzing as a polychotomy...')
-      @analysis = Polychotomy.new(@results, @area, @analysis, max_error)
+      if referendum?
+        @analysis = ReferendumPolychotomy.new(@results, @area, @analysis, max_error)
+      else
+        @analysis = Polychotomy.new(@results, @area, @analysis, max_error)
+      end
       analyze_until_convergence(max_error)
     end
   end
