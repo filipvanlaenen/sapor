@@ -191,8 +191,11 @@ module Sapor
         unless choice == OTHER
           mpv_new = calculate_most_probable_fraction(choice, new_simulations)
           mpv_old = calculate_most_probable_fraction(choice, @distributions)
-          delta = (mpv_new - mpv_old).abs
-          error_estimate = [error_estimate, delta].max
+          mpv_delta = (mpv_new - mpv_old).abs
+          mprf_new = calculate_most_probable_rounded_fraction(choice, new_simulations)
+          mprf_old = calculate_most_probable_rounded_fraction(choice, @distributions)
+          mprf_delta = (mprf_new - mprf_old).abs
+          error_estimate = [error_estimate, mpv_delta, mprf_delta].max
         end
       end
       error_estimate
@@ -256,12 +259,16 @@ module Sapor
         six_char_percentage(confidence_interval.last) + '  ' + \
         (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice)))
     end
+    
+    def calculate_most_probable_rounded_fraction(key, distributions)
+      distributions[key].most_probable_rounded_fraction(@area.population_size)
+    end
 
     def most_probable_rounded_fraction(key)
       if @no_of_simulations == 0
         nil
       else
-        @distributions[key].most_probable_rounded_fraction(@area.population_size)
+        calculate_most_probable_rounded_fraction(key, @distributions)
       end
     end
   end
