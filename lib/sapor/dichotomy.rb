@@ -29,6 +29,7 @@ module Sapor
       @distribution = CombinationsDistribution.new
       middle = @population_size / 2
       @distribution[middle] = combinations_for(middle)
+      @previous_distribution = @distribution.dup
     end
 
     def combinations(value)
@@ -56,6 +57,7 @@ module Sapor
     end
 
     def refine
+      @previous_distribution = @distribution.dup
       new_values = find_refinement_values
       new_values.each do |value|
         @distribution[value] = combinations_for(value)
@@ -127,11 +129,26 @@ module Sapor
         find_refinement_value_at_top
     end
 
+    def previous_confidence_interval(level)
+      @previous_distribution.confidence_interval(level, @population_size).map { |x| x.to_f / @population_size }
+    end
+
+    def previous_most_probable_fraction
+      @previous_distribution.most_probable_value.to_f / @population_size
+    end
+
     def estimate_error
       if @distribution.size == @population_size + 1
         0
       else
-        1.to_f / @distribution.size
+        ci_error_estimates = [0.8, 0.9, 0.95, 0.99].map do |l|
+          ci = confidence_interval(l)
+          pci = previous_confidence_interval(l)
+          [(ci.first - pci.first).abs, (ci.last - pci.last).abs].max
+        end
+        [1.to_f / @distribution.size,
+         (most_probable_fraction - previous_most_probable_fraction).abs,
+         ci_error_estimates.max].max
       end
     end
   end
