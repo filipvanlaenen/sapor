@@ -67,10 +67,10 @@ def pentachotomy(max_error = 0.01)
   dichotomies.refine
   dichotomies.refine
   dichotomies.refine
-  Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, max_error)
+  Sapor::RepresentativesPolychotomy.new(results, TEST_AREA, dichotomies, max_error)
 end
 
-describe Sapor::Polychotomy, '#new' do
+describe Sapor::RepresentativesPolychotomy, '#new' do
   it 'extracts the 99.99% confidence intervals as ranges for max 1% error' do
     expect(pentachotomy.range('Red').size).to eq(17)
     expect(pentachotomy.range('Green').size).to eq(19)
@@ -89,7 +89,7 @@ describe Sapor::Polychotomy, '#new' do
   # TODO: A test case where the construction of the enumerator fails
 end
 
-describe Sapor::Polychotomy, '#error_estimate' do
+describe Sapor::RepresentativesPolychotomy, '#error_estimate' do
   it 'is 1 by default (no refinement)' do
     polychotomy = pentachotomy
     expect(polychotomy.error_estimate).to eq(1.0)
@@ -119,7 +119,7 @@ describe Sapor::Polychotomy, '#error_estimate' do
   end
 end
 
-describe Sapor::Polychotomy, '#most_probable_fraction' do
+describe Sapor::RepresentativesPolychotomy, '#most_probable_fraction' do
   it 'is nil by default (no refinement)' do
     polychotomy = pentachotomy
     expect(polychotomy.most_probable_fraction('Red')).to be_nil
@@ -159,7 +159,7 @@ describe Sapor::Polychotomy, '#most_probable_fraction' do
   end
 end
 
-describe Sapor::Polychotomy, '#no_of_data_points' do
+describe Sapor::RepresentativesPolychotomy, '#no_of_data_points' do
   it 'is 0 by default (no refinement)' do
     polychotomy = pentachotomy
     expect(polychotomy.no_of_data_points).to eq(0)
@@ -189,7 +189,7 @@ describe Sapor::Polychotomy, '#no_of_data_points' do
   # TODO: A test case that runs all the simulations
 end
 
-describe Sapor::Polychotomy, '#no_of_simulations' do
+describe Sapor::RepresentativesPolychotomy, '#no_of_simulations' do
   it 'is 0 by default (no refinement)' do
     polychotomy = pentachotomy
     expect(polychotomy.no_of_simulations).to eq(0)
@@ -219,7 +219,7 @@ describe Sapor::Polychotomy, '#no_of_simulations' do
   # TODO: A test case that runs until the end of the enumerator
 end
 
-describe Sapor::Polychotomy, '#progress_report' do
+describe Sapor::RepresentativesPolychotomy, '#progress_report' do
   it 'reports progress with the number of simulations and data points,' \
      ' together with the search space size and the fraction that already has' \
      ' been searched' do
@@ -248,7 +248,7 @@ describe Sapor::Polychotomy, '#progress_report' do
   end
 end
 
-describe Sapor::Polychotomy, '#report' do
+describe Sapor::RepresentativesPolychotomy, '#report' do
   it 'produces a report after first refinement for short choice labels' do
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
@@ -272,7 +272,7 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     dichotomies.refine
     dichotomies.refine
-    polychotomy = Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, 0.01)
+    polychotomy = Sapor::RepresentativesPolychotomy.new(results, TEST_AREA, dichotomies, 0.01)
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
@@ -294,7 +294,7 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     dichotomies.refine
     dichotomies.refine
-    polychotomy = Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, 0.01)
+    polychotomy = Sapor::RepresentativesPolychotomy.new(results, TEST_AREA, dichotomies, 0.01)
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
@@ -315,7 +315,7 @@ describe Sapor::Polychotomy, '#report' do
     dichotomies.refine
     dichotomies.refine
     dichotomies.refine
-    polychotomy = Sapor::Polychotomy.new(results, TEST_AREA, dichotomies, 0.01)
+    polychotomy = Sapor::RepresentativesPolychotomy.new(results, TEST_AREA, dichotomies, 0.01)
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \

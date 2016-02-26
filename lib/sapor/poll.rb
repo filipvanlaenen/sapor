@@ -149,7 +149,7 @@ module Sapor
       if referendum?
         @analysis = ReferendumPolychotomy.new(@results, @area, @analysis, max_error)
       else
-        @analysis = Polychotomy.new(@results, @area, @analysis, max_error)
+        @analysis = RepresentativesPolychotomy.new(@results, @area, @analysis, max_error)
       end
       analyze_until_convergence(max_error)
     end

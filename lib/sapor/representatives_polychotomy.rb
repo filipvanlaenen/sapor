@@ -21,9 +21,9 @@ require 'prime'
 
 module Sapor
   #
-  # Represents a polychotomy for a referendum.
+  # Represents a polychotomy for the election of representatives.
   #
-  class ReferendumPolychotomy < Polychotomy
+  class RepresentativesPolychotomy < Polychotomy
     include NumberFormatter
 
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
@@ -32,12 +32,14 @@ module Sapor
       @results = results
       @area = area
       @choices = results.keys
+      @coalitions = area.coalitions
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
       range_sizes = @ranges.values.map(&:size)
       @enum = PseudoRandomMultiRangeEnumerator.new(range_sizes).each
       @no_of_simulations = 0
       @no_of_data_points = 0
       @distributions = create_new_votes_distributions # TODO: Rename to @votes
+      @seats = create_new_seats_distributions
       @comparisons = {}
       @choices.each do |a|
         @choices.each do |b|
@@ -79,21 +81,23 @@ module Sapor
     def refine
       no_of_new_simulations = 0
       new_votes = create_new_votes_distributions
+      new_seats = create_new_seats_distributions
       while @no_of_data_points == 0 || no_of_new_simulations == 0 ||
             no_of_new_simulations < @no_of_simulations
-        no_of_new_simulations += try_next_data_point(new_votes)
+        no_of_new_simulations += try_next_data_point(new_votes, new_seats)
       end
       unless @no_of_simulations == 0
         @error_estimate = calculate_error_estimate(new_votes)
       end
       @distributions = merge_distributions(@distributions, new_votes)
+      @seats = merge_distributions(@seats, new_seats)
       @no_of_simulations += no_of_new_simulations
     end
 
-    def try_next_data_point(new_votes)
+    def try_next_data_point(new_votes, new_seats)
       data_point = next_data_point
       if data_point[OTHER] >= 0
-        simulate(new_votes, data_point)
+        simulate(new_votes, new_seats, data_point)
         new_simulation = 1
       else
         new_simulation = 0
@@ -106,15 +110,26 @@ module Sapor
       choice_lengths = @choices.map(&:length)
       choice_lengths << 6
       max_choice_width = choice_lengths.max
+      max_seats_width = @area.no_of_seats.to_s.size
       sorted_choices = sort_choices_by_result
       choice_lines = sorted_choices.map.with_index do |choice, i|
         next_choice = sorted_choices[i + 1]
-        create_choice_report_line(choice, next_choice, max_choice_width)
+        create_choice_report_line(choice, next_choice, max_choice_width, max_seats_width)
+      end
+      coalition_lengths = @coalitions.map { |coalition| coalition_label(coalition).length }
+      coalition_lengths << 6
+      max_coalition_width = coalition_lengths.max
+      sorted_coalitions = sort_coalitions_by_result
+      coalition_lines = sorted_coalitions.map do |coalition|
+        create_coalition_report_line(coalition, max_coalition_width, max_seats_width)
       end
       'Most probable rounded fractions, fractions and 95% confidence' \
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
-        "  Result    MPRF    MPF      CI(95%)      P(>↓)\n" +
-        choice_lines.join("\n")
+        "  Result    MPRF    MPF      CI(95%)      P(>↓)  Seats\n" +
+        choice_lines.join("\n") + "\n" +
+        'Coalition'.ljust(max_coalition_width) + '  Result    MPRF    MPF' \
+        "      CI(95%)     P(>50%)  Seats  P(>50%)\n" +
+        coalition_lines.join("\n")
     end
 
     def progress_report
@@ -144,6 +159,23 @@ module Sapor
       ranges
     end
 
+    def create_new_seats_distributions
+      distributions = {}
+      @choices.each do |choice|
+        distributions[choice] = CombinationsDistribution.new
+        Range.new(0, @area.no_of_seats).each do |value|
+          distributions[choice][value] = 0.to_lf
+        end
+      end
+      @coalitions.each do |coalition|
+        distributions[coalition] = CombinationsDistribution.new
+        Range.new(0, @area.no_of_seats).each do |value|
+          distributions[coalition][value] = 0.to_lf
+        end
+      end
+      distributions
+    end
+
     def create_new_votes_distributions
       distributions = {}
       @choices.each do |choice|
@@ -153,6 +185,9 @@ module Sapor
             distributions[choice][value] = 0.to_lf
           end
         end
+      end
+      @coalitions.each do |coalition|
+        distributions[coalition] = CombinationsDistribution.new
       end
       distributions
     end
@@ -167,7 +202,7 @@ module Sapor
       data_point
     end
 
-    def simulate(votes, data_point)
+    def simulate(votes, seats, data_point)
       combinations = 1.to_lf
       data_point.each do |choice, value|
         combinations *= BinomialsCache.binomial(value, @results[choice])
@@ -183,6 +218,30 @@ module Sapor
           end
         end
       end
+      @coalitions.each do |coalition|
+        coalition_value = coalition.map { |choice| data_point.key?(choice) ? data_point[choice] : 0 }.inject(:+)
+        if votes[coalition][coalition_value].nil?
+          votes[coalition][coalition_value] = combinations
+        else
+          votes[coalition][coalition_value] += combinations
+        end
+      end
+      projection = @area.seats(data_point)
+      @choices.each do |choice|
+        if projection.key?(choice)
+          seats[choice][projection[choice]] += combinations
+        else
+          seats[choice][0] += combinations
+        end
+      end
+      @coalitions.each do |coalition|
+        coalition_value = coalition.map { |choice| projection.key?(choice) ? projection[choice] : 0 }.inject(:+)
+        if seats[coalition][coalition_value].nil?
+          seats[coalition][coalition_value] = combinations
+        else
+          seats[coalition][coalition_value] += combinations
+        end
+      end
     end
 
     def calculate_error_estimate(new_simulations)
@@ -191,11 +250,8 @@ module Sapor
         unless choice == OTHER
           mpv_new = calculate_most_probable_fraction(choice, new_simulations)
           mpv_old = calculate_most_probable_fraction(choice, @distributions)
-          mpv_delta = (mpv_new - mpv_old).abs
-          mprf_new = calculate_most_probable_rounded_fraction(choice, new_simulations)
-          mprf_old = calculate_most_probable_rounded_fraction(choice, @distributions)
-          mprf_delta = (mprf_new - mprf_old).abs
-          error_estimate = [error_estimate, mpv_delta, mprf_delta].max
+          delta = (mpv_new - mpv_old).abs
+          error_estimate = [error_estimate, delta].max
         end
       end
       error_estimate
@@ -208,6 +264,10 @@ module Sapor
           merged_distributions[choice] = distributions1[choice] + \
                                          distributions2[choice]
         end
+      end
+      @coalitions.each do |coalition|
+        merged_distributions[coalition] = distributions1[coalition] + \
+                                          distributions2[coalition]
       end
       merged_distributions
     end
@@ -243,32 +303,56 @@ module Sapor
       @results[choice].to_f / @results.values.inject(:+)
     end
 
+    def coalition_result(coalition)
+      coalition.map { |choice| @results[choice].to_f }.inject(:+) / @results.values.inject(:+)
+    end
+
     def larger_than(a, b)
       probability = @comparisons[a + '>' + b] / @combinations_sum
       probability.mantissa * (10**probability.exponent)
     end
 
-    def create_choice_report_line(choice, next_choice, max_choice_width)
+    def create_choice_report_line(choice, next_choice, max_choice_width, max_seats_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
+      ci_seats = @seats[choice].confidence_interval(0.95)
       choice.ljust(max_choice_width) + '  ' + \
         six_char_percentage(result(choice)) + '  ' + \
         six_char_percentage(most_probable_rounded_fraction(choice)) + '  ' + \
         six_char_percentage(most_probable_fraction(choice)) + '  ' + \
         six_char_percentage(confidence_interval.first) + '–' + \
         six_char_percentage(confidence_interval.last) + '  ' + \
-        (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice)))
+        (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice))) + '  ' + \
+        (max_seats_width == 1 ? ' ' : '') + \
+        ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
+        ci_seats.last.to_s.rjust(max_seats_width)
     end
-    
-    def calculate_most_probable_rounded_fraction(key, distributions)
-      distributions[key].most_probable_rounded_fraction(@area.population_size)
+
+    def create_coalition_report_line(coalition, max_coalition_width, max_seats_width)
+      ci_values = @distributions[coalition].confidence_interval(0.95)
+      majority_votes_probability = @distributions[coalition].threshold_probability(0.5, @area.population_size)
+      confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
+      ci_seats = @seats[coalition].confidence_interval(0.95)
+      seats_majority = 1 + @area.no_of_seats / 2
+      majority_seats_probability = @seats[coalition].value_threshold_probability(seats_majority)
+      coalition_label(coalition).ljust(max_coalition_width) + '  ' + \
+        six_char_percentage(coalition_result(coalition)) + '  ' + \
+        six_char_percentage(most_probable_rounded_fraction(coalition)) + '  ' + \
+        six_char_percentage(most_probable_fraction(coalition)) + '  ' + \
+        six_char_percentage(confidence_interval.first) + '–' + \
+        six_char_percentage(confidence_interval.last) + '   ' + \
+        six_char_percentage(majority_votes_probability) + '  ' + \
+        (max_seats_width == 1 ? ' ' : '') + \
+        ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
+        ci_seats.last.to_s.rjust(max_seats_width) + '    ' + \
+        six_char_percentage(majority_seats_probability)
     end
 
     def most_probable_rounded_fraction(key)
       if @no_of_simulations == 0
         nil
       else
-        calculate_most_probable_rounded_fraction(key, @distributions)
+        @distributions[key].most_probable_rounded_fraction(@area.population_size)
       end
     end
   end
