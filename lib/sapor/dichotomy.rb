@@ -22,6 +22,9 @@ module Sapor
   # Represents a dichotomy.
   #
   class Dichotomy
+    STANDARD_CONFIDENCE_LEVELS = [0.8, 0.9, 0.95, 0.99]
+    DEFAULT_CONFIDENCE_LEVEL = 0.95
+
     def initialize(number, sample_size, population_size)
       @number = number
       @sample_size = sample_size
@@ -36,11 +39,11 @@ module Sapor
       @distribution[value]
     end
 
-    def confidence_interval(level = 0.95)
+    def confidence_interval(level = DEFAULT_CONFIDENCE_LEVEL)
       value_confidence_interval(level).map { |x| x.to_f / @population_size }
     end
 
-    def confidence_interval_values(level = 0.95)
+    def confidence_interval_values(level = DEFAULT_CONFIDENCE_LEVEL)
       @distribution.confidence_interval_values(level)
     end
 
@@ -68,7 +71,7 @@ module Sapor
       @distribution.threshold_probability(threshold, @population_size)
     end
 
-    def value_confidence_interval(level = 0.95)
+    def value_confidence_interval(level = DEFAULT_CONFIDENCE_LEVEL)
       @distribution.confidence_interval(level, @population_size)
     end
 
@@ -130,7 +133,9 @@ module Sapor
     end
 
     def previous_confidence_interval(level)
-      @previous_distribution.confidence_interval(level, @population_size).map { |x| x.to_f / @population_size }
+      @previous_distribution.confidence_interval(level, @population_size).map do |x|
+        x.to_f / @population_size
+      end
     end
 
     def previous_most_probable_fraction
@@ -141,7 +146,7 @@ module Sapor
       if @distribution.size == @population_size + 1
         0
       else
-        ci_error_estimates = [0.8, 0.9, 0.95, 0.99].map do |l|
+        ci_error_estimates = STANDARD_CONFIDENCE_LEVELS.map do |l|
           ci = confidence_interval(l)
           pci = previous_confidence_interval(l)
           [(ci.first - pci.first).abs, (ci.last - pci.last).abs].max
