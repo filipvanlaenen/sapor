@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Statistical Analysis of Polling Results (SAPoR)
-# Copyright © 2014 Filip van Laenen <f.a.vanlaenen@ieee.org>
+# Copyright © 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
 #
 # This file is part of SAPoR.
 #

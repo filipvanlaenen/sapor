@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Statistical Analysis of Polling Results (SAPoR)
-# Copyright © 2014 Filip van Laenen <f.a.vanlaenen@ieee.org>
+# Copyright © 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
 #
 # This file is part of SAPoR.
 #
@@ -31,7 +31,7 @@ export LOCALSAPORDIR="${HOME}/.sapor"
 export RUBY="ruby"
 
 VERSION="0.2a1"
-COPYRIGHTYEAR="2014"
+COPYRIGHTYEAR="2016"
 
 case "$ACTION" in
   analyze)
