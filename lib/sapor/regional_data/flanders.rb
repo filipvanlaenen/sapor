@@ -29,7 +29,15 @@ module Sapor
 
     def coalitions
       [['N-VA', 'CD&V'],
-       ['N-VA', 'CD&V', 'Open Vld']]
+       ['N-VA', 'CD&V', 'Open Vld'],
+       ['N-VA', 'CD&V', 'sp.a'],
+       ['CD&V', 'Open Vld'],
+       ['CD&V', 'sp.a'],
+       ['CD&V', 'Open Vld', 'sp.a'],
+       ['Open Vld', 'sp.a'],
+       ['Open Vld', 'sp.a', 'Groen'],
+       ['CD&V', 'sp.a', 'Groen'],
+       ['N-VA', 'Vlaams Belang']]
     end
 
     def no_of_seats

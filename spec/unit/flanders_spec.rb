@@ -30,12 +30,44 @@ describe Sapor::Flanders, '#coalitions' do
     Sapor::Flanders.instance.coalitions
   end
 
-  it 'returns N-VA + CD&V as a coalition to track' do
+  it 'returns N-VA + CD&V (Kartel) as a coalition to track' do
     expect(flemish_coalitions).to include(['N-VA', 'CD&V'])
   end
 
-  it 'returns N-VA + CD&V + Open Vld as a coalition to track' do
+  it 'returns N-VA + CD&V + Open Vld (Bourgeois)as a coalition to track' do
     expect(flemish_coalitions).to include(['N-VA', 'CD&V', 'Open Vld'])
+  end
+
+  it 'returns N-VA + CD&V + sp.a (Peeters II) as a coalition to track' do
+    expect(flemish_coalitions).to include(['N-VA', 'CD&V', 'sp.a'])
+  end
+
+  it 'returns CD&V + Open Vld (rooms-blauw) as a coalition to track' do
+    expect(flemish_coalitions).to include(['CD&V', 'Open Vld'])
+  end
+
+  it 'returns CD&V + sp.a (rooms-rood) as a coalition to track' do
+    expect(flemish_coalitions).to include(['CD&V', 'sp.a'])
+  end
+
+  it 'returns CD&V + Open Vld + sp.a (tripartite) as a coalition to track' do
+    expect(flemish_coalitions).to include(['CD&V', 'Open Vld', 'sp.a'])
+  end
+
+  it 'returns Open Vld + sp.a (Paars) as a coalition to track' do
+    expect(flemish_coalitions).to include(['Open Vld', 'sp.a'])
+  end
+
+  it 'returns Open Vld + sp.a + Groen (Paars-groen) as a coalition to track' do
+    expect(flemish_coalitions).to include(['Open Vld', 'sp.a', 'Groen'])
+  end
+
+  it 'returns CD&V + sp.a + Groen (Regenboog) as a coalition to track' do
+    expect(flemish_coalitions).to include(['CD&V', 'sp.a', 'Groen'])
+  end
+
+  it 'returns N-VA + Vlaams Belang (V) as a coalition to track' do
+    expect(flemish_coalitions).to include(['N-VA', 'Vlaams Belang'])
   end
 end
 
