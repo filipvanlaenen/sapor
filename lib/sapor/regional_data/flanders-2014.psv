@@ -1,0 +1,96 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Wikipedia page about the elections of 25 May 2014 in Flanders,
+#         downloaded on 19 March 2016,
+# URL: https://nl.wikipedia.org/wiki/Vlaamse_verkiezingen_2014
+
+Antwerpen | N-VA          | 411,001
+Antwerpen | CD&V          | 225,891
+Antwerpen | sp.a          | 128,760
+Antwerpen | Groen         | 111,234
+Antwerpen | Open Vld      | 108,209
+Antwerpen | Vlaams Belang |  79,588
+Antwerpen | PVDA          |  43,694
+Antwerpen | Piratenpartij |   7,514
+Antwerpen | GENOEG        |   3,521
+Antwerpen | MAMA          |   3,227
+Antwerpen | ROSSEM        |   2,773
+Antwerpen | ROEL          |   1,306
+Antwerpen | VCP           |     682
+
+Brussel | Open Vld      | 12,461
+Brussel | Groen         | 10,660
+Brussel | sp.a          |  9,558
+Brussel | N-VA          |  9,508
+Brussel | CD&V          |  6,284
+Brussel | Vlaams Belang |  2,960
+Brussel | PENSIOEN PLUS |    488
+
+Limburg | N-VA          | 176,512
+Limburg | CD&V          | 127,656
+Limburg | sp.a          |  94,721
+Limburg | Open Vld      |  66,269
+Limburg | Groen         |  32,713
+Limburg | Vlaams Belang |  32,392
+Limburg | PVDA          |  14,257
+Limburg | GENOEG        |   1,475
+Limburg | ROSSEM        |   1,259
+Limburg | VCP           |     979
+Limburg | ROEL          |     872
+
+Oost-Vlaanderen | N-VA          | 300,638
+Oost-Vlaanderen | CD&V          | 179,572
+Oost-Vlaanderen | Open Vld      | 169,726
+Oost-Vlaanderen | sp.a          | 139,640
+Oost-Vlaanderen | Groen         |  88,977
+Oost-Vlaanderen | Vlaams Belang |  62,881
+Oost-Vlaanderen | PVDA          |  23,029
+Oost-Vlaanderen | Piratenpartij |   7,142
+Oost-Vlaanderen | SD&P          |   2,853
+Oost-Vlaanderen | ROSSEM        |   2,236
+Oost-Vlaanderen | GENOEG        |   2,177
+Oost-Vlaanderen | ROEL          |   1,017
+Oost-Vlaanderen | VCP           |     909
+
+Vlaams-Brabant | N-VA          | 204,139
+Vlaams-Brabant | Open Vld      | 133,362
+Vlaams-Brabant | CD&V          | 118,669
+Vlaams-Brabant | sp.a          |  85,105
+Vlaams-Brabant | Groen         |  64,836
+Vlaams-Brabant | UF            |  34,741
+Vlaams-Brabant | Vlaams Belang |  30,531
+Vlaams-Brabant | PVDA          |  12,212
+Vlaams-Brabant | Piratenpartij |   5,572
+Vlaams-Brabant | GENOEG        |   1,398
+Vlaams-Brabant | ROSSEM        |   1,302
+Vlaams-Brabant | VCP           |   1,007
+Vlaams-Brabant | ROEL          |     674
+
+West-Vlaanderen | N-VA          | 238,148
+West-Vlaanderen | CD&V          | 202,622
+West-Vlaanderen | sp.a          | 130,119
+West-Vlaanderen | Open Vld      | 104,442
+West-Vlaanderen | Groen         |  57,361
+West-Vlaanderen | Vlaams Belang |  40,488
+West-Vlaanderen | PVDA          |  12,922
+West-Vlaanderen | Piratenpartij |   5,758
+West-Vlaanderen | ROSSEM        |   2,407
+West-Vlaanderen | GENOEG        |   2,041
+West-Vlaanderen | VCP           |   1,449
+West-Vlaanderen | ROEL          |   1,359
+West-Vlaanderen | VITAL         |     617

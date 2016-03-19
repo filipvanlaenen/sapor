@@ -28,10 +28,10 @@ module Sapor
 
     AREA_KEY = 'Area'
     AREAS_MAP = {}
-    [Catalonia.instance, Greece.instance, Norway.instance,
-     NorwegianMunicipality::BERGEN, NorwegianMunicipality::OSLO,
-     NorwegianMunicipality::TRONDHEIM, UnitedKingdom.instance,
-     Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
+    [Catalonia.instance, Flanders.instance, Greece.instance,
+     Norway.instance, NorwegianMunicipality::BERGEN,
+     NorwegianMunicipality::OSLO, NorwegianMunicipality::TRONDHEIM,
+     UnitedKingdom.instance, Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
 
     TYPE_KEY = 'Type'
     REFERENDUM_TYPE_VALUE = 'Referendum'
