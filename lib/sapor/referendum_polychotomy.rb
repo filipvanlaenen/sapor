@@ -46,14 +46,6 @@ module Sapor
       @error_estimate = 1.0
     end
 
-    def most_probable_value(key)
-      if @no_of_simulations == 0
-        nil
-      else
-        @distributions[key].most_probable_value
-      end
-    end
-
     def calculate_most_probable_fraction(key, distributions)
       distributions[key].most_probable_value.to_f / @area.population_size
     end

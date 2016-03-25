@@ -24,6 +24,14 @@ module Sapor
   class Polychotomy
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 
+    def most_probable_value(key)
+      if @no_of_simulations == 0
+        nil
+      else
+        @distributions[key].most_probable_value
+      end
+    end
+
     def range(choice)
       @ranges[choice]
     end
