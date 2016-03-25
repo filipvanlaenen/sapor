@@ -48,10 +48,6 @@ module Sapor
       @error_estimate = 1.0
     end
 
-    def range(choice)
-      @ranges[choice]
-    end
-
     def space_size
       @enum.size
     end

@@ -23,5 +23,9 @@ module Sapor
   #
   class Polychotomy
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
+
+    def range(choice)
+      @ranges[choice]
+    end
   end
 end
