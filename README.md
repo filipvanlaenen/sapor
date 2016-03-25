@@ -59,15 +59,19 @@ Changelog
 
 **Version 0.2**
 
-* Areas: Added Greece with a simplified approach to the parliamentary elections
+* Included more data in the calculation of the error estimate.
+* Added the Type field with values Election and Referendum. Polls of type
+  Referendum do not try to calculate a seat distribution.
+* Areas: Added Flanders.
+* Areas: Added Greece with a simplified approach to the parliamentary elections.
 * Areas: Added Norwegian municipalities Oslo, Bergen and Trondheim, local
-  election, 2015
+  election, 2015.
 
 **Version 0.1**
 
 * First round analysis of poll results as a set of dichotomies, reporting on the
   most probable fraction, the 95% confidence interval for the vote share, and
-  probability to reach a threshold
+  probability to reach a threshold.
 * Second round analysis of poll results as a polychotomy, reporting on the most
   probable fraction, the most probable rounded fraction, the 95% confidence
   interval for the vote share, the probability to be larger than the next party,
@@ -76,7 +80,7 @@ Changelog
   95% confidence interval for the vote share, the probability to have a majority
   of the popular vote (vote share larger than 50%), the 95% confidence interval
   for the number of seats and the probability to have a majority in parliament.
-* Areas: Catalan parliamentary election, 2015
+* Areas: Catalan parliamentary election, 2015.
 
 License
 -------
