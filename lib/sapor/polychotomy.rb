@@ -22,8 +22,6 @@ module Sapor
   # Superclass for polychotomies.
   #
   class Polychotomy
-  
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
-  
   end
 end

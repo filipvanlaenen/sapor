@@ -24,7 +24,7 @@ require 'timeout'
 
 RSpec.configure do |config|
   config.around do |example|
-    Timeout.timeout(1) do
+    Timeout.timeout(2) do
       example.run
     end
   end

@@ -257,7 +257,7 @@ module Sapor
         six_char_percentage(confidence_interval.last) + '  ' + \
         (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice)))
     end
-    
+
     def calculate_most_probable_rounded_fraction(key, distributions)
       distributions[key].most_probable_rounded_fraction(@area.population_size)
     end
