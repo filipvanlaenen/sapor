@@ -27,5 +27,9 @@ module Sapor
     def range(choice)
       @ranges[choice]
     end
+
+    def space_size
+      @enum.size
+    end
   end
 end

@@ -48,10 +48,6 @@ module Sapor
       @error_estimate = 1.0
     end
 
-    def space_size
-      @enum.size
-    end
-
     def most_probable_value(key)
       if @no_of_simulations == 0
         nil
