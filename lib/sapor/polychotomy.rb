@@ -24,6 +24,14 @@ module Sapor
   class Polychotomy
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 
+    def most_probable_fraction(key)
+      if @no_of_simulations == 0
+        nil
+      else
+        calculate_most_probable_fraction(key, @distributions)
+      end
+    end
+
     def most_probable_value(key)
       if @no_of_simulations == 0
         nil
@@ -38,6 +46,24 @@ module Sapor
 
     def space_size
       @enum.size
+    end
+
+    private
+
+    def calculate_most_probable_fraction(key, distributions)
+      distributions[key].most_probable_value.to_f / @area.population_size
+    end
+
+    def extract_ranges_from_dichotomies(dichotomies, max_error)
+      ranges = {}
+      level = 1 - (max_error**2)
+      @choices.each do |choice|
+        unless choice == OTHER
+          ranges[choice] = dichotomies.confidence_interval_values(choice,
+                                                                  level).sort
+        end
+      end
+      ranges
     end
   end
 end
