@@ -41,7 +41,7 @@ module Sapor
       if @no_of_simulations == 0
         nil
       else
-        calculate_most_probable_fraction(key, @distributions)
+        calculate_most_probable_fraction(key, @votes)
       end
     end
 
@@ -49,7 +49,7 @@ module Sapor
       if @no_of_simulations == 0
         nil
       else
-        @distributions[key].most_probable_value
+        @votes[key].most_probable_value
       end
     end
 
@@ -63,12 +63,12 @@ module Sapor
 
     private
 
-    def calculate_most_probable_fraction(key, distributions)
-      distributions[key].most_probable_value.to_f / @area.population_size
+    def calculate_most_probable_fraction(key, votes)
+      votes[key].most_probable_value.to_f / @area.population_size
     end
 
-    def calculate_most_probable_rounded_fraction(key, distributions)
-      distributions[key].most_probable_rounded_fraction(@area.population_size)
+    def calculate_most_probable_rounded_fraction(key, votes)
+      votes[key].most_probable_rounded_fraction(@area.population_size)
     end
 
     def create_comparisons(choices)
@@ -107,7 +107,7 @@ module Sapor
       if @no_of_simulations == 0
         nil
       else
-        calculate_most_probable_rounded_fraction(key, @distributions)
+        calculate_most_probable_rounded_fraction(key, @votes)
       end
     end
 

@@ -26,7 +26,7 @@ module Sapor
 
     def initialize(results, area, dichotomies, max_error)
       super(results, area, dichotomies, max_error)
-      @distributions = create_new_votes_distributions # TODO: Rename to @votes
+      @votes = create_new_votes_distributions
     end
 
     def refine
@@ -39,7 +39,7 @@ module Sapor
       unless @no_of_simulations == 0
         @error_estimate = calculate_error_estimate(new_votes)
       end
-      @distributions = merge_distributions(@distributions, new_votes)
+      @votes = merge_distributions(@votes, new_votes)
       @no_of_simulations += no_of_new_simulations
     end
 
@@ -86,16 +86,16 @@ module Sapor
     private
 
     def create_new_votes_distributions
-      distributions = {}
+      votes = {}
       @choices.each do |choice|
         unless choice == OTHER
-          distributions[choice] = CombinationsDistribution.new
+          votes[choice] = CombinationsDistribution.new
           @ranges[choice].each do |value|
-            distributions[choice][value] = 0.to_lf
+            votes[choice][value] = 0.to_lf
           end
         end
       end
-      distributions
+      votes
     end
 
     def simulate(votes, data_point)
@@ -121,10 +121,10 @@ module Sapor
       @choices.each do |choice|
         unless choice == OTHER
           mpv_new = calculate_most_probable_fraction(choice, new_simulations)
-          mpv_old = calculate_most_probable_fraction(choice, @distributions)
+          mpv_old = calculate_most_probable_fraction(choice, @votes)
           mpv_delta = (mpv_new - mpv_old).abs
           mprf_new = calculate_most_probable_rounded_fraction(choice, new_simulations)
-          mprf_old = calculate_most_probable_rounded_fraction(choice, @distributions)
+          mprf_old = calculate_most_probable_rounded_fraction(choice, @votes)
           mprf_delta = (mprf_new - mprf_old).abs
           error_estimate = [error_estimate, mpv_delta, mprf_delta].max
         end
@@ -144,7 +144,7 @@ module Sapor
     end
 
     def create_choice_report_line(choice, next_choice, max_choice_width)
-      ci_values = @distributions[choice].confidence_interval(0.95)
+      ci_values = @votes[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
       choice.ljust(max_choice_width) + '  ' + \
         six_char_percentage(result(choice)) + '  ' + \

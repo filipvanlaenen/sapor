@@ -27,7 +27,7 @@ module Sapor
     def initialize(results, area, dichotomies, max_error)
       super(results, area, dichotomies, max_error)
       @coalitions = area.coalitions
-      @distributions = create_new_votes_distributions # TODO: Rename to @votes
+      @votes = create_new_votes_distributions
       @seats = create_new_seats_distributions
     end
 
@@ -42,7 +42,7 @@ module Sapor
       unless @no_of_simulations == 0
         @error_estimate = calculate_error_estimate(new_votes)
       end
-      @distributions = merge_distributions(@distributions, new_votes)
+      @votes = merge_distributions(@votes, new_votes)
       @seats = merge_distributions(@seats, new_seats)
       @no_of_simulations += no_of_new_simulations
     end
@@ -101,36 +101,36 @@ module Sapor
     private
 
     def create_new_seats_distributions
-      distributions = {}
+      seats = {}
       @choices.each do |choice|
-        distributions[choice] = CombinationsDistribution.new
+        seats[choice] = CombinationsDistribution.new
         Range.new(0, @area.no_of_seats).each do |value|
-          distributions[choice][value] = 0.to_lf
+          seats[choice][value] = 0.to_lf
         end
       end
       @coalitions.each do |coalition|
-        distributions[coalition] = CombinationsDistribution.new
+        seats[coalition] = CombinationsDistribution.new
         Range.new(0, @area.no_of_seats).each do |value|
-          distributions[coalition][value] = 0.to_lf
+          seats[coalition][value] = 0.to_lf
         end
       end
-      distributions
+      seats
     end
 
     def create_new_votes_distributions
-      distributions = {}
+      votes = {}
       @choices.each do |choice|
         unless choice == OTHER
-          distributions[choice] = CombinationsDistribution.new
+          votes[choice] = CombinationsDistribution.new
           @ranges[choice].each do |value|
-            distributions[choice][value] = 0.to_lf
+            votes[choice][value] = 0.to_lf
           end
         end
       end
       @coalitions.each do |coalition|
-        distributions[coalition] = CombinationsDistribution.new
+        votes[coalition] = CombinationsDistribution.new
       end
-      distributions
+      votes
     end
 
     def simulate(votes, seats, data_point)
@@ -180,7 +180,7 @@ module Sapor
       @choices.each do |choice|
         unless choice == OTHER
           mpv_new = calculate_most_probable_fraction(choice, new_simulations)
-          mpv_old = calculate_most_probable_fraction(choice, @distributions)
+          mpv_old = calculate_most_probable_fraction(choice, @votes)
           delta = (mpv_new - mpv_old).abs
           error_estimate = [error_estimate, delta].max
         end
@@ -223,7 +223,7 @@ module Sapor
     end
 
     def create_choice_report_line(choice, next_choice, max_choice_width, max_seats_width)
-      ci_values = @distributions[choice].confidence_interval(0.95)
+      ci_values = @votes[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
       ci_seats = @seats[choice].confidence_interval(0.95)
       choice.ljust(max_choice_width) + '  ' + \
@@ -239,8 +239,8 @@ module Sapor
     end
 
     def create_coalition_report_line(coalition, max_coalition_width, max_seats_width)
-      ci_values = @distributions[coalition].confidence_interval(0.95)
-      majority_votes_probability = @distributions[coalition].threshold_probability(0.5, @area.population_size)
+      ci_values = @votes[coalition].confidence_interval(0.95)
+      majority_votes_probability = @votes[coalition].threshold_probability(0.5, @area.population_size)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
       ci_seats = @seats[coalition].confidence_interval(0.95)
       seats_majority = 1 + @area.no_of_seats / 2
