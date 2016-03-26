@@ -25,17 +25,8 @@ module Sapor
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 
     def initialize(results, area, dichotomies, max_error)
-      @results = results
-      @area = area
-      @choices = results.keys
-      @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
-      @enum = create_enumerator(@ranges)
-      @no_of_simulations = 0
-      @no_of_data_points = 0
-      @comparisons = create_comparisons(@choices)
-      @combinations_sum = 0.to_lf
-      @error_estimate = 1.0
-      @votes = create_new_votes_distributions
+      initialize_static_information(results, area, dichotomies, max_error)
+      initialize_calculation_information
     end
 
     def most_probable_fraction(key)
@@ -97,6 +88,23 @@ module Sapor
         end
       end
       ranges
+    end
+
+    def initialize_calculation_information
+      @enum = create_enumerator(@ranges)
+      @no_of_simulations = 0
+      @no_of_data_points = 0
+      @combinations_sum = 0.to_lf
+      @error_estimate = 1.0
+      @votes = create_new_votes_distributions
+    end
+
+    def initialize_static_information(results, area, dichotomies, max_error)
+      @results = results
+      @area = area
+      @choices = results.keys
+      @comparisons = create_comparisons(@choices)
+      @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
     end
 
     def larger_than(a, b)
