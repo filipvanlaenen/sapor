@@ -115,16 +115,6 @@ module Sapor
       distributions
     end
 
-    def next_data_point
-      indexes = @enum.next
-      data_point = {}
-      indexes.each_with_index do |ix, i|
-        data_point[@ranges.keys[i]] = @ranges.values[i][ix]
-      end
-      data_point[OTHER] = @area.population_size - data_point.values.inject(:+)
-      data_point
-    end
-
     def simulate(votes, data_point)
       combinations = 1.to_lf
       data_point.each do |choice, value|
