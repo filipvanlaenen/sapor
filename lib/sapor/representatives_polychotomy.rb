@@ -25,9 +25,8 @@ module Sapor
     include NumberFormatter
 
     def initialize(results, area, dichotomies, max_error)
-      super(results, area, dichotomies, max_error)
       @coalitions = area.coalitions
-      @votes = create_new_votes_distributions
+      super(results, area, dichotomies, max_error)
       @seats = create_new_seats_distributions
     end
 

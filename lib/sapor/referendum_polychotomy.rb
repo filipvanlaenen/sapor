@@ -26,7 +26,6 @@ module Sapor
 
     def initialize(results, area, dichotomies, max_error)
       super(results, area, dichotomies, max_error)
-      @votes = create_new_votes_distributions
     end
 
     def refine

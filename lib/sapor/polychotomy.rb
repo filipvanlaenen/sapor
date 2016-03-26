@@ -35,6 +35,7 @@ module Sapor
       @comparisons = create_comparisons(@choices)
       @combinations_sum = 0.to_lf
       @error_estimate = 1.0
+      @votes = create_new_votes_distributions
     end
 
     def most_probable_fraction(key)
