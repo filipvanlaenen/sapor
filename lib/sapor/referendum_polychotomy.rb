@@ -160,21 +160,6 @@ module Sapor
       merged_distributions
     end
 
-    def coalition_label(coalition)
-      coalition.sort.join(' + ')
-    end
-
-    def sort_coalitions_by_result
-      @coalitions.sort do |a, b|
-        comparison = result(b) <=> result(a)
-        if comparison == 0
-          coalition_label(a) <=> coalition_label(b)
-        else
-          comparison
-        end
-      end
-    end
-
     def result(choice)
       @results[choice].to_f / @results.values.inject(:+)
     end
