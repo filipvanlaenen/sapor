@@ -76,6 +76,10 @@ module Sapor
       data_point
     end
 
+    def result(choice)
+      @results[choice].to_f / @results.values.inject(:+)
+    end
+
     def sort_choices_by_result
       sorted_choices = @choices.reject { |choice| choice == OTHER }
       sorted_choices.sort do |a, b|

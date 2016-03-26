@@ -235,10 +235,6 @@ module Sapor
       end
     end
 
-    def result(choice)
-      @results[choice].to_f / @results.values.inject(:+)
-    end
-
     def coalition_result(coalition)
       coalition.map { |choice| @results[choice].to_f }.inject(:+) / @results.values.inject(:+)
     end

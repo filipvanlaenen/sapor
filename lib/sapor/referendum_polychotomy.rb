@@ -160,10 +160,6 @@ module Sapor
       merged_distributions
     end
 
-    def result(choice)
-      @results[choice].to_f / @results.values.inject(:+)
-    end
-
     def larger_than(a, b)
       probability = @comparisons[a + '>' + b] / @combinations_sum
       probability.mantissa * (10**probability.exponent)
