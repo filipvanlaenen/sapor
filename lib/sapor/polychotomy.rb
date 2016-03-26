@@ -75,5 +75,17 @@ module Sapor
       data_point[OTHER] = @area.population_size - data_point.values.inject(:+)
       data_point
     end
+
+    def sort_choices_by_result
+      sorted_choices = @choices.reject { |choice| choice == OTHER }
+      sorted_choices.sort do |a, b|
+        comparison = result(b) <=> result(a)
+        if comparison == 0
+          a <=> b
+        else
+          comparison
+        end
+      end
+    end
   end
 end
