@@ -25,23 +25,8 @@ module Sapor
     include NumberFormatter
 
     def initialize(results, area, dichotomies, max_error)
-      @results = results
-      @area = area
-      @choices = results.keys
-      @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
-      range_sizes = @ranges.values.map(&:size)
-      @enum = PseudoRandomMultiRangeEnumerator.new(range_sizes).each
-      @no_of_simulations = 0
-      @no_of_data_points = 0
+      super(results, area, dichotomies, max_error)
       @distributions = create_new_votes_distributions # TODO: Rename to @votes
-      @comparisons = {}
-      @choices.each do |a|
-        @choices.each do |b|
-          @comparisons[a + '>' + b] = 0.to_lf
-        end
-      end
-      @combinations_sum = 0.to_lf
-      @error_estimate = 1.0
     end
 
     def refine

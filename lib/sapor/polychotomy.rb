@@ -24,6 +24,19 @@ module Sapor
   class Polychotomy
     attr_reader :error_estimate, :no_of_data_points, :no_of_simulations
 
+    def initialize(results, area, dichotomies, max_error)
+      @results = results
+      @area = area
+      @choices = results.keys
+      @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
+      @enum = create_enumerator(@ranges)
+      @no_of_simulations = 0
+      @no_of_data_points = 0
+      @comparisons = create_comparisons(@choices)
+      @combinations_sum = 0.to_lf
+      @error_estimate = 1.0
+    end
+
     def most_probable_fraction(key)
       if @no_of_simulations == 0
         nil
@@ -56,6 +69,21 @@ module Sapor
 
     def calculate_most_probable_rounded_fraction(key, distributions)
       distributions[key].most_probable_rounded_fraction(@area.population_size)
+    end
+
+    def create_comparisons(choices)
+      comparisons = {}
+      choices.each do |a|
+        choices.each do |b|
+          comparisons[a + '>' + b] = 0.to_lf
+        end
+      end
+      comparisons
+    end
+
+    def create_enumerator(ranges)
+      range_sizes = ranges.values.map(&:size)
+      PseudoRandomMultiRangeEnumerator.new(range_sizes).each
     end
 
     def extract_ranges_from_dichotomies(dichotomies, max_error)
