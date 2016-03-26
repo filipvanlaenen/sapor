@@ -17,8 +17,6 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-require 'prime'
-
 module Sapor
   #
   # Represents a polychotomy for the election of representatives.
