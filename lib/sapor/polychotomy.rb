@@ -54,6 +54,10 @@ module Sapor
       distributions[key].most_probable_value.to_f / @area.population_size
     end
 
+    def calculate_most_probable_rounded_fraction(key, distributions)
+      distributions[key].most_probable_rounded_fraction(@area.population_size)
+    end
+
     def extract_ranges_from_dichotomies(dichotomies, max_error)
       ranges = {}
       level = 1 - (max_error**2)
@@ -64,6 +68,19 @@ module Sapor
         end
       end
       ranges
+    end
+
+    def larger_than(a, b)
+      probability = @comparisons[a + '>' + b] / @combinations_sum
+      probability.mantissa * (10**probability.exponent)
+    end
+
+    def most_probable_rounded_fraction(key)
+      if @no_of_simulations == 0
+        nil
+      else
+        calculate_most_probable_rounded_fraction(key, @distributions)
+      end
     end
 
     def next_data_point

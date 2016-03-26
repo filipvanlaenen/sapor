@@ -160,11 +160,6 @@ module Sapor
       merged_distributions
     end
 
-    def larger_than(a, b)
-      probability = @comparisons[a + '>' + b] / @combinations_sum
-      probability.mantissa * (10**probability.exponent)
-    end
-
     def create_choice_report_line(choice, next_choice, max_choice_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
@@ -175,18 +170,6 @@ module Sapor
         six_char_percentage(confidence_interval.first) + '–' + \
         six_char_percentage(confidence_interval.last) + '  ' + \
         (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice)))
-    end
-
-    def calculate_most_probable_rounded_fraction(key, distributions)
-      distributions[key].most_probable_rounded_fraction(@area.population_size)
-    end
-
-    def most_probable_rounded_fraction(key)
-      if @no_of_simulations == 0
-        nil
-      else
-        calculate_most_probable_rounded_fraction(key, @distributions)
-      end
     end
   end
 end

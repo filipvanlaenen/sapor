@@ -239,11 +239,6 @@ module Sapor
       coalition.map { |choice| @results[choice].to_f }.inject(:+) / @results.values.inject(:+)
     end
 
-    def larger_than(a, b)
-      probability = @comparisons[a + '>' + b] / @combinations_sum
-      probability.mantissa * (10**probability.exponent)
-    end
-
     def create_choice_report_line(choice, next_choice, max_choice_width, max_seats_width)
       ci_values = @distributions[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
@@ -278,14 +273,6 @@ module Sapor
         ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
         ci_seats.last.to_s.rjust(max_seats_width) + '    ' + \
         six_char_percentage(majority_seats_probability)
-    end
-
-    def most_probable_rounded_fraction(key)
-      if @no_of_simulations == 0
-        nil
-      else
-        @distributions[key].most_probable_rounded_fraction(@area.population_size)
-      end
     end
   end
 end
