@@ -34,6 +34,7 @@ module Sapor
        ['CD&V', 'Open Vld'],
        ['CD&V', 'sp.a'],
        ['CD&V', 'Open Vld', 'sp.a'],
+       ['CD&V', 'Open Vld', 'sp.a', 'Groen'],
        ['Open Vld', 'sp.a'],
        ['Open Vld', 'sp.a', 'Groen'],
        ['CD&V', 'sp.a', 'Groen'],
