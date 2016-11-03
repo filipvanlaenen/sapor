@@ -1,0 +1,193 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 25 May 2014,
+#         downloaded on 3 November 2016,
+# URL: http://verkiezingen2014.belgium.be/nl/cha/results/results_tab_CKR00000.html
+
+Antwerpen | N-VA          | 449,531
+Antwerpen | CD&V          | 183,636
+Antwerpen | sp.a          | 132,096
+Antwerpen | Open Vld      | 116,892
+Antwerpen | Groen         | 112,477
+Antwerpen | Vlaams Belang |  79,852
+Antwerpen | PVDA+         |  51,638
+Antwerpen | Piratenpartij |  11,136
+Antwerpen | R.O.S.S.E.M.  |   2,984
+Antwerpen | B.U.B.        |   1,299
+
+Brabant wallon | MR                | 97,741
+Brabant wallon | PS                | 51,359
+Brabant wallon | Ecolo             | 27,356
+Brabant wallon | cdH               | 26,335
+Brabant wallon | FDF               | 11,198
+Brabant wallon | Parti Populaire   |  9,544
+Brabant wallon | PTB-GO!           |  6,449
+Brabant wallon | DEBOUT LES BELGES |  3,342
+Brabant wallon | LA DROITE         |  2,337
+Brabant wallon | R.W.F.            |  1,102
+Brabant wallon | B.U.B.            |    961
+Brabant wallon | NATION            |    908
+Brabant wallon | NWA               |    442
+Brabant wallon | MOVE              |    400
+Brabant wallon | VLC               |    208
+Brabant wallon | MG                |    187
+
+Brussel-Hoofdstad | Open Vld      | 13,283
+Brussel-Hoofdstad | N-VA          | 13,223
+Brussel-Hoofdstad | sp.a          |  9,613
+Brussel-Hoofdstad | CD&V          |  8,173
+Brussel-Hoofdstad | Vlaams Belang |  5,157
+
+Bruxelles-Capitale | PS                | 123,985
+Bruxelles-Capitale | MR                | 115,038
+Bruxelles-Capitale | FDF               |  55,306
+Bruxelles-Capitale | Ecolo             |  51,133
+Bruxelles-Capitale | cdH               |  46,441
+Bruxelles-Capitale | PTB-GO!           |  19,135
+Bruxelles-Capitale | DEBOUT LES BELGES |  11,112
+Bruxelles-Capitale | ISLAM             |   9,387
+Bruxelles-Capitale | Parti Populaire   |   8,641
+Bruxelles-Capitale | LA DROITE         |   2,165
+Bruxelles-Capitale | NATION            |   1,623
+Bruxelles-Capitale | GAUCHES COMMUNES  |   1,445
+Bruxelles-Capitale | Égalitaires!      |     953
+Bruxelles-Capitale | PARTI LIBERTARIEN |     750
+Bruxelles-Capitale | MG                |     567
+Bruxelles-Capitale | Agora Erasmus     |     382
+Bruxelles-Capitale | LaLutte-DeStrijd  |     213
+
+Hainaut | PS                 | 303,085
+Hainaut | MR                 | 153,301
+Hainaut | cdH                |  76,812
+Hainaut | Ecolo              |  43,488
+Hainaut | PTB-GO!            |  38,194
+Hainaut | Parti Populaire    |  32,158
+Hainaut | DEBOUT LES BELGES  |  24,634
+Hainaut | Faire place Nette  |  15,467
+Hainaut | FDF                |  14,382
+Hainaut | LA DROITE          |   6,804
+Hainaut | PIRATE             |   5,907
+Hainaut | WALLONIE D'ABORD   |   4,926
+Hainaut | NATION             |   3,767
+Hainaut | Lutte Ouvrière     |   3,539
+Hainaut | P+                 |   2,254
+Hainaut | R.W.F.             |   2,058
+Hainaut | NWA                |   1,673
+Hainaut | MG                 |   1,662
+Hainaut | FW                 |   1,633
+Hainaut | RassemblementWalon |   1,598
+Hainaut | B.U.B.             |     688
+Hainaut | MGJOD              |     460
+
+Liège | PS                 | 187,897
+Liège | MR                 | 158,046
+Liège | cdH                |  81,759
+Liège | Ecolo              |  56,890
+Liège | PTB-GO!            |  50,603
+Liège | Parti Populaire    |  32,229
+Liège | FDF                |  13,915
+Liège | DEBOUT LES BELGES  |   9,381
+Liège | LA DROITE          |   8,714
+Liège | WALLONIE D'ABORD   |   6,295
+Liège | ISLAM              |   4,332
+Liège | PIRATE             |   3,938
+Liège | PP PARTIPENSIONNES |   3,178
+Liège | NATION             |   2,342
+Liège | VLC                |   1,820
+Liège | R.W.F.             |   1,622
+Liège | B.U.B.             |   1,198
+Liège | MG                 |   1,024
+Liège | FW                 |     752
+Liège | CIM                |     430
+
+Limburg | N-VA          | 174,030
+Limburg | CD&V          | 125,962
+Limburg | sp.a          |  98,194
+Limburg | Open Vld      |  68,713
+Limburg | Vlaams Belang |  34,020
+Limburg | Groen         |  33,244
+Limburg | PVDA+         |  14,253
+Limburg | Piratenpartij |   3,909
+Limburg | R.O.S.S.E.M.  |   1,415
+Limburg | B.U.B.        |     714
+
+Luxembourg | cdH               | 56,702
+Luxembourg | MR                | 41,346
+Luxembourg | PS                | 37,371
+Luxembourg | Ecolo             | 13,471
+Luxembourg | Parti Populaire   |  6,980
+Luxembourg | PTB-GO!           |  4,003
+Luxembourg | DEBOUT LES BELGES |  2,958
+Luxembourg | FDF               |  2,811
+Luxembourg | LA DROITE         |  2,012
+Luxembourg | B.U.B.            |    752
+Luxembourg | MG                |    666
+Luxembourg | R.W.F.            |    645
+
+Namur | MR                 | 84,788
+Namur | PS                 | 83,361
+Namur | cdH                | 48,135
+Namur | Ecolo              | 29,186
+Namur | PTB-GO!            | 14,559
+Namur | Parti Populaire    | 13,029
+Namur | FDF                |  8,367
+Namur | DEBOUT LES BELGES  |  6,616
+Namur | LA DROITE          |  4,003
+Namur | R.W.F.             |  1,967
+Namur | NATION             |  1,576
+Namur | Vox Populi Belgica |  1,280
+Namur | B.U.B.             |    857
+Namur | FW                 |    695
+Namur | NWA                |    670
+Namur | MG                 |    423
+
+Oost-Vlaanderen | N-VA          | 306,650
+Oost-Vlaanderen | Open Vld      | 179,167
+Oost-Vlaanderen | CD&V          | 177,349
+Oost-Vlaanderen | sp.a          | 131,903
+Oost-Vlaanderen | Groen         |  90,473
+Oost-Vlaanderen | Vlaams Belang |  61,620
+Oost-Vlaanderen | PVDA+         |  26,381
+Oost-Vlaanderen | Piratenpartij |   8,124
+Oost-Vlaanderen | R.O.S.S.E.M.  |   2,557
+Oost-Vlaanderen | SD&P          |   2,298
+Oost-Vlaanderen | B.U.B.        |   1,366
+Oost-Vlaanderen | PVGW          |     932
+
+Vlaams-Brabant | N-VA          | 192,698
+Vlaams-Brabant | Open Vld      | 170,128
+Vlaams-Brabant | CD&V          | 112,251
+Vlaams-Brabant | sp.a          |  81,254
+Vlaams-Brabant | Groen         |  59,096
+Vlaams-Brabant | Vlaams Belang |  28,857
+Vlaams-Brabant | FDF           |  15,405
+Vlaams-Brabant | PVDA+         |  12,664
+Vlaams-Brabant | B.U.B.        |   2,577
+Vlaams-Brabant | Piratenpartij |   2,281
+Vlaams-Brabant | R.O.S.S.E.M.  |   1,914
+
+West-Vlaanderen | N-VA           | 230,265
+West-Vlaanderen | CD&V           | 175,669
+West-Vlaanderen | sp.a           | 142,406
+West-Vlaanderen | Open Vld       | 111,388
+West-Vlaanderen | Groen          |  63,657
+West-Vlaanderen | Vlaams Belang  |  38,232
+West-Vlaanderen | PVDA+          |  13,397
+West-Vlaanderen | R.O.S.S.E.M.   |   2,810
+West-Vlaanderen | B.U.B.         |   1,691
+West-Vlaanderen | Lijst Dedecker |  28,414

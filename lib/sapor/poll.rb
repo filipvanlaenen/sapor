@@ -17,7 +17,7 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 module Sapor
-  OTHER = 'Other'
+  OTHER = 'Other'.freeze
 
   #
   # Represents a poll.
@@ -26,16 +26,16 @@ module Sapor
     include NumberFormatter
     attr_reader :area, :logger, :type
 
-    AREA_KEY = 'Area'
+    AREA_KEY = 'Area'.freeze
     AREAS_MAP = {}
-    [Catalonia.instance, Flanders.instance, Greece.instance,
+    [Belgium.instance, Catalonia.instance, Flanders.instance, Greece.instance,
      Norway.instance, NorwegianMunicipality::BERGEN,
      NorwegianMunicipality::OSLO, NorwegianMunicipality::TRONDHEIM,
      UnitedKingdom.instance, Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
 
-    TYPE_KEY = 'Type'
-    REFERENDUM_TYPE_VALUE = 'Referendum'
-    ELECTION_TYPE_VALUE = 'Election'
+    TYPE_KEY = 'Type'.freeze
+    REFERENDUM_TYPE_VALUE = 'Referendum'.freeze
+    ELECTION_TYPE_VALUE = 'Election'.freeze
 
     def initialize(metadata, results)
       @logger = LogFacade.create_logger
@@ -44,7 +44,7 @@ module Sapor
       @results = interpret(results)
     end
 
-    def analyze(max_error = 0.001)
+    def analyze(max_error = 0.0001)
       analyze_as_dichotomies(max_error)
       analyze_as_polychotomy(max_error)
       @logger.info('Done.')
