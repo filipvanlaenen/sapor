@@ -28,7 +28,7 @@ module Sapor
     end
 
     def coalitions
-      [['N-VA', 'CD&V', 'Open Vld', 'MR']]
+      COALITIONS
     end
 
     def no_of_seats
@@ -66,26 +66,42 @@ module Sapor
                           'Hainaut' => 18, 'Liège' => 15, 'Limburg' => 12,
                           'Luxembourg' => 4, 'Namur' => 6,
                           'Oost-Vlaanderen' => 20, 'Vlaams-Brabant' => 15,
-                          'West-Vlaanderen' => 16 }
+                          'West-Vlaanderen' => 16 }.freeze
 
     THRESHOLD = 0.05
 
+    COALITIONS = [['cdH', 'CD&V', 'Ecolo', 'Groen', 'MR', 'Open Vld', 'PS',
+                   'sp.a'],
+                  ['cdH', 'CD&V', 'Ecolo', 'Groen', 'PS', 'PTB-GO!', 'PVDA+',
+                   'sp.a'],
+                  ['cdH', 'CD&V', 'Ecolo', 'Groen', 'PS', 'sp.a'],
+                  ['cdH', 'CD&V', 'MR', 'N-VA', 'Open Vld'],
+                  ['cdH', 'CD&V', 'MR', 'Open Vld'],
+                  ['cdH', 'CD&V', 'MR', 'Open Vld', 'PS', 'sp.a'],
+                  ['cdH', 'CD&V', 'PS', 'sp.a'],
+                  ['cdH', 'Ecolo', 'Groen', 'PS', 'PTB-GO!', 'PVDA+', 'sp.a'],
+                  ['CD&V', 'MR', 'N-VA', 'Open Vld'],
+                  ['Ecolo', 'Groen', 'MR', 'Open Vld', 'PS', 'sp.a'],
+                  ['MR', 'Open Vld', 'PS', 'sp.a']].freeze
+
     def election_results_of_2014
       if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results( \
-          'belgium-2014.psv')
+        @election_results_of_2014 = load_election_results(
+          'belgium-2014.psv'
+        )
       end
       @election_results_of_2014
     end
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = MultiDistrictProportional.new( \
+        @electoral_system = MultiDistrictProportional.new(
           overall_election_results_of_2014,
           election_results_of_2014,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
-          THRESHOLD)
+          THRESHOLD
+        )
       end
       @electoral_system
     end

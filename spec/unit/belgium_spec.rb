@@ -30,8 +30,57 @@ describe Sapor::Belgium, '#coalitions' do
     Sapor::Belgium.instance.coalitions
   end
 
-  it 'returns N-VA + CD&V + Open Vld + MR (Michel) as a coalition to track' do
-    expect(belgian_coalitions).to include(['N-VA', 'CD&V', 'Open Vld', 'MR'])
+  it 'returns the cabinet of Charles Michel as a coalition to track' do
+    expect(belgian_coalitions).to include(['CD&V', 'MR', 'N-VA', 'Open Vld'])
+  end
+
+  it 'returns the cabinet of Charles Michel extended with cdH as a coalition' \
+     ' to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'MR', 'N-VA',
+                                           'Open Vld'])
+  end
+
+  it 'returns a center-right coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'MR', 'Open Vld'])
+  end
+
+  it 'returns a center-left coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'PS', 'sp.a'])
+  end
+
+  it 'returns a so-called tripartite as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'MR', 'Open Vld',
+                                           'PS', 'sp.a'])
+  end
+
+  it 'returns a so-called purple coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['MR', 'Open Vld', 'PS', 'sp.a'])
+  end
+
+  it 'returns a so-called purple-green coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['Ecolo', 'Groen', 'MR', 'Open Vld',
+                                           'PS', 'sp.a'])
+  end
+
+  it 'returns a so-called rainbow coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'Ecolo', 'Groen',
+                                           'PS', 'sp.a'])
+  end
+
+  it 'returns an extended center-left coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'Ecolo', 'Groen',
+                                           'PS', 'PTB-GO!', 'PVDA+', 'sp.a'])
+  end
+
+  it 'returns the entire center-left opposition to the cabinet of Charles' \
+     ' Michel as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'Ecolo', 'Groen', 'PS',
+                                           'PTB-GO!', 'PVDA+', 'sp.a'])
+  end
+
+  it 'returns a so-called color party coalition as a coalition to track' do
+    expect(belgian_coalitions).to include(['cdH', 'CD&V', 'Ecolo', 'Groen',
+                                           'MR', 'Open Vld', 'PS', 'sp.a'])
   end
 end
 
