@@ -61,12 +61,12 @@ module Sapor
       sorted_choices = sort_choices_by_result
       choice_lines = sorted_choices.map.with_index do |choice, i|
         next_choice = sorted_choices[i + 1]
-        create_choice_report_line(choice, next_choice, max_choice_width)
+        create_choice_report_line(choice, i, next_choice, max_choice_width)
       end
       'Most probable rounded fractions, fractions and 95% confidence' \
       " intervals:\n" + 'Choice'.ljust(max_choice_width) +
-        "  Result    MPRF    MPF      CI(95%)      P(>↓)\n" +
-        choice_lines.join("\n")
+        '  Result    MPRF    MPF      CI(95%)      P(>↓)   P(R↑)    P(R)' \
+        "   P(R↓)\n" + choice_lines.join("\n")
     end
 
     def progress_report
@@ -87,11 +87,10 @@ module Sapor
     def create_new_votes_distributions
       votes = {}
       @choices.each do |choice|
-        unless choice == OTHER
-          votes[choice] = CombinationsDistribution.new
-          @ranges[choice].each do |value|
-            votes[choice][value] = 0.to_lf
-          end
+        next if choice == OTHER
+        votes[choice] = CombinationsDistribution.new
+        @ranges[choice].each do |value|
+          votes[choice][value] = 0.to_lf
         end
       end
       votes
@@ -113,20 +112,22 @@ module Sapor
           end
         end
       end
+      @choices.sort { |a, b| data_point[b] <=> data_point[a] }.each_with_index do |choice, i|
+        @rankings[choice + '@' + i.to_s] += combinations
+      end
     end
 
     def calculate_error_estimate(new_simulations)
       error_estimate = 0
       @choices.each do |choice|
-        unless choice == OTHER
-          mpv_new = calculate_most_probable_fraction(choice, new_simulations)
-          mpv_old = calculate_most_probable_fraction(choice, @votes)
-          mpv_delta = (mpv_new - mpv_old).abs
-          mprf_new = calculate_most_probable_rounded_fraction(choice, new_simulations)
-          mprf_old = calculate_most_probable_rounded_fraction(choice, @votes)
-          mprf_delta = (mprf_new - mprf_old).abs
-          error_estimate = [error_estimate, mpv_delta, mprf_delta].max
-        end
+        next if choice == OTHER
+        mpv_new = calculate_most_probable_fraction(choice, new_simulations)
+        mpv_old = calculate_most_probable_fraction(choice, @votes)
+        mpv_delta = (mpv_new - mpv_old).abs
+        mprf_new = calculate_most_probable_rounded_fraction(choice, new_simulations)
+        mprf_old = calculate_most_probable_rounded_fraction(choice, @votes)
+        mprf_delta = (mprf_new - mprf_old).abs
+        error_estimate = [error_estimate, mpv_delta, mprf_delta].max
       end
       error_estimate
     end
@@ -142,7 +143,7 @@ module Sapor
       merged_distributions
     end
 
-    def create_choice_report_line(choice, next_choice, max_choice_width)
+    def create_choice_report_line(choice, i, next_choice, max_choice_width)
       ci_values = @votes[choice].confidence_interval(0.95)
       confidence_interval = ci_values.map { |x| x.to_f / @area.population_size }
       choice.ljust(max_choice_width) + '  ' + \
@@ -151,7 +152,10 @@ module Sapor
         six_char_percentage(most_probable_fraction(choice)) + '  ' + \
         six_char_percentage(confidence_interval.first) + '–' + \
         six_char_percentage(confidence_interval.last) + '  ' + \
-        (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice)))
+        (next_choice.nil? ? '      ' : six_char_percentage(larger_than(choice, next_choice))) + '  ' + \
+        (i == 0 ? '      ' : six_char_percentage(ranking(choice, i - 1))) + '  ' + \
+        six_char_percentage(ranking(choice, i)) + \
+        (next_choice.nil? ? '' : '  ' + six_char_percentage(ranking(choice, i + 1)))
     end
   end
 end

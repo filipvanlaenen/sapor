@@ -78,6 +78,16 @@ module Sapor
       PseudoRandomMultiRangeEnumerator.new(range_sizes).each
     end
 
+    def create_rankings(choices)
+      rankings = {}
+      choices.each do |choice|
+        1.upto(choices.size).each do |i|
+          rankings[choice + '@' + (i - 1).to_s] = 0.to_lf
+        end
+      end
+      rankings
+    end
+
     def extract_ranges_from_dichotomies(dichotomies, max_error)
       ranges = {}
       level = 1 - (max_error**2)
@@ -104,6 +114,7 @@ module Sapor
       @area = area
       @choices = results.keys
       @comparisons = create_comparisons(@choices)
+      @rankings = create_rankings(@choices)
       @ranges = extract_ranges_from_dichotomies(dichotomies, max_error)
     end
 
@@ -128,6 +139,11 @@ module Sapor
       end
       data_point[OTHER] = @area.population_size - data_point.values.inject(:+)
       data_point
+    end
+
+    def ranking(choice, i)
+      probability = @rankings[choice + '@' + i.to_s] / @combinations_sum
+      probability.mantissa * (10**probability.exponent)
     end
 
     def result(choice)

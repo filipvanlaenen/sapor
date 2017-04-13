@@ -225,11 +225,11 @@ describe Sapor::ReferendumPolychotomy, '#report' do
   it 'produces a report after first refinement for short choice labels' do
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
-                      "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)\n" \
-                      "Yellow   46.2%    5.6%    9.3%    9.3%– 11.1%  100.0%\n" + # TODO: Shouldn't MPRF be 5.6% and CI 9.3%–9.3%?
-                      "Blue     23.1%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Green    15.4%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Red       7.7%    1.9%    1.9%    1.9%–  3.7%        " # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)   P(R↑)    P(R)   P(R↓)\n" \
+                      "Yellow   46.2%    5.6%    9.3%    9.3%– 11.1%  100.0%            0.0%  100.0%\n" + # TODO: Shouldn't MPRF be 5.6% and CI 9.3%–9.3%?
+                      "Blue     23.1%    1.9%    1.9%    1.9%–  3.7%    0.0%    0.0%    0.0%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Green    15.4%    1.9%    1.9%    1.9%–  3.7%    0.0%    0.0%    0.0%  100.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Red       7.7%    1.9%    1.9%    1.9%–  3.7%          100.0%    0.0%" # TODO: Shouldn't CI be 1.9%–1.9%?
     polychotomy = referendum_pentachotomy
     polychotomy.refine
     expect(polychotomy.report).to eq(expected_report)
@@ -246,10 +246,10 @@ describe Sapor::ReferendumPolychotomy, '#report' do
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
-                      "Choice       Result    MPRF    MPF      CI(95%)      P(>↓)\n" \
-                      "Medium Blue   42.9%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Light Green   28.6%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Dark Red      14.3%    1.9%    1.9%    1.9%–  3.7%        " # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Choice       Result    MPRF    MPF      CI(95%)      P(>↓)   P(R↑)    P(R)   P(R↓)\n" \
+                      "Medium Blue   42.9%    1.9%    1.9%    1.9%–  3.7%    0.0%            0.0%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Light Green   28.6%    1.9%    1.9%    1.9%–  3.7%    0.0%    0.0%    0.0%  100.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Dark Red      14.3%    1.9%    1.9%    1.9%–  3.7%          100.0%    0.0%" # TODO: Shouldn't CI be 1.9%–1.9%?
     expect(polychotomy.report).to eq(expected_report)
   end
 
@@ -263,10 +263,10 @@ describe Sapor::ReferendumPolychotomy, '#report' do
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
-                      "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)\n" \
-                      "Blue     42.9%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Green    28.6%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Red      14.3%    1.9%    1.9%    1.9%–  3.7%        " # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)   P(R↑)    P(R)   P(R↓)\n" \
+                      "Blue     42.9%    1.9%    1.9%    1.9%–  3.7%    0.0%            0.0%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Green    28.6%    1.9%    1.9%    1.9%–  3.7%    0.0%    0.0%    0.0%  100.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Red      14.3%    1.9%    1.9%    1.9%–  3.7%          100.0%    0.0%" # TODO: Shouldn't CI be 1.9%–1.9%?
     expect(polychotomy.report).to eq(expected_report)
   end
 
@@ -280,10 +280,10 @@ describe Sapor::ReferendumPolychotomy, '#report' do
     polychotomy.refine
     expected_report = 'Most probable rounded fractions, fractions and 95%' \
                       " confidence intervals:\n" \
-                      "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)\n" \
-                      "Blue     25.0%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Green    25.0%    1.9%    1.9%    1.9%–  3.7%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
-                      "Red      25.0%    1.9%    1.9%    1.9%–  3.7%        " # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Choice  Result    MPRF    MPF      CI(95%)      P(>↓)   P(R↑)    P(R)   P(R↓)\n" \
+                      "Blue     25.0%    1.9%    1.9%    1.9%–  3.7%    0.0%            0.0%    0.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Green    25.0%    1.9%    1.9%    1.9%–  3.7%    0.0%    0.0%    0.0%  100.0%\n" + # TODO: Shouldn't CI be 1.9%–1.9%?
+                      "Red      25.0%    1.9%    1.9%    1.9%–  3.7%          100.0%    0.0%" # TODO: Shouldn't CI be 1.9%–1.9%?
     expect(polychotomy.report).to eq(expected_report)
   end
 end
