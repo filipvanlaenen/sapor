@@ -28,8 +28,8 @@ module Sapor
 
     AREA_KEY = 'Area'.freeze
     AREAS_MAP = {}
-    [Belgium.instance, Catalonia.instance, Flanders.instance, Greece.instance,
-     Norway.instance, NorwegianMunicipality::BERGEN,
+    [Belgium.instance, Catalonia.instance, Flanders.instance, France.instance,
+     Greece.instance, Norway.instance, NorwegianMunicipality::BERGEN,
      NorwegianMunicipality::OSLO, NorwegianMunicipality::TRONDHEIM,
      UnitedKingdom.instance, Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
 
