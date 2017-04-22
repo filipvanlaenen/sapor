@@ -24,32 +24,72 @@ module Sapor
   class UnitedKingdom < Area
     include Singleton
 
-    #    LAST_DETAILED_ELECTION_RESULT = load_election_results('uk-2015.psv')
-    #    LAST_ELECTION_RESULT = summarize_election_results(LAST_DETAILED_ELECTION_RESULT)
-
-    #    ELECTORAL_SYSTEM = FirstPastThePost.new(LAST_ELECTION_RESULT,
-    #                                            LAST_DETAILED_ELECTION_RESULT)
-
     def area_code
       'UK'
     end
 
-    def population_size
-      # Source: BBC News Election 2010 Results, retrieved on 3 April 2015.
-      # URL: http://news.bbc.co.uk/2/shared/election2010/results/
-      29_691_380
+    def coalitions
+      [['Conservative Party'], ['Conservative Party', 'Liberal Democrats'],
+       ['Conservative Party', 'Plaid Cymru'],
+       ['Conservative Party', 'Plaid Cymru', 'Scottish National Party'],
+       ['Conservative Party', 'Scottish National Party'],
+       ['Labour Party'], ['Labour Party', 'Liberal Democrats'],
+       ['Labour Party', 'Liberal Democrats', 'Plaid Cymru'],
+       ['Labour Party', 'Liberal Democrats', 'Plaid Cymru',
+        'Scottish National Party'],
+       ['Labour Party', 'Liberal Democrats', 'Scottish National Party'],
+       ['Labour Party', 'Plaid Cymru'],
+       ['Labour Party', 'Plaid Cymru', 'Scottish National Party'],
+       ['Labour Party', 'Scottish National Party']]
     end
 
     def no_of_seats
-      LAST_DETAILED_ELECTION_RESULT.size
+      election_results_of_2015.size
+    end
+
+    def overall_election_results_of_2015
+      if @overall_election_results_of_2015.nil?
+        @overall_election_results_of_2015 = \
+          summarize_election_results(election_results_of_2015)
+      end
+      @overall_election_results_of_2015
+    end
+
+    def population_size
+      # Source: Wikipedia article Results of the United Kingdom general
+      # election, 2015 by parliamentary constituency, retrieved on 22 April
+      # 2017.
+      # URL: https://en.wikipedia.org/wiki/Results_of_the_United_Kingdom_general_election,_2015_by_parliamentary_constituency
+      30_697_525
     end
 
     def seats(simulation)
-      ELECTORAL_SYSTEM.project(simulation)
+      electoral_system.project(simulation)
     end
 
     def threshold
       nil
+    end
+
+    private
+
+    def election_results_of_2015
+      if @election_results_of_2015.nil?
+        @election_results_of_2015 = load_election_results(
+          'united_kingdom-2015.psv'
+        )
+      end
+      @election_results_of_2015
+    end
+
+    def electoral_system
+      if @electoral_system.nil?
+        @electoral_system = FirstPastThePost.new(
+          overall_election_results_of_2015,
+          election_results_of_2015
+        )
+      end
+      @electoral_system
     end
   end
 end
