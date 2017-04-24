@@ -115,7 +115,7 @@ describe Sapor::UnitedKingdom, '#seats' do
     uk = Sapor::UnitedKingdom.instance
     results = uk.overall_election_results_of_2015
     seats = uk.seats(results)
-    expect(seats['Conservative Party']).to eq(330)
+    expect(seats['Conservative Party']).to eq(331)
     expect(seats['Labour Party']).to eq(232)
     expect(seats['Scottish National Party']).to eq(56)
     expect(seats['Liberal Democrats']).to eq(8)
@@ -126,8 +126,8 @@ describe Sapor::UnitedKingdom, '#seats' do
     expect(seats['Ulster Unionist Party']).to eq(2)
     expect(seats['UK Independence Party']).to eq(1)
     expect(seats['Green Party']).to eq(1)
-    expect(seats['Speaker']).to eq(1)
-    expect(seats['Indipendent']).to eq(1)
+    expect(seats['Small or local party, or independent candidate']).to eq(1)
+    expect(seats['All other candidates']).to eq(0)
   end
 end
 
