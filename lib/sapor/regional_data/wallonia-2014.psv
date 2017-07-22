@@ -1,0 +1,101 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Official results by IBZ,
+#         downloaded on 21 July 2017,
+# URL: http://elections2014.belgium.be/fr/wal/results/results_start.html
+
+Brabant Wallon | MR              | 97,349
+Brabant Wallon | PS              | 45,723
+Brabant Wallon | cdH             | 28,314
+Brabant Wallon | Ecolo           | 27,555
+Brabant Wallon | DéFI            | 10,945
+Brabant Wallon | Parti Populaire |  9,563
+Brabant Wallon | PTB             |  6,592
+Brabant Wallon | La Droite       |  2,539
+Brabant Wallon | PIRATE          |  3,612
+Brabant Wallon | R.W.F.          |  1,277
+Brabant Wallon | NATION          |    867
+Brabant Wallon | NWA             |    453
+
+Hainaut | MR                   | 162,607
+Hainaut | DéFI                 |  16,843
+Hainaut | Ecolo                |  48,789
+Hainaut | PS                   | 279,646
+Hainaut | cdH                  |  93,321
+Hainaut | Parti Populaire      |  35,228
+Hainaut | PTB                  |  42,629
+Hainaut | MG                   |   2,419
+Hainaut | La Droite            |  11,076
+Hainaut | Debout les Belges    |  16,618
+Hainaut | R.W.F.               |   2,759
+Hainaut | R                    |     789
+Hainaut | Rassemblement Wallon |   3,298
+Hainaut | P+                   |   2,280
+Hainaut | NATION               |   6,923
+Hainaut | NWA                  |   1,804
+Hainaut | FW                   |   1,466
+Hainaut | Wallonie d'Abord     |   2,789
+Hainaut | Atomique             |     892
+
+Liège | PS                 | 185,907
+Liège | MR                 | 158,527
+Liège | cdH                |  81,364
+Liège | Ecolo              |  57,654
+Liège | PTB                |  51,064
+Liège | Parti Populaire    |  33,993
+Liège | DéFI               |  13,383
+Liège | La Droite          |   9,764
+Liège | Wallonie d'Abord   |   6,293
+Liège | PP PARTIPENSIONNES |   4,811
+Liège | VEGA               |   3,501
+Liège | ISLAM              |   3,169
+Liège | R.W.F.             |   2,426
+Liège | VLC                |   1,927
+Liège | NATION             |   1,234
+Liège | MG                 |   1,050
+Liège | FW                 |     596
+Liège | NWA                |     420
+Liège | R                  |     390
+
+Luxembourg | cdH                | 49,460
+Luxembourg | MR                 | 46,546
+Luxembourg | PS                 | 38,295
+Luxembourg | Ecolo              | 14,034
+Luxembourg | Parti Populaire    |  7,771
+Luxembourg | DéFI               |  3,270
+Luxembourg | PTB                |  2,848
+Luxembourg | MG                 |    960
+Luxembourg | R.W.F.             |    721
+Luxembourg | Rassemblement R    |    487
+Luxembourg | Union des Liberaux |    483
+
+Namur | PS              | 83,082
+Namur | MR              | 81,334
+Namur | cdH             | 58,036
+Namur | Ecolo           | 28,454
+Namur | PTB             | 14,749
+Namur | Parti Populaire | 13,025
+Namur | DéFI            |  7,389
+Namur | La Droite       |  5,059
+Namur | R.W.F.          |  2,548
+Namur | NATION          |  1,815
+Namur | R               |    710
+Namur | Rassemblement R |    595
+Namur | FW              |    557
+Namur | MG              |    529
+Namur | UdL             |    192
