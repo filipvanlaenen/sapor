@@ -119,7 +119,7 @@ describe Sapor::Wallonia, '#seats' do
     expect(seats['UdL']).to eq(0)
     expect(seats['Union des Liberaux']).to eq(0)
     expect(seats['VLC']).to eq(0)
-    expect(seats["Wallonie d'Abord"]).to eq(0)
+    expect(seats["Wallonie d’Abord"]).to eq(0)
   end
 end
 
