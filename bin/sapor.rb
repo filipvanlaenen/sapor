@@ -19,4 +19,6 @@
 
 require 'sapor'
 
-Sapor.analyze(ARGV[1])
+ARGV.shift
+filename = ARGV.shift
+Sapor.analyze(filename, ARGV)
