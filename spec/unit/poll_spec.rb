@@ -19,6 +19,7 @@
 
 require 'spec_helper'
 
+SAMPLE_FILENAME = 'poll_spec.poll'
 SAMPLE_POLL_ARRAY = ['foo=bar', 'baz=qux', '==', 'a=1', 'b=2']
 SAMPLE_METADATA = { 'Area' => 'UT', 'Type' => 'Election' }
 SAMPLE_RESULTS = { 'Red' => 1, 'Green' => 2, 'Blue' => 3, 'Other' => 1 }
@@ -26,7 +27,7 @@ MAX_ERROR = 0.05
 MAX_VALUE_ERROR = 50_000
 
 def sample_poll
-  Sapor::Poll.new(SAMPLE_METADATA.dup, SAMPLE_RESULTS.dup)
+  Sapor::Poll.new(SAMPLE_FILENAME, SAMPLE_METADATA.dup, SAMPLE_RESULTS.dup)
 end
 
 describe Sapor::Poll, '#as_hashes' do
