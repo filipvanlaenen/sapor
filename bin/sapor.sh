@@ -25,6 +25,7 @@
 #
 
 ACTION="$1"
+shift 1
 
 export SAPORDIR="/opt/sapor"
 export LOCALSAPORDIR="${HOME}/.sapor"
@@ -41,7 +42,7 @@ case "$ACTION" in
     if [ ! -d "${LOCALSAPORDIR}/cache" ]; then
       mkdir "${LOCALSAPORDIR}/cache"
     fi
-    $RUBY -I "${SAPORDIR}/lib" "${SAPORDIR}/sapor.rb" "${LOCALSAPORDIR}" $2
+    $RUBY -I "${SAPORDIR}/lib" "${SAPORDIR}/sapor.rb" "${LOCALSAPORDIR}" $@
     ;;
   help)
     echo "Statistical Analysis of Polling Results (SAPoR) v${VERSION}"
@@ -51,11 +52,11 @@ case "$ACTION" in
     echo "  sapor action [parameters]"
     echo
     echo "where actions and parameters include:"
-    echo "  analyze <poll-file>  run an analysis on the poll file"
-    echo "  help                 show this message"
-    echo "  version              show the version information"
-    echo "  copyright            show the copyright information"
-    echo "  warranty             show the warranty information"
+    echo "  analyze <poll-file> <options> run an analysis on the poll file"
+    echo "  help                          show this message"
+    echo "  version                       show the version information"
+    echo "  copyright                     show the copyright information"
+    echo "  warranty                      show the warranty information"
     ;;
   version)
     echo "Statistical Analysis of Polling Results (SAPoR) v${VERSION}"
