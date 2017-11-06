@@ -404,5 +404,28 @@ module Sapor
     def seats(simulation)
       ELECTORAL_SYSTEM.project(simulation)
     end
+    
+    def coalitions
+      [['Høyre', 'Kristelig Folkeparti', 'Venstre'],
+       ['Fremskrittspartiet', 'Høyre'],
+       ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Venstre'],
+       ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
+        'Miljøpartiet de Grønne', 'Venstre'],
+       ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Senterpartiet',
+        'Venstre'],
+       ['Arbeiderpartiet', 'Senterpartiet', 'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Senterpartiet'],
+       ['Arbeiderpartiet', 'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt', 'Senterpartiet',
+        'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Kristelig Folkeparti', 'Senterpartiet'],
+       ['Arbeiderpartiet', 'Kristelig Folkeparti', 'Miljøpartiet de Grønne',
+        'Senterpartiet', 'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Senterpartiet',
+        'Sosialistisk Venstreparti'],
+       ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
+        'Sosialistisk Venstreparti'],
+       ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']]
+    end    
   end
 end
