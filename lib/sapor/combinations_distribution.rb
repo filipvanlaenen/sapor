@@ -52,6 +52,26 @@ module Sapor
       @distribution.empty?
     end
 
+    def interval_probabilities(intervals, population_size)
+      value_interval_probabilities(intervals.map {|interval| [interval.first * population_size, interval.last * population_size]})
+    end
+    
+    def value_interval_probabilities(value_intervals)
+      total = @distribution.values.inject(:+)
+      value_intervals.map do | value_interval |
+        distribution_in_interval = @distribution.select do |k, _|
+          k >= value_interval.first && k < value_interval.last
+        end
+        if distribution_in_interval.empty?
+          0
+        else
+          in_interval = distribution_in_interval.values.inject(:+)
+          probability = in_interval / total
+          probability.mantissa * (10**probability.exponent)
+        end
+      end
+    end
+
     def value_threshold_probability(threshold_value)
       total = @distribution.values.inject(:+)
       distribution_over_threshold = @distribution.select do |k, _|
@@ -63,6 +83,28 @@ module Sapor
         over_threshold = distribution_over_threshold.values.inject(:+)
         probability = over_threshold / total
         probability.mantissa * (10**probability.exponent)
+      end
+    end
+
+    def probabilities(values)
+      total = @distribution.values.inject(:+)
+      values.map do | value |
+        if @distribution.key?(value)
+          probability = @distribution[value] / total
+          probability.mantissa * (10**probability.exponent)
+        else
+          0
+        end
+      end
+    end
+
+    def probability(value)
+      if @distribution.key?(value)
+        total = @distribution.values.inject(:+)
+        probability = @distribution[value] / total
+        probability.mantissa * (10**probability.exponent)
+      else
+        0
       end
     end
 
