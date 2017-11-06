@@ -28,17 +28,18 @@ module Sapor
     end
 
     def coalitions
-      [['N-VA', 'CD&V'],
-       ['N-VA', 'CD&V', 'Open Vld'],
-       ['N-VA', 'CD&V', 'sp.a'],
+      [['CD&V', 'Groen', 'Open Vld'],
+       ['CD&V', 'Groen', 'Open Vld', 'sp.a'],
+       ['CD&V', 'Groen', 'sp.a'],
+       ['CD&V', 'Groen', 'PVDA', 'sp.a'],
+       ['CD&V', 'N-VA'],
+       ['CD&V', 'N-VA', 'Open Vld'],
+       ['CD&V', 'N-VA', 'sp.a'],
        ['CD&V', 'Open Vld'],
-       ['CD&V', 'sp.a'],
        ['CD&V', 'Open Vld', 'sp.a'],
-       ['CD&V', 'Open Vld', 'sp.a', 'Groen'],
+       ['CD&V', 'sp.a'],
+       ['Groen', 'Open Vld', 'sp.a'],
        ['Open Vld', 'sp.a'],
-       ['Open Vld', 'sp.a', 'Groen'],
-       ['CD&V', 'sp.a', 'Groen'],
-       ['CD&V', 'sp.a', 'Groen', 'PVDA'],
        ['N-VA', 'Vlaams Belang']]
     end
 
