@@ -33,7 +33,11 @@ module Sapor
       result = create_empty_result(simulation)
       @last_detailed_election_result.each_value do |local_last_result|
         winner = local_winner(local_last_result, multiplicators)
-        result[winner] += 1
+        if result.key?(winner)
+          result[winner] += 1
+        else
+          result[winner] = 1
+        end
       end
       result
     end
