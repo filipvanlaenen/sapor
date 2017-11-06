@@ -65,6 +65,15 @@ module Sapor
       size = @dichotomy_hash.values.first.values.size
       "Number of data points: #{with_thousands_separator(size)}."
     end
+    
+    def size
+      @dichotomy_hash.values.first.values.size
+    end
+    
+    def write_outputs(filename)
+      write_confidence_intervals(filename)
+      write_probabilities(filename)
+    end
 
     private
 
@@ -94,5 +103,36 @@ module Sapor
         (@threshold.nil? ? '' : '  ' +
          six_char_percentage(dichotomy.threshold_probability(@threshold)))
     end
+    
+    def write_confidence_intervals(filename)
+      ci_filename = filename.gsub('.poll', '-dichotomies-confidence-intervals.psv')
+      File.open(ci_filename, 'w') do |file| 
+        file.puts('Choice | CI(80%) Bottom | CI(80%) Top | CI(90%) Bottom | CI(90%) Top | CI(95%) Bottom | CI(95%) Top | CI(99%) Bottom | CI(99%) Top') 
+        @dichotomy_hash.each_pair do | choice, dichotomy |
+          ci80 = dichotomy.confidence_interval(0.8)
+          ci90 = dichotomy.confidence_interval(0.9)
+          ci95 = dichotomy.confidence_interval(0.95)
+          ci99 = dichotomy.confidence_interval(0.99)
+          file.puts(choice + ' | ' + ci80.first.to_s + ' | ' + \
+                    ci80.last.to_s + ' | ' + ci90.first.to_s + ' | ' + \
+                    ci90.last.to_s + ' | ' + ci95.first.to_s + ' | ' + \
+                    ci95.last.to_s + ' | ' + ci99.first.to_s + ' | ' + \
+                    ci99.last.to_s)
+        end
+      end
+    end
+    
+    def write_probabilities(filename)
+      ci_filename = filename.gsub('.poll', '-dichotomies-probabilities.psv')
+      File.open(ci_filename, 'w') do |file|
+        intervals = Range.new(0, 1999).map{ | i | [i.to_f / 2000, (i + 1).to_f / 2000]}
+        file.puts('Choice | ' + intervals.map{|a| "#{sprintf('%.4f', a.first)}–#{sprintf('%.4f', a.last)}"}.join(' | '))
+        @dichotomy_hash.each_pair do | choice, dichotomy |
+          unless choice == OTHER
+            file.puts(choice + ' | ' + dichotomy.interval_probabilities(intervals).join(' | '))
+          end
+        end
+      end
+    end    
   end
 end
