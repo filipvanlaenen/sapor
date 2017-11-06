@@ -29,28 +29,33 @@ module Sapor
 
     def coalitions
       [['Junts pel Sí'],
-       ['Junts pel Sí',
-        "Candidatura d'Unitat Popular – Alternativa d'Esquerres"]]
+       ['Junts pel Sí', 'Candidatura d’Unitat Popular'],
+       ['Junts pel Sí', 'Catalunya en Comú'],
+       ['Ciutadans–Partido de la Ciudadanía',
+        'Partit dels Socialistes de Catalunya (PSC-PSOE)',
+        'Catalunya en Comú', 'Partit Popular'],
+       ['Ciutadans–Partido de la Ciudadanía',
+        'Partit dels Socialistes de Catalunya (PSC-PSOE)', 'Partit Popular']]
     end
 
     def no_of_seats
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2012_adapted_to_2015
-      if @overall_election_results_of_2012_adapted_to_2015.nil?
-        @overall_election_results_of_2012_adapted_to_2015 = \
-          summarize_election_results(election_results_of_2012_adapted_to_2015)
+    def overall_election_results_of_2015
+      if @overall_election_results_of_2015.nil?
+        @overall_election_results_of_2015 = \
+          summarize_election_results(election_results_of_2015)
       end
-      @overall_election_results_of_2012_adapted_to_2015
+      @overall_election_results_of_2015
     end
 
     def population_size
-      # Voter turnout in 2012
-      # Source: Catalonian parliamentary election, 2012, Wikipedia, retrieved on
-      # 22 July 2015.
-      # URL: https://en.wikipedia.org/wiki/Catalonian_parliamentary_election,_2012
-      3_668_310
+      # Voter turnout in 2015
+      # Source: "Election Results. Parliament of Catalonia Election 2015".
+      #         Generalitat of Catalonia. Retrieved 21 October 2017.
+      # URL: http://governacio.gencat.cat/ca/pgov_ambits_d_actuacio/pgov_eleccions/pgov_dades_electorals/resultats-2?id_eleccions=A20151&id_territori=CA09
+      5_510_853
     end
 
     def seats(simulation)
@@ -68,19 +73,19 @@ module Sapor
 
     THRESHOLD = 0.03
 
-    def election_results_of_2012_adapted_to_2015
-      if @election_results_of_2012_adapted_to_2015.nil?
-        @election_results_of_2012_adapted_to_2015 = load_election_results( \
-          'catalonia-2012-2015.psv')
+    def election_results_of_2015
+      if @election_results_of_2015.nil?
+        @election_results_of_2015 = load_election_results( \
+          'catalonia-2015.psv')
       end
-      @election_results_of_2012_adapted_to_2015
+      @election_results_of_2015
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2012_adapted_to_2015,
-          election_results_of_2012_adapted_to_2015,
+          overall_election_results_of_2015,
+          election_results_of_2015,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
           THRESHOLD)
