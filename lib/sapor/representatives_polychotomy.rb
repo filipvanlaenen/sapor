@@ -24,7 +24,8 @@ module Sapor
   class RepresentativesPolychotomy < Polychotomy
     include NumberFormatter
 
-    def initialize(results, area, dichotomies, max_error)
+    def initialize(results, area, dichotomies, max_error, logger = nil)
+      @logger = logger
       @coalitions = area.coalitions
       super(results, area, dichotomies, max_error)
       @seats = create_new_seats_distributions
@@ -34,9 +35,14 @@ module Sapor
       no_of_new_simulations = 0
       new_votes = create_new_votes_distributions
       new_seats = create_new_seats_distributions
+      last_logger_info = 0
       while @no_of_data_points == 0 || no_of_new_simulations == 0 ||
             no_of_new_simulations < @no_of_simulations
         no_of_new_simulations += try_next_data_point(new_votes, new_seats)
+        if @logger != nil && no_of_new_simulations > 0 && no_of_new_simulations % 131_072 == 0 && last_logger_info < no_of_new_simulations
+          @logger.info("#{with_thousands_separator(@no_of_simulations + no_of_new_simulations)} simulations done so far.")
+          last_logger_info = no_of_new_simulations
+        end
       end
       unless @no_of_simulations == 0
         @error_estimate = calculate_error_estimate(new_votes)
@@ -97,6 +103,15 @@ module Sapor
       " (#{with_thousands_separator(space_size)})."
     end
 
+    def write_outputs(filename)
+      write_rankings(filename)
+      write_seats_confidence_intervals(filename)
+      write_seats_probabilities(filename)
+      write_coalitions_seats_confidence_intervals(filename)
+      write_coalitions_seats_probabilities(filename)
+      write_state_summary(filename)
+    end
+
     private
 
     def create_new_seats_distributions
@@ -147,6 +162,9 @@ module Sapor
             @comparisons[a + '>' + b] += combinations
           end
         end
+      end
+      @choices.sort { |a, b| data_point[b] <=> data_point[a] }.each_with_index do |choice, i|
+        @rankings[choice + '@' + i.to_s] += combinations
       end
       @coalitions.each do |coalition|
         coalition_value = coalition.map { |choice| data_point.key?(choice) ? data_point[choice] : 0 }.inject(:+)
@@ -255,6 +273,66 @@ module Sapor
         ci_seats.first.to_s.rjust(max_seats_width) + '–' + \
         ci_seats.last.to_s.rjust(max_seats_width) + '    ' + \
         six_char_percentage(majority_seats_probability)
+    end
+    
+    def write_seats_confidence_intervals(filename)
+      ci_filename = filename.gsub('.poll', '-polychotomy-seats-confidence-intervals.psv')
+      File.open(ci_filename, 'w') do |file| 
+        file.puts('Choice | CI(80%) Bottom | CI(80%) Top | CI(90%) Bottom | CI(90%) Top | CI(95%) Bottom | CI(95%) Top | CI(99%) Bottom | CI(99%) Top') 
+        @choices.each do | choice |
+          unless choice == OTHER
+            ci80 = @seats[choice].confidence_interval(0.8)
+            ci90 = @seats[choice].confidence_interval(0.9)
+            ci95 = @seats[choice].confidence_interval(0.95)
+            ci99 = @seats[choice].confidence_interval(0.99)
+            file.puts(choice + ' | ' + ci80.first.to_s + ' | ' + \
+                      ci80.last.to_s + ' | ' + ci90.first.to_s + ' | ' + \
+                      ci90.last.to_s + ' | ' + ci95.first.to_s + ' | ' + \
+                      ci95.last.to_s + ' | ' + ci99.first.to_s + ' | ' + \
+                      ci99.last.to_s)
+          end
+        end
+      end
+    end    
+
+    def write_seats_probabilities(filename)
+      ci_filename = filename.gsub('.poll', '-polychotomy-seats-probabilities.psv')
+      File.open(ci_filename, 'w') do |file| 
+        file.puts('Choice | ' + Range.new(0, @area.no_of_seats).to_a.join(' | '))
+        @choices.each do | choice |
+          unless choice == OTHER
+            file.puts(choice + ' | ' + @seats[choice].probabilities(Range.new(0, @area.no_of_seats).to_a).join(' | '))
+          end
+        end
+      end
+    end    
+
+    def write_coalitions_seats_confidence_intervals(filename)
+      ci_filename = filename.gsub('.poll', '-polychotomy-coalitions-seats-confidence-intervals.psv')
+      File.open(ci_filename, 'w') do |file| 
+        file.puts('Coalition | CI(80%) Bottom | CI(80%) Top | CI(90%) Bottom | CI(90%) Top | CI(95%) Bottom | CI(95%) Top | CI(99%) Bottom | CI(99%) Top') 
+        @coalitions.each do | coalition |
+          ci80 = @seats[coalition].confidence_interval(0.8)
+          ci90 = @seats[coalition].confidence_interval(0.9)
+          ci95 = @seats[coalition].confidence_interval(0.95)
+          ci99 = @seats[coalition].confidence_interval(0.99)
+          file.puts(coalition_label(coalition) + ' | ' + ci80.first.to_s + ' | ' + \
+                    ci80.last.to_s + ' | ' + ci90.first.to_s + ' | ' + \
+                    ci90.last.to_s + ' | ' + ci95.first.to_s + ' | ' + \
+                    ci95.last.to_s + ' | ' + ci99.first.to_s + ' | ' + \
+                    ci99.last.to_s)
+        end
+      end
+    end    
+
+    def write_coalitions_seats_probabilities(filename)
+      ci_filename = filename.gsub('.poll', '-polychotomy-coalitions-seats-probabilities.psv')
+      File.open(ci_filename, 'w') do |file| 
+        file.puts('Coalition | ' + Range.new(0, @area.no_of_seats).to_a.join(' | '))
+        @coalitions.each do | coalition |
+          file.puts(coalition_label(coalition) + ' | ' + @seats[coalition].probabilities(Range.new(0, @area.no_of_seats).to_a).join(' | '))
+        end
+      end
     end
   end
 end
