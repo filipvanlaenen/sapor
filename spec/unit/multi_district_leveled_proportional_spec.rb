@@ -19,25 +19,25 @@
 
 require 'spec_helper'
 
-SAMPLE_ELECTION_RESULT = { 'Red' => 120, 'Green' => 120, 'Blue' => 100 }
+SAMPLE_ELECTION_RESULT = { 'Red' => 120, 'Green' => 120, 'Blue' => 100 }.freeze
 
-SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
-                                             },
+SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70 },
                                     'South' => { 'Red' => 70, 'Green' => 50,
-                                                 'Blue' => 100 } }
+                                                 'Blue' => 100 } }.freeze
 
-SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }
+SAMPLE_SEAT_DISTRIBUTION = { 'North' => 3, 'South' => 5 }.freeze
 
 SAMPLE_LEVELING_SEATS = 2
 
 SAMPLE_LEVELING_THRESHOLD = 0.05
 
-SAMPLE_POLL_RESULT = { 'Red' => 120, 'Green' => 120 }
+SAMPLE_POLL_RESULT = { 'Red' => 120, 'Green' => 120 }.freeze
 
 LEVELED = Sapor::MultiDistrictLeveledProportional.new( \
   SAMPLE_ELECTION_RESULT, SAMPLE_DETAILED_ELECTION_RESULT,
   SAMPLE_SEAT_DISTRIBUTION, SAMPLE_LEVELING_SEATS, SAMPLE_LEVELING_THRESHOLD,
-  Sapor::SainteLague14Denominators)
+  Sapor::SainteLague14Denominators
+)
 
 describe Sapor::MultiDistrictLeveledProportional, '#project' do
   it 'projects same result as last result if fed with last election result' do
