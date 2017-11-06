@@ -16,6 +16,9 @@
 #
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
+
+require 'yaml'
+
 module Sapor
   OTHER = 'Other'.freeze
 
@@ -28,29 +31,43 @@ module Sapor
 
     AREA_KEY = 'Area'.freeze
     AREAS_MAP = {}
-    [Belgium.instance, Catalonia.instance, Flanders.instance, France.instance,
-     Greece.instance, Norway.instance, NorwegianMunicipality::BERGEN,
-     NorwegianMunicipality::OSLO, NorwegianMunicipality::TRONDHEIM,
-     UnitedKingdom.instance, Utopia.instance].map { |area| AREAS_MAP[area.area_code] = area }
+    [BelgiumBrussels.instance, BelgiumFlanders.instance, BelgiumWallonia.instance,
+     Catalonia.instance, CataloniaWithoutJuntsPelSi.instance, Flanders.instance,
+     France.instance, Greece.instance, Iceland.instance, Iceland2017.instance, Norway.instance,
+     NorwegianMunicipality::BERGEN, NorwegianMunicipality::OSLO,
+     NorwegianMunicipality::TRONDHEIM, UnitedKingdom.instance, Utopia.instance, Wallonia.instance].map { |area| AREAS_MAP[area.area_code] = area }
 
     TYPE_KEY = 'Type'.freeze
     REFERENDUM_TYPE_VALUE = 'Referendum'.freeze
     ELECTION_TYPE_VALUE = 'Election'.freeze
 
-    def initialize(metadata, results)
+    DEFAULT_CONFIDENCE_LEVEL = 0.95
+
+    def initialize(filename, metadata, results)
+      @filename = filename
       @logger = LogFacade.create_logger
-      @area = lookup_area(metadata.delete(AREA_KEY))
+      @area_code = metadata.delete(AREA_KEY)
+      @area = Poll.lookup_area(@area_code)
       @type = metadata.delete(TYPE_KEY)
       @results = interpret(results)
     end
 
-    def analyze(max_error = 0.0001)
-      analyze_as_dichotomies(max_error)
-      analyze_as_polychotomy(max_error)
+    def analyze(options)
+      analyze_as_dichotomies(options)
+      analyze_as_polychotomy(options)
       @logger.info('Done.')
     end
 
-    def confidence_interval(choice, level = 0.95)
+    def continue_analysis(options)
+      @logger = LogFacade.create_logger
+      @logger.info('Continuing the analysis as a polychotomy...')
+      @area = Poll.lookup_area(@area_code)
+      @analysis.revive_volatile_fields(@logger)
+      analyze_until_convergence(options)
+      @logger.info('Done.')
+    end
+
+    def confidence_interval(choice, level = DEFAULT_CONFIDENCE_LEVEL)
       @analysis.confidence_interval(choice, level) unless @analysis.nil?
     end
 
@@ -64,6 +81,17 @@ module Sapor
 
     def result(choice)
       @results[choice]
+    end
+
+    def encode_with(coder)
+      (instance_variables - [:@area, :@logger]).each do |var|
+        var = var.to_s
+        coder[var.gsub('@', '')] = eval(var)
+      end
+    end
+
+    def self.lookup_area(area_code)
+      AREAS_MAP[area_code]
     end
 
     private
@@ -88,15 +116,15 @@ module Sapor
       [metadata, results]
     end
 
-    def self.from_lines(lines)
+    def self.from_lines(filename, lines)
       hashes = as_hashes(lines)
       metadata = hashes.first
       results = hashes.last
-      new(metadata, results)
+      new(filename, metadata, results)
     end
 
     def self.from_file(filename)
-      from_lines(File.open(filename))
+      from_lines(filename, File.open(filename))
     end
 
     def interpret(results)
@@ -105,10 +133,6 @@ module Sapor
         interpreted[key] = value.to_i
       end
       interpreted
-    end
-
-    def lookup_area(area_code)
-      AREAS_MAP[area_code]
     end
 
     def population_size
@@ -127,31 +151,54 @@ module Sapor
       end
     end
 
-    def analyze_until_convergence(max_error)
-      while @analysis.error_estimate > max_error
+    def analyze_until_convergence(options)
+      while should_continue_analysis?(@analysis, options)
         @analysis.refine
         @logger.info(@analysis.report)
         @logger.info('Error estimate: ε ≤ ' +
                      three_digits_percentage(@analysis.error_estimate) +
                      '.')
         @logger.info(@analysis.progress_report)
+        @analysis.write_outputs(@filename)
+        save_state
       end
     end
+    
+    def should_continue_analysis?(analysis, options)
+      analysis.kind_of?(Dichotomies) && (options.min_dichotomies_iterations > analysis.size || analysis.error_estimate > options.max_error) \
+        || analysis.kind_of?(Polychotomy) && options.max_polychotomy_iterations > analysis.no_of_simulations && (options.min_polychotomy_iterations > analysis.no_of_simulations || analysis.error_estimate > options.max_error)
+    end
 
-    def analyze_as_dichotomies(max_error)
+    def analyze_as_dichotomies(options)
       @logger.info('Analyzing as a set of dichotomies...')
       @analysis = Dichotomies.new(@results, population_size, threshold)
-      analyze_until_convergence(max_error)
+      analyze_until_convergence(options)
     end
 
-    def analyze_as_polychotomy(max_error)
+    def analyze_as_polychotomy(options)
       @logger.info('Analyzing as a polychotomy...')
       if referendum?
-        @analysis = ReferendumPolychotomy.new(@results, @area, @analysis, max_error)
+        @analysis = ReferendumPolychotomy.new(@results, @area, @analysis, options.max_error)
       else
-        @analysis = RepresentativesPolychotomy.new(@results, @area, @analysis, max_error)
+        @analysis = RepresentativesPolychotomy.new(@results, @area, @analysis, options.max_error, @logger)
       end
-      analyze_until_convergence(max_error)
+      analyze_until_convergence(options)
+    end
+    
+    def save_state
+      new_yaml_file = @filename.gsub('.poll', '-state-new.yaml')
+      open(new_yaml_file, 'w') do |file|
+        file.write(to_yaml)
+      end
+      yaml_file = @filename.gsub('.poll', '-state.yaml')
+      old_yaml_file = @filename.gsub('.poll', '-state-old.yaml')
+      if File.exist?(old_yaml_file)
+        File.delete(old_yaml_file)
+      end
+      if File.exist?(yaml_file)
+        File.rename(yaml_file, old_yaml_file)
+      end
+      File.rename(new_yaml_file, yaml_file)
     end
   end
 end
