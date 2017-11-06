@@ -53,6 +53,20 @@ module Sapor
       @enum.size
     end
 
+    def encode_with(coder)
+      (instance_variables - [:@area, :@enum, :@logger]).each do |var|
+        var = var.to_s
+        coder[var.gsub('@', '')] = eval(var)
+      end
+    end
+    
+    def revive_volatile_fields(logger = nil)
+      @area = Poll.lookup_area(@area_code)
+      @enum = create_enumerator(@ranges)
+      @logger = logger
+      1.upto(@no_of_data_points).each { |i| @enum.next() }
+    end
+    
     private
 
     def calculate_most_probable_fraction(key, votes)
@@ -112,6 +126,7 @@ module Sapor
     def initialize_static_information(results, area, dichotomies, max_error)
       @results = results
       @area = area
+      @area_code = area.area_code
       @choices = results.keys
       @comparisons = create_comparisons(@choices)
       @rankings = create_rankings(@choices)
@@ -161,5 +176,25 @@ module Sapor
         end
       end
     end
+    
+    def write_rankings(filename)
+      ci_filename = filename.gsub('.poll', '-polychotomy-rankings.psv')
+      File.open(ci_filename, 'w') do |file| 
+        file.puts('Choice | ' + 0.upto(@choices.size - 1).map {|i| i + 1}.join(' | ')) 
+        @choices.each do | choice |
+          file.puts(choice + ' | ' + 0.upto(@choices.size - 1).map {|i| ranking(choice, i)}.join(' | '))
+        end
+      end
+    end
+    
+    def write_state_summary(filename)
+      state_summary_filename = filename.gsub('.poll', '_state_summary.txt')
+      File.open(state_summary_filename, 'w') do |file|
+        file.puts("ErrorEstimate=#{@error_estimate}")
+        file.puts("NumberOfSimulations=#{@no_of_simulations}")
+        file.puts("NumberOfDataPoints=#{@no_of_data_points}")
+        file.puts("SpaceSize=#{space_size}")
+      end
+    end    
   end
 end
