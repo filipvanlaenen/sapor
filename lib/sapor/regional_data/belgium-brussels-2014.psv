@@ -1,0 +1,46 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 25 May 2014,
+#         downloaded on 3 November 2016,
+# URL: http://verkiezingen2014.belgium.be/nl/cha/results/results_tab_CKR00000.html
+
+# Replaced FDF with DéFI
+# Replaced PTB-GO! with PTB
+
+Bruxelles-Capitale / Brussel-Hoofdstad | PS                | 123,985
+Bruxelles-Capitale / Brussel-Hoofdstad | MR                | 115,038
+Bruxelles-Capitale / Brussel-Hoofdstad | DéFI              |  55,306
+Bruxelles-Capitale / Brussel-Hoofdstad | Ecolo             |  51,133
+Bruxelles-Capitale / Brussel-Hoofdstad | cdH               |  46,441
+Bruxelles-Capitale / Brussel-Hoofdstad | PTB               |  19,135
+Bruxelles-Capitale / Brussel-Hoofdstad | Open Vld          |  13,283
+Bruxelles-Capitale / Brussel-Hoofdstad | N-VA              |  13,223
+Bruxelles-Capitale / Brussel-Hoofdstad | DEBOUT LES BELGES |  11,112
+Bruxelles-Capitale / Brussel-Hoofdstad | sp.a              |   9,613
+Bruxelles-Capitale / Brussel-Hoofdstad | ISLAM             |   9,387
+Bruxelles-Capitale / Brussel-Hoofdstad | Parti Populaire   |   8,641
+Bruxelles-Capitale / Brussel-Hoofdstad | CD&V              |   8,173
+Bruxelles-Capitale / Brussel-Hoofdstad | Vlaams Belang     |   5,157
+Bruxelles-Capitale / Brussel-Hoofdstad | La Droite         |   2,165
+Bruxelles-Capitale / Brussel-Hoofdstad | NATION            |   1,623
+Bruxelles-Capitale / Brussel-Hoofdstad | GAUCHES COMMUNES  |   1,445
+Bruxelles-Capitale / Brussel-Hoofdstad | Égalitaires!      |     953
+Bruxelles-Capitale / Brussel-Hoofdstad | PARTI LIBERTARIEN |     750
+Bruxelles-Capitale / Brussel-Hoofdstad | MG                |     567
+Bruxelles-Capitale / Brussel-Hoofdstad | Agora Erasmus     |     382
+Bruxelles-Capitale / Brussel-Hoofdstad | LaLutte-DeStrijd  |     213
