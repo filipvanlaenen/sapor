@@ -50,6 +50,10 @@ module Sapor
     def error_estimate
       estimate_error
     end
+    
+    def interval_probabilities(intervals)
+      @distribution.interval_probabilities(intervals, @population_size)
+    end
 
     def most_probable_fraction
       most_probable_value.to_f / @population_size
