@@ -82,6 +82,10 @@ module Sapor
       " (#{with_thousands_separator(space_size)})."
     end
 
+    def write_outputs(filename)
+      write_rankings(filename)
+    end
+    
     private
 
     def create_new_votes_distributions
