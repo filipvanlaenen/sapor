@@ -51,26 +51,54 @@ File.open(TARGET, 'w') do |output|
     region = elements[2].to_i
     output.puts ''
     if region == 3
-      output.puts "#{name} | Ulster Unionist Party | #{elements[5]}" unless elements[5].to_i == 0
-      output.puts "#{name} | Social Democratic & Labour Party | #{elements[6]}" unless elements[6].to_i == 0
-      output.puts "#{name} | Democratic Unionist Party | #{elements[7]}" unless elements[7].to_i == 0
+      unless elements[5].to_i == 0
+        output.puts "#{name} | Ulster Unionist Party | #{elements[5]}"
+      end
+      unless elements[6].to_i == 0
+        output.puts "#{name} | Social Democratic & Labour Party | " \
+                    "#{elements[6]}"
+      end
+      unless elements[7].to_i == 0
+        output.puts "#{name} | Democratic Unionist Party | #{elements[7]}"
+      end
     else
-      output.puts "#{name} | Conservative Party | #{elements[5]}" unless elements[5].to_i == 0
-      output.puts "#{name} | Labour Party | #{elements[6]}" unless elements[6].to_i == 0
-      output.puts "#{name} | Liberal Democrats | #{elements[7]}" unless elements[7].to_i == 0
+      unless elements[5].to_i == 0
+        output.puts "#{name} | Conservative Party | #{elements[5]}"
+      end
+      unless elements[6].to_i == 0
+        output.puts "#{name} | Labour Party | #{elements[6]}"
+      end
+      unless elements[7].to_i == 0
+        output.puts "#{name} | Liberal Democrats | #{elements[7]}"
+      end
     end
-    output.puts "#{name} | UK Independence Party | #{elements[8]}" unless elements[8].to_i == 0
-    output.puts "#{name} | Green Party | #{elements[9]}" unless elements[9].to_i == 0
+    unless elements[8].to_i == 0
+      output.puts "#{name} | UK Independence Party | #{elements[8]}"
+    end
+    unless elements[9].to_i == 0
+      output.puts "#{name} | Green Party | #{elements[9]}"
+    end
     if region == 1 || region == 2
-      output.puts "#{name} | Scottish National Party | #{elements[10]}" unless elements[10].to_i == 0
+      unless elements[10].to_i == 0
+        output.puts "#{name} | Scottish National Party | #{elements[10]}"
+      end
     elsif region == 3
-      output.puts "#{name} | Sinn Féin | #{elements[10]}" unless elements[10].to_i == 0
+      unless elements[10].to_i == 0
+        output.puts "#{name} | Sinn Féin | #{elements[10]}"
+      end
     elsif region == 12
-      output.puts "#{name} | Plaid Cymru | #{elements[10]}" unless elements[10].to_i == 0
-    elsif elements[10].to_i > 0 
+      unless elements[10].to_i == 0
+        output.puts "#{name} | Plaid Cymru | #{elements[10]}"
+      end
+    elsif elements[10].to_i > 0
       puts "Check out #{name}!"
     end
-    output.puts "#{name} | Small or local party, or independent candidate | #{elements[11]}" unless elements[11].to_i == 0
-    output.puts "#{name} | All other candidates | #{elements[12]}" unless elements[12].to_i == 0
+    unless elements[11].to_i == 0
+      output.puts "#{name} | Small or local party, or independent candidate " \
+                  "| #{elements[11]}"
+    end
+    unless elements[12].to_i == 0
+      output.puts "#{name} | All other candidates | #{elements[12]}"
+    end
   end
 end
