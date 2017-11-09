@@ -28,16 +28,9 @@ module Sapor
     end
 
     def coalitions
-      [['cdH', 'Ecolo', 'MR'],
-       ['cdH', 'Ecolo', 'PS'],
-       ['cdH', 'MR'],
-       ['cdH', 'PS'],
-       ['cdH', 'PS', 'PTB'],
-       ['Ecolo', 'MR'],
-       ['Ecolo', 'MR', 'PS'],
-       ['Ecolo', 'PS', 'PTB'],
-       ['MR', 'PS'],
-       ['PS', 'PTB']]
+      [%w(cdH Ecolo MR), %w(cdH Ecolo PS), %w(cdH MR), %w(cdH PS),
+       %w(cdH PS PTB), %w(Ecolo MR), %w(Ecolo MR PS), %w(Ecolo PS),
+       %w(Ecolo PS PTB), %w(Ecolo PTB), %w(MR PS), %w(PS PTB)]
     end
 
     def no_of_seats
@@ -75,14 +68,15 @@ module Sapor
                           'Hainaut' => 28,
                           'Liège' => 23,
                           'Luxembourg' => 5,
-                          'Namur' => 11}
+                          'Namur' => 11 }.freeze
 
     THRESHOLD = 0.05
 
     def election_results_of_2014
       if @election_results_of_2014.nil?
         @election_results_of_2014 = load_election_results( \
-          'wallonia-2014.psv')
+          'wallonia-2014.psv'
+        )
       end
       @election_results_of_2014
     end
@@ -94,7 +88,8 @@ module Sapor
           election_results_of_2014,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
-          THRESHOLD)
+          THRESHOLD
+        )
       end
       @electoral_system
     end
