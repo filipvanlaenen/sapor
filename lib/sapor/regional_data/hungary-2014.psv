@@ -84,7 +84,7 @@ BUDAPEST capital 06 | KTI | 122
 BUDAPEST capital 06 | ZÖLDEK | 293
 BUDAPEST capital 06 | MCP | 212
 BUDAPEST capital 06 | ÚMP | 29
-BUDAPEST capital 06 | Független | 323
+BUDAPEST capital 06 | Independent | 323
 BUDAPEST capital 06 | Fidesz–KDNP | 15977
 
 BUDAPEST capital 07 | SMS | 331
@@ -252,7 +252,7 @@ BUDAPEST capital 16 | EP | 64
 BUDAPEST capital 16 | NEMZETI ÉRDEKÉRT | 25
 BUDAPEST capital 16 | Fidesz–KDNP | 17523
 BUDAPEST capital 16 | MCP | 61
-BUDAPEST capital 16 | Független | 543
+BUDAPEST capital 16 | Independent | 543
 BUDAPEST capital 16 | Szociáldemokraták | 190
 BUDAPEST capital 16 | ÚMP | 24
 BUDAPEST capital 16 | LMP | 2939
@@ -304,8 +304,8 @@ BUDAPEST capital 18 | LMP | 3601
 BUDAPEST capital 18 | FKGP | 139
 
 BARANYA county 01 | SEM | 306
-BARANYA county 01 | Független | 125
-BARANYA county 01 | Független | 43
+BARANYA county 01 | Independent 1 | 125
+BARANYA county 01 | Independent 2 | 43
 BARANYA county 01 | SZAVA | 48
 BARANYA county 01 | A HAZA NEM ELADÓ | 505
 BARANYA county 01 | SMS | 238
@@ -315,7 +315,7 @@ BARANYA county 01 | JESZ | 179
 BARANYA county 01 | Jobbik | 8379
 BARANYA county 01 | TEMPO | 70
 BARANYA county 01 | Fidesz–KDNP | 18855
-BARANYA county 01 | Független | 74
+BARANYA county 01 | Independent 3 | 74
 BARANYA county 01 | DK | 3341
 BARANYA county 01 | Együtt | 3341
 BARANYA county 01 | MLP | 3341
@@ -348,7 +348,7 @@ BARANYA county 02 | ÖP | 101
 
 BARANYA county 03 | MCF | 0
 BARANYA county 03 | MACSEP | 0
-BARANYA county 03 | Független | 484
+BARANYA county 03 | Independent | 484
 BARANYA county 03 | KMSZ | 76
 BARANYA county 03 | ÚMP | 41
 BARANYA county 03 | ÚDP | 37
@@ -387,7 +387,7 @@ BARANYA county 04 | A HAZA NEM ELADÓ | 359
 BARANYA county 04 | EURÓPAI BALOLDAL | 117
 BARANYA county 04 | Fidesz–KDNP | 19563
 BARANYA county 04 | SZMP | 40
-BARANYA county 04 | Független | 139
+BARANYA county 04 | Independent | 139
 BARANYA county 04 | MACSEP | 0
 BARANYA county 04 | ÚMP | 10
 BARANYA county 04 | Szociáldemokraták | 117
@@ -448,7 +448,7 @@ BÁCS–KISKUN county 03 | TEMPO | 61
 BÁCS–KISKUN county 03 | ÚDP | 23
 BÁCS–KISKUN county 03 | Fidesz–KDNP | 20833
 BÁCS–KISKUN county 03 | MDU | 36
-BÁCS–KISKUN county 03 | Független | 159
+BÁCS–KISKUN county 03 | Independent | 159
 BÁCS–KISKUN county 03 | HATMAP | 23
 BÁCS–KISKUN county 03 | KTI | 157
 BÁCS–KISKUN county 03 | EGYÜTT 2014 | 186
@@ -500,7 +500,7 @@ BÁCS–KISKUN county 05 | KTI | 741
 BÁCS–KISKUN county 05 | SEM | 88
 BÁCS–KISKUN county 05 | LMP | 913
 BÁCS–KISKUN county 05 | TEMPO | 47
-BÁCS–KISKUN county 05 | Független | 172
+BÁCS–KISKUN county 05 | Independent | 172
 
 BÁCS–KISKUN county 06 | Fidesz–KDNP | 19286
 BÁCS–KISKUN county 06 | MAJP | 58
@@ -561,7 +561,7 @@ BÉKÉS county 02 | ÚDP | 19
 BÉKÉS county 02 | ÖP | 90
 BÉKÉS county 02 | Jobbik | 10958
 
-BÉKÉS county 03 | Független | 654
+BÉKÉS county 03 | Independent | 654
 BÉKÉS county 03 | DK | 1875
 BÉKÉS county 03 | Együtt | 1875
 BÉKÉS county 03 | MLP | 1875
@@ -591,7 +591,7 @@ BÉKÉS county 04 | MCP | 108
 BÉKÉS county 04 | HATMAP | 28
 BÉKÉS county 04 | SZDP | 127
 BÉKÉS county 04 | MDU | 25
-BÉKÉS county 04 | Független | 180
+BÉKÉS county 04 | Independent | 180
 BÉKÉS county 04 | ÖP | 61
 BÉKÉS county 04 | ÚMP | 22
 BÉKÉS county 04 | MACSEP | 28
@@ -656,7 +656,7 @@ BORSOD–ABAÚJ–ZEMPLÉN county 03 | SMS | 125
 BORSOD–ABAÚJ–ZEMPLÉN county 03 | MCP | 350
 BORSOD–ABAÚJ–ZEMPLÉN county 03 | Jobbik | 12148
 BORSOD–ABAÚJ–ZEMPLÉN county 03 | SEM | 80
-BORSOD–ABAÚJ–ZEMPLÉN county 03 | Független | 124
+BORSOD–ABAÚJ–ZEMPLÉN county 03 | Independent | 124
 BORSOD–ABAÚJ–ZEMPLÉN county 03 | FKGP | 230
 BORSOD–ABAÚJ–ZEMPLÉN county 03 | SZDP | 103
 BORSOD–ABAÚJ–ZEMPLÉN county 03 | DK | 2029
@@ -807,7 +807,7 @@ CSONGRÁD county 02 | MGP | 269
 CSONGRÁD county 02 | Fidesz–KDNP | 23171
 
 CSONGRÁD county 03 | Jobbik | 11610
-CSONGRÁD county 03 | Független | 667
+CSONGRÁD county 03 | Independent | 667
 CSONGRÁD county 03 | MCP | 59
 CSONGRÁD county 03 | MGP | 0
 CSONGRÁD county 03 | A HAZA NEM ELADÓ | 542
@@ -832,7 +832,7 @@ CSONGRÁD county 04 | Szociáldemokraták | 174
 CSONGRÁD county 04 | Jobbik | 11824
 CSONGRÁD county 04 | FKGP | 72
 CSONGRÁD county 04 | KISGAZDAPÁRT-MIÉP | 97
-CSONGRÁD county 04 | Független | 505
+CSONGRÁD county 04 | Independent | 505
 CSONGRÁD county 04 | MGP | 172
 CSONGRÁD county 04 | KTI | 148
 CSONGRÁD county 04 | DK | 1864
@@ -918,7 +918,7 @@ FEJÉR county 04 | LMP | 1811
 
 FEJÉR county 05 | Jobbik | 10926
 FEJÉR county 05 | EU. ROM | 56
-FEJÉR county 05 | Független | 298
+FEJÉR county 05 | Independent | 298
 FEJÉR county 05 | ÖP | 51
 FEJÉR county 05 | MUNKÁSPÁRT | 270
 FEJÉR county 05 | DK | 1156
@@ -1074,11 +1074,11 @@ HAJDÚ–BIHAR county 04 | PM | 1397
 HAJDÚ–BIHAR county 04 | Fidesz–KDNP | 17799
 HAJDÚ–BIHAR county 04 | Jobbik | 10873
 HAJDÚ–BIHAR county 04 | MCP | 81
-HAJDÚ–BIHAR county 04 | Független | 453
+HAJDÚ–BIHAR county 04 | Independent | 453
 HAJDÚ–BIHAR county 04 | Szociáldemokraták | 145
 HAJDÚ–BIHAR county 04 | EU. ROM | 27
 
-HAJDÚ–BIHAR county 05 | Független | 44
+HAJDÚ–BIHAR county 05 | Independent 1 | 44
 HAJDÚ–BIHAR county 05 | ÚDP | 20
 HAJDÚ–BIHAR county 05 | JESZ | 749
 HAJDÚ–BIHAR county 05 | Fidesz–KDNP | 17657
@@ -1087,8 +1087,8 @@ HAJDÚ–BIHAR county 05 | ÖP | 44
 HAJDÚ–BIHAR county 05 | MACSEP | 9
 HAJDÚ–BIHAR county 05 | LMP | 1126
 HAJDÚ–BIHAR county 05 | KTI | 84
-HAJDÚ–BIHAR county 05 | Független | 64
-HAJDÚ–BIHAR county 05 | Független | 80
+HAJDÚ–BIHAR county 05 | Independent 2 | 64
+HAJDÚ–BIHAR county 05 | Independent 3 | 80
 HAJDÚ–BIHAR county 05 | SMS | 381
 HAJDÚ–BIHAR county 05 | MRPP | 5
 HAJDÚ–BIHAR county 05 | MCP | 79
@@ -1097,7 +1097,7 @@ HAJDÚ–BIHAR county 05 | Együtt | 1463
 HAJDÚ–BIHAR county 05 | MLP | 1463
 HAJDÚ–BIHAR county 05 | MSZP | 1463
 HAJDÚ–BIHAR county 05 | PM | 1463
-HAJDÚ–BIHAR county 05 | Független | 122
+HAJDÚ–BIHAR county 05 | Independent 4 | 122
 HAJDÚ–BIHAR county 05 | NEMZETI ÉRDEKÉRT | 37
 HAJDÚ–BIHAR county 05 | EU. ROM | 22
 HAJDÚ–BIHAR county 05 | TEMPO | 149
@@ -1142,7 +1142,7 @@ HEVES county 01 | LMP | 2528
 HEVES county 01 | A HAZA NEM ELADÓ | 269
 HEVES county 01 | ZÖLDEK | 276
 HEVES county 01 | Szociáldemokraták | 228
-HEVES county 01 | Független | 279
+HEVES county 01 | Independent | 279
 HEVES county 01 | MCP | 249
 
 HEVES county 02 | FKGP | 92
@@ -1174,7 +1174,7 @@ HEVES county 03 | LMP | 1114
 HEVES county 03 | MSZDP | 55
 HEVES county 03 | KMSZ | 54
 HEVES county 03 | Fidesz–KDNP | 20304
-HEVES county 03 | Független | 622
+HEVES county 03 | Independent | 622
 HEVES county 03 | REND, SZABADSÁG | 31
 HEVES county 03 | Jobbik | 15268
 HEVES county 03 | ÖP | 94
@@ -1211,7 +1211,7 @@ JÁSZ–NAGYKUN–SZOLNOK county 01 | A HAZA NEM ELADÓ | 296
 JÁSZ–NAGYKUN–SZOLNOK county 01 | NEMZETI ÉRDEKÉRT | 37
 
 JÁSZ–NAGYKUN–SZOLNOK county 02 | KTI | 134
-JÁSZ–NAGYKUN–SZOLNOK county 02 | Független | 344
+JÁSZ–NAGYKUN–SZOLNOK county 02 | Independent | 344
 JÁSZ–NAGYKUN–SZOLNOK county 02 | Jobbik | 12783
 JÁSZ–NAGYKUN–SZOLNOK county 02 | MUNKÁSPÁRT | 269
 JÁSZ–NAGYKUN–SZOLNOK county 02 | LMP | 1027
@@ -1290,7 +1290,7 @@ KOMÁROM–ESZTERGOM county 01 | PM | 3190
 
 KOMÁROM–ESZTERGOM county 02 | Fidesz–KDNP | 23475
 KOMÁROM–ESZTERGOM county 02 | ÖP | 229
-KOMÁROM–ESZTERGOM county 02 | Független | 639
+KOMÁROM–ESZTERGOM county 02 | Independent | 639
 KOMÁROM–ESZTERGOM county 02 | Jobbik | 10141
 KOMÁROM–ESZTERGOM county 02 | KTI | 127
 KOMÁROM–ESZTERGOM county 02 | JESZ | 224
@@ -1323,7 +1323,7 @@ KOMÁROM–ESZTERGOM county 03 | ÚDP | 82
 
 NÓGRÁD county 01 | SEM | 163
 NÓGRÁD county 01 | MCP | 269
-NÓGRÁD county 01 | Független | 548
+NÓGRÁD county 01 | Independent 1 | 548
 NÓGRÁD county 01 | FKGP | 63
 NÓGRÁD county 01 | A HAZA NEM ELADÓ | 401
 NÓGRÁD county 01 | LMP | 1286
@@ -1337,16 +1337,16 @@ NÓGRÁD county 01 | Jobbik | 11499
 NÓGRÁD county 01 | MACSEP | 0
 NÓGRÁD county 01 | EU. ROM | 42
 NÓGRÁD county 01 | KISGAZDAPÁRT-MIÉP | 56
-NÓGRÁD county 01 | Független | 99
+NÓGRÁD county 01 | Independent 2 | 99
 NÓGRÁD county 01 | Szociáldemokraták | 137
-NÓGRÁD county 01 | Független | 40
+NÓGRÁD county 01 | Independent 3 | 40
 NÓGRÁD county 01 | MRPP | 77
 NÓGRÁD county 01 | KTI | 290
 NÓGRÁD county 01 | ÚDP | 25
 NÓGRÁD county 01 | MUNKÁSPÁRT | 785
 NÓGRÁD county 01 | SMS | 1210
 NÓGRÁD county 01 | EP | 38
-NÓGRÁD county 01 | Független | 46
+NÓGRÁD county 01 | Independent 4 | 46
 NÓGRÁD county 01 | ZÖLDEK | 159
 NÓGRÁD county 01 | JESZ | 123
 
@@ -1412,7 +1412,7 @@ PEST county 02 | Együtt | 3258
 PEST county 02 | MLP | 3258
 PEST county 02 | MSZP | 3258
 PEST county 02 | PM | 3258
-PEST county 02 | Független | 1469
+PEST county 02 | Independent | 1469
 PEST county 02 | EGYÜTT 2014 | 237
 
 PEST county 03 | SEM | 371
@@ -1497,7 +1497,7 @@ PEST county 06 | EGYÜTT 2014 | 217
 PEST county 06 | Szociáldemokraták | 121
 PEST county 06 | A HAZA NEM ELADÓ | 679
 PEST county 06 | LMP | 3544
-PEST county 06 | Független | 900
+PEST county 06 | Independent | 900
 PEST county 06 | MCP | 177
 PEST county 06 | FKGP | 143
 
@@ -1630,7 +1630,7 @@ SOMOGY county 01 | ÚMP | 25
 SOMOGY county 01 | FKGP | 93
 SOMOGY county 01 | JESZ | 168
 SOMOGY county 01 | A HAZA NEM ELADÓ | 235
-SOMOGY county 01 | Független | 188
+SOMOGY county 01 | Independent 1 | 188
 SOMOGY county 01 | MGP | 40
 SOMOGY county 01 | LMP | 2058
 SOMOGY county 01 | ÚDP | 35
@@ -1641,7 +1641,7 @@ SOMOGY county 01 | Együtt | 2324
 SOMOGY county 01 | MLP | 2324
 SOMOGY county 01 | MSZP | 2324
 SOMOGY county 01 | PM | 2324
-SOMOGY county 01 | Független | 90
+SOMOGY county 01 | Independent 2 | 90
 SOMOGY county 01 | ZÖLDEK | 218
 SOMOGY county 01 | SZMP | 39
 SOMOGY county 01 | Szociáldemokraták | 360
@@ -1677,7 +1677,7 @@ SOMOGY county 03 | LMP | 1194
 SOMOGY county 03 | KTI | 135
 SOMOGY county 03 | JESZ | 77
 SOMOGY county 03 | ÚMP | 30
-SOMOGY county 03 | Független | 197
+SOMOGY county 03 | Independent | 197
 SOMOGY county 03 | Jobbik | 8503
 SOMOGY county 03 | Fidesz–KDNP | 17616
 SOMOGY county 03 | A HAZA NEM ELADÓ | 326
@@ -1729,7 +1729,7 @@ SZABOLCS–SZATMÁR–BEREG county 01 | KTI | 58
 SZABOLCS–SZATMÁR–BEREG county 01 | SMS | 600
 SZABOLCS–SZATMÁR–BEREG county 01 | EGYÜTT 2014 | 110
 SZABOLCS–SZATMÁR–BEREG county 01 | A HAZA NEM ELADÓ | 397
-SZABOLCS–SZATMÁR–BEREG county 01 | Független | 124
+SZABOLCS–SZATMÁR–BEREG county 01 | Independent | 124
 SZABOLCS–SZATMÁR–BEREG county 01 | Jobbik | 11138
 SZABOLCS–SZATMÁR–BEREG county 01 | MCP | 198
 SZABOLCS–SZATMÁR–BEREG county 01 | Szociáldemokraták | 115
@@ -1742,7 +1742,7 @@ SZABOLCS–SZATMÁR–BEREG county 01 | JESZ | 127
 
 SZABOLCS–SZATMÁR–BEREG county 02 | JESZ | 145
 SZABOLCS–SZATMÁR–BEREG county 02 | A HAZA NEM ELADÓ | 211
-SZABOLCS–SZATMÁR–BEREG county 02 | Független | 79
+SZABOLCS–SZATMÁR–BEREG county 02 | Independent 1 | 79
 SZABOLCS–SZATMÁR–BEREG county 02 | EU. ROM | 50
 SZABOLCS–SZATMÁR–BEREG county 02 | Jobbik | 11755
 SZABOLCS–SZATMÁR–BEREG county 02 | ÖP | 110
@@ -1753,7 +1753,7 @@ SZABOLCS–SZATMÁR–BEREG county 02 | KTI | 79
 SZABOLCS–SZATMÁR–BEREG county 02 | KISGAZDAPÁRT-MIÉP | 558
 SZABOLCS–SZATMÁR–BEREG county 02 | SMS | 239
 SZABOLCS–SZATMÁR–BEREG county 02 | TBP | 24
-SZABOLCS–SZATMÁR–BEREG county 02 | Független | 279
+SZABOLCS–SZATMÁR–BEREG county 02 | Independent 2 | 279
 SZABOLCS–SZATMÁR–BEREG county 02 | DK | 1897
 SZABOLCS–SZATMÁR–BEREG county 02 | Együtt | 1897
 SZABOLCS–SZATMÁR–BEREG county 02 | MLP | 1897
@@ -1803,7 +1803,7 @@ SZABOLCS–SZATMÁR–BEREG county 04 | PM | 1386
 SZABOLCS–SZATMÁR–BEREG county 04 | ÖP | 35
 SZABOLCS–SZATMÁR–BEREG county 04 | LMP | 449
 SZABOLCS–SZATMÁR–BEREG county 04 | SMS | 155
-SZABOLCS–SZATMÁR–BEREG county 04 | Független | 45
+SZABOLCS–SZATMÁR–BEREG county 04 | Independent | 45
 SZABOLCS–SZATMÁR–BEREG county 04 | MUNKÁSPÁRT | 263
 
 SZABOLCS–SZATMÁR–BEREG county 05 | MACSEP | 0
@@ -1829,7 +1829,7 @@ SZABOLCS–SZATMÁR–BEREG county 05 | Jobbik | 11632
 SZABOLCS–SZATMÁR–BEREG county 05 | MCP | 231
 SZABOLCS–SZATMÁR–BEREG county 05 | A HAZA NEM ELADÓ | 118
 
-SZABOLCS–SZATMÁR–BEREG county 06 | Független | 227
+SZABOLCS–SZATMÁR–BEREG county 06 | Independent | 227
 SZABOLCS–SZATMÁR–BEREG county 06 | Jobbik | 11852
 SZABOLCS–SZATMÁR–BEREG county 06 | ÖP | 58
 SZABOLCS–SZATMÁR–BEREG county 06 | MCP | 266
@@ -2053,7 +2053,7 @@ ZALA county 01 | MDU | 31
 ZALA county 01 | Jobbik | 10957
 ZALA county 01 | HATMAP | 35
 ZALA county 01 | REND, SZABADSÁG | 29
-ZALA county 01 | Független | 1382
+ZALA county 01 | Independent | 1382
 ZALA county 01 | MCP | 79
 ZALA county 01 | Szociáldemokraták | 133
 ZALA county 01 | MSZDP | 54
