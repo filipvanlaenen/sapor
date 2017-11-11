@@ -28,6 +28,10 @@ module Sapor
       'HU'
     end
 
+    def coalitions
+      COALITIONS
+    end
+
     def individual_constituencies_seats(simulation)
       individual_constituencies_electoral_system.project(simulation)
     end
@@ -76,6 +80,8 @@ module Sapor
     PARTY_LIST_ELECTORAL_SYSTEM = SingleDistrictProportional.new(\
       NO_OF_PROPORTIONAL_SEATS, DhondtDenominators, THRESHOLD
     )
+
+    COALITIONS = [%w(DK Együtt MLP MSZP PM), ['Fidesz–KDNP']].freeze
 
     def individual_constituencies_election_results_of_2014
       if @individual_constituencies_election_results_of_2014.nil?

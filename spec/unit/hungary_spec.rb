@@ -25,6 +25,20 @@ describe Sapor::Hungary, '#area_code' do
   end
 end
 
+describe Sapor::Hungary, '#coalitions' do
+  def hungarian_coalitions
+    Sapor::Hungary.instance.coalitions
+  end
+
+  it 'returns Fidesz–KDNP as a coalition to track' do
+    expect(hungarian_coalitions).to include(['Fidesz–KDNP'])
+  end
+
+  it 'returns DK + Együtt + MLP + MSZP + PM as a coalition to track' do
+    expect(hungarian_coalitions).to include(%w(DK Együtt MLP MSZP PM))
+  end
+end
+
 describe Sapor::Hungary, '#individual_constituencies_seats' do
   it 'calculates the number of seats in the individual constituencies for ' \
      'the election of 2014 correctly' do
