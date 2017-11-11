@@ -30,12 +30,22 @@ module Sapor
     attr_reader :area, :logger, :type
 
     AREA_KEY = 'Area'.freeze
+
+    BELGIAN_AREAS = [BelgiumBrussels.instance, BelgiumFlanders.instance,
+                     BelgiumWallonia.instance, Flanders.instance,
+                     Wallonia.instance].freeze
+    CATALONIAN_AREAS = [Catalonia.instance,
+                        CataloniaWithoutJuntsPelSi.instance].freeze
+    ICELANDIC_AREAS = [Iceland.instance, Iceland2017.instance].freeze
+    NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
+                       NorwegianMunicipality::OSLO,
+                       NorwegianMunicipality::TRONDHEIM].freeze
     AREAS_MAP = {}
-    [BelgiumBrussels.instance, BelgiumFlanders.instance, BelgiumWallonia.instance,
-     Catalonia.instance, CataloniaWithoutJuntsPelSi.instance, Flanders.instance,
-     France.instance, Greece.instance, Iceland.instance, Iceland2017.instance, Norway.instance,
-     NorwegianMunicipality::BERGEN, NorwegianMunicipality::OSLO,
-     NorwegianMunicipality::TRONDHEIM, UnitedKingdom.instance, Utopia.instance, Wallonia.instance].map { |area| AREAS_MAP[area.area_code] = area }
+    (BELGIAN_AREAS + CATALONIAN_AREAS + ICELANDIC_AREAS + NORWEGIAN_AREAS + \
+     [France.instance, Greece.instance, Hungary.instance, \
+      UnitedKingdom.instance, Utopia.instance]).map do |area|
+      AREAS_MAP[area.area_code] = area
+    end
 
     TYPE_KEY = 'Type'.freeze
     REFERENDUM_TYPE_VALUE = 'Referendum'.freeze
@@ -163,7 +173,7 @@ module Sapor
         save_state
       end
     end
-    
+
     def should_continue_analysis?(analysis, options)
       analysis.kind_of?(Dichotomies) && (options.min_dichotomies_iterations > analysis.size || analysis.error_estimate > options.max_error) \
         || analysis.kind_of?(Polychotomy) && options.max_polychotomy_iterations > analysis.no_of_simulations && (options.min_polychotomy_iterations > analysis.no_of_simulations || analysis.error_estimate > options.max_error)
@@ -184,7 +194,7 @@ module Sapor
       end
       analyze_until_convergence(options)
     end
-    
+
     def save_state
       new_yaml_file = @filename.gsub('.poll', '-state-new.yaml')
       open(new_yaml_file, 'w') do |file|
@@ -192,12 +202,8 @@ module Sapor
       end
       yaml_file = @filename.gsub('.poll', '-state.yaml')
       old_yaml_file = @filename.gsub('.poll', '-state-old.yaml')
-      if File.exist?(old_yaml_file)
-        File.delete(old_yaml_file)
-      end
-      if File.exist?(yaml_file)
-        File.rename(yaml_file, old_yaml_file)
-      end
+      File.delete(old_yaml_file) if File.exist?(old_yaml_file)
+      File.rename(yaml_file, old_yaml_file) if File.exist?(yaml_file)
       File.rename(new_yaml_file, yaml_file)
     end
   end
