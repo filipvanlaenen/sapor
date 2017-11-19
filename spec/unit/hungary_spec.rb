@@ -35,7 +35,7 @@ describe Sapor::Hungary, '#coalitions' do
   end
 
   it 'returns DK + Együtt + MLP + MSZP + PM as a coalition to track' do
-    expect(hungarian_coalitions).to include(%w(DK Együtt MLP MSZP PM))
+    expect(hungarian_coalitions).to include(%w(DK Együtt MLP MSZP Párbeszéd))
   end
 end
 
@@ -49,7 +49,7 @@ describe Sapor::Hungary, '#individual_constituencies_seats' do
     results['DK'] = 1
     results['Együtt'] = 1
     results['MLP'] = 1
-    results['PM'] = 1
+    results['Párbeszéd'] = 1
     seats = hungary.individual_constituencies_seats(results)
     expect(seats['Fidesz–KDNP']).to eq(87 + 9)
     expect(seats['MSZP']).to eq(8 + 1 + 1 + 0 + 0)
@@ -75,10 +75,10 @@ describe Sapor::Hungary, '#party_list_seats' do
      '2014 correctly' do
     hungary = Sapor::Hungary.instance
     results = { 'Fidesz–KDNP' => 2_264_780, 'MSZP' => 1_290_806, 'DK' => 0,
-                'Együtt' => 0, 'MLP' => 0, 'PM' => 0, 'Jobbik' => 1_020_476,
-                'LMP' => 269_414, 'Munkáspárt' => 28_323, 'ZÖP' => 18_557,
-                'Szociáldemokraták' => 15_073, 'ÖP' => 6_552, 'ÚDP' => 2_100,
-                'ÚMP' => 1_578,
+                'Együtt' => 0, 'MLP' => 0, 'Párbeszéd' => 0,
+                'Jobbik' => 1_020_476, 'LMP' => 269_414, 'Munkáspárt' => 28_323,
+                'ZÖP' => 18_557, 'Szociáldemokraták' => 15_073, 'ÖP' => 6_552,
+                'ÚDP' => 2_100, 'ÚMP' => 1_578,
                 'Other' => 23_507 + 22_219 + 14_085 + 12_563 + 10_969 + \
                            9_925 + 8_810 + 8_083 + 19_543 }
     seats = hungary.party_list_seats(results)

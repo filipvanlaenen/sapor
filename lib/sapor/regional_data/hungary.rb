@@ -81,7 +81,7 @@ module Sapor
       NO_OF_PROPORTIONAL_SEATS, DhondtDenominators, THRESHOLD
     )
 
-    COALITIONS = [%w(DK Együtt MLP MSZP PM), ['Fidesz–KDNP']].freeze
+    COALITIONS = [%w(DK Együtt MLP MSZP Párbeszéd), ['Fidesz–KDNP']].freeze
 
     def individual_constituencies_election_results_of_2014
       if @individual_constituencies_election_results_of_2014.nil?
