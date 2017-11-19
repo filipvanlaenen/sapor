@@ -35,6 +35,7 @@ module Sapor
                      BelgiumWallonia.instance, Flanders.instance,
                      Wallonia.instance].freeze
     CATALONIAN_AREAS = [Catalonia.instance,
+                        CataloniaWithJuntsPerCatalunya.instance,
                         CataloniaWithoutJuntsPelSi.instance].freeze
     ICELANDIC_AREAS = [Iceland.instance, Iceland2017.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,

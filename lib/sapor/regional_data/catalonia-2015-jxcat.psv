@@ -1,0 +1,68 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Parliament of Catalonia election results, 27 September 2015". Central
+#         Electoral Commission. 6 November 2015. Retrieved on 21 October 2017.
+# URL: http://www.juntaelectoralcentral.es/cs/jec/documentos/CATALU%C3%91A_2015_Resultados.pdf
+
+# Adjustments:
+# Catalunya Sí que es Pot + Recortes Cero–Els Verds → Catalunya en Comú
+# Junts pel Sí → Partit Demòcrata Europeu Català + Esquerra Republicana de Catalunya–Catalunya Sí
+
+Barcelona | Junts per Catalunya                              | 556,461
+Barcelona | Esquerra Republicana de Catalunya–Catalunya Sí   | 556,461
+Barcelona | Ciutadans–Partido de la Ciudadanía               | 581,032
+Barcelona | Partit dels Socialistes de Catalunya (PSC-PSOE)  | 421,487
+Barcelona | Catalunya en Comú                                | 324,856
+Barcelona | Partit Popular                                   | 272,804
+Barcelona | Candidatura d’Unitat Popular                     | 255,328
+Barcelona | Unió Democràtica de Catalunya                    |  75,700
+Barcelona | Partit Animalista contra el Maltractament Animal |  24,426
+
+Girona | Junts per Catalunya                              | 108,167
+Girona | Esquerra Republicana de Catalunya–Catalunya Sí   | 108,167
+Girona | Ciutadans–Partido de la Ciudadanía               |  48,346
+Girona | Partit dels Socialistes de Catalunya (PSC-PSOE)  |  33,416
+Girona | Candidatura d’Unitat Popular                     |  33,117
+Girona | Partit Popular                                   |  22,660
+Girona | Catalunya en Comú                                |  19,158
+Girona | Unió Democràtica de Catalunya                    |   8,295
+Girona | Partit Animalista contra el Maltractament Animal |   1,823
+Girona | Pirates de Catalunya–Per decidir-ho tot          |     327
+Girona | Guanyem Catalunya                                |     320
+
+Lleida | Junts per Catalunya                              | 63,461
+Lleida | Esquerra Republicana de Catalunya–Catalunya Sí   | 63,461
+Lleida | Ciutadans–Partido de la Ciudadanía               | 26,612
+Lleida | Partit dels Socialistes de Catalunya (PSC-PSOE)  | 19,364
+Lleida | Candidatura d’Unitat Popular                     | 18,736
+Lleida | Partit Popular                                   | 16,761
+Lleida | Catalunya en Comú                                | 10,290
+Lleida | Unió Democràtica de Catalunya                    |  8,178
+Lleida | Partit Animalista contra el Maltractament Animal |  1,046
+Lleida | Guanyem Catalunya                                |    221
+
+Tarragona | Junts per Catalunya                              | 86,269
+Tarragona | Esquerra Republicana de Catalunya–Catalunya Sí   | 86,269
+Tarragona | Ciutadans–Partido de la Ciudadanía               | 80,374
+Tarragona | Partit dels Socialistes de Catalunya (PSC-PSOE)  | 49,016
+Tarragona | Partit Popular                                   | 36,968
+Tarragona | Candidatura d’Unitat Popular                     | 30,613
+Tarragona | Catalunya en Comú                                | 27,773
+Tarragona | Unió Democràtica de Catalunya                    | 11,120
+Tarragona | Partit Animalista contra el Maltractament Animal |  2,862
+Tarragona | Guanyem Catalunya                                |    626
