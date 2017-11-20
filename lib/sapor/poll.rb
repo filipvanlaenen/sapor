@@ -37,13 +37,12 @@ module Sapor
     CATALONIAN_AREAS = [Catalonia.instance,
                         CataloniaWithJuntsPerCatalunya.instance,
                         CataloniaWithoutJuntsPelSi.instance].freeze
-    ICELANDIC_AREAS = [Iceland.instance, Iceland2017.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
     AREAS_MAP = {}
-    (BELGIAN_AREAS + CATALONIAN_AREAS + ICELANDIC_AREAS + NORWEGIAN_AREAS + \
-     [France.instance, Greece.instance, Hungary.instance, \
+    (BELGIAN_AREAS + CATALONIAN_AREAS + NORWEGIAN_AREAS + \
+     [France.instance, Greece.instance, Hungary.instance, Iceland.instance, \
       UnitedKingdom.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end

@@ -33,26 +33,25 @@ end
 
 describe Sapor::Iceland, '#population_size' do
   it 'returns a population size of 195,204' do
-    expect(Sapor::Iceland.instance.population_size).to eq(195_204)
+    expect(Sapor::Iceland.instance.population_size).to eq(196_246)
   end
 end
 
 describe Sapor::Iceland, '#seats' do
-  it 'calculates the number of seats for the election of 2016 correctly' do
+  it 'calculates the number of seats for the election of 2017 correctly' do
     iceland = Sapor::Iceland.instance
-    results = iceland.overall_election_results_of_2016
+    results = iceland.overall_election_results_of_2017
     seats = iceland.seats(results)
-    expect(seats['Sjálfstæðisflokkurinn']).to eq(21)
-    expect(seats['Vinstrihreyfingin – grænt framboð']).to eq(10)
-    expect(seats['Píratar']).to eq(10)
+    expect(seats['Sjálfstæðisflokkurinn']).to eq(16)
+    expect(seats['Vinstrihreyfingin – grænt framboð']).to eq(11)
     expect(seats['Framsóknarflokkurinn']).to eq(8)
-    expect(seats['Viðreisn']).to eq(7)
-    expect(seats['Björt framtíð']).to eq(4)
-    expect(seats['Samfylkingin']).to eq(3)
-    expect(seats['Flokkur fólksins']).to eq(0)
+    expect(seats['Samfylkingin']).to eq(7)
+    expect(seats['Miðflokkurinn']).to eq(7)
+    expect(seats['Píratar']).to eq(6)
+    expect(seats['Flokkur fólksins']).to eq(4)
+    expect(seats['Viðreisn']).to eq(4)
+    expect(seats['Björt framtíð']).to eq(0)
     expect(seats['Dögun']).to eq(0)
     expect(seats['Alþýðufylkingin']).to eq(0)
-    expect(seats['Íslenska þjóðfylkingin']).to eq(0)
-    expect(seats['Húmanistaflokkurinn']).to eq(0)
   end
 end

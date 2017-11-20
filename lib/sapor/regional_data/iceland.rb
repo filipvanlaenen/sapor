@@ -36,20 +36,20 @@ module Sapor
       NO_OF_LEVELING_SEATS + DIRECT_SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2016
-      if @overall_election_results_of_2016.nil?
-        @overall_election_results_of_2016 = \
-          summarize_election_results(election_results_of_2016)
+    def overall_election_results_of_2017
+      if @overall_election_results_of_2017.nil?
+        @overall_election_results_of_2017 = \
+          summarize_election_results(election_results_of_2017)
       end
-      @overall_election_results_of_2016
+      @overall_election_results_of_2017
     end
 
     def population_size
-      # Voter turnout on 29 October 2016
-      # Source: Wikipedia, Icelandic parliamentary election, 2016, downloaded
-      # on 17 September 2017,
-      # https://en.wikipedia.org/wiki/Icelandic_parliamentary_election,_2016
-      195_204
+      # Voter turnout on 28 October 2017
+      # Source: Wikipedia, Icelandic parliamentary election, 2017, downloaded
+      # on 20 November 2017,
+      # https://en.wikipedia.org/wiki/Icelandic_parliamentary_election,_2017
+      196_246
     end
 
     def seat_distribution
@@ -62,23 +62,38 @@ module Sapor
 
     def threshold
       LEVELING_THRESHOLD
-    end    
+    end
 
     private
 
     COALITIONS = [['Sjálfstæðisflokkurinn', 'Viðreisn', 'Björt framtíð'],
-                  ['Sjálfstæðisflokkurinn', 'Viðreisn'],
+                  %w(Sjálfstæðisflokkurinn Viðreisn),
                   ['Sjálfstæðisflokkurinn', 'Björt framtíð'],
-                  ['Sjálfstæðisflokkurinn', 'Samfylkingin'],
-                  ['Sjálfstæðisflokkurinn', 'Framsóknarflokkurinn'],
-                  ['Sjálfstæðisflokkurinn', 'Vinstrihreyfingin – grænt framboð'],
+                  %w(Sjálfstæðisflokkurinn Samfylkingin),
+                  %w(Sjálfstæðisflokkurinn Framsóknarflokkurinn),
+                  %w(Sjálfstæðisflokkurinn Framsóknarflokkurinn Miðflokkurinn),
+                  %w(Sjálfstæðisflokkurinn Miðflokkurinn),
+                  ['Sjálfstæðisflokkurinn',
+                   'Vinstrihreyfingin – grænt framboð'],
                   ['Vinstrihreyfingin – grænt framboð', 'Framsóknarflokkurinn'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Framsóknarflokkurinn',
+                   'Miðflokkurinn'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Miðflokkurinn'],
                   ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin'],
-                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin', 'Framsóknarflokkurinn'],
-                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin', 'Viðreisn', 'Björt framtíð', 'Píratar'],
-                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin', 'Viðreisn', 'Píratar'],
-                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin', 'Björt framtíð', 'Píratar'],
-                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin', 'Píratar'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Framsóknarflokkurinn'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Framsóknarflokkurinn', 'Miðflokkurinn'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Miðflokkurinn'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Viðreisn', 'Björt framtíð', 'Píratar'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Viðreisn', 'Píratar'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Björt framtíð', 'Píratar'],
+                  ['Vinstrihreyfingin – grænt framboð', 'Samfylkingin',
+                   'Píratar'],
                   ['Vinstrihreyfingin – grænt framboð', 'Píratar']].freeze
 
     DIRECT_SEAT_DISTRIBUTION = { 'Norðaustur' => 9, 'Norðvestur' => 9,
@@ -87,26 +102,23 @@ module Sapor
                                  'Suður' => 9 }.freeze
 
     NO_OF_LEVELING_SEATS = 9
-    
-    LEVELING_THRESHOLD = 0.05    
 
-    def election_results_of_2016
-      if @election_results_of_2016.nil?
-        @election_results_of_2016 = load_election_results(
-          'iceland-2016.psv'
+    LEVELING_THRESHOLD = 0.05
+
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'iceland-20171028.psv'
         )
       end
-      @election_results_of_2016
+      @election_results_of_2017
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictLeveledProportional.new(
-          overall_election_results_of_2016,
-          election_results_of_2016,
-          DIRECT_SEAT_DISTRIBUTION,
-          NO_OF_LEVELING_SEATS,
-          LEVELING_THRESHOLD,
+          overall_election_results_of_2017, election_results_of_2017,
+          DIRECT_SEAT_DISTRIBUTION, NO_OF_LEVELING_SEATS, LEVELING_THRESHOLD,
           DhondtDenominators
         )
       end
