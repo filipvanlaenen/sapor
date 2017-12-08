@@ -28,14 +28,7 @@ module Sapor
     end
 
     def coalitions
-      [['Junts per Catalunya', 'Esquerra Republicana de Catalunya–Catalunya Sí'],
-       ['Junts per Catalunya', 'Esquerra Republicana de Catalunya–Catalunya Sí', 'Candidatura d’Unitat Popular'],
-       ['Junts per Catalunya', 'Esquerra Republicana de Catalunya–Catalunya Sí', 'Catalunya en Comú'],
-       ['Ciutadans–Partido de la Ciudadanía',
-        'Partit dels Socialistes de Catalunya (PSC-PSOE)',
-        'Catalunya en Comú', 'Partit Popular'],
-       ['Ciutadans–Partido de la Ciudadanía',
-        'Partit dels Socialistes de Catalunya (PSC-PSOE)', 'Partit Popular']]
+      COALITIONS
     end
 
     def no_of_seats
@@ -69,14 +62,33 @@ module Sapor
     private
 
     SEAT_DISTRIBUTION = { 'Barcelona' => 85, 'Girona' => 17, 'Lleida' => 15,
-                          'Tarragona' => 18 }
+                          'Tarragona' => 18 }.freeze
 
     THRESHOLD = 0.03
+
+    COALITIONS = [['Candidatura d’Unitat Popular',
+                   'Esquerra Republicana de Catalunya–Catalunya Sí',
+                   'Junts per Catalunya'],
+                  ['Catalunya en Comú', 'Ciutadans–Partido de la Ciudadanía',
+                   'Partit dels Socialistes de Catalunya (PSC-PSOE)',
+                   'Partit Popular'],
+                  ['Catalunya en Comú',
+                   'Esquerra Republicana de Catalunya–Catalunya Sí',
+                   'Junts per Catalunya'],
+                  ['Catalunya en Comú',
+                   'Esquerra Republicana de Catalunya–Catalunya Sí',
+                   'Partit dels Socialistes de Catalunya (PSC-PSOE)'],
+                  ['Ciutadans–Partido de la Ciudadanía',
+                   'Partit dels Socialistes de Catalunya (PSC-PSOE)',
+                   'Partit Popular'],
+                  ['Esquerra Republicana de Catalunya–Catalunya Sí',
+                   'Junts per Catalunya']].freeze
 
     def election_results_of_2015
       if @election_results_of_2015.nil?
         @election_results_of_2015 = load_election_results( \
-          'catalonia-2015-jxcat.psv')
+          'catalonia-2015-jxcat.psv'
+        )
       end
       @election_results_of_2015
     end
@@ -88,7 +100,8 @@ module Sapor
           election_results_of_2015,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
-          THRESHOLD)
+          THRESHOLD
+        )
       end
       @electoral_system
     end
