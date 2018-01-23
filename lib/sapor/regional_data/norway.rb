@@ -48,7 +48,7 @@ module Sapor
                              'Samfunnspartiet' => 295,
                              'Folkeliste mot oljeboring i Lofoten, Vesterålen' \
                              ' og Senja' => 268,
-                             'Folkemakten' => 175 }
+                             'Folkemakten' => 175 }.freeze
 
     # Source: NSD European Election Database, Parliamentary election of 2013,
     # retrieved on 14 April 2015.
@@ -345,7 +345,8 @@ module Sapor
                      'Piratpartiet' => 516,
                      'Kystpartiet' => 68,
                      'Demokratene i Norge' => 99,
-                     'Kristent Samlingsparti' => 145 } }
+                     'Kristent Samlingsparti' => 145 }
+    }.freeze
 
     # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 1 May 2015.
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
@@ -367,7 +368,7 @@ module Sapor
                                  'Troms' => 5,
                                  'Vest-Agder' => 5,
                                  'Vestfold' => 6,
-                                 'Østfold' => 8 }
+                                 'Østfold' => 8 }.freeze
 
     # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
     # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
@@ -404,17 +405,17 @@ module Sapor
     def seats(simulation)
       ELECTORAL_SYSTEM.project(simulation)
     end
-    
+
     def coalitions
       [['Høyre', 'Kristelig Folkeparti', 'Venstre'],
-       ['Fremskrittspartiet', 'Høyre'],
+       %w(Fremskrittspartiet Høyre),
        ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Venstre'],
        ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
         'Miljøpartiet de Grønne', 'Venstre'],
        ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Senterpartiet',
         'Venstre'],
        ['Arbeiderpartiet', 'Senterpartiet', 'Sosialistisk Venstreparti'],
-       ['Arbeiderpartiet', 'Senterpartiet'],
+       %w(Arbeiderpartiet Senterpartiet),
        ['Arbeiderpartiet', 'Sosialistisk Venstreparti'],
        ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt', 'Senterpartiet',
         'Sosialistisk Venstreparti'],
@@ -426,6 +427,6 @@ module Sapor
        ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
         'Sosialistisk Venstreparti'],
        ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']]
-    end    
+    end
   end
 end
