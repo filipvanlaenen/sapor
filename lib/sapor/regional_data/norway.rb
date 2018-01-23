@@ -406,26 +406,31 @@ module Sapor
     end
 
     def coalitions
-      [['Arbeiderpartiet', 'Kristelig Folkeparti', 'Senterpartiet'],
-       ['Arbeiderpartiet', 'Kristelig Folkeparti', 'Miljøpartiet de Grønne',
-        'Senterpartiet', 'Sosialistisk Venstreparti'],
-       ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt', 'Senterpartiet',
-        'Sosialistisk Venstreparti'],
-       ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Senterpartiet',
-        'Sosialistisk Venstreparti'],
-       ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
-        'Sosialistisk Venstreparti'],
-       ['Arbeiderpartiet', 'Senterpartiet', 'Sosialistisk Venstreparti'],
-       %w(Arbeiderpartiet Senterpartiet),
-       ['Arbeiderpartiet', 'Sosialistisk Venstreparti'],
-       %w(Fremskrittspartiet Høyre),
-       ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
-        'Miljøpartiet de Grønne', 'Venstre'],
-       ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Senterpartiet',
-        'Venstre'],
-       ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti', 'Venstre'],
-       ['Høyre', 'Kristelig Folkeparti', 'Venstre'],
-       ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']]
+      COALITIONS
     end
+
+    COALITIONS = [['Arbeiderpartiet', 'Kristelig Folkeparti', 'Senterpartiet'],
+                  ['Arbeiderpartiet', 'Kristelig Folkeparti',
+                   'Miljøpartiet de Grønne', 'Senterpartiet',
+                   'Sosialistisk Venstreparti'],
+                  ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Rødt',
+                   'Senterpartiet', 'Sosialistisk Venstreparti'],
+                  ['Arbeiderpartiet', 'Miljøpartiet de Grønne', 'Senterpartiet',
+                   'Sosialistisk Venstreparti'],
+                  ['Arbeiderpartiet', 'Rødt', 'Senterpartiet',
+                   'Sosialistisk Venstreparti'],
+                  ['Arbeiderpartiet', 'Senterpartiet',
+                   'Sosialistisk Venstreparti'],
+                  %w(Arbeiderpartiet Senterpartiet),
+                  ['Arbeiderpartiet', 'Sosialistisk Venstreparti'],
+                  %w(Fremskrittspartiet Høyre),
+                  ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
+                   'Miljøpartiet de Grønne', 'Venstre'],
+                  ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
+                   'Senterpartiet', 'Venstre'],
+                  ['Fremskrittspartiet', 'Høyre', 'Kristelig Folkeparti',
+                   'Venstre'],
+                  ['Høyre', 'Kristelig Folkeparti', 'Venstre'],
+                  ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']].freeze
   end
 end
