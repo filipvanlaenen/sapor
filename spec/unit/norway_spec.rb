@@ -19,6 +19,24 @@
 
 require 'spec_helper'
 
+describe Sapor::Norway, '#area_code' do
+  it 'returns NO as the area code' do
+    expect(Sapor::Norway.instance.area_code).to eq('NO')
+  end
+end
+
+describe Sapor::Norway, '#no_of_seats' do
+  it 'returns 169 as the number of seats' do
+    expect(Sapor::Norway.instance.no_of_seats).to eq(169)
+  end
+end
+
+describe Sapor::Norway, '#population_size' do
+  it 'returns a population size of 2,836,029' do
+    expect(Sapor::Norway.instance.population_size).to eq(2_836_029)
+  end
+end
+
 describe Sapor::Norway, '#seats' do
   it 'calculates the number of seats for the election of 2013 correctly' do
     seats = Sapor::Norway.instance.seats(Sapor::Norway::LAST_ELECTION_RESULT)
@@ -42,6 +60,3 @@ describe Sapor::Norway, '#seats' do
     expect(seats['Samfunnspartiet']).to eq(0)
   end
 end
-
-# TODO: Sanity check that LAST_DETAILED_ELECTION_RESULT sums up to
-#       LAST_ELECTION_RESULT
