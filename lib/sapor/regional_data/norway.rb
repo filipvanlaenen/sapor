@@ -376,12 +376,6 @@ module Sapor
 
     LEVELING_THRESHOLD = 0.04
 
-    ELECTORAL_SYSTEM = MultiDistrictLeveledProportional.new(
-      LAST_ELECTION_RESULT, LAST_DETAILED_ELECTION_RESULT,
-      DIRECT_SEAT_DISTRIBUTION, NO_OF_LEVELING_SEATS, LEVELING_THRESHOLD,
-      SainteLague14Denominators
-    )
-
     def area_code
       'NO'
     end
@@ -402,12 +396,14 @@ module Sapor
     end
 
     def seats(simulation)
-      ELECTORAL_SYSTEM.project(simulation)
+      electoral_system.project(simulation)
     end
 
     def coalitions
       COALITIONS
     end
+
+    private
 
     COALITIONS = [['Arbeiderpartiet', 'Kristelig Folkeparti', 'Senterpartiet'],
                   ['Arbeiderpartiet', 'Kristelig Folkeparti',
@@ -432,5 +428,16 @@ module Sapor
                    'Venstre'],
                   ['Høyre', 'Kristelig Folkeparti', 'Venstre'],
                   ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']].freeze
+
+    def electoral_system
+      if @electoral_system.nil?
+        @electoral_system = MultiDistrictLeveledProportional.new(
+          LAST_ELECTION_RESULT, LAST_DETAILED_ELECTION_RESULT,
+          DIRECT_SEAT_DISTRIBUTION, NO_OF_LEVELING_SEATS, LEVELING_THRESHOLD,
+          SainteLague14Denominators
+        )
+      end
+      @electoral_system
+    end
   end
 end
