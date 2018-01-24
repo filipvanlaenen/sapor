@@ -38,8 +38,10 @@ describe Sapor::Norway, '#population_size' do
 end
 
 describe Sapor::Norway, '#seats' do
-  it 'calculates the number of seats for the election of 2013 correctly' do
-    seats = Sapor::Norway.instance.seats(Sapor::Norway::LAST_ELECTION_RESULT)
+  it 'calculates the number of seats for the election of 2015 correctly' do
+    norway = Sapor::Norway.instance
+    results = norway.overall_election_results_of_2015
+    seats = norway.seats(results)
     expect(seats['Arbeiderpartiet']).to eq(55)
     expect(seats['Høyre']).to eq(48)
     expect(seats['Fremskrittspartiet']).to eq(29)

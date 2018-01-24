@@ -21,34 +21,8 @@ module Sapor
   #
   # The regional data for Norway.
   #
-  class Norway
+  class Norway < Area
     include Singleton
-
-    # Source: NSD European Election Database, Parliamentary election of 2013,\
-    # retrieved on 14 April 2015.
-    # URL: http://eed.nsd.uib.no/webview/index.jsp?stubs=nuts_id&study=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfStudy%2Fnopa2013&virtualslice=pv_p_value&measuretype=4&headers=party_name_org&mode=cube&v=2&party_name_orgsubset=1+-+9&cube=http%3A%2F%2F129.177.90.166%3A80%2Fobj%2FfCube%2Fnopa2013_C1&nuts_idsubset=NO%2CNO011+-+NO073&virtualsubset=pv_p_value&layers=virtual&measure=common&top=yes
-    LAST_ELECTION_RESULT = { 'Arbeiderpartiet' => 874_769,
-                             'Høyre' => 760_232,
-                             'Fremskrittspartiet' => 463_560,
-                             'Kristelig Folkeparti' => 158_475,
-                             'Senterpartiet' => 155_357,
-                             'Venstre' => 148_275,
-                             'Sosialistisk Venstreparti' => 116_021,
-                             'Miljøpartiet de Grønne' => 79_152,
-                             'Rødt' => 30_751,
-                             'De Kristne' => 17_731,
-                             'Pensjonistpartiet' => 11_865,
-                             'Piratpartiet' => 9_869,
-                             'Kystpartiet' => 3_311,
-                             'Demokratene i Norge' => 2_214,
-                             'Kristent Samlingsparti' => 1_722,
-                             'Det Liberale Folkepartiet' => 909,
-                             'Norges Kommunistiske Parti' => 611,
-                             'Sykehus til Alta' => 467,
-                             'Samfunnspartiet' => 295,
-                             'Folkeliste mot oljeboring i Lofoten, Vesterålen' \
-                             ' og Senja' => 268,
-                             'Folkemakten' => 175 }.freeze
 
     # Source: NSD European Election Database, Parliamentary election of 2013,
     # retrieved on 14 April 2015.
@@ -348,36 +322,24 @@ module Sapor
                      'Kristent Samlingsparti' => 145 }
     }.freeze
 
-    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 1 May 2015.
-    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
-    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 16,
-                                 'Aust-Agder' => 3,
-                                 'Buskerud' => 8,
-                                 'Finnmark' => 4,
-                                 'Hedmark' => 6,
-                                 'Hordaland' => 15,
-                                 'Møre og Romsdal' => 8,
-                                 'Nord-Trøndelag' => 4,
-                                 'Nordland' => 8,
-                                 'Oppland' => 6,
-                                 'Oslo' => 18,
-                                 'Rogaland' => 13,
-                                 'Sogn og Fjordane' => 3,
-                                 'Sør-Trøndelag' => 9,
-                                 'Telemark' => 5,
-                                 'Troms' => 5,
-                                 'Vest-Agder' => 5,
-                                 'Vestfold' => 6,
-                                 'Østfold' => 8 }.freeze
-
-    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
-    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
-    NO_OF_LEVELING_SEATS = 19
-
-    LEVELING_THRESHOLD = 0.04
-
     def area_code
       'NO'
+    end
+
+    def coalitions
+      COALITIONS
+    end
+
+    def no_of_seats
+      NO_OF_SEATS
+    end
+
+    def overall_election_results_of_2015
+      if @overall_election_results_of_2015.nil?
+        @overall_election_results_of_2015 = \
+          summarize_election_results(election_results_of_2015)
+      end
+      @overall_election_results_of_2015
     end
 
     def population_size
@@ -387,20 +349,12 @@ module Sapor
       2_836_029
     end
 
-    def no_of_seats
-      169
-    end
-
-    def threshold
-      0.04
-    end
-
     def seats(simulation)
       electoral_system.project(simulation)
     end
 
-    def coalitions
-      COALITIONS
+    def threshold
+      LEVELING_THRESHOLD
     end
 
     private
@@ -429,10 +383,38 @@ module Sapor
                   ['Høyre', 'Kristelig Folkeparti', 'Venstre'],
                   ['Kristelig Folkeparti', 'Senterpartiet', 'Venstre']].freeze
 
+    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 1 May 2015.
+    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
+    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 16, 'Aust-Agder' => 3,
+                                 'Buskerud' => 8, 'Finnmark' => 4,
+                                 'Hedmark' => 6, 'Hordaland' => 15,
+                                 'Møre og Romsdal' => 8, 'Nord-Trøndelag' => 4,
+                                 'Nordland' => 8, 'Oppland' => 6, 'Oslo' => 18,
+                                 'Rogaland' => 13, 'Sogn og Fjordane' => 3,
+                                 'Sør-Trøndelag' => 9, 'Telemark' => 5,
+                                 'Troms' => 5, 'Vest-Agder' => 5,
+                                 'Vestfold' => 6, 'Østfold' => 8 }.freeze
+
+    LEVELING_THRESHOLD = 0.04
+
+    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
+    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
+    NO_OF_LEVELING_SEATS = 19
+
+    NO_OF_SEATS = NO_OF_LEVELING_SEATS + \
+                  DIRECT_SEAT_DISTRIBUTION.values.inject(:+)
+
+    def election_results_of_2015
+      if @election_results_of_2015.nil?
+        @election_results_of_2015 = LAST_DETAILED_ELECTION_RESULT
+      end
+      @election_results_of_2015
+    end
+
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictLeveledProportional.new(
-          LAST_ELECTION_RESULT, LAST_DETAILED_ELECTION_RESULT,
+          overall_election_results_of_2015, election_results_of_2015,
           DIRECT_SEAT_DISTRIBUTION, NO_OF_LEVELING_SEATS, LEVELING_THRESHOLD,
           SainteLague14Denominators
         )
