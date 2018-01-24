@@ -33,7 +33,7 @@ module Sapor
     end
 
     def no_of_seats
-      NO_OF_LEVELING_SEATS + DIRECT_SEAT_DISTRIBUTION.values.inject(:+)
+      NO_OF_SEATS
     end
 
     def overall_election_results_of_2017
@@ -106,6 +106,9 @@ module Sapor
     NO_OF_LEVELING_SEATS = 9
 
     LEVELING_THRESHOLD = 0.05
+
+    NO_OF_SEATS = NO_OF_LEVELING_SEATS + \
+                  DIRECT_SEAT_DISTRIBUTION.values.inject(:+)
 
     def election_results_of_2017
       if @election_results_of_2017.nil?
