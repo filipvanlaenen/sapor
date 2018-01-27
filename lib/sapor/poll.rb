@@ -37,11 +37,13 @@ module Sapor
     CATALONIAN_AREAS = [Catalonia.instance,
                         CataloniaWithJuntsPerCatalunya.instance,
                         CataloniaWithoutJuntsPelSi.instance].freeze
+    EUROPEAN_UNION_AREAS = [EuropeanUnionFlanders.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
     AREAS_MAP = {}
-    (BELGIAN_AREAS + CATALONIAN_AREAS + NORWEGIAN_AREAS + \
+    (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + \
+     NORWEGIAN_AREAS + \
      [France.instance, Greece.instance, Hungary.instance, Iceland.instance, \
       UnitedKingdom.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
@@ -175,8 +177,13 @@ module Sapor
     end
 
     def should_continue_analysis?(analysis, options)
-      analysis.kind_of?(Dichotomies) && (options.min_dichotomies_iterations > analysis.size || analysis.error_estimate > options.max_error) \
-        || analysis.kind_of?(Polychotomy) && options.max_polychotomy_iterations > analysis.no_of_simulations && (options.min_polychotomy_iterations > analysis.no_of_simulations || analysis.error_estimate > options.max_error)
+      analysis.kind_of?(Dichotomies) \
+        && (options.min_dichotomies_iterations > analysis.size \
+            || analysis.error_estimate > options.max_error) \
+        || analysis.kind_of?(Polychotomy) \
+           && options.max_polychotomy_iterations > analysis.no_of_simulations \
+           && (options.min_polychotomy_iterations > analysis.no_of_simulations \
+               || analysis.error_estimate > options.max_error)
     end
 
     def analyze_as_dichotomies(options)
@@ -188,9 +195,11 @@ module Sapor
     def analyze_as_polychotomy(options)
       @logger.info('Analyzing as a polychotomy...')
       if referendum?
-        @analysis = ReferendumPolychotomy.new(@results, @area, @analysis, options.max_error)
+        @analysis = ReferendumPolychotomy.new(@results, @area, @analysis,
+                                              options.max_error)
       else
-        @analysis = RepresentativesPolychotomy.new(@results, @area, @analysis, options.max_error, @logger)
+        @analysis = RepresentativesPolychotomy.new(@results, @area, @analysis,
+                                                   options.max_error, @logger)
       end
       analyze_until_convergence(options)
     end
