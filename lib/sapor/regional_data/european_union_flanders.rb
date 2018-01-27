@@ -28,6 +28,10 @@ module Sapor
       'EU[BE-VLG]'
     end
 
+    def coalitions
+      COALITIONS
+    end
+
     def no_of_seats
       NO_OF_SEATS
     end
@@ -41,6 +45,14 @@ module Sapor
     end
 
     private
+
+    COALITIONS = [['CD&V (EPP)'],
+                  ['Groen (Greens/EFA)', 'Piratenpartij (Greens/EFA)'],
+                  ['Lijst Dedecker (ECR)', 'N-VA (ECR)'],
+                  ['Open Vld (ALDE)'],
+                  ['PVDA (GUE/NGL)'],
+                  ['sp.a (S&D)'],
+                  ['Vlaams Belang (ENF)']].freeze
 
     NO_OF_SEATS = 12
 
