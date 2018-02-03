@@ -17,12 +17,13 @@
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
 
-SAMPLE_RG_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }
+require 'spec_helper'
 
-SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70
-                                             },
+SAMPLE_RG_ELECTION_RESULT = { 'Red' => 91_811, 'Green' => 190_934 }.freeze
+
+SAMPLE_DETAILED_ELECTION_RESULT = { 'North' => { 'Red' => 50, 'Green' => 70 },
                                     'South' => { 'Red' => 70, 'Green' => 50,
-                                                 'Blue' => 100 } }
+                                                 'Blue' => 100 } }.freeze
 
 FPTP = Sapor::FirstPastThePost.new(SAMPLE_RG_ELECTION_RESULT,
                                    SAMPLE_DETAILED_ELECTION_RESULT)
