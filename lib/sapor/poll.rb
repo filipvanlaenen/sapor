@@ -38,6 +38,7 @@ module Sapor
                         CataloniaWithJuntsPerCatalunya.instance,
                         CataloniaWithoutJuntsPelSi.instance].freeze
     EUROPEAN_UNION_AREAS = [EuropeanUnionFlanders.instance,
+                            EuropeanUnionFrance.instance,
                             EuropeanUnionGermany.instance,
                             EuropeanUnionHungary.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
