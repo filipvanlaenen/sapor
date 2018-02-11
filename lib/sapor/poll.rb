@@ -40,7 +40,8 @@ module Sapor
     EUROPEAN_UNION_AREAS = [EuropeanUnionFlanders.instance,
                             EuropeanUnionFrance.instance,
                             EuropeanUnionGermany.instance,
-                            EuropeanUnionHungary.instance].freeze
+                            EuropeanUnionHungary.instance,
+                            EuropeanUnionItaly.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze

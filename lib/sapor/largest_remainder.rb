@@ -23,17 +23,19 @@ module Sapor
   # district.
   #
   class LargestRemainder
-    def initialize(no_of_seats, quota_class)
+    def initialize(no_of_seats, quota_class, threshold = 0)
       @no_of_seats = no_of_seats
       @quota_class = quota_class
+      @threshold = threshold
     end
 
     def project(simulation)
       result = create_empty_result(simulation)
-      total_votes = simulation.values.inject(:+)
+      thresholded_simulation = apply_threshold(simulation)
+      total_votes = thresholded_simulation.values.inject(:+)
       quota = @quota_class.get(total_votes, @no_of_seats)
-      add_automatic_seats(result, simulation, quota)
-      add_remaining_seats(result, simulation, quota)
+      add_automatic_seats(result, thresholded_simulation, quota)
+      add_remaining_seats(result, thresholded_simulation, quota)
       result
     end
 
@@ -50,6 +52,15 @@ module Sapor
       choices = simulation.keys.sort { |a, b| remainders[b] <=> remainders[a] }
       remaining_seats = @no_of_seats - result.values.inject(:+)
       choices.slice(0, remaining_seats).each { |c| result[c] += 1 }
+    end
+
+    def apply_threshold(simulation)
+      threshold = simulation.values.inject(:+).to_f * @threshold
+      thresholded_simulation = {}
+      simulation.each_pair do |choice, votes|
+        thresholded_simulation[choice] = votes >= threshold ? votes : 0
+      end
+      thresholded_simulation
     end
 
     def calculate_remainders(simulation, quota)
