@@ -52,7 +52,7 @@ module Sapor
     COALITIONS = [['CasaPound Italia (—)', 'Civica Popolare (—)',
                    'Fratelli d’Italia (—)', 'Insieme (—)',
                    'Noi con l’Italia (—)', 'Più Europa (—)'],
-                  ['Forza Italia (EPP)'],
+                  ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Lega Nord (ENF)'],
                   ['Liberi e Uguali (S&D)', 'Partito Democratico (S&D)'],
                   ['Movimento 5 Stelle (EFDD)'],
