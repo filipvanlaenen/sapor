@@ -40,13 +40,13 @@ end
 
 describe Sapor::EuropeanUnionHungary, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
-    results = { 'Fidesz–KDNP (EPP)' => 1_193_991, 'Jobbik (AENM)' => 340_287,
+    results = { 'Fidesz–KDNP (EPP)' => 1_193_991, 'Jobbik (—)' => 340_287,
                 'MSZP (S&D)' => 252_751, 'DK (S&D)' => 226_086,
                 'Együtt (Greens/EFA)' => 168_076, 'LMP (Greens/EFA)' => 116_904,
                 'HNEM (—)' => 12_119, 'SMS (—)' => 9_279 }
     seats = Sapor::EuropeanUnionHungary.instance.seats(results)
     expect(seats['Fidesz–KDNP (EPP)']).to eq(12)
-    expect(seats['Jobbik (AENM)']).to eq(3)
+    expect(seats['Jobbik (—)']).to eq(3)
     expect(seats['MSZP (S&D)']).to eq(2)
     expect(seats['DK (S&D)']).to eq(2)
     expect(seats['Együtt (Greens/EFA)']).to eq(1)
