@@ -42,6 +42,7 @@ module Sapor
                             EuropeanUnionGermany.instance,
                             EuropeanUnionHungary.instance,
                             EuropeanUnionItaly.instance,
+                            EuropeanUnionPoland.instance,
                             EuropeanUnionSpain.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
