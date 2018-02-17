@@ -54,15 +54,13 @@ module Sapor
                    'PIRATEN (Greens/EFA)'],
                   ['Bürgerbewegung pro NRW (—)', 'BüSo (—)',
                    'Christliche Mitte (—)', 'Die PARTEI (—)',
-                   'Die Republikaner (—)', 'MLPD (—)',
+                   'Die Republikaner (—)', 'MLPD (—)', 'NPD (—)',
                    'Sozialistische Gleichheitspartei (—)',
                    'Volksabstimmung (—)'],
                   ['CDU (EPP)', 'CSU (EPP)'],
                   ['DIE LINKE (GUE/NGL)', 'DKP (GUE/NGL)',
                    'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['FDP (ALDE)'],
-                  ['FREIE WÄHLER (EDP)'],
-                  ['NPD (APF)'],
+                  ['FDP (ALDE)', 'FREIE WÄHLER (ALDE)'],
                   ['SPD (S&D)']].freeze
 
     NO_OF_SEATS = 96

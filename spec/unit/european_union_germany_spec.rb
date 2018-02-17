@@ -45,10 +45,10 @@ describe Sapor::EuropeanUnionGermany, '#seats' do
                 'DIE LINKE (GUE/NGL)' => 2_168_455,
                 'Alternative für Deutschland (EFDD)' => 2_070_014,
                 'CSU (EPP)' => 1_567_448, 'FDP (ALDE)' => 986_841,
-                'FREIE WÄHLER (EDP)' => 428_800,
+                'FREIE WÄHLER (ALDE)' => 428_800,
                 'PIRATEN (Greens/EFA)' => 425_044,
                 'Partei Mensch Umwelt Tierschutz (GUE/NGL)' => 366_598,
-                'NPD (APF)' => 301_139,
+                'NPD (—)' => 301_139,
                 'Familien-Partei Deutschlands (ECR)' => 202_803,
                 'ÖDP (Greens/EFA)' => 185_244,
                 'Die PARTEI (—)' => 184_709, 'Die Republikaner (—)' => 109_757,
@@ -68,10 +68,10 @@ describe Sapor::EuropeanUnionGermany, '#seats' do
     expect(seats['Alternative für Deutschland (EFDD)']).to eq(7)
     expect(seats['CSU (EPP)']).to eq(5)
     expect(seats['FDP (ALDE)']).to eq(3)
-    expect(seats['FREIE WÄHLER (EDP)']).to eq(1)
+    expect(seats['FREIE WÄHLER (ALDE)']).to eq(1)
     expect(seats['PIRATEN (Greens/EFA)']).to eq(1)
     expect(seats['Partei Mensch Umwelt Tierschutz (GUE/NGL)']).to eq(1)
-    expect(seats['NPD (APF)']).to eq(1)
+    expect(seats['NPD (—)']).to eq(1)
     expect(seats['Familien-Partei Deutschlands (ECR)']).to eq(1)
     expect(seats['ÖDP (Greens/EFA)']).to eq(1)
     expect(seats['Die PARTEI (—)']).to eq(1)
