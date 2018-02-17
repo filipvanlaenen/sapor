@@ -68,7 +68,7 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, \
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS,
                                                            DhondtDenominators)
       end
       @electoral_system
