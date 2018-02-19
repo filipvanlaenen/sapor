@@ -42,6 +42,7 @@ module Sapor
                             EuropeanUnionGermany.instance,
                             EuropeanUnionHungary.instance,
                             EuropeanUnionItaly.instance,
+                            EuropeanUnionNetherlands.instance,
                             EuropeanUnionPoland.instance,
                             EuropeanUnionRomania.instance,
                             EuropeanUnionSpain.instance].freeze
