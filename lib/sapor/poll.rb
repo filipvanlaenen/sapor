@@ -37,7 +37,8 @@ module Sapor
     CATALONIAN_AREAS = [Catalonia.instance,
                         CataloniaWithJuntsPerCatalunya.instance,
                         CataloniaWithoutJuntsPelSi.instance].freeze
-    EUROPEAN_UNION_AREAS = [EuropeanUnionCzechRepublic.instance,
+    EUROPEAN_UNION_AREAS = [EuropeanUnionAustria.instance,
+                            EuropeanUnionCzechRepublic.instance,
                             EuropeanUnionFlanders.instance,
                             EuropeanUnionFrance.instance,
                             EuropeanUnionGermany.instance,
