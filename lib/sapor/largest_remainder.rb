@@ -33,11 +33,11 @@ module Sapor
     def project(simulation)
       result = create_empty_result(simulation)
       thresholded_simulation = apply_threshold(simulation)
-      if @full_quota
-        total_votes = simulation.values.inject(:+)
-      else
-        total_votes = thresholded_simulation.values.inject(:+)
-      end
+      total_votes = if @full_quota
+                      simulation.values.inject(:+)
+                    else
+                      thresholded_simulation.values.inject(:+)
+                    end
       quota = @quota_class.get(total_votes, @no_of_seats)
       add_automatic_seats(result, thresholded_simulation, quota)
       add_remaining_seats(result, thresholded_simulation, quota)
@@ -101,6 +101,15 @@ module Sapor
   class DroopQuota
     def self.get(total_votes, no_of_seats)
       1 + total_votes.to_f / (1 + no_of_seats)
+    end
+  end
+
+  #
+  # Class calculating the Hagenbach-Bischoff quota.
+  #
+  class HagenbachBischoffQuota
+    def self.get(total_votes, no_of_seats)
+      total_votes.to_f / (1 + no_of_seats)
     end
   end
 end
