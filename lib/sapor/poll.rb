@@ -40,6 +40,7 @@ module Sapor
     EUROPEAN_UNION_AREAS = [EuropeanUnionAustria.instance,
                             EuropeanUnionBulgaria.instance,
                             EuropeanUnionCzechRepublic.instance,
+                            EuropeanUnionDenmark.instance,
                             EuropeanUnionFlanders.instance,
                             EuropeanUnionFrance.instance,
                             EuropeanUnionGermany.instance,
