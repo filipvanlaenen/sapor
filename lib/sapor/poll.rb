@@ -41,6 +41,7 @@ module Sapor
                             EuropeanUnionBulgaria.instance,
                             EuropeanUnionCzechRepublic.instance,
                             EuropeanUnionDenmark.instance,
+                            EuropeanUnionDenmark2019.instance,
                             EuropeanUnionFlanders.instance,
                             EuropeanUnionFrance.instance,
                             EuropeanUnionGermany.instance,
