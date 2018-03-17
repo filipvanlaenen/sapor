@@ -66,10 +66,13 @@ module Sapor
     # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(France)
     POPULATION_SIZE = 18_955_636
 
+    THRESHOLD = 0.05
+
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS,
-                                                           DhondtDenominators)
+                                                           DhondtDenominators,
+                                                           THRESHOLD)
       end
       @electoral_system
     end
