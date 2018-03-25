@@ -56,7 +56,7 @@ module Sapor
                    'Parti communiste français (GUE/NGL)'],
                   ['Les Républicains (EPP)'],
                   ['Parti socialiste (S&D)'],
-                  ['Union populaire républicaine (—)']].freeze
+                  ['Union populaire républicaine (*)']].freeze
 
     NO_OF_SEATS = 79
 
