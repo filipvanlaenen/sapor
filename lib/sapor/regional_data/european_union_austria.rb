@@ -48,7 +48,7 @@ module Sapor
 
     COALITIONS = [['Die Grünen–Die Grüne Alternative (Greens/EFA)'],
                   ['Freiheitliche Partei Österreichs (ENF)'],
-                  ['Liste Peter Pilz (—)', 'Meine Stimme Gilt! (—)'],
+                  ['Liste Peter Pilz (*)', 'Meine Stimme Gilt! (*)'],
                   ['NEOS–Das Neue Österreich und Liberales Forum (ALDE)'],
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
