@@ -50,8 +50,9 @@ module Sapor
                   ['Együtt (Greens/EFA)', 'LMP (Greens/EFA)',
                    'Párbeszéd (Greens/EFA)'],
                   ['Fidesz–KDNP (EPP)'],
-                  ['HNEM (—)', 'Jobbik (—)', 'MKKP (—)', 'MM (—)', 'SMS (—)'],
-                  ['MLP (ALDE)']].freeze
+                  ['HNEM (*)', 'MKKP (*)', 'SMS (*)'],
+                  ['Jobbik (NI)'],
+                  ['MLP (ALDE)', 'MM (ALDE)']].freeze
 
     NO_OF_SEATS = 21
 
