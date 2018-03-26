@@ -49,13 +49,14 @@ module Sapor
 
     private
 
-    COALITIONS = [['CasaPound Italia (—)', 'Civica Popolare (—)',
-                   'Fratelli d’Italia (—)', 'Insieme (—)',
-                   'Noi con l’Italia (—)', 'Più Europa (—)'],
-                  ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
+    COALITIONS = [['CasaPound Italia (*)', 'Civica Popolare (*)',
+                   'Fratelli d’Italia (*)', 'Insieme (*)'],
+                  ['Forza Italia (EPP)', 'Noi con l’Italia (EPP)',
+                   'Südtiroler Volkspartei (EPP)'],
                   ['Lega Nord (ENF)'],
                   ['Liberi e Uguali (S&D)', 'Partito Democratico (S&D)'],
                   ['Movimento 5 Stelle (EFDD)'],
+                  ['Più Europa (ALDE)'],
                   ['Potere al Popolo (GUE/NGL)']].freeze
 
     NO_OF_SEATS = 76
