@@ -46,9 +46,8 @@ module Sapor
 
     private
 
-    COALITIONS = [['Kukiz’15 (ENF)'],
+    COALITIONS = [['Kukiz’15 (*)', 'Partia Razem (*)'],
                   ['.Nowoczesna (ALDE)'],
-                  ['Partia Razem (—)'],
                   ['Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)'],
                   ['Prawo i Sprawiedliwość (ECR)'],
