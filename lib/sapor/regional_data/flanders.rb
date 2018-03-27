@@ -40,6 +40,7 @@ module Sapor
        ['CD&V', 'sp.a'],
        ['Groen', 'Open Vld', 'sp.a'],
        ['Open Vld', 'sp.a'],
+       ['N-VA', 'Open Vld'],
        ['N-VA', 'Vlaams Belang']]
     end
 
