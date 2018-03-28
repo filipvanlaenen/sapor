@@ -51,7 +51,7 @@ module Sapor
                   ['Partidul Mișcarea Populară (EPP)',
                    'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Uniunea Salvați România (—)']].freeze
+                  ['Uniunea Salvați România (*)']].freeze
 
     NO_OF_SEATS = 32
 
