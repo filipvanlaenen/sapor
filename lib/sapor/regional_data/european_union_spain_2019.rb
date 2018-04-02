@@ -53,12 +53,12 @@ module Sapor
                    'Partit Demòcrata Europeu Català (ALDE)'],
                   ['Bloque Nacionalista Galego (Greens/EFA)',
                    'Esquerra Republicana de Catalunya (Greens/EFA)'],
-                  ['Partido Animalista Contra el Maltrato Animal (—)',
-                   'Vox (—)'],
+                  ['Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
+                   'Euskal Herria Bildu (GUE/NGL)',
+                   'Unidos Podemos (GUE/NGL)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
-                  ['Euskal Herria Bildu (GUE/NGL)',
-                   'Unidos Podemos (GUE/NGL)']].freeze
+                  ['Vox (*)']].freeze
 
     NO_OF_SEATS = 59
 
