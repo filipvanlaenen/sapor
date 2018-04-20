@@ -42,7 +42,7 @@ describe Sapor::EuropeanUnionPortugal, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Partido Socialista (S&D)' => 1_033_158,
                 'Aliança Portugal (EPP)' => 909_932,
-                'Coligação Democrática Unitária (Greens/EFA)' => 416_446,
+                'Coligação Democrática Unitária (GUE/NGL)' => 416_446,
                 'Partido da Terra (ALDE)' => 234_603,
                 'Bloco de Esquerda (GUE/NGL)' => 149_628,
                 'LIVRE (Greens/EFA)' => 71_602,
@@ -59,7 +59,7 @@ describe Sapor::EuropeanUnionPortugal, '#seats' do
     seats = Sapor::EuropeanUnionPortugal.instance.seats(results)
     expect(seats['Partido Socialista (S&D)']).to eq(8)
     expect(seats['Aliança Portugal (EPP)']).to eq(7)
-    expect(seats['Coligação Democrática Unitária (Greens/EFA)']).to eq(3)
+    expect(seats['Coligação Democrática Unitária (GUE/NGL)']).to eq(3)
     expect(seats['Partido da Terra (ALDE)']).to eq(2)
     expect(seats['Bloco de Esquerda (GUE/NGL)']).to eq(1)
     expect(seats['LIVRE (Greens/EFA)']).to eq(0)
