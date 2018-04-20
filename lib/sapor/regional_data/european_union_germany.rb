@@ -53,13 +53,13 @@ module Sapor
                    'BÜNDNIS 90/DIE GRÜNEN (Greens/EFA)', 'ÖDP (Greens/EFA)',
                    'PIRATEN (Greens/EFA)'],
                   ['Bürgerbewegung pro NRW (*)', 'BüSo (*)',
-                   'Christliche Mitte (*)', 'Die PARTEI (*)',
-                   'Die Republikaner (*)', 'MLPD (*)', 'NPD (*)',
-                   'Sozialistische Gleichheitspartei (*)',
+                   'Christliche Mitte (*)', 'Die Republikaner (*)', 'MLPD (*)',
+                   'NPD (*)', 'Sozialistische Gleichheitspartei (*)',
                    'Volksabstimmung (*)'],
                   ['CDU (EPP)', 'CSU (EPP)'],
                   ['DIE LINKE (GUE/NGL)', 'DKP (GUE/NGL)',
                    'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
+                  ['Die PARTEI (NI)'],
                   ['FDP (ALDE)', 'FREIE WÄHLER (ALDE)'],
                   ['SPD (S&D)']].freeze
 
