@@ -80,7 +80,7 @@ module Sapor
     (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + \
      NORWEGIAN_AREAS + \
      [France.instance, Greece.instance, Hungary.instance, Iceland.instance, \
-      UnitedKingdom.instance, Utopia.instance]).map do |area|
+      Slovenia.instance, UnitedKingdom.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
 
