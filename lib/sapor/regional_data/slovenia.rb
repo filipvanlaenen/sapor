@@ -57,7 +57,17 @@ module Sapor
                    'Državljanska lista', 'Pozitivna Slovenija',
                    'Socialni demokrati'],
                   ['Demokratična stranka upokojencev Slovenije',
-                   'Socialni demokrati', 'Stranka modernega centra']].freeze
+                   'Lista Marjana Šarca', 'Slovenska demokratska stranka'],
+                  ['Demokratična stranka upokojencev Slovenije',
+                   'Lista Marjana Šarca', 'Socialni demokrati'],
+                  ['Demokratična stranka upokojencev Slovenije',
+                   'Socialni demokrati', 'Stranka modernega centra'],
+                  ['Pozitivna Slovenija', 'Socialni demokrati',
+                   'Stranka modernega centra'],
+                  ['Lista Marjana Šarca', 'Slovenska demokratska stranka'],
+                  ['Lista Marjana Šarca', 'Socialni demokrati'],
+                  ['Lista Marjana Šarca', 'Socialni demokrati',
+                   'Stranka modernega centra']].freeze
 
     NO_OF_SEATS = 90
     NO_OF_HUNGARIAN_AND_ITALIAN_SEATS = 2
