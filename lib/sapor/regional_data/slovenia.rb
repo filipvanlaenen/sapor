@@ -64,6 +64,8 @@ module Sapor
                    'Socialni demokrati', 'Stranka modernega centra'],
                   ['Pozitivna Slovenija', 'Socialni demokrati',
                    'Stranka modernega centra'],
+                  ['Lista Marjana Šarca', 'Nova Slovenija–Krščanski demokrati',
+                   'Socialni demokrati'],
                   ['Lista Marjana Šarca', 'Slovenska demokratska stranka'],
                   ['Lista Marjana Šarca', 'Socialni demokrati'],
                   ['Lista Marjana Šarca', 'Socialni demokrati',
