@@ -60,6 +60,7 @@ module Sapor
                             EuropeanUnionItaly2019.instance,
                             EuropeanUnionLatvia.instance,
                             EuropeanUnionLithuania.instance,
+                            EuropeanUnionLuxembourg.instance,
                             EuropeanUnionNetherlands.instance,
                             EuropeanUnionNetherlands2019.instance,
                             EuropeanUnionPoland.instance,
