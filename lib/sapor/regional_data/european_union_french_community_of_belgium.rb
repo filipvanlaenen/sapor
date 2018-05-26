@@ -46,9 +46,10 @@ module Sapor
     private
 
     COALITIONS = [['cdH (EPP)'],
+                  ['Debout les Belges (*)', 'La Droite (*)', 'FW (*)',
+                   'R.W.F. (*)', 'Wallonie d’Abord (*)'],
                   ['DéFI (ALDE)', 'MR (ALDE)'],
-                  ['Ecolo (Greens/EFA)'],
-                  ['La Droite (*)'],
+                  ['Ecolo (Greens/EFA)', 'PIRATE (Greens/EFA)'],
                   ['Parti Populaire (EFDD)'],
                   ['PS (S&D)'],
                   ['PTB (GUE/NGL)']].freeze
