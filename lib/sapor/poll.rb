@@ -53,6 +53,7 @@ module Sapor
                             EuropeanUnionFlanders.instance,
                             EuropeanUnionFrance.instance,
                             EuropeanUnionFrance2019.instance,
+                            EuropeanUnionFrenchCommunityOfBelgium.instance,
                             EuropeanUnionGermany.instance,
                             EuropeanUnionGreece.instance,
                             EuropeanUnionHungary.instance,
