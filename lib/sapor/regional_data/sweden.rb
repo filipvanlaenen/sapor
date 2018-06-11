@@ -46,10 +46,9 @@ module Sapor
 
     private
 
-    COALITIONS = [['Centerpartiet', 'Folkpartiet liberalerna',
-                   'Kristdemokraterna', 'Moderata samlingspartiet'],
-                  ['Centerpartiet', 'Folkpartiet liberalerna',
+    COALITIONS = [['Centerpartiet', 'Kristdemokraterna', 'Liberalerna',
                    'Moderata samlingspartiet'],
+                  ['Centerpartiet', 'Liberalerna', 'Moderata samlingspartiet'],
                   ['Centerpartiet', 'Kristdemokraterna',
                    'Moderata samlingspartiet'],
                   ['Centerpartiet', 'Moderata samlingspartiet'],
