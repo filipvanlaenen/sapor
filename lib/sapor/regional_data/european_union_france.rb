@@ -55,7 +55,7 @@ module Sapor
                   ['Génération·s, le mouvement (S&D)',
                    'Parti socialiste (S&D)'],
                   ['La France insoumise (GUE/NGL)',
-                   'Nouveau Parti anticapitaliste (GUE/NGL)'
+                   'Nouveau Parti anticapitaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
                   ['Les Républicains (EPP)'],
                   ['Résistons! (*)', 'Union populaire républicaine (*)']].freeze
