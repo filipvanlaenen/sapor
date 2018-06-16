@@ -51,12 +51,14 @@ module Sapor
                    'La République en marche–Mouvement démocrate (ALDE)'],
                   ['Debout la France (EFDD)', 'Les Patriotes (EFDD)'],
                   ['Europe Écologie Les Verts (Greens/EFA)'],
-                  ['Front national (ENF)'],
+                  ['Rassemblement national (ENF)'],
+                  ['Génération·s, le mouvement (S&D)',
+                   'Parti socialiste (S&D)'],
                   ['La France insoumise (GUE/NGL)',
+                   'Nouveau Parti anticapitaliste (GUE/NGL)'
                    'Parti communiste français (GUE/NGL)'],
                   ['Les Républicains (EPP)'],
-                  ['Parti socialiste (S&D)'],
-                  ['Union populaire républicaine (*)']].freeze
+                  ['Résistons! (*)', 'Union populaire républicaine (*)']].freeze
 
     NO_OF_SEATS = 74
 
