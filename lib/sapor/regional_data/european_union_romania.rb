@@ -51,7 +51,8 @@ module Sapor
                    'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
                   ['Partidul Alianța Liberalilor și Democraților (ALDE)'],
-                  ['Partidul Social Democrat (S&D)', 'PRO România (S&D)'],
+                  ['Partidul Social Democrat (S&D)'],
+                  ['PRO România (ECR)'],
                   ['Uniunea Salvați România (*)']].freeze
 
     NO_OF_SEATS = 32
