@@ -61,6 +61,8 @@ module Sapor
                    'Sveriges socialdemokratiska arbetareparti',
                    'Vänsterpartiet'],
                   ['Sveriges socialdemokratiska arbetareparti',
+                   'Moderata samlingspartiet'],
+                  ['Sveriges socialdemokratiska arbetareparti',
                    'Vänsterpartiet']].freeze
 
     NO_OF_SEATS = 349
