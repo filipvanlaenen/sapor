@@ -60,8 +60,10 @@ module Sapor
                   ['Miljöpartiet de gröna',
                    'Sveriges socialdemokratiska arbetareparti',
                    'Vänsterpartiet'],
-                  ['Sveriges socialdemokratiska arbetareparti',
-                   'Moderata samlingspartiet'],
+                  ['Moderata samlingspartiet',
+                   'Sverigedemokraterna'],
+                  ['Moderata samlingspartiet',
+                   'Sveriges socialdemokratiska arbetareparti'],
                   ['Sveriges socialdemokratiska arbetareparti',
                    'Vänsterpartiet']].freeze
 
