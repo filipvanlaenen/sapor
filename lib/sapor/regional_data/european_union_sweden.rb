@@ -51,7 +51,7 @@ module Sapor
                    'Sveriges socialdemokratiska arbetareparti (S&D)'],
                   ['Kristdemokraterna (EPP)', 'Moderata samlingspartiet (EPP)'],
                   ['Miljöpartiet de gröna (Greens/EFA)'],
-                  ['Sverigedemokraterna (EFDD)'],
+                  ['Sverigedemokraterna (ECR)'],
                   ['Vänsterpartiet (GUE/NGL)']].freeze
 
     NO_OF_SEATS = 20
