@@ -1,0 +1,64 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "ElectionsIreland.org: 2014 European Election". Retrieved on 7 July
+# 2018.
+# URL: https://electionsireland.org/results/europe/2014euro.cfm
+
+# Changes:
+# Added Independent Alliance (*) as a copy of Independents (GUE/NGL)
+# Added Renua Ireland (*) as a copy of Fine Gael (EPP)
+# Added Social Democrats (*) as a copy of Independents (GUE/NGL)
+
+Dublin | Sinn Féin (GUE/NGL)                       | 83,264
+Dublin | Fine Gael (EPP)                           | 54,676
+Dublin | Renua Ireland (*)                         | 54,676
+Dublin | Fianna Fáil (ALDE)                        | 44,283
+Dublin | Green Party (Greens/EFA)                  | 44,078
+Dublin | Independents (GUE/NGL)                    | 38,183
+Dublin | Independent Alliance (*)                  | 38,183
+Dublin | Social Democrats (*)                      | 38,183
+Dublin | Socialist Party (GUE/NGL)                 | 29,953
+Dublin | Labour Party (S&D)                        | 25,961
+Dublin | Solidarity–People Before Profit (GUE/NGL) | 23,875
+Dublin | Direct Democracy Ireland (*)              |  7,155
+Dublin | Fís Nua (*)                               |  1,147
+
+Midlands–North-West | Independents (GUE/NGL)       | 233,801
+Midlands–North-West | Independent Alliance (*)     | 233,801
+Midlands–North-West | Social Democrats (*)         | 233,801
+Midlands–North-West | Fine Gael (EPP)              | 131,988
+Midlands–North-West | Renua Ireland (*)            | 131,988
+Midlands–North-West | Fianna Fáil (ALDE)           | 114,946
+Midlands–North-West | Sinn Féin (GUE/NGL)          | 114,727
+Midlands–North-West | Labour Party (S&D)           |  31,951
+Midlands–North-West | Green Party (Greens/EFA)     |   9,520
+Midlands–North-West | Direct Democracy Ireland (*) |   7,683
+Midlands–North-West | Fís Nua (*)                  |   1,829
+
+South | Fianna Fáil (ALDE)           | 210,316
+South | Fine Gael (EPP)              | 182,456
+South | Renua Ireland (*)            | 182,456
+South | Sinn Féin (GUE/NGL)          | 125,309
+South | Independent Alliance (*)     |  56,782
+South | Independents (GUE/NGL)       |  56,782
+South | Social Democrats (*)         |  56,782
+South | Labour Party (S&D)           |  30,317
+South | Green Party (Greens/EFA)     |  27,860
+South | Catholic Democrats (*)       |  13,569
+South | Direct Democracy Ireland (*) |   9,255
+South | Fís Nua (*)                  |   1,634
