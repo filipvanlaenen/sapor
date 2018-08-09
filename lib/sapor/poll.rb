@@ -61,6 +61,7 @@ module Sapor
                             EuropeanUnionIreland2019.instance,
                             EuropeanUnionIreland2019Ia.instance,
                             EuropeanUnionIreland2019IaRiSd.instance,
+                            EuropeanUnionIreland2019IaSd.instance,
                             EuropeanUnionItaly.instance,
                             EuropeanUnionItaly2019.instance,
                             EuropeanUnionLatvia.instance,
