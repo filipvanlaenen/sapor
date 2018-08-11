@@ -19,20 +19,20 @@
 
 require 'spec_helper'
 
-describe Sapor::LatviaJkpKpvPar, '#area_code' do
-  it 'returns LV∪{JKP,KPV,PAR} as the area code' do
-    expect(Sapor::LatviaJkpKpvPar.instance.area_code).to eq('LV∪{JKP,KPV,PAR}')
+describe Sapor::LatviaKpvPar, '#area_code' do
+  it 'returns LV∪{KPV,PAR} as the area code' do
+    expect(Sapor::LatviaKpvPar.instance.area_code).to eq('LV∪{KPV,PAR}')
   end
 end
 
-describe Sapor::LatviaJkpKpvPar, '#no_of_seats' do
+describe Sapor::LatviaKpvPar, '#no_of_seats' do
   it 'returns 100 as the number of seats' do
-    expect(Sapor::LatviaJkpKpvPar.instance.no_of_seats).to eq(100)
+    expect(Sapor::LatviaKpvPar.instance.no_of_seats).to eq(100)
   end
 end
 
-describe Sapor::LatviaJkpKpvPar, '#population_size' do
+describe Sapor::LatviaKpvPar, '#population_size' do
   it 'returns a population size of 913,491' do
-    expect(Sapor::LatviaJkpKpvPar.instance.population_size).to eq(913_491)
+    expect(Sapor::LatviaKpvPar.instance.population_size).to eq(913_491)
   end
 end

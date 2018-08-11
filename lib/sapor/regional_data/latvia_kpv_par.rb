@@ -19,12 +19,12 @@
 
 module Sapor
   #
-  # The regional data for Latvia, extended for JKP, KPV and PAR.
+  # The regional data for Latvia, extended for KPV and PAR.
   #
-  class LatviaJkpKpvPar < Area
+  class LatviaKpvPar < Area
     include Singleton
     def area_code
-      'LV∪{JKP,KPV,PAR}'
+      'LV∪{KPV,PAR}'
     end
 
     def coalitions
@@ -66,7 +66,7 @@ module Sapor
 
     def election_results_of_2014
       if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results('latvia-20141004-jkp-kpv-par.psv')
+        @election_results_of_2014 = load_election_results('latvia-20141004-kpv-par.psv')
       end
       @election_results_of_2014
     end
