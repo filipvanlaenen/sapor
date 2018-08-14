@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -24,20 +23,30 @@ module Sapor
   #
   class MultiDistrictProportional
     def initialize(last_election_result, last_detailed_election_result,
-                   seat_distribution, denominators_class, threshold = 0)
+                   seat_distribution, denominators_class, threshold = 0,
+                   national_threshold = 0)
       @last_election_result = last_election_result
       @last_detailed_election_result = last_detailed_election_result
       @seat_distribution = seat_distribution
       @denominators_class = denominators_class
       @threshold = threshold
+      @national_threshold = national_threshold
     end
 
     def project(simulation)
+      allowed_parties = []
+      unless @national_threshold.zero?
+        threshold = @national_threshold * simulation.values.inject(:+)
+        simulation.each_pair do |choice, votes|
+          allowed_parties << choice if votes >= threshold
+        end
+      end
       multiplicators = calculate_multiplicators(simulation)
       result = create_empty_result(simulation)
       @last_detailed_election_result.each_pair do |name, local_last_result|
         no_of_seats = @seat_distribution[name]
-        seats = local_seats(no_of_seats, local_last_result, multiplicators)
+        seats = local_seats(no_of_seats, local_last_result, multiplicators,
+                            allowed_parties)
         add_seats_to_result(result, seats)
       end
       result
@@ -79,18 +88,20 @@ module Sapor
     def local_votes(local_last_result, multiplicators)
       local_votes = {}
       local_last_result.each_pair do |choice, votes|
-        if multiplicators.key?(choice)
-          local_votes[choice] = votes * multiplicators[choice]
-        else
-          local_votes[choice] = votes
-        end
+        local_votes[choice] = if multiplicators.key?(choice)
+                                votes * multiplicators[choice]
+                              else
+                                votes
+                              end
       end
       local_votes
     end
 
-    def local_quotients(local_votes, local_threshold, no_of_seats)
+    def local_quotients(local_votes, local_threshold, no_of_seats,
+                        allowed_parties)
       local_quotients = []
       local_votes.each_pair do |choice, new_value|
+        next unless allowed_parties.empty? || allowed_parties.include?(choice)
         next if new_value < local_threshold
         @denominators_class.get(no_of_seats).each do |d|
           local_quotients << [choice, new_value.to_f / d]
@@ -99,11 +110,12 @@ module Sapor
       local_quotients
     end
 
-    def local_seats(no_of_seats, local_last_result, multiplicators)
+    def local_seats(no_of_seats, local_last_result, multiplicators,
+                    allowed_parties)
       local_votes = local_votes(local_last_result, multiplicators)
       local_threshold = local_votes.values.inject(:+).to_f * @threshold
       local_quotients = local_quotients(local_votes, local_threshold,
-                                        no_of_seats)
+                                        no_of_seats, allowed_parties)
       sorted_quotients = local_quotients.sort { |a, b| b.last <=> a.last }
       sorted_quotients.map(&:first).slice(0, no_of_seats)
     end
