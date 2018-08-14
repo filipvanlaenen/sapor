@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -58,15 +57,16 @@ module Sapor
 
     private
 
-    SEAT_DISTRIBUTION = { 'Kurzeme' => 13, 'Latgale' => 15,
-                          'Rīga' => 32, 'Vidzeme' => 26,
-                          'Zemgale' => 14 }
+    SEAT_DISTRIBUTION = { 'Kurzeme' => 13, 'Latgale' => 15, 'Rīga' => 32,
+                          'Vidzeme' => 26, 'Zemgale' => 14 }.freeze
 
     THRESHOLD = 0.05
 
     def election_results_of_2014
       if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results('latvia-20141004-kpv-par.psv')
+        @election_results_of_2014 = load_election_results(
+          'latvia-20141004-kpv-par.psv'
+        )
       end
       @election_results_of_2014
     end
@@ -74,10 +74,9 @@ module Sapor
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2014,
-          election_results_of_2014,
-          SEAT_DISTRIBUTION,
-          SainteLagueDenominators)
+          overall_election_results_of_2014, election_results_of_2014,
+          SEAT_DISTRIBUTION, SainteLagueDenominators, 0, THRESHOLD
+        )
       end
       @electoral_system
     end
