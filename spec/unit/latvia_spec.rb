@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -43,15 +42,17 @@ describe Sapor::Latvia, '#seats' do
     results = Latvia.overall_election_results_of_2014
     seats = Latvia.seats(results)
     expect(seats['Sociāldemokrātiskā Partija “Saskaņa”']).to eq(24)
-    expect(seats['Vienotība']).to eq(23 - 1)
+    expect(seats['Vienotība']).to eq(23)
     expect(seats['Zaļo un Zemnieku savienība']).to eq(21)
-    expect(seats['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”']).to eq(17)
-    expect(seats['Latvijas Reģionu apvienība']).to eq(8 - 1)
+    expect(seats['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
+                 'Brīvībai/LNNK”']).to eq(17)
+    expect(seats['Latvijas Reģionu apvienība']).to eq(8)
     expect(seats['No sirds Latvijai']).to eq(7)
-    expect(seats['Latvijas Krievu savienība']).to eq(0 + 2)
+    expect(seats['Latvijas Krievu savienība']).to eq(0)
     expect(seats['Latvijas attīstībai']).to eq(0)
     expect(seats['“Suverenitāte”']).to eq(0)
-    expect(seats['Partija “Brīvība. Brīvs no bailēm, naida un dusmām”']).to eq(0)
+    expect(seats['Partija “Brīvība. Brīvs no bailēm, naida un dusmām”']).to \
+      eq(0)
     expect(seats['Politiskā partija Izaugsme']).to eq(0)
     expect(seats['Vienoti Latvijai']).to eq(0)
     expect(seats['Jaunā konservatīvā partija']).to eq(0)
