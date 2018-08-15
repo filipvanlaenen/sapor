@@ -27,7 +27,8 @@ module Sapor
     end
 
     def coalitions
-      []
+      [['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Vienotība', 'Zaļo un Zemnieku savienība']]
     end
 
     def no_of_seats
