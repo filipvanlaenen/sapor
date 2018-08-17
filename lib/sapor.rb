@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -113,6 +112,7 @@ require 'sapor/regional_data/norway'
 require 'sapor/regional_data/norwegian_municipality'
 require 'sapor/regional_data/slovenia'
 require 'sapor/regional_data/sweden'
+require 'sapor/regional_data/sweden_20140914'
 require 'sapor/regional_data/united_kingdom'
 require 'sapor/regional_data/utopia'
 require 'sapor/regional_data/wallonia'

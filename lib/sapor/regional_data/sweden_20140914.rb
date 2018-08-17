@@ -18,13 +18,14 @@
 
 module Sapor
   #
-  # The regional data for Sweden.
+  # The regional data for Sweden, using the electoral system used in the 2014
+  # election.
   #
-  class Sweden < Area
+  class Sweden20140914 < Area
     include Singleton
 
     def area_code
-      'SE'
+      'SE@20140914'
     end
 
     def coalitions
@@ -79,7 +80,7 @@ module Sapor
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(
-          NO_OF_SEATS, SainteLague12Denominators, THRESHOLD
+          NO_OF_SEATS, SainteLague14Denominators, THRESHOLD
         )
       end
       @electoral_system

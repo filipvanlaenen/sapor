@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -90,8 +89,8 @@ module Sapor
      NORWEGIAN_AREAS + \
      [France.instance, Greece.instance, Hungary.instance, Iceland.instance, \
       Latvia.instance, LatviaKpv.instance, LatviaKpvPar.instance,
-      Slovenia.instance, Sweden.instance, UnitedKingdom.instance,
-      Utopia.instance]).map do |area|
+      Slovenia.instance, Sweden.instance, Sweden20140914.instance,
+      UnitedKingdom.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
 
