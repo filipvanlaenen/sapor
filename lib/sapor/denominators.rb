@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -37,7 +36,18 @@ module Sapor
   end
 
   #
-  # Class building the denominators for modified Sainte-Lague.
+  # Class building the denominators for the modified Sainte-Lague starting with
+  # 1.2.
+  #
+  class SainteLague12Denominators
+    def self.get(size)
+      Range.new(1, size).map { |a| a.equal?(1) ? 1.2 : a * 2 - 1 }
+    end
+  end
+
+  #
+  # Class building the denominators for the modified Sainte-Lague starting with
+  # 1.4.
   #
   class SainteLague14Denominators
     def self.get(size)

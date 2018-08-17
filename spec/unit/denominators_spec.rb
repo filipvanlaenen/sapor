@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -23,6 +22,13 @@ describe Sapor::DhondtDenominators, '#get' do
   it 'returns [1, 2, 3, 4, 5] as the five first elements' do
     denominators = Sapor::DhondtDenominators.get(5).each.to_a
     expect(denominators).to eq([1, 2, 3, 4, 5])
+  end
+end
+
+describe Sapor::SainteLague12Denominators, '#get' do
+  it 'returns [1.2, 3, 5, 7, 9] as the five first elements' do
+    denominators = Sapor::SainteLague12Denominators.get(5).each.to_a
+    expect(denominators).to eq([1.2, 3, 5, 7, 9])
   end
 end
 
