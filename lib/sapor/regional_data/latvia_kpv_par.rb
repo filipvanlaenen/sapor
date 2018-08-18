@@ -27,7 +27,25 @@ module Sapor
     end
 
     def coalitions
-      [['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+      [['Kustība Par!',
+        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Vienotība', 'Zaļo un Zemnieku savienība'],
+       ['Kustība Par!',
+        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Zaļo un Zemnieku savienība'],
+       ['Kustība Par!', 'Jaunā konservatīvā partija',
+        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Vienotība', 'Zaļo un Zemnieku savienība'],
+       ['Kustība Par!', 'Jaunā konservatīvā partija',
+        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Zaļo un Zemnieku savienība'],
+       ['Jaunā konservatīvā partija',
+        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Vienotība', 'Zaļo un Zemnieku savienība'],
+       ['Jaunā konservatīvā partija',
+        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
+        'Zaļo un Zemnieku savienība'],
+       ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
         'Vienotība', 'Zaļo un Zemnieku savienība']]
     end
 
