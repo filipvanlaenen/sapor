@@ -54,6 +54,8 @@ module Sapor
                   ['Feministiskt initiativ', 'Miljöpartiet de gröna',
                    'Sveriges socialdemokratiska arbetareparti',
                    'Vänsterpartiet'],
+                  ['Kristdemokraterna', 'Moderata samlingspartiet',
+                   'Sverigedemokraterna'],
                   ['Miljöpartiet de gröna',
                    'Sveriges socialdemokratiska arbetareparti'],
                   ['Miljöpartiet de gröna',
