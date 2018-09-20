@@ -1,0 +1,76 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Résultats officieux — Site officiel des élections // Grand-Duché de
+#          Luxembourg". Retrieved on 20 September 2018.
+# URL: https://elections.public.lu/fr/elections-legislatives/2013/resultats.html
+
+Centre | Chrëschtlech-Sozial Vollekspartei           | 385,390
+Centre | Demokratesch Partei                         | 273,069
+Centre | Lëtzebuerger Sozialistesch Aarbechterpartei | 159,905
+Centre | déi gréng                                   | 114,145
+Centre | Alternativ Demokratesch Reformpartei        |  54,709
+Centre | Déi Lénk                                    |  51,851
+Centre | Piratepartei Lëtzebuerg                     |  29,633
+Centre | Partei fir Integral Demokratie              |  13,318
+Centre | Kommunistesch Partei Lëtzebuerg             |   9,425
+
+Est | Chrëschtlech-Sozial Vollekspartei           | 71,786
+Est | Demokratesch Partei                         | 36,237
+Est | Lëtzebuerger Sozialistesch Aarbechterpartei | 28,386
+Est | déi gréng                                   | 25,486
+Est | Alternativ Demokratesch Reformpartei        | 16,901
+Est | Déi Lénk                                    |  5,941
+Est | Piratepartei Lëtzebuerg                     |  5,226
+Est | Partei fir Integral Demokratie              |  3,018
+Est | Kommunistesch Partei Lëtzebuerg             |  1,537
+
+Nord | Chrëschtlech-Sozial Vollekspartei           | 107,163
+Nord | Demokratesch Partei                         |  75,426
+Nord | Lëtzebuerger Sozialistesch Aarbechterpartei |  54,788
+Nord | déi gréng                                   |  28,646
+Nord | Alternativ Demokratesch Reformpartei        |  20,246
+Nord | Piratepartei Lëtzebuerg                     |  10,733
+Nord | Partei fir Integral Demokratie              |  10,384
+Nord | Déi Lénk                                    |   8,138
+Nord | Kommunistesch Partei Lëtzebuerg             |   2,575
+
+Sud | Chrëschtlech-Sozial Vollekspartei           | 539,297
+Sud | Lëtzebuerger Sozialistesch Aarbechterpartei | 421,507
+Sud | Demokratesch Partei                         | 213,147
+Sud | déi gréng                                   | 163,643
+Sud | Alternativ Demokratesch Reformpartei        | 125,827
+Sud | Déi Lénk                                    |  95,829
+Sud | Piratepartei Lëtzebuerg                     |  50,678
+Sud | Kommunistesch Partei Lëtzebuerg             |  40,132
+Sud | Partei fir Integral Demokratie              |  22,570
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
