@@ -27,7 +27,8 @@ module Sapor
     end
 
     def coalitions
-      [['Chrëschtlech-Sozial Vollekspartei',
+      [['Chrëschtlech-Sozial Vollekspartei'],
+       ['Chrëschtlech-Sozial Vollekspartei',
         'Lëtzebuerger Sozialistesch Aarbechterpartei'],
        ['Chrëschtlech-Sozial Vollekspartei', 'Demokratesch Partei'],
        ['déi gréng', 'Demokratesch Partei',
