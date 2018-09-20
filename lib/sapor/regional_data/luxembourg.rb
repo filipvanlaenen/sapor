@@ -27,6 +27,11 @@ module Sapor
     end
 
     def coalitions
+      [['Chrëschtlech-Sozial Vollekspartei',
+        'Lëtzebuerger Sozialistesch Aarbechterpartei'],
+       ['Chrëschtlech-Sozial Vollekspartei', 'Demokratesch Partei'],
+       ['déi gréng', 'Demokratesch Partei',
+        'Lëtzebuerger Sozialistesch Aarbechterpartei']]
     end
 
     def no_of_seats
@@ -48,10 +53,6 @@ module Sapor
 
     def seats(simulation)
       electoral_system.project(simulation)
-    end
-
-    def threshold
-      THRESHOLD
     end
 
     private
