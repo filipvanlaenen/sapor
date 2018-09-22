@@ -19,7 +19,7 @@
 # URL: http://sv2014.cvk.lv/index_rez.html
 
 # Changes:
-# Added Kam pieder valsts? as a copy of Latvijas Reģionu apvienība
+# Added KPV LV as a copy of Latvijas Reģionu apvienība
 # Added Kustība Par! as a copy of Vienotība
 
 Kurzeme | Zaļo un Zemnieku savienība                                       | 41,840
@@ -29,7 +29,7 @@ Kurzeme | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvīb
 Kurzeme | Sociāldemokrātiskā Partija “Saskaņa”                             | 10,307
 Kurzeme | No sirds Latvijai                                                |  8,369
 Kurzeme | Latvijas Reģionu apvienība                                       |  6,705
-Kurzeme | Kam pieder valsts?                                               |  6,705
+Kurzeme | KPV LV                                                           |  6,705
 Kurzeme | Vienoti Latvijai                                                 |    980
 Kurzeme | Latvijas attīstībai                                              |    796
 Kurzeme | Jaunā konservatīvā partija                                       |    736
@@ -46,7 +46,7 @@ Latgale | No sirds Latvijai                                                |  9,
 Latgale | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” |  5,442
 Latgale | Latvijas Krievu savienība                                        |  4,970
 Latgale | Latvijas Reģionu apvienība                                       |  4,025
-Latgale | Kam pieder valsts?                                               |  4,025
+Latgale | KPV LV                                                           |  4,025
 Latgale | Vienoti Latvijai                                                 |  1,709
 Latgale | Latvijas attīstībai                                              |    712
 Latgale | Jaunā konservatīvā partija                                       |    650
@@ -60,7 +60,7 @@ Rīga | Kustība Par!                                                     |  65,
 Rīga | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” |  49,406
 Rīga | Zaļo un Zemnieku savienība                                       |  26,219
 Rīga | Latvijas Reģionu apvienība                                       |  24,238
-Rīga | Kam pieder valsts?                                               |  24,238
+Rīga | KPV LV                                                           |  24,238
 Rīga | No sirds Latvijai                                                |  17,414
 Rīga | Latvijas Krievu savienība                                        |   5,142
 Rīga | Vienoti Latvijai                                                 |   3,618
@@ -76,7 +76,7 @@ Vidzeme | Zaļo un Zemnieku savienība                                       | 5
 Vidzeme | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” | 51,261
 Vidzeme | Sociāldemokrātiskā Partija “Saskaņa”                             | 31,413
 Vidzeme | Latvijas Reģionu apvienība                                       | 19,069
-Vidzeme | Kam pieder valsts?                                               | 19,069
+Vidzeme | KPV LV                                                           | 19,069
 Vidzeme | No sirds Latvijai                                                | 18,362
 Vidzeme | Latvijas attīstībai                                              |  3,104
 Vidzeme | Vienoti Latvijai                                                 |  2,962
@@ -93,7 +93,7 @@ Zemgale | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvīb
 Zemgale | Sociāldemokrātiskā Partija “Saskaņa”                             | 14,411
 Zemgale | No sirds Latvijai                                                |  9,306
 Zemgale | Latvijas Reģionu apvienība                                       |  6,775
-Zemgale | Kam pieder valsts?                                               |  6,775
+Zemgale | KPV LV                                                           |  6,775
 Zemgale | Latvijas Krievu savienība                                        |  1,912
 Zemgale | Vienoti Latvijai                                                 |  1,519
 Zemgale | Latvijas attīstībai                                              |  1,410
