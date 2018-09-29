@@ -46,9 +46,9 @@ module Sapor
 
     private
 
-    COALITIONS = [['Latvijas attīstībai (ALDE)',
-                   'Zaļo un Zemnieku savienība (ALDE)'],
-                  ['Latvijas Krievu savienība (Greens/EFA)'],
+    COALITIONS = [['Latvijas attīstībai (ALDE)'],
+                  ['Latvijas Krievu savienība (Greens/EFA)',
+                   'Zaļo un Zemnieku savienība (Greens/EFA)'],
                   ['Jaunā konservatīvā partija (*)', 'KPV LV (*)',
                    'Kustība Par! (*)', 'Latvijas Reģionu apvienība (*)',
                    'No sirds Latvijai (*)', 'Vienoti Latvijai (*)'],
