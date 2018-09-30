@@ -42,6 +42,7 @@ module Sapor
        ['Kustība Par!', 'Jaunā konservatīvā partija',
         'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
         'Zaļo un Zemnieku savienība'],
+       ['Kustība Par!', 'Sociāldemokrātiskā Partija “Saskaņa”'],
        ['Jaunā konservatīvā partija',
         'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
         'Vienotība', 'Zaļo un Zemnieku savienība'],
