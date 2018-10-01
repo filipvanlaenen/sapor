@@ -27,6 +27,16 @@ module Sapor
   end
 
   #
+  # Class building the denominators for modified D'Hondt raising the
+  # denominators to the power 0.9.
+  #
+  class Dhondt09Denominators
+    def self.get(size)
+      Range.new(1, size).map { |a| a**0.9 }
+    end
+  end
+
+  #
   # Class building the denominators for Sainte-Lague.
   #
   class SainteLagueDenominators
