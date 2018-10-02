@@ -27,7 +27,10 @@ module Sapor
     end
 
     def coalitions
-      [['Kustība Par!',
+      [['KPV LV', 'Sociāldemokrātiskā Partija “Saskaņa”'],
+       ['KPV LV', 'Sociāldemokrātiskā Partija “Saskaņa”',
+        'Zaļo un Zemnieku savienība'],
+       ['Kustība Par!',
         'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
         'Vienotība', 'Zaļo un Zemnieku savienība'],
        ['Kustība Par!',
