@@ -1,0 +1,109 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "12.Saeimas vēlēšanas". Retrieved on 9 August 2018.
+# URL: http://sv2014.cvk.lv/index_rez.html
+
+# Changes:
+# Added KPV LV as a copy of Latvijas Reģionu apvienība
+# Added Kustība Par! as a copy of Vienotība
+# Added Progresīvie as a copy of Sociāldemokrātiskā Partija “Saskaņa”
+
+Kurzeme | Zaļo un Zemnieku savienība                                       | 41,840
+Kurzeme | Vienotība                                                        | 23,034
+Kurzeme | Kustība Par!                                                     | 23,034
+Kurzeme | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” | 21,239
+Kurzeme | Sociāldemokrātiskā Partija “Saskaņa”                             | 10,307
+Kurzeme | Progresīvie                                                      | 10,307
+Kurzeme | No sirds Latvijai                                                |  8,369
+Kurzeme | Latvijas Reģionu apvienība                                       |  6,705
+Kurzeme | KPV LV                                                           |  6,705
+Kurzeme | Vienoti Latvijai                                                 |    980
+Kurzeme | Latvijas attīstībai                                              |    796
+Kurzeme | Jaunā konservatīvā partija                                       |    736
+Kurzeme | Latvijas Krievu savienība                                        |    575
+Kurzeme | Partija “Brīvība. Brīvs no bailēm, naida un dusmām”              |    308
+Kurzeme | Politiskā partija Izaugsme                                       |    121
+Kurzeme | “Suverenitāte”                                                   |    111
+
+Latgale | Sociāldemokrātiskā Partija “Saskaņa”                             | 41,884
+Latgale | Progresīvie                                                      | 41,884
+Latgale | Zaļo un Zemnieku savienība                                       | 19,714
+Latgale | Vienotība                                                        | 16,187
+Latgale | Kustība Par!                                                     | 16,187
+Latgale | No sirds Latvijai                                                |  9,070
+Latgale | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” |  5,442
+Latgale | Latvijas Krievu savienība                                        |  4,970
+Latgale | Latvijas Reģionu apvienība                                       |  4,025
+Latgale | KPV LV                                                           |  4,025
+Latgale | Vienoti Latvijai                                                 |  1,709
+Latgale | Latvijas attīstībai                                              |    712
+Latgale | Jaunā konservatīvā partija                                       |    650
+Latgale | Partija “Brīvība. Brīvs no bailēm, naida un dusmām”              |    247
+Latgale | “Suverenitāte”                                                   |    206
+Latgale | Politiskā partija Izaugsme                                       |    104
+
+Rīga | Sociāldemokrātiskā Partija “Saskaņa”                             | 111,872
+Rīga | Progresīvie                                                      | 111,872
+Rīga | Vienotība                                                        |  65,359
+Rīga | Kustība Par!                                                     |  65,359
+Rīga | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” |  49,406
+Rīga | Zaļo un Zemnieku savienība                                       |  26,219
+Rīga | Latvijas Reģionu apvienība                                       |  24,238
+Rīga | KPV LV                                                           |  24,238
+Rīga | No sirds Latvijai                                                |  17,414
+Rīga | Latvijas Krievu savienība                                        |   5,142
+Rīga | Vienoti Latvijai                                                 |   3,618
+Rīga | Jaunā konservatīvā partija                                       |   2,414
+Rīga | Latvijas attīstībai                                              |   2,134
+Rīga | Partija “Brīvība. Brīvs no bailēm, naida un dusmām”              |     406
+Rīga | Politiskā partija Izaugsme                                       |     368
+Rīga | “Suverenitāte”                                                   |     287
+
+Vidzeme | Vienotība                                                        | 65,359
+Vidzeme | Kustība Par!                                                     | 65,359
+Vidzeme | Zaļo un Zemnieku savienība                                       | 54,699
+Vidzeme | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” | 51,261
+Vidzeme | Sociāldemokrātiskā Partija “Saskaņa”                             | 31,413
+Vidzeme | Progresīvie                                                      | 31,413
+Vidzeme | Latvijas Reģionu apvienība                                       | 19,069
+Vidzeme | KPV LV                                                           | 19,069
+Vidzeme | No sirds Latvijai                                                | 18,362
+Vidzeme | Latvijas attīstībai                                              |  3,104
+Vidzeme | Vienoti Latvijai                                                 |  2,962
+Vidzeme | Latvijas Krievu savienība                                        |  1,791
+Vidzeme | Jaunā konservatīvā partija                                       |  1,680
+Vidzeme | Politiskā partija Izaugsme                                       |    693
+Vidzeme | Partija “Brīvība. Brīvs no bailēm, naida un dusmām”              |    567
+Vidzeme | “Suverenitāte”                                                   |    260
+
+Zemgale | Zaļo un Zemnieku savienība                                       | 35,738
+Zemgale | Vienotība                                                        | 29,596
+Zemgale | Kustība Par!                                                     | 29,596
+Zemgale | Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” | 24,219
+Zemgale | Sociāldemokrātiskā Partija “Saskaņa”                             | 14,411
+Zemgale | Progresīvie                                                      | 14,411
+Zemgale | No sirds Latvijai                                                |  9,306
+Zemgale | Latvijas Reģionu apvienība                                       |  6,775
+Zemgale | KPV LV                                                           |  6,775
+Zemgale | Latvijas Krievu savienība                                        |  1,912
+Zemgale | Vienoti Latvijai                                                 |  1,519
+Zemgale | Latvijas attīstībai                                              |  1,410
+Zemgale | Jaunā konservatīvā partija                                       |    909
+Zemgale | Politiskā partija Izaugsme                                       |    229
+Zemgale | Partija “Brīvība. Brīvs no bailēm, naida un dusmām”              |    207
+Zemgale | “Suverenitāte”                                                   |    169
