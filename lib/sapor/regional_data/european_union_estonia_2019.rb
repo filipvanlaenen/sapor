@@ -50,7 +50,7 @@ module Sapor
                   ['Eesti 200 (*)', 'Eesti Konservatiivne Rahvaerakond (*)',
                    'Eesti Vabaerakond (*)'],
                   ['Erakond Eestimaa Rohelised (Greens/EFA)'],
-                  ['Isamaa ja Res Publica Liit (EPP)'],
+                  ['Erakond Isamaa (EPP)'],
                   ['Sotsiaaldemokraatlik Erakond (S&D)']].freeze
 
     NO_OF_SEATS = 7
