@@ -45,7 +45,21 @@ module Sapor
 
     private
 
-    COALITIONS = [].freeze
+    EKRE_PARTY = 'Eesti Konservatiivne Rahvaerakond'.freeze
+    EVA_PARTY = 'Eesti Vabaerakond'.freeze
+    I_PARTY = 'Erakond Isamaa'.freeze
+    KESK_PARTY = 'Eesti Keskerakond'.freeze
+    REF_PARTY = 'Eesti Reformierakond'.freeze
+    SDE_PARTY = 'Sotsiaaldemokraatlik Erakond'.freeze
+
+    COALITIONS = [[EKRE_PARTY, I_PARTY, REF_PARTY],
+                  [EKRE_PARTY, KESK_PARTY, REF_PARTY],
+                  [EVA_PARTY, I_PARTY, REF_PARTY, SDE_PARTY],
+                  [I_PARTY, KESK_PARTY, SDE_PARTY],
+                  [I_PARTY, REF_PARTY],
+                  [I_PARTY, REF_PARTY, SDE_PARTY],
+                  [KESK_PARTY, REF_PARTY],
+                  [REF_PARTY, SDE_PARTY]].freeze
 
     NO_OF_SEATS = 101
 
