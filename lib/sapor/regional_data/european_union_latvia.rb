@@ -51,7 +51,8 @@ module Sapor
                    'Zaļo un Zemnieku savienība (Greens/EFA)'],
                   ['Jaunā konservatīvā partija (*)', 'KPV LV (*)',
                    'Kustība Par! (*)', 'Latvijas Reģionu apvienība (*)',
-                   'No sirds Latvijai (*)', 'Vienoti Latvijai (*)'],
+                   'No sirds Latvijai (*)', 'Progresīvie (*)',
+                   'Vienoti Latvijai (*)'],
                   ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['Sociāldemokrātiskā Partija “Saskaņa” (S&D)'],
