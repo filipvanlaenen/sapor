@@ -53,12 +53,16 @@ module Sapor
     SDE_PARTY = 'Sotsiaaldemokraatlik Erakond'.freeze
 
     COALITIONS = [[EKRE_PARTY, I_PARTY, REF_PARTY],
+                  [EKRE_PARTY, KESK_PARTY],
                   [EKRE_PARTY, KESK_PARTY, REF_PARTY],
+                  [EKRE_PARTY, REF_PARTY],
+                  [EKRE_PARTY, SDE_PARTY],
                   [EVA_PARTY, I_PARTY, REF_PARTY, SDE_PARTY],
                   [I_PARTY, KESK_PARTY, SDE_PARTY],
                   [I_PARTY, REF_PARTY],
                   [I_PARTY, REF_PARTY, SDE_PARTY],
                   [KESK_PARTY, REF_PARTY],
+                  [KESK_PARTY, SDE_PARTY],
                   [REF_PARTY, SDE_PARTY]].freeze
 
     NO_OF_SEATS = 101
