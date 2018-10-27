@@ -48,12 +48,12 @@ module Sapor
 
     COALITIONS = [['Demokratična stranka upokojencev Slovenije (ALDE)',
                    'Državljanska lista (ALDE)',
+                   'Lista Marjana Šarca (ALDE)',
                    'Stranka Alenke Bratušek (ALDE)',
                    'Stranka modernega centra (ALDE)'],
                   ['Glas za otroke in družine (*)',
                    'Glas za otroke in družine–Nova ljudska stranka Slovenije' \
                      ' (*)',
-                   'Lista Marjana Šarca (*)',
                    'Nova ljudska stranka Slovenije (*)',
                    'Pozitivna Slovenija (*)',
                    'Slovenska nacionalna stranka (*)'],
