@@ -1,0 +1,212 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Eduskuntavaalit 2015". Retrieved on 30 October 2018.
+# URL: https://tulospalvelu.vaalit.fi/E-2015/fi/lasktila.html
+
+01 Helsinki | Kansallinen Kokoomus                                       | 93,392
+01 Helsinki | Vihreä liitto                                              | 67,806
+01 Helsinki | Suomen Sosialidemokraattinen Puolue                        | 55,874
+01 Helsinki | Perussuomalaiset                                           | 40,583
+01 Helsinki | Vasemmistoliitto                                           | 35,435
+01 Helsinki | Suomen Keskusta                                            | 25,947
+01 Helsinki | Svenska folkpartiet i Finland                              | 24,645
+01 Helsinki | Suomen Kristillisdemokraatit                               |  6,407
+01 Helsinki | Piraattipuolue                                             |  5,119
+01 Helsinki | Suomen Kommunistinen Puolue                                |  1,485
+01 Helsinki | Itsenäisyyspuolue                                          |  1,242
+01 Helsinki | Muutos 2011                                                |    480
+01 Helsinki | Köyhien Asialla                                            |    328
+01 Helsinki | Kristiina Kreisler                                         |    314
+01 Helsinki | Suomen Työväenpuolue                                       |    244
+01 Helsinki | Jani Leinonen                                              |    168
+01 Helsinki | Kim Sjöström                                               |    114
+01 Helsinki | Yakup Yilmaz                                               |     93
+01 Helsinki | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     76
+01 Helsinki | Ville Punto                                                |     73
+01 Helsinki | Jyrki Helminen                                             |     38
+01 Helsinki | Jaakko Katajisto                                           |     12
+
+02 Uusimaa | Kansallinen Kokoomus                                       | 124,754
+02 Uusimaa | Perussuomalaiset                                           |  93,411
+02 Uusimaa | Suomen Sosialidemokraattinen Puolue                        |  86,462
+02 Uusimaa | Suomen Keskusta                                            |  59,749
+02 Uusimaa | Svenska folkpartiet i Finland                              |  53,232
+02 Uusimaa | Vihreä liitto                                              |  52,034
+02 Uusimaa | Vasemmistoliitto                                           |  22,698
+02 Uusimaa | Suomen Kristillisdemokraatit                               |  13,750
+02 Uusimaa | Piraattipuolue                                             |   5,893
+02 Uusimaa | Muutos 2011                                                |   3,473
+02 Uusimaa | Itsenäisyyspuolue                                          |   2,131
+02 Uusimaa | Suomen Kommunistinen Puolue                                |   1,189
+02 Uusimaa | Mika Vähäkangas                                            |     522
+02 Uusimaa | Köyhien Asialla                                            |     295
+02 Uusimaa | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     262
+02 Uusimaa | Suomen Työväenpuolue                                       |     174
+02 Uusimaa | Joni Tikka                                                 |      90
+
+03 Varsinais-Suomi | Kansallinen Kokoomus                                       | 55,355
+03 Varsinais-Suomi | Perussuomalaiset                                           | 50,813
+03 Varsinais-Suomi | Suomen Keskusta                                            | 42,763
+03 Varsinais-Suomi | Suomen Sosialidemokraattinen Puolue                        | 40,835
+03 Varsinais-Suomi | Vasemmistoliitto                                           | 27,001
+03 Varsinais-Suomi | Vihreä liitto                                              | 22,875
+03 Varsinais-Suomi | Svenska folkpartiet i Finland                              | 13,111
+03 Varsinais-Suomi | Suomen Kristillisdemokraatit                               |  6,319
+03 Varsinais-Suomi | Piraattipuolue                                             |  2,008
+03 Varsinais-Suomi | Itsenäisyyspuolue                                          |    963
+03 Varsinais-Suomi | Suomen Kommunistinen Puolue                                |    664
+03 Varsinais-Suomi | Kari Leppäjoki                                             |    268
+03 Varsinais-Suomi | Suomen Työväenpuolue                                       |    184
+03 Varsinais-Suomi | Muutos 2011                                                |    172
+03 Varsinais-Suomi | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     63
+
+04 Satakunta | Perussuomalaiset                                           | 30,600
+04 Satakunta | Suomen Sosialidemokraattinen Puolue                        | 27,631
+04 Satakunta | Suomen Keskusta                                            | 25,247
+04 Satakunta | Kansallinen Kokoomus                                       | 18,377
+04 Satakunta | Vasemmistoliitto                                           | 11,730
+04 Satakunta | Suomen Kristillisdemokraatit                               |  3,525
+04 Satakunta | Vihreä liitto                                              |  3,335
+04 Satakunta | Itsenäisyyspuolue                                          |    436
+04 Satakunta | Svenska folkpartiet i Finland                              |    426
+04 Satakunta | Muutos 2011                                                |    393
+04 Satakunta | Piraattipuolue                                             |    388
+04 Satakunta | Suomen Kommunistinen Puolue                                |    127
+04 Satakunta | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     80
+04 Satakunta | Suomen Työväenpuolue                                       |     39
+
+05 Ahvenanmaa | Åländsk samling      | 10,910
+05 Ahvenanmaa | Liberalerna på Åland |  1,277
+
+06 Häme | Suomen Sosialidemokraattinen Puolue                        | 44,737
+06 Häme | Kansallinen Kokoomus                                       | 43,544
+06 Häme | Perussuomalaiset                                           | 39,537
+06 Häme | Suomen Keskusta                                            | 36,020
+06 Häme | Suomen Kristillisdemokraatit                               | 12,412
+06 Häme | Vasemmistoliitto                                           | 12,182
+06 Häme | Vihreä liitto                                              | 10,350
+06 Häme | Piraattipuolue                                             |  1,658
+06 Häme | Itsenäisyyspuolue                                          |    742
+06 Häme | Muutos 2011                                                |    632
+06 Häme | Suomen Kommunistinen Puolue                                |    489
+06 Häme | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |    143
+
+07 Pirkanmaa | Kansallinen Kokoomus                                       | 54,648
+07 Pirkanmaa | Suomen Sosialidemokraattinen Puolue                        | 54,220
+07 Pirkanmaa | Perussuomalaiset                                           | 49,551
+07 Pirkanmaa | Suomen Keskusta                                            | 46,189
+07 Pirkanmaa | Vihreä liitto                                              | 28,537
+07 Pirkanmaa | Vasemmistoliitto                                           | 21,780
+07 Pirkanmaa | Suomen Kristillisdemokraatit                               | 13,553
+07 Pirkanmaa | Piraattipuolue                                             |  3,037
+07 Pirkanmaa | Itsenäisyyspuolue                                          |  2,289
+07 Pirkanmaa | Pirkanmaan Sitoutumattomat yhteislista                     |  2,469
+07 Pirkanmaa | Suomen Kommunistinen Puolue                                |  1,130
+07 Pirkanmaa | Muutos 2011                                                |    486
+07 Pirkanmaa | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |    123
+07 Pirkanmaa | Suomen Työväenpuolue                                       |     61
+
+08 Kaakkois-Suomi | Suomen Keskusta                                            | 61,794
+08 Kaakkois-Suomi | Suomen Sosialidemokraattinen Puolue                        | 54,604
+08 Kaakkois-Suomi | Perussuomalaiset                                           | 51,707
+08 Kaakkois-Suomi | Kansallinen Kokoomus                                       | 38,947
+08 Kaakkois-Suomi | Vihreä liitto                                              | 15,664
+08 Kaakkois-Suomi | Suomen Kristillisdemokraatit                               | 11,056
+08 Kaakkois-Suomi | Vasemmistoliitto                                           |  7,336
+08 Kaakkois-Suomi | Itsenäisyyspuolue                                          |  1,806
+08 Kaakkois-Suomi | Piraattipuolue                                             |  1,085
+08 Kaakkois-Suomi | Svenska folkpartiet i Finland                              |    728
+08 Kaakkois-Suomi | Suomen Kommunistinen Puolue                                |    286
+08 Kaakkois-Suomi | Muutos 2011                                                |    199
+08 Kaakkois-Suomi | Valitsijayhdistys                                          |    174
+08 Kaakkois-Suomi | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |    106
+08 Kaakkois-Suomi | Suomen Työväenpuolue                                       |     53
+
+09 Savo-Karjala | Suomen Keskusta                                            | 70,573
+09 Savo-Karjala | Perussuomalaiset                                           | 42,696
+09 Savo-Karjala | Suomen Sosialidemokraattinen Puolue                        | 34,629
+09 Savo-Karjala | Kansallinen Kokoomus                                       | 24,980
+09 Savo-Karjala | Vihreä liitto                                              | 14,599
+09 Savo-Karjala | Suomen Kristillisdemokraatit                               | 13,578
+09 Savo-Karjala | Vasemmistoliitto                                           | 12,750
+09 Savo-Karjala | Piraattipuolue                                             |  1,269
+09 Savo-Karjala | Itsenäisyyspuolue                                          |    705
+09 Savo-Karjala | Suomen Kommunistinen Puolue                                |    639
+09 Savo-Karjala | Muutos 2011                                                |    277
+09 Savo-Karjala | Suomen Työväenpuolue                                       |    130
+09 Savo-Karjala | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     55
+
+10 Vaasa | Suomen Keskusta                                            | 67,333
+10 Vaasa | Svenska folkpartiet i Finland                              | 50,777
+10 Vaasa | Perussuomalaiset                                           | 38,964
+10 Vaasa | Kansallinen Kokoomus                                       | 29,195
+10 Vaasa | Suomen Sosialidemokraattinen Puolue                        | 29,024
+10 Vaasa | Suomen Kristillisdemokraatit                               | 14,076
+10 Vaasa | Vasemmistoliitto                                           |  7,238
+10 Vaasa | Vihreä liitto                                              |  6,136
+10 Vaasa | Itsenäisyyspuolue                                          |  1,461
+10 Vaasa | Piraattipuolue                                             |    933
+10 Vaasa | Muutos 2011                                                |    228
+10 Vaasa | Suomen Kommunistinen Puolue                                |    200
+10 Vaasa | Jani Pontus Toivanen                                       |    131
+10 Vaasa | Suomen Työväenpuolue                                       |     64
+10 Vaasa | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     57
+
+11 Keski-Suomi | Suomen Keskusta                                            | 40,729
+11 Keski-Suomi | Perussuomalaiset                                           | 29,142
+11 Keski-Suomi | Suomen Sosialidemokraattinen Puolue                        | 28,710
+11 Keski-Suomi | Kansallinen Kokoomus                                       | 19,776
+11 Keski-Suomi | Vihreä liitto                                              | 13,599
+11 Keski-Suomi | Vasemmistoliitto                                           | 10,145
+11 Keski-Suomi | Suomen Kristillisdemokraatit                               |  6,656
+11 Keski-Suomi | Piraattipuolue                                             |  1,264
+11 Keski-Suomi | Suomen Kommunistinen Puolue                                |    639
+11 Keski-Suomi | Itsenäisyyspuolue                                          |    379
+11 Keski-Suomi | Muutos 2011                                                |     86
+11 Keski-Suomi | Tero Poikolainen                                           |     61
+11 Keski-Suomi | Suomen Työväenpuolue STP                                   |     35
+11 Keski-Suomi | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     31
+11 Keski-Suomi | Risto Hintikka                                             |     17
+
+12 Oulu | Suomen Keskusta                                            | 106,581
+12 Oulu | Perussuomalaiset                                           |  40,429
+12 Oulu | Vasemmistoliitto                                           |  29,580
+12 Oulu | Kansallinen Kokoomus                                       |  27,089
+12 Oulu | Suomen Sosialidemokraattinen Puolue                        |  22,433
+12 Oulu | Vihreä liitto                                              |  15,524
+12 Oulu | Suomen Kristillisdemokraatit                               |   2,690
+12 Oulu | Piraattipuolue                                             |   1,614
+12 Oulu | Svenska folkpartiet i Finland                              |   1,413
+12 Oulu | Itsenäisyyspuolue                                          |   1,038
+12 Oulu | Muutos 2011                                                |     797
+12 Oulu | Suomen Kommunistinen Puolue                                |     396
+12 Oulu | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |      68
+
+13 Lappi | Suomen Keskusta                                            | 43,293
+13 Lappi | Perussuomalaiset                                           | 16,621
+13 Lappi | Vasemmistoliitto                                           | 13,827
+13 Lappi | Suomen Sosialidemokraattinen Puolue                        | 10,943
+13 Lappi | Kansallinen Kokoomus                                       | 10,155
+13 Lappi | Vihreä liitto                                              |  2,643
+13 Lappi | Suomen Kristillisdemokraatit                               |  1,112
+13 Lappi | Piraattipuolue                                             |    818
+13 Lappi | Svenska folkpartiet i Finland                              |    470
+13 Lappi | Itsenäisyyspuolue                                          |    446
+13 Lappi | Suomen Kommunistinen Puolue                                |    285
+13 Lappi | Muutos 2011                                                |    219
+13 Lappi | Kommunistinen Työväenpuolue–Rauhan ja Sosialismin puolesta |     39
