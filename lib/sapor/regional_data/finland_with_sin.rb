@@ -18,13 +18,13 @@
 
 module Sapor
   #
-  # The regional data for Finland.
+  # The regional data for Finland extended with SIN.
   #
-  class Finland < Area
+  class FinlandWithSin < Area
     include Singleton
 
     def area_code
-      'FI'
+      'FI∪{SIN}'
     end
 
     def coalitions
@@ -85,7 +85,7 @@ module Sapor
     def election_results_of_2015
       if @election_results_of_2015.nil?
         @election_results_of_2015 = load_election_results(
-          'finland-20150419.psv'
+          'finland-20150419-with-sin.psv'
         )
       end
       @election_results_of_2015
