@@ -26,7 +26,7 @@
 01 Helsinki | Vasemmistoliitto                                           | 35,435
 01 Helsinki | Suomen Keskusta                                            | 25,947
 01 Helsinki | Svenska folkpartiet i Finland                              | 24,645
-01 Helsinki | Suomen Kristillisdemokraatit                               |  6,407
+01 Helsinki | Kristillisdemokraatit                                      |  6,407
 01 Helsinki | Piraattipuolue                                             |  5,119
 01 Helsinki | Suomen Kommunistinen Puolue                                |  1,485
 01 Helsinki | Itsenäisyyspuolue                                          |  1,242
@@ -50,7 +50,7 @@
 02 Uusimaa | Svenska folkpartiet i Finland                              |  53,232
 02 Uusimaa | Vihreä liitto                                              |  52,034
 02 Uusimaa | Vasemmistoliitto                                           |  22,698
-02 Uusimaa | Suomen Kristillisdemokraatit                               |  13,750
+02 Uusimaa | Kristillisdemokraatit                                      |  13,750
 02 Uusimaa | Piraattipuolue                                             |   5,893
 02 Uusimaa | Muutos 2011                                                |   3,473
 02 Uusimaa | Itsenäisyyspuolue                                          |   2,131
@@ -69,7 +69,7 @@
 03 Varsinais-Suomi | Vasemmistoliitto                                           | 27,001
 03 Varsinais-Suomi | Vihreä liitto                                              | 22,875
 03 Varsinais-Suomi | Svenska folkpartiet i Finland                              | 13,111
-03 Varsinais-Suomi | Suomen Kristillisdemokraatit                               |  6,319
+03 Varsinais-Suomi | Kristillisdemokraatit                                      |  6,319
 03 Varsinais-Suomi | Piraattipuolue                                             |  2,008
 03 Varsinais-Suomi | Itsenäisyyspuolue                                          |    963
 03 Varsinais-Suomi | Suomen Kommunistinen Puolue                                |    664
@@ -84,7 +84,7 @@
 04 Satakunta | Suomen Keskusta                                            | 25,247
 04 Satakunta | Kansallinen Kokoomus                                       | 18,377
 04 Satakunta | Vasemmistoliitto                                           | 11,730
-04 Satakunta | Suomen Kristillisdemokraatit                               |  3,525
+04 Satakunta | Kristillisdemokraatit                                      |  3,525
 04 Satakunta | Vihreä liitto                                              |  3,335
 04 Satakunta | Itsenäisyyspuolue                                          |    436
 04 Satakunta | Svenska folkpartiet i Finland                              |    426
@@ -102,7 +102,7 @@
 06 Häme | Perussuomalaiset                                           | 19,769
 06 Häme | Sininen tulevaisuus                                        | 19,769
 06 Häme | Suomen Keskusta                                            | 36,020
-06 Häme | Suomen Kristillisdemokraatit                               | 12,412
+06 Häme | Kristillisdemokraatit                                      | 12,412
 06 Häme | Vasemmistoliitto                                           | 12,182
 06 Häme | Vihreä liitto                                              | 10,350
 06 Häme | Piraattipuolue                                             |  1,658
@@ -118,7 +118,7 @@
 07 Pirkanmaa | Suomen Keskusta                                            | 46,189
 07 Pirkanmaa | Vihreä liitto                                              | 28,537
 07 Pirkanmaa | Vasemmistoliitto                                           | 21,780
-07 Pirkanmaa | Suomen Kristillisdemokraatit                               | 13,553
+07 Pirkanmaa | Kristillisdemokraatit                                      | 13,553
 07 Pirkanmaa | Piraattipuolue                                             |  3,037
 07 Pirkanmaa | Itsenäisyyspuolue                                          |  2,289
 07 Pirkanmaa | Pirkanmaan Sitoutumattomat yhteislista                     |  2,469
@@ -133,7 +133,7 @@
 08 Kaakkois-Suomi | Sininen tulevaisuus                                        | 25,854
 08 Kaakkois-Suomi | Kansallinen Kokoomus                                       | 38,947
 08 Kaakkois-Suomi | Vihreä liitto                                              | 15,664
-08 Kaakkois-Suomi | Suomen Kristillisdemokraatit                               | 11,056
+08 Kaakkois-Suomi | Kristillisdemokraatit                                      | 11,056
 08 Kaakkois-Suomi | Vasemmistoliitto                                           |  7,336
 08 Kaakkois-Suomi | Itsenäisyyspuolue                                          |  1,806
 08 Kaakkois-Suomi | Piraattipuolue                                             |  1,085
@@ -150,7 +150,7 @@
 09 Savo-Karjala | Suomen Sosialidemokraattinen Puolue                        | 34,629
 09 Savo-Karjala | Kansallinen Kokoomus                                       | 24,980
 09 Savo-Karjala | Vihreä liitto                                              | 14,599
-09 Savo-Karjala | Suomen Kristillisdemokraatit                               | 13,578
+09 Savo-Karjala | Kristillisdemokraatit                                      | 13,578
 09 Savo-Karjala | Vasemmistoliitto                                           | 12,750
 09 Savo-Karjala | Piraattipuolue                                             |  1,269
 09 Savo-Karjala | Itsenäisyyspuolue                                          |    705
@@ -165,7 +165,7 @@
 10 Vaasa | Sininen tulevaisuus                                        | 19,482
 10 Vaasa | Kansallinen Kokoomus                                       | 29,195
 10 Vaasa | Suomen Sosialidemokraattinen Puolue                        | 29,024
-10 Vaasa | Suomen Kristillisdemokraatit                               | 14,076
+10 Vaasa | Kristillisdemokraatit                                      | 14,076
 10 Vaasa | Vasemmistoliitto                                           |  7,238
 10 Vaasa | Vihreä liitto                                              |  6,136
 10 Vaasa | Itsenäisyyspuolue                                          |  1,461
@@ -183,7 +183,7 @@
 11 Keski-Suomi | Kansallinen Kokoomus                                       | 19,776
 11 Keski-Suomi | Vihreä liitto                                              | 13,599
 11 Keski-Suomi | Vasemmistoliitto                                           | 10,145
-11 Keski-Suomi | Suomen Kristillisdemokraatit                               |  6,656
+11 Keski-Suomi | Kristillisdemokraatit                                      |  6,656
 11 Keski-Suomi | Piraattipuolue                                             |  1,264
 11 Keski-Suomi | Suomen Kommunistinen Puolue                                |    639
 11 Keski-Suomi | Itsenäisyyspuolue                                          |    379
@@ -200,7 +200,7 @@
 12 Oulu | Kansallinen Kokoomus                                       |  27,089
 12 Oulu | Suomen Sosialidemokraattinen Puolue                        |  22,433
 12 Oulu | Vihreä liitto                                              |  15,524
-12 Oulu | Suomen Kristillisdemokraatit                               |   2,690
+12 Oulu | Kristillisdemokraatit                                      |   2,690
 12 Oulu | Piraattipuolue                                             |   1,614
 12 Oulu | Svenska folkpartiet i Finland                              |   1,413
 12 Oulu | Itsenäisyyspuolue                                          |   1,038
@@ -215,7 +215,7 @@
 13 Lappi | Suomen Sosialidemokraattinen Puolue                        | 10,943
 13 Lappi | Kansallinen Kokoomus                                       | 10,155
 13 Lappi | Vihreä liitto                                              |  2,643
-13 Lappi | Suomen Kristillisdemokraatit                               |  1,112
+13 Lappi | Kristillisdemokraatit                                      |  1,112
 13 Lappi | Piraattipuolue                                             |    818
 13 Lappi | Svenska folkpartiet i Finland                              |    470
 13 Lappi | Itsenäisyyspuolue                                          |    446

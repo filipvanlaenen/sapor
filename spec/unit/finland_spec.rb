@@ -49,7 +49,7 @@ describe Sapor::Finland, '#seats' do
     expect(seats['Vihreä liitto']).to eq(15 + 1)
     expect(seats['Vasemmistoliitto']).to eq(12)
     expect(seats['Svenska folkpartiet i Finland']).to eq(9)
-    expect(seats['Suomen Kristillisdemokraatit']).to eq(5)
+    expect(seats['Kristillisdemokraatit']).to eq(5)
     expect(seats['Åländsk samling']).to eq(1)
     expect(seats['Piraattipuolue']).to eq(0)
     expect(seats['Itsenäisyyspuolue']).to eq(0)

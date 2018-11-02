@@ -53,7 +53,7 @@ module Sapor
 
     private
 
-    KD_PARTY = 'Suomen Kristillisdemokraatit'.freeze
+    KD_PARTY = 'Kristillisdemokraatit'.freeze
     KESK_PARTY = 'Suomen Keskusta'.freeze
     KOK_PARTY = 'Kansallinen Kokoomus'.freeze
     PS_PARTY = 'Perussuomalaiset'.freeze
