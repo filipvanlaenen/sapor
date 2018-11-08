@@ -63,12 +63,15 @@ module Sapor
     VAS_PARTY = 'Vasemmistoliitto'.freeze
     VIHR_PARTY = 'Vihreä liitto'.freeze
 
-    COALITIONS = [[KD_PARTY, KOK_PARTY, SDP_PARTY, SFP_PARTY],
+    COALITIONS = [[KD_PARTY, KESK_PARTY, KOK_PARTY, SFP_PARTY],
+                  [KD_PARTY, KOK_PARTY, SDP_PARTY, SFP_PARTY],
                   [KD_PARTY, KOK_PARTY, SDP_PARTY, SFP_PARTY, VAS_PARTY,
                    VIHR_PARTY],
                   [KD_PARTY, KOK_PARTY, SDP_PARTY, SFP_PARTY, VIHR_PARTY],
                   [KESK_PARTY, KOK_PARTY, PS_PARTY],
-                  [KESK_PARTY, KOK_PARTY, SIN_PARTY]].freeze
+                  [KESK_PARTY, KOK_PARTY, SIN_PARTY],
+                  [SDP_PARTY, SFP_PARTY, VAS_PARTY, VIHR_PARTY],
+                  [SDP_PARTY, VAS_PARTY, VIHR_PARTY]].freeze
 
     # Voter turnout on 19 April 2015
     # https://en.wikipedia.org/wiki/Finnish_parliamentary_election,_2015
