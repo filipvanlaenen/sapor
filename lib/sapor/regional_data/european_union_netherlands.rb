@@ -48,9 +48,9 @@ module Sapor
 
     COALITIONS = [['50Plus (ALDE)', 'Democraten 66 (ALDE)',
                    'Volkspartij voor Vrijheid en Democratie (ALDE)'],
-                  ['Bij1 (*)', 'Denk (*)', 'Forum voor Democratie (*)'],
+                  ['Bij1 (*)', 'Denk (*)'],
                   ['Christen-Democratisch Appèl (EPP)'],
-                  ['ChristenUnie (ECR)',
+                  ['ChristenUnie (ECR)', 'Forum voor Democratie (ECR)',
                    'Staatkundig Gereformeerde Partij (ECR)'],
                   ['GroenLinks (Greens/EFA)', 'Piratenpartij (Greens/EFA)'],
                   ['Partij van de Arbeid (S&D)'],
