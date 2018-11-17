@@ -44,23 +44,22 @@ module Sapor
     end
 
     def no_of_seats
-      election_results_of_2015.size
+      election_results_of_2017.size
     end
 
-    def overall_election_results_of_2015
-      if @overall_election_results_of_2015.nil?
-        @overall_election_results_of_2015 = \
-          summarize_election_results(election_results_of_2015)
+    def overall_election_results_of_2017
+      if @overall_election_results_of_2017.nil?
+        @overall_election_results_of_2017 = \
+          summarize_election_results(election_results_of_2017)
       end
-      @overall_election_results_of_2015
+      @overall_election_results_of_2017
     end
 
     def population_size
-      # Source: Wikipedia article Results of the United Kingdom general
-      # election, 2015 by parliamentary constituency, retrieved on 22 April
-      # 2017.
-      # URL: https://en.wikipedia.org/wiki/Results_of_the_United_Kingdom_general_election,_2015_by_parliamentary_constituency
-      30_697_525
+      # Source: Wikipedia article the general election in the United Kingdom,
+      # retrieved on 17 November 2018.
+      # URL: https://en.wikipedia.org/wiki/United_Kingdom_general_election,_2017
+      32_204_124
     end
 
     def seats(simulation)
@@ -73,20 +72,20 @@ module Sapor
 
     private
 
-    def election_results_of_2015
-      if @election_results_of_2015.nil?
-        @election_results_of_2015 = load_election_results(
-          'united_kingdom-2015.psv'
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'united_kingdom-20170608.psv'
         )
       end
-      @election_results_of_2015
+      @election_results_of_2017
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = FirstPastThePost.new(
-          overall_election_results_of_2015,
-          election_results_of_2015
+          overall_election_results_of_2017,
+          election_results_of_2017
         )
       end
       @electoral_system
