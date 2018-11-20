@@ -58,6 +58,7 @@ module Sapor
                   ['CD&V', 'MR', 'N-VA', 'Open Vld'],
                   ['Ecolo', 'Groen', 'MR', 'Open Vld', 'PS', 'sp.a'],
                   ['Ecolo', 'Groen', 'PS', 'PTB', 'PVDA', 'sp.a'],
+                  ['MR', 'N-VA', 'Open Vld', 'PS', 'sp.a'],
                   ['MR', 'Open Vld', 'PS', 'sp.a']].freeze
 
     def electoral_system

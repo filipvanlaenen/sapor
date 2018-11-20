@@ -52,7 +52,7 @@ describe Sapor::BelgiumFlanders, '#seats' do
     expect(seats['DéFI']).to eq(0)
     expect(seats['Lijst Dedecker']).to eq(0)
     expect(seats['Piratenpartij']).to eq(0)
-    expect(seats['PVDA+']).to eq(0)
+    expect(seats['PVDA']).to eq(0)
     expect(seats['PVGW']).to eq(0)
     expect(seats['R.O.S.S.E.M.']).to eq(0)
     expect(seats['SD&P']).to eq(0)

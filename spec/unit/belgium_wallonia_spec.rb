@@ -50,8 +50,8 @@ describe Sapor::BelgiumWallonia, '#seats' do
     expect(seats['Parti Populaire']).to eq(1)
     expect(seats['DéFI']).to eq(0)
     expect(seats['MG']).to eq(0)
-    expect(seats['LA DROITE']).to eq(0)
-    expect(seats['DEBOUT LES BELGES']).to eq(0)
+    expect(seats['La Droite']).to eq(0)
+    expect(seats['Debout les Belges']).to eq(0)
     expect(seats['B.U.B.']).to eq(0)
     expect(seats['CIM']).to eq(0)
     expect(seats['Faire place Nette']).to eq(0)
@@ -69,6 +69,6 @@ describe Sapor::BelgiumWallonia, '#seats' do
     expect(seats['R.W.F.']).to eq(0)
     expect(seats['VLC']).to eq(0)
     expect(seats['Vox Populi Belgica']).to eq(0)
-    expect(seats["WALLONIE D'ABORD"]).to eq(0)
+    expect(seats['Wallonie d’Abord']).to eq(0)
   end
 end
