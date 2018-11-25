@@ -43,7 +43,7 @@ describe Sapor::EuropeanUnionIreland2019, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Fianna Fáil (ALDE)' => 369_545,
                 'Fine Gael (EPP)' => 369_120,
-                'Independents (GUE/NGL)' => 328_766,
+                'Independents (*)' => 328_766,
                 'Sinn Féin (GUE/NGL)' => 323_300,
                 'Labour Party (S&D)' => 88_229,
                 'Green Party (Greens/EFA)' => 81_458,
@@ -55,7 +55,7 @@ describe Sapor::EuropeanUnionIreland2019, '#seats' do
     seats = Sapor::EuropeanUnionIreland2019.instance.seats(results)
     expect(seats['Fianna Fáil (ALDE)']).to eq(1 + 3)
     expect(seats['Fine Gael (EPP)']).to eq(4 - 1 + 1)
-    expect(seats['Independents (GUE/NGL)']).to eq(3 - 1)
+    expect(seats['Independents (*)']).to eq(3 - 1)
     expect(seats['Sinn Féin (GUE/NGL)']).to eq(3 - 1)
     expect(seats['Labour Party (S&D)']).to eq(0)
     expect(seats['Green Party (Greens/EFA)']).to eq(0 + 1)

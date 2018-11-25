@@ -20,13 +20,13 @@
 # URL: https://electionsireland.org/results/europe/2014euro.cfm
 
 # Changes:
-# Added Independent Alliance (*) as a copy of Independents (GUE/NGL)
+# Added Independent Alliance (*) as a copy of Independents (*)      
 
 Dublin | Sinn Féin (GUE/NGL)                       | 83,264
 Dublin | Fine Gael (EPP)                           | 54,676
 Dublin | Fianna Fáil (ALDE)                        | 44,283
 Dublin | Green Party (Greens/EFA)                  | 44,078
-Dublin | Independents (GUE/NGL)                    | 38,183
+Dublin | Independents (*)                          | 38,183
 Dublin | Independent Alliance (*)                  | 38,183
 Dublin | Socialist Party (GUE/NGL)                 | 29,953
 Dublin | Labour Party (S&D)                        | 25,961
@@ -34,7 +34,7 @@ Dublin | Solidarity–People Before Profit (GUE/NGL) | 23,875
 Dublin | Direct Democracy Ireland (*)              |  7,155
 Dublin | Fís Nua (*)                               |  1,147
 
-Midlands–North-West | Independents (GUE/NGL)       | 233,801
+Midlands–North-West | Independents (*)             | 233,801
 Midlands–North-West | Independent Alliance (*)     | 233,801
 Midlands–North-West | Fine Gael (EPP)              | 131,988
 Midlands–North-West | Fianna Fáil (ALDE)           | 114,946
@@ -48,7 +48,7 @@ South | Fianna Fáil (ALDE)           | 210,316
 South | Fine Gael (EPP)              | 182,456
 South | Sinn Féin (GUE/NGL)          | 125,309
 South | Independent Alliance (*)     |  56,782
-South | Independents (GUE/NGL)       |  56,782
+South | Independents (*)             |  56,782
 South | Labour Party (S&D)           |  30,317
 South | Green Party (Greens/EFA)     |  27,860
 South | Catholic Democrats (*)       |  13,569

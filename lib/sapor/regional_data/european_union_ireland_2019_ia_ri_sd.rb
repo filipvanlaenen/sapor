@@ -49,13 +49,13 @@ module Sapor
 
     COALITIONS = [['Catholic Democrats (*)', 'Direct Democracy Ireland (*)',
                    'Fís Nua (*)', 'Independent Alliance (*)',
-                   'Renua Ireland (*)', 'Social Democrats (*)'],
+                   'Independents (*)', 'Renua Ireland (*)',
+                   'Social Democrats (*)'],
                   ['Fianna Fáil (ALDE)'],
                   ['Fine Gael (EPP)'],
                   ['Green Party (Greens/EFA)'],
-                  ['Independents (GUE/NGL)',
-                   'Solidarity–People Before Profit (GUE/NGL)',
-                   'Sinn Féin (GUE/NGL)', 'Socialist Party (GUE/NGL)'],
+                  ['Sinn Féin (GUE/NGL)', 'Socialist Party (GUE/NGL)',
+                   'Solidarity–People Before Profit (GUE/NGL)'],
                   ['Labour Party (S&D)']].freeze
 
     # Voter turnout on 25 May 2014
