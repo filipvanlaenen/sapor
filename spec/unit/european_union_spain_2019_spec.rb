@@ -51,7 +51,7 @@ describe Sapor::EuropeanUnionSpain2019, '#seats' do
                 'Ciudadanos–Partido de la Ciudadanía (ALDE)' => 497_146,
                 'Los Pueblos Deciden (GUE/NGL)' => 326_464,
                 'Primavera Europea (Greens/EFA)' => 302_266,
-                'Vox (—)' => 246_833,
+                'Vox (ECR)' => 246_833,
                 'Partido Animalista Contra el Maltrato Animal (—)' => 177_499,
                 'Escaños en Blanco  (—)' => 115_682,
                 'Movimiento de Renovación Democrática de la Ciudadanía (—)' => \
@@ -94,7 +94,7 @@ describe Sapor::EuropeanUnionSpain2019, '#seats' do
     expect(seats['Ciudadanos–Partido de la Ciudadanía (ALDE)']).to eq(2)
     expect(seats['Los Pueblos Deciden (GUE/NGL)']).to eq(1)
     expect(seats['Primavera Europea (Greens/EFA)']).to eq(1)
-    expect(seats['Vox (—)']).to eq(0 + 1)
+    expect(seats['Vox (ECR)']).to eq(0 + 1)
     expect(seats['Partido Animalista Contra el Maltrato Animal (—)']).to eq(0)
     expect(seats['Escaños en Blanco  (—)']).to eq(0)
     expect(seats['Movimiento de Renovación Democrática de la Ciudadanía (—)']) \
