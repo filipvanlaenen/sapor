@@ -47,8 +47,7 @@ module Sapor
     private
 
     COALITIONS = [['ANO 2011 (ALDE)'],
-                  ['Česká pirátská strana (Greens/EFA)',
-                   'Strana zelených (Greens/EFA)'],
+                  ['Česká pirátská strana (*)'],
                   ['Česká strana sociálně demokratická (S&D)'],
                   ['Komunistická strana Čech a Moravy (GUE/NGL)'],
                   ['Křesťanská a demokratická unie–Československá strana' \
@@ -56,7 +55,8 @@ module Sapor
                    'Starostové a nezávislí (EPP)', 'TOP 09 (EPP)'],
                   ['Občanská demokratická strana (ECR)'],
                   ['Svoboda a přímá demokracie (ENF)'],
-                  ['Strana svobodných občanů (EFDD)']].freeze
+                  ['Strana svobodných občanů (EFDD)'],
+                  ['Strana zelených (Greens/EFA)']].freeze
 
     NO_OF_SEATS = 21
 

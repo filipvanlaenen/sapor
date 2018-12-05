@@ -48,7 +48,7 @@ describe Sapor::EuropeanUnionCzechRepublic, '#seats' do
                   ' (EPP)' => 150_792,
                 'Občanská demokratická strana (ECR)' => 116_389,
                 'Strana svobodných občanů (EFDD)' => 79_540,
-                'Česká pirátská strana (Greens/EFA)' => 72_514,
+                'Česká pirátská strana (*)' => 72_514,
                 'Strana zelených (Greens/EFA)' => 57_240,
                 'Úsvit přímé demokracie Tomia Okamury (—)' => 47_306,
                 'Strana zdravého rozumu–NECHCEME EURO–za Evropu svobodných' \
@@ -89,7 +89,7 @@ describe Sapor::EuropeanUnionCzechRepublic, '#seats' do
                    ' (EPP)']).to eq(3)
     expect(seats['Občanská demokratická strana (ECR)']).to eq(2)
     expect(seats['Strana svobodných občanů (EFDD)']).to eq(1)
-    expect(seats['Česká pirátská strana (Greens/EFA)']).to eq(0)
+    expect(seats['Česká pirátská strana (*)']).to eq(0)
     expect(seats['Strana zelených (Greens/EFA)']).to eq(0)
     expect(seats['Úsvit přímé demokracie Tomia Okamury (—)']).to eq(0)
     expect(seats['Strana zdravého rozumu–NECHCEME EURO–za Evropu svobodných' \
