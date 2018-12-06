@@ -45,7 +45,7 @@ describe Sapor::EuropeanUnionEstonia, '#seats' do
                 'Isamaa ja Res Publica Liit (EPP)' => 45_765,
                 'Sotsiaaldemokraatlik Erakond (S&D)' => 44_550,
                 'INDREK TARAND (Greens/EFA)' => 43_369,
-                'Eesti Konservatiivne Rahvaerakond (*)' => 13_247,
+                'Eesti Konservatiivne Rahvaerakond (NI)' => 13_247,
                 'TANEL TALVE (*)' => 10_073,
                 'SILVER MEIKAR (*)' => 6018,
                 'Eesti Iseseisvuspartei (*)' => 4158,
@@ -70,7 +70,7 @@ describe Sapor::EuropeanUnionEstonia, '#seats' do
     expect(seats['Isamaa ja Res Publica Liit (EPP)']).to eq(1)
     expect(seats['Sotsiaaldemokraatlik Erakond (S&D)']).to eq(1)
     expect(seats['INDREK TARAND (Greens/EFA)']).to eq(1)
-    expect(seats['Eesti Konservatiivne Rahvaerakond (*)']).to eq(0)
+    expect(seats['Eesti Konservatiivne Rahvaerakond (NI)']).to eq(0)
     expect(seats['TANEL TALVE (*)']).to eq(0)
     expect(seats['SILVER MEIKAR (*)']).to eq(0)
     expect(seats['Eesti Iseseisvuspartei (*)']).to eq(0)
