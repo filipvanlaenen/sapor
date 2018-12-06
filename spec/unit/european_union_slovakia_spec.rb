@@ -53,7 +53,7 @@ describe Sapor::EuropeanUnionSlovakia, '#seats' do
                 'MOST–HÍD (EPP)' => 32_708,
                 'Strana TIP (—)' => 20_730,
                 'Slovenská národná strana (EFDD)' => 20_244,
-                'Ľudová strana Naše Slovensko (—)' => 9_749,
+                'Ľudová strana Naše Slovensko (NI)' => 9_749,
                 'PRÁVO A SPRAVODLIVOSŤ (—)' => 9_322,
                 'Komunistická strana Slovenska (GUE/NGL)' => 8_510,
                 'Strana demokratického Slovenska (ALDE)' => 8_378,
@@ -87,7 +87,7 @@ describe Sapor::EuropeanUnionSlovakia, '#seats' do
     expect(seats['MOST–HÍD (EPP)']).to eq(1)
     expect(seats['Strana TIP (—)']).to eq(0)
     expect(seats['Slovenská národná strana (EFDD)']).to eq(0)
-    expect(seats['Ľudová strana Naše Slovensko (—)']).to eq(0)
+    expect(seats['Ľudová strana Naše Slovensko (NI)']).to eq(0)
     expect(seats['PRÁVO A SPRAVODLIVOSŤ (—)']).to eq(0)
     expect(seats['Komunistická strana Slovenska (GUE/NGL)']).to eq(0)
     expect(seats['Strana demokratického Slovenska (ALDE)']).to eq(0)
