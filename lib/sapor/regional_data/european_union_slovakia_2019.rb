@@ -48,13 +48,14 @@ module Sapor
 
     COALITIONS = [['Kotleba–Ľudová strana Naše Slovensko (NI)'],
                   ['Kresťanskodemokratické hnutie (EPP)', 'MOST–HÍD (EPP)',
+                   'SPOLU–Občianska Demokracia (EPP)',
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)'],
                   ['NOVA (ECR)', 'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)',
                    'Sloboda a Solidarita (ECR)'],
                   ['Progresívne Slovensko (ALDE)'],
                   ['Slovenská národná strana (ENF)'],
                   ['SMER–sociálna demokracia (S&D)'],
-                  ['SME RODINA (*)', 'SPOLU–Občianska Demokracia (*)']].freeze
+                  ['SME RODINA (*)']].freeze
 
     NO_OF_SEATS = 14
 
