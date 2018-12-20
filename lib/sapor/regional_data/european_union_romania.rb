@@ -46,14 +46,14 @@ module Sapor
 
     private
 
-    COALITIONS = [['Mișcarea România Împreună (EPP)',
-                   'Partidul Mișcarea Populară (EPP)',
+    COALITIONS = [['Partidul Mișcarea Populară (EPP)',
                    'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Partidul Alianța Liberalilor și Democraților (ALDE)'],
+                  ['Mișcarea România Împreună (ALDE)',
+                   'Partidul Alianța Liberalilor și Democraților (ALDE)',
+                   'Uniunea Salvați România (ALDE)'],
                   ['Partidul Social Democrat (S&D)'],
-                  ['PRO România (ECR)'],
-                  ['Uniunea Salvați România (*)']].freeze
+                  ['PRO România (ECR)']].freeze
 
     NO_OF_SEATS = 32
 
