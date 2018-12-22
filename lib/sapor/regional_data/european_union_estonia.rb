@@ -46,9 +46,10 @@ module Sapor
 
     private
 
-    COALITIONS = [['Eesti Keskerakond (ALDE)', 'Eesti Reformierakond (ALDE)'],
-                  ['Eesti 200 (*)', 'Eesti Vabaerakond (*)'],
-                  ['Eesti Konservatiivne Rahvaerakond (NI)'],
+    COALITIONS = [['Eesti 200 (ALDE)', 'Eesti Keskerakond (ALDE)',
+                   'Eesti Reformierakond (ALDE)'],
+                  ['Eesti Konservatiivne Rahvaerakond (ECR)'],
+                  ['Eesti Vabaerakond (*)'],
                   ['Erakond Eestimaa Rohelised (Greens/EFA)'],
                   ['Erakond Isamaa (EPP)'],
                   ['Sotsiaaldemokraatlik Erakond (S&D)']].freeze
