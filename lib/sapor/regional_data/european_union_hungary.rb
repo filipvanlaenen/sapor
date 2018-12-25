@@ -46,12 +46,12 @@ module Sapor
 
     private
 
-    COALITIONS = [['DK (S&D)', 'MSZP (S&D)'],
+    COALITIONS = [['DK (S&D)', 'MSZP (S&D)', 'MSZP–Párbeszéd (S&D)'],
                   ['Együtt (Greens/EFA)', 'LMP (Greens/EFA)',
                    'Párbeszéd (Greens/EFA)'],
                   ['Fidesz–KDNP (EPP)'],
-                  ['HNEM (*)', 'MKKP (*)', 'SMS (*)'],
-                  ['Jobbik (NI)'],
+                  ['HNEM (*)', 'SMS (*)'],
+                  ['Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)', 'MKKP (NI)'],
                   ['MLP (ALDE)', 'MM (ALDE)']].freeze
 
     NO_OF_SEATS = 21
