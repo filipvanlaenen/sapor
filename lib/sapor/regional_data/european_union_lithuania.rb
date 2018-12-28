@@ -47,10 +47,10 @@ module Sapor
     private
 
     COALITIONS = [['Darbo Partija (ALDE)', 'Liberalų Sąjūdis (ALDE)'],
-                  ['Lietuvos Centro Partija (*)',
-                   'Lietuvos Žaliųjų Partija (*)',
+                  ['Lietuvos Centro Partija (ECR)',
+                   'Lietuvos lenkų rinkimų akcija (ECR)'],
+                  ['Lietuvos Žaliųjų Partija (*)',
                    'Politinė partija “Lietuvos sąrašas” (*)'],
-                  ['Lietuvos lenkų rinkimų akcija (ECR)'],
                   ['Lietuvos socialdemokratų darbo partija (S&D)',
                    'Lietuvos socialdemokratų partija (S&D)'],
                   ['Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)'],
