@@ -1,0 +1,130 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Resultater - Hele landet - Folketingsvalg torsdag 18. juni 2015 - 
+# Danmarks Statistik". Retrieved on 28 December 2018.
+# URL: http://www.dst.dk/valg/Valg1487635/valgopg/valgopgHL.htm
+
+Københavns Storkreds | Socialdemokraterne | 96,753
+Københavns Storkreds | Radikale Venstre | 40578
+Københavns Storkreds | Det Konservative Folkeparti | 13471
+Københavns Storkreds | Socialistisk Folkeparti | 28260
+Københavns Storkreds | Liberal Alliance | 37935
+Københavns Storkreds | Kristendemokraterne | 1599
+Københavns Storkreds | Dansk Folkeparti | 49575
+Københavns Storkreds | Venstre | 44721
+Københavns Storkreds | Enhedslisten | 71140
+Københavns Storkreds | Alternativet | 48475
+
+Københavns Omegns Storkreds | Socialdemokraterne | 90361
+Københavns Omegns Storkreds | Radikale Venstre | 16710
+Københavns Omegns Storkreds | Det Konservative Folkeparti | 13840
+Københavns Omegns Storkreds | Socialistisk Folkeparti | 14619
+Københavns Omegns Storkreds | Liberal Alliance | 25982
+Københavns Omegns Storkreds | Kristendemokraterne | 1365
+Københavns Omegns Storkreds | Dansk Folkeparti | 62419
+Københavns Omegns Storkreds | Venstre | 46092
+Københavns Omegns Storkreds | Enhedslisten | 25364
+Københavns Omegns Storkreds | Alternativet | 13575
+
+Nordsjællands Storkreds | Socialdemokraterne | 64822
+Nordsjællands Storkreds | Radikale Venstre | 17515
+Nordsjællands Storkreds | Det Konservative Folkeparti | 15123
+Nordsjællands Storkreds | Socialistisk Folkeparti | 11182
+Nordsjællands Storkreds | Liberal Alliance | 32744
+Nordsjællands Storkreds | Kristendemokraterne | 1680
+Nordsjællands Storkreds | Dansk Folkeparti | 53980
+Nordsjællands Storkreds | Venstre | 59155
+Nordsjællands Storkreds | Enhedslisten | 18171
+Nordsjællands Storkreds | Alternativet | 12957
+
+Bornholms Storkreds | Socialdemokraterne | 8683
+Bornholms Storkreds | Radikale Venstre | 427
+Bornholms Storkreds | Det Konservative Folkeparti | 441
+Bornholms Storkreds | Socialistisk Folkeparti | 716
+Bornholms Storkreds | Liberal Alliance | 1037
+Bornholms Storkreds | Kristendemokraterne | 749
+Bornholms Storkreds | Dansk Folkeparti | 5168
+Bornholms Storkreds | Venstre | 5257
+Bornholms Storkreds | Enhedslisten | 2175
+Bornholms Storkreds | Alternativet | 1299
+
+Sjællands Storkreds | Socialdemokraterne | 146464
+Sjællands Storkreds | Radikale Venstre | 16906
+Sjællands Storkreds | Det Konservative Folkeparti | 15083
+Sjællands Storkreds | Socialistisk Folkeparti | 20575
+Sjællands Storkreds | Liberal Alliance | 32598
+Sjællands Storkreds | Kristendemokraterne | 1996
+Sjællands Storkreds | Dansk Folkeparti | 134195
+Sjællands Storkreds | Venstre | 102818
+Sjællands Storkreds | Enhedslisten | 35374
+Sjællands Storkreds | Alternativet | 18202
+
+Fyns Storkreds | Socialdemokraterne | 90061
+Fyns Storkreds | Radikale Venstre | 10513
+Fyns Storkreds | Det Konservative Folkeparti | 10849
+Fyns Storkreds | Socialistisk Folkeparti | 13790
+Fyns Storkreds | Liberal Alliance | 20271
+Fyns Storkreds | Kristendemokraterne | 1293
+Fyns Storkreds | Dansk Folkeparti | 67913
+Fyns Storkreds | Venstre | 56673
+Fyns Storkreds | Enhedslisten | 26575
+Fyns Storkreds | Alternativet | 14165
+
+Sydjyllands Storkreds | Socialdemokraterne | 104391
+Sydjyllands Storkreds | Radikale Venstre | 13962
+Sydjyllands Storkreds | Det Konservative Folkeparti | 9625
+Sydjyllands Storkreds | Socialistisk Folkeparti | 13508
+Sydjyllands Storkreds | Liberal Alliance | 33277
+Sydjyllands Storkreds | Kristendemokraterne | 4792
+Sydjyllands Storkreds | Dansk Folkeparti | 126058
+Sydjyllands Storkreds | Venstre | 104483
+Sydjyllands Storkreds | Enhedslisten | 22614
+Sydjyllands Storkreds | Alternativet | 11551
+
+Østjyllands Storkreds | Socialdemokraterne | 132320
+Østjyllands Storkreds | Radikale Venstre | 23876
+Østjyllands Storkreds | Det Konservative Folkeparti | 13490
+Østjyllands Storkreds | Socialistisk Folkeparti | 21100
+Østjyllands Storkreds | Liberal Alliance | 40101
+Østjyllands Storkreds | Kristendemokraterne | 4627
+Østjyllands Storkreds | Dansk Folkeparti | 91621
+Østjyllands Storkreds | Venstre | 90528
+Østjyllands Storkreds | Enhedslisten | 35960
+Østjyllands Storkreds | Alternativet | 29587
+
+Vestjyllands Storkreds | Socialdemokraterne | 80122
+Vestjyllands Storkreds | Radikale Venstre | 9183
+Vestjyllands Storkreds | Det Konservative Folkeparti | 15928
+Vestjyllands Storkreds | Socialistisk Folkeparti | 11720
+Vestjyllands Storkreds | Liberal Alliance | 19377
+Vestjyllands Storkreds | Kristendemokraterne | 7646
+Vestjyllands Storkreds | Dansk Folkeparti | 69657
+Vestjyllands Storkreds | Venstre | 89537
+Vestjyllands Storkreds | Enhedslisten | 14531
+Vestjyllands Storkreds | Alternativet | 8642
+
+Nordjyllands Storkreds | Socialdemokraterne | 110963
+Nordjyllands Storkreds | Radikale Venstre | 11339
+Nordjyllands Storkreds | Det Konservative Folkeparti | 10153
+Nordjyllands Storkreds | Socialistisk Folkeparti | 12108
+Nordjyllands Storkreds | Liberal Alliance | 21807
+Nordjyllands Storkreds | Kristendemokraterne | 3330
+Nordjyllands Storkreds | Dansk Folkeparti | 81160
+Nordjyllands Storkreds | Venstre | 85924
+Nordjyllands Storkreds | Enhedslisten | 22559
+Nordjyllands Storkreds | Alternativet | 10335

@@ -82,18 +82,19 @@ module Sapor
                             EuropeanUnionSpain2019.instance,
                             EuropeanUnionSweden.instance,                            
                             EuropeanUnionSweden2019.instance].freeze
+    LATVIAN_AREAS = [Latvia.instance, LatviaKpv.instance, \
+                     LatviaKpvPar.instance, LatviaKpvPPar.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
     AREAS_MAP = {}
-    (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + \
+    (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + LATVIAN_AREAS + \
      NORWEGIAN_AREAS + \
-     [Estonia.instance, Finland.instance, FinlandWithSin.instance, \
-      France.instance, Greece.instance, Hungary.instance, Iceland.instance, \
-      Latvia.instance, LatviaKpv.instance, LatviaKpvPar.instance, \
-      LatviaKpvPPar.instance, Luxembourg.instance, Slovenia.instance, \
-      Sweden.instance, Sweden20140914.instance, UnitedKingdom.instance, \
-      Utopia.instance]).map do |area|
+     [Denmark.instance, Estonia.instance, Finland.instance, \
+      FinlandWithSin.instance, France.instance, Greece.instance, \
+      Hungary.instance, Iceland.instance, Luxembourg.instance, \
+      Slovenia.instance, Sweden.instance, Sweden20140914.instance, \
+      UnitedKingdom.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
 
