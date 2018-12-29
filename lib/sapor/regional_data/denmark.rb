@@ -64,12 +64,17 @@ module Sapor
     OE_PARTY = 'Enhedslisten–De Rød-Grønne'.freeze
     AA_PARTY = 'Alternativet'.freeze
 
-    COALITIONS = [[A_PARTY, B_PARTY, F_PARTY, OE_PARTY],
+    COALITIONS = [[A_PARTY, B_PARTY],
+                  [A_PARTY, B_PARTY, F_PARTY],
+                  [A_PARTY, B_PARTY, F_PARTY, OE_PARTY],
                   [A_PARTY, B_PARTY, F_PARTY, OE_PARTY, AA_PARTY],
                   [C_PARTY, D_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, D_PARTY, I_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY],
-                  [C_PARTY, I_PARTY, O_PARTY, V_PARTY]].freeze
+                  [C_PARTY, I_PARTY, O_PARTY, V_PARTY],
+                  [C_PARTY, I_PARTY, V_PARTY],
+                  [C_PARTY, V_PARTY],
+                  [V_PARTY]].freeze
 
     # Voter turnout on 18 June 2015
     # http://www.dst.dk/valg/Valg1487635/valgopg/valgopgHL.htm
