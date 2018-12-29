@@ -61,7 +61,7 @@ module Sapor
     K_PARTY = 'Kristendemokraterne'.freeze
     O_PARTY = 'Dansk Folkeparti'.freeze
     V_PARTY = 'Venstre'.freeze
-    OE_PARTY = 'Enhedslisten'.freeze
+    OE_PARTY = 'Enhedslisten–De Rød-Grønne'.freeze
     AA_PARTY = 'Alternativet'.freeze
 
     COALITIONS = [[A_PARTY, B_PARTY, F_PARTY, OE_PARTY],
