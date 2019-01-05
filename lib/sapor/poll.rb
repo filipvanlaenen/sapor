@@ -87,15 +87,15 @@ module Sapor
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
+    PORTUGUESE_AREAS = [Portugal.instance, PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
     (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + LATVIAN_AREAS + \
-     NORWEGIAN_AREAS + \
+     NORWEGIAN_AREAS + PORTUGUESE_AREAS + \
      [Denmark.instance, Estonia.instance, Finland.instance, \
       FinlandWithSin.instance, France.instance, Greece.instance, \
       Hungary.instance, Iceland.instance, Luxembourg.instance, \
-      Portugal.instance, Slovenia.instance, Sweden.instance, \
-      Sweden20140914.instance, UnitedKingdom.instance, \
-      Utopia.instance]).map do |area|
+      Slovenia.instance, Sweden.instance, Sweden20140914.instance, \
+      UnitedKingdom.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
 

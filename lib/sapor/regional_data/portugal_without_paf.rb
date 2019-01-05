@@ -18,13 +18,14 @@
 
 module Sapor
   #
-  # The regional data for Portugal.
+  # The regional data for Portugal, with Portugal à Frente replaced with Partido
+  # Social Democrata and CDS–Partido Popular.
   #
-  class Portugal < Area
+  class PortugalWithoutPaf < Area
     include Singleton
 
     def area_code
-      'PT'
+      'PT\{PàF}'
     end
 
     def coalitions
@@ -53,17 +54,7 @@ module Sapor
 
     private
 
-    BE_PARTY = 'Bloco de Esquerda'.freeze
-    CDS_PP_PARTY = 'CDS–Partido Popular'.freeze
-    CDU_PARTY = 'Coligação Democrática Unitária'.freeze
-    PS_PARTY = 'Partido Socialista'.freeze
-    PSD_PARTY = 'Partido Social Democrata'.freeze
-
-    COALITIONS = [[BE_PARTY, CDU_PARTY, PS_PARTY],
-                  [BE_PARTY, PS_PARTY],
-                  [CDS_PP_PARTY, PSD_PARTY],
-                  [CDU_PARTY, PS_PARTY],
-                  [PS_PARTY]].freeze
+    COALITIONS = Portugal.instance.coalitions
 
     # Voter turnout on 4 October 2015
     # https://en.wikipedia.org/wiki/2015_Portuguese_legislative_election
@@ -82,7 +73,7 @@ module Sapor
     def election_results_of_2015
       if @election_results_of_2015.nil?
         @election_results_of_2015 = load_election_results(
-          'portugal-20151004.psv'
+          'portugal-20151004-without-paf.psv'
         )
       end
       @election_results_of_2015
