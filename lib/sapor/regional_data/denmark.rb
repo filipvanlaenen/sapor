@@ -68,6 +68,8 @@ module Sapor
                   [A_PARTY, B_PARTY, F_PARTY],
                   [A_PARTY, B_PARTY, F_PARTY, OE_PARTY],
                   [A_PARTY, B_PARTY, F_PARTY, OE_PARTY, AA_PARTY],
+                  [A_PARTY, F_PARTY, OE_PARTY],
+                  [A_PARTY, F_PARTY, OE_PARTY, AA_PARTY],
                   [C_PARTY, D_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, D_PARTY, I_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY],
