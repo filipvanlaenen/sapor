@@ -44,7 +44,7 @@ describe Sapor::Denmark, '#seats' do
     expect(seats['Socialdemokraterne']).to eq(47)
     expect(seats['Dansk Folkeparti']).to eq(37)
     expect(seats['Venstre']).to eq(34)
-    expect(seats['Enhedslisten']).to eq(14)
+    expect(seats['Enhedslisten–De Rød-Grønne']).to eq(14)
     expect(seats['Liberal Alliance']).to eq(13)
     expect(seats['Alternativet']).to eq(9)
     expect(seats['Radikale Venstre']).to eq(8)
