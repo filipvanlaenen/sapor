@@ -87,7 +87,8 @@ module Sapor
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
-    PORTUGUESE_AREAS = [Portugal.instance, PortugalWithoutPaf.instance].freeze
+    PORTUGUESE_AREAS = [Portugal.instance, PortugalWithAWithoutPaf.instance,
+                        PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
     (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + LATVIAN_AREAS + \
      NORWEGIAN_AREAS + PORTUGUESE_AREAS + \

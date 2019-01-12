@@ -18,36 +18,37 @@
 
 require 'spec_helper'
 
-describe Sapor::PortugalWithoutPaf, '#area_code' do
-  it 'returns PT\{PàF} as the area code' do
-    expect(Sapor::PortugalWithoutPaf.instance.area_code).to \
-      eq('PT\{PàF}')
+describe Sapor::PortugalWithAWithoutPaf, '#area_code' do
+  it 'returns PT∪{A}\{PàF} as the area code' do
+    expect(Sapor::PortugalWithAWithoutPaf.instance.area_code).to \
+      eq('PT∪{A}\{PàF}')
   end
 end
 
-describe Sapor::PortugalWithoutPaf, '#no_of_seats' do
+describe Sapor::PortugalWithAWithoutPaf, '#no_of_seats' do
   it 'returns 230 as the number of seats' do
-    expect(Sapor::PortugalWithoutPaf.instance.no_of_seats).to eq(230)
+    expect(Sapor::PortugalWithAWithoutPaf.instance.no_of_seats).to eq(230)
   end
 end
 
-describe Sapor::PortugalWithoutPaf, '#population_size' do
+describe Sapor::PortugalWithAWithoutPaf, '#population_size' do
   it 'returns a population size of 5,206,113' do
-    expect(Sapor::PortugalWithoutPaf.instance.population_size).to eq(5_206_113)
+    expect(Sapor::PortugalWithAWithoutPaf.instance.population_size).to eq(5_206_113)
   end
 end
 
-describe Sapor::PortugalWithoutPaf, '#seats' do
+describe Sapor::PortugalWithAWithoutPaf, '#seats' do
   it 'calculates the number of seats for the election of 2015 adjusted for' \
      ' the seat distribution for 2019' do
-    PortugalWithoutPaf = Sapor::PortugalWithoutPaf.instance
-    results = PortugalWithoutPaf.overall_election_results_of_2015
-    seats = Sapor::PortugalWithoutPaf.instance.seats(results)
-    expect(seats['Partido Social Democrata']).to eq(5 + 74)
-    expect(seats['CDS–Partido Popular']).to eq(0 + 66)
-    expect(seats['Partido Socialista']).to eq(86 - 23)
-    expect(seats['Bloco de Esquerda']).to eq(19 - 6)
-    expect(seats['Coligação Democrática Unitária']).to eq(17 - 8)
+    PortugalWithAWithoutPaf = Sapor::PortugalWithAWithoutPaf.instance
+    results = PortugalWithAWithoutPaf.overall_election_results_of_2015
+    seats = Sapor::PortugalWithAWithoutPaf.instance.seats(results)
+    expect(seats['Partido Social Democrata']).to eq(5 + 60)
+    expect(seats['Aliança']).to eq(0 + 56)
+    expect(seats['CDS–Partido Popular']).to eq(0 + 47)
+    expect(seats['Partido Socialista']).to eq(86 - 40)
+    expect(seats['Bloco de Esquerda']).to eq(19 - 10)
+    expect(seats['Coligação Democrática Unitária']).to eq(17 - 10)
     expect(seats['Pessoas–Animais–Natureza']).to eq(1 - 1)
     expect(seats['Partido Democrático Republicano']).to eq(0)
     expect(seats['Partido Comunista dos Trabalhadores Portugueses']).to eq(0)
