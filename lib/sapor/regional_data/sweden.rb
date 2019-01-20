@@ -44,31 +44,31 @@ module Sapor
     end
 
     private
+    
+    C_PARTY = 'Centerpartiet'.freeze
+    FI_PARTY = 'Feministiskt initiativ'.freeze
+    KD_PARTY = 'Kristdemokraterna'.freeze
+    L_PARTY = 'Liberalerna'.freeze
+    M_PARTY = 'Moderata samlingspartiet'.freeze
+    MP_PARTY = 'Miljöpartiet de gröna'.freeze
+    S_PARTY = 'Sveriges socialdemokratiska arbetareparti'.freeze
+    SD_PARTY = 'Sverigedemokraterna'.freeze
+    V_PARTY = 'Vänsterpartiet'.freeze
 
-    COALITIONS = [['Centerpartiet', 'Kristdemokraterna', 'Liberalerna',
-                   'Moderata samlingspartiet'],
-                  ['Centerpartiet', 'Liberalerna', 'Moderata samlingspartiet'],
-                  ['Centerpartiet', 'Kristdemokraterna',
-                   'Moderata samlingspartiet'],
-                  ['Centerpartiet', 'Moderata samlingspartiet'],
-                  ['Centerpartiet', 'Moderata samlingspartiet',
-                   'Sveriges socialdemokratiska arbetareparti'],
-                  ['Feministiskt initiativ', 'Miljöpartiet de gröna',
-                   'Sveriges socialdemokratiska arbetareparti',
-                   'Vänsterpartiet'],
-                  ['Kristdemokraterna', 'Moderata samlingspartiet',
-                   'Sverigedemokraterna'],
-                  ['Miljöpartiet de gröna',
-                   'Sveriges socialdemokratiska arbetareparti'],
-                  ['Miljöpartiet de gröna',
-                   'Sveriges socialdemokratiska arbetareparti',
-                   'Vänsterpartiet'],
-                  ['Moderata samlingspartiet',
-                   'Sverigedemokraterna'],
-                  ['Moderata samlingspartiet',
-                   'Sveriges socialdemokratiska arbetareparti'],
-                  ['Sveriges socialdemokratiska arbetareparti',
-                   'Vänsterpartiet']].freeze
+    COALITIONS = [[C_PARTY, KD_PARTY, L_PARTY, M_PARTY],
+                  [C_PARTY, L_PARTY, M_PARTY],
+                  [C_PARTY, L_PARTY, MP_PARTY, S_PARTY],
+                  [C_PARTY, L_PARTY, MP_PARTY, S_PARTY, V_PARTY],
+                  [C_PARTY, KD_PARTY, M_PARTY],
+                  [C_PARTY, M_PARTY],
+                  [C_PARTY, M_PARTY, S_PARTY],
+                  [FI_PARTY, MP_PARTY, S_PARTY, V_PARTY],
+                  [KD_PARTY, M_PARTY, SD_PARTY],
+                  [MP_PARTY, S_PARTY],
+                  [MP_PARTY, S_PARTY, V_PARTY],
+                  [M_PARTY, SD_PARTY],
+                  [M_PARTY, S_PARTY],
+                  [S_PARTY, V_PARTY]].freeze
 
     NO_OF_SEATS = 349
 
