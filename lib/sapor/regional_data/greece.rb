@@ -50,21 +50,21 @@ module Sapor
     private
 
     ANEL_PARTY = 'Ανεξάρτητοι Έλληνες'.freeze
-    DISI_PARTY = 'Δημοκρατική Συμπαράταξη'.freeze
+    EL_PARTY = 'Ελληνική Λύση'.freeze
+    KINAL_PARTY = 'Κίνημα Αλλαγής'.freeze
     LE_PARTY = 'Λαϊκή Ενότητα'.freeze
     ND_PARTY = 'Νέα Δημοκρατία'.freeze
     POTAMI_PARTY = 'Το Ποτάμι'.freeze
     SYRIZA_PARTY = 'Συνασπισμός Ριζοσπαστικής Αριστεράς'.freeze
 
-    COALITIONS = [[DISI_PARTY, ND_PARTY, POTAMI_PARTY],
-                  [DISI_PARTY, ND_PARTY],
+    COALITIONS = [[ANEL_PARTY, LE_PARTY, SYRIZA_PARTY],
+                  [ANEL_PARTY, SYRIZA_PARTY],
+                  [KINAL_PARTY, ND_PARTY, POTAMI_PARTY],
+                  [KINAL_PARTY, ND_PARTY],
+                  [LE_PARTY, SYRIZA_PARTY],
                   [ND_PARTY],
                   [ND_PARTY, POTAMI_PARTY],
-                  [SYRIZA_PARTY],
-                  [SYRIZA_PARTY, ANEL_PARTY],
-                  [SYRIZA_PARTY, ANEL_PARTY, LE_PARTY],
-                  [SYRIZA_PARTY, LE_PARTY],
-                  [SYRIZA_PARTY, ND_PARTY]].freeze
+                  [SYRIZA_PARTY]].freeze
 
     NO_OF_PROPORTIONAL_SEATS = 250
 
