@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -25,13 +25,6 @@ describe Sapor::Greece, '#area_code' do
   end
 end
 
-describe Sapor::Greece, '#coalitions' do
-  it 'returns at least ΣΥΡΙΖΑ and ΣΥΡΙΖΑ+ΑΝΕΛ as the coalitions to track' do
-    expect(Sapor::Greece.instance.coalitions).to include(['ΣΥΡΙΖΑ'])
-    expect(Sapor::Greece.instance.coalitions).to include(%w(ΣΥΡΙΖΑ ΑΝΕΛ))
-  end
-end
-
 describe Sapor::Greece, '#no_of_seats' do
   it 'returns 300 as the number of seats' do
     expect(Sapor::Greece.instance.no_of_seats).to eq(300)
@@ -39,33 +32,82 @@ describe Sapor::Greece, '#no_of_seats' do
 end
 
 describe Sapor::Greece, '#population_size' do
-  it 'returns a population size of 9,949,684' do
-    expect(Sapor::Greece.instance.population_size).to eq(9_949_684)
+  it 'returns a population size of 5,567,930' do
+    expect(Sapor::Greece.instance.population_size).to eq(5_567_930)
   end
 end
 
 describe Sapor::Greece, '#seats' do
-  it 'calculates the number of seats for the election of 25 January 2015' \
+  it 'calculates the number of seats for the election of 20 September 2015' \
      ' correctly' do
     greece = Sapor::Greece.instance
-    results = { 'ΣΥΡΙΖΑ' => 2_245_978, 'ΝΔ' => 1_718_694, 'ΧΑ' => 388_387,
-                'Το Ποτάμι' => 373_924, 'ΚΚΕ' => 338_188, 'ΑΝΕΛ' => 293_683,
-                'ΠΑΣΟΚ-ΔΠ' => 289_469, 'Το Κίνημα' => 152_557, 'ΕΚ' => 110_923,
-                'Τελεία' => 109_500, 'ΛΑΟΣ' => 63_669, 'ΑΝΤΑΡΣΥΑ' => 39_497,
-                'Other' => 29_820 + 7_999 + 7_615 + 4_740 + 2_363 + 3_866 }
+    results = { 'Συνασπισμός Ριζοσπαστικής Αριστεράς' => 1_925_904,
+                'Νέα Δημοκρατία' => 1_526_205,
+                'Χρυσή Αυγή' => 379_581,
+                'Δημοκρατική Συμπαράταξη' => 341_390,
+                'Κομμουνιστικό Κόμμα Ελλάδας' => 301_632,
+                'Το Ποτάμι' => 222_166,
+                'Ανεξάρτητοι Έλληνες' => 200_423,
+                'Ένωση Κεντρώων' => 186_457,
+                'Λαϊκή Ενότητα' => 155_242,
+                'Αντικαπιταλιστική Αριστερή Συνεργασία για την Ανατροπή Εργατικό Επαναστατικό Κόμμα' => 46_096,
+                'Ενιαίο Παλλαϊκό Μέτωπο' => 41_631,
+                'Κοινωνία' => 35_534,
+                'δημιουργία, ξανά!' => 28_936,
+                'Δημοκρατικοί–Κοινωνία Αξιών–Κόμμα Πειρατών' => 15_257,
+                'Κομμουνιστικό Κόμμα Ελλάδας (μ-λ)–Μ-Λ Κομμουνιστικό Κόμμα Ελλάδας' => 8_944,
+                'Πατριωτική Ένωση–Ελληνική Λαϊκή Συσπείρωση' => 6_253,
+                'Ελληνική Λαϊκή Δημοκρατική Απελευθέρωση' => 4_425,
+                'Οργάνωση Κομμουνιστών Διεθνιστών Ελλάδας' => 2_372,
+                'Οργάνωση για την Ανασυγκρότηση του Κ.Κ.Ε.' => 2_263,
+                'Independent candidates' => 1_139 }
     seats = greece.seats(results)
-    expect(seats['ΣΥΡΙΖΑ']).to eq(149)
-    expect(seats['ΝΔ']).to eq(76)
-    expect(seats['ΧΑ']).to eq(17)
-    expect(seats['Το Ποτάμι']).to eq(17)
-    expect(seats['ΚΚΕ']).to eq(15)
-    expect(seats['ΑΝΕΛ']).to eq(13)
-    expect(seats['ΠΑΣΟΚ-ΔΠ']).to eq(13)
-    expect(seats['Το Κίνημα']).to eq(0)
-    expect(seats['ΕΚ']).to eq(0)
-    expect(seats['Τελεία']).to eq(0)
-    expect(seats['ΛΑΟΣ']).to eq(0)
-    expect(seats['ΑΝΤΑΡΣΥΑ']).to eq(0)
+    expect(seats['Συνασπισμός Ριζοσπαστικής Αριστεράς']).to eq(145)
+    expect(seats['Νέα Δημοκρατία']).to eq(75)
+    expect(seats['Χρυσή Αυγή']).to eq(18)
+    expect(seats['Δημοκρατική Συμπαράταξη']).to eq(17)
+    expect(seats['Κομμουνιστικό Κόμμα Ελλάδας']).to eq(15)
+    expect(seats['Το Ποτάμι']).to eq(11)
+    expect(seats['Ανεξάρτητοι Έλληνες']).to eq(10)
+    expect(seats['Ένωση Κεντρώων']).to eq(9)
+    expect(seats['Λαϊκή Ενότητα']).to eq(0)
+    expect(seats['Αντικαπιταλιστική Αριστερή Συνεργασία για την Ανατροπή Εργατικό Επαναστατικό Κόμμα']).to eq(0)
+    expect(seats['Ενιαίο Παλλαϊκό Μέτωπο']).to eq(0)
+    expect(seats['Κοινωνία']).to eq(0)
+    expect(seats['δημιουργία, ξανά!']).to eq(0)
+    expect(seats['Δημοκρατικοί–Κοινωνία Αξιών–Κόμμα Πειρατών']).to eq(0)
+    expect(seats['Κομμουνιστικό Κόμμα Ελλάδας (μ-λ)–Μ-Λ Κομμουνιστικό Κόμμα Ελλάδας']).to eq(0)
+    expect(seats['Πατριωτική Ένωση–Ελληνική Λαϊκή Συσπείρωση']).to eq(0)
+    expect(seats['Ελληνική Λαϊκή Δημοκρατική Απελευθέρωση']).to eq(0)
+    expect(seats['Οργάνωση Κομμουνιστών Διεθνιστών Ελλάδας']).to eq(0)
+    expect(seats['Οργάνωση για την Ανασυγκρότηση του Κ.Κ.Ε.']).to eq(0)
+    expect(seats['Independent candidates']).to eq(0)
+  end
+
+  it 'calculates the number of seats for the election of 20 September 2015' \
+     ' correctly with small parties aggregated as OTHER' do
+    greece = Sapor::Greece.instance
+    results = { 'Συνασπισμός Ριζοσπαστικής Αριστεράς' => 1_925_904,
+                'Νέα Δημοκρατία' => 1_526_205,
+                'Χρυσή Αυγή' => 379_581,
+                'Δημοκρατική Συμπαράταξη' => 341_390,
+                'Κομμουνιστικό Κόμμα Ελλάδας' => 301_632,
+                'Το Ποτάμι' => 222_166,
+                'Ανεξάρτητοι Έλληνες' => 200_423,
+                'Ένωση Κεντρώων' => 186_457,
+                Sapor::OTHER => 155_242 + 46_096 + 41_631 + 35_534 + 28_936 \
+                                + 15_257 + 8_944 + 6_253 + 4_425 + 2_372 \
+                                + 2_263 + 1_139 }
+    seats = greece.seats(results)
+    expect(seats['Συνασπισμός Ριζοσπαστικής Αριστεράς']).to eq(145)
+    expect(seats['Νέα Δημοκρατία']).to eq(75)
+    expect(seats['Χρυσή Αυγή']).to eq(18)
+    expect(seats['Δημοκρατική Συμπαράταξη']).to eq(17)
+    expect(seats['Κομμουνιστικό Κόμμα Ελλάδας']).to eq(15)
+    expect(seats['Το Ποτάμι']).to eq(11)
+    expect(seats['Ανεξάρτητοι Έλληνες']).to eq(10)
+    expect(seats['Ένωση Κεντρώων']).to eq(9)
+    expect(seats[Sapor::OTHER]).to eq(0)
   end
 end
 

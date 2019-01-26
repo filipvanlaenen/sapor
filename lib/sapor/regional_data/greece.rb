@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -28,7 +28,7 @@ module Sapor
     end
 
     def coalitions
-      [['ΣΥΡΙΖΑ'], %w(ΣΥΡΙΖΑ ΑΝΕΛ), %w(ΣΥΡΙΖΑ ΝΔ), %w(ΣΥΡΙΖΑ ΛΕ), %w(ΣΥΡΙΖΑ ΛΕ ΑΝΕΛ), ['ΝΔ', 'ΠΑΣΟΚ-ΔΗΜΑΡ', 'Το Ποτάμι']]
+      COALITIONS
     end
 
     def no_of_seats
@@ -36,28 +36,55 @@ module Sapor
     end
 
     def population_size
-      # Number of registered voters on 25 January 2015
-      # Source: Greek legislative election, January 2015, retrieved on 31
-      # August 2015.
-      # URL: https://en.wikipedia.org/wiki/Greek_legislative_election,_January_2015
-      9_949_684
+      POPULATION_SIZE
     end
 
     def seats(simulation)
-      SIMPLIFIED_ELECTORAL_SYSTEM.project(simulation)
+      electoral_system.project(simulation)
     end
 
     def threshold
       THRESHOLD
     end
 
+    private
+
+    ANEL_PARTY = 'Ανεξάρτητοι Έλληνες'.freeze
+    DISI_PARTY = 'Δημοκρατική Συμπαράταξη'.freeze
+    LE_PARTY = 'Λαϊκή Ενότητα'.freeze
+    ND_PARTY = 'Νέα Δημοκρατία'.freeze
+    POTAMI_PARTY = 'Το Ποτάμι'.freeze
+    SYRIZA_PARTY = 'Συνασπισμός Ριζοσπαστικής Αριστεράς'.freeze
+
+    COALITIONS = [[DISI_PARTY, ND_PARTY, POTAMI_PARTY],
+                  [DISI_PARTY, ND_PARTY],
+                  [ND_PARTY],
+                  [ND_PARTY, POTAMI_PARTY],
+                  [SYRIZA_PARTY],
+                  [SYRIZA_PARTY, ANEL_PARTY],
+                  [SYRIZA_PARTY, ANEL_PARTY, LE_PARTY],
+                  [SYRIZA_PARTY, LE_PARTY],
+                  [SYRIZA_PARTY, ND_PARTY]].freeze
+
     NO_OF_PROPORTIONAL_SEATS = 250
+
     NO_OF_BONUS_SEATS = 50
+
+    # Number of registered voters on 20 September 2015
+    # Source: Greek legislative election, September 2015, retrieved on 20
+    # January 2019.
+    # URL: https://en.wikipedia.org/wiki/Greek_legislative_election,_September_2015
+    POPULATION_SIZE = 5_567_930
 
     THRESHOLD = 0.03
 
-    SIMPLIFIED_ELECTORAL_SYSTEM = SingleDistrictProportional.new(\
-      NO_OF_PROPORTIONAL_SEATS, SainteLague14Denominators, THRESHOLD,
-      NO_OF_BONUS_SEATS)
+    def electoral_system
+      if @electoral_system.nil?
+        @electoral_system = LargestRemainder.new(NO_OF_PROPORTIONAL_SEATS,
+                                                 HareQuota, THRESHOLD, false,
+                                                 NO_OF_BONUS_SEATS, false)
+      end
+      @electoral_system
+    end
   end
 end

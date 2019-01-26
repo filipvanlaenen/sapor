@@ -1,5 +1,3 @@
-# encoding: utf-8
-#
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
 #
@@ -23,11 +21,14 @@ module Sapor
   # district.
   #
   class LargestRemainder
-    def initialize(no_of_seats, quota_class, threshold = 0, full_quota = false)
+    def initialize(no_of_seats, quota_class, threshold = 0, full_quota = false,
+                   bonus = 0, other_eligible = true)
       @no_of_seats = no_of_seats
       @quota_class = quota_class
       @threshold = threshold
       @full_quota = full_quota
+      @bonus = bonus
+      @other_eligible = other_eligible
     end
 
     def project(simulation)
@@ -41,6 +42,7 @@ module Sapor
       quota = @quota_class.get(total_votes, @no_of_seats)
       add_automatic_seats(result, thresholded_simulation, quota)
       add_remaining_seats(result, thresholded_simulation, quota)
+      result[simulation.max_by(&:last)[0]] += @bonus
       result
     end
 
@@ -65,6 +67,7 @@ module Sapor
       simulation.each_pair do |choice, votes|
         thresholded_simulation[choice] = votes >= threshold ? votes : 0
       end
+      thresholded_simulation[OTHER] = 0 unless @other_eligible
       thresholded_simulation
     end
 
