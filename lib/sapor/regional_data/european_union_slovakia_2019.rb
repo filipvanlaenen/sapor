@@ -53,9 +53,8 @@ module Sapor
                   ['NOVA (ECR)', 'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)',
                    'Sloboda a Solidarita (ECR)'],
                   ['Progresívne Slovensko (ALDE)'],
-                  ['Slovenská národná strana (ENF)'],
-                  ['SMER–sociálna demokracia (S&D)'],
-                  ['SME RODINA (*)']].freeze
+                  ['Slovenská národná strana (ENF)', 'SME RODINA (ENF)'],
+                  ['SMER–sociálna demokracia (S&D)']].freeze
 
     NO_OF_SEATS = 14
 
