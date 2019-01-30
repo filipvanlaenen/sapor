@@ -51,8 +51,9 @@ module Sapor
                    'Hrvatska narodna stranka–liberalni demokrati (ALDE)',
                    'Pametno (ALDE)'],
                   ['Bandić Milan 365–Stranka rada i solidarnosti (*)',
-                   'Most nezavisnih lista (*)', 'Živi zid (*)'],
-                  ['Socijaldemokratska partija Hrvatske (S&D)']].freeze
+                   'Most nezavisnih lista (*)'],
+                  ['Socijaldemokratska partija Hrvatske (S&D)'],
+                  ['Živi zid (EFDD)']].freeze
 
     NO_OF_SEATS = 12
 
