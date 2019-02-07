@@ -52,7 +52,7 @@ module Sapor
                   ['Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)'],
                   ['Prawo i Sprawiedliwość (ECR)'],
-                  ['Sojusz Lewicy Demokratycznej (S&D)']].freeze
+                  ['Sojusz Lewicy Demokratycznej (S&D)', 'Wiosna (S&D)']].freeze
 
     NO_OF_SEATS = 51
 
