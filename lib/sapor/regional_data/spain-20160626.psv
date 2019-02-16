@@ -1,0 +1,616 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Consulta de resultados electorales. Ministerio del Interior". Retrieved on 14 February 2019.
+# URL: http://www.infoelectoral.mir.es/infoelectoral/min/
+
+A Coruña | Partido Popular                                   | 257,855
+A Coruña | Unidos Podemos                                    | 148,566
+A Coruña | Partido Socialista Obrero Español                 | 139,973
+A Coruña | Ciudadanos–Partido de la Ciudadanía               |  60,347
+A Coruña | Bloque Nacionalista Galego–Nós Candidatura Galega |  19,343
+A Coruña | Partido Animalista Contra el Maltrato Animal      |   6,857
+A Coruña | Recortes Cero–Grupo Verde                         |   1,583
+A Coruña | Vox                                               |   1,026
+A Coruña | Partido Comunista de los Pueblos de España        |     754
+A Coruña | Solidaridad y Autogestión Internacionalista       |     392
+
+Albacete | Partido Popular                                    | 89,717
+Albacete | Partido Socialista Obrero Español                  | 59,617
+Albacete | Unidos Podemos                                     | 33,509
+Albacete | Ciudadanos–Partido de la Ciudadanía                | 31,976
+Albacete | Partido Animalista Contra el Maltrato Animal       |  1,985
+Albacete | Unión Progreso y Democracia                        |    430
+Albacete | Recortes Cero–Grupo Verde                          |    321
+Albacete | Falange Española de las JONS                       |    255
+Albacete | Partido Comunista de los Pueblos de España         |    233
+
+Alicante/Alacant | Partido Popular                                    | 329,628
+Alicante/Alacant | Unidos Podemos                                     | 193,263
+Alicante/Alacant | Partido Socialista Obrero Español                  | 187,484
+Alicante/Alacant | Ciudadanos–Partido de la Ciudadanía                | 138,517
+Alicante/Alacant | Partido Animalista Contra el Maltrato Animal       |  10,632
+Alicante/Alacant | Los Verdes Ecopacifistas                           |   3,011
+Alicante/Alacant | Vox                                                |   2,003
+Alicante/Alacant | Unión Progreso y Democracia                        |   1,961
+Alicante/Alacant | Partido Comunista de los Pueblos de España         |   1,582
+Alicante/Alacant | Recortes Cero–Grupo Verde                          |   1,293
+Alicante/Alacant | Som Valencians                                     |     554
+Alicante/Alacant | Partido Libertario                                 |     403
+
+Almería | Partido Popular                                    | 131,801
+Almería | Partido Socialista Obrero Español                  |  84,988
+Almería | Ciudadanos–Partido de la Ciudadanía                |  41,897
+Almería | Unidos Podemos                                     |  40,578
+Almería | Partido Animalista Contra el Maltrato Animal       |   2,689
+Almería | Unión Progreso y Democracia                        |     684
+Almería | Vox                                                |     435
+Almería | Escaños en Blanco                                  |     347
+Almería | Recortes Cero–Grupo Verde                          |     334
+Almería | Falange Española de las JONS                       |     323
+Almería | Partido Comunista de los Pueblos de España         |     280
+Almería | Izquierda Anticapitalista Revolucionaria           |     105
+
+Araba | Unidos Podemos                                     | 51,827
+Araba | Partido Popular                                    | 34,276
+Araba | Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco | 26,703
+Araba | Partido Socialista Obrero Español                  | 26,381
+Araba | Euskal Herria Bildu                                | 15,858
+Araba | Ciudadanos–Partido de la Ciudadanía                |  8,372
+Araba | Partido Animalista Contra el Maltrato Animal       |  1,657
+Araba | Recortes Cero–Grupo Verde                          |    599
+Araba | Vox                                                |    306
+Araba | Unión Progreso y Democracia                        |    298
+Araba | Partido Comunista de los Pueblos de España         |    211
+Araba | Libertate Nafarra                                  |     74
+
+Asturias | Partido Popular                                    | 209,632
+Asturias | Partido Socialista Obrero Español                  | 147,920
+Asturias | Unidos Podemos                                     | 141,845
+Asturias | Ciudadanos–Partido de la Ciudadanía                |  74,961
+Asturias | Partido Animalista Contra el Maltrato Animal       |   6,398
+Asturias | Escaños en Blanco                                  |   2,517
+Asturias | Vox                                                |   1,442
+Asturias | Unión Progreso y Democracia                        |   1,391
+Asturias | Partido Comunista de los Pueblos de España         |   1,383
+Asturias | Recortes Cero–Grupo Verde                          |   1,086
+Asturias | Partido Humanista                                  |     414
+Asturias | Partido Unionista Estado de España                 |     336
+
+Ávila | Partido Popular                                    | 50,931
+Ávila | Partido Socialista Obrero Español                  | 19,277
+Ávila | Ciudadanos–Partido de la Ciudadanía                | 14,096
+Ávila | Unidos Podemos                                     | 12,527
+Ávila | Partido Animalista Contra el Maltrato Animal       |    610
+Ávila | Unión Progreso y Democracia                        |    357
+Ávila | Falange Española de las JONS                       |    261
+Ávila | Recortes Cero–Grupo Verde                          |    141
+
+Badajoz | Partido Popular                                    | 149,603
+Badajoz | Partido Socialista Obrero Español                  | 133,392
+Badajoz | Unidos Podemos                                     |  47,182
+Badajoz | Ciudadanos–Partido de la Ciudadanía                |  40,417
+Badajoz | Partido Animalista Contra el Maltrato Animal       |   2,766
+Badajoz | Unión Progreso y Democracia                        |     639
+Badajoz | Vox                                                |     617
+Badajoz | Recortes Cero–Grupo Verde                          |     614
+
+Barcelona | Unidos Podemos                                     | 694,315
+Barcelona | Partido Socialista Obrero Español                  | 444,812
+Barcelona | Esquerra Republicana de Catalunya–Catalunya Sí     | 438,126
+Barcelona | Partido Popular                                    | 357,759
+Barcelona | Convergència Democràtica de Catalunya              | 323,824
+Barcelona | Ciudadanos–Partido de la Ciudadanía                | 305,075
+Barcelona | Partido Animalista Contra el Maltrato Animal       |  47,660
+Barcelona | Recortes Cero–Grupo Verde                          |   8,006
+Barcelona | Partit Comunista del Poble de Catalunya            |   3,275
+
+Bizkaia | Unidos Podemos                                     | 179,347
+Bizkaia | Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco | 175,296
+Bizkaia | Partido Socialista Obrero Español                  |  86,425
+Bizkaia | Partido Popular                                    |  78,965
+Bizkaia | Euskal Herria Bildu                                |  67,653
+Bizkaia | Ciudadanos–Partido de la Ciudadanía                |  20,685
+Bizkaia | Partido Animalista Contra el Maltrato Animal       |   4,865
+Bizkaia | Recortes Cero–Grupo Verde                          |   1,176
+Bizkaia | Escaños en Blanco                                  |   1,026
+Bizkaia | Unión Progreso y Democracia                        |     766
+Bizkaia | Vox                                                |     641
+Bizkaia | Partido Comunista de los Pueblos de España         |     467
+
+Burgos | Partido Popular                                    | 88,785
+Burgos | Partido Socialista Obrero Español                  | 45,724
+Burgos | Unidos Podemos                                     | 35,705
+Burgos | Ciudadanos–Partido de la Ciudadanía                | 30,361
+Burgos | Partido Animalista Contra el Maltrato Animal       |  1,782
+Burgos | Unión Progreso y Democracia                        |    788
+Burgos | Vox                                                |    647
+Burgos | Recortes Cero–Grupo Verde                          |    456
+Burgos | Iniciativa Merindades de Castilla                  |    356
+Burgos | Partido Comunista de los Pueblos de España         |    287
+Burgos | Solidaridad y Autogestión Internacionalista        |    278
+
+Cáceres | Partido Popular                                    | 95,419
+Cáceres | Partido Socialista Obrero Español                  | 78,767
+Cáceres | Unidos Podemos                                     | 33,164
+Cáceres | Ciudadanos–Partido de la Ciudadanía                | 24,343
+Cáceres | Partido Animalista Contra el Maltrato Animal       |  1,690
+Cáceres | Recortes Cero–Grupo Verde                          |    459
+Cáceres | Unión Progreso y Democracia                        |    415
+Cáceres | Vox                                                |    409
+
+Cádiz | Partido Popular                                    | 198,876
+Cádiz | Partido Socialista Obrero Español                  | 175,498
+Cádiz | Unidos Podemos                                     | 130,643
+Cádiz | Ciudadanos–Partido de la Ciudadanía                |  88,029
+Cádiz | Partido Animalista Contra el Maltrato Animal       |   9,719
+Cádiz | Unión Progreso y Democracia                        |   1,750
+Cádiz | Recortes Cero–Grupo Verde                          |   1,417
+Cádiz | Vox                                                |   1,253
+Cádiz | Partido Comunista de los Pueblos de España         |     767
+Cádiz | Falange Española de las JONS                       |     472
+Cádiz | Partido Libertario                                 |     393
+
+Cantabria | Partido Popular                                    | 140,252
+Cantabria | Partido Socialista Obrero Español                  |  79,407
+Cantabria | Unidos Podemos                                     |  59,845
+Cantabria | Ciudadanos–Partido de la Ciudadanía                |  48,626
+Cantabria | Partido Animalista Contra el Maltrato Animal       |   3,369
+Cantabria | Unión Progreso y Democracia                        |   1,051
+Cantabria | Vox                                                |     713
+Cantabria | Escaños en Blanco                                  |     596
+Cantabria | Recortes Cero–Grupo Verde                          |     483
+Cantabria | Partido Comunista de los Pueblos de España         |     468
+Cantabria | Solidaridad y Autogestión Internacionalista        |     156
+Cantabria | Partido Libertario                                 |     147
+
+Castellón/Castelló | Partido Popular                                    | 106,746
+Castellón/Castelló | Unidos Podemos                                     |  72,281
+Castellón/Castelló | Partido Socialista Obrero Español                  |  66,062
+Castellón/Castelló | Ciudadanos–Partido de la Ciudadanía                |  44,121
+Castellón/Castelló | Partido Animalista Contra el Maltrato Animal       |   2,985
+Castellón/Castelló | Ciudadanos de Centro Democrático                   |   1,712
+Castellón/Castelló | Vox                                                |     711
+Castellón/Castelló | Unión Progreso y Democracia                        |     662
+Castellón/Castelló | Recortes Cero–Grupo Verde                          |     561
+Castellón/Castelló | Falange Española de las JONS                       |     476
+Castellón/Castelló | Som Valencians                                     |     415
+Castellón/Castelló | Partido Comunista de los Pueblos de España         |     403
+
+Ceuta | Partido Popular                                    | 15,991
+Ceuta | Partido Socialista Obrero Español                  |  6,974
+Ceuta | Ciudadanos–Partido de la Ciudadanía                |  3,549
+Ceuta | Unidos Podemos                                     |  3,345
+Ceuta | Partido Animalista Contra el Maltrato Animal       |    333
+Ceuta | Vox                                                |    139
+Ceuta | Recortes Cero–Grupo Verde                          |    118
+Ceuta | Unión Progreso y Democracia                        |     72
+
+Ciudad Real | Partido Popular                                    | 121,622
+Ciudad Real | Partido Socialista Obrero Español                  |  81,728
+Ciudad Real | Unidos Podemos                                     |  37,510
+Ciudad Real | Ciudadanos–Partido de la Ciudadanía                |  33,126
+Ciudad Real | Partido Animalista Contra el Maltrato Animal       |   2,334
+Ciudad Real | Unión Progreso y Democracia                        |     679
+Ciudad Real | Recortes Cero–Grupo Verde                          |     458
+
+Córdoba | Partido Popular                                     | 153,750
+Córdoba | Partido Socialista Obrero Español                   | 139,281
+Córdoba | Unidos Podemos                                      |  85,058
+Córdoba | Ciudadanos–Partido de la Ciudadanía                 |  55,248
+Córdoba | Partido Animalista Contra el Maltrato Animal        |   4,234
+Córdoba | Unión Progreso y Democracia                         |     743
+Córdoba | Vox                                                 |     708
+Córdoba | Partido Comunista de los Pueblos de España          |     663
+Córdoba | Partido Comunista Obrero Español                    |     627
+Córdoba | Escaños en Blanco                                   |     614
+Córdoba | Partido Somos Andaluces por Andalucía y los Pueblos |     606
+Córdoba | Recortes Cero–Grupo Verde                           |     467
+Córdoba | Falange Española de las JONS                        |     330
+
+Cuenca | Partido Popular                                    | 53,004
+Cuenca | Partido Socialista Obrero Español                  | 34,426
+Cuenca | Unidos Podemos                                     | 15,263
+Cuenca | Ciudadanos–Partido de la Ciudadanía                | 10,868
+Cuenca | Partido Animalista Contra el Maltrato Animal       |    785
+Cuenca | Vox                                                |    274
+Cuenca | Unión Progreso y Democracia                        |    195
+Cuenca | Recortes Cero–Grupo Verde                          |    130
+Cuenca | Partido Comunista de los Pueblos de España         |     81
+
+Gipuzkoa | Unidos Podemos                                     | 104,566
+Gipuzkoa | Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco |  85,015
+Gipuzkoa | Euskal Herria Bildu                                |  69,828
+Gipuzkoa | Partido Socialista Obrero Español                  |  51,449
+Gipuzkoa | Partido Popular                                    |  35,312
+Gipuzkoa | Ciudadanos–Partido de la Ciudadanía                |  11,683
+Gipuzkoa | Partido Animalista Contra el Maltrato Animal       |   2,788
+Gipuzkoa | Recortes Cero–Grupo Verde                          |   1,172
+Gipuzkoa | Unión Progreso y Democracia                        |     478
+Gipuzkoa | Partido Comunista de los Pueblos de España         |     284
+Gipuzkoa | Partido Libertario                                 |     207
+
+Girona | Esquerra Republicana de Catalunya–Catalunya Sí     | 80,824
+Girona | Convergència Democràtica de Catalunya              | 71,453
+Girona | Unidos Podemos                                     | 53,277
+Girona | Partido Socialista Obrero Español                  | 38,558
+Girona | Partido Popular                                    | 31,035
+Girona | Ciudadanos–Partido de la Ciudadanía                | 23,748
+Girona | Partido Animalista Contra el Maltrato Animal       |  4,627
+Girona | Plataforma per Catalunya                           |    724
+Girona | Recortes Cero–Grupo Verde                          |    583
+Girona | Partit Comunista del Poble de Catalunya            |    382
+
+Granada | Partido Popular                                     | 172,721
+Granada | Partido Socialista Obrero Español                   | 151,445
+Granada | Unidos Podemos                                      |  86,975
+Granada | Ciudadanos–Partido de la Ciudadanía                 |  66,000
+Granada | Partido Animalista Contra el Maltrato Animal        |   5,228
+Granada | Unión Progreso y Democracia                         |   1,158
+Granada | Vox                                                 |     993
+Granada | Recortes Cero–Grupo Verde                           |     763
+Granada | Partido Comunista de los Pueblos de España          |     641
+Granada | Izquierda Anticapitalista Revolucionaria            |     192
+
+Guadalajara | Partido Popular                                    | 52,047
+Guadalajara | Partido Socialista Obrero Español                  | 30,282
+Guadalajara | Unidos Podemos                                     | 23,884
+Guadalajara | Ciudadanos–Partido de la Ciudadanía                | 21,586
+Guadalajara | Partido Animalista Contra el Maltrato Animal       |  1,349
+Guadalajara | Vox                                                |    541
+Guadalajara | Unión Progreso y Democracia                        |    413
+Guadalajara | Recortes Cero–Grupo Verde                          |    245
+Guadalajara | Falange Española de las JONS                       |    206
+Guadalajara | Partido Comunista Obrero Español                   |    126
+Guadalajara | Solidaridad y Autogestión Internacionalista        |     37
+
+Huelva | Partido Socialista Obrero Español                   | 88,100
+Huelva | Partido Popular                                     | 81,959
+Huelva | Unidos Podemos                                      | 40,023
+Huelva | Ciudadanos–Partido de la Ciudadanía                 | 28,685
+Huelva | Partido Animalista Contra el Maltrato Animal        |  2,850
+Huelva | Recortes Cero–Grupo Verde                           |    470
+Huelva | Unión Progreso y Democracia                         |    464
+Huelva | Vox                                                 |    398
+Huelva | Partido Comunista de los Pueblos de España          |    344
+
+Huesca | Partido Popular                                     | 42,332
+Huesca | Partido Socialista Obrero Español                   | 29,915
+Huesca | Unidos Podemos                                      | 22,430
+Huesca | Ciudadanos–Partido de la Ciudadanía                 | 17,934
+Huesca | Partido Animalista Contra el Maltrato Animal        |    909
+Huesca | Escaños en Blanco                                   |    487
+Huesca | Vox                                                 |    399
+Huesca | ENTABAN                                             |    377
+Huesca | Partido Comunista de los Pueblos de España          |    349
+Huesca | Unión Progreso y Democracia                         |    239
+Huesca | Recortes Cero–Grupo Verde                           |    216
+Huesca | Movimiento Aragonés Social                          |     93
+
+Illes Balears | Partido Popular                                    | 163,045
+Illes Balears | Unidos Podemos                                     | 118,082
+Illes Balears | Partido Socialista Obrero Español                  |  93,363
+Illes Balears | Ciudadanos–Partido de la Ciudadanía                |  67,700
+Illes Balears | Sobirania per a les Illes                          |   7,418
+Illes Balears | Partido Animalista Contra el Maltrato Animal       |   7,266
+Illes Balears | Recortes Cero–Grupo Verde                          |   1,644
+Illes Balears | Unión Progreso y Democracia                        |   1,197
+Illes Balears | Partido Familia y Vida                             |     846
+
+Jaén | Partido Socialista Obrero Español                   | 138,612
+Jaén | Partido Popular                                     | 131,234
+Jaén | Unidos Podemos                                      |  53,239
+Jaén | Ciudadanos–Partido de la Ciudadanía                 |  38,884
+Jaén | Partido Animalista Contra el Maltrato Animal        |   3,238
+Jaén | Ciudadanos Libres Unidos                            |     830
+Jaén | Vox                                                 |     638
+Jaén | Unión Progreso y Democracia                         |     589
+Jaén | Partido Comunista de los Pueblos de España          |     498
+Jaén | Recortes Cero–Grupo Verde                           |     455
+
+La Rioja | Partido Popular                                     | 73,708
+La Rioja | Partido Socialista Obrero Español                   | 42,010
+La Rioja | Unidos Podemos                                      | 28,772
+La Rioja | Ciudadanos–Partido de la Ciudadanía                 | 24,180
+La Rioja | Partido Animalista Contra el Maltrato Animal        |  1,350
+La Rioja | Unión Progreso y Democracia                         |    425
+La Rioja | Vox                                                 |    366
+La Rioja | Recortes Cero–Grupo Verde                           |    312
+La Rioja | Escaños en Blanco                                   |    304
+La Rioja | Partido Comunista de los Pueblos de España          |    250
+La Rioja | Hegoalde Rioja–Libertad Navarra                     |     80
+
+Las Palmas | Partido Popular                                    | 170,316
+Las Palmas | Partido Socialista Obrero Español                  | 119,351
+Las Palmas | Unidos Podemos                                     | 113,256
+Las Palmas | Ciudadanos–Partido de la Ciudadanía                |  65,172
+Las Palmas | Coalición Canaria–Partido Nacionalista Canario     |  17,982
+Las Palmas | Partido Animalista Contra el Maltrato Animal       |   6,730
+Las Palmas | Recortes Cero–Grupo Verde                          |   1,552
+Las Palmas | Unión Progreso y Democracia                        |     978
+Las Palmas | Partido Comunista de los Pueblos de España         |     900
+Las Palmas | Vox                                                |     882
+Las Palmas | Unidad del Pueblo                                  |     686
+Las Palmas | Juntos por Canarias                                |     537
+Las Palmas | Partido Humanista                                  |     450
+Las Palmas | Solidaridad y Autogestión Internacionalista        |     212
+
+Léon | Partido Popular                                    | 112,723
+Léon | Partido Socialista Obrero Español                  |  73,681
+Léon | Unidos Podemos                                     |  49,484
+Léon | Ciudadanos–Partido de la Ciudadanía                |  35,870
+Léon | Partido Animalista Contra el Maltrato Animal       |   2,184
+Léon | Unión del Pueblo Leonés                            |   2,094
+Léon | Vox                                                |     620
+Léon | Unión Progreso y Democracia                        |     618
+Léon | Recortes Cero–Grupo Verde                          |     430
+Léon | Partido Comunista de los Pueblos de España         |     381
+Léon | Partido Regionalista del País Leonés               |     277
+Léon | Alianza de Centro Democrático                      |      99
+
+Lleida | Esquerra Republicana de Catalunya–Catalunya Sí     | 45,525
+Lleida | Convergència Democràtica de Catalunya              | 40,985
+Lleida | Unidos Podemos                                     | 30,182
+Lleida | Partido Popular                                    | 24,503
+Lleida | Partido Socialista Obrero Español                  | 22,533
+Lleida | Ciudadanos–Partido de la Ciudadanía                | 12,592
+Lleida | Partido Animalista Contra el Maltrato Animal       |  1,930
+Lleida | Recortes Cero–Grupo Verde                          |    288
+Lleida | Partit Comunista del Poble de Catalunya            |    267
+Lleida | Vox                                                |    198
+
+Lugo | Partido Popular                                   | 91,516
+Lugo | Partido Socialista Obrero Español                 | 45,796
+Lugo | Unidos Podemos                                    | 32,752
+Lugo | Ciudadanos–Partido de la Ciudadanía               | 13,343
+Lugo | Bloque Nacionalista Galego–Nós Candidatura Galega |  5,009
+Lugo | Partido Animalista Contra el Maltrato Animal      |  1,939
+Lugo | Recortes Cero–Grupo Verde                         |    514
+
+Madrid | Partido Popular                                   | 1,325,665
+Madrid | Unidos Podemos                                    |   737,885
+Madrid | Partido Socialista Obrero Español                 |   678,340
+Madrid | Ciudadanos–Partido de la Ciudadanía               |   616,503
+Madrid | Partido Animalista Contra el Maltrato Animal      |    39,117
+Madrid | Vox                                               |    16,803
+Madrid | Unión Progreso y Democracia                       |    14,659
+Madrid | Recortes Cero–Grupo Verde                         |     7,377
+Madrid | Falange Española de las JONS                      |     3,946
+Madrid | Partido Comunista de los Pueblos de España        |     3,110
+Madrid | Partido Humanista                                 |     2,148
+Madrid | Partido Libertario                                |     1,111
+Madrid | Solidaridad y Autogestión Internacionalista       |       994
+
+Málaga | Partido Popular                                     | 256,033
+Málaga | Partido Socialista Obrero Español                   | 201,444
+Málaga | Unidos Podemos                                      | 140,829
+Málaga | Ciudadanos–Partido de la Ciudadanía                 | 121,294
+Málaga | Partido Animalista Contra el Maltrato Animal        |  11,523
+Málaga | Unión Progreso y Democracia                         |   1,832
+Málaga | Vox                                                 |   1,770
+Málaga | Recortes Cero–Grupo Verde                           |   1,461
+Málaga | Partido Somos Andaluces por Andalucía y los Pueblos |   1,121
+Málaga | Partido Comunista de los Pueblos de España          |     983
+Málaga | Izquierda Anticapitalista Revolucionaria            |     390
+
+Melilla | Partido Popular                                    | 13,522
+Melilla | Partido Socialista Obrero Español                  |  6,805
+Melilla | Ciudadanos–Partido de la Ciudadanía                |  3,352
+Melilla | Unidos Podemos                                     |  2,667
+Melilla | Partido Animalista Contra el Maltrato Animal       |    317
+Melilla | Unión Progreso y Democracia                        |    146
+Melilla | Recortes Cero–Grupo Verde                          |     44
+
+Murcia | Partido Popular                                     | 333,109
+Murcia | Partido Socialista Obrero Español                   | 144,937
+Murcia | Ciudadanos–Partido de la Ciudadanía                 | 111,961
+Murcia | Unidos Podemos                                      | 103,522
+Murcia | Partido Animalista Contra el Maltrato Animal        |   8,209
+Murcia | Vox                                                 |   2,622
+Murcia | Unión Progreso y Democracia                         |   2,083
+Murcia | Recortes Cero–Grupo Verde                           |   1,305
+Murcia | Escaños en Blanco                                   |   1,069
+Murcia | Partido Comunista de los Pueblos de España          |     627
+Murcia | Solidaridad y Autogestión Internacionalista         |     235
+Murcia | La Fuerza de los Mayores de España                  |     200
+
+Navarra | Partido Popular                                     | 106,976
+Navarra | Unidos Podemos                                      |  94,972
+Navarra | Partido Socialista Obrero Español                   |  58,173
+Navarra | Euskal Herria Bildu                                 |  31,374
+Navarra | Ciudadanos–Partido de la Ciudadanía                 |  20,505
+Navarra | Geroa Bai                                           |  14,343
+Navarra | Partido Animalista Contra el Maltrato Animal        |   2,757
+Navarra | Recortes Cero–Grupo Verde                           |   1,089
+Navarra | Unión Progreso y Democracia                         |     591
+Navarra | Libertate Nafarra                                   |     548
+Navarra | Solidaridad y Autogestión Internacionalista         |     539
+
+Ourense | Partido Popular                                   | 92,539
+Ourense | Partido Socialista Obrero Español                 | 43,429
+Ourense | Unidos Podemos                                    | 29,136
+Ourense | Ciudadanos–Partido de la Ciudadanía               | 13,133
+Ourense | Bloque Nacionalista Galego–Nós Candidatura Galega |  4,107
+Ourense | Partido Animalista Contra el Maltrato Animal      |  1,671
+Ourense | Recortes Cero–Grupo Verde                         |    417
+Ourense | Partido Comunista de los Pueblos de España        |    218
+
+Palencia | Partido Popular                                    | 45,965
+Palencia | Partido Socialista Obrero Español                  | 24,751
+Palencia | Unidos Podemos                                     | 15,077
+Palencia | Ciudadanos–Partido de la Ciudadanía                | 12,428
+Palencia | Partido Animalista Contra el Maltrato Animal       |    761
+Palencia | Unión Progreso y Democracia                        |    273
+Palencia | Recortes Cero–Grupo Verde                          |    202
+Palencia | Falange Española de las JONS                       |    184
+Palencia | Partido Comunista de los Pueblos de España         |     90
+Palencia | Solidaridad y Autogestión Internacionalista        |     57
+
+Pontevedra | Partido Popular                                   | 208,921
+Pontevedra | Unidos Podemos                                    | 137,088
+Pontevedra | Partido Socialista Obrero Español                 | 118,816
+Pontevedra | Ciudadanos–Partido de la Ciudadanía               |  48,302
+Pontevedra | Bloque Nacionalista Galego–Nós Candidatura Galega |  16,793
+Pontevedra | Partido Animalista Contra el Maltrato Animal      |   6,497
+Pontevedra | Recortes Cero–Grupo Verde                         |   1,360
+Pontevedra | Unión Progreso y Democracia                       |     975
+Pontevedra | Escaños en Blanco                                 |     785
+Pontevedra | Partido Comunista de los Pueblos de España        |     718
+
+Salamanca | Partido Popular                                    | 97,672
+Salamanca | Partido Socialista Obrero Español                  | 43,252
+Salamanca | Ciudadanos–Partido de la Ciudadanía                | 31,878
+Salamanca | Unidos Podemos                                     | 25,441
+Salamanca | Partido Animalista Contra el Maltrato Animal       |  1,359
+Salamanca | Unión Progreso y Democracia                        |    683
+Salamanca | Recortes Cero–Grupo Verde                          |    326
+Salamanca | Partido Regionalista del País Leonés               |    233
+Salamanca | Partido Comunista de los Pueblos de España         |    196
+
+Santa Cruz de Tenerife | Partido Popular                                    | 163,129
+Santa Cruz de Tenerife | Partido Socialista Obrero Español                  | 101,120
+Santa Cruz de Tenerife | Unidos Podemos                                     |  85,178
+Santa Cruz de Tenerife | Coalición Canaria–Partido Nacionalista Canario     |  60,271
+Santa Cruz de Tenerife | Ciudadanos–Partido de la Ciudadanía                |  52,576
+Santa Cruz de Tenerife | Partido Animalista Contra el Maltrato Animal       |   8,243
+Santa Cruz de Tenerife | Recortes Cero–Grupo Verde                          |   1,417
+Santa Cruz de Tenerife | Juntos por Canarias                                |     653
+Santa Cruz de Tenerife | Partido Comunista de los Pueblos de España         |     649
+Santa Cruz de Tenerife | Escaños en Blanco                                  |     647
+
+Segovia | Partido Popular                                    | 40,172
+Segovia | Partido Socialista Obrero Español                  | 19,014
+Segovia | Ciudadanos–Partido de la Ciudadanía                | 13,595
+Segovia | Unidos Podemos                                     | 13,440
+Segovia | Partido Animalista Contra el Maltrato Animal       |    612
+Segovia | Unión Progreso y Democracia                        |    352
+Segovia | Vox                                                |    277
+Segovia | Recortes Cero–Grupo Verde                          |    202
+Segovia | Falange Española de las JONS                       |    129
+Segovia | Partido Comunista de los Pueblos de España         |    117
+
+Sevilla | Partido Socialista Obrero Español                   | 347,470
+Sevilla | Partido Popular                                     | 299,884
+Sevilla | Unidos Podemos                                      | 214,663
+Sevilla | Ciudadanos–Partido de la Ciudadanía                 | 138,086
+Sevilla | Partido Animalista Contra el Maltrato Animal        |  13,389
+Sevilla | Unión Progreso y Democracia                         |   2,712
+Sevilla | Vox                                                 |   2,146
+Sevilla | Recortes Cero–Grupo Verde                           |   1,950
+Sevilla | Partido Comunista de los Pueblos de España          |   1,306
+Sevilla | Partido Comunista Obrero Español                    |   1,069
+Sevilla | Falange Española de las JONS                        |     855
+
+Soria | Partido Popular                                    | 22,264
+Soria | Partido Socialista Obrero Español                  | 12,762
+Soria | Unidos Podemos                                     |  7,599
+Soria | Ciudadanos–Partido de la Ciudadanía                |  5,679
+Soria | Partido Animalista Contra el Maltrato Animal       |    260
+Soria | Unión Progreso y Democracia                        |    125
+Soria | Vox                                                |    119
+Soria | Recortes Cero–Grupo Verde                          |     90
+Soria | Falange Española de las JONS                       |     63
+Soria | Partido Comunista de los Pueblos de España         |     57
+
+Tarragona | Unidos Podemos                                     | 75,328
+Tarragona | Esquerra Republicana de Catalunya–Catalunya Sí     | 67,759
+Tarragona | Partido Socialista Obrero Español                  | 53,967
+Tarragona | Partido Popular                                    | 51,241
+Tarragona | Convergència Democràtica de Catalunya              | 47,226
+Tarragona | Ciudadanos–Partido de la Ciudadanía                | 39,082
+Tarragona | Partido Animalista Contra el Maltrato Animal       |  5,680
+Tarragona | Recortes Cero–Grupo Verde                          |    853
+Tarragona | Partit Comunista del Poble de Catalunya            |    424
+
+Teruel | Partido Popular                                     | 30,913
+Teruel | Partido Socialista Obrero Español                   | 19,724
+Teruel | Unidos Podemos                                      | 12,558
+Teruel | Ciudadanos–Partido de la Ciudadanía                 |  9,871
+Teruel | Partido Animalista Contra el Maltrato Animal        |    402
+Teruel | Escaños en Blanco                                   |    245
+Teruel | Falange Española de las JONS                        |    160
+Teruel | Recortes Cero–Grupo Verde                           |    125
+Teruel | Partido Comunista de los Pueblos de España          |     71
+Teruel | Movimiento Aragonés Social                          |     62
+Teruel | Unión de Todos                                      |     48
+Teruel | Independientes por Aragón                           |     39
+
+Toledo | Partido Popular                                    | 159,521
+Toledo | Partido Socialista Obrero Español                  |  97,733
+Toledo | Unidos Podemos                                     |  53,994
+Toledo | Ciudadanos–Partido de la Ciudadanía                |  47,705
+Toledo | Partido Animalista Contra el Maltrato Animal       |   3,386
+Toledo | Vox                                                |   1,013
+Toledo | Unión Progreso y Democracia                        |     695
+Toledo | Recortes Cero–Grupo Verde                          |     564
+Toledo | Partido Comunista de los Pueblos de España         |     334
+Toledo | Falange Española de las JONS                       |     330
+Toledo | La Falange                                         |     254
+
+Valencia/València | Partido Popular                                    | 482,855
+Valencia/València | Unidos Podemos                                     | 394,227
+Valencia/València | Partido Socialista Obrero Español                  | 285,732
+Valencia/València | Ciudadanos–Partido de la Ciudadanía                | 205,489
+Valencia/València | Partido Animalista Contra el Maltrato Animal       |  18,994
+Valencia/València | Som Valencians                                     |   5,678
+Valencia/València | Ciudadanos de Centro Democrático                   |   4,561
+Valencia/València | Vox                                                |   3,381
+Valencia/València | Unión Progreso y Democracia                        |   2,962
+Valencia/València | Recortes Cero–Grupo Verde                          |   2,944
+Valencia/València | Partido Comunista de los Pueblos de España         |   1,566
+Valencia/València | Falange Española de las JONS                       |   1,465
+Valencia/València | Partido Libertario                                 |     589
+Valencia/València | Renovació Política                                 |     570
+
+Valladolid | Partido Popular                                            | 132,026
+Valladolid | Partido Socialista Obrero Español                          |  71,780
+Valladolid | Unidos Podemos                                             |  51,637
+Valladolid | Ciudadanos–Partido de la Ciudadanía                        |  49,283
+Valladolid | Ciudadanos de Centro Democrático–Candidatura Independiente |   2,672
+Valladolid | Partido Animalista Contra el Maltrato Animal               |   2,225
+Valladolid | Vox                                                        |   1,078
+Valladolid | Unión Progreso y Democracia                                |   1,068
+Valladolid | Recortes Cero–Grupo Verde                                  |     524
+Valladolid | Falange Española de las JONS                               |     454
+Valladolid | Partido Comunista de los Pueblos de España                 |     316
+Valladolid | Solidaridad y Autogestión Internacionalista                |     210
+Valladolid | Partido Libertario                                         |     146
+Valladolid | Alianza de Centro Democrático                              |     115
+
+Zamora | Partido Popular                                    | 52,555
+Zamora | Partido Socialista Obrero Español                  | 26,045
+Zamora | Unidos Podemos                                     | 15,403
+Zamora | Ciudadanos–Partido de la Ciudadanía                | 12,423
+Zamora | Partido Animalista Contra el Maltrato Animal       |    537
+Zamora | Unión Progreso y Democracia                        |    256
+Zamora | Unión del Pueblo Leonés                            |    201
+Zamora | Recortes Cero–Grupo Verde                          |    174
+Zamora | Partido Regionalista del País Leonés               |    158
+Zamora | Partido Comunista de los Pueblos de España         |    131
+
+Zaragoza | Partido Popular                                     | 179,211
+Zaragoza | Partido Socialista Obrero Español                   | 125,321
+Zaragoza | Unidos Podemos                                      | 104,199
+Zaragoza | Ciudadanos–Partido de la Ciudadanía                 |  86,434
+Zaragoza | Partido Animalista Contra el Maltrato Animal        |   5,025
+Zaragoza | Escaños en Blanco                                   |   3,032
+Zaragoza | Vox                                                 |   1,614
+Zaragoza | Unión Progreso y Democracia                         |   1,395
+Zaragoza | Recortes Cero–Grupo Verde                           |   1,137
+Zaragoza | Movimiento Aragonés Social                          |     568
+Zaragoza | Partido Comunista de los Pueblos de España          |     564
+Zaragoza | Independientes por Aragón                           |     511
