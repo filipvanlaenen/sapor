@@ -81,6 +81,7 @@ module Sapor
                   [CS_PARTY, PSOE_PARTY],
                   [PODEMOS_PARTY, PSOE_PARTY],
                   [PP_PARTY],
+                  [PP_PARTY, PSOE_PARTY],
                   [PP_PARTY, VOX_PARTY],
                   [PSOE_PARTY]].freeze
 
