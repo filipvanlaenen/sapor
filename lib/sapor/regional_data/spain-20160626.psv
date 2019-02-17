@@ -18,6 +18,9 @@
 # Source: "Consulta de resultados electorales. Ministerio del Interior". Retrieved on 14 February 2019.
 # URL: http://www.infoelectoral.mir.es/infoelectoral/min/
 
+# Changes to the original results:
+# Partit Demòcrata Europeu Català       → Partit Demòcrata Europeu Català
+
 A Coruña | Partido Popular                                   | 257,855
 A Coruña | Unidos Podemos                                    | 148,566
 A Coruña | Partido Socialista Obrero Español                 | 139,973
@@ -113,7 +116,7 @@ Barcelona | Unidos Podemos                                     | 694,315
 Barcelona | Partido Socialista Obrero Español                  | 444,812
 Barcelona | Esquerra Republicana de Catalunya–Catalunya Sí     | 438,126
 Barcelona | Partido Popular                                    | 357,759
-Barcelona | Convergència Democràtica de Catalunya              | 323,824
+Barcelona | Partit Demòcrata Europeu Català                    | 323,824
 Barcelona | Ciudadanos–Partido de la Ciudadanía                | 305,075
 Barcelona | Partido Animalista Contra el Maltrato Animal       |  47,660
 Barcelona | Recortes Cero–Grupo Verde                          |   8,006
@@ -245,7 +248,7 @@ Gipuzkoa | Partido Comunista de los Pueblos de España         |     284
 Gipuzkoa | Partido Libertario                                 |     207
 
 Girona | Esquerra Republicana de Catalunya–Catalunya Sí     | 80,824
-Girona | Convergència Democràtica de Catalunya              | 71,453
+Girona | Partit Demòcrata Europeu Català                    | 71,453
 Girona | Unidos Podemos                                     | 53,277
 Girona | Partido Socialista Obrero Español                  | 38,558
 Girona | Partido Popular                                    | 31,035
@@ -363,7 +366,7 @@ Léon | Partido Regionalista del País Leonés               |     277
 Léon | Alianza de Centro Democrático                      |      99
 
 Lleida | Esquerra Republicana de Catalunya–Catalunya Sí     | 45,525
-Lleida | Convergència Democràtica de Catalunya              | 40,985
+Lleida | Partit Demòcrata Europeu Català                    | 40,985
 Lleida | Unidos Podemos                                     | 30,182
 Lleida | Partido Popular                                    | 24,503
 Lleida | Partido Socialista Obrero Español                  | 22,533
@@ -530,7 +533,7 @@ Tarragona | Unidos Podemos                                     | 75,328
 Tarragona | Esquerra Republicana de Catalunya–Catalunya Sí     | 67,759
 Tarragona | Partido Socialista Obrero Español                  | 53,967
 Tarragona | Partido Popular                                    | 51,241
-Tarragona | Convergència Democràtica de Catalunya              | 47,226
+Tarragona | Partit Demòcrata Europeu Català                    | 47,226
 Tarragona | Ciudadanos–Partido de la Ciudadanía                | 39,082
 Tarragona | Partido Animalista Contra el Maltrato Animal       |  5,680
 Tarragona | Recortes Cero–Grupo Verde                          |    853

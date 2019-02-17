@@ -47,7 +47,7 @@ describe Sapor::Spain, '#seats' do
     expect(seats['Unidos Podemos']).to eq(71)
     expect(seats['Ciudadanos–Partido de la Ciudadanía']).to eq(32)
     expect(seats['Esquerra Republicana de Catalunya–Catalunya Sí']).to eq(9)
-    expect(seats['Convergència Democràtica de Catalunya']).to eq(8)
+    expect(seats['Partit Demòcrata Europeu Català']).to eq(8)
     expect(seats['Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco']).to eq(5)
     expect(seats['Partido Animalista Contra el Maltrato Animal']).to eq(0)
     expect(seats['Euskal Herria Bildu']).to eq(2)
