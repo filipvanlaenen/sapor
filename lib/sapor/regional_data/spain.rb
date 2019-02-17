@@ -76,6 +76,7 @@ module Sapor
                   [ERC_PARTY, PDECAT_PARTY, PODEMOS_PARTY, PSOE_PARTY],
                   [CS_PARTY, PP_PARTY],
                   [CS_PARTY, PP_PARTY, VOX_PARTY],
+                  [CS_PARTY, PODEMOS_PARTY, PSOE_PARTY],
                   [CS_PARTY, PSOE_PARTY],
                   [PODEMOS_PARTY, PSOE_PARTY],
                   [PP_PARTY],
