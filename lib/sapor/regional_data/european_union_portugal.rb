@@ -48,11 +48,11 @@ module Sapor
 
     COALITIONS = [['Aliança (*)'],
                   ['Bloco de Esquerda (GUE/NGL)',
-                   'Coligação Democrática Unitária (GUE/NGL)',
-                   'Pessoas–Animais–Natureza (GUE/NGL)'],
+                   'Coligação Democrática Unitária (GUE/NGL)'],
                   ['CDS–Partido Popular (EPP)',
                    'Partido Social Democrata (EPP)'],
-                  ['Partido Socialista (S&D)']].freeze
+                  ['Partido Socialista (S&D)'],
+                  ['Pessoas–Animais–Natureza (Greens/EFA)']].freeze
 
     NO_OF_SEATS = 21
 
