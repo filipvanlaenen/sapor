@@ -41,18 +41,36 @@ module Sapor
     end
 
     def seats(simulation)
-      electoral_system.project(simulation)
+      seats = electoral_system.project(simulation)
+      if seats.include?(PS_SPOLU_ALLIANCE)
+        if seats[PS_SPOLU_ALLIANCE] == 0
+          seats[PS_PARTY] = 0
+          seats[SPOLU_PARTY] = 0
+        elsif seats[PS_SPOLU_ALLIANCE] == 1
+          seats[PS_PARTY] = 1
+          seats[SPOLU_PARTY] = 0
+        else
+          seats[PS_PARTY] = seats[PS_SPOLU_ALLIANCE] - 1
+          seats[SPOLU_PARTY] = 1
+        end
+        seats.delete(PS_SPOLU_ALLIANCE)
+      end
+      seats
     end
 
     private
+    
+    PS_PARTY = 'Progresívne Slovensko (ALDE)'.freeze
+    SPOLU_PARTY = 'SPOLU–Občianska Demokracia (EPP)'.freeze
+    PS_SPOLU_ALLIANCE = PS_PARTY + '–' + SPOLU_PARTY
 
     COALITIONS = [['Kotleba–Ľudová strana Naše Slovensko (NI)'],
                   ['Kresťanskodemokratické hnutie (EPP)', 'MOST–HÍD (EPP)',
-                   'SPOLU–Občianska Demokracia (EPP)',
+                   SPOLU_PARTY,
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)'],
                   ['NOVA (ECR)', 'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)',
                    'Sloboda a Solidarita (ECR)'],
-                  ['Progresívne Slovensko (ALDE)'],
+                  [PS_PARTY],
                   ['Slovenská národná strana (ENF)', 'SME RODINA (ENF)'],
                   ['SMER–sociálna demokracia (S&D)']].freeze
 
