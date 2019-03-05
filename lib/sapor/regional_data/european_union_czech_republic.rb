@@ -52,11 +52,10 @@ module Sapor
                   ['Komunistická strana Čech a Moravy (GUE/NGL)'],
                   ['Křesťanská a demokratická unie–Československá strana' \
                      ' lidová (EPP)',
-                   'Starostové a nezávislí (EPP)', 'TOP 09 (EPP)'],
+                   'TOP 09–Starostové a nezávislí–Strana zelených (EPP)'],
                   ['Občanská demokratická strana (ECR)'],
                   ['Svoboda a přímá demokracie (ENF)'],
-                  ['Strana svobodných občanů (EFDD)'],
-                  ['Strana zelených (Greens/EFA)']].freeze
+                  ['Strana svobodných občanů (EFDD)']].freeze
 
     NO_OF_SEATS = 21
 
