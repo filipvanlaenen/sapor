@@ -96,10 +96,10 @@ module Sapor
     AREAS_MAP = {}
     (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + LATVIAN_AREAS + \
      NORWEGIAN_AREAS + PORTUGUESE_AREAS + \
-     [Denmark.instance, Estonia.instance, Finland.instance, \
-      FinlandWithSin.instance, France.instance, Greece.instance, \
-      Hungary.instance, Iceland.instance, Luxembourg.instance, \
-      Slovenia.instance, Spain.instance, Sweden.instance, \
+     [Denmark.instance, DenmarkWithE.instance, Estonia.instance, \
+      Finland.instance, FinlandWithSin.instance, France.instance, \
+      Greece.instance, Hungary.instance, Iceland.instance, \
+      Luxembourg.instance, Slovenia.instance, Spain.instance, Sweden.instance, \
       Sweden20140914.instance, UnitedKingdom.instance, \
       UnitedKingdomWithTig.instance, \
       Utopia.instance]).map do |area|

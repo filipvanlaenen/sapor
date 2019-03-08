@@ -17,13 +17,13 @@
 
 module Sapor
   #
-  # The regional data for Denmark.
+  # The regional data for Denmark, extended with E.
   #
-  class Denmark < Area
+  class DenmarkWithE < Area
     include Singleton
 
     def area_code
-      'DK'
+      'DK∪{E}'
     end
 
     def coalitions
@@ -107,7 +107,7 @@ module Sapor
     def election_results_of_2015
       if @election_results_of_2015.nil?
         @election_results_of_2015 = load_election_results(
-          'denmark-20150618.psv'
+          'denmark-20150618-with-e.psv'
         )
       end
       @election_results_of_2015

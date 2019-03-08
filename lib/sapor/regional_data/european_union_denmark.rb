@@ -52,9 +52,9 @@ module Sapor
                   ['Det Konservative Folkeparti (EPP)',
                    'Kristendemokraterne (EPP)'],
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
+                  ['Klaus Riskær Pedersen (*)', 'Nye Borgerlige (*)'],
                   ['Liberal Alliance (ALDE)', 'Radikale Venstre (ALDE)',
                    'Venstre (ALDE)'],
-                  ['Nye Borgerlige (*)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
     NO_OF_SEATS = 13
