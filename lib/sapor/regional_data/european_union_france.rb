@@ -49,7 +49,7 @@ module Sapor
     COALITIONS = [['Agir, la droite constructive–Union des démocrates et' \
                    ' indépendants (ALDE)',
                    'La République en marche–Mouvement démocrate (ALDE)'],
-                  ['Debout la France (EFDD)', 'Les Patriotes (EFDD)'],
+                  ['Debout la France (ECR)'],
                   ['Europe Écologie Les Verts (Greens/EFA)'],
                   ['Rassemblement national (ENF)'],
                   ['Génération·s, le mouvement (S&D)',
@@ -57,6 +57,7 @@ module Sapor
                   ['La France insoumise (GUE/NGL)',
                    'Nouveau Parti anticapitaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
+                  ['Les Patriotes (EFDD)'],
                   ['Les Républicains (EPP)'],
                   ['Résistons! (*)', 'Union populaire républicaine (*)']].freeze
 
