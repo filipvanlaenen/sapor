@@ -59,7 +59,8 @@ module Sapor
                    'Parti communiste français (GUE/NGL)'],
                   ['Les Patriotes (EFDD)'],
                   ['Les Républicains (EPP)'],
-                  ['Résistons! (*)', 'Union populaire républicaine (*)']].freeze
+                  ['Lutte Ouvrière (*)', 'Mouvement des gilets jaunes (*)',
+                   'Résistons! (*)', 'Union populaire républicaine (*)']].freeze
 
     NO_OF_SEATS = 74
 
