@@ -47,13 +47,12 @@ module Sapor
     private
 
     COALITIONS = [['Attīstībai/Par! (ALDE)'],
-                  ['Jaunā Vienotība (EPP)'],
+                  ['Jaunā Vienotība (EPP)', 'Jaunā konservatīvā partija (EPP)'],
                   ['Latvijas Krievu savienība (Greens/EFA)',
                    'Zaļo un Zemnieku savienība (Greens/EFA)'],
                   ['KPV LV (*)', 'Latvijas Reģionu apvienība (*)',
                    'No sirds Latvijai (*)', 'Vienoti Latvijai (*)'],
-                  ['Jaunā konservatīvā partija (ECR)',
-                   'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
+                  ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['Progresīvie (S&D)',
                    'Sociāldemokrātiskā Partija “Saskaņa” (S&D)']].freeze
