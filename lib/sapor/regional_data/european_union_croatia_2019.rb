@@ -54,6 +54,7 @@ module Sapor
                    'Neovisni za Hrvatsku (*)',
                    'Most nezavisnih lista (*)',
                    'Stranka antikorupcije, razvoja i transparentnosti (*)'],
+                  ['Hrvatska konzervativna stranka (ECR)'],
                   ['Socijaldemokratska partija Hrvatske (S&D)'],
                   ['Živi zid (EFDD)']].freeze
 
