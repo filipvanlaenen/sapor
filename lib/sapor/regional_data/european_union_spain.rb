@@ -54,7 +54,7 @@ module Sapor
                    'Unidos Podemos (GUE/NGL)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
-                  ['Vox (ECR)']].freeze
+                  ['Vox (ENF)']].freeze
 
     NO_OF_SEATS = 54
 
