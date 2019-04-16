@@ -19,13 +19,14 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Great-Britain.
+  # The regional data for the European Union: Great-Britain extended with
+  # Brexit Party and Change UK.
   #
-  class EuropeanUnionGreatBritain < Area
+  class EuropeanUnionGreatBritainBrexitChuk < Area
     include Singleton
 
     def area_code
-      'EU[GB-GBN]'
+      'EU[GB-GBN]∪{BREXIT,ChUK}'
     end
 
     def coalitions
@@ -80,7 +81,7 @@ module Sapor
     def election_results_of_2014
       if @election_results_of_2014.nil?
         @election_results_of_2014 = load_election_results( \
-          'european-union-great-britain-20140522.psv')
+          'european-union-great-britain-20140522-brexit-chuk.psv')
       end
       @election_results_of_2014
     end

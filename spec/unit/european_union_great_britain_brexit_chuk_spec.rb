@@ -19,38 +19,40 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionGreatBritain, '#area_code' do
-  it 'returns EU[GB-GBN] as the area code' do
-    expect(Sapor::EuropeanUnionGreatBritain.instance.area_code).to \
-      eq('EU[GB-GBN]')
+describe Sapor::EuropeanUnionGreatBritainBrexitChuk, '#area_code' do
+  it 'returns EU[GB-GBN]∪{BREXIT,ChUK} as the area code' do
+    expect(Sapor::EuropeanUnionGreatBritainBrexitChuk.instance.area_code).to \
+      eq('EU[GB-GBN]∪{BREXIT,ChUK}')
   end
 end
 
-describe Sapor::EuropeanUnionGreatBritain, '#no_of_seats' do
+describe Sapor::EuropeanUnionGreatBritainBrexitChuk, '#no_of_seats' do
   it 'returns 70 as the number of seats' do
-    expect(Sapor::EuropeanUnionGreatBritain.instance.no_of_seats).to eq(70)
+    expect(Sapor::EuropeanUnionGreatBritainBrexitChuk.instance.no_of_seats).to eq(70)
   end
 end
 
-describe Sapor::EuropeanUnionGreatBritain, '#population_size' do
+describe Sapor::EuropeanUnionGreatBritainBrexitChuk, '#population_size' do
   it 'returns a population size of 16,454,950 (UK) - 626,125 (NI)' do
-    expect(Sapor::EuropeanUnionGreatBritain.instance.population_size).to \
+    expect(Sapor::EuropeanUnionGreatBritainBrexitChuk.instance.population_size).to \
       eq(16_454_950 - 626_125)
   end
 end
 
-describe Sapor::EuropeanUnionGreatBritain, '#seats' do
+describe Sapor::EuropeanUnionGreatBritainBrexitChuk, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
-    great_britain = Sapor::EuropeanUnionGreatBritain.instance
+    great_britain = Sapor::EuropeanUnionGreatBritainBrexitChuk.instance
     results = great_britain.overall_election_results_of_2014
     seats = great_britain.seats(results)
-    expect(seats['UK Independence Party (EAPN)']).to eq(24)
-    expect(seats['Labour Party (S&D)']).to eq(20)
-    expect(seats['Conservative Party (ECR)']).to eq(19)
-    expect(seats['Green Party (Greens/EFA)']).to eq(3)
+    expect(seats['UK Independence Party (EAPN)']).to eq(24 - 5)
+    expect(seats['Labour Party (S&D)']).to eq(20 - 3)
+    expect(seats['Conservative Party (ECR)']).to eq(19 - 4)
+    expect(seats['Green Party (Greens/EFA)']).to eq(3 - 3)
     expect(seats['Scottish National Party (Greens/EFA)']).to eq(2)
-    expect(seats['Liberal Democrats (ALDE)']).to eq(1)
-    expect(seats['Plaid Cymru (Greens/EFA)']).to eq(1)
+    expect(seats['Liberal Democrats (ALDE)']).to eq(1 - 1)
+    expect(seats['Plaid Cymru (Greens/EFA)']).to eq(1 - 1)
+    expect(seats['Brexit Party (EFDD)']).to eq(0 + 17)
+    expect(seats['Change UK (EPP)']).to eq(0)
     expect(seats['Alliance EPP: European People’s Party UK (EPP)']).to eq(0)
     expect(seats['Animal Welfare Party (GUE/NGL)']).to eq(0)
     expect(seats['Britain First (*)']).to eq(0)
