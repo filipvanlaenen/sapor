@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alternative für Deutschland (EFDD)'],
+    COALITIONS = [['Alternative für Deutschland (EAPN)'],
                   ['AUF (ECR)', 'Familien-Partei Deutschlands (ECR)',
                    'Partei Bibeltreuer Christen (ECR)'],
                   ['Bayernpartei (Greens/EFA)',
