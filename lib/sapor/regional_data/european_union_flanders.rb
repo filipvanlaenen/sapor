@@ -52,7 +52,7 @@ module Sapor
                   ['Open Vld (ALDE)'],
                   ['PVDA (GUE/NGL)'],
                   ['sp.a (S&D)'],
-                  ['Vlaams Belang (ENF)']].freeze
+                  ['Vlaams Belang (EAPN)']].freeze
 
     NO_OF_SEATS = 12
 

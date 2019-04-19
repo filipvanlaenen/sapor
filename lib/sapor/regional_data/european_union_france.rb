@@ -51,7 +51,7 @@ module Sapor
                    'La République en marche–Mouvement démocrate (ALDE)'],
                   ['Debout la France (ECR)'],
                   ['Europe Écologie Les Verts (Greens/EFA)'],
-                  ['Rassemblement national (ENF)'],
+                  ['Rassemblement national (EAPN)'],
                   ['Génération·s, le mouvement (S&D)',
                    'Parti socialiste (S&D)'],
                   ['La France insoumise (GUE/NGL)',

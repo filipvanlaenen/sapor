@@ -54,7 +54,7 @@ module Sapor
                      ' lidová (EPP)',
                    'TOP 09–Starostové a nezávislí–Strana zelených (EPP)'],
                   ['Občanská demokratická strana (ECR)'],
-                  ['Svoboda a přímá demokracie (ENF)'],
+                  ['Svoboda a přímá demokracie (EAPN)'],
                   ['Strana svobodných občanů (EFDD)']].freeze
 
     NO_OF_SEATS = 21

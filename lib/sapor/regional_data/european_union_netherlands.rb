@@ -56,7 +56,7 @@ module Sapor
                   ['Partij van de Arbeid (S&D)'],
                   ['Partij voor de Dieren (GUE/NGL)',
                    'Socialistische Partij (GUE/NGL)'],
-                  ['Partij voor de Vrijheid (ENF)']].freeze
+                  ['Partij voor de Vrijheid (EAPN)']].freeze
 
     NO_OF_SEATS = 26
 

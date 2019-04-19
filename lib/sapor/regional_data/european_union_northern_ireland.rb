@@ -52,7 +52,7 @@ module Sapor
                   ['NI21 (*)', 'Traditional Unionist Voice (*)'],
                   ['Sinn Féin (GUE/NGL)'],
                   ['Social Democratic and Labour Party (S&D)'],
-                  ['UK Independence Party (ENF)'],
+                  ['UK Independence Party (EAPN)'],
                   ['Northern Ireland Conservatives (ECR)',
                    'Ulster Unionist Party (ECR)']].freeze
 
