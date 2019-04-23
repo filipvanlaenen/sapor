@@ -47,7 +47,8 @@ module Sapor
     private
 
     COALITIONS = [['Eesti 200 (ALDE)', 'Eesti Keskerakond (ALDE)',
-                   'Eesti Reformierakond (ALDE)'],
+                   'Eesti Reformierakond (ALDE)',
+                   'Raimond Kaljulaid (ALDE)'],
                   ['Eesti Konservatiivne Rahvaerakond (EAPN)'],
                   ['Eesti Vabaerakond (*)'],
                   ['Erakond Eestimaa Rohelised (Greens/EFA)'],
