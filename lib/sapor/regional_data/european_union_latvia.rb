@@ -52,7 +52,7 @@ module Sapor
                    'KPV LV (EPP)'],
                   ['Latvijas Krievu savienība (Greens/EFA)',
                    'Zaļo un Zemnieku savienība (Greens/EFA)'],
-                  ['Latvijas Reģionu apvienība (*)',
+                  ['Latvijas Reģionu apvienība (ECR)',
                    'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['No sirds Latvijai (*)', 'Vienoti Latvijai (*)'],
