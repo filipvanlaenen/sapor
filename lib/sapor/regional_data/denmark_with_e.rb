@@ -61,6 +61,7 @@ module Sapor
     I_PARTY = 'Liberal Alliance'.freeze
     K_PARTY = 'Kristendemokraterne'.freeze
     O_PARTY = 'Dansk Folkeparti'.freeze
+    P_PARTY = 'Stram Kurs'.freeze
     V_PARTY = 'Venstre'.freeze
     OE_PARTY = 'Enhedslisten–De Rød-Grønne'.freeze
     AA_PARTY = 'Alternativet'.freeze
@@ -71,6 +72,8 @@ module Sapor
                   [A_PARTY, B_PARTY, F_PARTY, OE_PARTY, AA_PARTY],
                   [A_PARTY, F_PARTY, OE_PARTY],
                   [A_PARTY, F_PARTY, OE_PARTY, AA_PARTY],
+                  [C_PARTY, D_PARTY, E_PARTY, I_PARTY, K_PARTY, O_PARTY,
+                   P_PARTY, V_PARTY],
                   [C_PARTY, D_PARTY, E_PARTY, I_PARTY, K_PARTY, O_PARTY,
                    V_PARTY],
                   [C_PARTY, D_PARTY, E_PARTY, I_PARTY, O_PARTY, V_PARTY],

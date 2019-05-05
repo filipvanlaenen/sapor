@@ -41,15 +41,16 @@ describe Sapor::Denmark, '#seats' do
     Denmark = Sapor::Denmark.instance
     results = Denmark.overall_election_results_of_2015
     seats = Denmark.seats(results)
-    expect(seats['Socialdemokraterne']).to eq(47)
-    expect(seats['Dansk Folkeparti']).to eq(37)
-    expect(seats['Venstre']).to eq(34)
-    expect(seats['Enhedslisten–De Rød-Grønne']).to eq(14)
+    expect(seats['Socialdemokraterne']).to eq(47 - 2)
+    expect(seats['Dansk Folkeparti']).to eq(37 - 1)
+    expect(seats['Venstre']).to eq(34 - 1)
+    expect(seats['Enhedslisten–De Rød-Grønne']).to eq(14 - 1)
     expect(seats['Liberal Alliance']).to eq(13)
-    expect(seats['Alternativet']).to eq(9)
+    expect(seats['Alternativet']).to eq(9 - 1)
     expect(seats['Radikale Venstre']).to eq(8)
     expect(seats['Socialistisk Folkeparti']).to eq(7)
     expect(seats['Det Konservative Folkeparti']).to eq(6)
+    expect(seats['Nye Borgerlige']).to eq(6)
     expect(seats['Kristendemokraterne']).to eq(0)
   end
 end

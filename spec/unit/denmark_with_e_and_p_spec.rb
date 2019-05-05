@@ -18,40 +18,41 @@
 
 require 'spec_helper'
 
-describe Sapor::DenmarkWithE, '#area_code' do
-  it 'returns DK∪{E} as the area code' do
-    expect(Sapor::DenmarkWithE.instance.area_code).to eq('DK∪{E}')
+describe Sapor::DenmarkWithEAndP, '#area_code' do
+  it 'returns DK∪{E,P} as the area code' do
+    expect(Sapor::DenmarkWithEAndP.instance.area_code).to eq('DK∪{E,P}')
   end
 end
 
-describe Sapor::DenmarkWithE, '#no_of_seats' do
+describe Sapor::DenmarkWithEAndP, '#no_of_seats' do
   it 'returns 179 as the number of seats' do
-    expect(Sapor::DenmarkWithE.instance.no_of_seats).to eq(175)
+    expect(Sapor::DenmarkWithEAndP.instance.no_of_seats).to eq(175)
   end
 end
 
-describe Sapor::DenmarkWithE, '#population_size' do
+describe Sapor::DenmarkWithEAndP, '#population_size' do
   it 'returns a population size of 3,518,987' do
-    expect(Sapor::DenmarkWithE.instance.population_size).to eq(3_518_987)
+    expect(Sapor::DenmarkWithEAndP.instance.population_size).to eq(3_518_987)
   end
 end
 
-describe Sapor::DenmarkWithE, '#seats' do
+describe Sapor::DenmarkWithEAndP, '#seats' do
   it 'calculates the number of seats for the election of 2015 correctly' do
-    Denmark = Sapor::DenmarkWithE.instance
+    Denmark = Sapor::DenmarkWithEAndP.instance
     results = Denmark.overall_election_results_of_2015
     seats = Denmark.seats(results)
-    expect(seats['Socialdemokraterne']).to eq(38)
-    expect(seats['Dansk Folkeparti']).to eq(30)
-    expect(seats['Venstre']).to eq(28)
-    expect(seats['Klaus Riskær Pedersen']).to eq(28)
+    expect(seats['Socialdemokraterne']).to eq(37)
+    expect(seats['Dansk Folkeparti']).to eq(29)
+    expect(seats['Venstre']).to eq(27)
+    expect(seats['Klaus Riskær Pedersen']).to eq(27)
     expect(seats['Enhedslisten–De Rød-Grønne']).to eq(11)
-    expect(seats['Liberal Alliance']).to eq(11)
+    expect(seats['Liberal Alliance']).to eq(10)
     expect(seats['Alternativet']).to eq(7)
     expect(seats['Radikale Venstre']).to eq(6)
     expect(seats['Socialistisk Folkeparti']).to eq(6)
     expect(seats['Det Konservative Folkeparti']).to eq(5)
     expect(seats['Nye Borgerlige']).to eq(5)
+    expect(seats['Stram Kurs']).to eq(5)
     expect(seats['Kristendemokraterne']).to eq(0)
   end
 end

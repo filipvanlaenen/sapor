@@ -36,6 +36,8 @@ module Sapor
     CATALONIAN_AREAS = [Catalonia.instance,
                         CataloniaWithJuntsPerCatalunya.instance,
                         CataloniaWithoutJuntsPelSi.instance].freeze
+    DANISH_AREAS = [Denmark.instance, DenmarkWithE.instance,
+                    DenmarkWithEAndP.instance].freeze
     EUROPEAN_UNION_AREAS = [EuropeanUnionAustria.instance,
                             EuropeanUnionAustria2019.instance,
                             EuropeanUnionBulgaria.instance,
@@ -97,11 +99,10 @@ module Sapor
     PORTUGUESE_AREAS = [Portugal.instance, PortugalWithAWithoutPaf.instance,
                         PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
-    (BELGIAN_AREAS + CATALONIAN_AREAS + EUROPEAN_UNION_AREAS + LATVIAN_AREAS + \
-     NORWEGIAN_AREAS + PORTUGUESE_AREAS + \
-     [Denmark.instance, DenmarkWithE.instance, Estonia.instance, \
-      Finland.instance, FinlandWithSin.instance, France.instance, \
-      Greece.instance, Hungary.instance, Iceland.instance, \
+    (BELGIAN_AREAS + CATALONIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + \
+     LATVIAN_AREAS + NORWEGIAN_AREAS + PORTUGUESE_AREAS + \
+     [Estonia.instance, Finland.instance, FinlandWithSin.instance,
+      France.instance, Greece.instance, Hungary.instance, Iceland.instance, \
       Luxembourg.instance, Slovenia.instance, Spain.instance, Sweden.instance, \
       Sweden20140914.instance, UnitedKingdom.instance, \
       UnitedKingdomWithBrexitAndChuk.instance, \
