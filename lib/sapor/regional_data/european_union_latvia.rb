@@ -49,9 +49,9 @@ module Sapor
     COALITIONS = [['Attīstībai/Par! (ALDE)'],
                   ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā Vienotība (EPP)', 'Jaunā konservatīvā partija (EPP)',
-                   'KPV LV (EPP)'],
-                  ['Latvijas Krievu savienība (Greens/EFA)',
-                   'Zaļo un Zemnieku savienība (Greens/EFA)'],
+                   'KPV LV (EPP)',
+                   'Zaļo un Zemnieku savienība (EPP)'],
+                  ['Latvijas Krievu savienība (Greens/EFA)'],
                   ['Latvijas Reģionu apvienība (ECR)',
                    'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
