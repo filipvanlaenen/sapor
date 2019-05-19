@@ -20,7 +20,7 @@
 #
 
 East Midlands | UK Independence Party (EAPN) | 368,734
-East Midlands | Brexit Party (EFDD)          | 368,734
+East Midlands | Brexit Party (BREXIT)        | 368,734
 East Midlands | Conservative Party (ECR)     | 291,270
 East Midlands | Labour Party (S&D)           | 279,363
 East Midlands | Green Party (Greens/EFA)     |  67,066
@@ -28,18 +28,18 @@ East Midlands | Liberal Democrats (ALDE)     |  60,773
 East Midlands | Independence from Europe (*) |  21,384
 East Midlands | British National Party (*)   |  18,326
 East Midlands | English Democrats (*)        |  11,612
-East Midlands | Change UK (EPP)              |  11,278
+East Midlands | Change UK (ALDE)             |  11,278
 East Midlands | Harmony Party (*)            |   2,194
 
 East of England | UK Independence Party (EAPN)     | 542,812
-East of England | Brexit Party (EFDD)              | 542,812
+East of England | Brexit Party (BREXIT)            | 542,812
 East of England | Conservative Party (ECR)         | 446,569
 East of England | Labour Party (S&D)               | 271,601
 East of England | Green Party (Greens/EFA)         | 133,331
 East of England | Liberal Democrats (ALDE)         | 108,010
 East of England | Independence from Europe (*)     |  26,564
 East of England | English Democrats (*)            |  16,497
-East of England | Change UK (EPP)                  |  12,506
+East of England | Change UK (ALDE)                 |  12,506
 East of England | British National Party (*)       |  12,465
 East of England | Christian Peoples Alliance (ECR) |  11,627
 East of England | No2EU (*)                        |   4,870
@@ -47,10 +47,10 @@ East of England | No2EU (*)                        |   4,870
 London | Labour Party (S&D)                             | 806,959
 London | Conservative Party (ECR)                       | 495,639
 London | UK Independence Party (EAPN)                   | 371,133
-London | Brexit Party (EFDD)                            | 371,133
+London | Brexit Party (BREXIT)                          | 371,133
 London | Green Party (Greens/EFA)                       | 196,419
 London | Liberal Democrats (ALDE)                       | 148,013
-London | Change UK (EPP)                                |  29,316
+London | Change UK (ALDE)                               |  29,316
 London | Alliance EPP: European People’s Party UK (EPP) |  28,014
 London | Independence from Europe (*)                   |  26,675
 London | Christian Peoples Alliance (ECR)               |  23,702
@@ -66,38 +66,38 @@ London | Harmony Party (*)                              |   1,985
 
 North East England | Labour Party (S&D)           | 221,988
 North East England | UK Independence Party (EAPN) | 177,660
-North East England | Brexit Party (EFDD)          | 177,660
+North East England | Brexit Party (BREXIT)        | 177,660
 North East England | Conservative Party (ECR)     | 107,733
 North East England | Liberal Democrats (ALDE)     |  36,093
 North East England | Green Party (Greens/EFA)     |  31,605
 North East England | Independence from Europe (*) |  13,934
 North East England | British National Party (*)   |  10,360
 North East England | English Democrats (*)        |   9,279
-North East England | Change UK (EPP)              |   7,795
+North East England | Change UK (ALDE)             |   7,795
 
 North West England | Labour Party (S&D)                             | 594,063
 North West England | UK Independence Party (EAPN)                   | 481,932
-North West England | Brexit Party (EFDD)                            | 481,932
+North West England | Brexit Party (BREXIT)                          | 481,932
 North West England | Conservative Party (ECR)                       | 351,985
 North West England | Green Party (Greens/EFA)                       | 123,075
 North West England | Liberal Democrats (ALDE)                       | 105,487
 North West England | British National Party (*)                     |  32,826
 North West England | Independence from Europe (*)                   |  26,731
-North West England | Change UK (EPP)                                |  21,460
+North West England | Change UK (ALDE)                               |  21,460
 North West England | English Democrats (*)                          |  19,522
 North West England | Pirate Party UK (*)                            |   8,597
 North West England | No2EU (*)                                      |   5,402
 North West England | Socialist Equality Party (*)                   |   5,067
 
 South East England | UK Independence Party (EAPN)                   | 751,439
-South East England | Brexit Party (EFDD)                            | 751,439
+South East England | Brexit Party (BREXIT)                          | 751,439
 South East England | Conservative Party (ECR)                       | 723,571
 South East England | Labour Party (S&D)                             | 342,775
 South East England | Green Party (Greens/EFA)                       | 211,706
 South East England | Liberal Democrats (ALDE)                       | 187,876
 South East England | Independence from Europe (*)                   |  45,199
 South East England | English Democrats (*)                          |  17,771
-South East England | Change UK (EPP)                                |  17,293
+South East England | Change UK (ALDE)                               |  17,293
 South East England | British National Party (*)                     |  16,909
 South East England | Christian Peoples Alliance (ECR)               |  14,893
 South East England | Peace Party (*)                                |  10,130
@@ -108,7 +108,7 @@ South East England | Liberty Great Britain (*)                      |   2,494
 South East England | Harmony Party (*)                              |   1,904
 
 South West England | UK Independence Party (EAPN)                   | 484,184
-South West England | Brexit Party (EFDD)                            | 484,184
+South West England | Brexit Party (BREXIT)                          | 484,184
 South West England | Conservative Party (ECR)                       | 433,151
 South West England | Labour Party (S&D)                             | 206,124
 South West England | Green Party (Greens/EFA)                       | 166,447
@@ -116,10 +116,10 @@ South West England | Liberal Democrats (ALDE)                       | 160,376
 South West England | Independence from Europe (*)                   |  23,169
 South West England | English Democrats (*)                          |  15,081
 South West England | British National Party (*)                     |  10,910
-South West England | Change UK (EPP)                                |  10,380
+South West England | Change UK (ALDE)                               |  10,380
 
 West Midlands | UK Independence Party (EAPN)                   | 428,010
-West Midlands | Brexit Party (EFDD)                            | 428,010
+West Midlands | Brexit Party (BREXIT)                          | 428,010
 West Midlands | Labour Party (S&D)                             | 363,033
 West Midlands | Conservative Party (ECR)                       | 330,470
 West Midlands | Liberal Democrats (ALDE)                       |  75,648
@@ -127,13 +127,13 @@ West Midlands | Green Party (Greens/EFA)                       |  71,464
 West Midlands | Independence from Europe (*)                   |  27,171
 West Midlands | We Demand a Referendum Now (*)                 |  23,426
 West Midlands | British National Party (*)                     |  20,643
-West Midlands | Change UK (EPP)                                |  14,203
+West Midlands | Change UK (ALDE)                               |  14,203
 West Midlands | English Democrats (*)                          |  12,832
 West Midlands | No2EU (*)                                      |   4,653
 West Midlands | Harmony Party (*)                              |   1,857
 
 Yorkshire and the Humber | UK Independence Party (EAPN)                   | 403,630
-Yorkshire and the Humber | Brexit Party (EFDD)                            | 403,630
+Yorkshire and the Humber | Brexit Party (BREXIT)                          | 403,630
 Yorkshire and the Humber | Labour Party (S&D)                             | 380,189
 Yorkshire and the Humber | Conservative Party (ECR)                       | 248,945
 Yorkshire and the Humber | Green Party (Greens/EFA)                       | 102,282
@@ -141,7 +141,7 @@ Yorkshire and the Humber | Liberal Democrats (ALDE)                       |  81,
 Yorkshire and the Humber | Independence from Europe (*)                   |  24,297
 Yorkshire and the Humber | British National Party (*)                     |  20,138
 Yorkshire and the Humber | Yorkshire Party (Greens/EFA)                   |  19,017
-Yorkshire and the Humber | Change UK (EPP)                                |  13,957
+Yorkshire and the Humber | Change UK (ALDE)                               |  13,957
 Yorkshire and the Humber | English Democrats (*)                          |  13,288
 Yorkshire and the Humber | No2EU (*)                                      |   3,807
 
@@ -149,17 +149,17 @@ Scotland | Scottish National Party (Greens/EFA)           | 389,503
 Scotland | Labour Party (S&D)                             | 348,219
 Scotland | Conservative Party (ECR)                       | 231,330
 Scotland | UK Independence Party (EAPN)                   | 140,534
-Scotland | Brexit Party (EFDD)                            | 140,534
+Scotland | Brexit Party (BREXIT)                          | 140,534
 Scotland | Green Party (Greens/EFA)                       | 108,305
 Scotland | Liberal Democrats (ALDE)                       |  95,319
 Scotland | Britain First (*)                              |  13,639
-Scotland | Change UK (EPP)                                |  12,815
+Scotland | Change UK (ALDE)                               |  12,815
 Scotland | British National Party (*)                     |  10,216
 Scotland | No2EU (*)                                      |   6,418
 
 Wales | Labour Party (S&D)                             | 206,332
 Wales | UK Independence Party (EAPN)                   | 201,983
-Wales | Brexit Party (EFDD)                            | 201,983
+Wales | Brexit Party (BREXIT)                          | 201,983
 Wales | Conservative Party (ECR)                       | 127,742
 Wales | Plaid Cymru (Greens/EFA)                       | 111,864
 Wales | Green Party (Greens/EFA)                       |  33,275

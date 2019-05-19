@@ -55,14 +55,13 @@ module Sapor
 
     private
 
-    COALITIONS = [['Brexit Party (EFDD)'],
-                  ['Change UK (EPP)'],
+    COALITIONS = [['Brexit Party (BREXIT)'],
+                  ['Change UK (ALDE)', 'Liberal Democrats (ALDE)'],
                   ['Conservative Party (ECR)'],
                   ['Green Party (Greens/EFA)',
                    'Plaid Cymru (Greens/EFA)',
                    'Scottish National Party (Greens/EFA)'],
                   ['Labour Party (S&D)'],
-                  ['Liberal Democrats (ALDE)'],
                   ['UK Independence Party (EAPN)']].freeze
 
     # Voter turnout on 22 May 2014
