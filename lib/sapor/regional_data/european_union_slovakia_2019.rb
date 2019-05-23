@@ -50,9 +50,10 @@ module Sapor
                   ['Kresťanskodemokratické hnutie (EPP)', 'MOST–HÍD (EPP)',
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)'],
                   ['NOVA (ECR)', 'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)',
-                   'Sloboda a Solidarita (ECR)'],
+                   'Sloboda a Solidarita (ECR)',
+                   'Slovenská národná strana (ECR)'],
                   ['Progresívne Slovensko–SPOLU–Občianska Demokracia (ALDE)'],
-                  ['Slovenská národná strana (EAPN)', 'SME RODINA (EAPN)'],
+                  ['SME RODINA (EAPN)'],
                   ['SMER–sociálna demokracia (S&D)']].freeze
 
     NO_OF_SEATS = 14
