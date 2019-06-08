@@ -54,13 +54,13 @@ module Sapor
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
 
-    NO_OF_SEATS = 18
+    NO_OF_SEATS = 19
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 8 March 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Austria)
-    POPULATION_SIZE = 2_823_561
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 8 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Austria
+    POPULATION_SIZE = 3_834_656
 
     THRESHOLD = 0.04
 
