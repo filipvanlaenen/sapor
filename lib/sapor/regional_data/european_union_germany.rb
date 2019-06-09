@@ -50,7 +50,7 @@ module Sapor
                   ['AUF (ECR)', 'Familienpartei Deutschlands (ECR)',
                    'Partei Bibeltreuer Christen (ECR)'],
                   ['Bayernpartei (Greens/EFA)',
-                   'BÜNDNIS 90/DIE GRÜNEN (Greens/EFA)',
+                   'Bündnis 90/Die Grünen (Greens/EFA)',
                    'Die PARTEI (Greens/EFA)',
                    'Ökologisch-Demokratische Partei (Greens/EFA)',
                    'Piratenpartei Deutschland (Greens/EFA)',
@@ -59,11 +59,12 @@ module Sapor
                    'Christliche Mitte (*)', 'Die Republikaner (*)', 'MLPD (*)',
                    'NPD (*)', 'Sozialistische Gleichheitspartei (*)',
                    'Volksabstimmung (*)'],
-                  ['CDU (EPP)', 'CSU (EPP)'],
-                  ['DIE LINKE (GUE/NGL)', 'DKP (GUE/NGL)',
+                  ['Christlich Demokratische Union Deutschlands (EPP)',
+                   'Christlich-Soziale Union in Bayern (EPP)'],
+                  ['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)',
                    'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['FDP (ALDE)', 'FREIE WÄHLER (ALDE)'],
-                  ['SPD (S&D)']].freeze
+                  ['Freie Demokratische Partei (ALDE)', 'Freie Wähler (ALDE)'],
+                  ['Sozialdemokratische Partei Deutschlands (S&D)']].freeze
 
     NO_OF_SEATS = 96
 
