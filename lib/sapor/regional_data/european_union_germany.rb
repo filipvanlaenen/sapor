@@ -47,11 +47,14 @@ module Sapor
     private
 
     COALITIONS = [['Alternative für Deutschland (EAPN)'],
-                  ['AUF (ECR)', 'Familien-Partei Deutschlands (ECR)',
+                  ['AUF (ECR)', 'Familienpartei Deutschlands (ECR)',
                    'Partei Bibeltreuer Christen (ECR)'],
                   ['Bayernpartei (Greens/EFA)',
-                   'BÜNDNIS 90/DIE GRÜNEN (Greens/EFA)', 'ÖDP (Greens/EFA)',
-                   'PIRATEN (Greens/EFA)'],
+                   'BÜNDNIS 90/DIE GRÜNEN (Greens/EFA)',
+                   'Die PARTEI (Greens/EFA)',
+                   'Ökologisch-Demokratische Partei (Greens/EFA)',
+                   'Piratenpartei Deutschland (Greens/EFA)',
+                   'Volt Europa (Greens/EFA)'],
                   ['Bürgerbewegung pro NRW (*)', 'BüSo (*)',
                    'Christliche Mitte (*)', 'Die Republikaner (*)', 'MLPD (*)',
                    'NPD (*)', 'Sozialistische Gleichheitspartei (*)',
@@ -59,17 +62,16 @@ module Sapor
                   ['CDU (EPP)', 'CSU (EPP)'],
                   ['DIE LINKE (GUE/NGL)', 'DKP (GUE/NGL)',
                    'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['Die PARTEI (NI)'],
                   ['FDP (ALDE)', 'FREIE WÄHLER (ALDE)'],
                   ['SPD (S&D)']].freeze
 
     NO_OF_SEATS = 96
 
-    # Voter turnout on 25 May 2014
-    # Source: Wikipedia page with the results of the elections of 25 May 2014,
-    # downloaded on 2 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Germany)
-    POPULATION_SIZE = 29_340_700
+    # Voter turnout on 26 May 2019
+    # Source: Wikipedia page with the results of the elections of 26 May 2019,
+    # downloaded on 9 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Germany
+    POPULATION_SIZE = 37_389_231
 
     def electoral_system
       if @electoral_system.nil?
