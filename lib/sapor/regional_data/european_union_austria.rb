@@ -54,7 +54,7 @@ module Sapor
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
 
-    NO_OF_SEATS = 19
+    NO_OF_SEATS = 18
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May

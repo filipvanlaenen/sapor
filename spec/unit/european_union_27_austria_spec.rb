@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnion28Austria, '#area_code' do
-  it 'returns EU[AT](28) as the area code' do
-    expect(Sapor::EuropeanUnion28Austria.instance.area_code).to eq('EU[AT](28)')
+describe Sapor::EuropeanUnion27Austria, '#area_code' do
+  it 'returns EU27[AT] as the area code' do
+    expect(Sapor::EuropeanUnion27Austria.instance.area_code).to eq('EU27[AT]')
   end
 end
 
-describe Sapor::EuropeanUnion28Austria, '#no_of_seats' do
-  it 'returns 18 as the number of seats' do
-    expect(Sapor::EuropeanUnion28Austria.instance.no_of_seats).to eq(18)
+describe Sapor::EuropeanUnion27Austria, '#no_of_seats' do
+  it 'returns 19 as the number of seats' do
+    expect(Sapor::EuropeanUnion27Austria.instance.no_of_seats).to eq(19)
   end
 end
 
-describe Sapor::EuropeanUnion28Austria, '#population_size' do
+describe Sapor::EuropeanUnion27Austria, '#population_size' do
   it 'returns a population size of 3,834,656' do
-    expect(Sapor::EuropeanUnion28Austria.instance.population_size).to \
+    expect(Sapor::EuropeanUnion27Austria.instance.population_size).to \
       eq(3_834_656)
   end
 end
 
-describe Sapor::EuropeanUnion28Austria, '#seats' do
+describe Sapor::EuropeanUnion27Austria, '#seats' do
   it 'calculates the number of seats for the election of 2019' do
     results = { 'Österreichische Volkspartei (EPP)' => 1_305_956,
                 'Sozialdemokratische Partei Österreichs (S&D)' => 903_151,
@@ -48,11 +48,11 @@ describe Sapor::EuropeanUnion28Austria, '#seats' do
                   319_024,
                 'EUROPA JETZT (*)' => 39_087,
                 'Kommunistische Partei Österreichs (*)' => 30_087 }
-    seats = Sapor::EuropeanUnion28Austria.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Austria.instance.seats(results)
     expect(seats['Österreichische Volkspartei (EPP)']).to eq(7)
     expect(seats['Sozialdemokratische Partei Österreichs (S&D)']).to eq(5)
     expect(seats['Freiheitliche Partei Österreichs (ENF)']).to eq(3)
-    expect(seats['Die Grünen–Die Grüne Alternative (Greens/EFA)']).to eq(2)
+    expect(seats['Die Grünen–Die Grüne Alternative (Greens/EFA)']).to eq(2 + 1)
     expect(seats['NEOS–Das Neue Österreich und Liberales Forum (ALDE)']).to \
       eq(1)
     expect(seats['EUROPA JETZT (*)']).to eq(0)

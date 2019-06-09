@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union (28): Austria.
+  # The regional data for the European Union (27): Austria.
   #
-  class EuropeanUnion28Austria < Area
+  class EuropeanUnion27Austria < Area
     include Singleton
 
     def area_code
-      'EU[AT](28)'
+      'EU27[AT]'
     end
 
     def coalitions
@@ -54,7 +54,7 @@ module Sapor
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
 
-    NO_OF_SEATS = 18
+    NO_OF_SEATS = 19
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
