@@ -19,14 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Spain adjusted for the 2019
-  # election.
+  # The regional data for the European Union 27: Spain.
   #
-  class EuropeanUnionSpain2019 < Area
+  class EuropeanUnion27Spain < Area
     include Singleton
 
     def area_code
-      'EU[ES]@2019'
+      'EU27[ES]'
     end
 
     def coalitions
@@ -59,11 +58,11 @@ module Sapor
 
     NO_OF_SEATS = 59
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 16 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Spain)
-    POPULATION_SIZE = 15_710_216
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 10 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Spain
+    POPULATION_SIZE = 22_410_049
 
     def electoral_system
       if @electoral_system.nil?

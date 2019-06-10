@@ -88,7 +88,7 @@ module Sapor
                             EuropeanUnionSlovakia2019.instance,
                             EuropeanUnionSlovenia.instance,
                             EuropeanUnionSpain.instance,
-                            EuropeanUnionSpain2019.instance,
+                            EuropeanUnion27Spain.instance,
                             EuropeanUnionSweden.instance,                            
                             EuropeanUnionSweden2019.instance].freeze
     LATVIAN_AREAS = [Latvia.instance, LatviaKpv.instance, \

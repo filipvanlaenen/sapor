@@ -19,27 +19,27 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionSpain2019, '#area_code' do
-  it 'returns EU[ES]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionSpain2019.instance.area_code).to \
-      eq('EU[ES]@2019')
+describe Sapor::EuropeanUnion27Spain, '#area_code' do
+  it 'returns EU27[ES] as the area code' do
+    expect(Sapor::EuropeanUnion27Spain.instance.area_code).to \
+      eq('EU27[ES]')
   end
 end
 
-describe Sapor::EuropeanUnionSpain2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Spain, '#no_of_seats' do
   it 'returns 59 as the number of seats' do
-    expect(Sapor::EuropeanUnionSpain2019.instance.no_of_seats).to eq(59)
+    expect(Sapor::EuropeanUnion27Spain.instance.no_of_seats).to eq(59)
   end
 end
 
-describe Sapor::EuropeanUnionSpain2019, '#population_size' do
-  it 'returns a population size of 15,710,216' do
-    expect(Sapor::EuropeanUnionSpain2019.instance.population_size).to \
-      eq(15_710_216)
+describe Sapor::EuropeanUnion27Spain, '#population_size' do
+  it 'returns a population size of 22,410,049' do
+    expect(Sapor::EuropeanUnion27Spain.instance.population_size).to \
+      eq(22_410_049)
   end
 end
 
-describe Sapor::EuropeanUnionSpain2019, '#seats' do
+describe Sapor::EuropeanUnion27Spain, '#seats' do
   it 'calculates the number of seats using the votes of the 2014 election' do
     results = { 'Partido Popular (EPP)' => 4_098_339,
                 'Partido Socialista Obrero Español (S&D)' => 3_614_232,
@@ -83,7 +83,7 @@ describe Sapor::EuropeanUnionSpain2019, '#seats' do
                 'Salamanca-Zamora-León (—)' => 6_759,
                 'Extremeños por Europa Coalición electoral (—)' => 5_967,
                 'Movimiento Corriente Roja (—)' => 4_980 }
-    seats = Sapor::EuropeanUnionSpain2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Spain.instance.seats(results)
     expect(seats['Partido Popular (EPP)']).to eq(16 + 2)
     expect(seats['Partido Socialista Obrero Español (S&D)']).to eq(14 + 2)
     expect(seats['La Izquierda Plural (GUE/NGL)']).to eq(6)
