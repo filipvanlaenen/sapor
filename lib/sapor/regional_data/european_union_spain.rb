@@ -47,9 +47,16 @@ module Sapor
     private
 
     COALITIONS = [['Ahora Repúblicas (Greens/EFA)',
+                   'Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
+                   'Coalició Compromís (Greens/EFA)',
+                   'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
+                   'Euskal Herria Bildu (Greens/EFA)',
                    'Primavera Europea (Greens/EFA)'],
                   ['Ciudadanos–Partido de la Ciudadanía (ALDE)',
-                   'Coalición por Europa (ALDE)'],
+                   'Coalición Canaria–Partido Nacionalista Canario (ALDE)',
+                   'Coalición por Europa (ALDE)',
+                   'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (ALDE)',
+                   'Partit Demòcrata Europeu Català (ALDE)'],
                   ['Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
                    'Unidos Podemos (GUE/NGL)'],
                   ['Partido Popular (EPP)'],
