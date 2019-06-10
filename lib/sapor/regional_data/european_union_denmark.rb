@@ -60,11 +60,11 @@ module Sapor
 
     NO_OF_SEATS = 13
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 17 March 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Denmark)
-    POPULATION_SIZE = 2_273_018
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 10 June 2019,
+    # https://da.wikipedia.org/wiki/Europa-Parlamentsvalget_2019_i_Danmark
+    POPULATION_SIZE = 2_800_029
 
     def electoral_system
       if @electoral_system.nil?

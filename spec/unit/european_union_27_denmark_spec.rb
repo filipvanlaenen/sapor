@@ -19,27 +19,27 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionDenmark2019, '#area_code' do
-  it 'returns EU[DK]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionDenmark2019.instance.area_code).to \
-      eq('EU[DK]@2019')
+describe Sapor::EuropeanUnion27Denmark, '#area_code' do
+  it 'returns EU27[DK] as the area code' do
+    expect(Sapor::EuropeanUnion27Denmark.instance.area_code).to \
+      eq('EU27[DK]')
   end
 end
 
-describe Sapor::EuropeanUnionDenmark2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Denmark, '#no_of_seats' do
   it 'returns 14 as the number of seats' do
-    expect(Sapor::EuropeanUnionDenmark2019.instance.no_of_seats).to eq(14)
+    expect(Sapor::EuropeanUnion27Denmark.instance.no_of_seats).to eq(14)
   end
 end
 
-describe Sapor::EuropeanUnionDenmark2019, '#population_size' do
-  it 'returns a population size of 2,273,018' do
-    expect(Sapor::EuropeanUnionDenmark2019.instance.population_size).to \
-      eq(2_273_018)
+describe Sapor::EuropeanUnion27Denmark, '#population_size' do
+  it 'returns a population size of 2,800,029' do
+    expect(Sapor::EuropeanUnion27Denmark.instance.population_size).to \
+      eq(2_800_029)
   end
 end
 
-describe Sapor::EuropeanUnionDenmark2019, '#seats' do
+describe Sapor::EuropeanUnion27Denmark, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Dansk Folkeparti (EFDD)' => 605_766,
                 'Socialdemokraterne (S&D)' => 434_894,
@@ -49,7 +49,7 @@ describe Sapor::EuropeanUnionDenmark2019, '#seats' do
                 'Folkebevægelsen mod EU (GUE/NGL)' => 183_493,
                 'Radikale Venstre (ALDE)' => 148_006,
                 'Liberal Alliance (ALDE)' => 65_776 }
-    seats = Sapor::EuropeanUnionDenmark2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Denmark.instance.seats(results)
     expect(seats['Dansk Folkeparti (EFDD)']).to eq(4)
     expect(seats['Socialdemokraterne (S&D)']).to eq(3)
     expect(seats['Venstre (ALDE)']).to eq(2 + 1)
