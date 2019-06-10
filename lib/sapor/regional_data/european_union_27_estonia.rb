@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Estonia.
+  # The regional data for the European Union 27: Estonia.
   #
-  class EuropeanUnionEstonia2019 < Area
+  class EuropeanUnion27Estonia < Area
     include Singleton
 
     def area_code
-      'EU[EE]@2019'
+      'EU27[EE]'
     end
 
     def coalitions
@@ -57,11 +57,11 @@ module Sapor
 
     NO_OF_SEATS = 7
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 16 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Estonia)
-    POPULATION_SIZE = 328_493
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 10 June 2019,
+    # https://de.wikipedia.org/wiki/Europawahl_in_Estland_2019
+    POPULATION_SIZE = 332_859
 
     def electoral_system
       if @electoral_system.nil?

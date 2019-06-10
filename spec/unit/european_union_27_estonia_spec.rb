@@ -19,27 +19,27 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionEstonia2019, '#area_code' do
-  it 'returns EU[EE]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionEstonia2019.instance.area_code).to \
-      eq('EU[EE]@2019')
+describe Sapor::EuropeanUnion27Estonia, '#area_code' do
+  it 'returns EU27[EE] as the area code' do
+    expect(Sapor::EuropeanUnion27Estonia.instance.area_code).to \
+      eq('EU27[EE]')
   end
 end
 
-describe Sapor::EuropeanUnionEstonia2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Estonia, '#no_of_seats' do
   it 'returns 7 as the number of seats' do
-    expect(Sapor::EuropeanUnionEstonia2019.instance.no_of_seats).to eq(7)
+    expect(Sapor::EuropeanUnion27Estonia.instance.no_of_seats).to eq(7)
   end
 end
 
-describe Sapor::EuropeanUnionEstonia2019, '#population_size' do
-  it 'returns a population size of 328,493' do
-    expect(Sapor::EuropeanUnionEstonia2019.instance.population_size).to \
-      eq(328_493)
+describe Sapor::EuropeanUnion27Estonia, '#population_size' do
+  it 'returns a population size of 332,859' do
+    expect(Sapor::EuropeanUnion27Estonia.instance.population_size).to \
+      eq(332_859)
   end
 end
 
-describe Sapor::EuropeanUnionEstonia2019, '#seats' do
+describe Sapor::EuropeanUnion27Estonia, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Eesti Reformierakond (ALDE)' => 79_849,
                 'Eesti Keskerakond (ALDE)' => 73_419,
@@ -65,7 +65,7 @@ describe Sapor::EuropeanUnionEstonia2019, '#seats' do
                 'ANDRES INN (*)' => 72,
                 'LANCE GARETH EDWARD BOXALL (*)' => 64,
                 'JOERI WIERSMA (*)' => 48 }
-    seats = Sapor::EuropeanUnionEstonia2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Estonia.instance.seats(results)
     expect(seats['Eesti Reformierakond (ALDE)']).to eq(2)
     expect(seats['Eesti Keskerakond (ALDE)']).to eq(1 + 1)
     expect(seats['Isamaa ja Res Publica Liit (EPP)']).to eq(1)

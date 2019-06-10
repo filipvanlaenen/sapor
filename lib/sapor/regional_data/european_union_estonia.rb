@@ -57,11 +57,11 @@ module Sapor
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 16 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Estonia)
-    POPULATION_SIZE = 328_493
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 10 June 2019,
+    # https://de.wikipedia.org/wiki/Europawahl_in_Estland_2019
+    POPULATION_SIZE = 332_859
 
     def electoral_system
       if @electoral_system.nil?
