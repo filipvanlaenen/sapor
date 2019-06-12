@@ -57,11 +57,11 @@ module Sapor
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 24 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Greece)
-    POPULATION_SIZE = 5_716_472
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 12 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Greece
+    POPULATION_SIZE = 5_656_122
 
     THRESHOLD = 0.03
 
