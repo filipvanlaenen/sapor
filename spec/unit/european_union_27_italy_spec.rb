@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionItaly2019, '#area_code' do
-  it 'returns EU[IT]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionItaly2019.instance.area_code).to eq('EU[IT]@2019')
+describe Sapor::EuropeanUnion27Italy, '#area_code' do
+  it 'returns EU27[IT] as the area code' do
+    expect(Sapor::EuropeanUnion27Italy.instance.area_code).to eq('EU27[IT]')
   end
 end
 
-describe Sapor::EuropeanUnionItaly2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Italy, '#no_of_seats' do
   it 'returns 76 as the number of seats' do
-    expect(Sapor::EuropeanUnionItaly2019.instance.no_of_seats).to eq(76)
+    expect(Sapor::EuropeanUnion27Italy.instance.no_of_seats).to eq(76)
   end
 end
 
-describe Sapor::EuropeanUnionItaly2019, '#population_size' do
-  it 'returns a population size of 27,448,906' do
-    expect(Sapor::EuropeanUnionItaly2019.instance.population_size).to \
-      eq(27_448_906)
+describe Sapor::EuropeanUnion27Italy, '#population_size' do
+  it 'returns a population size of 26,783,732' do
+    expect(Sapor::EuropeanUnion27Italy.instance.population_size).to \
+      eq(26_783_732)
   end
 end
 
-describe Sapor::EuropeanUnionItaly2019, '#seats' do
+describe Sapor::EuropeanUnion27Italy, '#seats' do
   it 'calculates the number of seats using the votes of the 2014 election' do
     results = { 'Partito Democratico (S&D)' => 11_203_231,
                 'Movimento 5 Stelle (EFDD)' => 5_792_865,
@@ -52,7 +52,7 @@ describe Sapor::EuropeanUnionItaly2019, '#seats' do
                 'Italia dei Valori (ALDE)' => 181_373,
                 'Südtiroler Volkspartei (EPP)' => 138_037,
                 'Io Cambio–MAIE (—)' => 50_978 }
-    seats = Sapor::EuropeanUnionItaly2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Italy.instance.seats(results)
     expect(seats['Partito Democratico (S&D)']).to eq(31 + 1)
     expect(seats['Movimento 5 Stelle (EFDD)']).to eq(17)
     expect(seats['Forza Italia (EPP)']).to eq(13 + 1)

@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Italy.
+  # The regional data for the European Union (27): Italy.
   #
-  class EuropeanUnionItaly2019 < Area
+  class EuropeanUnion27Italy < Area
     include Singleton
 
     def area_code
-      'EU[IT]@2019'
+      'EU27[IT]'
     end
 
     def coalitions
@@ -63,11 +63,11 @@ module Sapor
 
     NO_OF_SVP_SEATS = 1
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 11 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Italy)
-    POPULATION_SIZE = 27_448_906
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 12 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Italy
+    POPULATION_SIZE = 26_783_732
 
     THRESHOLD = 0.04
 
