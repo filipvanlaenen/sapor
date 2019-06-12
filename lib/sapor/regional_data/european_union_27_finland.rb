@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Finland.
+  # The regional data for the European Union (27): Finland.
   #
-  class EuropeanUnionFinland2019 < Area
+  class EuropeanUnion27Finland < Area
     include Singleton
 
     def area_code
-      'EU[FI]@2019'
+      'EU27[FI]'
     end
 
     def coalitions
@@ -58,10 +58,10 @@ module Sapor
     NO_OF_SEATS = 14
 
     # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 16 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Finland)
-    POPULATION_SIZE = 1_728_294
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 12 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Finland
+    POPULATION_SIZE = 1_830_045
 
     def electoral_system
       if @electoral_system.nil?

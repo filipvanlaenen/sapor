@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionFinland2019, '#area_code' do
-  it 'returns EU[FI]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionFinland2019.instance.area_code).to eq('EU[FI]@2019')
+describe Sapor::EuropeanUnion27Finland, '#area_code' do
+  it 'returns EU27[FI] as the area code' do
+    expect(Sapor::EuropeanUnion27Finland.instance.area_code).to eq('EU27[FI]')
   end
 end
 
-describe Sapor::EuropeanUnionFinland2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Finland, '#no_of_seats' do
   it 'returns 14 as the number of seats' do
-    expect(Sapor::EuropeanUnionFinland2019.instance.no_of_seats).to eq(14)
+    expect(Sapor::EuropeanUnion27Finland.instance.no_of_seats).to eq(14)
   end
 end
 
-describe Sapor::EuropeanUnionFinland2019, '#population_size' do
-  it 'returns a population size of 1,728,294' do
-    expect(Sapor::EuropeanUnionFinland2019.instance.population_size).to \
-      eq(1_728_294)
+describe Sapor::EuropeanUnion27Finland, '#population_size' do
+  it 'returns a population size of 1,830,045' do
+    expect(Sapor::EuropeanUnion27Finland.instance.population_size).to \
+      eq(1_830_045)
   end
 end
 
-describe Sapor::EuropeanUnionFinland2019, '#seats' do
+describe Sapor::EuropeanUnion27Finland, '#seats' do
   it 'calculates the number of seats using the votes of the 2014 election' do
     results = { 'Kansallinen Kokoomus (EPP)' => 390_376,
                 'Suomen Keskusta (ALDE)' => 339_895,
@@ -55,7 +55,7 @@ describe Sapor::EuropeanUnionFinland2019, '#seats' do
                 'Köyhien Asialla (—)' => 2_667,
                 'Sinivalkoinen Rintama (—)' => 1_176,
                 'Kristiina Ilmarinen (—)' => 526 }
-    seats = Sapor::EuropeanUnionFinland2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Finland.instance.seats(results)
     expect(seats['Kansallinen Kokoomus (EPP)']).to eq(3 + 1)
     expect(seats['Suomen Keskusta (ALDE)']).to eq(3)
     expect(seats['Perussuomalaiset (EFDD)']).to eq(2)
