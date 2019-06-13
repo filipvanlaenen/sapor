@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionNetherlands2019, '#area_code' do
-  it 'returns EU[NL]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionNetherlands2019.instance.area_code).to eq('EU[NL]@2019')
+describe Sapor::EuropeanUnion27Netherlands, '#area_code' do
+  it 'returns EU27[NL] as the area code' do
+    expect(Sapor::EuropeanUnion27Netherlands.instance.area_code).to eq('EU27[NL]')
   end
 end
 
-describe Sapor::EuropeanUnionNetherlands2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Netherlands, '#no_of_seats' do
   it 'returns 29 as the number of seats' do
-    expect(Sapor::EuropeanUnionNetherlands2019.instance.no_of_seats).to eq(29)
+    expect(Sapor::EuropeanUnion27Netherlands.instance.no_of_seats).to eq(29)
   end
 end
 
-describe Sapor::EuropeanUnionNetherlands2019, '#population_size' do
-  it 'returns a population size of 4,753,746' do
-    expect(Sapor::EuropeanUnionNetherlands2019.instance.population_size).to \
-      eq(4_753_746)
+describe Sapor::EuropeanUnion27Netherlands, '#population_size' do
+  it 'returns a population size of 5,497,813' do
+    expect(Sapor::EuropeanUnion27Netherlands.instance.population_size).to \
+      eq(5_497_813)
   end
 end
 
-describe Sapor::EuropeanUnionNetherlands2019, '#seats' do
+describe Sapor::EuropeanUnion27Netherlands, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Democraten 66 (ALDE)' => 735_825,
                 'Christen-Democratisch Appèl–ChristenUnie–Staatkundig' \
@@ -58,7 +58,7 @@ describe Sapor::EuropeanUnionNetherlands2019, '#seats' do
                 'Liberaal Democratische Partij (—)' => 6_349,
                 'Aandacht en Eenvoud (—)' => 3_174,
                 'IQ, de Rechten-Plichten-Partij (—)' => 1_705 }
-    seats = Sapor::EuropeanUnionNetherlands2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Netherlands.instance.seats(results)
     expect(seats['Democraten 66 (ALDE)']).to eq(4 + 1)
     expect(seats['Christen-Democratisch Appèl–ChristenUnie–Staatkundig' \
                    ' Gereformeerde Partij (EPP)']).to eq(5 + 2)

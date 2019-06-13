@@ -60,11 +60,11 @@ module Sapor
 
     NO_OF_SEATS = 26
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 19 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Netherlands)
-    POPULATION_SIZE = 4_753_746
+    # Voter turnout on 23 May 2019
+    # Source: Web page with the official results of the elections of 23 May
+    # 2019, downloaded on 13 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_the_Netherlands
+    POPULATION_SIZE = 5_497_813
 
     THRESHOLD = 1 / NO_OF_SEATS.to_f
 
