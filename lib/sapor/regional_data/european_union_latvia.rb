@@ -61,11 +61,11 @@ module Sapor
 
     NO_OF_SEATS = 8
 
-    # Voter turnout on 24 May 2014
-    # Source: Web page with the official results of the elections of 24 May
-    # 2014, downloaded on 13 April 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Latvia)
-    POPULATION_SIZE = 440_288
+    # Voter turnout on 25 May 2019
+    # Source: Web page with the official results of the elections of 25 May
+    # 2019, downloaded on 13 June 2019,
+    # https://es.wikipedia.org/wiki/Elecciones_al_Parlamento_Europeo_de_2019_(Letonia)
+    POPULATION_SIZE = 470_460
 
     THRESHOLD = 0.05
 
