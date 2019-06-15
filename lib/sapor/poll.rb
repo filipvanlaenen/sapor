@@ -43,7 +43,9 @@ module Sapor
                             EuropeanUnion27Estonia.instance,
                             EuropeanUnion27Finland.instance,
                             EuropeanUnion27Italy.instance,
-                            EuropeanUnion27Netherlands.instance,
+                            EuropeanUnion27Netherlands.instance,                            
+                            EuropeanUnion27Spain.instance,
+                            EuropeanUnion27Sweden.instance,
                             EuropeanUnionAustria.instance,
                             EuropeanUnionBulgaria.instance,
                             EuropeanUnionCroatia.instance,
@@ -88,9 +90,7 @@ module Sapor
                             EuropeanUnionSlovakia2019.instance,
                             EuropeanUnionSlovenia.instance,
                             EuropeanUnionSpain.instance,
-                            EuropeanUnion27Spain.instance,
-                            EuropeanUnionSweden.instance,                            
-                            EuropeanUnionSweden2019.instance].freeze
+                            EuropeanUnionSweden.instance].freeze
     LATVIAN_AREAS = [Latvia.instance, LatviaKpv.instance, \
                      LatviaKpvPar.instance, LatviaKpvPPar.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,

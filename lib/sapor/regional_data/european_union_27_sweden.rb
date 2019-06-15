@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Sweden.
+  # The regional data for the European Union (27): Sweden.
   #
-  class EuropeanUnionSweden2019 < Area
+  class EuropeanUnion27Sweden < Area
     include Singleton
 
     def area_code
-      'EU[SE]@2019'
+      'EU27[SE]'
     end
 
     def coalitions
@@ -56,11 +56,11 @@ module Sapor
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 8 March 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Sweden)
-    POPULATION_SIZE = 3_758_951
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 15 June 2019,
+    # https://de.wikipedia.org/wiki/Europawahl_in_Schweden_2019
+    POPULATION_SIZE = 4_151_470
 
     THRESHOLD = 0.04
 

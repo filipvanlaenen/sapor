@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionSweden2019, '#area_code' do
-  it 'returns EU[SE]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionSweden2019.instance.area_code).to eq('EU[SE]@2019')
+describe Sapor::EuropeanUnion27Sweden, '#area_code' do
+  it 'returns EU27[SE] as the area code' do
+    expect(Sapor::EuropeanUnion27Sweden.instance.area_code).to eq('EU27[SE]')
   end
 end
 
-describe Sapor::EuropeanUnionSweden2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Sweden, '#no_of_seats' do
   it 'returns 21 as the number of seats' do
-    expect(Sapor::EuropeanUnionSweden2019.instance.no_of_seats).to eq(21)
+    expect(Sapor::EuropeanUnion27Sweden.instance.no_of_seats).to eq(21)
   end
 end
 
-describe Sapor::EuropeanUnionSweden2019, '#population_size' do
-  it 'returns a population size of 3,758,951' do
-    expect(Sapor::EuropeanUnionSweden2019.instance.population_size).to \
-      eq(3_758_951)
+describe Sapor::EuropeanUnion27Sweden, '#population_size' do
+  it 'returns a population size of 4,151,470' do
+    expect(Sapor::EuropeanUnion27Sweden.instance.population_size).to \
+      eq(4_151_470)
   end
 end
 
-describe Sapor::EuropeanUnionSweden2019, '#seats' do
+describe Sapor::EuropeanUnion27Sweden, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Sveriges socialdemokratiska arbetareparti (S&D)' => 899_074,
                 'Miljöpartiet de gröna (Greens/EFA)' => 572_591,
@@ -62,7 +62,7 @@ describe Sapor::EuropeanUnionSweden2019, '#seats' do
                 '666 för en EU:s super-state med frihet, jämlikhet, rättvisa,' \
                   ' fred, kärlek och lyckan (—)' => 11,
                 'Republicans right (—)' => 9 }
-    seats = Sapor::EuropeanUnionSweden2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Sweden.instance.seats(results)
     expect(seats['Sveriges socialdemokratiska arbetareparti (S&D)']).to eq(5 + 1)
     expect(seats['Miljöpartiet de gröna (Greens/EFA)']).to eq(4)
     expect(seats['Moderata samlingspartiet (EPP)']).to eq(3)

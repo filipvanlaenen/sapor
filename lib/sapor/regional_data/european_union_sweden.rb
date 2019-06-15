@@ -56,11 +56,11 @@ module Sapor
 
     NO_OF_SEATS = 20
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 8 March 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Sweden)
-    POPULATION_SIZE = 3_758_951
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 15 June 2019,
+    # https://de.wikipedia.org/wiki/Europawahl_in_Schweden_2019
+    POPULATION_SIZE = 4_151_470
 
     THRESHOLD = 0.04
 
