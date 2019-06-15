@@ -47,23 +47,25 @@ module Sapor
     private
 
     COALITIONS = [['ANO 2011 (ALDE)'],
-                  ['Česká pirátská strana (*)'],
+                  ['Česká pirátská strana (Greens/EFA)',
+                   'Strana zelených (Greens/EFA)'],
                   ['Česká strana sociálně demokratická (S&D)'],
                   ['Komunistická strana Čech a Moravy (GUE/NGL)'],
                   ['Křesťanská a demokratická unie–Československá strana' \
                      ' lidová (EPP)',
-                   'TOP 09–Starostové a nezávislí–Strana zelených (EPP)'],
+                   'Starostové a nezávislí (EPP)',
+                   'TOP 09 (EPP)'],
                   ['Občanská demokratická strana (ECR)'],
                   ['Svoboda a přímá demokracie (EAPN)'],
                   ['Strana svobodných občanů (EFDD)']].freeze
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 25 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Czech_Republic)
-    POPULATION_SIZE = 1_515_492
+    # Voter turnout on 24 and 25 May 2019
+    # Source: Web page with the official results of the elections of 24 and 25
+    # May 2019, downloaded on 15 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_the_Czech_Republic#Results
+    POPULATION_SIZE = 1_007_398
 
     THRESHOLD = 0.05
 
