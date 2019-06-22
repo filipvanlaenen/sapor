@@ -19,27 +19,27 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionCroatia2019, '#area_code' do
-  it 'returns EU[HR]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionCroatia2019.instance.area_code).to \
-      eq('EU[HR]@2019')
+describe Sapor::EuropeanUnion27Croatia, '#area_code' do
+  it 'returns EU27[HR] as the area code' do
+    expect(Sapor::EuropeanUnion27Croatia.instance.area_code).to \
+      eq('EU27[HR]')
   end
 end
 
-describe Sapor::EuropeanUnionCroatia2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Croatia, '#no_of_seats' do
   it 'returns 12 as the number of seats' do
-    expect(Sapor::EuropeanUnionCroatia2019.instance.no_of_seats).to eq(12)
+    expect(Sapor::EuropeanUnion27Croatia.instance.no_of_seats).to eq(12)
   end
 end
 
-describe Sapor::EuropeanUnionCroatia2019, '#population_size' do
-  it 'returns a population size of 921,904' do
-    expect(Sapor::EuropeanUnionCroatia2019.instance.population_size).to \
-      eq(921_904)
+describe Sapor::EuropeanUnion27Croatia, '#population_size' do
+  it 'returns a population size of 1,073,954' do
+    expect(Sapor::EuropeanUnion27Croatia.instance.population_size).to \
+      eq(1_073_954)
   end
 end
 
-describe Sapor::EuropeanUnionCroatia2019, '#seats' do
+describe Sapor::EuropeanUnion27Croatia, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'HDZ-ova koalicija (EPP)' => 381_844,
                 'Kukuriku koalicija (S&D)' => 275_904,
@@ -48,7 +48,7 @@ describe Sapor::EuropeanUnionCroatia2019, '#seats' do
                 'Hrvatski laburisti–Stranka rada (GUE/NGL)' => 31_363,
                 'Partnership of Croatian Center (—)' => 22_098,
                 'Others (—)' => 60_452 }
-    seats = Sapor::EuropeanUnionCroatia2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Croatia.instance.seats(results)
     expect(seats['HDZ-ova koalicija (EPP)']).to eq(6)
     expect(seats['Kukuriku koalicija (S&D)']).to eq(4)
     expect(seats['Održivi razvoj Hrvatske (—)']).to eq(1)

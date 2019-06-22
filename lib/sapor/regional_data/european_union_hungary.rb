@@ -56,11 +56,11 @@ module Sapor
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 30 January 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Hungary)
-    POPULATION_SIZE = 2_319_493
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 22 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Hungary
+    POPULATION_SIZE = 3_470_257
 
     def electoral_system
       if @electoral_system.nil?

@@ -60,11 +60,11 @@ module Sapor
 
     NO_OF_SEATS = 11
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 17 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Croatia)
-    POPULATION_SIZE = 921_904
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 22 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Croatia
+    POPULATION_SIZE = 1_073_954
 
     THRESHOLD = 0.05
 

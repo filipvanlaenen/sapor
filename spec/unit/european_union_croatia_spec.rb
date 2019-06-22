@@ -32,9 +32,9 @@ describe Sapor::EuropeanUnionCroatia, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionCroatia, '#population_size' do
-  it 'returns a population size of 921,904' do
+  it 'returns a population size of 1,073,954' do
     expect(Sapor::EuropeanUnionCroatia.instance.population_size).to \
-      eq(921_904)
+      eq(1_073_954)
   end
 end
 
