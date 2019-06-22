@@ -46,13 +46,16 @@ module Sapor
 
     private
 
-    COALITIONS = [['DK (S&D)', 'MSZP (S&D)', 'MSZP–Párbeszéd (S&D)'],
-                  ['Együtt (Greens/EFA)', 'LMP (Greens/EFA)',
+    COALITIONS = [['Demokratikus Koalíció (S&D)',
+                   'Magyar Szocialista Párt (S&D)',
+                   'Magyar Szocialista Párt–Párbeszéd (S&D)'],
+                  ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)',
                    'Párbeszéd (Greens/EFA)'],
-                  ['Fidesz–KDNP (EPP)'],
+                  ['Fidesz–Kereszténydemokrata Néppárt (EPP)'],
                   ['HNEM (*)', 'SMS (*)'],
-                  ['Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)', 'MKKP (NI)'],
-                  ['MLP (ALDE)', 'MM (ALDE)']].freeze
+                  ['Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)',
+                   'Magyar Kétfarkú Kutya Párt (NI)'],
+                  ['MLP (ALDE)', 'Momentum Mozgalom (ALDE)']].freeze
 
     NO_OF_SEATS = 21
 
