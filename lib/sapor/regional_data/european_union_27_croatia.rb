@@ -52,8 +52,9 @@ module Sapor
                    'Pametno (ALDE)'],
                   ['Bandić Milan 365–Stranka rada i solidarnosti (*)',
                    'Stranka antikorupcije, razvoja i transparentnosti (*)'],
-                  ['Most nezavisnih lista (ECR)',
-                   'Hrvatska konzervativna stranka (ECR)'],
+                  ['Hrvatska konzervativna stranka (ECR)',
+                   'Hrvatski rast (ECR)', 'Most nezavisnih lista (ECR)'],
+                  ['Nezavisna lista Mislava Kolakušića (NI)'],
                   ['Neovisni za Hrvatsku (EAPN)'],
                   ['Socijaldemokratska partija Hrvatske (S&D)'],
                   ['Živi zid (EFDD)']].freeze
