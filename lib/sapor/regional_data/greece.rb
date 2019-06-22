@@ -53,6 +53,7 @@ module Sapor
     EL_PARTY = 'Ελληνική Λύση'.freeze
     KINAL_PARTY = 'Κίνημα Αλλαγής'.freeze
     LE_PARTY = 'Λαϊκή Ενότητα'.freeze
+    MERA_PARTY = 'Μέτωπο Ευρωπαϊκής Ρεαλιστικής Ανυπακοής'.freeze
     ND_PARTY = 'Νέα Δημοκρατία'.freeze
     POTAMI_PARTY = 'Το Ποτάμι'.freeze
     SYRIZA_PARTY = 'Συνασπισμός Ριζοσπαστικής Αριστεράς'.freeze
@@ -62,6 +63,7 @@ module Sapor
                   [KINAL_PARTY, ND_PARTY, POTAMI_PARTY],
                   [KINAL_PARTY, ND_PARTY],
                   [LE_PARTY, SYRIZA_PARTY],
+                  [MERA_PARTY, SYRIZA_PARTY],
                   [ND_PARTY],
                   [ND_PARTY, POTAMI_PARTY],
                   [SYRIZA_PARTY]].freeze
