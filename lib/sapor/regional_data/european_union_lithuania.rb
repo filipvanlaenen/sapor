@@ -60,11 +60,11 @@ module Sapor
 
     NO_OF_SEATS = 11
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 24 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Lithania)
-    POPULATION_SIZE = 1_144_131
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 23 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Lithuania
+    POPULATION_SIZE = 1_322_036
 
     THRESHOLD = 0.05
 
