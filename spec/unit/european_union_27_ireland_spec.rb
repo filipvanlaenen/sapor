@@ -19,27 +19,27 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionIreland, '#area_code' do
-  it 'returns EU[IE] as the area code' do
-    expect(Sapor::EuropeanUnionIreland.instance.area_code).to \
-      eq('EU[IE]')
+describe Sapor::EuropeanUnion27Ireland, '#area_code' do
+  it 'returns EU[IE]@2019 as the area code' do
+    expect(Sapor::EuropeanUnion27Ireland.instance.area_code).to \
+      eq('EU27[IE]')
   end
 end
 
-describe Sapor::EuropeanUnionIreland, '#no_of_seats' do
-  it 'returns 11 as the number of seats' do
-    expect(Sapor::EuropeanUnionIreland.instance.no_of_seats).to eq(11)
+describe Sapor::EuropeanUnion27Ireland, '#no_of_seats' do
+  it 'returns 13 as the number of seats' do
+    expect(Sapor::EuropeanUnion27Ireland.instance.no_of_seats).to eq(13)
   end
 end
 
-describe Sapor::EuropeanUnionIreland, '#population_size' do
+describe Sapor::EuropeanUnion27Ireland, '#population_size' do
   it 'returns a population size of 1,678,003' do
-    expect(Sapor::EuropeanUnionIreland.instance.population_size).to \
+    expect(Sapor::EuropeanUnion27Ireland.instance.population_size).to \
       eq(1_678_003)
   end
 end
 
-describe Sapor::EuropeanUnionIreland, '#seats' do
+describe Sapor::EuropeanUnion27Ireland, '#seats' do
   it 'calculates the number of seats for the election of 2019' do
     results = { 'Fine Gael (EPP)' => 496_459,
                 'Green Party (Greens/EFA)' => 190_755,
@@ -54,12 +54,12 @@ describe Sapor::EuropeanUnionIreland, '#seats' do
                 'Identity Ireland (*)' => 3_685,
                 'Direct Democracy Ireland (*)' => 2_773,
                 'Independents (*)' => 264_087 }
-    seats = Sapor::EuropeanUnionIreland.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Ireland.instance.seats(results)
     expect(seats['Fine Gael (EPP)']).to eq(4 + 1)
     expect(seats['Green Party (Greens/EFA)']).to eq(2 - 1)
-    expect(seats['Independents 4 Change (GUE/NGL)']).to eq(2 - 1)
+    expect(seats['Independents 4 Change (GUE/NGL)']).to eq(2 - 1 + 1)
     expect(seats['Fianna Fáil (ALDE)']).to eq(1 + 1)
-    expect(seats['Sinn Féin (GUE/NGL)']).to eq(1 - 1)
+    expect(seats['Sinn Féin (GUE/NGL)']).to eq(1 - 1 + 1)
     expect(seats['Labour Party (S&D)']).to eq(0)
     expect(seats['Solidarity–People Before Profit (GUE/NGL)']).to eq(0)
     expect(seats['Social Democrats (*)']).to eq(0)

@@ -19,14 +19,14 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Ireland, with Independent
-  # Alliance (IA), Renua Ireland (RI) and Social Democrats (SD).
+  # The regional data for the European Union (27): Ireland, with Independent
+  # Alliance (IA).
   #
-  class EuropeanUnionIrelandIaRiSd < Area
+  class EuropeanUnion27IrelandWithIa < Area
     include Singleton
 
     def area_code
-      'EU[IE]∪{IA,RI,SD}'
+      'EU27[IE]∪{IA}'
     end
 
     def coalitions
@@ -54,44 +54,45 @@ module Sapor
                   ['Fianna Fáil (ALDE)'],
                   ['Fine Gael (EPP)'],
                   ['Green Party (Greens/EFA)'],
-                  ['Sinn Féin (GUE/NGL)', 'Socialist Party (GUE/NGL)',
+                  ['Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',
+                   'Socialist Party (GUE/NGL)',
                    'Solidarity–People Before Profit (GUE/NGL)'],
                   ['Labour Party (S&D)']].freeze
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 7 July 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Ireland)
-    POPULATION_SIZE = 1_656_518
+    # Voter turnout on 24 May 2019
+    # Source: Web page with the official results of the elections of 24 May
+    # 2019, downloaded on 23 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Ireland
+    POPULATION_SIZE = 1_678_003
 
-    SEAT_DISTRIBUTION = { 'Dublin' => 3, 'Midlands–North-West' => 4,
-                          'South' => 4 }
+    SEAT_DISTRIBUTION = { 'Dublin' => 4, 'Midlands–North-West' => 4,
+                          'South' => 5 }
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results( \
-          'european-union-ireland-2014-ia-ri-sd.psv')
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results( \
+          'european-union-ireland-20190524-ia.psv')
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2014,
-          election_results_of_2014,
+          overall_election_results_of_2019,
+          election_results_of_2019,
           SEAT_DISTRIBUTION,
           DhondtDenominators)
       end
       @electoral_system
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
   end
 end

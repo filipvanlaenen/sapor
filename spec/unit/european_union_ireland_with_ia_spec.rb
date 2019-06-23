@@ -19,27 +19,27 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionIreland, '#area_code' do
-  it 'returns EU[IE] as the area code' do
-    expect(Sapor::EuropeanUnionIreland.instance.area_code).to \
-      eq('EU[IE]')
+describe Sapor::EuropeanUnionIrelandWithIa, '#area_code' do
+  it 'returns EU[IE]∪{IA} as the area code' do
+    expect(Sapor::EuropeanUnionIrelandWithIa.instance.area_code).to \
+      eq('EU[IE]∪{IA}')
   end
 end
 
-describe Sapor::EuropeanUnionIreland, '#no_of_seats' do
+describe Sapor::EuropeanUnionIrelandWithIa, '#no_of_seats' do
   it 'returns 11 as the number of seats' do
-    expect(Sapor::EuropeanUnionIreland.instance.no_of_seats).to eq(11)
+    expect(Sapor::EuropeanUnionIrelandWithIa.instance.no_of_seats).to eq(11)
   end
 end
 
-describe Sapor::EuropeanUnionIreland, '#population_size' do
+describe Sapor::EuropeanUnionIrelandWithIa, '#population_size' do
   it 'returns a population size of 1,678,003' do
-    expect(Sapor::EuropeanUnionIreland.instance.population_size).to \
+    expect(Sapor::EuropeanUnionIrelandWithIa.instance.population_size).to \
       eq(1_678_003)
   end
 end
 
-describe Sapor::EuropeanUnionIreland, '#seats' do
+describe Sapor::EuropeanUnionIrelandWithIa, '#seats' do
   it 'calculates the number of seats for the election of 2019' do
     results = { 'Fine Gael (EPP)' => 496_459,
                 'Green Party (Greens/EFA)' => 190_755,
@@ -53,8 +53,9 @@ describe Sapor::EuropeanUnionIreland, '#seats' do
                 'Workers’ Party (NI)' => 3_701,
                 'Identity Ireland (*)' => 3_685,
                 'Direct Democracy Ireland (*)' => 2_773,
-                'Independents (*)' => 264_087 }
-    seats = Sapor::EuropeanUnionIreland.instance.seats(results)
+                'Independents (*)' => 264_087,
+                'Independent Alliance (*)' => 264_087 }
+    seats = Sapor::EuropeanUnionIrelandWithIa.instance.seats(results)
     expect(seats['Fine Gael (EPP)']).to eq(4 + 1)
     expect(seats['Green Party (Greens/EFA)']).to eq(2 - 1)
     expect(seats['Independents 4 Change (GUE/NGL)']).to eq(2 - 1)
@@ -67,6 +68,7 @@ describe Sapor::EuropeanUnionIreland, '#seats' do
     expect(seats['Workers’ Party (NI)']).to eq(0)
     expect(seats['Identity Ireland (*)']).to eq(0)
     expect(seats['Direct Democracy Ireland (*)']).to eq(0)
-    expect(seats['Independents (*)']).to eq(1 + 1)
+    expect(seats['Independents (*)']).to eq(1 + 1 - 1)
+    expect(seats['Independent Alliance (*)']).to eq(1 + 1 - 1)
   end
 end
