@@ -56,11 +56,11 @@ module Sapor
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 1 March 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Portugal)
-    POPULATION_SIZE = 3_040_771
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 23 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Portugal
+    POPULATION_SIZE = 3_084_505
 
     def electoral_system
       if @electoral_system.nil?
