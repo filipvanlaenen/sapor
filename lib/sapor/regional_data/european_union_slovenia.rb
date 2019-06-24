@@ -58,8 +58,8 @@ module Sapor
                    'Pozitivna Slovenija (*)'],
                   ['Levica (GUE/NGL)'],
                   ['Nova Slovenija–Krščanski demokrati (EPP)',
-                   'Slovenska demokratska stranka–Slovenska ljudska stranka' \
-                     ' (EPP)'],
+                   'Slovenska demokratska stranka (EPP)',
+                   'Slovenska ljudska stranka (EPP)'],
                   ['Slovenska nacionalna stranka (NI)'],
                   ['Socialni demokrati (S&D)']].freeze
 
