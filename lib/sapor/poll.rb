@@ -47,6 +47,7 @@ module Sapor
                             EuropeanUnion27IrelandWithIa.instance,
                             EuropeanUnion27Italy.instance,
                             EuropeanUnion27Netherlands.instance,                            
+                            EuropeanUnion27Slovakia.instance,
                             EuropeanUnion27Spain.instance,
                             EuropeanUnion27Sweden.instance,
                             EuropeanUnionAustria.instance,
@@ -81,7 +82,6 @@ module Sapor
                             EuropeanUnionRomania.instance,
                             EuropeanUnionRomania2019.instance,
                             EuropeanUnionSlovakia.instance,
-                            EuropeanUnionSlovakia2019.instance,
                             EuropeanUnionSlovenia.instance,
                             EuropeanUnionSpain.instance,
                             EuropeanUnionSweden.instance].freeze

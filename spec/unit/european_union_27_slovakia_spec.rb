@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionSlovakia2019, '#area_code' do
-  it 'returns EU[SK]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionSlovakia2019.instance.area_code).to eq('EU[SK]@2019')
+describe Sapor::EuropeanUnion27Slovakia, '#area_code' do
+  it 'returns EU27[SK] as the area code' do
+    expect(Sapor::EuropeanUnion27Slovakia.instance.area_code).to eq('EU27[SK]')
   end
 end
 
-describe Sapor::EuropeanUnionSlovakia2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Slovakia, '#no_of_seats' do
   it 'returns 14 as the number of seats' do
-    expect(Sapor::EuropeanUnionSlovakia2019.instance.no_of_seats).to eq(14)
+    expect(Sapor::EuropeanUnion27Slovakia.instance.no_of_seats).to eq(14)
   end
 end
 
-describe Sapor::EuropeanUnionSlovakia2019, '#population_size' do
-  it 'returns a population size of 560,603' do
-    expect(Sapor::EuropeanUnionSlovakia2019.instance.population_size).to \
-      eq(560_603)
+describe Sapor::EuropeanUnion27Slovakia, '#population_size' do
+  it 'returns a population size of 1,007,398' do
+    expect(Sapor::EuropeanUnion27Slovakia.instance.population_size).to \
+      eq(1_007_398)
   end
 end
 
-describe Sapor::EuropeanUnionSlovakia2019, '#seats' do
+describe Sapor::EuropeanUnion27Slovakia, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'SMER–sociálna demokracia (S&D)' => 135_089,
                 'Kresťanskodemokratické hnutie (EPP)' => 74_108,
@@ -73,7 +73,7 @@ describe Sapor::EuropeanUnionSlovakia2019, '#seats' do
                 'Maďarská kresťanskodemokratická aliancia–Magyar' \
                   ' Kereszténydemokrata Szövetség (Greens/EFA)' => 1_170,
                 'Nový parlament (—)' => 900 }
-    seats = Sapor::EuropeanUnionSlovakia2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Slovakia.instance.seats(results)
     expect(seats['SMER–sociálna demokracia (S&D)']).to eq(4 + 1)
     expect(seats['Kresťanskodemokratické hnutie (EPP)']).to eq(2 + 1)
     expect(seats['Slovenská demokratická a kresťanská únia–Demokratická' \

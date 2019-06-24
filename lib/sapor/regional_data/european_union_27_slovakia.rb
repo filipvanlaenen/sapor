@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Slovakia.
+  # The regional data for the European Union (27): Slovakia.
   #
-  class EuropeanUnionSlovakia2019 < Area
+  class EuropeanUnion27Slovakia < Area
     include Singleton
 
     def area_code
-      'EU[SK]@2019'
+      'EU27[SK]'
     end
 
     def coalitions
@@ -58,11 +58,11 @@ module Sapor
 
     NO_OF_SEATS = 14
 
-    # Voter turnout on 24 May 2014
-    # Source: Web page with the official results of the elections of 24 May
-    # 2014, downloaded on 9 March 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Slovakia)
-    POPULATION_SIZE = 560_603
+    # Voter turnout on 25 May 2019
+    # Source: Web page with the official results of the elections of 25 May
+    # 2019, downloaded on 24 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Slovakia
+    POPULATION_SIZE = 1_007_398
 
     THRESHOLD = 0.05
 
