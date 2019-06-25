@@ -47,17 +47,23 @@ module Sapor
     private
 
     COALITIONS = [['KORWiN (EFDD)', 'Kukiz’15 (EFDD)'],
-                  ['Koalicja Europejska (EPP)'],
+                  ['Koalicja Europejska (EPP)',
+                   'Platforma Obywatelska (EPP)',
+                   'Polskie Stronnictwo Ludowe (EPP)'],
+                  ['.Nowoczesna (ALDE)'],
+                  ['Partia Razem (*)'],
                   ['Prawo i Sprawiedliwość (ECR)'],
-                  ['Wiosna–Partia Razem (S&D)']].freeze
+                  ['Sojusz Lewicy Demokratycznej (S&D)',
+                   'Wiosna (S&D)',
+                   'Wiosna–Partia Razem (S&D)']].freeze
 
     NO_OF_SEATS = 51
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 17 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Poland)
-    POPULATION_SIZE = 7_069_485
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 25 June 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Poland
+    POPULATION_SIZE = 13_647_311
 
     THRESHOLD = 0.05
 

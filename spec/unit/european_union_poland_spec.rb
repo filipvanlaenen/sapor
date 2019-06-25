@@ -32,9 +32,9 @@ describe Sapor::EuropeanUnionPoland, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionPoland, '#population_size' do
-  it 'returns a population size of 7,069,485' do
+  it 'returns a population size of 13,647,311' do
     expect(Sapor::EuropeanUnionPoland.instance.population_size).to \
-      eq(7_069_485)
+      eq(13_647_311)
   end
 end
 

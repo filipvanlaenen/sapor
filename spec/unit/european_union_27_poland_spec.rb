@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionPoland2019, '#area_code' do
-  it 'returns EU[PL]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionPoland2019.instance.area_code).to eq('EU[PL]@2019')
+describe Sapor::EuropeanUnion27Poland, '#area_code' do
+  it 'returns EU27[PL] as the area code' do
+    expect(Sapor::EuropeanUnion27Poland.instance.area_code).to eq('EU27[PL]')
   end
 end
 
-describe Sapor::EuropeanUnionPoland2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Poland, '#no_of_seats' do
   it 'returns 52 as the number of seats' do
-    expect(Sapor::EuropeanUnionPoland2019.instance.no_of_seats).to eq(52)
+    expect(Sapor::EuropeanUnion27Poland.instance.no_of_seats).to eq(52)
   end
 end
 
-describe Sapor::EuropeanUnionPoland2019, '#population_size' do
-  it 'returns a population size of 7,069,485' do
-    expect(Sapor::EuropeanUnionPoland2019.instance.population_size).to \
-      eq(7_069_485)
+describe Sapor::EuropeanUnion27Poland, '#population_size' do
+  it 'returns a population size of 13,647,311' do
+    expect(Sapor::EuropeanUnion27Poland.instance.population_size).to \
+      eq(13_647_311)
   end
 end
 
-describe Sapor::EuropeanUnionPoland2019, '#seats' do
+describe Sapor::EuropeanUnion27Poland, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Platforma Obywatelska (EPP)' => 2_271_215,
                 'Prawo i Sprawiedliwość (ECR)' => 2_246_870,
@@ -52,7 +52,7 @@ describe Sapor::EuropeanUnionPoland2019, '#seats' do
                 'Partia Zieloni (Greens/EFA)' => 22_481,
                 'Demokracja Bezpośrednia (—)' => 16_222,
                 'Samoobrona (—)' => 2_729 }
-    seats = Sapor::EuropeanUnionPoland2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Poland.instance.seats(results)
     expect(seats['Platforma Obywatelska (EPP)']).to eq(19 + 1)
     expect(seats['Prawo i Sprawiedliwość (ECR)']).to eq(19)
     expect(seats['Sojusz Lewicy Demokratycznej–Unia Pracy (S&D)']).to eq(5)
