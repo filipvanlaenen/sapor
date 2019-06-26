@@ -51,7 +51,7 @@ module Sapor
                   ['déi gréng (Greens/EFA)',
                    'Piratepartei Lëtzebuerg (Greens/EFA)'],
                   ['Déi Lénk (GUE/NGL)'],
-                  ['Demokratesch Partei (ALDE)'],
+                  ['Demokratesch Partei (RE)'],
                   ['Kommunistesch Partei Lëtzebuerg (*)',
                    'Partei fir Integral Demokratie (*)'],
                   ['Lëtzebuerger Sozialistesch Aarbechterpartei (S&D)']].freeze

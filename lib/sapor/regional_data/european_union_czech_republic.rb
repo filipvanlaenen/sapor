@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['ANO 2011 (ALDE)'],
+    COALITIONS = [['ANO 2011 (RE)'],
                   ['Česká pirátská strana (Greens/EFA)',
                    'Strana zelených (Greens/EFA)'],
                   ['Česká strana sociálně demokratická (S&D)'],

@@ -50,7 +50,7 @@ module Sapor
                   ['Liike Nyt (EFDD)'],
                   ['Perussuomalaiset (EAPN)'],
                   ['Sininen tulevaisuus (ECR)'],
-                  ['Suomen Keskusta (ALDE)', 'Svenska folkpartiet i Finland (ALDE)'],
+                  ['Suomen Keskusta (RE)', 'Svenska folkpartiet i Finland (RE)'],
                   ['Suomen Sosialidemokraattinen Puolue (S&D)'],
                   ['Vasemmistoliitto (GUE/NGL)'],
                   ['Vihreä liitto (Greens/EFA)']].freeze

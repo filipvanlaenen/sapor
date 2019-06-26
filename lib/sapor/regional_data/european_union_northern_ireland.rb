@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alliance Party of Northern Ireland (ALDE)'],
+    COALITIONS = [['Alliance Party of Northern Ireland (RE)'],
                   ['Democratic Unionist Party (NI)'],
                   ['Green Party in Northern Ireland (Greens/EFA)'],
                   ['NI21 (*)', 'Traditional Unionist Voice (*)'],

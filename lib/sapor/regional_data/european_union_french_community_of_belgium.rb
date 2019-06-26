@@ -48,7 +48,7 @@ module Sapor
     COALITIONS = [['cdH (EPP)'],
                   ['Debout les Belges (*)', 'La Droite (*)', 'FW (*)',
                    'ISLAM (*)', 'R.W.F. (*)', 'Wallonie d’Abord (*)'],
-                  ['DéFI (ALDE)', 'MR (ALDE)'],
+                  ['DéFI (RE)', 'MR (RE)'],
                   ['Ecolo (Greens/EFA)', 'PIRATE (Greens/EFA)'],
                   ['Parti Populaire (EFDD)'],
                   ['PS (S&D)'],

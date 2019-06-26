@@ -50,7 +50,7 @@ module Sapor
                   ['Koalicja Europejska (EPP)',
                    'Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)'],
-                  ['.Nowoczesna (ALDE)'],
+                  ['.Nowoczesna (RE)'],
                   ['Partia Razem (*)'],
                   ['Prawo i Sprawiedliwość (ECR)'],
                   ['Sojusz Lewicy Demokratycznej (S&D)',

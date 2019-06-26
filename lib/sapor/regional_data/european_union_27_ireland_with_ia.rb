@@ -51,7 +51,7 @@ module Sapor
                    'Fís Nua (*)', 'Independent Alliance (*)',
                    'Independents (*)', 'Renua Ireland (*)',
                    'Social Democrats (*)'],
-                  ['Fianna Fáil (ALDE)'],
+                  ['Fianna Fáil (RE)'],
                   ['Fine Gael (EPP)'],
                   ['Green Party (Greens/EFA)'],
                   ['Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',

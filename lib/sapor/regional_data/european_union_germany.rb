@@ -63,7 +63,7 @@ module Sapor
                    'Christlich-Soziale Union in Bayern (EPP)'],
                   ['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)',
                    'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['Freie Demokratische Partei (ALDE)', 'Freie Wähler (ALDE)'],
+                  ['Freie Demokratische Partei (RE)', 'Freie Wähler (RE)'],
                   ['Sozialdemokratische Partei Deutschlands (S&D)']].freeze
 
     NO_OF_SEATS = 96

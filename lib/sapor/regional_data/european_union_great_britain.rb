@@ -55,7 +55,7 @@ module Sapor
     private
 
     COALITIONS = [['Brexit Party (BREXIT)'],
-                  ['Change UK (ALDE)', 'Liberal Democrats (ALDE)'],
+                  ['Change UK (RE)', 'Liberal Democrats (RE)'],
                   ['Conservative Party (ECR)'],
                   ['Green Party (Greens/EFA)',
                    'Plaid Cymru (Greens/EFA)',

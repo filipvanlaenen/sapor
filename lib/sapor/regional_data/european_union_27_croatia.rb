@@ -47,9 +47,9 @@ module Sapor
     private
 
     COALITIONS = [['Hrvatska demokratska zajednica (EPP)'],
-                  ['Amsterdamska koalicija (ALDE)',
-                   'Hrvatska narodna stranka–liberalni demokrati (ALDE)',
-                   'Pametno (ALDE)'],
+                  ['Amsterdamska koalicija (RE)',
+                   'Hrvatska narodna stranka–liberalni demokrati (RE)',
+                   'Pametno (RE)'],
                   ['Bandić Milan 365–Stranka rada i solidarnosti (*)',
                    'Stranka antikorupcije, razvoja i transparentnosti (*)'],
                   ['Hrvatska konzervativna stranka (ECR)',

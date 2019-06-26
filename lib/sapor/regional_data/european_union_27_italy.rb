@@ -50,7 +50,7 @@ module Sapor
     private
 
     COALITIONS = [['CasaPound Italia (NI)'],
-                  ['Civica Popolare (ALDE)', 'Più Europa (ALDE)'],
+                  ['Civica Popolare (RE)', 'Più Europa (RE)'],
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['Insieme (*)'],

@@ -52,7 +52,7 @@ module Sapor
                   ['NOVA (ECR)', 'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)',
                    'Sloboda a Solidarita (ECR)',
                    'Slovenská národná strana (ECR)'],
-                  ['Progresívne Slovensko–SPOLU–Občianska Demokracia (ALDE)'],
+                  ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
                   ['SME RODINA (EAPN)'],
                   ['SMER–sociálna demokracia (S&D)'],
                   ['Za ľudí (*)']].freeze

@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Attīstībai/Par! (ALDE)'],
+    COALITIONS = [['Attīstībai/Par! (RE)'],
                   ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā Vienotība (EPP)', 'Jaunā konservatīvā partija (EPP)',
                    'KPV LV (EPP)',

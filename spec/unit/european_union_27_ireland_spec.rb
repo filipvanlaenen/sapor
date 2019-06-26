@@ -44,7 +44,7 @@ describe Sapor::EuropeanUnion27Ireland, '#seats' do
     results = { 'Fine Gael (EPP)' => 496_459,
                 'Green Party (Greens/EFA)' => 190_755,
                 'Independents 4 Change (GUE/NGL)' => 124_085,
-                'Fianna Fáil (ALDE)' => 277_705,
+                'Fianna Fáil (RE)' => 277_705,
                 'Sinn Féin (GUE/NGL)' => 196_001,
                 'Labour Party (S&D)' => 52_753,
                 'Solidarity–People Before Profit (GUE/NGL)' => 38_771,
@@ -58,7 +58,7 @@ describe Sapor::EuropeanUnion27Ireland, '#seats' do
     expect(seats['Fine Gael (EPP)']).to eq(4 + 1)
     expect(seats['Green Party (Greens/EFA)']).to eq(2 - 1)
     expect(seats['Independents 4 Change (GUE/NGL)']).to eq(2 - 1 + 1)
-    expect(seats['Fianna Fáil (ALDE)']).to eq(1 + 1)
+    expect(seats['Fianna Fáil (RE)']).to eq(1 + 1)
     expect(seats['Sinn Féin (GUE/NGL)']).to eq(1 - 1 + 1)
     expect(seats['Labour Party (S&D)']).to eq(0)
     expect(seats['Solidarity–People Before Profit (GUE/NGL)']).to eq(0)

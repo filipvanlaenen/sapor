@@ -50,7 +50,7 @@ module Sapor
                    'JETZT–Liste Pilz (Greens/EFA)'],
                   ['Freiheitliche Partei Österreichs (EAPN)'],
                   ['Meine Stimme Gilt! (*)'],
-                  ['NEOS–Das Neue Österreich und Liberales Forum (ALDE)'],
+                  ['NEOS–Das Neue Österreich und Liberales Forum (RE)'],
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
 

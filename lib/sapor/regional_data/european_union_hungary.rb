@@ -55,7 +55,7 @@ module Sapor
                   ['HNEM (*)', 'SMS (*)'],
                   ['Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)',
                    'Magyar Kétfarkú Kutya Párt (NI)'],
-                  ['MLP (ALDE)', 'Momentum Mozgalom (ALDE)']].freeze
+                  ['MLP (RE)', 'Momentum Mozgalom (RE)']].freeze
 
     NO_OF_SEATS = 21
 

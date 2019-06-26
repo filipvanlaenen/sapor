@@ -54,8 +54,8 @@ module Sapor
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
                   ['Klaus Riskær Pedersen (*)', 'Nye Borgerlige (*)',
                    'Stram Kurs (*)'],
-                  ['Liberal Alliance (ALDE)', 'Radikale Venstre (ALDE)',
-                   'Venstre (ALDE)'],
+                  ['Liberal Alliance (RE)', 'Radikale Venstre (RE)',
+                   'Venstre (RE)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
     NO_OF_SEATS = 14

@@ -47,8 +47,8 @@ module Sapor
     private
 
     COALITIONS = [['Agir, la droite constructive–Union des démocrates et' \
-                   ' indépendants (ALDE)',
-                   'La République en marche–Mouvement démocrate (ALDE)'],
+                   ' indépendants (RE)',
+                   'La République en marche–Mouvement démocrate (RE)'],
                   ['Debout la France (ECR)'],
                   ['Europe Écologie Les Verts (Greens/EFA)'],
                   ['Rassemblement national (EAPN)'],

@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Darbo Partija (ALDE)', 'Liberalų Sąjūdis (ALDE)'],
+    COALITIONS = [['Darbo Partija (RE)', 'Liberalų Sąjūdis (RE)'],
                   ['Lietuvos Centro Partija (ECR)',
                    'Lietuvos lenkų rinkimų akcija (ECR)',
                    'Partija tvarka ir teisingumas (ECR)'],
