@@ -54,7 +54,7 @@ module Sapor
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['Insieme (*)'],
-                  ['Lega Nord (EAPN)'],
+                  ['Lega Nord (ID)'],
                   ['Liberi e Uguali (S&D)', 'Partito Democratico (S&D)'],
                   ['Movimento 5 Stelle (EFDD)'],
                   ['Potere al Popolo (GUE/NGL)']].freeze

@@ -47,7 +47,7 @@ module Sapor
     private
 
     COALITIONS = [['Alternattiva Demokratika (Greens/EFA)'],
-                  ['Moviment Patrijotti Maltin (EAPN)'],
+                  ['Moviment Patrijotti Maltin (ID)'],
                   ['Partit Demokratiku (RE)'],
                   ['Partit Laburista (S&D)'],
                   ['Partit Nazzjonalista (EPP)']].freeze

@@ -53,7 +53,7 @@ module Sapor
                    'Sloboda a Solidarita (ECR)',
                    'Slovenská národná strana (ECR)'],
                   ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
-                  ['SME RODINA (EAPN)'],
+                  ['SME RODINA (ID)'],
                   ['SMER–sociálna demokracia (S&D)'],
                   ['Za ľudí (*)']].freeze
 

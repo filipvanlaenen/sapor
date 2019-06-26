@@ -61,7 +61,7 @@ module Sapor
                    'Plaid Cymru (Greens/EFA)',
                    'Scottish National Party (Greens/EFA)'],
                   ['Labour Party (S&D)'],
-                  ['UK Independence Party (EAPN)']].freeze
+                  ['UK Independence Party (ID)']].freeze
 
     # Voter turnout on 22 May 2014
     # Source: Web page with the official results of the elections of 22 May

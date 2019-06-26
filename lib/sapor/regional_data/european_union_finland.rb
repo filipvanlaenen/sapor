@@ -48,7 +48,7 @@ module Sapor
 
     COALITIONS = [['Kansallinen Kokoomus (EPP)', 'Kristillisdemokraatit (EPP)'],
                   ['Liike Nyt (EFDD)'],
-                  ['Perussuomalaiset (EAPN)'],
+                  ['Perussuomalaiset (ID)'],
                   ['Sininen tulevaisuus (ECR)'],
                   ['Suomen Keskusta (RE)', 'Svenska folkpartiet i Finland (RE)'],
                   ['Suomen Sosialidemokraattinen Puolue (S&D)'],
