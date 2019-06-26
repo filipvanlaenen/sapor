@@ -54,10 +54,10 @@ module Sapor
                    'Stranka antikorupcije, razvoja i transparentnosti (*)'],
                   ['Hrvatska konzervativna stranka (ECR)',
                    'Hrvatski rast (ECR)', 'Most nezavisnih lista (ECR)'],
-                  ['Nezavisna lista Mislava Kolakušića (NI)'],
+                  ['Nezavisna lista Mislava Kolakušića (NI)',
+                   'Živi zid (NI)'],
                   ['Neovisni za Hrvatsku (ID)'],
-                  ['Socijaldemokratska partija Hrvatske (S&D)'],
-                  ['Živi zid (EFDD)']].freeze
+                  ['Socijaldemokratska partija Hrvatske (S&D)']].freeze
 
     NO_OF_SEATS = 12
 

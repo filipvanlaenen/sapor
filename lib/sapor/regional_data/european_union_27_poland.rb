@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['KORWiN (EFDD)', 'Kukiz’15 (EFDD)'],
+    COALITIONS = [['KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['Koalicja Europejska (EPP)',
                    'Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)'],
