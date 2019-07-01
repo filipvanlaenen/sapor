@@ -46,11 +46,17 @@ module Sapor
     private
 
     FPO_PARTY = 'Freiheitliche Partei Österreichs'.freeze
+    GRUENE_PARTY = 'Die Grünen–Die Grüne Alternative'.freeze
+    NEOS_PARTY = 'NEOS–Das Neue Österreich und Liberales Forum'.freeze
     OVP_PARTY = 'Österreichische Volkspartei'.freeze
     SPO_PARTY = 'Sozialdemokratische Partei Österreichs'.freeze
 
     COALITIONS = [[FPO_PARTY, OVP_PARTY],
                   [FPO_PARTY, SPO_PARTY],
+                  [GRUENE_PARTY, NEOS_PARTY, OVP_PARTY],
+                  [GRUENE_PARTY, NEOS_PARTY, SPO_PARTY],
+                  [GRUENE_PARTY, OVP_PARTY],
+                  [NEOS_PARTY, OVP_PARTY],
                   [OVP_PARTY],
                   [OVP_PARTY, SPO_PARTY],
                   [SPO_PARTY]].freeze
