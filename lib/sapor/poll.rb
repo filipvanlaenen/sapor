@@ -65,7 +65,6 @@ module Sapor
                             EuropeanUnionFrenchCommunityOfBelgium.instance,
                             EuropeanUnionGermany.instance,
                             EuropeanUnionGreatBritain.instance,
-                            EuropeanUnionGreatBritainBrexitChuk.instance,
                             EuropeanUnionGreece.instance,
                             EuropeanUnionHungary.instance,
                             EuropeanUnionIreland.instance,

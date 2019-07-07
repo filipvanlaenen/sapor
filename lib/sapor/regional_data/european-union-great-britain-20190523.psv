@@ -1,0 +1,141 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+East Midlands | Brexit Party (NI)            | 452,321
+East Midlands | Liberal Democrats (RE)       | 203,989
+East Midlands | Labour Party (S&D)           | 164,682
+East Midlands | Conservative Party (ECR)     | 126,138
+East Midlands | Green Party (Greens/EFA)     | 124,630
+East Midlands | UK Independence Party (ID)   |  58,198
+East Midlands | Change UK (RE)               |  41,117
+East Midlands | Independent Network (*)      |   7,641
+East Midlands | Independent: Simon Rood (*)  |   4,511
+
+East of England | Brexit Party (NI)                | 604,715
+East of England | Liberal Democrats (RE)           | 361,563
+East of England | Green Party (Greens/EFA)         | 202,460
+East of England | Conservative Party (ECR)         | 163,830
+East of England | Labour Party (S&D)               | 139,490
+East of England | Change UK (RE)                   |  58,274
+East of England | UK Independence Party (ID)       |  54,676
+East of England | English Democrats (*)            |  10,217
+East of England | Independent: Attila Csordas (*)  |   3,230
+
+London | Liberal Democrats (RE)                         | 608,725
+London | Labour Party (S&D)                             | 536,810
+London | Brexit Party (NI)                              | 400,257
+London | Green Party (Greens/EFA)                       | 278,957
+London | Conservative Party (ECR)                       | 177,964
+London | Change UK (RE)                                 | 117,635
+London | UK Independence Party (ID)                     |  46,497
+London | Animal Welfare Party (GUE/NGL)                 |  25,232
+London | Women’s Equality Party (*)                     |  23,766
+London | UK European Union Party (*)                    |  18,806
+London | Independent: Claudia McDowell (*)              |   1,036
+London | Independent: Daze Aghaji (*)                   |   1,018
+London | Independent: Roger Hallam (*)                  |     924
+London | Independent: Kofi Klu (*)                      |     869
+London | Independent: Andrea Venzon (*)                 |     731
+London | Independent: Mike Shad (*)                     |     707
+London | Independent: Zoe Lafferty (*)                  |     436
+London | Independent: Andrew Medhurst (*)               |     430
+London | Independent: Alan Kirkby (*)                   |     401
+London | Independent: Ian Sowden (*)                    |     254
+London | Independent: Henry Muss (*)                    |     226
+
+North East England | Brexit Party (NI)            | 240,056
+North East England | Labour Party (S&D)           | 119,931
+North East England | Liberal Democrats (RE)       | 104,330
+North East England | Green Party (Greens/EFA)     |  49,905
+North East England | Conservative Party (ECR)     |  42,395
+North East England | UK Independence Party (ID)   |  38,269
+North East England | Change UK (RE)               |  24,968
+
+North West England | Brexit Party (NI)                              | 541,843
+North West England | Labour Party (S&D)                             | 380,193
+North West England | Liberal Democrats (RE)                         | 297,507
+North West England | Green Party (Greens/EFA)                       | 216,581
+North West England | Conservative Party (ECR)                       | 131,002
+North West England | UK Independence Party (ID)                     |  62,464
+North West England | Change UK (RE)                                 |  47,237
+North West England | Independent: Tommy Robinson (*)                |  38,908
+North West England | English Democrats (*)                          |  10,045
+North West England | UK European Union Party (*)                    |   7,125
+North West England | Independent: Mohammad Aslam (*)                |   2,002
+
+South East England | Brexit Party (NI)                              | 915,686
+South East England | Liberal Democrats (RE)                         | 653,743
+South East England | Green Party (Greens/EFA)                       | 343,249
+South East England | Conservative Party (ECR)                       | 260,277
+South East England | Labour Party (S&D)                             | 184,678
+South East England | Change UK (RE)                                 | 105,832
+South East England | UK Independence Party (ID)                     |  56,487
+South East England | UK European Union Party (*)                    |   7,645
+South East England | Independent: Jason Guy Spencer McMahon (*)     |   3,650
+South East England | Socialist Party of Great Britain (*)           |   3,505
+South East England | Independent: David Victor Round (*)            |   3,650
+South East England | Independent: Michael Jeffrey Tuberville (*)    |   3,650
+
+South West England | Brexit Party (NI)                              | 611,742
+South West England | Liberal Democrats (RE)                         | 385,095
+South West England | Green Party (Greens/EFA)                       | 302,364
+South West England | Conservative Party (ECR)                       | 144,674
+South West England | Labour Party (S&D)                             | 108,100
+South West England | UK Independence Party (ID)                     |  53,739
+South West England | Change UK (RE)                                 |  46,612
+South West England | English Democrats (*)                          |   8,393
+South West England | Independent: Neville Seed (*)                  |   3,383
+South West England | Independent: Larch Maxey (*)                   |   1,722
+South West England | Independent: Mothiur Rahman (*)                |     755
+
+West Midlands | Brexit Party (NI)                              | 507,152
+West Midlands | Labour Party (S&D)                             | 228,298
+West Midlands | Liberal Democrats (RE)                         | 219,982
+West Midlands | Green Party (Greens/EFA)                       | 143,520
+West Midlands | Conservative Party (ECR)                       | 135,279
+West Midlands | UK Independence Party (ID)                     |  66,934
+West Midlands | Change UK (RE)                                 |  45,673
+
+Yorkshire and the Humber | Brexit Party (NI)                              | 470,351
+Yorkshire and the Humber | Labour Party (S&D)                             | 210,516
+Yorkshire and the Humber | Liberal Democrats (RE)                         | 200,180
+Yorkshire and the Humber | Green Party (Greens/EFA)                       | 166,980
+Yorkshire and the Humber | Conservative Party (ECR)                       |  92,863
+Yorkshire and the Humber | UK Independence Party (ID)                     |  56,100
+Yorkshire and the Humber | Yorkshire Party (Greens/EFA)                   |  50,842
+Yorkshire and the Humber | Change UK (RE)                                 |  30,162
+Yorkshire and the Humber | English Democrats (*)                          |  11,283
+
+Scotland | Scottish National Party (Greens/EFA)           | 594,533
+Scotland | Brexit Party (NI)                              | 233,006
+Scotland | Liberal Democrats (RE)                         | 218,285
+Scotland | Conservative Party (ECR)                       | 182,476
+Scotland | Labour Party (S&D)                             | 146,724
+Scotland | Green Party (Greens/EFA)                       | 129,603
+Scotland | Change UK (RE)                                 |  30,004
+Scotland | UK Independence Party (ID)                     |  28,418
+Scotland | Independent: Gordon Edgar (*)                  |   6,128
+Scotland | Independent: Ken Parke (*)                     |   2,049
+
+Wales | Brexit Party (NI)                              | 271,404
+Wales | Plaid Cymru (Greens/EFA)                       | 163,928
+Wales | Labour Party (S&D)                             | 127,833
+Wales | Liberal Democrats (RE)                         | 113,885
+Wales | Conservative Party (ECR)                       |  54,587
+Wales | Green Party (Greens/EFA)                       |  52,660
+Wales | UK Independence Party (ID)                     |  27,566
+Wales | Change UK (RE)                                 |  24,332

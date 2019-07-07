@@ -44,17 +44,17 @@ module Sapor
       electoral_system.project(simulation)
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
 
     private
 
-    COALITIONS = [['Brexit Party (BREXIT)'],
+    COALITIONS = [['Brexit Party (NI)'],
                   ['Change UK (RE)', 'Liberal Democrats (RE)'],
                   ['Conservative Party (ECR)'],
                   ['Green Party (Greens/EFA)',
@@ -63,11 +63,11 @@ module Sapor
                   ['Labour Party (S&D)'],
                   ['UK Independence Party (ID)']].freeze
 
-    # Voter turnout on 22 May 2014
-    # Source: Web page with the official results of the elections of 22 May
-    # 2014, downloaded on 5 April 2019,
-    # https://en.wikipedia.org/wiki/2014_European_Parliament_election_in_the_United_Kingdom
-    POPULATION_SIZE = 15_828_825
+    # Voter turnout on 23 May 2019
+    # Source: Web page with the official results of the elections of 23 May
+    # 2019, downloaded on 7 July 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_the_United_Kingdom
+    POPULATION_SIZE = 16_627_254
 
     SEAT_DISTRIBUTION = { 'East Midlands' => 5, 'East of England' => 7,
                           'London' => 8, 'North East England' => 3,
@@ -76,19 +76,19 @@ module Sapor
                           'Yorkshire and the Humber' => 6, 'Scotland' => 6,
                           'Wales' => 4}
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results( \
-          'european-union-great-britain-20140522.psv')
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results( \
+          'european-union-great-britain-20190523.psv')
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2014,
-          election_results_of_2014,
+          overall_election_results_of_2019,
+          election_results_of_2019,
           SEAT_DISTRIBUTION,
           DhondtDenominators)
       end

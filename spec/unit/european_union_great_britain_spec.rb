@@ -33,46 +33,55 @@ describe Sapor::EuropeanUnionGreatBritain, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionGreatBritain, '#population_size' do
-  it 'returns a population size of 16,454,950 (UK) - 626,125 (NI)' do
+  it 'returns a population size of 17,199,701 (UK) - 572,447 (NI)' do
     expect(Sapor::EuropeanUnionGreatBritain.instance.population_size).to \
-      eq(16_454_950 - 626_125)
+      eq(17_199_701 - 572_447)
   end
 end
 
 describe Sapor::EuropeanUnionGreatBritain, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     great_britain = Sapor::EuropeanUnionGreatBritain.instance
-    results = great_britain.overall_election_results_of_2014
+    results = great_britain.overall_election_results_of_2019
     seats = great_britain.seats(results)
-    expect(seats['UK Independence Party (EAPN)']).to eq(24)
-    expect(seats['Labour Party (S&D)']).to eq(20)
-    expect(seats['Conservative Party (ECR)']).to eq(19)
-    expect(seats['Green Party (Greens/EFA)']).to eq(3)
-    expect(seats['Scottish National Party (Greens/EFA)']).to eq(2)
-    expect(seats['Liberal Democrats (ALDE)']).to eq(1)
+    expect(seats['Brexit Party (NI)']).to eq(29)
+    expect(seats['Liberal Democrats (RE)']).to eq(16)
+    expect(seats['Labour Party (S&D)']).to eq(10)
+    expect(seats['Green Party (Greens/EFA)']).to eq(7)
+    expect(seats['Conservative Party (ECR)']).to eq(4)
+    expect(seats['Scottish National Party (Greens/EFA)']).to eq(3)
     expect(seats['Plaid Cymru (Greens/EFA)']).to eq(1)
-    expect(seats['Alliance EPP: European People’s Party UK (EPP)']).to eq(0)
-    expect(seats['Animal Welfare Party (GUE/NGL)']).to eq(0)
-    expect(seats['Britain First (*)']).to eq(0)
-    expect(seats['British National Party (*)']).to eq(0)
-    expect(seats['Christian Peoples Alliance (ECR)']).to eq(0)
-    expect(seats['Communities United Party (*)']).to eq(0)
-    expect(seats['English Democrats (*)']).to eq(0)
-    expect(seats['Europeans Party (*)']).to eq(0)
-    expect(seats['Harmony Party (*)']).to eq(0)
-    expect(seats['Independence from Europe (*)']).to eq(0)
-    expect(seats['Liberty Great Britain (*)']).to eq(0)
-    expect(seats['National Health Action Party (*)']).to eq(0)
-    expect(seats['National Liberal Party (*)']).to eq(0)
-    expect(seats['No2EU (*)']).to eq(0)
-    expect(seats['Peace Party (*)']).to eq(0)
-    expect(seats['Pirate Party UK (*)']).to eq(0)
-    expect(seats['Roman Party (*)']).to eq(0)
-    expect(seats['Socialist Equality Party (*)']).to eq(0)
-    expect(seats['Socialist Labour Party (*)']).to eq(0)
-    expect(seats['Socialist Party of Great Britain (*)']).to eq(0)
-    expect(seats['We Demand a Referendum Now (*)']).to eq(0)
+    expect(seats['Change UK (RE)']).to eq(0)
+    expect(seats['UK Independence Party (ID)']).to eq(0)
     expect(seats['Yorkshire Party (Greens/EFA)']).to eq(0)
-    expect(seats['YOURVoice (*)']).to eq(0)
+    expect(seats['English Democrats (*)']).to eq(0)
+    expect(seats['UK European Union Party (*)']).to eq(0)
+    expect(seats['Animal Welfare Party (GUE/NGL)']).to eq(0)
+    expect(seats['Women’s Equality Party (*)']).to eq(0)
+    expect(seats['Independent Network (*)']).to eq(0)
+    expect(seats['Socialist Party of Great Britain (*)']).to eq(0)
+    expect(seats['Independent: Alan Kirkby (*)']).to eq(0)
+    expect(seats['Independent: Andrea Venzon (*)']).to eq(0)
+    expect(seats['Independent: Andrew Medhurst (*)']).to eq(0)
+    expect(seats['Independent: Attila Csordas (*)']).to eq(0)
+    expect(seats['Independent: Claudia McDowell (*)']).to eq(0)
+    expect(seats['Independent: David Victor Round (*)']).to eq(0)
+    expect(seats['Independent: Daze Aghaji (*)']).to eq(0)
+    expect(seats['Independent: Gordon Edgar (*)']).to eq(0)
+    expect(seats['Independent: Henry Muss (*)']).to eq(0)
+    expect(seats['Independent: Ian Sowden (*)']).to eq(0)
+    expect(seats['Independent: Jason Guy Spencer McMahon (*)']).to eq(0)
+    expect(seats['Independent: Ken Parke (*)']).to eq(0)
+    expect(seats['Independent: Kofi Klu (*)']).to eq(0)
+    expect(seats['Independent: Larch Maxey (*)']).to eq(0)
+    expect(seats['Independent: Michael Jeffrey Tuberville (*)']).to eq(0)
+    expect(seats['Independent: Mike Shad (*)']).to eq(0)
+    expect(seats['Independent: Mohammad Aslam (*)']).to eq(0)
+    expect(seats['Independent: Mothiur Rahman (*)']).to eq(0)
+    expect(seats['Independent: Neville Seed (*)']).to eq(0)
+    expect(seats['Independent: Roger Hallam (*)']).to eq(0)
+    expect(seats['Independent: Simon Rood (*)']).to eq(0)
+    expect(seats['Independent: Tommy Robinson (*)']).to eq(0)
+    expect(seats['Independent: Zoe Lafferty (*)']).to eq(0)
   end
 end
