@@ -48,7 +48,7 @@ describe Sapor::EuropeanUnion27IrelandWithIa, '#seats' do
                 'Sinn Féin (GUE/NGL)' => 196_001,
                 'Labour Party (S&D)' => 52_753,
                 'Solidarity–People Before Profit (GUE/NGL)' => 38_771,
-                'Social Democrats (*)' => 20_331,
+                'Social Democrats (S&D)' => 20_331,
                 'Renua Ireland (*)' => 6_897,
                 'Workers’ Party (NI)' => 3_701,
                 'Identity Ireland (*)' => 3_685,
@@ -63,7 +63,7 @@ describe Sapor::EuropeanUnion27IrelandWithIa, '#seats' do
     expect(seats['Sinn Féin (GUE/NGL)']).to eq(1 - 1 + 1)
     expect(seats['Labour Party (S&D)']).to eq(0)
     expect(seats['Solidarity–People Before Profit (GUE/NGL)']).to eq(0)
-    expect(seats['Social Democrats (*)']).to eq(0)
+    expect(seats['Social Democrats (S&D)']).to eq(0)
     expect(seats['Renua Ireland (*)']).to eq(0)
     expect(seats['Workers’ Party (NI)']).to eq(0)
     expect(seats['Identity Ireland (*)']).to eq(0)

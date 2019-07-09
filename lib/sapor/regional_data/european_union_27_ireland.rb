@@ -48,15 +48,14 @@ module Sapor
 
     COALITIONS = [['Catholic Democrats (*)', 'Direct Democracy Ireland (*)',
                    'Fís Nua (*)', 'Independent Alliance (*)',
-                   'Independents (*)', 'Renua Ireland (*)',
-                   'Social Democrats (*)'],
+                   'Independents (*)', 'Renua Ireland (*)'],
                   ['Fianna Fáil (RE)'],
                   ['Fine Gael (EPP)'],
                   ['Green Party (Greens/EFA)'],
                   ['Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',
                    'Socialist Party (GUE/NGL)',
                    'Solidarity–People Before Profit (GUE/NGL)'],
-                  ['Labour Party (S&D)']].freeze
+                  ['Labour Party (S&D)', 'Social Democrats (S&D)']].freeze
 
     # Voter turnout on 24 May 2019
     # Source: Web page with the official results of the elections of 24 May
