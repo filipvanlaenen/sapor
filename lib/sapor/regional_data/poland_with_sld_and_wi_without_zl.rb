@@ -53,7 +53,7 @@ module Sapor
     end
 
     def threshold
-      THRESHOLD
+      PARTY_LIST_THRESHOLD
     end
 
     private
