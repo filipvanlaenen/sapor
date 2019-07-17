@@ -57,6 +57,9 @@ module Sapor
 
     private
 
+    MN_PARTY = 'Mniejszość Niemiecka'.freeze
+    ZL_PARTY = 'Zjednoczona Lewica'.freeze
+
     COALITIONS = [].freeze
 
     # Voter turnout on 25 October 2015
@@ -82,7 +85,10 @@ module Sapor
                           'Konin' => 9, 'Piła' => 9, 'Poznań' => 10,
                           'Koszalin' => 8, 'Szczecin' => 12 }.freeze
 
-    THRESHOLD = 0.05
+    PARTY_LIST_THRESHOLD = 0.05
+    COALITION_LIST_THRESHOLD = 0.08
+    COALITION_LISTS = [ZL_PARTY].freeze
+    MINORITY_LISTS = [MN_PARTY].freeze
 
     def election_results_of_2015
       if @election_results_of_2015.nil?
@@ -95,9 +101,10 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = MultiDistrictProportional.new( \
+        @electoral_system = MultiDistrictVariableThresholdProportional.new( \
           overall_election_results_of_2015, election_results_of_2015,
-          SEAT_DISTRIBUTION, DhondtDenominators, 0, THRESHOLD
+          SEAT_DISTRIBUTION, DhondtDenominators, PARTY_LIST_THRESHOLD,
+          COALITION_LIST_THRESHOLD, COALITION_LISTS, MINORITY_LISTS
         )
       end
       @electoral_system
