@@ -21,7 +21,7 @@ SOURCE = '2015-gl-lis-okr.csv'.freeze
 TARGET = '../../lib/sapor/regional_data/poland-20151025.psv'.freeze
 PARTIES = ['Prawo i Sprawiedliwość',
            'Platforma Obywatelska',
-           'Partia Razem', 
+           'Lewica Razem', 
            'KORWiN',
            'Polskie Stronnictwo Ludowe',
            'Zjednoczona Lewica',

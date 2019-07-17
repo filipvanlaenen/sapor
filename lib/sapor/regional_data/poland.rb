@@ -58,9 +58,21 @@ module Sapor
     private
 
     MN_PARTY = 'Mniejszość Niemiecka'.freeze
+    N_PARTY = '.Nowoczesna'.freeze
+    PIS_PARTY = 'Prawo i Sprawiedliwość'.freeze
+    PO_PARTY = 'Platforma Obywatelska'.freeze
+    PSL_PARTY = 'Polskie Stronnictwo Ludowe'.freeze
+    R_PARTY = 'Lewica Razem'.freeze
+    SLD_PARTY = 'Sojusz Lewicy Demokratycznej'.freeze
     ZL_PARTY = 'Zjednoczona Lewica'.freeze
 
-    COALITIONS = [].freeze
+    COALITIONS = [[N_PARTY, PO_PARTY],
+                  [N_PARTY, PO_PARTY, PSL_PARTY],
+                  [N_PARTY, PO_PARTY, PSL_PARTY, R_PARTY, SLD_PARTY],
+                  [N_PARTY, PO_PARTY, PSL_PARTY, SLD_PARTY],
+                  [N_PARTY, PO_PARTY, SLD_PARTY],
+                  [PIS_PARTY],
+                  [PO_PARTY]].freeze
 
     # Voter turnout on 25 October 2015
     # Source: Web page with the official results of the elections of 25 October

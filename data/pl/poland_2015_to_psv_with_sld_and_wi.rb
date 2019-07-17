@@ -22,7 +22,7 @@ TARGET = '../../lib/sapor/regional_data/poland-20151025-with-sld-and-wi-without-
 ZL_PARTY = 'Zjednoczona Lewica'.freeze
 PARTIES = ['Prawo i Sprawiedliwość',
            'Platforma Obywatelska',
-           'Partia Razem', 
+           'Lewica Razem', 
            'KORWiN',
            'Polskie Stronnictwo Ludowe',
            ZL_PARTY,

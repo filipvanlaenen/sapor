@@ -48,7 +48,7 @@ describe Sapor::PolandWithSldWithoutZL, '#seats' do
     expect(seats['Polskie Stronnictwo Ludowe']).to eq(16 - 2)
     expect(seats['Mniejszość Niemiecka']).to eq(1)
     expect(seats['Sojusz Lewicy Demokratycznej']).to eq(0 + 29)
-    expect(seats['Partia Razem']).to eq(0)
+    expect(seats['Lewica Razem']).to eq(0)
     expect(seats['KORWiN']).to eq(0)
     expect(seats['JOW Bezpartyjni']).to eq(0)
     expect(seats['Stonoga Partia Polska']).to eq(0)
