@@ -96,7 +96,7 @@ module Sapor
      LATVIAN_AREAS + NORWEGIAN_AREAS + PORTUGUESE_AREAS + \
      [Austria.instance, Estonia.instance, Finland.instance,
       FinlandWithSin.instance, France.instance, Greece.instance,
-      Hungary.instance, Iceland.instance, Luxembourg.instance,
+      Hungary.instance, Iceland.instance, Luxembourg.instance, Poland.instance,
       Slovenia.instance, Spain.instance, Sweden.instance, \
       Sweden20140914.instance, UnitedKingdom.instance, \
       UnitedKingdomWithBrexit.instance, \
