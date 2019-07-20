@@ -90,6 +90,7 @@ module Sapor
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
     POLISH_AREAS = [Poland.instance,
+                    PolandWithKoSldAndWiWithoutNPoAndZl.instance,
                     PolandWithSldAndWiWithoutZL.instance,
                     PolandWithSldWithoutZL.instance].freeze
     PORTUGUESE_AREAS = [Portugal.instance, PortugalWithAWithoutPaf.instance,

@@ -1,0 +1,403 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+Legnica | Prawo i Sprawiedliwość | 127370
+Legnica | Lewica Razem | 13003
+Legnica | KORWiN | 15427
+Legnica | Polskie Stronnictwo Ludowe | 13886
+Legnica | Sojusz Lewicy Demokratycznej | 37298
+Legnica | Wiosna | 37298
+Legnica | Kukiz’15 | 34229
+Legnica | Koalicja Obywatelska | 115566
+Wałbrzych | Prawo i Sprawiedliwość | 72929
+Wałbrzych | Lewica Razem | 7984
+Wałbrzych | KORWiN | 10075
+Wałbrzych | Polskie Stronnictwo Ludowe | 7448
+Wałbrzych | Sojusz Lewicy Demokratycznej | 20517
+Wałbrzych | Wiosna | 20517
+Wałbrzych | Kukiz’15 | 20634
+Wałbrzych | JOW Bezpartyjni | 2540
+Wałbrzych | Koalicja Obywatelska | 91968
+Wrocław | Prawo i Sprawiedliwość | 163323
+Wrocław | Lewica Razem | 22059
+Wrocław | KORWiN | 27341
+Wrocław | Polskie Stronnictwo Ludowe | 13604
+Wrocław | Sojusz Lewicy Demokratycznej | 31932
+Wrocław | Wiosna | 31932
+Wrocław | Kukiz’15 | 45726
+Wrocław | Stonoga Partia Polska | 2779
+Wrocław | Grzegorz Braun „Szczęść Boże!” | 1269
+Wrocław | Koalicja Obywatelska | 215338
+Bydgoszcz | Prawo i Sprawiedliwość | 113024
+Bydgoszcz | Lewica Razem | 14062
+Bydgoszcz | KORWiN | 17002
+Bydgoszcz | Polskie Stronnictwo Ludowe | 22701
+Bydgoszcz | Sojusz Lewicy Demokratycznej | 37583
+Bydgoszcz | Wiosna | 37583
+Bydgoszcz | Kukiz’15 | 29080
+Bydgoszcz | Stonoga Partia Polska | 2543
+Bydgoszcz | Koalicja Obywatelska | 138282
+Toruń | Prawo i Sprawiedliwość | 121703
+Toruń | Lewica Razem | 13227
+Toruń | KORWiN | 14134
+Toruń | Polskie Stronnictwo Ludowe | 24476
+Toruń | Sojusz Lewicy Demokratycznej | 39003
+Toruń | Wiosna | 39003
+Toruń | Kukiz’15 | 30159
+Toruń | Stonoga Partia Polska | 2041
+Toruń | Samoobrona | 772
+Toruń | Koalicja Obywatelska | 116995
+Lublin | Prawo i Sprawiedliwość | 232014
+Lublin | Lewica Razem | 13395
+Lublin | KORWiN | 24376
+Lublin | Polskie Stronnictwo Ludowe | 37733
+Lublin | Sojusz Lewicy Demokratycznej | 29172
+Lublin | Wiosna | 29172
+Lublin | Kukiz’15 | 45448
+Lublin | Ruch Społeczny Rzeczypospolitej Polskiej | 599
+Lublin | Samoobrona | 580
+Lublin | Grzegorz Braun „Szczęść Boże!” | 1353
+Lublin | Koalicja Obywatelska | 103050
+Chełm | Prawo i Sprawiedliwość | 163122
+Chełm | Lewica Razem | 8116
+Chełm | KORWiN | 14835
+Chełm | Polskie Stronnictwo Ludowe | 38689
+Chełm | Sojusz Lewicy Demokratycznej | 24161
+Chełm | Wiosna | 24161
+Chełm | Kukiz’15 | 35567
+Chełm | Samoobrona | 628
+Chełm | Koalicja Obywatelska | 54568
+Zielona Góra | Prawo i Sprawiedliwość | 97877
+Zielona Góra | Lewica Razem | 13825
+Zielona Góra | KORWiN | 17274
+Zielona Góra | Polskie Stronnictwo Ludowe | 17743
+Zielona Góra | Sojusz Lewicy Demokratycznej | 34695
+Zielona Góra | Wiosna | 34695
+Zielona Góra | Kukiz’15 | 30284
+Zielona Góra | Stonoga Partia Polska | 2258
+Zielona Góra | Koalicja Obywatelska | 132262
+Łódź | Prawo i Sprawiedliwość | 107350
+Łódź | Lewica Razem | 16627
+Łódź | KORWiN | 17163
+Łódź | Polskie Stronnictwo Ludowe | 9710
+Łódź | Sojusz Lewicy Demokratycznej | 37615
+Łódź | Wiosna | 37615
+Łódź | Kukiz’15 | 25992
+Łódź | Koalicja Obywatelska | 144607
+Piotrków Trybunalski | Prawo i Sprawiedliwość | 134134
+Piotrków Trybunalski | Lewica Razem | 8747
+Piotrków Trybunalski | KORWiN | 11160
+Piotrków Trybunalski | Polskie Stronnictwo Ludowe | 21364
+Piotrków Trybunalski | Sojusz Lewicy Demokratycznej | 21352
+Piotrków Trybunalski | Wiosna | 21352
+Piotrków Trybunalski | Kukiz’15 | 28808
+Piotrków Trybunalski | Koalicja Obywatelska | 60156
+Sieradz | Prawo i Sprawiedliwość | 147623
+Sieradz | Lewica Razem | 13077
+Sieradz | KORWiN | 15171
+Sieradz | Polskie Stronnictwo Ludowe | 29044
+Sieradz | Sojusz Lewicy Demokratycznej | 30256
+Sieradz | Wiosna | 30256
+Sieradz | Kukiz’15 | 32973
+Sieradz | Stonoga Partia Polska | 1905
+Sieradz | Samoobrona | 712
+Sieradz | Grzegorz Braun „Szczęść Boże!” | 989
+Sieradz | Koalicja Obywatelska | 97995
+Kraków I (południe) | Prawo i Sprawiedliwość | 133213
+Kraków I (południe) | Lewica Razem | 8840
+Kraków I (południe) | KORWiN | 12089
+Kraków I (południe) | Polskie Stronnictwo Ludowe | 8226
+Kraków I (południe) | Sojusz Lewicy Demokratycznej | 14473
+Kraków I (południe) | Wiosna | 14473
+Kraków I (południe) | Kukiz’15 | 23551
+Kraków I (południe) | Koalicja Obywatelska | 71185
+Kraków II (północ) | Prawo i Sprawiedliwość | 209607
+Kraków II (północ) | Lewica Razem | 21053
+Kraków II (północ) | KORWiN | 34446
+Kraków II (północ) | Polskie Stronnictwo Ludowe | 14644
+Kraków II (północ) | Sojusz Lewicy Demokratycznej | 34643
+Kraków II (północ) | Wiosna | 34643
+Kraków II (północ) | Kukiz’15 | 39379
+Kraków II (północ) | Grzegorz Braun „Szczęść Boże!” | 1372
+Kraków II (północ) | Kongres Nowej Prawicy | 1244
+Kraków II (północ) | Koalicja Obywatelska | 186380
+Nowy Sącz | Prawo i Sprawiedliwość | 188010
+Nowy Sącz | Lewica Razem | 6627
+Nowy Sącz | KORWiN | 13379
+Nowy Sącz | Polskie Stronnictwo Ludowe | 12929
+Nowy Sącz | Sojusz Lewicy Demokratycznej | 7924
+Nowy Sącz | Wiosna | 7924
+Nowy Sącz | Kukiz’15 | 24318
+Nowy Sącz | Stonoga Partia Polska | 1606
+Nowy Sącz | Kongres Nowej Prawicy | 891
+Nowy Sącz | Koalicja Obywatelska | 54777
+Tarnów | Prawo i Sprawiedliwość | 151623
+Tarnów | Lewica Razem | 7082
+Tarnów | KORWiN | 13766
+Tarnów | Polskie Stronnictwo Ludowe | 23552
+Tarnów | Sojusz Lewicy Demokratycznej | 9933
+Tarnów | Wiosna | 9933
+Tarnów | Kukiz’15 | 28005
+Tarnów | Grzegorz Braun „Szczęść Boże!” | 906
+Tarnów | Kongres Nowej Prawicy | 654
+Tarnów | Koalicja Obywatelska | 56120
+Płock | Prawo i Sprawiedliwość | 131431
+Płock | Lewica Razem | 10062
+Płock | KORWiN | 12214
+Płock | Polskie Stronnictwo Ludowe | 31994
+Płock | Sojusz Lewicy Demokratycznej | 24440
+Płock | Wiosna | 24440
+Płock | Kukiz’15 | 25257
+Płock | Koalicja Obywatelska | 64804
+Radom | Prawo i Sprawiedliwość | 130758
+Radom | Lewica Razem | 7203
+Radom | KORWiN | 10770
+Radom | Polskie Stronnictwo Ludowe | 25933
+Radom | Sojusz Lewicy Demokratycznej | 13258
+Radom | Wiosna | 13258
+Radom | Kukiz’15 | 23149
+Radom | Stonoga Partia Polska | 2050
+Radom | Kongres Nowej Prawicy | 656
+Radom | Koalicja Obywatelska | 61565
+Siedlce | Prawo i Sprawiedliwość | 191733
+Siedlce | Lewica Razem | 9964
+Siedlce | KORWiN | 16332
+Siedlce | Polskie Stronnictwo Ludowe | 38396
+Siedlce | Sojusz Lewicy Demokratycznej | 16327
+Siedlce | Wiosna | 16327
+Siedlce | Kukiz’15 | 31378
+Siedlce | JOW Bezpartyjni | 1045
+Siedlce | Ruch Społeczny Rzeczypospolitej Polskiej | 582
+Siedlce | Grzegorz Braun „Szczęść Boże!” | 1239
+Siedlce | Koalicja Obywatelska | 68244
+Warszawa I (miasto) | Prawo i Sprawiedliwość | 327342
+Warszawa I (miasto) | Lewica Razem | 60663
+Warszawa I (miasto) | KORWiN | 67700
+Warszawa I (miasto) | Polskie Stronnictwo Ludowe | 7882
+Warszawa I (miasto) | Sojusz Lewicy Demokratycznej | 93666
+Warszawa I (miasto) | Wiosna | 93666
+Warszawa I (miasto) | Kukiz’15 | 84937
+Warszawa I (miasto) | Ruch Społeczny Rzeczypospolitej Polskiej | 2760
+Warszawa I (miasto) | Obywatele do Parlamentu | 1964
+Warszawa I (miasto) | Koalicja Obywatelska | 448301
+Warszawa II (okręg) | Prawo i Sprawiedliwość | 190355
+Warszawa II (okręg) | Lewica Razem | 18895
+Warszawa II (okręg) | KORWiN | 23586
+Warszawa II (okręg) | Polskie Stronnictwo Ludowe | 18666
+Warszawa II (okręg) | Sojusz Lewicy Demokratycznej | 27774
+Warszawa II (okręg) | Wiosna | 27774
+Warszawa II (okręg) | Kukiz’15 | 35418
+Warszawa II (okręg) | Stonoga Partia Polska | 3597
+Warszawa II (okręg) | Koalicja Obywatelska | 172325
+Opole | Prawo i Sprawiedliwość | 93926
+Opole | Lewica Razem | 10202
+Opole | KORWiN | 13346
+Opole | Polskie Stronnictwo Ludowe | 12464
+Opole | Sojusz Lewicy Demokratycznej | 22841
+Opole | Wiosna | 22841
+Opole | Kukiz’15 | 42533
+Opole | JOW Bezpartyjni | 1772
+Opole | Grzegorz Braun „Szczęść Boże!” | 751
+Opole | Mniejszość Niemiecka | 27530
+Opole | Koalicja Obywatelska | 112883
+Krosno | Prawo i Sprawiedliwość | 174900
+Krosno | Lewica Razem | 7595
+Krosno | KORWiN | 13984
+Krosno | Polskie Stronnictwo Ludowe | 23805
+Krosno | Sojusz Lewicy Demokratycznej | 14893
+Krosno | Wiosna | 14893
+Krosno | Kukiz’15 | 29919
+Krosno | JOW Bezpartyjni | 2289
+Krosno | Stonoga Partia Polska | 1528
+Krosno | Koalicja Obywatelska | 57952
+Rzeszów | Prawo i Sprawiedliwość | 284642
+Rzeszów | Lewica Razem | 11623
+Rzeszów | KORWiN | 25163
+Rzeszów | Polskie Stronnictwo Ludowe | 23667
+Rzeszów | Sojusz Lewicy Demokratycznej | 22409
+Rzeszów | Wiosna | 22409
+Rzeszów | Kukiz’15 | 47071
+Rzeszów | Stonoga Partia Polska | 2919
+Rzeszów | Grzegorz Braun „Szczęść Boże!” | 1363
+Rzeszów | Kongres Nowej Prawicy | 778
+Rzeszów | Koalicja Obywatelska | 87622
+Białystok | Prawo i Sprawiedliwość | 197575
+Białystok | Lewica Razem | 11258
+Białystok | KORWiN | 20297
+Białystok | Polskie Stronnictwo Ludowe | 35116
+Białystok | Sojusz Lewicy Demokratycznej | 32015
+Białystok | Wiosna | 32015
+Białystok | Kukiz’15 | 39509
+Białystok | Stonoga Partia Polska | 2088
+Białystok | Samoobrona | 626
+Białystok | Kongres Nowej Prawicy | 629
+Białystok | Koalicja Obywatelska | 96255
+Gdańsk | Prawo i Sprawiedliwość | 126466
+Gdańsk | Lewica Razem | 16992
+Gdańsk | KORWiN | 21366
+Gdańsk | Polskie Stronnictwo Ludowe | 12904
+Gdańsk | Sojusz Lewicy Demokratycznej | 28168
+Gdańsk | Wiosna | 28168
+Gdańsk | Kukiz’15 | 30536
+Gdańsk | Stonoga Partia Polska | 3210
+Gdańsk | Koalicja Obywatelska | 187489
+Gdynia | Prawo i Sprawiedliwość | 145698
+Gdynia | Lewica Razem | 18918
+Gdynia | KORWiN | 20677
+Gdynia | Polskie Stronnictwo Ludowe | 15064
+Gdynia | Sojusz Lewicy Demokratycznej | 30973
+Gdynia | Wiosna | 30973
+Gdynia | Kukiz’15 | 37410
+Gdynia | Stonoga Partia Polska | 3477
+Gdynia | Koalicja Obywatelska | 194491
+Bielsko-Biała | Prawo i Sprawiedliwość | 136330
+Bielsko-Biała | Lewica Razem | 12557
+Bielsko-Biała | KORWiN | 15788
+Bielsko-Biała | Polskie Stronnictwo Ludowe | 11533
+Bielsko-Biała | Sojusz Lewicy Demokratycznej | 22122
+Bielsko-Biała | Wiosna | 22122
+Bielsko-Biała | Kukiz’15 | 31570
+Bielsko-Biała | Koalicja Obywatelska | 107388
+Częstochowa | Prawo i Sprawiedliwość | 84773
+Częstochowa | Lewica Razem | 8625
+Częstochowa | KORWiN | 10111
+Częstochowa | Polskie Stronnictwo Ludowe | 11799
+Częstochowa | Sojusz Lewicy Demokratycznej | 26305
+Częstochowa | Wiosna | 26305
+Częstochowa | Kukiz’15 | 27521
+Częstochowa | Stonoga Partia Polska | 1378
+Częstochowa | Grzegorz Braun „Szczęść Boże!” | 600
+Częstochowa | Koalicja Obywatelska | 65522
+Gliwice | Prawo i Sprawiedliwość | 89584
+Gliwice | Lewica Razem | 12181
+Gliwice | KORWiN | 14949
+Gliwice | Polskie Stronnictwo Ludowe | 7342
+Gliwice | Sojusz Lewicy Demokratycznej | 21163
+Gliwice | Wiosna | 21163
+Gliwice | Kukiz’15 | 35793
+Gliwice | Grzegorz Braun „Szczęść Boże!” | 1403
+Gliwice | Koalicja Obywatelska | 111252
+Rybnik | Prawo i Sprawiedliwość | 114799
+Rybnik | Lewica Razem | 9669
+Rybnik | KORWiN | 13136
+Rybnik | Polskie Stronnictwo Ludowe | 5197
+Rybnik | Sojusz Lewicy Demokratycznej | 17201
+Rybnik | Wiosna | 17201
+Rybnik | Kukiz’15 | 32794
+Rybnik | Zjednoczeni dla Śląska | 7928
+Rybnik | Grzegorz Braun „Szczęść Boże!” | 710
+Rybnik | Koalicja Obywatelska | 88529
+Katowice | Prawo i Sprawiedliwość | 135367
+Katowice | Lewica Razem | 16786
+Katowice | KORWiN | 22803
+Katowice | Polskie Stronnictwo Ludowe | 4064
+Katowice | Sojusz Lewicy Demokratycznej | 27837
+Katowice | Wiosna | 27837
+Katowice | Kukiz’15 | 41344
+Katowice | Zjednoczeni dla Śląska | 10740
+Katowice | Koalicja Obywatelska | 152249
+Sosnowiec | Prawo i Sprawiedliwość | 84410
+Sosnowiec | Lewica Razem | 12652
+Sosnowiec | KORWiN | 13682
+Sosnowiec | Polskie Stronnictwo Ludowe | 6687
+Sosnowiec | Sojusz Lewicy Demokratycznej | 39774
+Sosnowiec | Wiosna | 39774
+Sosnowiec | Kukiz’15 | 29161
+Sosnowiec | Koalicja Obywatelska | 98277
+Kielce | Prawo i Sprawiedliwość | 200652
+Kielce | Lewica Razem | 13106
+Kielce | KORWiN | 19395
+Kielce | Polskie Stronnictwo Ludowe | 44574
+Kielce | Sojusz Lewicy Demokratycznej | 36880
+Kielce | Wiosna | 36880
+Kielce | Kukiz’15 | 44115
+Kielce | JOW Bezpartyjni | 2344
+Kielce | Stonoga Partia Polska | 1792
+Kielce | Samoobrona | 448
+Kielce | Grzegorz Braun „Szczęść Boże!” | 1158
+Kielce | Koalicja Obywatelska | 104226
+Elbląg | Prawo i Sprawiedliwość | 63236
+Elbląg | Lewica Razem | 7608
+Elbląg | KORWiN | 9480
+Elbląg | Polskie Stronnictwo Ludowe | 13411
+Elbląg | Sojusz Lewicy Demokratycznej | 15407
+Elbląg | Wiosna | 15407
+Elbląg | Kukiz’15 | 16514
+Elbląg | JOW Bezpartyjni | 1426
+Elbląg | Stonoga Partia Polska | 1253
+Elbląg | Koalicja Obywatelska | 72027
+Olsztyn | Prawo i Sprawiedliwość | 80970
+Olsztyn | Lewica Razem | 9948
+Olsztyn | KORWiN | 13584
+Olsztyn | Polskie Stronnictwo Ludowe | 22458
+Olsztyn | Sojusz Lewicy Demokratycznej | 23312
+Olsztyn | Wiosna | 23312
+Olsztyn | Kukiz’15 | 23888
+Olsztyn | Stonoga Partia Polska | 1810
+Olsztyn | Koalicja Obywatelska | 90196
+Kalisz | Prawo i Sprawiedliwość | 115668
+Kalisz | Lewica Razem | 11497
+Kalisz | KORWiN | 15422
+Kalisz | Polskie Stronnictwo Ludowe | 39874
+Kalisz | Sojusz Lewicy Demokratycznej | 32047
+Kalisz | Wiosna | 32047
+Kalisz | Kukiz’15 | 28996
+Kalisz | JOW Bezpartyjni | 1973
+Kalisz | Stonoga Partia Polska | 1982
+Kalisz | Samoobrona | 500
+Kalisz | Koalicja Obywatelska | 115225
+Konin | Prawo i Sprawiedliwość | 103781
+Konin | Lewica Razem | 11032
+Konin | KORWiN | 11061
+Konin | Polskie Stronnictwo Ludowe | 19027
+Konin | Sojusz Lewicy Demokratycznej | 32649
+Konin | Wiosna | 32649
+Konin | Kukiz’15 | 24486
+Konin | Koalicja Obywatelska | 75348
+Piła | Prawo i Sprawiedliwość | 73665
+Piła | Lewica Razem | 10591
+Piła | KORWiN | 11004
+Piła | Polskie Stronnictwo Ludowe | 20712
+Piła | Sojusz Lewicy Demokratycznej | 24723
+Piła | Wiosna | 24723
+Piła | Kukiz’15 | 24359
+Piła | Stonoga Partia Polska | 2515
+Piła | Koalicja Obywatelska | 102704
+Poznań | Prawo i Sprawiedliwość | 97975
+Poznań | Lewica Razem | 18854
+Poznań | KORWiN | 19548
+Poznań | Polskie Stronnictwo Ludowe | 7809
+Poznań | Sojusz Lewicy Demokratycznej | 33080
+Poznań | Wiosna | 33080
+Poznań | Kukiz’15 | 24825
+Poznań | JOW Bezpartyjni | 2267
+Poznań | Koalicja Obywatelska | 205528
+Koszalin | Prawo i Sprawiedliwość | 62032
+Koszalin | Lewica Razem | 8466
+Koszalin | KORWiN | 9672
+Koszalin | Polskie Stronnictwo Ludowe | 8972
+Koszalin | Sojusz Lewicy Demokratycznej | 24697
+Koszalin | Wiosna | 24697
+Koszalin | Kukiz’15 | 20428
+Koszalin | Koalicja Obywatelska | 82750
+Szczecin | Prawo i Sprawiedliwość | 110697
+Szczecin | Lewica Razem | 15678
+Szczecin | KORWiN | 20291
+Szczecin | Polskie Stronnictwo Ludowe | 14776
+Szczecin | Sojusz Lewicy Demokratycznej | 32584
+Szczecin | Wiosna | 32584
+Szczecin | Kukiz’15 | 32030
+Szczecin | Koalicja Obywatelska | 154443
