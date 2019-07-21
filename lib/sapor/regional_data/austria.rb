@@ -56,6 +56,7 @@ module Sapor
                   [GRUENE_PARTY, NEOS_PARTY, OVP_PARTY],
                   [GRUENE_PARTY, NEOS_PARTY, SPO_PARTY],
                   [GRUENE_PARTY, OVP_PARTY],
+                  [GRUENE_PARTY, SPO_PARTY],
                   [NEOS_PARTY, OVP_PARTY],
                   [OVP_PARTY],
                   [OVP_PARTY, SPO_PARTY],
