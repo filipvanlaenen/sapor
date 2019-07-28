@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionRomania2019, '#area_code' do
-  it 'returns EU[RO]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionRomania2019.instance.area_code).to eq('EU[RO]@2019')
+describe Sapor::EuropeanUnion27Romania, '#area_code' do
+  it 'returns EU27[RO] as the area code' do
+    expect(Sapor::EuropeanUnion27Romania.instance.area_code).to eq('EU27[RO]')
   end
 end
 
-describe Sapor::EuropeanUnionRomania2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27Romania, '#no_of_seats' do
   it 'returns 33 as the number of seats' do
-    expect(Sapor::EuropeanUnionRomania2019.instance.no_of_seats).to eq(33)
+    expect(Sapor::EuropeanUnion27Romania.instance.no_of_seats).to eq(33)
   end
 end
 
-describe Sapor::EuropeanUnionRomania2019, '#population_size' do
-  it 'returns a population size of 5,566,783' do
-    expect(Sapor::EuropeanUnionRomania2019.instance.population_size).to \
-      eq(5_566_783)
+describe Sapor::EuropeanUnion27Romania, '#population_size' do
+  it 'returns a population size of 9,352,472' do
+    expect(Sapor::EuropeanUnion27Romania.instance.population_size).to \
+      eq(9_352_472)
   end
 end
 
-describe Sapor::EuropeanUnionRomania2019, '#seats' do
+describe Sapor::EuropeanUnion27Romania, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     results = { 'Uniunea Social Democrată (S&D)' => 2_093_237,
                 'Partidul Național Liberal (ALDE)' => 835_531,
@@ -50,7 +50,7 @@ describe Sapor::EuropeanUnionRomania2019, '#seats' do
                 'Partidul România Mare (—)' => 150_484,
                 'Forța Civică (EPP)' => 145_181,
                 'Partidul Ecologist Român (—)' => 64_232 }
-    seats = Sapor::EuropeanUnionRomania2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27Romania.instance.seats(results)
     expect(seats['Uniunea Social Democrată (S&D)']).to eq(15 + 1)
     # Uniunea Social Democrata got in reality the extra seat from Mircea Diaconu
     expect(seats['Partidul Național Liberal (ALDE)']).to eq(6)

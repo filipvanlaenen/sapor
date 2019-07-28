@@ -19,13 +19,13 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Poland.
+  # The regional data for the European Union 27: Poland.
   #
-  class EuropeanUnionRomania2019 < Area
+  class EuropeanUnion27Romania < Area
     include Singleton
 
     def area_code
-      'EU[RO]@2019'
+      'EU27[RO]'
     end
 
     def coalitions
@@ -46,21 +46,22 @@ module Sapor
 
     private
 
-    COALITIONS = [['Partidul Mișcarea Populară (EPP)',
+    COALITIONS = [['Partidul Alianța Liberalilor și Democraților (*)'],
+                  ['Partidul Libertății, Unității și Solidarității (RE)',
+                   'Uniunea Salvați România (RE)'],
+                  ['Partidul Mișcarea Populară (EPP)',
                    'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Partidul Alianța Liberalilor și Democraților (RE)',
-                   'Uniunea Salvați România–Partidul Libertății, Unității și Solidarității (RE)'],
                   ['Partidul Social Democrat (S&D)',
                    'PRO România (S&D)']].freeze
 
     NO_OF_SEATS = 33
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 17 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Romania)
-    POPULATION_SIZE = 5_566_783
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 28 July 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Romania
+    POPULATION_SIZE = 9_352_472
 
     THRESHOLD = 0.05
 

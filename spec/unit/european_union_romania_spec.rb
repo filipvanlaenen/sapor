@@ -32,9 +32,9 @@ describe Sapor::EuropeanUnionRomania, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionRomania, '#population_size' do
-  it 'returns a population size of 5,566,783' do
+  it 'returns a population size of 9,352,472' do
     expect(Sapor::EuropeanUnionRomania.instance.population_size).to \
-      eq(5_566_783)
+      eq(9_352_472)
   end
 end
 
