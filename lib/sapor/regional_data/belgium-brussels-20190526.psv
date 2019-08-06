@@ -1,0 +1,33 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 26 May 2019,
+#         downloaded on 6 August 2019,
+# URL: https://verkiezingen2019.belgium.be/nl/resultaten-cijfers?el=CK&id=CKC21004
+    
+Bruxelles-Capitale / Brussel-Hoofdstad | Ecolo                                | 108,144
+Bruxelles-Capitale / Brussel-Hoofdstad | Parti Socialiste                     | 100,195
+Bruxelles-Capitale / Brussel-Hoofdstad | Mouvement Réformateur                |  87,594
+Bruxelles-Capitale / Brussel-Hoofdstad | Parti du Travail de Belgique         |  61,589
+Bruxelles-Capitale / Brussel-Hoofdstad | DéFI                                 |  51,544
+Bruxelles-Capitale / Brussel-Hoofdstad | Centre démocrate humaniste           |  29,161
+Bruxelles-Capitale / Brussel-Hoofdstad | Nieuw-Vlaamse Alliantie              |  15,983
+Bruxelles-Capitale / Brussel-Hoofdstad | Listes Destexhe                      |  12,879
+Bruxelles-Capitale / Brussel-Hoofdstad | Open Vlaamse Liberalen en Democraten |  11,511
+Bruxelles-Capitale / Brussel-Hoofdstad | Parti Populaire                      |   8,455
+Bruxelles-Capitale / Brussel-Hoofdstad | Vlaams Belang                        |   7,824
+Bruxelles-Capitale / Brussel-Hoofdstad | Christen-Democratisch en Vlaams      |   6,580

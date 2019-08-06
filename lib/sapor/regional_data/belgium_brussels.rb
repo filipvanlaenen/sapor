@@ -26,20 +26,20 @@ module Sapor
       'BE[BRU]'
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
 
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 6 August 2019,
+    # https://verkiezingen2019.belgium.be/nl/resultaten-cijfers?el=CK&id=CKC21004
     def population_size
-      # Voter turnout on 25 May 2014
-      # Source: Web page with the official results of the elections of 25 May
-      # 2014, downloaded on 3 November 2016,
-      # http://verkiezingen2014.belgium.be/nl/cha/results/results_tab_CKR00000.html
-      498_725
+      501_459
     end
 
     def seat_distribution
@@ -48,15 +48,15 @@ module Sapor
 
     private
 
-    SEAT_DISTRIBUTION = { 'Bruxelles-Capitale / Brussel-Hoofdstad' => 15, }.freeze
+    SEAT_DISTRIBUTION = { 'Bruxelles-Capitale / Brussel-Hoofdstad' => 15 }.freeze
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results(
-          'belgium-brussels-2014.psv'
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'belgium-brussels-20190526.psv'
         )
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
   end
 end
