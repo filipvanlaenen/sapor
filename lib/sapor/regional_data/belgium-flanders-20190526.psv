@@ -1,0 +1,74 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 26 May 2019,
+#         downloaded on 7 August 2019,
+# URL: https://verkiezingen2019.belgium.be/nl/verkiezingen?el=CK
+
+Antwerpen | Nieuw-Vlaamse Alliantie              | 361,022
+Antwerpen | Vlaams Belang                        | 217,333
+Antwerpen | Christen-Democratisch en Vlaams      | 128,036
+Antwerpen | Groen                                | 127,131
+Antwerpen | Open Vlaamse Liberalen en Democraten | 111,505
+Antwerpen | Socialistische Partij Anders         |  93,114
+Antwerpen | Partij van de Arbeid van België      |  88,430
+Antwerpen | DierAnimal                           |  13,544
+Antwerpen | Piratenpartij                        |   7,521
+Antwerpen | Democratisch-Solidair Appèl          |   3,605
+Antwerpen | Partij Vrede en Solidariteit         |   3,217
+Antwerpen | Volt                                 |   1,669
+
+Limburg | Nieuw-Vlaamse Alliantie              | 125,273
+Limburg | Vlaams Belang                        | 109,499
+Limburg | Christen-Democratisch en Vlaams      | 103,625
+Limburg | Socialistische Partij Anders         |  76,614
+Limburg | Open Vlaamse Liberalen en Democraten |  66,602
+Limburg | Groen                                |  38,154
+Limburg | Partij van de Arbeid van België      |  31,037
+Limburg | Democratisch-Solidair Appèl          |   2,344
+Limburg | PRO                                  |   1,690
+
+Oost-Vlaanderen | Nieuw-Vlaamse Alliantie              | 218,023
+Oost-Vlaanderen | Vlaams Belang                        | 200,173
+Oost-Vlaanderen | Open Vlaamse Liberalen en Democraten | 178,349
+Oost-Vlaanderen | Christen-Democratisch en Vlaams      | 127,024
+Oost-Vlaanderen | Groen                                | 103,061
+Oost-Vlaanderen | Socialistische Partij Anders         | 101,447
+Oost-Vlaanderen | Partij van de Arbeid van België      |  55,209
+Oost-Vlaanderen | DierAnimal                           |  11,801
+Oost-Vlaanderen | Belgische Unie – Union Belge         |   2,092
+Oost-Vlaanderen | de coöperatie                        |   1,732
+
+Vlaams-Brabant | Nieuw-Vlaamse Alliantie              | 193,735
+Vlaams-Brabant | Open Vlaamse Liberalen en Democraten | 106,175
+Vlaams-Brabant | Christen-Democratisch en Vlaams      |  94,743
+Vlaams-Brabant | Vlaams Belang                        |  92,844
+Vlaams-Brabant | Groen                                |  81,620
+Vlaams-Brabant | Socialistische Partij Anders         |  65,347
+Vlaams-Brabant | Partij van de Arbeid van België      |  33,016
+Vlaams-Brabant | DéFI                                 |  14,043
+Vlaams-Brabant | Belgische Unie – Union Belge         |   4,513
+Vlaams-Brabant | PRO                                  |   3,992
+
+West-Vlaanderen | Nieuw-Vlaamse Alliantie              | 172,751
+West-Vlaanderen | Vlaams Belang                        | 164,427
+West-Vlaanderen | Christen-Democratisch en Vlaams      | 142,512
+West-Vlaanderen | Socialistische Partij Anders         | 118,512
+West-Vlaanderen | Open Vlaamse Liberalen en Democraten | 105,192
+West-Vlaanderen | Groen                                |  63,870
+West-Vlaanderen | Partij van de Arbeid van België      |  29,205
+West-Vlaanderen | DierAnimal                           |   9,926

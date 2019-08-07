@@ -26,20 +26,20 @@ module Sapor
       'BE[VLG]'
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
 
     def population_size
-      # Voter turnout on 25 May 2014
-      # Source: Web page with the official results of the elections of 25 May
-      # 2014, downloaded on 3 November 2016,
-      # http://verkiezingen2014.belgium.be/nl/cha/results/results_tab_CKR00000.html
-      1_141_541 + 554_454 + 988_820 + 679_125 + 807_929 	
+      # Voter turnout on 26 May 2019
+      # Source: Web page with the official results of the elections of 26 May
+      # 2019, downloaded on 6 August 2019,
+      # https://verkiezingen2019.belgium.be/nl/verkiezingen?el=CK
+      1_156_127 + 554_838 + 998_917 + 690_028 + 806_395 	
     end
 
     def seat_distribution
@@ -52,13 +52,13 @@ module Sapor
                           'Oost-Vlaanderen' => 20, 'Vlaams-Brabant' => 15,
                           'West-Vlaanderen' => 16 }.freeze
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results(
-          'belgium-flanders-2014.psv'
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'belgium-flanders-20190526.psv'
         )
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
   end
 end
