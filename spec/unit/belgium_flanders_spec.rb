@@ -38,7 +38,7 @@ describe Sapor::BelgiumFlanders, '#population_size' do
 end
 
 describe Sapor::BelgiumFlanders, '#seats' do
-  it 'calculates the number of seats for the election of 2014' do
+  it 'calculates the number of seats for the election of 2019' do
     belgium_flanders = Sapor::BelgiumFlanders.instance
     results = belgium_flanders.overall_election_results_of_2019
     seats = belgium_flanders.seats(results)

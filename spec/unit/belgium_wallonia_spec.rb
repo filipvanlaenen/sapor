@@ -32,43 +32,34 @@ describe Sapor::BelgiumWallonia, '#no_of_seats' do
 end
 
 describe Sapor::BelgiumWallonia, '#population_size' do
-  it 'returns a population size of 2,073,953' do
-    expect(Sapor::BelgiumWallonia.instance.population_size).to eq(2_073_953)
+  it 'returns a population size of 2,072,774' do
+    expect(Sapor::BelgiumWallonia.instance.population_size).to eq(2_072_774)
   end
 end
 
 describe Sapor::BelgiumWallonia, '#seats' do
-  it 'calculates the number of seats for the election of 2014' do
+  it 'calculates the number of seats for the election of 2019' do
     belgium_wallonia = Sapor::BelgiumWallonia.instance
-    results = belgium_wallonia.overall_election_results_of_2014
+    results = belgium_wallonia.overall_election_results_of_2019
     seats = belgium_wallonia.seats(results)
-    expect(seats['PS']).to eq(18)
-    expect(seats['MR']).to eq(16)
-    expect(seats['cdH']).to eq(7)
-    expect(seats['Ecolo']).to eq(4)
-    expect(seats['PTB']).to eq(2)
-    expect(seats['Parti Populaire']).to eq(1)
+    expect(seats['Parti Socialiste']).to eq(17)
+    expect(seats['Mouvement Réformateur']).to eq(11)
+    expect(seats['Ecolo']).to eq(9)
+    expect(seats['Parti du Travail de Belgique']).to eq(7)
+    expect(seats['Centre démocrate humaniste']).to eq(4)
     expect(seats['DéFI']).to eq(0)
-    expect(seats['MG']).to eq(0)
+    expect(seats['AGIR']).to eq(0)
+    expect(seats['Collectif Citoyen']).to eq(0)
+    expect(seats['DierAnimal']).to eq(0)
     expect(seats['La Droite']).to eq(0)
-    expect(seats['Debout les Belges']).to eq(0)
-    expect(seats['B.U.B.']).to eq(0)
-    expect(seats['CIM']).to eq(0)
-    expect(seats['Faire place Nette']).to eq(0)
-    expect(seats['FW']).to eq(0)
-    expect(seats['ISLAM']).to eq(0)
+    expect(seats['Les Belges d’Abord']).to eq(0)
+    expect(seats['Listes Destexhe']).to eq(0)
     expect(seats['Lutte Ouvrière']).to eq(0)
-    expect(seats['MOVE']).to eq(0)
-    expect(seats['MGJOD']).to eq(0)
-    expect(seats['NWA']).to eq(0)
     expect(seats['NATION']).to eq(0)
-    expect(seats['PIRATE']).to eq(0)
-    expect(seats['PP PARTIPENSIONNES']).to eq(0)
-    expect(seats['P+']).to eq(0)
-    expect(seats['RassemblementWalon']).to eq(0)
-    expect(seats['R.W.F.']).to eq(0)
-    expect(seats['VLC']).to eq(0)
-    expect(seats['Vox Populi Belgica']).to eq(0)
-    expect(seats['Wallonie d’Abord']).to eq(0)
+    expect(seats['Parti Communiste de Belgique']).to eq(0)
+    expect(seats['Parti Populaire']).to eq(0)
+    expect(seats['Turquoise']).to eq(0)
+    expect(seats['Vlaams Belang']).to eq(0)
+    expect(seats['Wallonie Insoumise']).to eq(0)
   end
 end

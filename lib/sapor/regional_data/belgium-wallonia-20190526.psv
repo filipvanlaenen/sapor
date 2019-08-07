@@ -1,0 +1,93 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 26 May 2019,
+#         downloaded on 7 August 2019,
+# URL: httParti Socialiste://verkiezingen2019.belgium.be/nl/verkiezingen?el=CK
+
+Brabant wallon | Mouvement Réformateur        | 86,463
+Brabant wallon | Ecolo                        | 48,874
+Brabant wallon | Parti Socialiste             | 37,730
+Brabant wallon | Centre démocrate humaniste   | 18,805
+Brabant wallon | Parti du Travail de Belgique | 18,278
+Brabant wallon | DéFI                         | 15,109
+Brabant wallon | Listes Destexhe              |  6,313
+Brabant wallon | Parti Populaire              |  6,085
+Brabant wallon | Collectif Citoyen            |  3,299
+Brabant wallon | Vlaams Belang                |  2,097
+Brabant wallon | Wallonie Insoumise           |  2,088
+Brabant wallon | La Droite                    |  1,460
+Brabant wallon | Turquoise                    |    626
+
+Hainaut | Parti Socialiste             | 250,146
+Hainaut | Mouvement Réformateur        | 116,528
+Hainaut | Parti du Travail de Belgique | 114,243
+Hainaut | Ecolo                        |  89,898
+Hainaut | Centre démocrate humaniste   |  58,695
+Hainaut | DéFI                         |  27,484
+Hainaut | Parti Populaire              |  24,719
+Hainaut | Vlaams Belang                |   8,246
+Hainaut | Listes Destexhe              |   8,177
+Hainaut | Collectif Citoyen            |   7,992
+Hainaut | AGIR                         |   5,916
+Hainaut | La Droite                    |   5,916
+Hainaut | Lutte Ouvrière               |   5,735
+Hainaut | NATION                       |   5,341
+Hainaut | Parti Communiste de Belgique |   1,626
+
+Liège | Parti Socialiste             | 154,232
+Liège | Mouvement Réformateur        | 121,732
+Liège | Parti du Travail de Belgique | 101,860
+Liège | Ecolo                        |  95,878
+Liège | Centre démocrate humaniste   |  52,167
+Liège | DéFI                         |  22,313
+Liège | Parti Populaire              |  21,998
+Liège | Les Belges d’Abord           |  10,463
+Liège | Listes Destexhe              |   9,310
+Liège | DierAnimal                   |   8,392
+Liège | Collectif Citoyen            |   7,395
+Liège | Vlaams Belang                |   4,093
+Liège | La Droite                    |   3,949
+Liège | Wallonie Insoumise           |   3,266
+Liège | NATION                       |   2,137
+
+Luxembourg | Mouvement Réformateur        | 40,242
+Luxembourg | Centre démocrate humaniste   | 40,056
+Luxembourg | Parti Socialiste             | 31,898
+Luxembourg | Ecolo                        | 27,338
+Luxembourg | Parti du Travail de Belgique | 15,424
+Luxembourg | DéFI                         |  5,092
+Luxembourg | Parti Populaire              |  4,933
+Luxembourg | Listes Destexhe              |  1,707
+Luxembourg | Vlaams Belang                |  1,517
+Luxembourg | La Droite                    |  1,440
+Luxembourg | NATION                       |  1,176
+
+Namur | Parti Socialiste             | 67,422
+Namur | Mouvement Réformateur        | 60,266
+Namur | Centre démocrate humaniste   | 51,977
+Namur | Ecolo                        | 46,320
+Namur | Parti du Travail de Belgique | 36,330
+Namur | DéFI                         | 14,809
+Namur | Parti Populaire              |  8,906
+Namur | Listes Destexhe              |  4,326
+Namur | DierAnimal                   |  4,070
+Namur | Collectif Citoyen            |  2,406
+Namur | La Droite                    |  2,310
+Namur | Vlaams Belang                |  2,124
+Namur | NATION                       |  1,929
+Namur | AGIR                         |  1,682

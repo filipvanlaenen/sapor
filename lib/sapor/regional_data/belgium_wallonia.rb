@@ -26,20 +26,20 @@ module Sapor
       'BE[WAL]'
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
 
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 7 August 2019,
+    # https://verkiezingen2019.belgium.be/nl/verkiezingen?el=CK
     def population_size
-      # Voter turnout on 25 May 2014
-      # Source: Web page with the official results of the elections of 25 May
-      # 2014, downloaded on 3 November 2016,
-      # http://verkiezingen2014.belgium.be/nl/cha/results/results_tab_CKR00000.html
-      738_490 + 626_365 + 169_717 + 299_512 + 239_869
+      730_662 + 619_185 + 170_823 + 304_877 + 247_227
     end
 
     def seat_distribution
@@ -51,13 +51,13 @@ module Sapor
     SEAT_DISTRIBUTION = { 'Brabant wallon' => 5, 'Hainaut' => 18, 'Liège' => 15,
                           'Luxembourg' => 4, 'Namur' => 6 }.freeze
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results(
-          'belgium-wallonia-2014.psv'
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'belgium-wallonia-20190526.psv'
         )
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
   end
 end
