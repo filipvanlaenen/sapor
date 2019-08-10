@@ -102,11 +102,10 @@ module Sapor
      [Austria.instance, Estonia.instance, Finland.instance,
       FinlandWithSin.instance, France.instance, Greece.instance,
       Hungary.instance, Iceland.instance, Luxembourg.instance,
-      Slovenia.instance, Spain.instance, Sweden.instance, \
-      Sweden20140914.instance, UnitedKingdom.instance, \
-      UnitedKingdomWithBrexit.instance, \
-      UnitedKingdomWithBrexitAndChuk.instance, \
-      UnitedKingdomWithTig.instance, \
+      Netherlands.instance, Slovenia.instance, Spain.instance, Sweden.instance,
+      Sweden20140914.instance, UnitedKingdom.instance,
+      UnitedKingdomWithBrexit.instance, UnitedKingdomWithBrexitAndChuk.instance,
+      UnitedKingdomWithTig.instance,
       Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
