@@ -48,8 +48,25 @@ module Sapor
     end
 
     private
+    
+    CDA_PARTY = 'Christen-Democratisch Appèl'.freeze
+    CU_PARTY = 'ChristenUnie'.freeze
+    D66_PARTY = 'Democraten 66'.freeze
+    PVDA_PARTY = 'Partij van de Arbeid'.freeze
+    PVV_PARTY = 'Partij voor de Vrijheid'.freeze
+    VVD_PARTY = 'Volkspartij voor Vrijheid en Democratie'.freeze
 
-    COALITIONS = [].freeze
+    COALITIONS = [[CDA_PARTY, CU_PARTY, D66_PARTY, VVD_PARTY],
+                  [CDA_PARTY, CU_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, D66_PARTY],
+                  [CDA_PARTY, D66_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, D66_PARTY, VVD_PARTY],
+                  [CDA_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, PVDA_PARTY, VVD_PARTY],
+                  [CDA_PARTY, PVV_PARTY, VVD_PARTY],
+                  [CDA_PARTY, VVD_PARTY],
+                  [D66_PARTY, PVDA_PARTY, VVD_PARTY],
+                  [PVDA_PARTY, VVD_PARTY]].freeze
 
     NO_OF_SEATS = 150
 
