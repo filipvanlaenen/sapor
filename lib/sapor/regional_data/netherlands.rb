@@ -58,9 +58,13 @@ module Sapor
     PVDA_PARTY = 'Partij van de Arbeid'.freeze
     PVV_PARTY = 'Partij voor de Vrijheid'.freeze
     SGP_PARTY = 'Staatkundig Gereformeerde Partij'.freeze
+    SP_PARTY = 'Socialistische Partij'.freeze
     VVD_PARTY = 'Volkspartij voor Vrijheid en Democratie'.freeze
 
-    COALITIONS = [[CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, VVD_PARTY],
+    COALITIONS = [[CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY,
+                   SP_PARTY],
+                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, VVD_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, PVDA_PARTY, VVD_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, VVD_PARTY],
                   [CDA_PARTY, CU_PARTY, PVDA_PARTY],
@@ -69,8 +73,9 @@ module Sapor
                   [CDA_PARTY, D66_PARTY, VVD_PARTY],
                   [CDA_PARTY, FIFTY_PARTY, FVD_PARTY, VVD_PARTY],
                   [CDA_PARTY, FIFTY_PARTY, FVD_PARTY, VVD_PARTY, SGP_PARTY],
-                  [CDA_PARTY, FVD_PARTY, VVD_PARTY, SGP_PARTY],
+                  [CDA_PARTY, FVD_PARTY, PVV_PARTY, SGP_PARTY, VVD_PARTY],
                   [CDA_PARTY, FVD_PARTY, PVV_PARTY, VVD_PARTY],
+                  [CDA_PARTY, FVD_PARTY, SGP_PARTY, VVD_PARTY],
                   [CDA_PARTY, FVD_PARTY, VVD_PARTY],
                   [CDA_PARTY, PVDA_PARTY],
                   [CDA_PARTY, PVDA_PARTY, VVD_PARTY],
