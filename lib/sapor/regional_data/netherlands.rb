@@ -54,6 +54,7 @@ module Sapor
     D66_PARTY = 'Democraten 66'.freeze
     FIFTY_PARTY = '50Plus'.freeze
     FVD_PARTY = 'Forum voor Democratie'.freeze
+    GL_PARTY = 'GroenLinks'.freeze
     PVDA_PARTY = 'Partij van de Arbeid'.freeze
     PVV_PARTY = 'Partij voor de Vrijheid'.freeze
     SGP_PARTY = 'Staatkundig Gereformeerde Partij'.freeze
