@@ -52,6 +52,7 @@ module Sapor
     CDA_PARTY = 'Christen-Democratisch Appèl'.freeze
     CU_PARTY = 'ChristenUnie'.freeze
     D66_PARTY = 'Democraten 66'.freeze
+    FVD_PARTY = 'Forum voor Democratie'.freeze
     PVDA_PARTY = 'Partij van de Arbeid'.freeze
     PVV_PARTY = 'Partij voor de Vrijheid'.freeze
     VVD_PARTY = 'Volkspartij voor Vrijheid en Democratie'.freeze
@@ -61,6 +62,8 @@ module Sapor
                   [CDA_PARTY, D66_PARTY],
                   [CDA_PARTY, D66_PARTY, PVDA_PARTY],
                   [CDA_PARTY, D66_PARTY, VVD_PARTY],
+                  [CDA_PARTY, FVD_PARTY, PVV_PARTY, VVD_PARTY],
+                  [CDA_PARTY, FVD_PARTY, VVD_PARTY],
                   [CDA_PARTY, PVDA_PARTY],
                   [CDA_PARTY, PVDA_PARTY, VVD_PARTY],
                   [CDA_PARTY, PVV_PARTY, VVD_PARTY],
