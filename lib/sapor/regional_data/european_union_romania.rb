@@ -46,9 +46,10 @@ module Sapor
 
     private
 
-    COALITIONS = [['Partidul Alianța Liberalilor și Democraților (*)'],
-                  ['Partidul Libertății, Unității și Solidarității (RE)',
+    COALITIONS = [['Alianța 2020 USR-PLUS (RE)',
+                   'Partidul Libertății, Unității și Solidarității (RE)',
                    'Uniunea Salvați România (RE)'],
+                  ['Partidul Alianța Liberalilor și Democraților (*)'],
                   ['Partidul Mișcarea Populară (EPP)',
                    'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
