@@ -18,35 +18,35 @@
 
 require 'spec_helper'
 
-describe Sapor::PolandWithKoAndRswWithoutNPoRAndZl, '#area_code' do
-  it 'returns PL∪{KO,RSW}\{N,PO,R,ZL} as the area code' do
-    expect(Sapor::PolandWithKoAndRswWithoutNPoRAndZl.instance.area_code).to eq('PL∪{KO,RSW}\{N,PO,R,ZL}')
+describe Sapor::PolandWithKoAndLWithoutNPoRAndZl, '#area_code' do
+  it 'returns PL∪{KO,L}\{N,PO,R,ZL} as the area code' do
+    expect(Sapor::PolandWithKoAndLWithoutNPoRAndZl.instance.area_code).to eq('PL∪{KO,L}\{N,PO,R,ZL}')
   end
 end
 
-describe Sapor::PolandWithKoAndRswWithoutNPoRAndZl, '#no_of_seats' do
+describe Sapor::PolandWithKoAndLWithoutNPoRAndZl, '#no_of_seats' do
   it 'returns 460 as the number of seats' do
-    expect(Sapor::PolandWithKoAndRswWithoutNPoRAndZl.instance.no_of_seats).to eq(460)
+    expect(Sapor::PolandWithKoAndLWithoutNPoRAndZl.instance.no_of_seats).to eq(460)
   end
 end
 
-describe Sapor::PolandWithKoAndRswWithoutNPoRAndZl, '#population_size' do
+describe Sapor::PolandWithKoAndLWithoutNPoRAndZl, '#population_size' do
   it 'returns a population size of 15,200,671' do
-    expect(Sapor::PolandWithKoAndRswWithoutNPoRAndZl.instance.population_size).to eq(15_200_671)
+    expect(Sapor::PolandWithKoAndLWithoutNPoRAndZl.instance.population_size).to eq(15_200_671)
   end
 end
 
-describe Sapor::PolandWithKoAndRswWithoutNPoRAndZl, '#seats' do
+describe Sapor::PolandWithKoAndLWithoutNPoRAndZl, '#seats' do
   it 'calculates the number of seats for the election of 2015 correctly' do
-    PolandWithKoAndRswWithoutNPoRAndZl = Sapor::PolandWithKoAndRswWithoutNPoRAndZl.instance
-    results = PolandWithKoAndRswWithoutNPoRAndZl.overall_election_results_of_2015
-    seats = PolandWithKoAndRswWithoutNPoRAndZl.seats(results)
+    PolandWithKoAndLWithoutNPoRAndZl = Sapor::PolandWithKoAndLWithoutNPoRAndZl.instance
+    results = PolandWithKoAndLWithoutNPoRAndZl.overall_election_results_of_2015
+    seats = PolandWithKoAndLWithoutNPoRAndZl.seats(results)
     expect(seats['Prawo i Sprawiedliwość']).to eq(235 - 30)
     expect(seats['Koalicja Obywatelska']).to eq(138 + 24)
     expect(seats['Kukiz’15']).to eq(42 - 7)
     expect(seats['Polskie Stronnictwo Ludowe']).to eq(16 - 4)
     expect(seats['Mniejszość Niemiecka']).to eq(1)
-    expect(seats['Lewica Razem–Sojusz Lewicy Demokratycznej–Wiosna']).to eq(0 + 45)
+    expect(seats['Lewica']).to eq(0 + 45)
     expect(seats['KORWiN']).to eq(0)
     expect(seats['JOW Bezpartyjni']).to eq(0)
     expect(seats['Stonoga Partia Polska']).to eq(0)

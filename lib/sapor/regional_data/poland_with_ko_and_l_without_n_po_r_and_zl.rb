@@ -19,14 +19,13 @@
 module Sapor
   #
   # The regional data for Poland, without .Nowoczesna, Platforma Obywatelska and
-  # Zjednoczona Lewica but with Koalicja Obywatelska, Sojusz Lewicy
-  # Demokratycznej and Wiosna.
+  # Zjednoczona Lewica but with Koalicja Obywatelska and Lewica.
   #
-  class PolandWithKoAndRswWithoutNPoRAndZl < Area
+  class PolandWithKoAndLWithoutNPoRAndZl < Area
     include Singleton
 
     def area_code
-      'PL∪{KO,RSW}\{N,PO,R,ZL}'
+      'PL∪{KO,L}\{N,PO,R,ZL}'
     end
 
     def coalitions
@@ -60,16 +59,16 @@ module Sapor
     private
 
     KO_PARTY = 'Koalicja Obywatelska'.freeze
+    L_PARTY = 'Lewica'.freeze
     MN_PARTY = 'Mniejszość Niemiecka'.freeze
     PIS_PARTY = 'Prawo i Sprawiedliwość'.freeze
     PSL_PARTY = 'Polskie Stronnictwo Ludowe'.freeze
-    RSW_PARTY = 'Lewica Razem–Sojusz Lewicy Demokratycznej–Wiosna'.freeze
     ZL_PARTY = 'Zjednoczona Lewica'.freeze
 
     COALITIONS = [[KO_PARTY],
                   [KO_PARTY, PSL_PARTY],
-                  [KO_PARTY, PSL_PARTY, RSW_PARTY],
-                  [KO_PARTY, RSW_PARTY],
+                  [KO_PARTY, L_PARTY, PSL_PARTY],
+                  [KO_PARTY, L_PARTY],
                   [PIS_PARTY]].freeze
 
     # Voter turnout on 25 October 2015
@@ -97,13 +96,13 @@ module Sapor
 
     PARTY_LIST_THRESHOLD = 0.05
     COALITION_LIST_THRESHOLD = 0.08
-    COALITION_LISTS = [KO_PARTY, RSW_PARTY].freeze
+    COALITION_LISTS = [KO_PARTY].freeze
     MINORITY_LISTS = [MN_PARTY].freeze
 
     def election_results_of_2015
       if @election_results_of_2015.nil?
         @election_results_of_2015 = load_election_results(
-          'poland-20151025-with-ko-and-rsw-without-n-po-r-and-zl.psv'
+          'poland-20151025-with-ko-and-l-without-n-po-r-and-zl.psv'
         )
       end
       @election_results_of_2015
