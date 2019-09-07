@@ -47,7 +47,7 @@ describe Sapor::PolandWithKoKonfKpLAndZpWithoutKK15NPisPoPslRAndZl, '#seats' do
     expect(seats['Mniejszość Niemiecka']).to eq(1)
     expect(seats['Lewica']).to eq(0 + 42)
     expect(seats['Konfederacja']).to eq(0)
-    expect(seats['JOW Bezpartyjni']).to eq(0)
+    expect(seats['Bezpartyjni Samorządowcy']).to eq(0)
     expect(seats['Stonoga Partia Polska']).to eq(0)
     expect(seats['Ruch Społeczny Rzeczypospolitej Polskiej']).to eq(0)
     expect(seats['Zjednoczeni dla Śląska']).to eq(0)
