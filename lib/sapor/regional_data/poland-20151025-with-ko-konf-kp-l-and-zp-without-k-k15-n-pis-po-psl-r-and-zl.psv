@@ -1,0 +1,280 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+Legnica | Zjednoczona Prawica | 127370
+Legnica | Konfederacja | 15427
+Legnica | Koalicja Obywatelska | 115566
+Legnica | Koalicja Polska | 48115
+Legnica | Lewica | 50301
+Wałbrzych | Zjednoczona Prawica | 72929
+Wałbrzych | Konfederacja | 10075
+Wałbrzych | JOW Bezpartyjni | 2540
+Wałbrzych | Koalicja Obywatelska | 91968
+Wałbrzych | Koalicja Polska | 28082
+Wałbrzych | Lewica | 28501
+Wrocław | Zjednoczona Prawica | 163323
+Wrocław | Konfederacja | 27341
+Wrocław | Stonoga Partia Polska | 2779
+Wrocław | Grzegorz Braun „Szczęść Boże!” | 1269
+Wrocław | Koalicja Obywatelska | 215338
+Wrocław | Koalicja Polska | 59330
+Wrocław | Lewica | 53991
+Bydgoszcz | Zjednoczona Prawica | 113024
+Bydgoszcz | Konfederacja | 17002
+Bydgoszcz | Stonoga Partia Polska | 2543
+Bydgoszcz | Koalicja Obywatelska | 138282
+Bydgoszcz | Koalicja Polska | 51781
+Bydgoszcz | Lewica | 51645
+Toruń | Zjednoczona Prawica | 121703
+Toruń | Konfederacja | 14134
+Toruń | Stonoga Partia Polska | 2041
+Toruń | Samoobrona | 772
+Toruń | Koalicja Obywatelska | 116995
+Toruń | Koalicja Polska | 54635
+Toruń | Lewica | 52230
+Lublin | Zjednoczona Prawica | 232014
+Lublin | Konfederacja | 24376
+Lublin | Ruch Społeczny Rzeczypospolitej Polskiej | 599
+Lublin | Samoobrona | 580
+Lublin | Grzegorz Braun „Szczęść Boże!” | 1353
+Lublin | Koalicja Obywatelska | 103050
+Lublin | Koalicja Polska | 83181
+Lublin | Lewica | 42567
+Chełm | Zjednoczona Prawica | 163122
+Chełm | Konfederacja | 14835
+Chełm | Samoobrona | 628
+Chełm | Koalicja Obywatelska | 54568
+Chełm | Koalicja Polska | 74256
+Chełm | Lewica | 32277
+Zielona Góra | Zjednoczona Prawica | 97877
+Zielona Góra | Konfederacja | 17274
+Zielona Góra | Stonoga Partia Polska | 2258
+Zielona Góra | Koalicja Obywatelska | 132262
+Zielona Góra | Koalicja Polska | 48027
+Zielona Góra | Lewica | 48520
+Łódź | Zjednoczona Prawica | 107350
+Łódź | Konfederacja | 17163
+Łódź | Koalicja Obywatelska | 144607
+Łódź | Koalicja Polska | 35702
+Łódź | Lewica | 54242
+Piotrków Trybunalski | Zjednoczona Prawica | 134134
+Piotrków Trybunalski | Konfederacja | 11160
+Piotrków Trybunalski | Koalicja Obywatelska | 60156
+Piotrków Trybunalski | Koalicja Polska | 50172
+Piotrków Trybunalski | Lewica | 30099
+Sieradz | Zjednoczona Prawica | 147623
+Sieradz | Konfederacja | 15171
+Sieradz | Stonoga Partia Polska | 1905
+Sieradz | Samoobrona | 712
+Sieradz | Grzegorz Braun „Szczęść Boże!” | 989
+Sieradz | Koalicja Obywatelska | 97995
+Sieradz | Koalicja Polska | 62017
+Sieradz | Lewica | 43333
+Kraków I (południe) | Zjednoczona Prawica | 133213
+Kraków I (południe) | Konfederacja | 12089
+Kraków I (południe) | Koalicja Obywatelska | 71185
+Kraków I (południe) | Koalicja Polska | 31777
+Kraków I (południe) | Lewica | 23313
+Kraków II (północ) | Zjednoczona Prawica | 209607
+Kraków II (północ) | Konfederacja | 34446
+Kraków II (północ) | Grzegorz Braun „Szczęść Boże!” | 1372
+Kraków II (północ) | Kongres Nowej Prawicy | 1244
+Kraków II (północ) | Koalicja Obywatelska | 186380
+Kraków II (północ) | Koalicja Polska | 54023
+Kraków II (północ) | Lewica | 55696
+Nowy Sącz | Zjednoczona Prawica | 188010
+Nowy Sącz | Konfederacja | 13379
+Nowy Sącz | Stonoga Partia Polska | 1606
+Nowy Sącz | Kongres Nowej Prawicy | 891
+Nowy Sącz | Koalicja Obywatelska | 54777
+Nowy Sącz | Koalicja Polska | 37247
+Nowy Sącz | Lewica | 14551
+Tarnów | Zjednoczona Prawica | 151623
+Tarnów | Konfederacja | 13766
+Tarnów | Grzegorz Braun „Szczęść Boże!” | 906
+Tarnów | Kongres Nowej Prawicy | 654
+Tarnów | Koalicja Obywatelska | 56120
+Tarnów | Koalicja Polska | 51557
+Tarnów | Lewica | 17015
+Płock | Zjednoczona Prawica | 131431
+Płock | Konfederacja | 12214
+Płock | Koalicja Obywatelska | 64804
+Płock | Koalicja Polska | 57251
+Płock | Lewica | 34502
+Radom | Zjednoczona Prawica | 130758
+Radom | Konfederacja | 10770
+Radom | Stonoga Partia Polska | 2050
+Radom | Kongres Nowej Prawicy | 656
+Radom | Koalicja Obywatelska | 61565
+Radom | Koalicja Polska | 49082
+Radom | Lewica | 20461
+Siedlce | Zjednoczona Prawica | 191733
+Siedlce | Konfederacja | 16332
+Siedlce | JOW Bezpartyjni | 1045
+Siedlce | Ruch Społeczny Rzeczypospolitej Polskiej | 582
+Siedlce | Grzegorz Braun „Szczęść Boże!” | 1239
+Siedlce | Koalicja Obywatelska | 68244
+Siedlce | Koalicja Polska | 69774
+Siedlce | Lewica | 26291
+Warszawa I (miasto) | Zjednoczona Prawica | 327342
+Warszawa I (miasto) | Konfederacja | 67700
+Warszawa I (miasto) | Ruch Społeczny Rzeczypospolitej Polskiej | 2760
+Warszawa I (miasto) | Obywatele do Parlamentu | 1964
+Warszawa I (miasto) | Koalicja Obywatelska | 448301
+Warszawa I (miasto) | Koalicja Polska | 92819
+Warszawa I (miasto) | Lewica | 154329
+Warszawa II (okręg) | Zjednoczona Prawica | 190355
+Warszawa II (okręg) | Konfederacja | 23586
+Warszawa II (okręg) | Stonoga Partia Polska | 3597
+Warszawa II (okręg) | Koalicja Obywatelska | 172325
+Warszawa II (okręg) | Koalicja Polska | 54084
+Warszawa II (okręg) | Lewica | 46669
+Opole | Zjednoczona Prawica | 93926
+Opole | Konfederacja | 13346
+Opole | JOW Bezpartyjni | 1772
+Opole | Grzegorz Braun „Szczęść Boże!” | 751
+Opole | Mniejszość Niemiecka | 27530
+Opole | Koalicja Obywatelska | 112883
+Opole | Koalicja Polska | 54997
+Opole | Lewica | 33043
+Krosno | Zjednoczona Prawica | 174900
+Krosno | Konfederacja | 13984
+Krosno | JOW Bezpartyjni | 2289
+Krosno | Stonoga Partia Polska | 1528
+Krosno | Koalicja Obywatelska | 57952
+Krosno | Koalicja Polska | 53724
+Krosno | Lewica | 22488
+Rzeszów | Zjednoczona Prawica | 284642
+Rzeszów | Konfederacja | 25163
+Rzeszów | Stonoga Partia Polska | 2919
+Rzeszów | Grzegorz Braun „Szczęść Boże!” | 1363
+Rzeszów | Kongres Nowej Prawicy | 778
+Rzeszów | Koalicja Obywatelska | 87622
+Rzeszów | Koalicja Polska | 70738
+Rzeszów | Lewica | 34032
+Białystok | Zjednoczona Prawica | 197575
+Białystok | Konfederacja | 20297
+Białystok | Stonoga Partia Polska | 2088
+Białystok | Samoobrona | 626
+Białystok | Kongres Nowej Prawicy | 629
+Białystok | Koalicja Obywatelska | 96255
+Białystok | Koalicja Polska | 74625
+Białystok | Lewica | 43273
+Gdańsk | Zjednoczona Prawica | 126466
+Gdańsk | Konfederacja | 21366
+Gdańsk | Stonoga Partia Polska | 3210
+Gdańsk | Koalicja Obywatelska | 187489
+Gdańsk | Koalicja Polska | 43440
+Gdańsk | Lewica | 45160
+Gdynia | Zjednoczona Prawica | 145698
+Gdynia | Konfederacja | 20677
+Gdynia | Stonoga Partia Polska | 3477
+Gdynia | Koalicja Obywatelska | 194491
+Gdynia | Koalicja Polska | 52474
+Gdynia | Lewica | 49891
+Bielsko-Biała | Zjednoczona Prawica | 136330
+Bielsko-Biała | Konfederacja | 15788
+Bielsko-Biała | Koalicja Obywatelska | 107388
+Bielsko-Biała | Koalicja Polska | 43103
+Bielsko-Biała | Lewica | 34679
+Częstochowa | Zjednoczona Prawica | 84773
+Częstochowa | Konfederacja | 10111
+Częstochowa | Stonoga Partia Polska | 1378
+Częstochowa | Grzegorz Braun „Szczęść Boże!” | 600
+Częstochowa | Koalicja Obywatelska | 65522
+Częstochowa | Koalicja Polska | 39320
+Częstochowa | Lewica | 34930
+Gliwice | Zjednoczona Prawica | 89584
+Gliwice | Konfederacja | 14949
+Gliwice | Grzegorz Braun „Szczęść Boże!” | 1403
+Gliwice | Koalicja Obywatelska | 111252
+Gliwice | Koalicja Polska | 43135
+Gliwice | Lewica | 33344
+Rybnik | Zjednoczona Prawica | 114799
+Rybnik | Konfederacja | 13136
+Rybnik | Zjednoczeni dla Śląska | 7928
+Rybnik | Grzegorz Braun „Szczęść Boże!” | 710
+Rybnik | Koalicja Obywatelska | 88529
+Rybnik | Koalicja Polska | 37991
+Rybnik | Lewica | 26870
+Katowice | Zjednoczona Prawica | 135367
+Katowice | Konfederacja | 22803
+Katowice | Zjednoczeni dla Śląska | 10740
+Katowice | Koalicja Obywatelska | 152249
+Katowice | Koalicja Polska | 45408
+Katowice | Lewica | 44623
+Sosnowiec | Zjednoczona Prawica | 84410
+Sosnowiec | Konfederacja | 13682
+Sosnowiec | Koalicja Obywatelska | 98277
+Sosnowiec | Koalicja Polska | 35848
+Sosnowiec | Lewica | 52426
+Kielce | Zjednoczona Prawica | 200652
+Kielce | Konfederacja | 19395
+Kielce | JOW Bezpartyjni | 2344
+Kielce | Stonoga Partia Polska | 1792
+Kielce | Samoobrona | 448
+Kielce | Grzegorz Braun „Szczęść Boże!” | 1158
+Kielce | Koalicja Obywatelska | 104226
+Kielce | Koalicja Polska | 88689
+Kielce | Lewica | 49986
+Elbląg | Zjednoczona Prawica | 63236
+Elbląg | Konfederacja | 9480
+Elbląg | JOW Bezpartyjni | 1426
+Elbląg | Stonoga Partia Polska | 1253
+Elbląg | Koalicja Obywatelska | 72027
+Elbląg | Koalicja Polska | 29925
+Elbląg | Lewica | 23015
+Olsztyn | Zjednoczona Prawica | 80970
+Olsztyn | Konfederacja | 13584
+Olsztyn | Stonoga Partia Polska | 1810
+Olsztyn | Koalicja Obywatelska | 90196
+Olsztyn | Koalicja Polska | 46346
+Olsztyn | Lewica | 33260
+Kalisz | Zjednoczona Prawica | 115668
+Kalisz | Konfederacja | 15422
+Kalisz | JOW Bezpartyjni | 1973
+Kalisz | Stonoga Partia Polska | 1982
+Kalisz | Samoobrona | 500
+Kalisz | Koalicja Obywatelska | 115225
+Kalisz | Koalicja Polska | 68870
+Kalisz | Lewica | 43544
+Konin | Zjednoczona Prawica | 103781
+Konin | Konfederacja | 11061
+Konin | Koalicja Obywatelska | 75348
+Konin | Koalicja Polska | 43513
+Konin | Lewica | 43681
+Piła | Zjednoczona Prawica | 73665
+Piła | Konfederacja | 11004
+Piła | Stonoga Partia Polska | 2515
+Piła | Koalicja Obywatelska | 102704
+Piła | Koalicja Polska | 45071
+Piła | Lewica | 35314
+Poznań | Zjednoczona Prawica | 97975
+Poznań | Konfederacja | 19548
+Poznań | JOW Bezpartyjni | 2267
+Poznań | Koalicja Obywatelska | 205528
+Poznań | Koalicja Polska | 32634
+Poznań | Lewica | 51934
+Koszalin | Zjednoczona Prawica | 62032
+Koszalin | Konfederacja | 9672
+Koszalin | Koalicja Obywatelska | 82750
+Koszalin | Koalicja Polska | 29400
+Koszalin | Lewica | 33163
+Szczecin | Zjednoczona Prawica | 110697
+Szczecin | Konfederacja | 20291
+Szczecin | Koalicja Obywatelska | 154443
+Szczecin | Koalicja Polska | 46806
+Szczecin | Lewica | 48262
