@@ -46,12 +46,12 @@ module Sapor
 
     private
 
-    COALITIONS = [['CD&V (EPP)'],
+    COALITIONS = [['Christen-Democratisch en Vlaams (EPP)'],
                   ['Groen (Greens/EFA)', 'Piratenpartij (Greens/EFA)'],
-                  ['Lijst Dedecker (ECR)', 'N-VA (ECR)'],
-                  ['Open Vld (RE)'],
-                  ['PVDA (GUE/NGL)'],
-                  ['sp.a (S&D)'],
+                  ['Lijst Dedecker (ECR)', 'Nieuw-Vlaamse Alliantie (ECR)'],
+                  ['Open Vlaamse Liberalen en Democraten (RE)'],
+                  ['Partij van de Arbeid van België (GUE/NGL)'],
+                  ['Socialistische Partij Anders (S&D)'],
                   ['Vlaams Belang (ID)']].freeze
 
     NO_OF_SEATS = 12
