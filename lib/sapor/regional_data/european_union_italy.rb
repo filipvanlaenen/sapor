@@ -49,11 +49,13 @@ module Sapor
 
     private
 
-    COALITIONS = [['CasaPound Italia (NI)', 'Movimento 5 Stelle (NI)'],
-                  ['Civica Popolare (RE)', 'Più Europa (RE)'],
+    COALITIONS = [['Cambiamo! (*)', 'Insieme (*)'],
+                  ['CasaPound Italia (NI)', 'Movimento 5 Stelle (NI)'],
+                  ['Civica Popolare (RE)', 'Italia Viva (RE)',
+                   'Più Europa (RE)'],
+                  ['Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
-                  ['Insieme (*)'],
                   ['Lega Nord (ID)'],
                   ['Liberi e Uguali (S&D)', 'Partito Democratico (S&D)'],
                   ['Potere al Popolo (GUE/NGL)']].freeze
