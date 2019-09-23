@@ -33,9 +33,9 @@ describe Sapor::EuropeanUnionNorthernIreland, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionNorthernIreland, '#population_size' do
-  it 'returns a population size of 626,125' do
+  it 'returns a population size of 572,447' do
     expect(Sapor::EuropeanUnionNorthernIreland.instance.population_size).to \
-      eq(626_125)
+      eq(572_447)
   end
 end
 

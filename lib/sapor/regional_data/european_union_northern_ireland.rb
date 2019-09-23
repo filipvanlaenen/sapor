@@ -58,11 +58,11 @@ module Sapor
 
     NO_OF_SEATS = 3
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 22 May
-    # 2014, downloaded on 19 March 2019,
-    # https://en.wikipedia.org/wiki/Northern_Ireland_(European_Parliament_constituency)#2014
-    POPULATION_SIZE = 626_125
+    # Valid votes on 23 May 2019
+    # Source: Web page with the official results of the elections of 23 May
+    # 2019, downloaded on 23 September 2019,
+    # https://en.wikipedia.org/wiki/Results_of_the_2019_European_Parliament_election_in_the_United_Kingdom#Northern_Ireland_(3_seats)
+    POPULATION_SIZE = 572_447
 
     def electoral_system
       if @electoral_system.nil?
