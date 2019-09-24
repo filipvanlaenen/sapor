@@ -45,23 +45,22 @@ module Sapor
 
     private
 
-    COALITIONS = [['cdH (EPP)'],
+    COALITIONS = [['Centre démocrate humaniste (EPP)'],
                   ['Debout les Belges (*)', 'La Droite (*)', 'FW (*)',
-                   'ISLAM (*)', 'R.W.F. (*)', 'Wallonie d’Abord (*)'],
-                  ['DéFI (RE)', 'MR (RE)'],
+                   'ISLAM (*)', 'Parti Populaire (*)', 'R.W.F. (*)',
+                   'Wallonie d’Abord (*)'],
+                  ['DéFI (RE)', 'Mouvement Réformateur (RE)'],
                   ['Ecolo (Greens/EFA)', 'PIRATE (Greens/EFA)'],
-                  ['Parti Populaire (EFDD)'],
-                  ['PS (S&D)'],
-                  ['PTB (GUE/NGL)']].freeze
+                  ['Parti Socialiste (S&D)'],
+                  ['Parti du Travail de Belgique (GUE/NGL)']].freeze
 
     NO_OF_SEATS = 8
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 27 January 2018,
-    # https://nl.wikipedia.org/wiki/Europese_Parlementsverkiezingen_2014_in_Belgi%C3%AB
-    POPULATION_SIZE = 713_375 + 660_118 + 284_656 + 276_879 + 133_472 + \
-                      145_538 + 82_631 + 72_639
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 24 September 2019,
+    # https://verkiezingen2019.belgium.be/nl/resultaten-cijfers?el=EU&id=EUL92094
+    POPULATION_SIZE = 2_439_775
 
     def electoral_system
       if @electoral_system.nil?
