@@ -54,11 +54,11 @@ module Sapor
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 25 May 2014
+    # Voter turnout on 25 May 2019
     # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 5 July 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Malta)
-    POPULATION_SIZE = 251_851
+    # 2019, downloaded on 25 September 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Malta
+    POPULATION_SIZE = 260_160
 
     def electoral_system
       if @electoral_system.nil?

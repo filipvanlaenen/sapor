@@ -35,7 +35,7 @@ end
 describe Sapor::EuropeanUnionMalta, '#population_size' do
   it 'returns a population size of 251,851' do
     expect(Sapor::EuropeanUnionMalta.instance.population_size).to \
-      eq(251_851)
+      eq(260_160)
   end
 end
 
