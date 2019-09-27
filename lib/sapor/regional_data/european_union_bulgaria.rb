@@ -62,11 +62,11 @@ module Sapor
 
     NO_OF_SEATS = 17
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 24 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Bulgaria)
-    POPULATION_SIZE = 2_239_430
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 27 September 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Bulgaria
+    POPULATION_SIZE = 2_015_320
 
     THRESHOLD = 0.05
 
