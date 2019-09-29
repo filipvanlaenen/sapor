@@ -18,31 +18,31 @@
 
 require 'spec_helper'
 
-describe Sapor::PortugalWithAChAndIWithoutPaf, '#area_code' do
-  it 'returns PT∪{A,CH,I}\{PàF} as the area code' do
-    expect(Sapor::PortugalWithAChAndIWithoutPaf.instance.area_code).to \
-      eq('PT∪{A,CH,I}\{PàF}')
+describe Sapor::PortugalWithAChAndIlWithoutPaf, '#area_code' do
+  it 'returns PT∪{A,CH,IL}\{PàF} as the area code' do
+    expect(Sapor::PortugalWithAChAndIlWithoutPaf.instance.area_code).to \
+      eq('PT∪{A,CH,IL}\{PàF}')
   end
 end
 
-describe Sapor::PortugalWithAChAndIWithoutPaf, '#no_of_seats' do
+describe Sapor::PortugalWithAChAndIlWithoutPaf, '#no_of_seats' do
   it 'returns 230 as the number of seats' do
-    expect(Sapor::PortugalWithAChAndIWithoutPaf.instance.no_of_seats).to eq(230)
+    expect(Sapor::PortugalWithAChAndIlWithoutPaf.instance.no_of_seats).to eq(230)
   end
 end
 
-describe Sapor::PortugalWithAChAndIWithoutPaf, '#population_size' do
+describe Sapor::PortugalWithAChAndIlWithoutPaf, '#population_size' do
   it 'returns a population size of 5,206,113' do
-    expect(Sapor::PortugalWithAChAndIWithoutPaf.instance.population_size).to eq(5_206_113)
+    expect(Sapor::PortugalWithAChAndIlWithoutPaf.instance.population_size).to eq(5_206_113)
   end
 end
 
-describe Sapor::PortugalWithAChAndIWithoutPaf, '#seats' do
+describe Sapor::PortugalWithAChAndIlWithoutPaf, '#seats' do
   it 'calculates the number of seats for the election of 2015 adjusted for' \
      ' the seat distribution for 2019' do
-    PortugalWithAChAndIWithoutPaf = Sapor::PortugalWithAChAndIWithoutPaf.instance
-    results = PortugalWithAChAndIWithoutPaf.overall_election_results_of_2015
-    seats = Sapor::PortugalWithAChAndIWithoutPaf.instance.seats(results)
+    PortugalWithAChAndIlWithoutPaf = Sapor::PortugalWithAChAndIlWithoutPaf.instance
+    results = PortugalWithAChAndIlWithoutPaf.overall_election_results_of_2015
+    seats = Sapor::PortugalWithAChAndIlWithoutPaf.instance.seats(results)
     expect(seats['Partido Social Democrata']).to eq(5 + 33)
     expect(seats['Aliança']).to eq(0 + 33)
     expect(seats['Chega']).to eq(0 + 28)

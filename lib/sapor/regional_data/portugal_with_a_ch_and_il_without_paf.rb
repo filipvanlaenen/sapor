@@ -21,11 +21,11 @@ module Sapor
   # The regional data for Portugal, with Portugal à Frente replaced with Partido
   # Social Democrata and CDS–Partido Popular, and Aliança added.
   #
-  class PortugalWithAChAndIWithoutPaf < Area
+  class PortugalWithAChAndIlWithoutPaf < Area
     include Singleton
 
     def area_code
-      'PT∪{A,CH,I}\{PàF}'
+      'PT∪{A,CH,IL}\{PàF}'
     end
 
     def coalitions
@@ -73,7 +73,7 @@ module Sapor
     def election_results_of_2015
       if @election_results_of_2015.nil?
         @election_results_of_2015 = load_election_results(
-          'portugal-20151004-with-a-ch-and-i-without-paf.psv'
+          'portugal-20151004-with-a-ch-and-il-without-paf.psv'
         )
       end
       @election_results_of_2015
