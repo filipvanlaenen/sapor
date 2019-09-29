@@ -51,7 +51,7 @@ describe Sapor::Portugal, '#seats' do
     expect(seats['CDS–Partido Popular']).to eq(0)
     expect(seats['Partido Democrático Republicano']).to eq(0)
     expect(seats['Partido Comunista dos Trabalhadores Portugueses']).to eq(0)
-    expect(seats['LIVRE/Tempo de Avançar']).to eq(0)
+    expect(seats['LIVRE']).to eq(0)
     expect(seats['Partido Nacional Renovador']).to eq(0)
     expect(seats['Partido da Terra']).to eq(0)
     expect(seats['AGIR']).to eq(0)
