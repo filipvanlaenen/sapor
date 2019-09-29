@@ -43,8 +43,8 @@ describe Sapor::PortugalWithoutPaf, '#seats' do
     PortugalWithoutPaf = Sapor::PortugalWithoutPaf.instance
     results = PortugalWithoutPaf.overall_election_results_of_2015
     seats = Sapor::PortugalWithoutPaf.instance.seats(results)
-    expect(seats['Partido Social Democrata']).to eq(5 + 74)
-    expect(seats['CDS–Partido Popular']).to eq(0 + 66)
+    expect(seats['Partido Social Democrata']).to eq(5 + 73)
+    expect(seats['CDS–Partido Popular']).to eq(0 + 67)
     expect(seats['Partido Socialista']).to eq(86 - 23)
     expect(seats['Bloco de Esquerda']).to eq(19 - 6)
     expect(seats['Coligação Democrática Unitária']).to eq(17 - 8)

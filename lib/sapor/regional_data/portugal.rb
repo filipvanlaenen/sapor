@@ -72,11 +72,11 @@ module Sapor
     SEAT_DISTRIBUTION = { 'Açores' => 5, 'Aveiro' => 16, 'Beja' => 3,
                           'Braga' => 19, 'Bragança' => 3, 'Castelo Branco' => 4,
                           'Coimbra' => 9, 'Évora' => 3, 'Faro' => 9,
-                          'Guarda' => 4, 'Leiria' => 10, 'Lisboa' => 47,
-                          'Madeira' => 6, 'Portalegre' => 2, 'Porto' => 39,
+                          'Guarda' => 3, 'Leiria' => 10, 'Lisboa' => 48,
+                          'Madeira' => 6, 'Portalegre' => 2, 'Porto' => 40,
                           'Santarém' => 9, 'Setúbal' => 18,
                           'Viana do Castelo' => 6, 'Vila Real' => 5,
-                          'Viseu' => 9, 'Europa' => 2,
+                          'Viseu' => 8, 'Europa' => 2,
                           'Fora da Europa' => 2 }.freeze
 
     def election_results_of_2015

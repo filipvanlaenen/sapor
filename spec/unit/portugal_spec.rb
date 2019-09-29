@@ -42,8 +42,8 @@ describe Sapor::Portugal, '#seats' do
     Portugal = Sapor::Portugal.instance
     results = Portugal.overall_election_results_of_2015
     seats = Sapor::Portugal.instance.seats(results)
-    expect(seats['Portugal à Frente']).to eq(102)
-    expect(seats['Partido Socialista']).to eq(86)
+    expect(seats['Portugal à Frente']).to eq(102 + 1)
+    expect(seats['Partido Socialista']).to eq(86 - 1)
     expect(seats['Bloco de Esquerda']).to eq(19)
     expect(seats['Coligação Democrática Unitária']).to eq(17)
     expect(seats['Partido Social Democrata']).to eq(5)
