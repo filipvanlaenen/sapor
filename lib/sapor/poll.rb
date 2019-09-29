@@ -95,7 +95,9 @@ module Sapor
                     PolandWithKoSldAndWiWithoutNPoAndZl.instance,
                     PolandWithSldAndWiWithoutZL.instance,
                     PolandWithSldWithoutZL.instance].freeze
-    PORTUGUESE_AREAS = [Portugal.instance, PortugalWithAWithoutPaf.instance,
+    PORTUGUESE_AREAS = [Portugal.instance,
+                        PortugalWithAChAndIWithoutPaf.instance,
+                        PortugalWithAWithoutPaf.instance,
                         PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
     (BELGIAN_AREAS + CATALONIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + \
