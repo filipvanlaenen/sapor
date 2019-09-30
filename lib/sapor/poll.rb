@@ -98,6 +98,7 @@ module Sapor
     PORTUGUESE_AREAS = [Portugal.instance,
                         PortugalWithAChAndIlWithoutPaf.instance,
                         PortugalWithAWithoutPaf.instance,
+                        PortugalWithChAndIlWithoutPaf.instance,
                         PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
     (BELGIAN_AREAS + CATALONIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + \

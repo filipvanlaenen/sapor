@@ -1,0 +1,438 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Tabela de resultados por círculos eleitorais". Retrieved on 1
+# January 2019.
+# URL: https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%B5es_legislativas_portuguesas_de_2015#Tabela_de_resultados_por_c%C3%ADrculos_eleitorais
+#
+# Source: "Legislativas 2015 – Resultados Globais". Retrieved on 5 January 2019.
+# URL: https://www.eleicoes.mai.gov.pt/legislativas2015/resultados-globais.html
+
+# Replaced Portugal à Frente with Partido Social Democrata and CDS–Partido Popular
+# Added Chega using the distribution of Partido Social Democrata
+# Added Iniciativa Liberal using the distribution of Partido Social Democrata and Partido Socialista added together
+
+Açores | Partido Socialista                              | 37,869
+Açores | Partido Social Democrata                        | 33,826
+Açores | Chega                                           | 33,826
+Açores | Iniciativa Liberal                              | 71,695
+Açores | Bloco de Esquerda                               |  7,330
+Açores | Aliança Açores                                  |  3,654
+Açores | Coligação Democrática Unitária                  |  2,320
+Açores | Pessoas–Animais–Natureza                        |    815
+Açores | Nós, Cidadãos!                                  |    766
+Açores | Partido Comunista dos Trabalhadores Portugueses |    601
+Açores | Partido Democrático Republicano                 |    511 
+Açores | Partido Unido dos Reformados e Pensionistas     |    346
+Açores | LIVRE                                           |    332
+Açores | AGIR                                            |    319
+Açores | Partido da Terra                                |    299
+Açores | Partido Nacional Renovador                      |    185
+
+Aveiro | Partido Social Democrata                        | 177,185
+Aveiro | Chega                                           | 177,185
+Aveiro | Iniciativa Liberal                              | 279,911
+Aveiro | CDS–Partido Popular                             | 177,185
+Aveiro | Partido Socialista                              | 102,726
+Aveiro | Bloco de Esquerda                               |  35,327
+Aveiro | Coligação Democrática Unitária                  |  16,038
+Aveiro | Partido Democrático Republicano                 |   4,548
+Aveiro | Pessoas–Animais–Natureza                        |   3,573
+Aveiro | Partido Comunista dos Trabalhadores Portugueses |   3,280
+Aveiro | Partido Nacional Renovador                      |   1,698
+Aveiro | LIVRE                                           |   1,660
+Aveiro | Partido da Terra                                |   1,325
+Aveiro | Partido Popular Monárquico                      |   1,292
+Aveiro | AGIR                                            |   1,253
+Aveiro | Nós, Cidadãos!                                  |   1,006
+Aveiro | Partido Cidadania e Democracia Cristã           |     785
+Aveiro | Partido Unido dos Reformados e Pensionistas     |     634
+Aveiro | Juntos pelo Povo                                |     448
+
+Beja | Partido Socialista                              | 27,775
+Beja | Coligação Democrática Unitária                  | 18,592
+Beja | Partido Social Democrata                        | 14,980
+Beja | Chega                                           | 14,980
+Beja | Iniciativa Liberal                              | 42,755
+Beja | CDS–Partido Popular                             | 14,980
+Beja | Bloco de Esquerda                               |  6,105
+Beja | Partido Comunista dos Trabalhadores Portugueses |  1,945
+Beja | Pessoas–Animais–Natureza                        |    608
+Beja | Partido Democrático Republicano                 |    351
+Beja | Partido Unido dos Reformados e Pensionistas     |    340
+Beja | Partido Nacional Renovador                      |    275
+Beja | LIVRE                                           |    271
+Beja | Partido da Terra                                |    248
+Beja | AGIR                                            |    193
+Beja | Partido Popular Monárquico                      |    192
+Beja | Nós, Cidadãos!                                  |    160
+Beja | Juntos pelo Povo                                |     88
+
+Braga | Partido Social Democrata                        | 216,357
+Braga | Chega                                           | 216,357
+Braga | Iniciativa Liberal                              | 362,769
+Braga | CDS–Partido Popular                             | 216,357
+Braga | Partido Socialista                              | 146,412
+Braga | Bloco de Esquerda                               |  41,745
+Braga | Coligação Democrática Unitária                  |  24,632
+Braga | Partido Democrático Republicano                 |   7,500
+Braga | Partido Comunista dos Trabalhadores Portugueses |   5,436
+Braga | Pessoas–Animais–Natureza                        |   3,682
+Braga | LIVRE                                           |   2,333
+Braga | Partido Nacional Renovador                      |   1,836
+Braga | AGIR                                            |   1,620
+Braga | Partido da Terra                                |   1,604
+Braga | Partido Cidadania e Democracia Cristã           |     993
+Braga | Nós, Cidadãos!                                  |     972
+Braga | Partido Popular Monárquico                      |     884
+Braga | Partido Unido dos Reformados e Pensionistas     |     878
+Braga | Juntos pelo Povo                                |     637
+
+Bragança | Partido Social Democrata                        | 34,408
+Bragança | Chega                                           | 34,408
+Bragança | Iniciativa Liberal                              | 58,126
+Bragança | CDS–Partido Popular                             | 34,408
+Bragança | Partido Socialista                              | 23,718
+Bragança | Bloco de Esquerda                               |  3,858
+Bragança | Coligação Democrática Unitária                  |  2,136
+Bragança | Partido Democrático Republicano                 |    546
+Bragança | Partido Comunista dos Trabalhadores Portugueses |    537
+Bragança | Pessoas–Animais–Natureza                        |    386
+Bragança | AGIR                                            |    284
+Bragança | LIVRE                                           |    251
+Bragança | Partido Popular Monárquico                      |    229
+Bragança | Partido da Terra                                |    223
+Bragança | Partido Nacional Renovador                      |    190
+Bragança | Nós, Cidadãos!                                  |    160
+Bragança | Juntos pelo Povo                                |    121
+
+Castelo Branco | Partido Socialista                              | 40,502
+Castelo Branco | Partido Social Democrata                        | 36,803
+Castelo Branco | Chega                                           | 36,803
+Castelo Branco | Iniciativa Liberal                              | 77,305
+Castelo Branco | CDS–Partido Popular                             | 36,803
+Castelo Branco | Bloco de Esquerda                               | 10,450
+Castelo Branco | Coligação Democrática Unitária                  |  6,286
+Castelo Branco | Partido Democrático Republicano                 |  1,086
+Castelo Branco | Partido Comunista dos Trabalhadores Portugueses |  1,080
+Castelo Branco | Pessoas–Animais–Natureza                        |    860
+Castelo Branco | Partido Nacional Renovador                      |    508
+Castelo Branco | LIVRE                                           |    507
+Castelo Branco | Partido Popular Monárquico                      |    496
+Castelo Branco | Partido da Terra                                |    474
+Castelo Branco | AGIR                                            |    374
+Castelo Branco | Partido Unido dos Reformados e Pensionistas     |    272
+Castelo Branco | Nós, Cidadãos!                                  |    267
+
+Coimbra | Partido Social Democrata                        | 81,882
+Coimbra | Chega                                           | 81,882
+Coimbra | Iniciativa Liberal                              |159,566
+Coimbra | CDS–Partido Popular                             | 81,882
+Coimbra | Partido Socialista                              | 77,684
+Coimbra | Bloco de Esquerda                               | 21,780
+Coimbra | Coligação Democrática Unitária                  | 15,476
+Coimbra | Partido Democrático Republicano                 |  3,615
+Coimbra | Pessoas–Animais–Natureza                        |  2,165
+Coimbra | Partido Comunista dos Trabalhadores Portugueses |  1,889
+Coimbra | LIVRE                                           |  1,292
+Coimbra | Partido Nacional Renovador                      |  1,097
+Coimbra | AGIR                                            |  1,081
+Coimbra | Partido da Terra                                |    854
+Coimbra | Nós, Cidadãos!                                  |    683
+Coimbra | Partido Popular Monárquico                      |    525
+Coimbra | Partido Unido dos Reformados e Pensionistas     |    451
+Coimbra | Juntos pelo Povo                                |    272
+
+Évora | Partido Socialista                              | 31,705
+Évora | Partido Social Democrata                        | 20,275
+Évora | Chega                                           | 20,275
+Évora | Iniciativa Liberal                              | 51,980
+Évora | CDS–Partido Popular                             | 20,275
+Évora | Coligação Democrática Unitária                  | 18,567
+Évora | Bloco de Esquerda                               |  7,312
+Évora | Partido Comunista dos Trabalhadores Portugueses |  1,245
+Évora | Pessoas–Animais–Natureza                        |    723
+Évora | Partido Democrático Republicano                 |    443
+Évora | Partido Popular Monárquico                      |    363
+Évora | LIVRE                                           |    356
+Évora | Partido Nacional Renovador                      |    280
+Évora | Partido da Terra                                |    242
+Évora | AGIR                                            |    224
+Évora | Nós, Cidadãos!                                  |    216
+Évora | Partido Unido dos Reformados e Pensionistas     |    166
+
+Faro | Partido Socialista                              | 62,422
+Faro | Partido Social Democrata                        | 59,950
+Faro | Chega                                           | 59,950
+Faro | Iniciativa Liberal                              |122,372
+Faro | CDS–Partido Popular                             | 59,950
+Faro | Bloco de Esquerda                               | 26,922
+Faro | Coligação Democrática Unitária                  | 16,539
+Faro | Pessoas–Animais–Natureza                        |  3,783
+Faro | Partido Comunista dos Trabalhadores Portugueses |  3,012
+Faro | Partido Democrático Republicano                 |  2,293
+Faro | LIVRE                                           |  1,435
+Faro | Partido Nacional Renovador                      |  1,343
+Faro | Nós, Cidadãos!                                  |  1,337
+Faro | Partido da Terra                                |  1,222
+Faro | AGIR                                            |  1,220
+Faro | Partido Unido dos Reformados e Pensionistas     |    886
+Faro | Partido Popular Monárquico                      |    755
+
+Guarda | Partido Social Democrata                        | 38,964
+Guarda | Chega                                           | 38,964
+Guarda | Iniciativa Liberal                              | 67,832
+Guarda | CDS–Partido Popular                             | 38,964
+Guarda | Partido Socialista                              | 28,868
+Guarda | Bloco de Esquerda                               |  6,341
+Guarda | Coligação Democrática Unitária                  |  3,379
+Guarda | Partido Democrático Republicano                 |    958
+Guarda | Pessoas–Animais–Natureza                        |    725
+Guarda | Partido Comunista dos Trabalhadores Portugueses |    689
+Guarda | Partido Nacional Renovador                      |    389
+Guarda | Partido da Terra                                |    298
+Guarda | LIVRE                                           |    287
+Guarda | AGIR                                            |    277
+Guarda | Partido Popular Monárquico                      |    211
+Guarda | Nós, Cidadãos!                                  |    180
+Guarda | Partido Unido dos Reformados e Pensionistas     |    144
+Guarda | Juntos pelo Povo                                |     83
+
+Leiria | Partido Social Democrata                        | 115,453
+Leiria | Chega                                           | 115,453
+Leiria | Iniciativa Liberal                              | 174,637
+Leiria | CDS–Partido Popular                             | 115,453
+Leiria | Partido Socialista                              |  59,184
+Leiria | Bloco de Esquerda                               |  23,034
+Leiria | Coligação Democrática Unitária                  |  12,181
+Leiria | Partido Democrático Republicano                 |   4,067
+Leiria | Pessoas–Animais–Natureza                        |   2,908
+Leiria | Partido Comunista dos Trabalhadores Portugueses |   2,517
+Leiria | LIVRE                                           |   1,786
+Leiria | Partido da Terra                                |   1,189
+Leiria | Partido Nacional Renovador                      |   1,073
+Leiria | AGIR                                            |     916
+Leiria | Nós, Cidadãos!                                  |     840
+Leiria | Partido Popular Monárquico                      |     701
+Leiria | Partido Unido dos Reformados e Pensionistas     |     612
+Leiria | Juntos pelo Povo                                |     371
+
+Lisboa | Partido Social Democrata                        | 399,520
+Lisboa | Chega                                           | 399,520
+Lisboa | Iniciativa Liberal                              | 785,874
+Lisboa | CDS–Partido Popular                             | 399,520
+Lisboa | Partido Socialista                              | 386,354
+Lisboa | Bloco de Esquerda                               | 125,438
+Lisboa | Coligação Democrática Unitária                  | 113,406
+Lisboa | Pessoas–Animais–Natureza                        |  22,628
+Lisboa | LIVRE                                           |  14,683
+Lisboa | Partido Comunista dos Trabalhadores Portugueses |  11,083
+Lisboa | Partido Democrático Republicano                 |  10,249
+Lisboa | Partido Nacional Renovador                      |   7,188
+Lisboa | Partido da Terra                                |   5,078
+Lisboa | AGIR                                            |   5,026
+Lisboa | Partido Unido dos Reformados e Pensionistas     |   3,999
+Lisboa | Nós, Cidadãos!                                  |   3,737
+Lisboa | Partido Popular Monárquico                      |   2,820
+Lisboa | Juntos pelo Povo                                |   1,553
+
+Madeira | Partido Social Democrata                        | 47,228
+Madeira | Chega                                           | 47,228
+Madeira | Iniciativa Liberal                              | 73,380
+Madeira | Partido Socialista                              | 26,152
+Madeira | Bloco de Esquerda                               | 13,342
+Madeira | Juntos pelo Povo                                |  8,671
+Madeira | CDS–Partido Popular                             |  7,536
+Madeira | Coligação Democrática Unitária                  |  4,468
+Madeira | Pessoas–Animais–Natureza                        |  2,206
+Madeira | Partido Democrático Republicano                 |  2,144
+Madeira | Partido Trabalhista Português                   |  1,748
+Madeira | Partido da Terra                                |  1,705
+Madeira | Partido Comunista dos Trabalhadores Portugueses |  1,592
+Madeira | LIVRE                                           |  1,260
+Madeira | Nós, Cidadãos!                                  |  1,125
+Madeira | Partido Nacional Renovador                      |    784
+Madeira | Partido Popular Monárquico                      |    528
+
+Portalegre | Partido Socialista                              | 25,037
+Portalegre | Partido Social Democrata                        | 16,303
+Portalegre | Chega                                           | 16,303
+Portalegre | Iniciativa Liberal                              | 41,340
+Portalegre | CDS–Partido Popular                             | 16,303
+Portalegre | Coligação Democrática Unitária                  |  7,184
+Portalegre | Bloco de Esquerda                               |  5,427
+Portalegre | Partido Comunista dos Trabalhadores Portugueses |  1,001
+Portalegre | Pessoas–Animais–Natureza                        |    464
+Portalegre | Partido Democrático Republicano                 |    326
+Portalegre | Partido Nacional Renovador                      |    217
+Portalegre | AGIR                                            |    198
+Portalegre | LIVRE                                           |    189
+Portalegre | Partido Popular Monárquico                      |    187
+Portalegre | Partido da Terra                                |    154
+Portalegre | Partido Unido dos Reformados e Pensionistas     |    147
+Portalegre | Nós, Cidadãos!                                  |    144
+
+Porto | Partido Social Democrata                        | 380,043
+Porto | Chega                                           | 380,043
+Porto | Iniciativa Liberal                              | 694,127
+Porto | CDS–Partido Popular                             | 380,043
+Porto | Partido Socialista                              | 314,084
+Porto | Bloco de Esquerda                               | 106,954
+Porto | Coligação Democrática Unitária                  |  65,560
+Porto | Pessoas–Animais–Natureza                        |  15,295
+Porto | Partido Democrático Republicano                 |  10,702
+Porto | Partido Comunista dos Trabalhadores Portugueses |  10,290
+Porto | LIVRE                                           |   5,014
+Porto | Partido Nacional Renovador                      |   4,750
+Porto | Partido da Terra                                |   3,449
+Porto | AGIR                                            |   2,788
+Porto | Nós, Cidadãos!                                  |   2,773
+Porto | Partido Popular Monárquico                      |   2,392
+Porto | Partido Unido dos Reformados e Pensionistas     |   1,611
+Porto | Juntos pelo Povo                                |   1,239
+
+Santarém | Partido Social Democrata                        | 81,544
+Santarém | Chega                                           | 81,544
+Santarém | Iniciativa Liberal                              |156,449
+Santarém | CDS–Partido Popular                             | 81,544
+Santarém | Partido Socialista                              | 74,905
+Santarém | Bloco de Esquerda                               | 24,489
+Santarém | Coligação Democrática Unitária                  | 21,941
+Santarém | Partido Comunista dos Trabalhadores Portugueses |  3,060
+Santarém | Pessoas–Animais–Natureza                        |  2,715
+Santarém | Partido Democrático Republicano                 |  2,377
+Santarém | LIVRE                                           |  1,236
+Santarém | Partido Nacional Renovador                      |  1,206
+Santarém | Partido da Terra                                |  1,038
+Santarém | Nós, Cidadãos!                                  |    932
+Santarém | AGIR                                            |    928
+Santarém | Partido Unido dos Reformados e Pensionistas     |    827
+Santarém | Partido Popular Monárquico                      |    822
+Santarém | Partido Cidadania e Democracia Cristã           |    491
+
+Setúbal | Partido Socialista                              | 145,302
+Setúbal | Partido Social Democrata                        |  95,659
+Setúbal | Chega                                           |  95,659
+Setúbal | Iniciativa Liberal                              | 240,961
+Setúbal | CDS–Partido Popular                             |  95,659
+Setúbal | Coligação Democrática Unitária                  |  79,606
+Setúbal | Bloco de Esquerda                               |  55,276
+Setúbal | Pessoas–Animais–Natureza                        |   8,167
+Setúbal | Partido Comunista dos Trabalhadores Portugueses |   6,721
+Setúbal | LIVRE                                           |   4,277
+Setúbal | Partido Democrático Republicano                 |   4,124
+Setúbal | Partido Nacional Renovador                      |   2,676
+Setúbal | AGIR                                            |   1,807
+Setúbal | Partido Unido dos Reformados e Pensionistas     |   1,700
+Setúbal | Partido da Terra                                |   1,584
+Setúbal | Nós, Cidadãos!                                  |   1,572
+Setúbal | Partido Popular Monárquico                      |   1,024
+Setúbal | Juntos pelo Povo                                |     561
+
+Viana do Castelo | Partido Social Democrata                        | 58,509
+Viana do Castelo | Chega                                           | 58,509
+Viana do Castelo | Iniciativa Liberal                              | 96,818
+Viana do Castelo | CDS–Partido Popular                             | 58,509
+Viana do Castelo | Partido Socialista                              | 38,309
+Viana do Castelo | Bloco de Esquerda                               | 10,225
+Viana do Castelo | Coligação Democrática Unitária                  |  6,726
+Viana do Castelo | Partido Democrático Republicano                 |  2,400
+Viana do Castelo | Partido Comunista dos Trabalhadores Portugueses |  1,113
+Viana do Castelo | Pessoas–Animais–Natureza                        |  1,086
+Viana do Castelo | Nós, Cidadãos!                                  |  1,037
+Viana do Castelo | AGIR                                            |    959
+Viana do Castelo | Partido Nacional Renovador                      |    559
+Viana do Castelo | Partido Popular Monárquico                      |    535
+Viana do Castelo | LIVRE                                           |    453
+Viana do Castelo | Partido da Terra                                |    445
+Viana do Castelo | Partido Cidadania e Democracia Cristã           |    390
+Viana do Castelo | Partido Unido dos Reformados e Pensionistas     |    213
+Viana do Castelo | Juntos pelo Povo                                |    160
+
+Vila Real | Partido Social Democrata                        | 56,262
+Vila Real | Chega                                           | 56,262
+Vila Real | Iniciativa Liberal                              | 92,723
+Vila Real | CDS–Partido Popular                             | 56,262
+Vila Real | Partido Socialista                              | 36,461
+Vila Real | Bloco de Esquerda                               |  5,707
+Vila Real | Coligação Democrática Unitária                  |  3,250
+Vila Real | Partido Comunista dos Trabalhadores Portugueses |  1,004
+Vila Real | Partido Democrático Republicano                 |    806
+Vila Real | Pessoas–Animais–Natureza                        |    667
+Vila Real | AGIR                                            |    521
+Vila Real | LIVRE                                           |    383
+Vila Real | Partido Popular Monárquico                      |    316
+Vila Real | Partido da Terra                                |    306
+Vila Real | Nós, Cidadãos!                                  |    281
+Vila Real | Partido Nacional Renovador                      |    279
+Vila Real | Partido Unido dos Reformados e Pensionistas     |    151
+
+Viseu | Partido Social Democrata                        | 97,362
+Viseu | Chega                                           | 97,362
+Viseu | Iniciativa Liberal                              |153,905
+Viseu | CDS–Partido Popular                             | 97,362
+Viseu | Partido Socialista                              | 56,543
+Viseu | Bloco de Esquerda                               | 12,816
+Viseu | Coligação Democrática Unitária                  |  6,668
+Viseu | Partido Democrático Republicano                 |  1,952
+Viseu | Partido Comunista dos Trabalhadores Portugueses |  1,743
+Viseu | Pessoas–Animais–Natureza                        |  1,296
+Viseu | LIVRE                                           |  1,003
+Viseu | AGIR                                            |    721
+Viseu | Partido da Terra                                |    679
+Viseu | Partido Nacional Renovador                      |    608
+Viseu | Nós, Cidadãos!                                  |    534
+Viseu | Partido Popular Monárquico                      |    533
+Viseu | Partido Unido dos Reformados e Pensionistas     |    387
+
+Europa | Partido Social Democrata                        | 5,340
+Europa | Chega                                           | 5,340
+Europa | Iniciativa Liberal                              | 9,421
+Europa | CDS–Partido Popular                             | 5,340
+Europa | Partido Socialista                              | 4,081
+Europa | Coligação Democrática Unitária                  |   811
+Europa | Bloco de Esquerda                               |   785
+Europa | LIVRE                                           |   249
+Europa | Partido Democrático Republicano                 |   169
+Europa | Pessoas–Animais–Natureza                        |   128
+Europa | Partido Comunista dos Trabalhadores Portugueses |    98
+Europa | Partido Unido dos Reformados e Pensionistas     |    96
+Europa | Nós, Cidadãos!                                  |    86
+Europa | Partido da Terra                                |    82
+Europa | Partido Nacional Renovador                      |    45
+Europa | Partido Popular Monárquico                      |    40
+Europa | Juntos pelo Povo                                |    28
+Europa | AGIR                                            |    23
+
+Fora da Europa | Partido Social Democrata                        | 7,122
+Fora da Europa | Chega                                           | 7,122
+Fora da Europa | Iniciativa Liberal                              | 8,714
+Fora da Europa | CDS–Partido Popular                             | 7,122
+Fora da Europa | Nós, Cidadãos!                                  | 2,631
+Fora da Europa | Partido Socialista                              | 1,592
+Fora da Europa | Partido Democrático Republicano                 |   465
+Fora da Europa | Pessoas–Animais–Natureza                        |   260
+Fora da Europa | Bloco de Esquerda                               |   229
+Fora da Europa | Coligação Democrática Unitária                  |   214
+Fora da Europa | Partido Unido dos Reformados e Pensionistas     |   119
+Fora da Europa | Partido da Terra                                |    98
+Fora da Europa | LIVRE                                           |    83
+Fora da Europa | Partido Nacional Renovador                      |    83
+Fora da Europa | Juntos pelo Povo                                |    53
+Fora da Europa | Partido Popular Monárquico                      |    52
+Fora da Europa | Partido Comunista dos Trabalhadores Portugueses |    19
+Fora da Europa | AGIR                                            |    17
