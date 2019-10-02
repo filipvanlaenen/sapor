@@ -46,11 +46,12 @@ module Sapor
 
     private
 
-    COALITIONS = [['Aliança (*)', 'Chega (*)'],
+    COALITIONS = [['Aliança (*)'],
                   ['Bloco de Esquerda (GUE/NGL)',
                    'Coligação Democrática Unitária (GUE/NGL)'],
                   ['CDS–Partido Popular (EPP)',
                    'Partido Social Democrata (EPP)'],
+                  ['Chega (ECR)'],
                   ['Iniciativa Liberal (RE)'],
                   ['Partido Socialista (S&D)'],
                   ['LIVRE (Greens/EFA)',
