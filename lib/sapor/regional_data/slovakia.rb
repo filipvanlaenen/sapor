@@ -49,7 +49,15 @@ module Sapor
 
     private
     
-    COALITIONS = [].freeze
+    KDH_PARTY = 'Kresťanskodemokratické hnutie'.freeze
+    MH_PARTY = 'MOST–HÍD'.freeze
+    SKS_PARTY = 'Slovenská konzervatívna strana'.freeze
+    SMER_SD_PARTY = 'SMER–sociálna demokracia'.freeze
+    SNS_PARTY = 'Slovenská národná strana'.freeze
+    
+    COALITIONS = [[MH_PARTY, SKS_PARTY, SMER_SD_PARTY, SNS_PARTY],
+                  [MH_PARTY, SMER_SD_PARTY, SNS_PARTY],
+                  [SMER_SD_PARTY]].freeze
 
     NO_OF_SEATS = 150
 
