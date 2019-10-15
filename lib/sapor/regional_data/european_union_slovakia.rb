@@ -71,7 +71,8 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = LargestRemainder.new(NO_OF_SEATS,
                                                  HagenbachBischoffQuota,
-                                                 THRESHOLD)
+                                                 THRESHOLD,
+                                                 false, 0, false)
       end
       @electoral_system
     end
