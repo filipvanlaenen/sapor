@@ -48,10 +48,10 @@ module Sapor
     
     COALITIONS = [['Kotleba–Ľudová strana Naše Slovensko (NI)'],
                   ['Kresťanskodemokratické hnutie (EPP)', 'MOST–HÍD (EPP)',
+                   'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (EPP)',
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)',
                    'Za ľudí (EPP)'],
-                  ['NOVA (ECR)', 'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)',
-                   'Sloboda a Solidarita (ECR)',
+                  ['NOVA (ECR)', 'Sloboda a Solidarita (ECR)',
                    'Slovenská národná strana (ECR)'],
                   ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
                   ['SME RODINA (ID)'],
