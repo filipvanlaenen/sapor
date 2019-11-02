@@ -32,33 +32,34 @@ describe Sapor::Flanders, '#no_of_seats' do
 end
 
 describe Sapor::Flanders, '#population_size' do
-  it 'returns a population size of 4,202,462' do
-    expect(Sapor::Flanders.instance.population_size).to eq(4_202_462)
+  it 'returns a population size of 4,238,274' do
+    expect(Sapor::Flanders.instance.population_size).to eq(4_238_274)
   end
 end
 
 describe Sapor::Flanders, '#seats' do
-  it 'calculates the number of seats for the election of 2014' do
+  it 'calculates the number of seats for the election of 2019' do
     flanders = Sapor::Flanders.instance
-    results = flanders.overall_election_results_of_2014
+    results = flanders.overall_election_results_of_2019
     seats = flanders.seats(results)
-    expect(seats['N-VA']).to eq(43)
-    expect(seats['CD&V']).to eq(27)
-    expect(seats['Open Vld']).to eq(19)
-    expect(seats['sp.a']).to eq(18)
-    expect(seats['Groen']).to eq(10)
-    expect(seats['Vlaams Belang']).to eq(6)
-    expect(seats['PVDA']).to eq(0)
-    expect(seats['UF']).to eq(1)
+    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(35)
+    expect(seats['Christen-Democratisch en Vlaams']).to eq(19)
+    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(16)
+    expect(seats['Socialistische Partij Anders']).to eq(13)
+    expect(seats['Groen']).to eq(14)
+    expect(seats['Vlaams Belang']).to eq(23)
+    expect(seats['Partij van de Arbeid van België']).to eq(4)
+    expect(seats['BE.ONE']).to eq(0)
+    expect(seats['Burgerlijst']).to eq(0)
+    expect(seats['de coöperatie']).to eq(0)
+    expect(seats['Democratisch-Solidair Appèl']).to eq(0)
+    expect(seats['DierAnimal']).to eq(0)
+    expect(seats['Genoeg voor iedereen']).to eq(0)
     expect(seats['Piratenpartij']).to eq(0)
-    expect(seats['GENOEG']).to eq(0)
-    expect(seats['ROSSEM']).to eq(0)
-    expect(seats['ROEL']).to eq(0)
-    expect(seats['VCP']).to eq(0)
-    expect(seats['MAMA']).to eq(0)
-    expect(seats['SD&P']).to eq(0)
-    expect(seats['VITAL']).to eq(0)
-    expect(seats['PENSIOEN PLUS']).to eq(0)
+    expect(seats['Partij Vrede en Solidariteit']).to eq(0)
+    expect(seats['PRO']).to eq(0)
+    expect(seats['Referendumpartij']).to eq(0)
+    expect(seats['Union des Francophones']).to eq(0)
   end
 end
 

@@ -28,41 +28,27 @@ module Sapor
     end
 
     def coalitions
-      [['CD&V', 'Groen', 'Open Vld'],
-       ['CD&V', 'Groen', 'Open Vld', 'sp.a'],
-       ['CD&V', 'Groen', 'sp.a'],
-       ['CD&V', 'Groen', 'PVDA', 'sp.a'],
-       ['CD&V', 'N-VA'],
-       ['CD&V', 'N-VA', 'Open Vld'],
-       ['CD&V', 'N-VA', 'sp.a'],
-       ['CD&V', 'Open Vld'],
-       ['CD&V', 'Open Vld', 'sp.a'],
-       ['CD&V', 'sp.a'],
-       ['Groen', 'Open Vld', 'sp.a'],
-       ['Open Vld', 'sp.a'],
-       ['N-VA', 'Open Vld'],
-       ['N-VA', 'Open Vld', 'sp.a'],
-       ['N-VA', 'Vlaams Belang']]
+      COALITIONS
     end
 
     def no_of_seats
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
 
     def population_size
-      # Voter turnout on 25 May 2014
-      # Source: Wikipedia page about the elections of 25 May 2014 in
-      # Flanders, downloaded on 19 March 2016,
-      # https://nl.wikipedia.org/wiki/Vlaamse_verkiezingen_2014
-      4_202_462
+      # Voter turnout on 26 May 2019
+      # Source: Official page with the results of the elections of 26 May 2019
+      #         in Flanders, downloaded on 2 November 2019
+      # https://verkiezingen2019.belgium.be/nl/verkiezingen?el=VL
+      4_238_274
     end
 
     def seats(simulation)
@@ -74,6 +60,30 @@ module Sapor
     end
 
     private
+    
+    CDV_PARTY = 'Christen-Democratisch en Vlaams'.freeze
+    GROEN_PARTY = 'Groen'.freeze
+    NVA_PARTY = 'Nieuw-Vlaamse Alliantie'.freeze
+    PVDA_PARTY = 'Partij van de Arbeid van België'.freeze
+    SPA_PARTY = 'Socialistische Partij Anders'.freeze
+    VB_PARTY = 'Vlaams Belang'.freeze
+    VLD_PARTY = 'Open Vlaamse Liberalen en Democraten'.freeze
+
+    COALITIONS = [[CDV_PARTY, GROEN_PARTY, VLD_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, VLD_PARTY, SPA_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, SPA_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, PVDA_PARTY, SPA_PARTY],
+                  [CDV_PARTY, NVA_PARTY],
+                  [CDV_PARTY, NVA_PARTY, VLD_PARTY],
+                  [CDV_PARTY, NVA_PARTY, SPA_PARTY],
+                  [CDV_PARTY, VLD_PARTY],
+                  [CDV_PARTY, VLD_PARTY, SPA_PARTY],
+                  [CDV_PARTY, SPA_PARTY],
+                  [GROEN_PARTY, VLD_PARTY, SPA_PARTY],
+                  [VLD_PARTY, SPA_PARTY],
+                  [NVA_PARTY, VLD_PARTY],
+                  [NVA_PARTY, VLD_PARTY, SPA_PARTY],
+                  [NVA_PARTY, VB_PARTY]].freeze    
 
     SEAT_DISTRIBUTION = { 'Antwerpen' => 33, 'Brussel' => 6,
                           'Limburg' => 16, 'Oost-Vlaanderen' => 27,
@@ -82,19 +92,19 @@ module Sapor
 
     THRESHOLD = 0.05
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results( \
-          'flanders-2014.psv')
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results( \
+          'flanders-20190526.psv')
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2014,
-          election_results_of_2014,
+          overall_election_results_of_2019,
+          election_results_of_2019,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
           THRESHOLD)
