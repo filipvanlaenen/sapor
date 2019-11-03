@@ -28,13 +28,15 @@ module Sapor
       'UK∪{BREXIT}'
     end
     
+    BREX_PARTY = 'Brexit Party'.freeze
     CON_PARTY = 'Conservative Party'.freeze
     LAB_PARTY = 'Labour Party'.freeze
     LD_PARTY = 'Liberal Democrats'.freeze
     CHUK_PARTY = 'Change UK'.freeze
 
     def coalitions
-      [[CON_PARTY],
+      [[BREX_PARTY, CON_PARTY],
+       [CON_PARTY],
        [CON_PARTY, LD_PARTY],
        [CON_PARTY, LD_PARTY, CHUK_PARTY],
        [CON_PARTY, 'Plaid Cymru'],

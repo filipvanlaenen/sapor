@@ -29,29 +29,31 @@ module Sapor
       'UK∪{TIG}'
     end
     
+    BREX_PARTY = 'Brexit Party'.freeze
     CON_PARTY = 'Conservative Party'.freeze
     LAB_PARTY = 'Labour Party'.freeze
     LD_PARTY = 'Liberal Democrats'.freeze
-    TIG_PARTY = 'The Independent Group'.freeze
+    CHUK_PARTY = 'Change UK'.freeze
 
     def coalitions
-      [[CON_PARTY],
+      [[BREX_PARTY, CON_PARTY],
+       [CON_PARTY],
        [CON_PARTY, LD_PARTY],
-       [CON_PARTY, LD_PARTY, TIG_PARTY],
+       [CON_PARTY, LD_PARTY, CHUK_PARTY],
        [CON_PARTY, 'Plaid Cymru'],
        [CON_PARTY, 'Plaid Cymru', 'Scottish National Party'],
        [CON_PARTY, 'Scottish National Party'],
-       [CON_PARTY, TIG_PARTY],
+       [CON_PARTY, CHUK_PARTY],
        [LAB_PARTY],
        [LAB_PARTY, LD_PARTY],
        [LAB_PARTY, LD_PARTY, 'Plaid Cymru'],
        [LAB_PARTY, LD_PARTY, 'Plaid Cymru', 'Scottish National Party'],
        [LAB_PARTY, LD_PARTY, 'Scottish National Party'],
-       [LAB_PARTY, LD_PARTY, TIG_PARTY],
+       [LAB_PARTY, LD_PARTY, CHUK_PARTY],
        [LAB_PARTY, 'Plaid Cymru'],
        [LAB_PARTY, 'Plaid Cymru', 'Scottish National Party'],
        [LAB_PARTY, 'Scottish National Party'],
-       [LAB_PARTY, TIG_PARTY]]
+       [LAB_PARTY, CHUK_PARTY]]
     end
 
     def no_of_seats
