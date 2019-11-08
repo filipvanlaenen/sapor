@@ -52,7 +52,8 @@ module Sapor
     REF_PARTY = 'Eesti Reformierakond'.freeze
     SDE_PARTY = 'Sotsiaaldemokraatlik Erakond'.freeze
 
-    COALITIONS = [[EKRE_PARTY, I_PARTY, REF_PARTY],
+    COALITIONS = [[EKRE_PARTY, I_PARTY, KESK_PARTY],
+                  [EKRE_PARTY, I_PARTY, REF_PARTY],
                   [EKRE_PARTY, KESK_PARTY],
                   [EKRE_PARTY, KESK_PARTY, REF_PARTY],
                   [EKRE_PARTY, REF_PARTY],
