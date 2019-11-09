@@ -29,29 +29,33 @@ module Sapor
     end
     
     BREX_PARTY = 'Brexit Party'.freeze
+    CHUK_PARTY = 'Change UK'.freeze
     CON_PARTY = 'Conservative Party'.freeze
+    GREEN_PARTY = 'Green Party'.freeze
     LAB_PARTY = 'Labour Party'.freeze
     LD_PARTY = 'Liberal Democrats'.freeze
-    CHUK_PARTY = 'Change UK'.freeze
+    PC_PARTY = 'Plaid Cymru'.freeze
+    SNP_PARTY = 'Scottish National Party'.freeze
 
     def coalitions
       [[BREX_PARTY, CON_PARTY],
        [CON_PARTY],
        [CON_PARTY, LD_PARTY],
        [CON_PARTY, LD_PARTY, CHUK_PARTY],
-       [CON_PARTY, 'Plaid Cymru'],
-       [CON_PARTY, 'Plaid Cymru', 'Scottish National Party'],
-       [CON_PARTY, 'Scottish National Party'],
+       [CON_PARTY, PC_PARTY],
+       [CON_PARTY, PC_PARTY, SNP_PARTY],
+       [CON_PARTY, SNP_PARTY],
        [CON_PARTY, CHUK_PARTY],
        [LAB_PARTY],
+       [LAB_PARTY, GREEN_PARTY, LD_PARTY, PC_PARTY, SNP_PARTY],
        [LAB_PARTY, LD_PARTY],
-       [LAB_PARTY, LD_PARTY, 'Plaid Cymru'],
-       [LAB_PARTY, LD_PARTY, 'Plaid Cymru', 'Scottish National Party'],
-       [LAB_PARTY, LD_PARTY, 'Scottish National Party'],
+       [LAB_PARTY, LD_PARTY, PC_PARTY],
+       [LAB_PARTY, LD_PARTY, PC_PARTY, SNP_PARTY],
+       [LAB_PARTY, LD_PARTY, SNP_PARTY],
        [LAB_PARTY, LD_PARTY, CHUK_PARTY],
-       [LAB_PARTY, 'Plaid Cymru'],
-       [LAB_PARTY, 'Plaid Cymru', 'Scottish National Party'],
-       [LAB_PARTY, 'Scottish National Party'],
+       [LAB_PARTY, PC_PARTY],
+       [LAB_PARTY, PC_PARTY, SNP_PARTY],
+       [LAB_PARTY, SNP_PARTY],
        [LAB_PARTY, CHUK_PARTY]]
     end
 
