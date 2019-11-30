@@ -46,16 +46,21 @@ module Sapor
 
     private
 
-    COALITIONS = [['KORWiN (NI)', 'Kukiz’15 (NI)'],
+    COALITIONS = [['Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['Koalicja Europejska (EPP)',
+                   'Koalicja Obywatelska (EPP)',
+                   'Koalicja Polska (EPP)',
                    'Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)'],
-                  ['.Nowoczesna (RE)'],
-                  ['Partia Razem (*)'],
-                  ['Prawo i Sprawiedliwość (ECR)'],
-                  ['Sojusz Lewicy Demokratycznej (S&D)',
+                  ['Lewica (S&D)',
+                   'Lewica Razem (S&D)',
+                   'Sojusz Lewicy Demokratycznej (S&D)',
                    'Wiosna (S&D)',
-                   'Wiosna–Partia Razem (S&D)']].freeze
+                   'Wiosna–Partia Razem (S&D)'],
+                  ['.Nowoczesna (RE)'],
+                  ['Bezpartyjni Samorządowcy (*)'],
+                  ['Prawo i Sprawiedliwość (ECR)',
+                   'Zjednoczona Prawica (ECR)']].freeze
 
     NO_OF_SEATS = 51
 
