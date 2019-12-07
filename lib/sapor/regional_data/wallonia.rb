@@ -27,29 +27,44 @@ module Sapor
       'BE-WAL'
     end
 
+    CDH_PARTY = 'Centre démocrate humaniste'.freeze
+    ECOLO_PARTY = 'Ecolo'.freeze
+    MR_PARTY = 'Mouvement Réformateur'.freeze
+    PS_PARTY = 'Parti Socialiste'.freeze
+    PTB_PARTY = 'Parti du Travail de Belgique'.freeze
+
     def coalitions
-      [%w(cdH Ecolo MR), %w(cdH Ecolo PS), %w(cdH MR), %w(cdH PS),
-       %w(cdH PS PTB), %w(Ecolo MR), %w(Ecolo MR PS), %w(Ecolo PS),
-       %w(Ecolo PS PTB), %w(Ecolo PTB), %w(MR PS), %w(PS PTB)]
+      [[CDH_PARTY, ECOLO_PARTY, MR_PARTY],
+       [CDH_PARTY, ECOLO_PARTY, PS_PARTY],
+       [CDH_PARTY, MR_PARTY],
+       [CDH_PARTY, PS_PARTY],
+       [CDH_PARTY, PS_PARTY, PTB_PARTY],
+       [ECOLO_PARTY, MR_PARTY],
+       [ECOLO_PARTY, MR_PARTY, PS_PARTY],
+       [ECOLO_PARTY, PS_PARTY],
+       [ECOLO_PARTY, PS_PARTY, PTB_PARTY],
+       [ECOLO_PARTY, PTB_PARTY],
+       [MR_PARTY, PS_PARTY],
+       [PS_PARTY, PTB_PARTY]]
     end
 
     def no_of_seats
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2019
     end
 
     def population_size
-      # Voter turnout on 25 May 2014
-      # Source: http://elections2014.belgium.be/fr/wal/results/results_tab_WLR00000.html
-      # Retrieved on 21 July 2017
-      2_047_387
+      # Voter turnout on 26 May 2019
+      # Source: https://verkiezingen2019.belgium.be/nl/verkiezingen?el=WL
+      # Retrieved on 7 December 2019
+      2_034_813
     end
 
     def seats(simulation)
@@ -64,28 +79,28 @@ module Sapor
 
     # Source: https://nl.wikipedia.org/wiki/Waals_Parlement
     # Retrieved on 21 July 2017
-    SEAT_DISTRIBUTION = { 'Brabant Wallon' => 8,
-                          'Hainaut' => 28,
+    SEAT_DISTRIBUTION = { 'Brabant wallon' => 8,
+                          'Hainaut' => 27,
                           'Liège' => 23,
-                          'Luxembourg' => 5,
+                          'Luxembourg' => 6,
                           'Namur' => 11 }.freeze
 
     THRESHOLD = 0.05
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results( \
-          'wallonia-2014.psv'
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results( \
+          'wallonia-20190526.psv'
         )
       end
-      @election_results_of_2014
+      @election_results_of_2019
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2014,
-          election_results_of_2014,
+          overall_election_results_of_2019,
+          election_results_of_2019,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
           THRESHOLD

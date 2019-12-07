@@ -1,0 +1,88 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 26 May 2019,
+#         downloaded on 23 November 2019,
+# URL: https://verkiezingen2019.belgium.be/nl/verkiezingen?el=WL
+
+Brabant wallon | Mouvement Réformateur        | 81,684
+Brabant wallon | Ecolo                        | 47,410
+Brabant wallon | Parti Socialiste             | 35,803
+Brabant wallon | Centre démocrate humaniste   | 20,216
+Brabant wallon | Parti du Travail de Belgique | 18,074
+Brabant wallon | DéFI                         | 15,196
+Brabant wallon | Parti Populaire              |  6,547
+Brabant wallon | Listes Destexhe              |  6,031
+Brabant wallon | DierAnimal                   |  3,675
+Brabant wallon | Collectif Citoyen            |  2,818
+Brabant wallon | Wallonie Insoumise           |  1,892
+Brabant wallon | Turquoise                    |    590
+
+Hainaut | Parti Socialiste             | 239,616
+Hainaut | Mouvement Réformateur        | 122,336
+Hainaut | Parti du Travail de Belgique | 115,073
+Hainaut | Ecolo                        |  83,938
+Hainaut | Centre démocrate humaniste   |  63,296
+Hainaut | DéFI                         |  26,907
+Hainaut | Parti Populaire              |  27,361
+Hainaut | Collectif Citoyen            |  10,545
+Hainaut | Listes Destexhe              |   8,900
+Hainaut | DierAnimal                   |   6,347
+Hainaut | AGIR                         |   5,967
+Hainaut | NATION                       |   4,759
+Hainaut | La Droite                    |   3,407
+Hainaut | Demain                       |   1,659
+Hainaut | Parti Communiste de Belgique |     944
+
+Liège | Parti Socialiste             | 154,893
+Liège | Mouvement Réformateur        | 124,103
+Liège | Ecolo                        |  93,921
+Liège | Parti du Travail de Belgique |  93,293
+Liège | Centre démocrate humaniste   |  56,816
+Liège | Parti Populaire              |  26,047
+Liège | DéFI                         |  23,144
+Liège | Listes Destexhe              |   9,955
+Liège | Collectif Citoyen            |   8,786
+Liège | Wallonie Insoumise           |   6,263
+Liège | DierAnimal                   |   5,393
+Liège | Demain                       |   2,784
+Liège | NATION                       |   2,070
+Liège | REFERENDUM                   |     621
+
+Luxembourg | Mouvement Réformateur        | 41,705
+Luxembourg | Centre démocrate humaniste   | 37,151
+Luxembourg | Parti Socialiste             | 32,317
+Luxembourg | Ecolo                        | 24,323
+Luxembourg | Parti du Travail de Belgique | 14,933
+Luxembourg | Parti Populaire              |  5,044
+Luxembourg | DéFI                         |  4,786
+Luxembourg | Collectif Citoyen            |  2,070
+Luxembourg | Listes Destexhe              |  1,549
+Luxembourg | NATION                       |  1,170
+
+Namur | Parti Socialiste             | 69,793
+Namur | Mouvement Réformateur        | 66,050
+Namur | Centre démocrate humaniste   | 46,296
+Namur | Ecolo                        | 45,039
+Namur | Parti du Travail de Belgique | 36,970
+Namur | DéFI                         | 14,186
+Namur | Parti Populaire              |  9,623
+Namur | Listes Destexhe              |  4,443
+Namur | DierAnimal                   |  3,002
+Namur | Collectif Citoyen            |  2,454
+Namur | NATION                       |  1,650
+Namur | AGIR                         |  1,179
