@@ -32,9 +32,9 @@ describe Sapor::EuropeanUnionLuxembourg, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionLuxembourg, '#population_size' do
-  it 'returns a population size of 1,172,614' do
+  it 'returns a population size of 1,254,363' do
     expect(Sapor::EuropeanUnionLuxembourg.instance.population_size).to \
-      eq(1_172_614)
+      eq(1_254_363)
   end
 end
 

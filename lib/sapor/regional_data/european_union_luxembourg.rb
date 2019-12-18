@@ -58,11 +58,11 @@ module Sapor
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 11 May 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Luxembourg)
-    POPULATION_SIZE = 1_172_614
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 18 December 2019,
+    # https://lb.wikipedia.org/wiki/Wale_fir_d%27Europ%C3%A4escht_Parlament_2019_(L%C3%ABtzebuerg)
+    POPULATION_SIZE = 1_254_363
 
     def electoral_system
       if @electoral_system.nil?
