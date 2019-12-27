@@ -32,8 +32,8 @@ describe Sapor::Greece, '#no_of_seats' do
 end
 
 describe Sapor::Greece, '#population_size' do
-  it 'returns a population size of 5,567,930' do
-    expect(Sapor::Greece.instance.population_size).to eq(5_567_930)
+  it 'returns a population size of 5,769,542' do
+    expect(Sapor::Greece.instance.population_size).to eq(5_769_542)
   end
 end
 

@@ -72,11 +72,11 @@ module Sapor
 
     NO_OF_BONUS_SEATS = 50
 
-    # Number of registered voters on 20 September 2015
-    # Source: Greek legislative election, September 2015, retrieved on 20
-    # January 2019.
-    # URL: https://en.wikipedia.org/wiki/Greek_legislative_election,_September_2015
-    POPULATION_SIZE = 5_567_930
+    # Number of registered voters on 7 July 2019
+    # Source: Greek legislative election, 7 July 2019, retrieved on 27
+    # December 2019.
+    # URL: https://en.wikipedia.org/wiki/2019_Greek_legislative_election
+    POPULATION_SIZE = 5_769_542
 
     THRESHOLD = 0.03
 
