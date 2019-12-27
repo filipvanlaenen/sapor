@@ -39,17 +39,17 @@ module Sapor
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2013
-      if @overall_election_results_of_2013.nil?
-        @overall_election_results_of_2013 = \
-          summarize_election_results(election_results_of_2013)
+    def overall_election_results_of_2018
+      if @overall_election_results_of_2018.nil?
+        @overall_election_results_of_2018 = \
+          summarize_election_results(election_results_of_2018)
       end
-      @overall_election_results_of_2013
+      @overall_election_results_of_2018
     end
 
     def population_size
-      # Voter turnout on 20 October 2013 (note: multiple votes per voter)
-      3_276_692
+      # Voter turnout on 14 October 2018 (note: multiple votes per voter)
+      3_529_969
     end
 
     def seats(simulation)
@@ -60,19 +60,19 @@ module Sapor
 
     SEAT_DISTRIBUTION = { 'Centre' => 21, 'Est' => 7, 'Nord' => 9, 'Sud' => 23 }.freeze
 
-    def election_results_of_2013
-      if @election_results_of_2013.nil?
-        @election_results_of_2013 = load_election_results(
-          'luxembourg-20131020.psv'
+    def election_results_of_2018
+      if @election_results_of_2018.nil?
+        @election_results_of_2018 = load_election_results(
+          'luxembourg-20181014.psv'
         )
       end
-      @election_results_of_2013
+      @election_results_of_2018
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2013, election_results_of_2013,
+          overall_election_results_of_2018, election_results_of_2018,
           SEAT_DISTRIBUTION, DhondtDenominators
         )
       end

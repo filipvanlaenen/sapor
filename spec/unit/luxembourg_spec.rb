@@ -31,24 +31,25 @@ describe Sapor::Luxembourg, '#no_of_seats' do
 end
 
 describe Sapor::Luxembourg, '#population_size' do
-  it 'returns a population size of 3,276,692' do
-    expect(Sapor::Luxembourg.instance.population_size).to eq(3_276_692)
+  it 'returns a population size of 3,529,969' do
+    expect(Sapor::Luxembourg.instance.population_size).to eq(3_529_969)
   end
 end
 
 describe Sapor::Luxembourg, '#seats' do
-  it 'calculates the number of seats for the election of 2013 correctly' do
+  it 'calculates the number of seats for the election of 2018 correctly' do
     Luxembourg = Sapor::Luxembourg.instance
-    results = Luxembourg.overall_election_results_of_2013
+    results = Luxembourg.overall_election_results_of_2018
     seats = Luxembourg.seats(results)
-    expect(seats['Chrëschtlech-Sozial Vollekspartei']).to eq(23)
-    expect(seats['Lëtzebuerger Sozialistesch Aarbechterpartei']).to eq(13)
-    expect(seats['Demokratesch Partei']).to eq(13)
-    expect(seats['déi gréng']).to eq(6)
-    expect(seats['Alternativ Demokratesch Reformpartei']).to eq(3)
-    expect(seats['Déi Lénk']).to eq(2)
-    expect(seats['Piratepartei Lëtzebuerg']).to eq(0)
+    expect(seats['Chrëschtlech-Sozial Vollekspartei']).to eq(21)
+    expect(seats['Lëtzebuerger Sozialistesch Aarbechterpartei']).to eq(10)
+    expect(seats['Demokratesch Partei']).to eq(12)
+    expect(seats['déi gréng']).to eq(9)
+    expect(seats['Alternativ Demokratesch Reformpartei']).to eq(4)
+    expect(seats['déi Lénk']).to eq(2)
+    expect(seats['Piratepartei Lëtzebuerg']).to eq(2)
     expect(seats['Kommunistesch Partei Lëtzebuerg']).to eq(0)
-    expect(seats['Partei fir Integral Demokratie']).to eq(0)
+    expect(seats['Demokratie']).to eq(0)
+    expect(seats['déi Konservativ']).to eq(0)
   end
 end

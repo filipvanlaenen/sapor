@@ -50,7 +50,7 @@ module Sapor
                   ['Chrëschtlech-Sozial Vollekspartei (EPP)'],
                   ['déi gréng (Greens/EFA)',
                    'Piratepartei Lëtzebuerg (Greens/EFA)'],
-                  ['Déi Lénk (GUE/NGL)'],
+                  ['déi Lénk (GUE/NGL)'],
                   ['Demokratesch Partei (RE)'],
                   ['Kommunistesch Partei Lëtzebuerg (*)',
                    'Partei fir Integral Demokratie (*)'],
