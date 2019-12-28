@@ -27,12 +27,7 @@ module Sapor
     end
 
     def coalitions
-      [['Chrëschtlech-Sozial Vollekspartei'],
-       ['Chrëschtlech-Sozial Vollekspartei',
-        'Lëtzebuerger Sozialistesch Aarbechterpartei'],
-       ['Chrëschtlech-Sozial Vollekspartei', 'Demokratesch Partei'],
-       ['déi gréng', 'Demokratesch Partei',
-        'Lëtzebuerger Sozialistesch Aarbechterpartei']]
+      COALITIONS
     end
 
     def no_of_seats
@@ -58,7 +53,18 @@ module Sapor
 
     private
 
-    SEAT_DISTRIBUTION = { 'Centre' => 21, 'Est' => 7, 'Nord' => 9, 'Sud' => 23 }.freeze
+    CSV_PARTY = 'Chrëschtlech-Sozial Vollekspartei'.freeze
+    DG_PARTY = 'déi gréng'.freeze
+    DP_PARTY = 'Demokratesch Partei'.freeze
+    LSAP_PARTY = 'Lëtzebuerger Sozialistesch Aarbechterpartei'.freeze
+
+    COALITIONS = [[CSV_PARTY],
+                  [CSV_PARTY, LSAP_PARTY],
+                  [CSV_PARTY, DP_PARTY],
+                  [DG_PARTY, DP_PARTY, LSAP_PARTY]].freeze
+
+    SEAT_DISTRIBUTION = { 'Centre' => 21, 'Est' => 7, 'Nord' => 9,
+                          'Sud' => 23 }.freeze
 
     def election_results_of_2018
       if @election_results_of_2018.nil?
