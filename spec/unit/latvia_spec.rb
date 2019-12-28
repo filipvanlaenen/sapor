@@ -31,30 +31,32 @@ describe Sapor::Latvia, '#no_of_seats' do
 end
 
 describe Sapor::Latvia, '#population_size' do
-  it 'returns a population size of 913,491' do
-    expect(Sapor::Latvia.instance.population_size).to eq(913_491)
+  it 'returns a population size of 839,000' do
+    expect(Sapor::Latvia.instance.population_size).to eq(839_000)
   end
 end
 
 describe Sapor::Latvia, '#seats' do
-  it 'calculates the number of seats for the election of 2014 correctly' do
+  it 'calculates the number of seats for the election of 2018 correctly' do
     Latvia = Sapor::Latvia.instance
-    results = Latvia.overall_election_results_of_2014
+    results = Latvia.overall_election_results_of_2018
     seats = Latvia.seats(results)
-    expect(seats['Sociāldemokrātiskā Partija “Saskaņa”']).to eq(24)
-    expect(seats['Vienotība']).to eq(23)
-    expect(seats['Zaļo un Zemnieku savienība']).to eq(21)
+    expect(seats['Sociāldemokrātiskā partija “Saskaņa”']).to eq(23)
+    expect(seats['Politiskā partija „KPV LV”']).to eq(16)
+    expect(seats['Jaunā konservatīvā partija']).to eq(16)
     expect(seats['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
-                 'Brīvībai/LNNK”']).to eq(17)
-    expect(seats['Latvijas Reģionu apvienība']).to eq(8)
-    expect(seats['No sirds Latvijai']).to eq(7)
+                 'Brīvībai/LNNK”']).to eq(13)
+    expect(seats['Attīstībai/Par!']).to eq(13)
+    expect(seats['Zaļo un Zemnieku savienība']).to eq(11)
+    expect(seats['Jaunā VIENOTĪBA']).to eq(8)
+    expect(seats['Latvijas Reģionu Apvienība']).to eq(0)
     expect(seats['Latvijas Krievu savienība']).to eq(0)
-    expect(seats['Latvijas attīstībai']).to eq(0)
-    expect(seats['“Suverenitāte”']).to eq(0)
-    expect(seats['Partija “Brīvība. Brīvs no bailēm, naida un dusmām”']).to \
-      eq(0)
-    expect(seats['Politiskā partija Izaugsme']).to eq(0)
-    expect(seats['Vienoti Latvijai']).to eq(0)
-    expect(seats['Jaunā konservatīvā partija']).to eq(0)
+    expect(seats['PROGRESĪVIE']).to eq(0)
+    expect(seats['No sirds Latvijai']).to eq(0)
+    expect(seats['Latviešu Nacionālisti']).to eq(0)
+    expect(seats['Par Alternatīvu']).to eq(0)
+    expect(seats['Apvienība SKG']).to eq(0)
+    expect(seats['Rīcības partija']).to eq(0)
+    expect(seats['Latvijas centriskā partija']).to eq(0)
   end
 end

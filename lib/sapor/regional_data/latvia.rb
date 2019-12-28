@@ -27,52 +27,24 @@ module Sapor
     end
 
     def coalitions
-      [['KPV LV', 'Sociāldemokrātiskā Partija “Saskaņa”'],
-       ['KPV LV', 'Sociāldemokrātiskā Partija “Saskaņa”',
-        'Zaļo un Zemnieku savienība'],
-       ['Kustība Par!',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Vienotība', 'Zaļo un Zemnieku savienība'],
-       ['Kustība Par!',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Zaļo un Zemnieku savienība'],
-       ['Kustība Par!', 'Jaunā konservatīvā partija',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Vienotība'],
-       ['Kustība Par!', 'Jaunā konservatīvā partija',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Vienotība', 'Zaļo un Zemnieku savienība'],
-       ['Kustība Par!', 'Jaunā konservatīvā partija',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Zaļo un Zemnieku savienība'],
-       ['Kustība Par!', 'Jaunā konservatīvā partija',
-        'Sociāldemokrātiskā Partija “Saskaņa”'],
-       ['Kustība Par!', 'Sociāldemokrātiskā Partija “Saskaņa”'],
-       ['Jaunā konservatīvā partija',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Vienotība', 'Zaļo un Zemnieku savienība'],
-       ['Jaunā konservatīvā partija',
-        'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Zaļo un Zemnieku savienība'],
-       ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK”',
-        'Vienotība', 'Zaļo un Zemnieku savienība']]
+      COALITIONS
     end
 
     def no_of_seats
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2014
-      if @overall_election_results_of_2014.nil?
-        @overall_election_results_of_2014 = \
-          summarize_election_results(election_results_of_2014)
+    def overall_election_results_of_2018
+      if @overall_election_results_of_2018.nil?
+        @overall_election_results_of_2018 = \
+          summarize_election_results(election_results_of_2018)
       end
-      @overall_election_results_of_2014
+      @overall_election_results_of_2018
     end
 
     def population_size
-      # Voter turnout on 4 October 2014
-      913_491
+      # Voter turnout on 6 October 2018
+      839_000
     end
 
     def seats(simulation)
@@ -85,24 +57,46 @@ module Sapor
 
     private
 
-    SEAT_DISTRIBUTION = { 'Kurzeme' => 13, 'Latgale' => 15, 'Rīga' => 32,
-                          'Vidzeme' => 26, 'Zemgale' => 14 }.freeze
+    AP_PARTY = 'Attīstībai/Par!'.freeze
+    JKP_PARTY = 'Jaunā konservatīvā partija'.freeze
+    JV_PARTY = 'Jaunā VIENOTĪBA'.freeze
+    KPVLV_PARTY = 'Politiskā partija „KPV LV”'.freeze
+    NA_PARTY = 'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
+               'Brīvībai/LNNK”'.freeze
+    SDPS_PARTY = 'Sociāldemokrātiskā Partija “Saskaņa”'.freeze
+    ZZS_PARTY = 'Zaļo un Zemnieku savienība'.freeze
+
+    COALITIONS = [[AP_PARTY, JKP_PARTY, JV_PARTY, NA_PARTY],
+                  [AP_PARTY, JKP_PARTY, JV_PARTY, NA_PARTY, ZZS_PARTY],
+                  [AP_PARTY, JKP_PARTY, NA_PARTY, ZZS_PARTY],
+                  [AP_PARTY, JKP_PARTY, SDPS_PARTY],
+                  [AP_PARTY, JV_PARTY, NA_PARTY, ZZS_PARTY],
+                  [AP_PARTY, NA_PARTY, ZZS_PARTY],
+                  [AP_PARTY, SDPS_PARTY],
+                  [JKP_PARTY, JV_PARTY, NA_PARTY, ZZS_PARTY],
+                  [JKP_PARTY, NA_PARTY, ZZS_PARTY],
+                  [KPVLV_PARTY, SDPS_PARTY],
+                  [KPVLV_PARTY, SDPS_PARTY, ZZS_PARTY],
+                  [NA_PARTY, JV_PARTY, ZZS_PARTY]].freeze
+
+    SEAT_DISTRIBUTION = { 'Kurzeme' => 12, 'Latgale' => 14, 'Rīga' => 35,
+                          'Vidzeme' => 25, 'Zemgale' => 14 }.freeze
 
     THRESHOLD = 0.05
 
-    def election_results_of_2014
-      if @election_results_of_2014.nil?
-        @election_results_of_2014 = load_election_results(
-          'latvia-20141004.psv'
+    def election_results_of_2018
+      if @election_results_of_2018.nil?
+        @election_results_of_2018 = load_election_results(
+          'latvia-20181006.psv'
         )
       end
-      @election_results_of_2014
+      @election_results_of_2018
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2014, election_results_of_2014,
+          overall_election_results_of_2018, election_results_of_2018,
           SEAT_DISTRIBUTION, SainteLagueDenominators, 0, THRESHOLD
         )
       end
