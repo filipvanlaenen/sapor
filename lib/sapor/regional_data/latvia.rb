@@ -66,13 +66,18 @@ module Sapor
     SDPS_PARTY = 'Sociāldemokrātiskā Partija “Saskaņa”'.freeze
     ZZS_PARTY = 'Zaļo un Zemnieku savienība'.freeze
 
-    COALITIONS = [[AP_PARTY, JKP_PARTY, JV_PARTY, NA_PARTY],
+    COALITIONS = [[AP_PARTY, JKP_PARTY, JV_PARTY, KPVLV_PARTY],
+                  [AP_PARTY, JKP_PARTY, JV_PARTY, KPVLV_PARTY, NA_PARTY],
+                  [AP_PARTY, JKP_PARTY, JV_PARTY, NA_PARTY],
                   [AP_PARTY, JKP_PARTY, JV_PARTY, NA_PARTY, ZZS_PARTY],
+                  [AP_PARTY, JKP_PARTY, KPVLV_PARTY, NA_PARTY],
                   [AP_PARTY, JKP_PARTY, NA_PARTY, ZZS_PARTY],
                   [AP_PARTY, JKP_PARTY, SDPS_PARTY],
+                  [AP_PARTY, JV_PARTY, KPVLV_PARTY, NA_PARTY],
                   [AP_PARTY, JV_PARTY, NA_PARTY, ZZS_PARTY],
                   [AP_PARTY, NA_PARTY, ZZS_PARTY],
                   [AP_PARTY, SDPS_PARTY],
+                  [JKP_PARTY, JV_PARTY, KPVLV_PARTY, NA_PARTY],
                   [JKP_PARTY, JV_PARTY, NA_PARTY, ZZS_PARTY],
                   [JKP_PARTY, NA_PARTY, ZZS_PARTY],
                   [KPVLV_PARTY, SDPS_PARTY],
