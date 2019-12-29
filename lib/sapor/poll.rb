@@ -84,8 +84,6 @@ module Sapor
                             EuropeanUnionSlovenia.instance,
                             EuropeanUnionSpain.instance,
                             EuropeanUnionSweden.instance].freeze
-    LATVIAN_AREAS = [Latvia.instance, LatviaKpv.instance, \
-                     LatviaKpvPar.instance, LatviaKpvPPar.instance].freeze
     NORWEGIAN_AREAS = [Norway.instance, NorwegianMunicipality::BERGEN,
                        NorwegianMunicipality::OSLO,
                        NorwegianMunicipality::TRONDHEIM].freeze
@@ -104,10 +102,10 @@ module Sapor
                         PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
     (BELGIAN_AREAS + CATALONIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + \
-     LATVIAN_AREAS + NORWEGIAN_AREAS + POLISH_AREAS + PORTUGUESE_AREAS + \
+     NORWEGIAN_AREAS + POLISH_AREAS + PORTUGUESE_AREAS + \
      [Austria.instance, Estonia.instance, Finland.instance,
       FinlandWithSin.instance, France.instance, Greece.instance,
-      Hungary.instance, Iceland.instance, Luxembourg.instance,
+      Hungary.instance, Iceland.instance, Latvia.instance, Luxembourg.instance,
       Netherlands.instance, Slovakia.instance, Slovenia.instance,
       Spain.instance, Sweden.instance, Sweden20140914.instance,
       UnitedKingdom.instance, UnitedKingdomWithBrexit.instance,
