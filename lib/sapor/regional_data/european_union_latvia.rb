@@ -48,16 +48,16 @@ module Sapor
 
     COALITIONS = [['Attīstībai/Par! (RE)'],
                   ['Jaunā Saskaņa (GUE/NGL)'],
-                  ['Jaunā Vienotība (EPP)', 'Jaunā konservatīvā partija (EPP)',
-                   'KPV LV (EPP)',
+                  ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
+                   'Politiskā partija „KPV LV” (EPP)',
                    'Zaļo un Zemnieku savienība (EPP)'],
                   ['Latvijas Krievu savienība (Greens/EFA)'],
-                  ['Latvijas Reģionu apvienība (ECR)',
+                  ['Latvijas Reģionu Apvienība (ECR)',
                    'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['No sirds Latvijai (*)', 'Vienoti Latvijai (*)'],
-                  ['Progresīvie (S&D)',
-                   'Sociāldemokrātiskā Partija “Saskaņa” (S&D)']].freeze
+                  ['PROGRESĪVIE (S&D)',
+                   'Sociāldemokrātiskā partija “Saskaņa” (S&D)']].freeze
 
     NO_OF_SEATS = 8
 

@@ -63,7 +63,7 @@ module Sapor
     KPVLV_PARTY = 'Politiskā partija „KPV LV”'.freeze
     NA_PARTY = 'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                'Brīvībai/LNNK”'.freeze
-    SDPS_PARTY = 'Sociāldemokrātiskā Partija “Saskaņa”'.freeze
+    SDPS_PARTY = 'Sociāldemokrātiskā partija “Saskaņa”'.freeze
     ZZS_PARTY = 'Zaļo un Zemnieku savienība'.freeze
 
     COALITIONS = [[AP_PARTY, JKP_PARTY, JV_PARTY, KPVLV_PARTY],
