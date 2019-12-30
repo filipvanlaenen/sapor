@@ -21,11 +21,11 @@ module Sapor
   #
   # The regional data for the European Union: France.
   #
-  class EuropeanUnionFrance2019 < Area
+  class EuropeanUnion27France < Area
     include Singleton
 
     def area_code
-      'EU[FR]@2019'
+      'EU27[FR]'
     end
 
     def coalitions
@@ -57,18 +57,18 @@ module Sapor
                   ['La France insoumise (GUE/NGL)',
                    'Nouveau Parti anticapitaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
-                  ['Les Patriotes (EFDD)'],
                   ['Les Républicains (EPP)'],
-                  ['Lutte Ouvrière (*)', 'Mouvement des gilets jaunes (*)',
-                   'Résistons! (*)', 'Union populaire républicaine (*)']].freeze
+                  ['Les Patriotes (*)', 'Lutte Ouvrière (*)',
+                   'Mouvement des gilets jaunes (*)', 'Résistons! (*)',
+                   'Union populaire républicaine (*)']].freeze
 
     NO_OF_SEATS = 79
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 8 February 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(France)
-    POPULATION_SIZE = 18_955_636
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 25-26 May
+    # 2019, downloaded on 30 December 2019,
+    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_France
+    POPULATION_SIZE = 22_655_174
 
     THRESHOLD = 0.05
 

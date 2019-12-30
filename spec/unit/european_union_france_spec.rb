@@ -32,9 +32,9 @@ describe Sapor::EuropeanUnionFrance, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionFrance, '#population_size' do
-  it 'returns a population size of 18,955,636' do
+  it 'returns a population size of 22,655,174' do
     expect(Sapor::EuropeanUnionFrance.instance.population_size).to \
-      eq(18_955_636)
+      eq(22_655_174)
   end
 end
 

@@ -19,26 +19,26 @@
 
 require 'spec_helper'
 
-describe Sapor::EuropeanUnionFrance2019, '#area_code' do
-  it 'returns EU[FR]@2019 as the area code' do
-    expect(Sapor::EuropeanUnionFrance2019.instance.area_code).to eq('EU[FR]@2019')
+describe Sapor::EuropeanUnion27France, '#area_code' do
+  it 'returns EU27[FR] as the area code' do
+    expect(Sapor::EuropeanUnion27France.instance.area_code).to eq('EU27[FR]')
   end
 end
 
-describe Sapor::EuropeanUnionFrance2019, '#no_of_seats' do
+describe Sapor::EuropeanUnion27France, '#no_of_seats' do
   it 'returns 79 as the number of seats' do
-    expect(Sapor::EuropeanUnionFrance2019.instance.no_of_seats).to eq(79)
+    expect(Sapor::EuropeanUnion27France.instance.no_of_seats).to eq(79)
   end
 end
 
-describe Sapor::EuropeanUnionFrance2019, '#population_size' do
-  it 'returns a population size of 18,955,636' do
-    expect(Sapor::EuropeanUnionFrance2019.instance.population_size).to \
-      eq(18_955_636)
+describe Sapor::EuropeanUnion27France, '#population_size' do
+  it 'returns a population size of 22,655,174' do
+    expect(Sapor::EuropeanUnion27France.instance.population_size).to \
+      eq(22_655_174)
   end
 end
 
-describe Sapor::EuropeanUnionFrance2019, '#seats' do
+describe Sapor::EuropeanUnion27France, '#seats' do
   it 'calculates the number of seats using the votes of the 2014 election' do
     results = { 'Front national–Rassemblement bleu Marine  (ENF)' => 4_712_461,
                 'Union pour un mouvement populaire (EPP)' => 3_943_819,
@@ -53,7 +53,7 @@ describe Sapor::EuropeanUnionFrance2019, '#seats' do
                 'Alliance écologiste indépendante (—)' => 211_759,
                 'Force vie' => 138_708, 'Europe citoyenne (—)' => 127_849,
                 'Parti du vote blanc (—)' => 110_090 }
-    seats = Sapor::EuropeanUnionFrance2019.instance.seats(results)
+    seats = Sapor::EuropeanUnion27France.instance.seats(results)
     expect(seats['Front national–Rassemblement bleu Marine  (ENF)']).to eq(22 + 1)
     expect(seats['Union pour un mouvement populaire (EPP)']).to eq(18 + 2)
     expect(seats['Parti socialiste–Parti radical de gauche (S&D)']).to eq(12 + 1)
