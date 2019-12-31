@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -30,6 +30,15 @@ module Sapor
 
     def coalitions
       COALITIONS
+    end
+
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'iceland-20171028.psv'
+        )
+      end
+      @election_results_of_2017
     end
 
     def no_of_seats
@@ -74,27 +83,27 @@ module Sapor
                   ['Björt framtíð', 'Sjálfstæðisflokkurinn', 'Viðreisn'],
                   ['Framsóknarflokkurinn', 'Miðflokkurinn', 'Samfylkingin',
                    'Vinstrihreyfingin – grænt framboð'],
-                  %w(Framsóknarflokkurinn Miðflokkurinn Sjálfstæðisflokkurinn),
+                  %w[Framsóknarflokkurinn Miðflokkurinn Sjálfstæðisflokkurinn],
                   ['Framsóknarflokkurinn', 'Miðflokkurinn',
                    'Vinstrihreyfingin – grænt framboð'],
                   ['Framsóknarflokkurinn', 'Samfylkingin',
                    'Vinstrihreyfingin – grænt framboð'],
-                  %w(Framsóknarflokkurinn Sjálfstæðisflokkurinn),
+                  %w[Framsóknarflokkurinn Sjálfstæðisflokkurinn],
                   ['Framsóknarflokkurinn', 'Sjálfstæðisflokkurinn',
                    'Vinstrihreyfingin – grænt framboð'],
                   ['Framsóknarflokkurinn', 'Vinstrihreyfingin – grænt framboð'],
                   ['Miðflokkurinn', 'Samfylkingin',
                    'Vinstrihreyfingin – grænt framboð'],
-                  %w(Miðflokkurinn Sjálfstæðisflokkurinn),
+                  %w[Miðflokkurinn Sjálfstæðisflokkurinn],
                   ['Miðflokkurinn', 'Vinstrihreyfingin – grænt framboð'],
-                  %w(Samfylkingin Sjálfstæðisflokkurinn),
+                  %w[Samfylkingin Sjálfstæðisflokkurinn],
                   ['Píratar', 'Samfylkingin', 'Viðreisn',
                    'Vinstrihreyfingin – grænt framboð'],
                   ['Píratar', 'Samfylkingin',
                    'Vinstrihreyfingin – grænt framboð'],
                   ['Píratar', 'Vinstrihreyfingin – grænt framboð'],
                   ['Samfylkingin', 'Vinstrihreyfingin – grænt framboð'],
-                  %w(Sjálfstæðisflokkurinn Viðreisn),
+                  %w[Sjálfstæðisflokkurinn Viðreisn],
                   ['Sjálfstæðisflokkurinn',
                    'Vinstrihreyfingin – grænt framboð']].freeze
 
@@ -110,15 +119,6 @@ module Sapor
     NO_OF_SEATS = NO_OF_LEVELING_SEATS + \
                   DIRECT_SEAT_DISTRIBUTION.values.inject(:+)
 
-    def election_results_of_2017
-      if @election_results_of_2017.nil?
-        @election_results_of_2017 = load_election_results(
-          'iceland-20171028.psv'
-        )
-      end
-      @election_results_of_2017
-    end
-
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictLeveledProportional.new(
@@ -128,6 +128,22 @@ module Sapor
         )
       end
       @electoral_system
+    end
+  end
+
+  # Extension of Iceland with J
+  class IcelandWithJ < Iceland
+    def area_code
+      'IS∪{J}'
+    end
+
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'iceland-20171028-with-j.psv'
+        )
+      end
+      @election_results_of_2017
     end
   end
 end

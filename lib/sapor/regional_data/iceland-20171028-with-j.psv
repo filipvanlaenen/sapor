@@ -1,0 +1,94 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 28 October
+#         2017, downloaded on 20 November 2017,
+# URL: http://icelandmonitor.mbl.is/elections2017/
+#
+# Added Sósíalistaflokkur Íslands (J) with the same distribution as Flokkur
+# fólksins (F)
+
+Norðaustur | Sjálfstæðisflokkurinn              | 4,787
+Norðaustur | Vinstrihreyfingin – grænt framboð  | 4,699
+Norðaustur | Miðflokkurinn                      | 4,388
+Norðaustur | Framsóknarflokkurinn               | 3,386
+Norðaustur | Samfylkingin                       | 3,275
+Norðaustur | Píratar                            | 1,295
+Norðaustur | Flokkur fólksins                   | 1,005
+Norðaustur | Sósíalistaflokkur Íslands          | 1,005
+Norðaustur | Viðreisn                           |   495
+Norðaustur | Björt framtíð                      |   169
+Norðaustur | Alþýðufylkingin                    |   110
+
+Norðvestur | Sjálfstæðisflokkurinn              | 4,233
+Norðvestur | Framsóknarflokkurinn               | 3,177
+Norðvestur | Vinstrihreyfingin – grænt framboð  | 3,067
+Norðvestur | Miðflokkurinn                      | 2,456
+Norðvestur | Samfylkingin                       | 1,681
+Norðvestur | Píratar                            | 1,169
+Norðvestur | Flokkur fólksins                   |   911
+Norðvestur | Sósíalistaflokkur Íslands          |   911
+Norðvestur | Viðreisn                           |   423
+Norðvestur | Björt framtíð                      |   135
+
+Reykjavík norður | Sjálfstæðisflokkurinn              | 8,108
+Reykjavík norður | Vinstrihreyfingin – grænt framboð  | 7,727
+Reykjavík norður | Píratar                            | 4,885
+Reykjavík norður | Samfylkingin                       | 4,575
+Reykjavík norður | Viðreisn                           | 3,013
+Reykjavík norður | Flokkur fólksins                   | 2,547
+Reykjavík norður | Sósíalistaflokkur Íslands          | 2,547
+Reykjavík norður | Miðflokkurinn                      | 2,509
+Reykjavík norður | Framsóknarflokkurinn               | 1,901
+Reykjavík norður | Björt framtíð                      |   506
+Reykjavík norður | Alþýðufylkingin                    |   105
+
+Reykjavík suður | Sjálfstæðisflokkurinn              | 8,143
+Reykjavík suður | Vinstrihreyfingin – grænt framboð  | 6,750
+Reykjavík suður | Samfylkingin                       | 4,661
+Reykjavík suður | Píratar                            | 4,076
+Reykjavík suður | Viðreisn                           | 3,043
+Reykjavík suður | Flokkur fólksins                   | 2,914
+Reykjavík suður | Sósíalistaflokkur Íslands          | 2,914
+Reykjavík suður | Framsóknarflokkurinn               | 2,897
+Reykjavík suður | Miðflokkurinn                      | 2,701
+Reykjavík suður | Björt framtíð                      |   449
+Reykjavík suður | Alþýðufylkingin                    |    85
+
+Suður | Sjálfstæðisflokkurinn              | 7,056
+Suður | Framsóknarflokkurinn               | 5,230
+Suður | Miðflokkurinn                      | 3,999
+Suður | Vinstrihreyfingin – grænt framboð  | 3,321
+Suður | Samfylkingin                       | 2,689
+Suður | Flokkur fólksins                   | 2,509
+Suður | Sósíalistaflokkur Íslands          | 2,509
+Suður | Píratar                            | 1,985
+Suður | Viðreisn                           |   871
+Suður | Björt framtíð                      |   289
+Suður | Dögun                              |   101
+
+Suðvestur | Sjálfstæðisflokkurinn              | 17,216
+Suðvestur | Vinstrihreyfingin – grænt framboð  |  7,591
+Suðvestur | Samfylkingin                       |  6,771
+Suðvestur | Miðflokkurinn                      |  5,282
+Suðvestur | Viðreisn                           |  5,277
+Suðvestur | Píratar                            |  4,641
+Suðvestur | Framsóknarflokkurinn               |  4,425
+Suðvestur | Flokkur fólksins                   |  3,616
+Suðvestur | Sósíalistaflokkur Íslands          |  3,616
+Suðvestur | Björt framtíð                      |    846
+Suðvestur | Alþýðufylkingin                    |     75
