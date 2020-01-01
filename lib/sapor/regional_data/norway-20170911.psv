@@ -1,0 +1,331 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+Østfold | Arbeiderpartiet | 51545
+Østfold | Sosialistisk Venstreparti | 7036
+Østfold | Rødt | 3435
+Østfold | Senterpartiet | 13943
+Østfold | Kristelig Folkeparti | 6811
+Østfold | Miljøpartiet De Grønne | 4192
+Østfold | Venstre | 3878
+Østfold | Høyre | 38264
+Østfold | Fremskrittspartiet | 28181
+Østfold | Alliansen | 211
+Østfold | Demokratene i Norge | 190
+Østfold | Helsepartiet | 806
+Østfold | Partiet De Kristne | 518
+Østfold | Kystpartiet | 98
+Østfold | Liberalistene | 353
+Østfold | Pensjonistpartiet | 1359
+Akershus | Arbeiderpartiet | 88689
+Akershus | Sosialistisk Venstreparti | 17859
+Akershus | Rødt | 6542
+Akershus | Senterpartiet | 20219
+Akershus | Kristelig Folkeparti | 7839
+Akershus | Miljøpartiet De Grønne | 12459
+Akershus | Venstre | 21853
+Akershus | Høyre | 104451
+Akershus | Fremskrittspartiet | 50741
+Akershus | Alliansen | 383
+Akershus | Demokratene i Norge | 268
+Akershus | Helsepartiet | 2052
+Akershus | Partiet De Kristne | 420
+Akershus | Kystpartiet | 136
+Akershus | Liberalistene | 598
+Akershus | Piratpartiet | 565
+Akershus | Pensjonistpartiet | 1954
+Oslo | Arbeiderpartiet | 104089
+Oslo | Sosialistisk Venstreparti | 34052
+Oslo | Rødt | 23083
+Oslo | Senterpartiet | 7778
+Oslo | Kristelig Folkeparti | 7843
+Oslo | Miljøpartiet De Grønne | 21853
+Oslo | Venstre | 30933
+Oslo | Høyre | 97085
+Oslo | Fremskrittspartiet | 35037
+Oslo | Alliansen | 314
+Oslo | Demokratene i Norge | 326
+Oslo | Helsepartiet | 1184
+Oslo | Partiet De Kristne | 343
+Oslo | Liberalistene | 667
+Oslo | Norges Kommunistiske Parti | 119
+Oslo | Piratpartiet | 630
+Oslo | Pensjonistpartiet | 1335
+Oslo | Samfunnspartiet | 104
+Oslo | Feministisk Initiativ | 326
+Hedmark | Arbeiderpartiet | 40561
+Hedmark | Sosialistisk Venstreparti | 6528
+Hedmark | Rødt | 1443
+Hedmark | Senterpartiet | 25296
+Hedmark | Kristelig Folkeparti | 2051
+Hedmark | Miljøpartiet De Grønne | 2215
+Hedmark | Venstre | 2659
+Hedmark | Høyre | 17454
+Hedmark | Fremskrittspartiet | 13376
+Hedmark | Alliansen | 120
+Hedmark | Demokratene i Norge | 192
+Hedmark | Helsepartiet | 356
+Hedmark | Partiet De Kristne | 165
+Hedmark | Kystpartiet | 45
+Hedmark | Liberalistene | 165
+Hedmark | Pensjonistpartiet | 1303
+Hedmark | Norgespartiet | 151
+Oppland | Arbeiderpartiet | 38056
+Oppland | Sosialistisk Venstreparti | 5028
+Oppland | Rødt | 1823
+Oppland | Senterpartiet | 22990
+Oppland | Kristelig Folkeparti | 2281
+Oppland | Miljøpartiet De Grønne | 2550
+Oppland | Venstre | 2776
+Oppland | Høyre | 18163
+Oppland | Fremskrittspartiet | 13285
+Oppland | Alliansen | 138
+Oppland | Demokratene i Norge | 132
+Oppland | Helsepartiet | 455
+Oppland | Partiet De Kristne | 184
+Oppland | Kystpartiet | 40
+Oppland | Liberalistene | 146
+Oppland | Pensjonistpartiet | 453
+Buskerud | Arbeiderpartiet | 43143
+Buskerud | Sosialistisk Venstreparti | 7642
+Buskerud | Rødt | 2260
+Buskerud | Senterpartiet | 16446
+Buskerud | Kristelig Folkeparti | 3995
+Buskerud | Miljøpartiet De Grønne | 4112
+Buskerud | Venstre | 5604
+Buskerud | Høyre | 41011
+Buskerud | Fremskrittspartiet | 26419
+Buskerud | Alliansen | 221
+Buskerud | Demokratene i Norge | 201
+Buskerud | Helsepartiet | 855
+Buskerud | Partiet De Kristne | 275
+Buskerud | Kystpartiet | 91
+Buskerud | Liberalistene | 318
+Vestfold | Arbeiderpartiet | 39118
+Vestfold | Sosialistisk Venstreparti | 6927
+Vestfold | Rødt | 2602
+Vestfold | Senterpartiet | 8777
+Vestfold | Kristelig Folkeparti | 5159
+Vestfold | Miljøpartiet De Grønne | 4107
+Vestfold | Venstre | 5373
+Vestfold | Høyre | 42179
+Vestfold | Fremskrittspartiet | 23628
+Vestfold | Alliansen | 186
+Vestfold | Demokratene i Norge | 160
+Vestfold | Helsepartiet | 672
+Vestfold | Partiet De Kristne | 403
+Vestfold | Kystpartiet | 111
+Vestfold | Liberalistene | 309
+Vestfold | Piratpartiet | 217
+Telemark | Arbeiderpartiet | 30931
+Telemark | Sosialistisk Venstreparti | 4800
+Telemark | Rødt | 2041
+Telemark | Senterpartiet | 12457
+Telemark | Kristelig Folkeparti | 4825
+Telemark | Miljøpartiet De Grønne | 2392
+Telemark | Venstre | 2591
+Telemark | Høyre | 19445
+Telemark | Fremskrittspartiet | 16013
+Telemark | Alliansen | 138
+Telemark | Demokratene i Norge | 129
+Telemark | Helsepartiet | 354
+Telemark | Partiet De Kristne | 537
+Telemark | Kystpartiet | 81
+Telemark | Liberalistene | 133
+Aust-Agder | Arbeiderpartiet | 16481
+Aust-Agder | Sosialistisk Venstreparti | 2562
+Aust-Agder | Rødt | 807
+Aust-Agder | Senterpartiet | 5385
+Aust-Agder | Kristelig Folkeparti | 6352
+Aust-Agder | Miljøpartiet De Grønne | 1676
+Aust-Agder | Venstre | 2121
+Aust-Agder | Høyre | 16614
+Aust-Agder | Fremskrittspartiet | 11195
+Aust-Agder | Alliansen | 61
+Aust-Agder | Demokratene i Norge | 102
+Aust-Agder | Helsepartiet | 249
+Aust-Agder | Partiet De Kristne | 470
+Aust-Agder | Kystpartiet | 24
+Aust-Agder | Liberalistene | 122
+Aust-Agder | Piratpartiet | 102
+Aust-Agder | Pensjonistpartiet | 453
+Vest-Agder | Arbeiderpartiet | 21238
+Vest-Agder | Sosialistisk Venstreparti | 4333
+Vest-Agder | Rødt | 1376
+Vest-Agder | Senterpartiet | 6542
+Vest-Agder | Kristelig Folkeparti | 12747
+Vest-Agder | Miljøpartiet De Grønne | 2911
+Vest-Agder | Venstre | 3654
+Vest-Agder | Høyre | 28146
+Vest-Agder | Fremskrittspartiet | 17284
+Vest-Agder | Alliansen | 99
+Vest-Agder | Demokratene i Norge | 748
+Vest-Agder | Helsepartiet | 226
+Vest-Agder | Partiet De Kristne | 793
+Vest-Agder | Kystpartiet | 66
+Vest-Agder | Liberalistene | 211
+Vest-Agder | Piratpartiet | 153
+Vest-Agder | Pensjonistpartiet | 428
+Rogaland | Arbeiderpartiet | 56340
+Rogaland | Sosialistisk Venstreparti | 9895
+Rogaland | Rødt | 2895
+Rogaland | Senterpartiet | 18897
+Rogaland | Kristelig Folkeparti | 21092
+Rogaland | Miljøpartiet De Grønne | 6444
+Rogaland | Venstre | 8851
+Rogaland | Høyre | 72201
+Rogaland | Fremskrittspartiet | 49451
+Rogaland | Alliansen | 231
+Rogaland | Demokratene i Norge | 240
+Rogaland | Helsepartiet | 530
+Rogaland | Partiet De Kristne | 1256
+Rogaland | Kystpartiet | 248
+Rogaland | Liberalistene | 644
+Rogaland | Norges Kommunistiske Parti | 75
+Rogaland | Piratpartiet | 444
+Rogaland | Pensjonistpartiet | 1226
+Rogaland | Verdipartiet | 148
+Hordaland | Arbeiderpartiet | 68195
+Hordaland | Sosialistisk Venstreparti | 20958
+Hordaland | Rødt | 6402
+Hordaland | Senterpartiet | 22594
+Hordaland | Kristelig Folkeparti | 16513
+Hordaland | Miljøpartiet De Grønne | 10476
+Hordaland | Venstre | 13027
+Hordaland | Høyre | 90733
+Hordaland | Fremskrittspartiet | 45060
+Hordaland | Alliansen | 309
+Hordaland | Demokratene i Norge | 328
+Hordaland | Helsepartiet | 745
+Hordaland | Partiet De Kristne | 1357
+Hordaland | Kystpartiet | 443
+Hordaland | Liberalistene | 601
+Hordaland | Piratpartiet | 486
+Hordaland | Feministisk Initiativ | 370
+Sogn og Fjordane | Arbeiderpartiet | 15258
+Sogn og Fjordane | Sosialistisk Venstreparti | 2781
+Sogn og Fjordane | Rødt | 790
+Sogn og Fjordane | Senterpartiet | 18446
+Sogn og Fjordane | Kristelig Folkeparti | 2683
+Sogn og Fjordane | Miljøpartiet De Grønne | 1410
+Sogn og Fjordane | Venstre | 2532
+Sogn og Fjordane | Høyre | 11572
+Sogn og Fjordane | Fremskrittspartiet | 6153
+Sogn og Fjordane | Alliansen | 43
+Sogn og Fjordane | Demokratene i Norge | 43
+Sogn og Fjordane | Helsepartiet | 110
+Sogn og Fjordane | Partiet De Kristne | 255
+Sogn og Fjordane | Liberalistene | 56
+Møre og Romsdal | Arbeiderpartiet | 31353
+Møre og Romsdal | Sosialistisk Venstreparti | 5745
+Møre og Romsdal | Rødt | 1809
+Møre og Romsdal | Senterpartiet | 19046
+Møre og Romsdal | Kristelig Folkeparti | 9017
+Møre og Romsdal | Miljøpartiet De Grønne | 3167
+Møre og Romsdal | Venstre | 5088
+Møre og Romsdal | Høyre | 34708
+Møre og Romsdal | Fremskrittspartiet | 32750
+Møre og Romsdal | Alliansen | 181
+Møre og Romsdal | Demokratene i Norge | 129
+Møre og Romsdal | Partiet De Kristne | 741
+Møre og Romsdal | Kystpartiet | 121
+Møre og Romsdal | Liberalistene | 175
+Møre og Romsdal | Pensjonistpartiet | 798
+Møre og Romsdal | Nordmørslista | 2135
+Sør-Trøndelag | Arbeiderpartiet | 59610
+Sør-Trøndelag | Sosialistisk Venstreparti | 14008
+Sør-Trøndelag | Rødt | 5344
+Sør-Trøndelag | Senterpartiet | 19409
+Sør-Trøndelag | Kristelig Folkeparti | 4974
+Sør-Trøndelag | Miljøpartiet De Grønne | 7082
+Sør-Trøndelag | Venstre | 7385
+Sør-Trøndelag | Høyre | 37719
+Sør-Trøndelag | Fremskrittspartiet | 21248
+Sør-Trøndelag | Alliansen | 264
+Sør-Trøndelag | Demokratene i Norge | 168
+Sør-Trøndelag | Helsepartiet | 405
+Sør-Trøndelag | Partiet De Kristne | 225
+Sør-Trøndelag | Kystpartiet | 143
+Sør-Trøndelag | Liberalistene | 368
+Sør-Trøndelag | Piratpartiet | 361
+Sør-Trøndelag | Pensjonistpartiet | 3083
+Nord-Trøndelag | Arbeiderpartiet | 26822
+Nord-Trøndelag | Sosialistisk Venstreparti | 3951
+Nord-Trøndelag | Rødt | 1282
+Nord-Trøndelag | Senterpartiet | 19155
+Nord-Trøndelag | Kristelig Folkeparti | 2115
+Nord-Trøndelag | Miljøpartiet De Grønne | 1386
+Nord-Trøndelag | Venstre | 1758
+Nord-Trøndelag | Høyre | 11568
+Nord-Trøndelag | Fremskrittspartiet | 9014
+Nord-Trøndelag | Alliansen | 91
+Nord-Trøndelag | Demokratene i Norge | 98
+Nord-Trøndelag | Helsepartiet | 295
+Nord-Trøndelag | Partiet De Kristne | 169
+Nord-Trøndelag | Kystpartiet | 61
+Nord-Trøndelag | Liberalistene | 78
+Nord-Trøndelag | Piratpartiet | 112
+Nord-Trøndelag | Pensjonistpartiet | 463
+Nordland | Arbeiderpartiet | 35196
+Nordland | Sosialistisk Venstreparti | 9467
+Nordland | Rødt | 3905
+Nordland | Senterpartiet | 25207
+Nordland | Kristelig Folkeparti | 3284
+Nordland | Miljøpartiet De Grønne | 2932
+Nordland | Venstre | 3509
+Nordland | Høyre | 27273
+Nordland | Fremskrittspartiet | 22248
+Nordland | Alliansen | 127
+Nordland | Demokratene i Norge | 186
+Nordland | Helsepartiet | 615
+Nordland | Partiet De Kristne | 288
+Nordland | Kystpartiet | 420
+Nordland | Liberalistene | 269
+Nordland | Norges Kommunistiske Parti | 59
+Nordland | Piratpartiet | 210
+Troms Romsa | Arbeiderpartiet | 21882
+Troms Romsa | Sosialistisk Venstreparti | 9213
+Troms Romsa | Rødt | 2081
+Troms Romsa | Senterpartiet | 13640
+Troms Romsa | Kristelig Folkeparti | 2408
+Troms Romsa | Miljøpartiet De Grønne | 2588
+Troms Romsa | Venstre | 2674
+Troms Romsa | Høyre | 18709
+Troms Romsa | Fremskrittspartiet | 16604
+Troms Romsa | Alliansen | 115
+Troms Romsa | Demokratene i Norge | 119
+Troms Romsa | Helsepartiet | 289
+Troms Romsa | Partiet De Kristne | 160
+Troms Romsa | Kystpartiet | 173
+Troms Romsa | Liberalistene | 300
+Troms Romsa | Norges Kommunistiske Parti | 56
+Troms Romsa | Nordting | 59
+Finnmark Finnmárku | Arbeiderpartiet | 12440
+Finnmark Finnmárku | Sosialistisk Venstreparti | 3437
+Finnmark Finnmárku | Rødt | 602
+Finnmark Finnmárku | Senterpartiet | 5790
+Finnmark Finnmárku | Kristelig Folkeparti | 808
+Finnmark Finnmárku | Miljøpartiet De Grønne | 836
+Finnmark Finnmárku | Venstre | 1644
+Finnmark Finnmárku | Høyre | 5600
+Finnmark Finnmárku | Fremskrittspartiet | 6994
+Finnmark Finnmárku | Alliansen | 79
+Finnmark Finnmárku | Demokratene i Norge | 71
+Finnmark Finnmárku | Helsepartiet | 139
+Finnmark Finnmárku | Partiet De Kristne | 141
+Finnmark Finnmárku | Kystpartiet | 166
+Finnmark Finnmárku | Liberalistene | 86
+Finnmark Finnmárku | Piratpartiet | 76
