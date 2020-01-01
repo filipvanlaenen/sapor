@@ -82,6 +82,7 @@ module Sapor
                   [FRP_PARTY, H_PARTY, KRF_PARTY, MDG_PARTY, V_PARTY],
                   [FRP_PARTY, H_PARTY, KRF_PARTY, SP_PARTY, V_PARTY],
                   [FRP_PARTY, H_PARTY, KRF_PARTY, V_PARTY],
+                  [FRP_PARTY, H_PARTY, V_PARTY],
                   [H_PARTY, KRF_PARTY, V_PARTY],
                   [KRF_PARTY, SP_PARTY, V_PARTY]].freeze
 
