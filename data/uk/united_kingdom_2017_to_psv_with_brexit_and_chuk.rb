@@ -1,7 +1,7 @@
 # encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
-# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
 #
 # This file is part of SAPoR.
 #
@@ -22,7 +22,7 @@ TARGET = '../../lib/sapor/regional_data/united_kingdom-20170608-brexit-chuk.psv'
 
 File.open(TARGET, 'w') do |output|
   output.puts '# Statistical Analysis of Polling Results (SAPoR)'
-  output.puts '# Copyright (C) 2016 Filip van Laenen <f.a.vanlaenen@ieee.org>'
+  output.puts '# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>'
   output.puts '#'
   output.puts '# This file is part of SAPoR.'
   output.puts '#'
