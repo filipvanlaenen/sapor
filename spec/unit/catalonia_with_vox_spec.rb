@@ -18,44 +18,45 @@
 
 require 'spec_helper'
 
-describe Sapor::Catalonia, '#area_code' do
-  it 'returns ES-CT as the area code' do
-    expect(Sapor::Catalonia.instance.area_code).to eq('ES-CT')
+describe Sapor::CataloniaWithVox, '#area_code' do
+  it 'returns ES-CT∪{Vox} as the area code' do
+    expect(Sapor::CataloniaWithVox.instance.area_code).to eq('ES-CT∪{Vox}')
   end
 end
 
-describe Sapor::Catalonia, '#no_of_seats' do
+describe Sapor::CataloniaWithVox, '#no_of_seats' do
   it 'returns 135 as the number of seats' do
-    expect(Sapor::Catalonia.instance.no_of_seats).to eq(135)
+    expect(Sapor::CataloniaWithVox.instance.no_of_seats).to eq(135)
   end
 end
 
-describe Sapor::Catalonia, '#population_size' do
+describe Sapor::CataloniaWithVox, '#population_size' do
   it 'returns a population size of 4,357,368' do
-    expect(Sapor::Catalonia.instance.population_size).to eq(4_357_368)
+    expect(Sapor::CataloniaWithVox.instance.population_size).to eq(4_357_368)
   end
 end
 
-describe Sapor::Catalonia, '#seats' do
+describe Sapor::CataloniaWithVox, '#seats' do
   it 'calculates the number of seats for the election of 2015 correctly' do
-    catalonia = Sapor::Catalonia.instance
-    results = catalonia.overall_election_results_of_2017
-    seats = catalonia.seats(results)
-    expect(seats['Ciutadans–Partido de la Ciudadanía']).to eq(36)
-    expect(seats['Junts pel Catalunya']).to eq(34)
-    expect(seats['Esquerra Republicana–Catalunya Sí']).to eq(32)
+    CataloniaWithVox = Sapor::CataloniaWithVox.instance
+    results = CataloniaWithVox.overall_election_results_of_2017
+    seats = CataloniaWithVox.seats(results)
+    expect(seats['Ciutadans–Partido de la Ciudadanía']).to eq(36 - 1)
+    expect(seats['Junts pel Catalunya']).to eq(34 - 1)
+    expect(seats['Esquerra Republicana–Catalunya Sí']).to eq(32 - 1)
     expect(seats['Partit dels Socialistes de Catalunya (PSC-PSOE)']).to eq(17)
     expect(seats['Catalunya en Comú–Podem']).to eq(8)
     expect(seats['Candidatura d’Unitat Popular']).to eq(4)
     expect(seats['Partit Popular']).to eq(4)
+    expect(seats['Vox']).to eq(0 + 3)
     expect(seats['Partit Animalista contra el Maltractament Animal']).to eq(0)
     expect(seats['Recortes Cero–Grupo Verde']).to eq(0)
     expect(seats['Per un Món Més Just']).to eq(0)
   end
 end
 
-describe Sapor::Catalonia, '#threshold' do
+describe Sapor::CataloniaWithVox, '#threshold' do
   it 'returns a threshold of 3%' do
-    expect(Sapor::Catalonia.instance.threshold).to eq(0.03)
+    expect(Sapor::CataloniaWithVox.instance.threshold).to eq(0.03)
   end
 end

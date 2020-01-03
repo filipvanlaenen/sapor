@@ -1,0 +1,61 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Disposición 426 del BOE núm. 11 de 2018" Retrieved on 3 January 2020.
+# URL: http://www.juntaelectoralcentral.es/cs/jec/documentos/CATALU%C3%91A_2017_Resultados.pdf
+
+Barcelona | Ciutadans–Partido de la Ciudadanía               | 868,032
+Barcelona | Junts pel Catalunya                              | 624,261
+Barcelona | Esquerra Republicana–Catalunya Sí                | 678,030
+Barcelona | Partit dels Socialistes de Catalunya (PSC-PSOE)  | 497,650
+Barcelona | Catalunya en Comú–Podem                          | 276,810
+Barcelona | Candidatura d’Unitat Popular                     | 143,711
+Barcelona | Partit Popular                                   | 142,934
+Barcelona | Partit Animalista contra el Maltractament Animal |  31,330
+Barcelona | Recortes Cero–Grupo Verde                        |   8,621
+
+Girona | Ciutadans–Partido de la Ciudadanía               |  79,634
+Girona | Junts pel Catalunya                              | 149,638
+Girona | Esquerra Republicana–Catalunya Sí                |  88,582
+Girona | Partit dels Socialistes de Catalunya (PSC-PSOE)  |  35,197
+Girona | Catalunya en Comú–Podem                          |  16,482
+Girona | Candidatura d’Unitat Popular                     |  21,708
+Girona | Partit Popular                                   |  11,646
+Girona | Partit Animalista contra el Maltractament Animal |   2,582
+Girona | Recortes Cero–Grupo Verde                        |     560
+Girona | Per un Món Més Just                              |     241
+
+Lleida | Ciutadans–Partido de la Ciudadanía               | 40,908
+Lleida | Junts pel Catalunya                              | 78,303
+Lleida | Esquerra Republicana–Catalunya Sí                | 64,417
+Lleida | Partit dels Socialistes de Catalunya (PSC-PSOE)  | 21,795
+Lleida | Catalunya en Comú–Podem                          |  9,415
+Lleida | Candidatura d’Unitat Popular                     | 12,140
+Lleida | Partit Popular                                   | 10,902
+Lleida | Partit Animalista contra el Maltractament Animal |  1,186
+Lleida | Recortes Cero–Grupo Verde                        |    312
+Lleida | Per un Món Més Just                              |    336
+
+Tarragona | Ciutadans–Partido de la Ciudadanía               | 120,825
+Tarragona | Junts pel Catalunya                              |  96,031
+Tarragona | Esquerra Republicana–Catalunya Sí                | 104,832
+Tarragona | Partit dels Socialistes de Catalunya (PSC-PSOE)  |  52,017
+Tarragona | Catalunya en Comú–Podem                          |  23,653
+Tarragona | Candidatura d’Unitat Popular                     |  17,687
+Tarragona | Partit Popular                                   |  20,188
+Tarragona | Partit Animalista contra el Maltractament Animal |   3,645
+Tarragona | Recortes Cero–Grupo Verde                        |     794

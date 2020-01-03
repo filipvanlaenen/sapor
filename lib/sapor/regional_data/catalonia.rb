@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -28,34 +27,27 @@ module Sapor
     end
 
     def coalitions
-      [['Junts pel Sí'],
-       ['Junts pel Sí', 'Candidatura d’Unitat Popular'],
-       ['Junts pel Sí', 'Catalunya en Comú'],
-       ['Ciutadans–Partido de la Ciudadanía',
-        'Partit dels Socialistes de Catalunya (PSC-PSOE)',
-        'Catalunya en Comú', 'Partit Popular'],
-       ['Ciutadans–Partido de la Ciudadanía',
-        'Partit dels Socialistes de Catalunya (PSC-PSOE)', 'Partit Popular']]
+      COALITIONS
     end
 
     def no_of_seats
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2015
-      if @overall_election_results_of_2015.nil?
-        @overall_election_results_of_2015 = \
-          summarize_election_results(election_results_of_2015)
+    def overall_election_results_of_2017
+      if @overall_election_results_of_2017.nil?
+        @overall_election_results_of_2017 = \
+          summarize_election_results(election_results_of_2017)
       end
-      @overall_election_results_of_2015
+      @overall_election_results_of_2017
     end
 
     def population_size
-      # Voter turnout in 2015
-      # Source: "Election Results. Parliament of Catalonia Election 2015".
-      #         Generalitat of Catalonia. Retrieved 21 October 2017.
-      # URL: http://governacio.gencat.cat/ca/pgov_ambits_d_actuacio/pgov_eleccions/pgov_dades_electorals/resultats-2?id_eleccions=A20151&id_territori=CA09
-      5_510_853
+      # Voter turnout in 2017
+      # Source: "Disposición 426 del BOE núm. 11 de 2018" Retrieved on 3 January
+      # 2020.
+      # URL: http://www.juntaelectoralcentral.es/cs/jec/documentos/CATALU%C3%91A_2017_Resultados.pdf
+      4_357_368
     end
 
     def seats(simulation)
@@ -68,29 +60,64 @@ module Sapor
 
     private
 
+    CEC_PARTY = 'Catalunya en Comú–Podem'.freeze
+    CS_PARTY = 'Ciutadans–Partido de la Ciudadanía'.freeze
+    CUP_PARTY = 'Candidatura d’Unitat Popular'.freeze
+    ERC_PARTY = 'Esquerra Republicana–Catalunya Sí'.freeze
+    JXCAT_PARTY = 'Junts pel Catalunya'.freeze
+    PP_PARTY = 'Partit Popular'.freeze
+    PSC_PARTY = 'Partit dels Socialistes de Catalunya (PSC-PSOE)'.freeze
+    VOX_PARTY = 'Vox'.freeze
+
+    COALITIONS = [[CEC_PARTY, CS_PARTY, PSC_PARTY, PP_PARTY],
+                  [CEC_PARTY, ERC_PARTY],
+                  [CEC_PARTY, ERC_PARTY, JXCAT_PARTY],
+                  [CS_PARTY, PSC_PARTY, PP_PARTY],
+                  [CS_PARTY, PSC_PARTY, PP_PARTY, VOX_PARTY],
+                  [CUP_PARTY, ERC_PARTY, JXCAT_PARTY],
+                  [ERC_PARTY, JXCAT_PARTY]].freeze
+
     SEAT_DISTRIBUTION = { 'Barcelona' => 85, 'Girona' => 17, 'Lleida' => 15,
-                          'Tarragona' => 18 }
+                          'Tarragona' => 18 }.freeze
 
     THRESHOLD = 0.03
 
-    def election_results_of_2015
-      if @election_results_of_2015.nil?
-        @election_results_of_2015 = load_election_results( \
-          'catalonia-2015.psv')
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results( \
+          'catalonia-20171221.psv'
+        )
       end
-      @election_results_of_2015
+      @election_results_of_2017
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2015,
-          election_results_of_2015,
+          overall_election_results_of_2017,
+          election_results_of_2017,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
-          THRESHOLD)
+          THRESHOLD
+        )
       end
       @electoral_system
+    end
+  end
+
+  # Extension of Catalonia with Vox
+  class CataloniaWithVox < Catalonia
+    def area_code
+      'ES-CT∪{Vox}'
+    end
+
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'catalonia-20171221-with-vox.psv'
+        )
+      end
+      @election_results_of_2017
     end
   end
 end

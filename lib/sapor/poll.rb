@@ -33,9 +33,6 @@ module Sapor
     BELGIAN_AREAS = [BelgiumBrussels.instance, BelgiumFlanders.instance,
                      BelgiumWallonia.instance, Flanders.instance,
                      Wallonia.instance].freeze
-    CATALONIAN_AREAS = [Catalonia.instance,
-                        CataloniaWithJuntsPerCatalunya.instance,
-                        CataloniaWithoutJuntsPelSi.instance].freeze
     DANISH_AREAS = [Denmark.instance, DenmarkWithE.instance,
                     DenmarkWithEAndP.instance, DenmarkWithP.instance].freeze
     EUROPEAN_UNION_AREAS = [EuropeanUnion27Austria.instance,
@@ -101,16 +98,17 @@ module Sapor
                         PortugalWithChAndIlWithoutPaf.instance,
                         PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
-    (BELGIAN_AREAS + CATALONIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + \
-     NORWEGIAN_AREAS + POLISH_AREAS + PORTUGUESE_AREAS + \
-     [Austria.instance, Estonia.instance, Finland.instance,
-      FinlandWithSin.instance, France.instance, Greece.instance,
-      Hungary.instance, Iceland.instance, IcelandWithJ.instance,
-      Latvia.instance, Luxembourg.instance, Netherlands.instance,
-      Slovakia.instance, Slovenia.instance, Spain.instance, Sweden.instance,
-      Sweden20140914.instance, UnitedKingdom.instance,
-      UnitedKingdomWithBrexit.instance, UnitedKingdomWithBrexitAndChuk.instance,
-      UnitedKingdomWithTig.instance, Utopia.instance]).map do |area|
+    (BELGIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + NORWEGIAN_AREAS + \
+     POLISH_AREAS + PORTUGUESE_AREAS + \
+     [Austria.instance, Catalonia.instance, CataloniaWithVox.instance,
+      Estonia.instance, Finland.instance, FinlandWithSin.instance,
+      France.instance, Greece.instance, Hungary.instance, Iceland.instance,
+      IcelandWithJ.instance, Latvia.instance, Luxembourg.instance,
+      Netherlands.instance, Slovakia.instance, Slovenia.instance,
+      Spain.instance, Sweden.instance, Sweden20140914.instance,
+      UnitedKingdom.instance, UnitedKingdomWithBrexit.instance,
+      UnitedKingdomWithBrexitAndChuk.instance, UnitedKingdomWithTig.instance,
+      Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
 
