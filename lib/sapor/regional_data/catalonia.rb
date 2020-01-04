@@ -72,6 +72,7 @@ module Sapor
     COALITIONS = [[CEC_PARTY, CS_PARTY, PSC_PARTY, PP_PARTY],
                   [CEC_PARTY, ERC_PARTY],
                   [CEC_PARTY, ERC_PARTY, JXCAT_PARTY],
+                  [CEC_PARTY, ERC_PARTY, PSC_PARTY],
                   [CS_PARTY, PSC_PARTY, PP_PARTY],
                   [CS_PARTY, PSC_PARTY, PP_PARTY, VOX_PARTY],
                   [CUP_PARTY, ERC_PARTY, JXCAT_PARTY],
