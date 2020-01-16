@@ -27,17 +27,28 @@ module Sapor
       nil
     end
 
-    def lines_to_election_results(lines)
+    def lines_to_election_results(lines, capped = false)
       results = {}
-      lines.each_line { |line| add_line_to_election_results(results, line) }
-      results
+      candidates = {}
+      lines.each_line do |line|
+        add_line_to_election_results(results, candidates, line, capped)
+      end
+      [results, candidates]
+    end
+
+    def load_capped_election_results(filename)
+      load_full_election_results(filename, true)
     end
 
     def load_election_results(filename)
+      load_full_election_results(filename, false).first
+    end
+
+    def load_full_election_results(filename, capped)
       dirname = File.dirname(File.expand_path(__FILE__))
       full_filename = File.expand_path(filename, dirname)
       lines = File.read(full_filename)
-      lines_to_election_results(lines)
+      lines_to_election_results(lines, capped)
     end
 
     def summarize_election_results(election_results)
@@ -50,16 +61,19 @@ module Sapor
 
     private
 
-    def add_line_to_election_results(results, line)
+    def add_line_to_election_results(results, candidates, line, capped)
       return if line.strip.empty? || line.strip.start_with?('#')
       values = line.split('|')
-      fail(ArgumentError, "Broken line: #{line}.") unless values.size.equal?(3)
-      add_line_values_to_election_results(results, values)
+      fail(ArgumentError, "Broken line: #{line}.") unless values.size.equal?(capped ? 4 : 3)
+      add_line_values_to_election_results(results, candidates, values, capped)
     end
 
-    def add_line_values_to_election_results(results, values)
+    def add_line_values_to_election_results(results, candidates, values, capped)
       constituency = values[0].strip
-      results[constituency] = {} unless results.key?(constituency)
+      unless results.key?(constituency)
+        results[constituency] = {}
+        candidates[constituency] = {}
+      end
       choice = values[1].strip
       votes = values[2].gsub(',', '').to_i
       if results[constituency].key?(choice)
@@ -67,6 +81,10 @@ module Sapor
                             "constituency #{constituency}.")
       end
       results[constituency][choice] = votes
+      if capped
+        cap = values[3].gsub(',', '').to_i
+        candidates[constituency][choice] = cap
+      end
     end
 
     def add_local_results_to_summary(summary, local_results)

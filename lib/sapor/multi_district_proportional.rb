@@ -24,13 +24,14 @@ module Sapor
   class MultiDistrictProportional
     def initialize(last_election_result, last_detailed_election_result,
                    seat_distribution, denominators_class, threshold = 0,
-                   national_threshold = 0)
+                   national_threshold = 0, caps = {})
       @last_election_result = last_election_result
       @last_detailed_election_result = last_detailed_election_result
       @seat_distribution = seat_distribution
       @denominators_class = denominators_class
       @threshold = threshold
       @national_threshold = national_threshold
+      @caps = caps
     end
 
     def project(simulation)
@@ -45,8 +46,9 @@ module Sapor
       result = create_empty_result(simulation)
       @last_detailed_election_result.each_pair do |name, local_last_result|
         no_of_seats = @seat_distribution[name]
+        caps = @caps.empty? ? {} : @caps[name]
         seats = local_seats(no_of_seats, local_last_result, multiplicators,
-                            allowed_parties)
+                            allowed_parties, caps)
         add_seats_to_result(result, seats)
       end
       result
@@ -98,12 +100,13 @@ module Sapor
     end
 
     def local_quotients(local_votes, local_threshold, no_of_seats,
-                        allowed_parties)
+                        allowed_parties, caps)
       local_quotients = []
       local_votes.each_pair do |choice, new_value|
         next unless allowed_parties.empty? || allowed_parties.include?(choice)
         next if new_value < local_threshold
-        @denominators_class.get(no_of_seats).each do |d|
+        actual_no_of_seats = caps.empty? ? no_of_seats : caps[choice]
+        @denominators_class.get(actual_no_of_seats).each do |d|
           local_quotients << [choice, new_value.to_f / d]
         end
       end
@@ -111,11 +114,11 @@ module Sapor
     end
 
     def local_seats(no_of_seats, local_last_result, multiplicators,
-                    allowed_parties)
+                    allowed_parties, caps)
       local_votes = local_votes(local_last_result, multiplicators)
       local_threshold = local_votes.values.inject(:+).to_f * @threshold
       local_quotients = local_quotients(local_votes, local_threshold,
-                                        no_of_seats, allowed_parties)
+                                        no_of_seats, allowed_parties, caps)
       sorted_quotients = local_quotients.sort { |a, b| b.last <=> a.last }
       sorted_quotients.map(&:first).slice(0, no_of_seats)
     end

@@ -101,7 +101,7 @@ module Sapor
 
     def election_results_of_2016
       if @election_results_of_2016.nil?
-        @election_results_of_2016 = load_election_results(
+        @election_results_of_2016, @candidates_of_2016 = load_capped_election_results(
           'ireland-20160226.psv'
         )
       end
@@ -112,7 +112,7 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
           overall_election_results_of_2016, election_results_of_2016,
-          SEAT_DISTRIBUTION, DhondtDenominators
+          SEAT_DISTRIBUTION, DhondtDenominators, 0, 0, @candidates_of_2016
         )
       end
       @electoral_system
