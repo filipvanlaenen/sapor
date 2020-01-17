@@ -19,30 +19,30 @@
 
 require 'spec_helper'
 
-describe Sapor::Ireland, '#area_code' do
+describe Sapor::Ireland2016, '#area_code' do
   it 'returns IE as the area code' do
-    expect(Sapor::Ireland.instance.area_code).to eq('IE')
+    expect(Sapor::Ireland2016.instance.area_code).to eq('IE@2016')
   end
 end
 
-describe Sapor::Ireland, '#no_of_seats' do
-  it 'returns 160 as the number of seats' do
-    expect(Sapor::Ireland.instance.no_of_seats).to eq(160)
+describe Sapor::Ireland2016, '#no_of_seats' do
+  it 'returns 158 as the number of seats' do
+    expect(Sapor::Ireland2016.instance.no_of_seats).to eq(158)
   end
 end
 
-describe Sapor::Ireland, '#population_size' do
+describe Sapor::Ireland2016, '#population_size' do
   it 'returns a population size of 2,132,895' do
-    expect(Sapor::Ireland.instance.population_size).to eq(2_132_895)
+    expect(Sapor::Ireland2016.instance.population_size).to eq(2_132_895)
   end
 end
 
-describe Sapor::Ireland, '#seats' do
+describe Sapor::Ireland2016, '#seats' do
   it 'calculates the number of seats for the election of 2016 correctly' do
-    Ireland = Sapor::Ireland.instance
+    Ireland = Sapor::Ireland2016.instance
     results = Ireland.overall_election_results_of_2016
     seats = Ireland.seats(results)
-    expect(seats['Fine Gael']).to eq(49 + 5 + 1)
+    expect(seats['Fine Gael']).to eq(49 + 5)
     expect(seats['Fianna Fáil']).to eq(44 + 6)
     expect(seats['Sinn Féin']).to eq(23 - 5)
     expect(seats['The Labour Party']).to eq(7 - 4)
@@ -57,6 +57,6 @@ describe Sapor::Ireland, '#seats' do
     expect(seats['Irish Democratic Party']).to eq(0)
     expect(seats['Renua Ireland']).to eq(0)
     expect(seats['Workers’ Party']).to eq(0)
-    expect(seats['Independent']).to eq(20 + 3 + 1)
+    expect(seats['Independent']).to eq(20 + 3)
   end
 end

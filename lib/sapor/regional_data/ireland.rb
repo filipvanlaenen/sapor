@@ -18,21 +18,30 @@
 
 module Sapor
   #
-  # The regional data for Ireland.
+  # The regional data for Ireland for the 2016 election.
   #
-  class Ireland < Area
+  class Ireland2016 < Area
     include Singleton
 
     def area_code
-      'IE'
+      'IE@2016'
     end
 
     def coalitions
       COALITIONS
     end
 
+    def election_results_of_2016
+      if @election_results_of_2016.nil?
+        @election_results_of_2016, @candidates_of_2016 = load_capped_election_results(
+          'ireland-20160226.psv'
+        )
+      end
+      @election_results_of_2016
+    end
+
     def no_of_seats
-      SEAT_DISTRIBUTION.values.inject(:+)
+      seat_distribution.values.inject(:+)
     end
 
     def overall_election_results_of_2016
@@ -47,6 +56,10 @@ module Sapor
       POPULATION_SIZE
     end
 
+    def seat_distribution
+      SEAT_DISTRIBUTION_2016
+    end
+
     def seats(simulation)
       electoral_system.project(simulation)
     end
@@ -59,45 +72,25 @@ module Sapor
     # https://en.wikipedia.org/wiki/2016_Irish_general_election
     POPULATION_SIZE = 2_132_895
 
-    SEAT_DISTRIBUTION = { 'Carlow–Kilkenny' => 5, 'Cavan–Monaghan' => 4,
-                          'Clare' => 4, 'Cork East' => 4,
-                          'Cork North-Central' => 4, 'Cork North-West' => 3,
-                          'Cork South-Central' => 4, 'Cork South-West' => 3,
-                          'Donegal' => 5, 'Dublin Bay North' => 5,
-                          'Dublin Bay South' => 4, 'Dublin Central' => 3,
-                          'Dublin Fingal' => 5, 'Dublin Mid-West' => 4,
-                          'Dublin North-West' => 3, 'Dublin Rathdown' => 3,
-                          'Dublin South-Central' => 4, 'Dublin South-West' => 5,
-                          'Dublin West' => 4, 'Dún Laoghaire' => 4,
-                          'Galway East' => 3, 'Galway West' => 5, 'Kerry' => 5,
-                          'Kildare North' => 4, 'Kildare South' => 3,
-                          'Laois' => 3, 'Limerick City' => 4,
-                          'Limerick County' => 3, 'Longford–Westmeath' => 4,
-                          'Louth' => 5, 'Mayo' => 4, 'Meath East' => 3,
-                          'Meath West' => 3, 'Offaly' => 3, 'Roscommon–Galway' => 3,
-                          'Sligo–Leitrim' => 4, 'Tipperary' => 5,
-                          'Waterford' => 4, 'Wexford' => 5,
-                          'Wicklow' => 5 }.freeze
-
-    SEAT_DISTRIBUTION_2020 = { 'Carlow–Kilkenny' => 5, 'Cavan–Monaghan' => 5,
-                          'Clare' => 4, 'Cork East' => 4,
-                          'Cork North-Central' => 4, 'Cork North-West' => 3,
-                          'Cork South-Central' => 4, 'Cork South-West' => 3,
-                          'Donegal' => 5, 'Dublin Bay North' => 5,
-                          'Dublin Bay South' => 4, 'Dublin Central' => 4,
-                          'Dublin Fingal' => 5, 'Dublin Mid-West' => 4,
-                          'Dublin North-West' => 3, 'Dublin Rathdown' => 3,
-                          'Dublin South-Central' => 4, 'Dublin South-West' => 5,
-                          'Dublin West' => 4, 'Dún Laoghaire' => 4,
-                          'Galway East' => 3, 'Galway West' => 5, 'Kerry' => 5,
-                          'Kildare North' => 4, 'Kildare South' => 4,
-                          'Laois–Offaly' => 5, 'Limerick City' => 4,
-                          'Limerick County' => 3, 'Longford–Westmeath' => 4,
-                          'Louth' => 5, 'Mayo' => 4, 'Meath East' => 3,
-                          'Meath West' => 3, 'Roscommon–Galway' => 3,
-                          'Sligo–Leitrim' => 4, 'Tipperary' => 5,
-                          'Waterford' => 4, 'Wexford' => 5,
-                          'Wicklow' => 5 }.freeze
+    SEAT_DISTRIBUTION_2016 = { 'Carlow–Kilkenny' => 5, 'Cavan–Monaghan' => 4,
+                               'Clare' => 4, 'Cork East' => 4,
+                               'Cork North-Central' => 4, 'Cork North-West' => 3,
+                               'Cork South-Central' => 4, 'Cork South-West' => 3,
+                               'Donegal' => 5, 'Dublin Bay North' => 5,
+                               'Dublin Bay South' => 4, 'Dublin Central' => 3,
+                               'Dublin Fingal' => 5, 'Dublin Mid-West' => 4,
+                               'Dublin North-West' => 3, 'Dublin Rathdown' => 3,
+                               'Dublin South-Central' => 4, 'Dublin South-West' => 5,
+                               'Dublin West' => 4, 'Dún Laoghaire' => 4,
+                               'Galway East' => 3, 'Galway West' => 5, 'Kerry' => 5,
+                               'Kildare North' => 4, 'Kildare South' => 3,
+                               'Laois' => 3, 'Limerick City' => 4,
+                               'Limerick County' => 3, 'Longford–Westmeath' => 4,
+                               'Louth' => 5, 'Mayo' => 4, 'Meath East' => 3,
+                               'Meath West' => 3, 'Offaly' => 3, 'Roscommon–Galway' => 3,
+                               'Sligo–Leitrim' => 4, 'Tipperary' => 5,
+                               'Waterford' => 4, 'Wexford' => 5,
+                               'Wicklow' => 5 }.freeze
 
     def election_results_of_2016
       if @election_results_of_2016.nil?
@@ -112,10 +105,38 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
           overall_election_results_of_2016, election_results_of_2016,
-          SEAT_DISTRIBUTION, DhondtDenominators, 0, 0, @candidates_of_2016
+          seat_distribution, DhondtDenominators, 0, 0, @candidates_of_2016
         )
       end
       @electoral_system
     end
+  end
+
+  # Extension of Ireland with the 2020 seat distribution among the
+  # constituencies.
+  class Ireland < Ireland2016
+    def area_code
+      'IE'
+    end
+
+    def election_results_of_2016
+      if @election_results_of_2016.nil?
+        @election_results_of_2016, @candidates_of_2016 = load_capped_election_results(
+          'ireland-20160226-2020.psv'
+        )
+      end
+      @election_results_of_2016
+    end
+
+    def seat_distribution
+      SEAT_DISTRIBUTION_2020
+    end
+
+    private
+
+    SEAT_DISTRIBUTION_2020 = Ireland2016.instance.seat_distribution.merge(
+      'Cavan–Monaghan' => 5, 'Dublin Central' => 4, 'Kildare South' => 4,
+      'Laois–Offaly' => 5
+    ).reject { |k, _v| %w[Laois Offaly].include?(k) }.freeze
   end
 end
