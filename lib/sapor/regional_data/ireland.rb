@@ -66,7 +66,17 @@ module Sapor
 
     private
 
-    COALITIONS = [].freeze
+    FF_PARTY = 'Fianna Fáil'.freeze
+    FG_PARTY = 'Fine Gael'.freeze
+    GREEN_PARTY = 'Green Party/Comhaontas Glas'.freeze
+    LAB_PARTY = 'Labour Party'.freeze
+    SF_PARTY = 'Sinn Féin'.freeze
+
+    COALITIONS = [[FF_PARTY, FG_PARTY],
+                  [FF_PARTY, GREEN_PARTY],
+                  [FF_PARTY, SF_PARTY],
+                  [FG_PARTY],
+                  [FG_PARTY, LAB_PARTY]].freeze
 
     # Voter turnout on 26 February 2016
     # https://en.wikipedia.org/wiki/2016_Irish_general_election

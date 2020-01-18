@@ -45,7 +45,7 @@ describe Sapor::Ireland, '#seats' do
     expect(seats['Fine Gael']).to eq(49 + 5 + 1)
     expect(seats['Fianna Fáil']).to eq(44 + 6)
     expect(seats['Sinn Féin']).to eq(23 - 5)
-    expect(seats['The Labour Party']).to eq(7 - 4)
+    expect(seats['Labour Party']).to eq(7 - 4)
     expect(seats['Anti-Austerity Alliance–People Before Profit']).to eq(6 - 2)
     expect(seats['Independents 4 Change']).to eq(4 - 2)
     expect(seats['Social Democrats']).to eq(3)
