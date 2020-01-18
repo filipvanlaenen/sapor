@@ -39,9 +39,9 @@ end
 
 describe Sapor::Ireland2016, '#seats' do
   it 'calculates the number of seats for the election of 2016 correctly' do
-    Ireland = Sapor::Ireland2016.instance
-    results = Ireland.overall_election_results_of_2016
-    seats = Ireland.seats(results)
+    Ireland2016 = Sapor::Ireland2016.instance
+    results = Ireland2016.overall_election_results_of_2016
+    seats = Ireland2016.seats(results)
     expect(seats['Fine Gael']).to eq(49 + 5)
     expect(seats['Fianna Fáil']).to eq(44 + 6)
     expect(seats['Sinn Féin']).to eq(23 - 5)
