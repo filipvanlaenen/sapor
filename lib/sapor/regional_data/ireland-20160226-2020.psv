@@ -14,7 +14,6 @@
 #
 # You can find a copy of the GNU General Public License in /doc/gpl.txt
 #
-Carlow–Kilkenny | Anti-Austerity Alliance–People Before Profit | 2702 | 2
 Carlow–Kilkenny | Fianna Fáil | 28267 | 3
 Carlow–Kilkenny | Fine Gael | 19147 | 3
 Carlow–Kilkenny | Green Party/Comhaontas Glas | 2621 | 1
@@ -22,6 +21,7 @@ Carlow–Kilkenny | Independent | 1698 | 3
 Carlow–Kilkenny | Labour Party | 4391 | 1
 Carlow–Kilkenny | Renua Ireland | 2483 | 1
 Carlow–Kilkenny | Sinn Féin | 8700 | 1
+Carlow–Kilkenny | Solidarity–People Before Profit | 2702 | 2
 Cavan–Monaghan | Direct Democracy Ireland | 754 | 2
 Cavan–Monaghan | Fianna Fáil | 17952 | 3
 Cavan–Monaghan | Fine Gael | 18957 | 2
@@ -35,7 +35,6 @@ Clare | Green Party/Comhaontas Glas | 1700 | 1
 Clare | Independent | 13171 | 6
 Clare | Labour Party | 4472 | 1
 Clare | Sinn Féin | 4216 | 1
-Cork East | Anti-Austerity Alliance–People Before Profit | 1999 | 1
 Cork East | Fianna Fáil | 12858 | 2
 Cork East | Fine Gael | 15038 | 3
 Cork East | Green Party/Comhaontas Glas | 806 | 1
@@ -44,7 +43,7 @@ Cork East | Labour Party | 6949 | 1
 Cork East | Renua Ireland | 3244 | 1
 Cork East | Sinn Féin | 5358 | 1
 Cork East | Social Democrats | 1386 | 1
-Cork North-Central | Anti-Austerity Alliance–People Before Profit | 8041 | 1
+Cork East | Solidarity–People Before Profit | 1999 | 1
 Cork North-Central | Fianna Fáil | 14286 | 1
 Cork North-Central | Fine Gael | 9105 | 2
 Cork North-Central | Green Party/Comhaontas Glas | 1693 | 1
@@ -52,6 +51,7 @@ Cork North-Central | Independent | 1783 | 4
 Cork North-Central | Labour Party | 3723 | 1
 Cork North-Central | Renua Ireland | 1120 | 1
 Cork North-Central | Sinn Féin | 10004 | 2
+Cork North-Central | Solidarity–People Before Profit | 8041 | 1
 Cork North-Central | Workers’ Party | 1419 | 1
 Cork North-West | Communist Party of Ireland | 185 | 1
 Cork North-West | Fianna Fáil | 16256 | 2
@@ -60,7 +60,6 @@ Cork North-West | Green Party/Comhaontas Glas | 1354 | 1
 Cork North-West | Independent | 9251 | 5
 Cork North-West | Renua Ireland | 1568 | 1
 Cork North-West | Sinn Féin | 3238 | 1
-Cork South-Central | Anti-Austerity Alliance–People Before Profit | 1732 | 2
 Cork South-Central | Fianna Fáil | 23141 | 2
 Cork South-Central | Fine Gael | 14384 | 2
 Cork South-Central | Green Party/Comhaontas Glas | 2064 | 1
@@ -68,6 +67,7 @@ Cork South-Central | Independent | 4071 | 5
 Cork South-Central | Labour Party | 2417 | 1
 Cork South-Central | Renua Ireland | 887 | 1
 Cork South-Central | Sinn Féin | 6986 | 1
+Cork South-Central | Solidarity–People Before Profit | 1732 | 2
 Cork South-West | Catholic Democrats | 686 | 1
 Cork South-West | Fianna Fáil | 8482 | 1
 Cork South-West | Fine Gael | 13803 | 2
@@ -81,7 +81,6 @@ Donegal | Fís Nua | 70 | 1
 Donegal | Green Party/Comhaontas Glas | 428 | 1
 Donegal | Independent | 18653 | 7
 Donegal | Sinn Féin | 20178 | 3
-Dublin Bay North | Anti-Austerity Alliance–People Before Profit | 6645 | 2
 Dublin Bay North | Fianna Fáil | 11367 | 2
 Dublin Bay North | Fine Gael | 14517 | 3
 Dublin Bay North | Green Party/Comhaontas Glas | 1024 | 1
@@ -91,7 +90,7 @@ Dublin Bay North | Labour Party | 5675 | 1
 Dublin Bay North | Renua Ireland | 3205 | 1
 Dublin Bay North | Sinn Féin | 8566 | 2
 Dublin Bay North | Social Democrats | 3864 | 1
-Dublin Bay South | Anti-Austerity Alliance–People Before Profit | 1728 | 1
+Dublin Bay North | Solidarity–People Before Profit | 6645 | 2
 Dublin Bay South | Fianna Fáil | 4575 | 1
 Dublin Bay South | Fine Gael | 11966 | 2
 Dublin Bay South | Green Party/Comhaontas Glas | 4529 | 1
@@ -100,7 +99,7 @@ Dublin Bay South | Labour Party | 4205 | 1
 Dublin Bay South | Renua Ireland | 4229 | 1
 Dublin Bay South | Sinn Féin | 3774 | 1
 Dublin Bay South | Social Democrats | 2652 | 1
-Dublin Central | Anti-Austerity Alliance–People Before Profit | 721 | 1
+Dublin Bay South | Solidarity–People Before Profit | 1728 | 1
 Dublin Central | Direct Democracy Ireland | 62 | 1
 Dublin Central | Fianna Fáil | 2508 | 1
 Dublin Central | Fine Gael | 3226 | 1
@@ -110,8 +109,8 @@ Dublin Central | Labour Party | 2092 | 1
 Dublin Central | Renua Ireland | 330 | 1
 Dublin Central | Sinn Féin | 5770 | 1
 Dublin Central | Social Democrats | 2307 | 1
+Dublin Central | Solidarity–People Before Profit | 721 | 1
 Dublin Central | Workers’ Party | 303 | 1
-Dublin Fingal | Anti-Austerity Alliance–People Before Profit | 2067 | 1
 Dublin Fingal | Fianna Fáil | 14185 | 2
 Dublin Fingal | Fine Gael | 12180 | 2
 Dublin Fingal | Green Party/Comhaontas Glas | 2783 | 1
@@ -120,7 +119,7 @@ Dublin Fingal | Independents 4 Change | 11892 | 2
 Dublin Fingal | Labour Party | 6009 | 1
 Dublin Fingal | Renua Ireland | 2091 | 1
 Dublin Fingal | Sinn Féin | 5228 | 1
-Dublin Mid-West | Anti-Austerity Alliance–People Before Profit | 4629 | 1
+Dublin Fingal | Solidarity–People Before Profit | 2067 | 1
 Dublin Mid-West | Direct Democracy Ireland | 167 | 1
 Dublin Mid-West | Fianna Fáil | 6971 | 1
 Dublin Mid-West | Fine Gael | 11365 | 2
@@ -129,8 +128,8 @@ Dublin Mid-West | Independent | 4521 | 5
 Dublin Mid-West | Labour Party | 2146 | 1
 Dublin Mid-West | Sinn Féin | 9782 | 1
 Dublin Mid-West | Social Democrats | 2633 | 1
+Dublin Mid-West | Solidarity–People Before Profit | 4629 | 1
 Dublin Mid-West | Workers’ Party | 502 | 1
-Dublin North-West | Anti-Austerity Alliance–People Before Profit | 1434 | 1
 Dublin North-West | Direct Democracy Ireland | 158 | 1
 Dublin North-West | Fianna Fáil | 4750 | 1
 Dublin North-West | Fine Gael | 4642 | 1
@@ -139,6 +138,7 @@ Dublin North-West | Independent | 1120 | 1
 Dublin North-West | Labour Party | 2750 | 1
 Dublin North-West | Sinn Féin | 10008 | 2
 Dublin North-West | Social Democrats | 10540 | 1
+Dublin North-West | Solidarity–People Before Profit | 1434 | 1
 Dublin North-West | Workers’ Party | 692 | 1
 Dublin Rathdown | Fianna Fáil | 4220 | 1
 Dublin Rathdown | Fine Gael | 12573 | 2
@@ -147,7 +147,6 @@ Dublin Rathdown | Independent | 12223 | 2
 Dublin Rathdown | Labour Party | 4048 | 1
 Dublin Rathdown | Renua Ireland | 1055 | 1
 Dublin Rathdown | Sinn Féin | 2858 | 1
-Dublin South-Central | Anti-Austerity Alliance–People Before Profit | 4374 | 1
 Dublin South-Central | Direct Democracy Ireland | 407 | 1
 Dublin South-Central | Fianna Fáil | 5441 | 1
 Dublin South-Central | Fine Gael | 6130 | 1
@@ -158,7 +157,7 @@ Dublin South-Central | Labour Party | 3297 | 1
 Dublin South-Central | Renua Ireland | 893 | 1
 Dublin South-Central | Sinn Féin | 9971 | 2
 Dublin South-Central | Social Democrats | 2434 | 1
-Dublin South-West | Anti-Austerity Alliance–People Before Profit | 12246 | 2
+Dublin South-Central | Solidarity–People Before Profit | 4374 | 1
 Dublin South-West | Direct Democracy Ireland | 359 | 1
 Dublin South-West | Fianna Fáil | 9647 | 1
 Dublin South-West | Fine Gael | 14746 | 3
@@ -167,7 +166,7 @@ Dublin South-West | Independent | 12102 | 8
 Dublin South-West | Labour Party | 4378 | 2
 Dublin South-West | Renua Ireland | 2906 | 1
 Dublin South-West | Sinn Féin | 9590 | 2
-Dublin West | Anti-Austerity Alliance–People Before Profit | 6520 | 1
+Dublin South-West | Solidarity–People Before Profit | 12246 | 2
 Dublin West | Fianna Fáil | 6917 | 1
 Dublin West | Fine Gael | 9321 | 2
 Dublin West | Green Party/Comhaontas Glas | 1730 | 1
@@ -175,7 +174,7 @@ Dublin West | Independent | 4308 | 3
 Dublin West | Labour Party | 6445 | 1
 Dublin West | Renua Ireland | 677 | 1
 Dublin West | Sinn Féin | 6034 | 1
-Dún Laoghaire | Anti-Austerity Alliance–People Before Profit | 9775 | 1
+Dublin West | Solidarity–People Before Profit | 6520 | 1
 Dún Laoghaire | Direct Democracy Ireland | 213 | 1
 Dún Laoghaire | Fianna Fáil | 11143 | 2
 Dún Laoghaire | Fine Gael | 21306 | 2
@@ -184,6 +183,7 @@ Dún Laoghaire | Independent | 3152 | 1
 Dún Laoghaire | Labour Party | 5192 | 1
 Dún Laoghaire | Renua Ireland | 1812 | 1
 Dún Laoghaire | Sinn Féin | 3167 | 1
+Dún Laoghaire | Solidarity–People Before Profit | 9775 | 1
 Galway East | Direct Democracy Ireland | 489 | 1
 Galway East | Fianna Fáil | 12364 | 2
 Galway East | Fine Gael | 13597 | 2
@@ -191,7 +191,6 @@ Galway East | Green Party/Comhaontas Glas | 769 | 1
 Galway East | Independent | 10805 | 2
 Galway East | Labour Party | 4531 | 1
 Galway East | Sinn Féin | 2683 | 1
-Galway West | Anti-Austerity Alliance–People Before Profit | 1017 | 1
 Galway West | Direct Democracy Ireland | 152 | 1
 Galway West | Fianna Fáil | 15629 | 3
 Galway West | Fine Gael | 15437 | 3
@@ -201,7 +200,7 @@ Galway West | Labour Party | 3220 | 1
 Galway West | Renua Ireland | 994 | 1
 Galway West | Sinn Féin | 5755 | 1
 Galway West | Social Democrats | 3455 | 1
-Kerry | Anti-Austerity Alliance–People Before Profit | 981 | 1
+Galway West | Solidarity–People Before Profit | 1017 | 1
 Kerry | Fianna Fáil | 12504 | 2
 Kerry | Fine Gael | 16939 | 3
 Kerry | Green Party/Comhaontas Glas | 1011 | 1
@@ -209,7 +208,7 @@ Kerry | Independent | 32851 | 6
 Kerry | Labour Party | 4813 | 1
 Kerry | Renua Ireland | 716 | 1
 Kerry | Sinn Féin | 9458 | 1
-Kildare North | Anti-Austerity Alliance–People Before Profit | 781 | 1
+Kerry | Solidarity–People Before Profit | 981 | 1
 Kildare North | Fianna Fáil | 13802 | 2
 Kildare North | Fine Gael | 11553 | 2
 Kildare North | Green Party/Comhaontas Glas | 1485 | 1
@@ -218,6 +217,7 @@ Kildare North | Labour Party | 4087 | 1
 Kildare North | Renua Ireland | 994 | 1
 Kildare North | Sinn Féin | 3205 | 1
 Kildare North | Social Democrats | 11108 | 1
+Kildare North | Solidarity–People Before Profit | 781 | 1
 Kildare South | Fianna Fáil | 13375 | 2
 Kildare South | Fine Gael | 11101 | 2
 Kildare South | Green Party/Comhaontas Glas | 836 | 1
@@ -233,7 +233,6 @@ Laois–Offaly | Irish Democratic Party | 971 | 1
 Laois–Offaly | Labour Party | 2856 | 1
 Laois–Offaly | Renua Ireland | 4596 | 1
 Laois–Offaly | Sinn Féin | 13046 | 2
-Limerick City | Anti-Austerity Alliance–People Before Profit | 4584 | 1
 Limerick City | Catholic Democrats | 673 | 1
 Limerick City | Fianna Fáil | 12999 | 1
 Limerick City | Fine Gael | 13341 | 2
@@ -242,6 +241,7 @@ Limerick City | Independent | 332 | 2
 Limerick City | Labour Party | 5227 | 1
 Limerick City | Sinn Féin | 5894 | 1
 Limerick City | Social Democrats | 2747 | 1
+Limerick City | Solidarity–People Before Profit | 4584 | 1
 Limerick County | Direct Democracy Ireland | 222 | 1
 Limerick County | Fianna Fáil | 12276 | 1
 Limerick County | Fine Gael | 16492 | 2
@@ -249,7 +249,6 @@ Limerick County | Green Party/Comhaontas Glas | 311 | 1
 Limerick County | Independent | 8494 | 3
 Limerick County | Sinn Féin | 3347 | 1
 Limerick County | Social Democrats | 3270 | 1
-Longford–Westmeath | Anti-Austerity Alliance–People Before Profit | 506 | 1
 Longford–Westmeath | Catholic Democrats | 654 | 1
 Longford–Westmeath | Direct Democracy Ireland | 132 | 1
 Longford–Westmeath | Fianna Fáil | 15596 | 2
@@ -258,7 +257,7 @@ Longford–Westmeath | Green Party/Comhaontas Glas | 1102 | 1
 Longford–Westmeath | Independent | 14013 | 7
 Longford–Westmeath | Labour Party | 4817 | 1
 Longford–Westmeath | Sinn Féin | 5270 | 1
-Louth | Anti-Austerity Alliance–People Before Profit | 3462 | 1
+Longford–Westmeath | Solidarity–People Before Profit | 506 | 1
 Louth | Direct Democracy Ireland | 803 | 2
 Louth | Fianna Fáil | 12521 | 2
 Louth | Fine Gael | 13222 | 2
@@ -267,13 +266,14 @@ Louth | Independent | 6606 | 3
 Louth | Labour Party | 6143 | 2
 Louth | Renua Ireland | 2095 | 1
 Louth | Sinn Féin | 19490 | 2
-Mayo | Anti-Austerity Alliance–People Before Profit | 576 | 1
+Louth | Solidarity–People Before Profit | 3462 | 1
 Mayo | Fianna Fáil | 17633 | 2
 Mayo | Fine Gael | 32434 | 3
 Mayo | Green Party/Comhaontas Glas | 629 | 1
 Mayo | Independent | 4386 | 7
 Mayo | Renua Ireland | 1574 | 1
 Mayo | Sinn Féin | 6414 | 1
+Mayo | Solidarity–People Before Profit | 576 | 1
 Meath East | Direct Democracy Ireland | 794 | 1
 Meath East | Fianna Fáil | 10818 | 1
 Meath East | Fine Gael | 14386 | 2
@@ -291,7 +291,6 @@ Meath West | Green Party/Comhaontas Glas | 1421 | 1
 Meath West | Independent | 2157 | 2
 Meath West | Labour Party | 1166 | 1
 Meath West | Sinn Féin | 9442 | 1
-Roscommon–Galway | Anti-Austerity Alliance–People Before Profit | 982 | 1
 Roscommon–Galway | Fianna Fáil | 8819 | 2
 Roscommon–Galway | Fine Gael | 6812 | 1
 Roscommon–Galway | Green Party/Comhaontas Glas | 286 | 1
@@ -299,7 +298,7 @@ Roscommon–Galway | Independent | 23975 | 4
 Roscommon–Galway | Labour Party | 1211 | 1
 Roscommon–Galway | Renua Ireland | 520 | 1
 Roscommon–Galway | Sinn Féin | 3075 | 1
-Sligo–Leitrim | Anti-Austerity Alliance–People Before Profit | 1768 | 1
+Roscommon–Galway | Solidarity–People Before Profit | 982 | 1
 Sligo–Leitrim | Fianna Fáil | 20177 | 3
 Sligo–Leitrim | Fine Gael | 17247 | 3
 Sligo–Leitrim | Green Party/Comhaontas Glas | 603 | 1
@@ -307,13 +306,13 @@ Sligo–Leitrim | Independent | 8727 | 6
 Sligo–Leitrim | Labour Party | 1829 | 1
 Sligo–Leitrim | Renua Ireland | 881 | 1
 Sligo–Leitrim | Sinn Féin | 11103 | 2
+Sligo–Leitrim | Solidarity–People Before Profit | 1768 | 1
 Tipperary | Fianna Fáil | 18604 | 3
 Tipperary | Fine Gael | 12542 | 3
 Tipperary | Green Party/Comhaontas Glas | 1341 | 1
 Tipperary | Independent | 31991 | 4
 Tipperary | Labour Party | 7746 | 1
 Tipperary | Sinn Féin | 5724 | 1
-Waterford | Anti-Austerity Alliance–People Before Profit | 1646 | 1
 Waterford | Direct Democracy Ireland | 194 | 1
 Waterford | Fianna Fáil | 10603 | 1
 Waterford | Fine Gael | 14850 | 2
@@ -322,7 +321,7 @@ Waterford | Independent | 9304 | 3
 Waterford | Labour Party | 2268 | 1
 Waterford | Renua Ireland | 862 | 1
 Waterford | Sinn Féin | 9739 | 1
-Wexford | Anti-Austerity Alliance–People Before Profit | 1472 | 1
+Waterford | Solidarity–People Before Profit | 1646 | 1
 Wexford | Direct Democracy Ireland | 128 | 1
 Wexford | Fianna Fáil | 19106 | 3
 Wexford | Fine Gael | 16708 | 3
@@ -332,7 +331,7 @@ Wexford | Independents 4 Change | 7917 | 1
 Wexford | Labour Party | 10574 | 1
 Wexford | Sinn Féin | 7260 | 1
 Wexford | Social Democrats | 1635 | 1
-Wicklow | Anti-Austerity Alliance–People Before Profit | 1780 | 2
+Wexford | Solidarity–People Before Profit | 1472 | 1
 Wicklow | Direct Democracy Ireland | 168 | 1
 Wicklow | Fianna Fáil | 9279 | 2
 Wicklow | Fine Gael | 18955 | 3
@@ -342,3 +341,4 @@ Wicklow | Labour Party | 2634 | 1
 Wicklow | Renua Ireland | 5510 | 1
 Wicklow | Sinn Féin | 11151 | 1
 Wicklow | Social Democrats | 14348 | 1
+Wicklow | Solidarity–People Before Profit | 1780 | 2
