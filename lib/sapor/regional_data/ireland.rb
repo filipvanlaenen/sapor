@@ -105,7 +105,7 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = ManyPastThePost.new( \
           overall_election_results_of_2016, election_results_of_2016,
-          seat_distribution, DhondtDenominators, 0, 0, @candidates_of_2016
+          seat_distribution, @candidates_of_2016
         )
       end
       @electoral_system
