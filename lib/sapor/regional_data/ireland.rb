@@ -109,6 +109,12 @@ module Sapor
                                'Waterford' => 4, 'Wexford' => 5,
                                'Wicklow' => 5 }.freeze
 
+    WEIGHTS = [ [1.0],
+                [0.646, 0.354],
+                [0.532, 0.316, 0.152],
+                [0.547, 0.303, 0.108, 0.041],
+                [0.532, 0.249, 0.138, 0.05, 0.032] ].freeze
+
     def election_results_of_2016
       if @election_results_of_2016.nil?
         @election_results_of_2016, @candidates_of_2016 = load_capped_election_results(
@@ -122,7 +128,7 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = ManyPastThePost.new( \
           overall_election_results_of_2016, election_results_of_2016,
-          seat_distribution, @candidates_of_2016
+          seat_distribution, @candidates_of_2016, WEIGHTS
         )
       end
       @electoral_system

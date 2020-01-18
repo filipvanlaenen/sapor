@@ -22,6 +22,7 @@ TARGET_2020 = '../../lib/sapor/regional_data/ireland-20160226-2020.psv'.freeze
 
 votes_map = {}
 candidates_map = {}
+weights_map = {}
 parties = []
 total_votes = 0
 
@@ -32,6 +33,7 @@ File.open(SOURCE).each do |line|
   unless votes_map.include?(constituency)
     votes_map[constituency] = {}
     candidates_map[constituency] = {}
+    weights_map[constituency] = {}
   end
   party = elements[4]
   parties << party unless parties.include?(party)
@@ -39,9 +41,11 @@ File.open(SOURCE).each do |line|
   if votes_map[constituency].include?(party)
     votes_map[constituency][party] += votes
     candidates_map[constituency][party] += 1
+    weights_map[constituency][party] << votes
   else
     votes_map[constituency][party] = votes
     candidates_map[constituency][party] = 1
+    weights_map[constituency][party] = [votes]
   end
   total_votes += votes
 end
@@ -107,5 +111,28 @@ candidates_map_2020.delete('Offaly')
 
 export_file(TARGET_2020, votes_map_2020, candidates_map_2020)
 
+accumulated_weigths = {}
+votes_map.keys.sort.each do | constituency |
+  votes_map[constituency].keys.sort.each do | party |
+    if accumulated_weigths.include?(candidates_map[constituency][party])
+      accumulated_weigths[candidates_map[constituency][party]].each_with_index do |e, i|
+        accumulated_weigths[candidates_map[constituency][party]][i] += weights_map[constituency][party].sort.reverse[i].to_f / votes_map[constituency][party]
+      end
+    else
+      accumulated_weigths[candidates_map[constituency][party]] = weights_map[constituency][party].sort.reverse.map{|w| w.to_f / votes_map[constituency][party]}
+    end
+  end
+end
+
+accumulated_weigths.keys.each do | i |
+  sum = accumulated_weigths[i].inject(:+)
+  accumulated_weigths[i] = accumulated_weigths[i].map{|e| e / sum}
+end
+
 puts 'Parties: ' + parties.sort.join(', ')
 puts "Total votes: #{total_votes}"
+
+puts 'Weights:'
+accumulated_weigths.keys.sort.each do | i |
+  puts ' ' + i.to_s + ' => [' + accumulated_weigths[i].map{|e| e.round(3)}.join(', ') + '],'
+end

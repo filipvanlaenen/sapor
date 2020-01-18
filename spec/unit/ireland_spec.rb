@@ -42,12 +42,12 @@ describe Sapor::Ireland, '#seats' do
     Ireland = Sapor::Ireland.instance
     results = Ireland.overall_election_results_of_2016
     seats = Ireland.seats(results)
-    expect(seats['Fine Gael']).to eq(49 + 5 + 1)
-    expect(seats['Fianna Fáil']).to eq(44 + 6)
-    expect(seats['Sinn Féin']).to eq(23 - 5)
-    expect(seats['Labour Party']).to eq(7 - 4)
-    expect(seats['Solidarity–People Before Profit']).to eq(6 - 2)
-    expect(seats['Independents 4 Change']).to eq(4 - 2)
+    expect(seats['Fine Gael']).to eq(49 - 1)
+    expect(seats['Fianna Fáil']).to eq(44 + 3 + 1)
+    expect(seats['Sinn Féin']).to eq(23 + 4 + 1)
+    expect(seats['Labour Party']).to eq(7 + 1)
+    expect(seats['Solidarity–People Before Profit']).to eq(6 - 1)
+    expect(seats['Independents 4 Change']).to eq(4 - 1)
     expect(seats['Social Democrats']).to eq(3)
     expect(seats['Green Party/Comhaontas Glas']).to eq(2 - 1)
     expect(seats['Catholic Democrats']).to eq(0)
@@ -57,6 +57,6 @@ describe Sapor::Ireland, '#seats' do
     expect(seats['Irish Democratic Party']).to eq(0)
     expect(seats['Renua Ireland']).to eq(0)
     expect(seats['Workers’ Party']).to eq(0)
-    expect(seats['Independent']).to eq(20 + 3 + 1)
+    expect(seats['Independent']).to eq(20 - 3 - 1)
   end
 end

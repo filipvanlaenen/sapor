@@ -24,11 +24,12 @@ module Sapor
   #
   class ManyPastThePost
     def initialize(last_election_result, last_detailed_election_result,
-                   seat_distribution, caps = {})
+                   seat_distribution, caps = {}, weights = {})
       @last_election_result = last_election_result
       @last_detailed_election_result = last_detailed_election_result
       @seat_distribution = seat_distribution
       @caps = caps
+      @weights = weights
     end
 
     def project(simulation)
@@ -38,7 +39,7 @@ module Sapor
         no_of_seats = @seat_distribution[name]
         caps = @caps.empty? ? {} : @caps[name]
         seats = local_seats(no_of_seats, local_last_result, multiplicators,
-                            caps)
+                            caps, @weights)
         add_seats_to_result(result, seats)
       end
       result
@@ -89,20 +90,22 @@ module Sapor
       local_votes
     end
 
-    def local_quotients(local_votes, no_of_seats, caps)
+    def local_quotients(local_votes, no_of_seats, caps, weights)
       local_quotients = []
       local_votes.each_pair do |choice, new_value|
-        actual_no_of_seats = caps.empty? ? no_of_seats : caps[choice]
-        DhondtDenominators.get(actual_no_of_seats).each do |d|
-          local_quotients << [choice, new_value.to_f / d]
+        actual_no_of_seats = caps.empty? ? no_of_seats : [caps[choice], no_of_seats].min
+        actual_weights = weights[actual_no_of_seats - 1]
+        actual_weights.each do |w|
+          local_quotients << [choice, new_value.to_f * w]
         end
       end
       local_quotients
     end
 
-    def local_seats(no_of_seats, local_last_result, multiplicators, caps)
+    def local_seats(no_of_seats, local_last_result, multiplicators, caps,
+                    weights)
       local_votes = local_votes(local_last_result, multiplicators)
-      local_quotients = local_quotients(local_votes, no_of_seats, caps)
+      local_quotients = local_quotients(local_votes, no_of_seats, caps, weights)
       sorted_quotients = local_quotients.sort { |a, b| b.last <=> a.last }
       sorted_quotients.map(&:first).slice(0, no_of_seats)
     end
