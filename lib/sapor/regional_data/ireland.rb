@@ -70,12 +70,19 @@ module Sapor
     FG_PARTY = 'Fine Gael'.freeze
     GREEN_PARTY = 'Green Party/Comhaontas Glas'.freeze
     LAB_PARTY = 'Labour Party'.freeze
+    SD_PARTY = 'Social Democrats'.freeze
     SF_PARTY = 'Sinn Féin'.freeze
 
     COALITIONS = [[FF_PARTY, FG_PARTY],
                   [FF_PARTY, GREEN_PARTY],
+                  [FF_PARTY, GREEN_PARTY, LAB_PARTY],
+                  [FF_PARTY, GREEN_PARTY, LAB_PARTY, SD_PARTY],
+                  [FF_PARTY, LAB_PARTY],
                   [FF_PARTY, SF_PARTY],
                   [FG_PARTY],
+                  [FG_PARTY, GREEN_PARTY],
+                  [FG_PARTY, GREEN_PARTY, LAB_PARTY],
+                  [FG_PARTY, GREEN_PARTY, LAB_PARTY, SD_PARTY],
                   [FG_PARTY, LAB_PARTY]].freeze
 
     # Voter turnout on 26 February 2016
