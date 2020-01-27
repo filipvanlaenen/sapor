@@ -145,7 +145,7 @@ module Sapor
     def election_results_of_2016
       if @election_results_of_2016.nil?
         @election_results_of_2016, @candidates_of_2016 = load_capped_election_results(
-          'ireland-20160226-2020.psv'
+          'ireland-20160226-2020-candidates.psv'
         )
       end
       @election_results_of_2016
