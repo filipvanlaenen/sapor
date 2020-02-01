@@ -72,6 +72,7 @@ module Sapor
     LAB_PARTY = 'Labour Party'.freeze
     SD_PARTY = 'Social Democrats'.freeze
     SF_PARTY = 'Sinn Féin'.freeze
+    SPBP_PARTY = 'Solidarity–People Before Profit'.freeze
 
     COALITIONS = [[FF_PARTY, FG_PARTY],
                   [FF_PARTY, GREEN_PARTY],
@@ -83,7 +84,11 @@ module Sapor
                   [FG_PARTY, GREEN_PARTY],
                   [FG_PARTY, GREEN_PARTY, LAB_PARTY],
                   [FG_PARTY, GREEN_PARTY, LAB_PARTY, SD_PARTY],
-                  [FG_PARTY, LAB_PARTY]].freeze
+                  [FG_PARTY, LAB_PARTY],
+                  [GREEN_PARTY, LAB_PARTY, SD_PARTY, SF_PARTY],
+                  [GREEN_PARTY, LAB_PARTY, SD_PARTY, SF_PARTY, SPBP_PARTY],
+                  [GREEN_PARTY, LAB_PARTY, SF_PARTY],
+                  [GREEN_PARTY, LAB_PARTY, SF_PARTY, SPBP_PARTY]].freeze
 
     # Voter turnout on 26 February 2016
     # https://en.wikipedia.org/wiki/2016_Irish_general_election
