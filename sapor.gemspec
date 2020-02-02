@@ -19,7 +19,7 @@
 
 Gem::Specification.new do |gem|
   gem.name = 'sapor'
-  gem.version = '0.3.7'
+  gem.version = '0.3.8'
   gem.authors = ['Filip van Laenen']
   gem.email = ['f.a.vanlaenen@ieee.org']
 
