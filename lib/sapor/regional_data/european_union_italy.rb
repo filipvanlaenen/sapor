@@ -61,7 +61,7 @@ module Sapor
                   ['Lega Nord (ID)'],
                   ['Potere al Popolo (GUE/NGL)']].freeze
 
-    NO_OF_SEATS = 73
+    NO_OF_SEATS = 76
 
     NO_OF_SVP_SEATS = 1
 

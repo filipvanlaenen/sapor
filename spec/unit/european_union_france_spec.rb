@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionFrance, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionFrance, '#no_of_seats' do
-  it 'returns 74 as the number of seats' do
-    expect(Sapor::EuropeanUnionFrance.instance.no_of_seats).to eq(74)
+  it 'returns 79 as the number of seats' do
+    expect(Sapor::EuropeanUnionFrance.instance.no_of_seats).to eq(79)
   end
 end
 
@@ -54,13 +54,13 @@ describe Sapor::EuropeanUnionFrance, '#seats' do
                 'Force vie' => 138_708, 'Europe citoyenne (—)' => 127_849,
                 'Parti du vote blanc (—)' => 110_090 }
     seats = Sapor::EuropeanUnionFrance.instance.seats(results)
-    expect(seats['Front national–Rassemblement bleu Marine  (ENF)']).to eq(22)
-    expect(seats['Union pour un mouvement populaire (EPP)']).to eq(18)
-    expect(seats['Parti socialiste–Parti radical de gauche (S&D)']).to eq(12)
+    expect(seats['Front national–Rassemblement bleu Marine  (ENF)']).to eq(22 + 1)
+    expect(seats['Union pour un mouvement populaire (EPP)']).to eq(18 + 2)
+    expect(seats['Parti socialiste–Parti radical de gauche (S&D)']).to eq(12 + 1)
     expect(seats['L’Alternative (ALDE)']).to eq(9)
     expect(seats['Europe Écologie Les Verts (Greens/EFA)']).to eq(8)
     expect(seats['Front de gauche–L’Union pour les Outremer (GUE/NGL)']).to \
-      eq(5)
+      eq(5 + 1)
     expect(seats['Debout la République (—)']).to eq(0)
     expect(seats['Nouvelle Donne (—)']).to eq(0)
     expect(seats['Nous Citoyens (—)']).to eq(0)

@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionItaly, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionItaly, '#no_of_seats' do
-  it 'returns 73 as the number of seats' do
-    expect(Sapor::EuropeanUnionItaly.instance.no_of_seats).to eq(73)
+  it 'returns 76 as the number of seats' do
+    expect(Sapor::EuropeanUnionItaly.instance.no_of_seats).to eq(76)
   end
 end
 
@@ -53,11 +53,11 @@ describe Sapor::EuropeanUnionItaly, '#seats' do
                 'Südtiroler Volkspartei (EPP)' => 138_037,
                 'Io Cambio–MAIE (—)' => 50_978 }
     seats = Sapor::EuropeanUnionItaly.instance.seats(results)
-    expect(seats['Partito Democratico (S&D)']).to eq(31)
+    expect(seats['Partito Democratico (S&D)']).to eq(31 + 1)
     expect(seats['Movimento 5 Stelle (EFDD)']).to eq(17)
-    expect(seats['Forza Italia (EPP)']).to eq(13)
+    expect(seats['Forza Italia (EPP)']).to eq(13 + 1)
     expect(seats['Lega Nord (ENF)']).to eq(5)
-    expect(seats['Nuovo Centrodestra–Unione di Centro (EPP)']).to eq(3)
+    expect(seats['Nuovo Centrodestra–Unione di Centro (EPP)']).to eq(3 + 1)
     expect(seats['L’Altra Europa con Tsipras (GUE/NGL)']).to eq(3)
     expect(seats['Fratelli d’Italia (—)']).to eq(0)
     expect(seats['Verdi Europei–Green Italia (Greens/EFA)']).to eq(0)

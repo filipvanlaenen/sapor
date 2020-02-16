@@ -62,7 +62,7 @@ module Sapor
                    'Mouvement des gilets jaunes (*)', 'Résistons! (*)',
                    'Union populaire républicaine (*)']].freeze
 
-    NO_OF_SEATS = 74
+    NO_OF_SEATS = 79
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 25-26 May
