@@ -58,7 +58,7 @@ module Sapor
                    'Venstre (RE)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
-    NO_OF_SEATS = 13
+    NO_OF_SEATS = 14
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May

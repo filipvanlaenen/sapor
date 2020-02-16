@@ -21,13 +21,14 @@ require 'spec_helper'
 
 describe Sapor::EuropeanUnionDenmark, '#area_code' do
   it 'returns EU[DK] as the area code' do
-    expect(Sapor::EuropeanUnionDenmark.instance.area_code).to eq('EU[DK]')
+    expect(Sapor::EuropeanUnionDenmark.instance.area_code).to \
+      eq('EU[DK]')
   end
 end
 
 describe Sapor::EuropeanUnionDenmark, '#no_of_seats' do
-  it 'returns 13 as the number of seats' do
-    expect(Sapor::EuropeanUnionDenmark.instance.no_of_seats).to eq(13)
+  it 'returns 14 as the number of seats' do
+    expect(Sapor::EuropeanUnionDenmark.instance.no_of_seats).to eq(14)
   end
 end
 
@@ -51,7 +52,7 @@ describe Sapor::EuropeanUnionDenmark, '#seats' do
     seats = Sapor::EuropeanUnionDenmark.instance.seats(results)
     expect(seats['Dansk Folkeparti (EFDD)']).to eq(4)
     expect(seats['Socialdemokraterne (S&D)']).to eq(3)
-    expect(seats['Venstre (ALDE)']).to eq(2)
+    expect(seats['Venstre (ALDE)']).to eq(2 + 1)
     expect(seats['Socialistisk Folkeparti (Greens/EFA)']).to eq(1)
     expect(seats['Det Konservative Folkeparti (EPP)']).to eq(1)
     expect(seats['Folkebevægelsen mod EU (GUE/NGL)']).to eq(1)

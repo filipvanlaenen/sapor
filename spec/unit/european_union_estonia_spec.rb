@@ -21,13 +21,14 @@ require 'spec_helper'
 
 describe Sapor::EuropeanUnionEstonia, '#area_code' do
   it 'returns EU[EE] as the area code' do
-    expect(Sapor::EuropeanUnionEstonia.instance.area_code).to eq('EU[EE]')
+    expect(Sapor::EuropeanUnionEstonia.instance.area_code).to \
+      eq('EU[EE]')
   end
 end
 
 describe Sapor::EuropeanUnionEstonia, '#no_of_seats' do
-  it 'returns 6 as the number of seats' do
-    expect(Sapor::EuropeanUnionEstonia.instance.no_of_seats).to eq(6)
+  it 'returns 7 as the number of seats' do
+    expect(Sapor::EuropeanUnionEstonia.instance.no_of_seats).to eq(7)
   end
 end
 
@@ -66,7 +67,7 @@ describe Sapor::EuropeanUnionEstonia, '#seats' do
                 'JOERI WIERSMA (*)' => 48 }
     seats = Sapor::EuropeanUnionEstonia.instance.seats(results)
     expect(seats['Eesti Reformierakond (ALDE)']).to eq(2)
-    expect(seats['Eesti Keskerakond (ALDE)']).to eq(1)
+    expect(seats['Eesti Keskerakond (ALDE)']).to eq(1 + 1)
     expect(seats['Isamaa ja Res Publica Liit (EPP)']).to eq(1)
     expect(seats['Sotsiaaldemokraatlik Erakond (S&D)']).to eq(1)
     expect(seats['INDREK TARAND (Greens/EFA)']).to eq(1)

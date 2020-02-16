@@ -55,7 +55,7 @@ module Sapor
                   ['Erakond Isamaa (EPP)'],
                   ['Sotsiaaldemokraatlik Erakond (S&D)']].freeze
 
-    NO_OF_SEATS = 6
+    NO_OF_SEATS = 7
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
