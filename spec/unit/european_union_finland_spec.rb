@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionFinland, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionFinland, '#no_of_seats' do
-  it 'returns 13 as the number of seats' do
-    expect(Sapor::EuropeanUnionFinland.instance.no_of_seats).to eq(13)
+  it 'returns 14 as the number of seats' do
+    expect(Sapor::EuropeanUnionFinland.instance.no_of_seats).to eq(14)
   end
 end
 
@@ -56,7 +56,7 @@ describe Sapor::EuropeanUnionFinland, '#seats' do
                 'Sinivalkoinen Rintama (—)' => 1_176,
                 'Kristiina Ilmarinen (—)' => 526 }
     seats = Sapor::EuropeanUnionFinland.instance.seats(results)
-    expect(seats['Kansallinen Kokoomus (EPP)']).to eq(3)
+    expect(seats['Kansallinen Kokoomus (EPP)']).to eq(3 + 1)
     expect(seats['Suomen Keskusta (ALDE)']).to eq(3)
     expect(seats['Perussuomalaiset (EFDD)']).to eq(2)
     expect(seats['Suomen Sosialidemokraattinen Puolue (S&D)']).to eq(2)

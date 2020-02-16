@@ -55,7 +55,7 @@ module Sapor
                   ['Vasemmistoliitto (GUE/NGL)'],
                   ['Vihreä liitto (Greens/EFA)']].freeze
 
-    NO_OF_SEATS = 13
+    NO_OF_SEATS = 14
 
     # Voter turnout on 25 May 2014
     # Source: Web page with the official results of the elections of 26 May

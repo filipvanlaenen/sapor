@@ -21,13 +21,14 @@ require 'spec_helper'
 
 describe Sapor::EuropeanUnionSpain, '#area_code' do
   it 'returns EU[ES] as the area code' do
-    expect(Sapor::EuropeanUnionSpain.instance.area_code).to eq('EU[ES]')
+    expect(Sapor::EuropeanUnionSpain.instance.area_code).to \
+      eq('EU[ES]')
   end
 end
 
 describe Sapor::EuropeanUnionSpain, '#no_of_seats' do
-  it 'returns 54 as the number of seats' do
-    expect(Sapor::EuropeanUnionSpain.instance.no_of_seats).to eq(54)
+  it 'returns 59 as the number of seats' do
+    expect(Sapor::EuropeanUnionSpain.instance.no_of_seats).to eq(59)
   end
 end
 
@@ -83,8 +84,8 @@ describe Sapor::EuropeanUnionSpain, '#seats' do
                 'Extremeños por Europa Coalición electoral (—)' => 5_967,
                 'Movimiento Corriente Roja (—)' => 4_980 }
     seats = Sapor::EuropeanUnionSpain.instance.seats(results)
-    expect(seats['Partido Popular (EPP)']).to eq(16)
-    expect(seats['Partido Socialista Obrero Español (S&D)']).to eq(14)
+    expect(seats['Partido Popular (EPP)']).to eq(16 + 2)
+    expect(seats['Partido Socialista Obrero Español (S&D)']).to eq(14 + 2)
     expect(seats['La Izquierda Plural (GUE/NGL)']).to eq(6)
     expect(seats['Podemos (GUE/NGL)']).to eq(5)
     expect(seats['Unión Progreso y Democracia (ALDE)']).to eq(4)
@@ -93,7 +94,7 @@ describe Sapor::EuropeanUnionSpain, '#seats' do
     expect(seats['Ciudadanos–Partido de la Ciudadanía (ALDE)']).to eq(2)
     expect(seats['Los Pueblos Deciden (GUE/NGL)']).to eq(1)
     expect(seats['Primavera Europea (Greens/EFA)']).to eq(1)
-    expect(seats['Vox (ECR)']).to eq(0)
+    expect(seats['Vox (ECR)']).to eq(0 + 1)
     expect(seats['Partido Animalista Contra el Maltrato Animal (—)']).to eq(0)
     expect(seats['Escaños en Blanco  (—)']).to eq(0)
     expect(seats['Movimiento de Renovación Democrática de la Ciudadanía (—)']) \

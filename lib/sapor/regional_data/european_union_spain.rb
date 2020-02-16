@@ -63,7 +63,7 @@ module Sapor
                   ['Partit Demòcrata Europeu Català (NI)'],
                   ['Vox (ECR)']].freeze
 
-    NO_OF_SEATS = 54
+    NO_OF_SEATS = 59
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
