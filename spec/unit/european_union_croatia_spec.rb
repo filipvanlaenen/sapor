@@ -21,13 +21,14 @@ require 'spec_helper'
 
 describe Sapor::EuropeanUnionCroatia, '#area_code' do
   it 'returns EU[HR] as the area code' do
-    expect(Sapor::EuropeanUnionCroatia.instance.area_code).to eq('EU[HR]')
+    expect(Sapor::EuropeanUnionCroatia.instance.area_code).to \
+      eq('EU[HR]')
   end
 end
 
 describe Sapor::EuropeanUnionCroatia, '#no_of_seats' do
-  it 'returns 11 as the number of seats' do
-    expect(Sapor::EuropeanUnionCroatia.instance.no_of_seats).to eq(11)
+  it 'returns 12 as the number of seats' do
+    expect(Sapor::EuropeanUnionCroatia.instance.no_of_seats).to eq(12)
   end
 end
 
@@ -51,7 +52,7 @@ describe Sapor::EuropeanUnionCroatia, '#seats' do
     expect(seats['HDZ-ova koalicija (EPP)']).to eq(6)
     expect(seats['Kukuriku koalicija (S&D)']).to eq(4)
     expect(seats['Održivi razvoj Hrvatske (—)']).to eq(1)
-    expect(seats['Savez za Hrvatsku (—)']).to eq(0)
+    expect(seats['Savez za Hrvatsku (—)']).to eq(0 + 1)
     expect(seats['Hrvatski laburisti–Stranka rada (GUE/NGL)']).to eq(0)
     expect(seats['Partnership of Croatian Center (—)']).to eq(0)
     expect(seats['Others (—)']).to eq(0)

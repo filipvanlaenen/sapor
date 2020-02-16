@@ -61,7 +61,7 @@ module Sapor
                   ['Neovisni za Hrvatsku (ID)'],
                   ['Socijaldemokratska partija Hrvatske (S&D)']].freeze
 
-    NO_OF_SEATS = 11
+    NO_OF_SEATS = 12
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
