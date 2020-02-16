@@ -54,7 +54,7 @@ module Sapor
                   ['Sverigedemokraterna (ECR)'],
                   ['Vänsterpartiet (GUE/NGL)']].freeze
 
-    NO_OF_SEATS = 20
+    NO_OF_SEATS = 21
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
@@ -67,7 +67,7 @@ module Sapor
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(
-          NO_OF_SEATS, SainteLague14Denominators, THRESHOLD
+          NO_OF_SEATS, SainteLague12Denominators, THRESHOLD
         )
       end
       @electoral_system

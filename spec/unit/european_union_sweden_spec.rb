@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionSweden, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionSweden, '#no_of_seats' do
-  it 'returns 20 as the number of seats' do
-    expect(Sapor::EuropeanUnionSweden.instance.no_of_seats).to eq(20)
+  it 'returns 21 as the number of seats' do
+    expect(Sapor::EuropeanUnionSweden.instance.no_of_seats).to eq(21)
   end
 end
 
@@ -63,7 +63,7 @@ describe Sapor::EuropeanUnionSweden, '#seats' do
                   ' fred, kärlek och lyckan (—)' => 11,
                 'Republicans right (—)' => 9 }
     seats = Sapor::EuropeanUnionSweden.instance.seats(results)
-    expect(seats['Sveriges socialdemokratiska arbetareparti (S&D)']).to eq(5)
+    expect(seats['Sveriges socialdemokratiska arbetareparti (S&D)']).to eq(5 + 1)
     expect(seats['Miljöpartiet de gröna (Greens/EFA)']).to eq(4)
     expect(seats['Moderata samlingspartiet (EPP)']).to eq(3)
     expect(seats['Liberalerna (ALDE)']).to eq(2)
