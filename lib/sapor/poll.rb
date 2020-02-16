@@ -35,9 +35,7 @@ module Sapor
                      Wallonia.instance].freeze
     DANISH_AREAS = [Denmark.instance, DenmarkWithE.instance,
                     DenmarkWithEAndP.instance, DenmarkWithP.instance].freeze
-    EUROPEAN_UNION_AREAS = [EuropeanUnion27Ireland.instance,
-                            EuropeanUnion27IrelandWithIa.instance,
-                            EuropeanUnionAustria.instance,
+    EUROPEAN_UNION_AREAS = [EuropeanUnionAustria.instance,
                             EuropeanUnionBulgaria.instance,
                             EuropeanUnionCroatia.instance,
                             EuropeanUnionCyprus.instance,

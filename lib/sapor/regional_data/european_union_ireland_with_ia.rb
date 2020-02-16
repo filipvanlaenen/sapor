@@ -64,8 +64,8 @@ module Sapor
     # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Ireland
     POPULATION_SIZE = 1_678_003
 
-    SEAT_DISTRIBUTION = { 'Dublin' => 3, 'Midlands–North-West' => 4,
-                          'South' => 4 }
+    SEAT_DISTRIBUTION = { 'Dublin' => 4, 'Midlands–North-West' => 4,
+                          'South' => 5 }
 
     def election_results_of_2019
       if @election_results_of_2019.nil?
