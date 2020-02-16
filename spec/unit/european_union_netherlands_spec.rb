@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionNetherlands, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionNetherlands, '#no_of_seats' do
-  it 'returns 26 as the number of seats' do
-    expect(Sapor::EuropeanUnionNetherlands.instance.no_of_seats).to eq(26)
+  it 'returns 29 as the number of seats' do
+    expect(Sapor::EuropeanUnionNetherlands.instance.no_of_seats).to eq(29)
   end
 end
 
@@ -59,15 +59,15 @@ describe Sapor::EuropeanUnionNetherlands, '#seats' do
                 'Aandacht en Eenvoud (—)' => 3_174,
                 'IQ, de Rechten-Plichten-Partij (—)' => 1_705 }
     seats = Sapor::EuropeanUnionNetherlands.instance.seats(results)
-    expect(seats['Democraten 66 (ALDE)']).to eq(4)
+    expect(seats['Democraten 66 (ALDE)']).to eq(4 + 1)
     expect(seats['Christen-Democratisch Appèl–ChristenUnie–Staatkundig' \
                    ' Gereformeerde Partij (EPP)']).to eq(5 + 2)
     expect(seats['Partij voor de Vrijheid (ENF)']).to eq(4)
     expect(seats['Volkspartij voor Vrijheid en Democratie (ALDE)']).to eq(3)
-    expect(seats['Socialistische Partij (GUE/NGL)']).to eq(2)
+    expect(seats['Socialistische Partij (GUE/NGL)']).to eq(2 + 1)
     expect(seats['Partij van de Arbeid–GroenLinks (S&D)']).to eq(3 + 2)
     expect(seats['Partij voor de Dieren (GUE/NGL)']).to eq(1)
-    expect(seats['50Plus (ALDE)']).to eq(0)
+    expect(seats['50Plus (ALDE)']).to eq(0 + 1)
     expect(seats['Piratenpartij (Greens/EFA)']).to eq(0)
     expect(seats['Artikel 50 (—)']).to eq(0)
     expect(seats['Anti Europa Partij (—)']).to eq(0)

@@ -62,7 +62,7 @@ module Sapor
                   ['Prawo i Sprawiedliwość (ECR)',
                    'Zjednoczona Prawica (ECR)']].freeze
 
-    NO_OF_SEATS = 51
+    NO_OF_SEATS = 52
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May

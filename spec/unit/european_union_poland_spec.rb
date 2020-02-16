@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionPoland, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionPoland, '#no_of_seats' do
-  it 'returns 51 as the number of seats' do
-    expect(Sapor::EuropeanUnionPoland.instance.no_of_seats).to eq(51)
+  it 'returns 52 as the number of seats' do
+    expect(Sapor::EuropeanUnionPoland.instance.no_of_seats).to eq(52)
   end
 end
 
@@ -53,7 +53,7 @@ describe Sapor::EuropeanUnionPoland, '#seats' do
                 'Demokracja Bezpośrednia (—)' => 16_222,
                 'Samoobrona (—)' => 2_729 }
     seats = Sapor::EuropeanUnionPoland.instance.seats(results)
-    expect(seats['Platforma Obywatelska (EPP)']).to eq(19)
+    expect(seats['Platforma Obywatelska (EPP)']).to eq(19 + 1)
     expect(seats['Prawo i Sprawiedliwość (ECR)']).to eq(19)
     expect(seats['Sojusz Lewicy Demokratycznej–Unia Pracy (S&D)']).to eq(5)
     expect(seats['Kongres Nowej Prawicy (ENF)']).to eq(4)

@@ -59,7 +59,7 @@ module Sapor
                    'Socialistische Partij (GUE/NGL)'],
                   ['Partij voor de Vrijheid (ID)']].freeze
 
-    NO_OF_SEATS = 26
+    NO_OF_SEATS = 29
 
     # Voter turnout on 23 May 2019
     # Source: Web page with the official results of the elections of 23 May
