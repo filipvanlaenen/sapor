@@ -19,7 +19,7 @@
 
 module Sapor
   #
-  # The regional data for the European Union: Poland.
+  # The regional data for the European Union: Romania.
   #
   class EuropeanUnionRomania < Area
     include Singleton
@@ -56,7 +56,7 @@ module Sapor
                   ['Partidul Social Democrat (S&D)',
                    'PRO România (S&D)']].freeze
 
-    NO_OF_SEATS = 32
+    NO_OF_SEATS = 33
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May

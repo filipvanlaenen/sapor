@@ -45,7 +45,7 @@ module Sapor
     end
 
     private
-
+    
     COALITIONS = [['Dobrá voľba (*)', 'VLASŤ (*)'],
                   ['Kotleba–Ľudová strana Naše Slovensko (NI)'],
                   ['Kresťanskodemokratické hnutie (EPP)', 'MOST–HÍD (EPP)',
@@ -58,7 +58,7 @@ module Sapor
                   ['SME RODINA (ID)'],
                   ['SMER–sociálna demokracia (S&D)']].freeze
 
-    NO_OF_SEATS = 13
+    NO_OF_SEATS = 14
 
     # Voter turnout on 25 May 2019
     # Source: Web page with the official results of the elections of 25 May
@@ -72,8 +72,7 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = LargestRemainder.new(NO_OF_SEATS,
                                                  HagenbachBischoffQuota,
-                                                 THRESHOLD,
-                                                 false, 0, false)
+                                                 THRESHOLD, false, 0, false)
       end
       @electoral_system
     end

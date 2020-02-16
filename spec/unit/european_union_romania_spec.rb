@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionRomania, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionRomania, '#no_of_seats' do
-  it 'returns 32 as the number of seats' do
-    expect(Sapor::EuropeanUnionRomania.instance.no_of_seats).to eq(32)
+  it 'returns 33 as the number of seats' do
+    expect(Sapor::EuropeanUnionRomania.instance.no_of_seats).to eq(33)
   end
 end
 
@@ -51,7 +51,7 @@ describe Sapor::EuropeanUnionRomania, '#seats' do
                 'Forța Civică (EPP)' => 145_181,
                 'Partidul Ecologist Român (—)' => 64_232 }
     seats = Sapor::EuropeanUnionRomania.instance.seats(results)
-    expect(seats['Uniunea Social Democrată (S&D)']).to eq(15)
+    expect(seats['Uniunea Social Democrată (S&D)']).to eq(15 + 1)
     # Uniunea Social Democrata got in reality the extra seat from Mircea Diaconu
     expect(seats['Partidul Național Liberal (ALDE)']).to eq(6)
     expect(seats['Partidul Democrat Liberal (EPP)']).to eq(5)

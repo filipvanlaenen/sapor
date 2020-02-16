@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionSlovakia, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionSlovakia, '#no_of_seats' do
-  it 'returns 13 as the number of seats' do
-    expect(Sapor::EuropeanUnionSlovakia.instance.no_of_seats).to eq(13)
+  it 'returns 14 as the number of seats' do
+    expect(Sapor::EuropeanUnionSlovakia.instance.no_of_seats).to eq(14)
   end
 end
 
@@ -74,10 +74,10 @@ describe Sapor::EuropeanUnionSlovakia, '#seats' do
                   ' Kereszténydemokrata Szövetség (Greens/EFA)' => 1_170,
                 'Nový parlament (—)' => 900 }
     seats = Sapor::EuropeanUnionSlovakia.instance.seats(results)
-    expect(seats['SMER–sociálna demokracia (S&D)']).to eq(4)
-    expect(seats['Kresťanskodemokratické hnutie (EPP)']).to eq(2)
+    expect(seats['SMER–sociálna demokracia (S&D)']).to eq(4 + 1)
+    expect(seats['Kresťanskodemokratické hnutie (EPP)']).to eq(2 + 1)
     expect(seats['Slovenská demokratická a kresťanská únia–Demokratická' \
-                 ' strana (EPP)']).to eq(2)
+                 ' strana (EPP)']).to eq(2 - 1)
     expect(seats['OBYČAJNÍ ĽUDIA a nezávislé osobnosti (ECR)']).to eq(1)
     expect(seats['NOVA–Konzervatívni demokrati Slovenska–Občianska' \
                  ' konzervatívna strana (ECR)']).to eq(1)

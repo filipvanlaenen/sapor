@@ -46,8 +46,6 @@ module Sapor
                             EuropeanUnion27Italy.instance,
                             EuropeanUnion27Netherlands.instance,                            
                             EuropeanUnion27Poland.instance,
-                            EuropeanUnion27Romania.instance,
-                            EuropeanUnion27Slovakia.instance,
                             EuropeanUnion27Spain.instance,
                             EuropeanUnionAustria.instance,
                             EuropeanUnionBulgaria.instance,
