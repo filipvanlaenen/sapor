@@ -23,12 +23,13 @@ module Sapor
   #
   class SingleDistrictProportional
     def initialize(no_of_seats, denominators_class, threshold = 0, bonus = 0,
-                   coalition_list_threshold = 1, coalition_lists = [],
-                   minority_lists = [])
+                   other_eligible = true, coalition_list_threshold = 1,
+                   coalition_lists = [], minority_lists = [])
       @no_of_seats = no_of_seats
       @denominators_class = denominators_class
       @threshold = threshold
       @bonus = bonus
+      @other_eligible = other_eligible
       @coalition_list_threshold = coalition_list_threshold
       @coalition_lists = coalition_lists
       @minority_lists = minority_lists
@@ -71,6 +72,7 @@ module Sapor
     def quotients(votes, threshold, coalition_list_threshold)
       quotients = []
       votes.each_pair do |choice, new_value|
+        next if choice == OTHER && !@other_eligible
         next unless @minority_lists.include?(choice) ||
                     @coalition_lists.include?(choice) &&
                     new_value >= coalition_list_threshold ||

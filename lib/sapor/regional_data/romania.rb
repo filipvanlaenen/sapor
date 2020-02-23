@@ -97,7 +97,7 @@ module Sapor
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(
-          NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0,
+          NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false,
           COALITION_LIST_THRESHOLD, COALITION_LISTS, MINORITY_LISTS
         )
       end
