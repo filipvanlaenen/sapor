@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -22,16 +22,23 @@ module Sapor
   # Class representing a proportional electoral system with only one district.
   #
   class SingleDistrictProportional
-    def initialize(no_of_seats, denominators_class, threshold = 0, bonus = 0)
+    def initialize(no_of_seats, denominators_class, threshold = 0, bonus = 0,
+                   coalition_list_threshold = 1, coalition_lists = [],
+                   minority_lists = [])
       @no_of_seats = no_of_seats
       @denominators_class = denominators_class
       @threshold = threshold
       @bonus = bonus
+      @coalition_list_threshold = coalition_list_threshold
+      @coalition_lists = coalition_lists
+      @minority_lists = minority_lists
     end
 
     def project(simulation)
-      threshold = simulation.values.inject(:+).to_f * @threshold
-      quotients = quotients(simulation, threshold)
+      votes_sum = simulation.values.inject(:+).to_f
+      threshold = votes_sum * @threshold
+      coalition_list_threshold = votes_sum * @coalition_list_threshold
+      quotients = quotients(simulation, threshold, coalition_list_threshold)
       sorted_quotients = quotients.sort { |a, b| b.last <=> a.last }
       seats = sorted_quotients.map(&:first).slice(0, @no_of_seats)
       result = create_empty_result(simulation)
@@ -46,7 +53,7 @@ module Sapor
       simulation.each_key do |choice|
         result[choice] = 0
       end
-      result[simulation.max { |a, b| a.last <=> b.last }[0]] = @bonus
+      result[simulation.max_by(&:last)[0]] = @bonus
       result[OTHER] = 0
       result
     end
@@ -61,10 +68,14 @@ module Sapor
       end
     end
 
-    def quotients(votes, threshold)
+    def quotients(votes, threshold, coalition_list_threshold)
       quotients = []
       votes.each_pair do |choice, new_value|
-        next if new_value < threshold
+        next unless @minority_lists.include?(choice) ||
+                    @coalition_lists.include?(choice) &&
+                    new_value >= coalition_list_threshold ||
+                    !@coalition_lists.include?(choice) &&
+                    new_value >= threshold
         @denominators_class.get(@no_of_seats).each do |d|
           quotients << [choice, new_value.to_f / d]
         end
