@@ -50,7 +50,7 @@ module Sapor
     private
 
     A2020_COALITION = 'Alianța 2020 USR-PLUS'.freeze
-    ALDE_PARTY = 'Alianța Liberalilor și Democraților'.freeze
+    ALDE_PARTY = 'Partidul Alianța Liberalilor și Democraților'.freeze
     # PLUS_PARTY = 'Partidul Libertății, Unității și Solidarității'.freeze
     PMP_PARTY = 'Partidul Mișcarea Populară'.freeze
     PNL_PARTY = 'Partidul Național Liberal'.freeze

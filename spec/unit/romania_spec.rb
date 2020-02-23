@@ -44,7 +44,7 @@ describe Sapor::Romania, '#seats' do
                 'Partidul Național Liberal' => 1_412_377,
                 'Uniunea Salvați România' => 625_154,
                 'Uniunea Democrată Maghiară din România' => 435_969,
-                'Alianța Liberalilor și Democraților' => 396_386,
+                'Partidul Alianța Liberalilor și Democraților' => 396_386,
                 'Partidul Mișcarea Populară' => 376_891,
                 'Partidul România Unită' => 196_397,
                 'Partidul România Mare' => 73_264,
@@ -57,7 +57,7 @@ describe Sapor::Romania, '#seats' do
     expect(seats['Partidul Național Liberal']).to eq(69 - 1)
     expect(seats['Uniunea Salvați România']).to eq(30)
     expect(seats['Uniunea Democrată Maghiară din România']).to eq(21)
-    expect(seats['Alianța Liberalilor și Democraților']).to eq(20 - 1)
+    expect(seats['Partidul Alianța Liberalilor și Democraților']).to eq(20 - 1)
     expect(seats['Partidul Mișcarea Populară']).to eq(18)
     expect(seats['Partidul România Unită']).to eq(0)
     expect(seats['Partidul România Mare']).to eq(0)
