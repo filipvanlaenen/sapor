@@ -51,7 +51,7 @@ module Sapor
                    'Coligação Democrática Unitária (GUE/NGL)'],
                   ['CDS–Partido Popular (EPP)',
                    'Partido Social Democrata (EPP)'],
-                  ['Chega (ECR)'],
+                  ['Chega (ID)'],
                   ['Partido Socialista (S&D)'],
                   ['LIVRE (Greens/EFA)',
                    'Pessoas–Animais–Natureza (Greens/EFA)']].freeze
