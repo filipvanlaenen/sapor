@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -39,7 +39,7 @@ describe Sapor::Germany, '#population_size' do
 end
 
 describe Sapor::Germany, '#seats' do
-  it 'calculates the number of seats for the election of 2014' do
+  it 'calculates the number of seats for the election of 2017' do
     results = { 'Christlich Demokratische Union Deutschlands' => 12_447_656,
                 'Sozialdemokratische Partei Deutschlands' => 9_539_381,
                 'Alternative für Deutschland' => 5_878_115,
@@ -48,7 +48,7 @@ describe Sapor::Germany, '#seats' do
                 'Bündnis 90/Die Grünen' => 4_158_400,
                 'Christlich-Soziale Union in Bayern' => 2_869_688,
                 'Freie Wähler' => 463_292,
-                'Die PARTEI' => 454_349, 
+                'Die PARTEI' => 454_349,
                 'Partei Mensch Umwelt Tierschutz' => 374_179,
                 'Nationaldemokratische Partei Deutschlands' => 176_020,
                 'Piratenpartei Deutschland' => 173_476,
@@ -109,5 +109,29 @@ describe Sapor::Germany, '#seats' do
     expect(seats['Sozialistische Gleichheitspartei']).to eq(0)
     expect(seats['Bergpartei, die Überpartei']).to eq(0)
     expect(seats['Partei der Vernunft']).to eq(0)
+  end
+
+  it 'calculates the number of seats for the election of 2017' do
+    results = { 'Christlich Demokratische Union Deutschlands' => 12_447_656,
+                'Sozialdemokratische Partei Deutschlands' => 9_539_381,
+                'Alternative für Deutschland' => 5_878_115,
+                'Freie Demokratische Partei' => 4_999_449,
+                'Die Linke' => 4_297_270,
+                'Bündnis 90/Die Grünen' => 4_158_400,
+                'Christlich-Soziale Union in Bayern' => 2_869_688,
+                'Other' => 463_292 + 454_349 + 374_179 + 176_020 + 173_476 +
+                           144_809 + 97_539 + 64_073 + 63_203 + 60_914 +
+                           58_037 + 41_251 + 32_221 + 18_198 + 23_404 + 11_558 +
+                           11_661 + 10_009 + 9_631 + 6_693 + 5_991 + 5_617 +
+                           3_032 + 2_054 + 1_291 + 911 + 533 }
+    seats = Sapor::Germany.instance.seats(results)
+    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200)
+    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153)
+    expect(seats['Alternative für Deutschland']).to eq(94)
+    expect(seats['Freie Demokratische Partei']).to eq(80)
+    expect(seats['Die Linke']).to eq(69)
+    expect(seats['Bündnis 90/Die Grünen']).to eq(67)
+    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46)
+    expect(seats['Other']).to eq(0)
   end
 end

@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -49,7 +48,7 @@ module Sapor
     end
 
     private
-    
+
     AFD_PARTY = 'Alternative für Deutschland'.freeze
     CDU_PARTY = 'Christlich Demokratische Union Deutschlands'.freeze
     CSU_PARTY = 'Christlich-Soziale Union in Bayern'.freeze
@@ -78,13 +77,13 @@ module Sapor
     # 2017, downloaded on 13 March 2020,
     # https://en.wikipedia.org/wiki/2017_German_federal_election
     POPULATION_SIZE = 46_976_341
-    
+
     THRESHOLD = 0.05
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(
-          NO_OF_SEATS, SainteLagueDenominators, THRESHOLD
+          NO_OF_SEATS, SainteLagueDenominators, THRESHOLD, 0, false
         )
       end
       @electoral_system
