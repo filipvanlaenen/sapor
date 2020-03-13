@@ -87,11 +87,11 @@ module Sapor
      POLISH_AREAS + PORTUGUESE_AREAS + \
      [Austria.instance, Catalonia.instance, CataloniaWithVox.instance,
       Estonia.instance, Finland.instance, FinlandWithSin.instance,
-      France.instance, Greece.instance, Hungary.instance, Iceland.instance,
-      IcelandWithJ.instance, Ireland.instance, Latvia.instance,
-      Luxembourg.instance, Netherlands.instance, Romania.instance,
-      Slovakia.instance, Slovenia.instance, Spain.instance, Sweden.instance,
-      Sweden20140914.instance, UnitedKingdom.instance,
+      France.instance, Germany.instance, Greece.instance, Hungary.instance,
+      Iceland.instance, IcelandWithJ.instance, Ireland.instance,
+      Latvia.instance, Luxembourg.instance, Netherlands.instance,
+      Romania.instance, Slovakia.instance, Slovenia.instance, Spain.instance,
+      Sweden.instance, Sweden20140914.instance, UnitedKingdom.instance,
       UnitedKingdomWithBrexit.instance, UnitedKingdomWithBrexitAndChuk.instance,
       UnitedKingdomWithTig.instance, Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
