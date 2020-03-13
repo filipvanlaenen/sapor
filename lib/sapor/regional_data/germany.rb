@@ -50,11 +50,26 @@ module Sapor
 
     private
     
+    AFD_PARTY = 'Alternative für Deutschland'.freeze
     CDU_PARTY = 'Christlich Demokratische Union Deutschlands'.freeze
     CSU_PARTY = 'Christlich-Soziale Union in Bayern'.freeze
+    FDP_PARTY = 'Freie Demokratische Partei'.freeze
+    GRUNEN_PARTY = 'Bündnis 90/Die Grünen'.freeze
+    LINKEN_PARTY = 'Die Linke'.freeze
     SPD_PARTY = 'Sozialdemokratische Partei Deutschlands'.freeze
 
-    COALITIONS = [[CDU_PARTY, CSU_PARTY, SPD_PARTY]].freeze
+    COALITIONS = [[AFD_PARTY, CDU_PARTY, CSU_PARTY],
+                  [AFD_PARTY, CDU_PARTY, CSU_PARTY, FDP_PARTY],
+                  [CDU_PARTY, CSU_PARTY, FDP_PARTY],
+                  [CDU_PARTY, CSU_PARTY, FDP_PARTY, GRUNEN_PARTY],
+                  [CDU_PARTY, CSU_PARTY, FDP_PARTY, SPD_PARTY],
+                  [CDU_PARTY, CSU_PARTY, GRUNEN_PARTY],
+                  [CDU_PARTY, CSU_PARTY, GRUNEN_PARTY, SPD_PARTY],
+                  [CDU_PARTY, CSU_PARTY, SPD_PARTY],
+                  [FDP_PARTY, GRUNEN_PARTY, SPD_PARTY],
+                  [GRUNEN_PARTY, LINKEN_PARTY, SPD_PARTY],
+                  [GRUNEN_PARTY, SPD_PARTY],
+                  [LINKEN_PARTY, SPD_PARTY]].freeze
 
     NO_OF_SEATS = 709
 
