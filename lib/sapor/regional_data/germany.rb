@@ -66,6 +66,7 @@ module Sapor
                   [CDU_PARTY, CSU_PARTY, GRUNEN_PARTY, SPD_PARTY],
                   [CDU_PARTY, CSU_PARTY, SPD_PARTY],
                   [FDP_PARTY, GRUNEN_PARTY, SPD_PARTY],
+                  [FDP_PARTY, SPD_PARTY],
                   [GRUNEN_PARTY, LINKEN_PARTY, SPD_PARTY],
                   [GRUNEN_PARTY, SPD_PARTY],
                   [LINKEN_PARTY, SPD_PARTY]].freeze
