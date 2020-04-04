@@ -40,15 +40,27 @@ module Sapor
       votes_sum = simulation.values.inject(:+).to_f
       threshold = votes_sum * @threshold
       coalition_list_threshold = votes_sum * @coalition_list_threshold
-      quotients = quotients(simulation, threshold, coalition_list_threshold)
-      sorted_quotients = quotients.sort { |a, b| b.last <=> a.last }
-      seats = sorted_quotients.map(&:first).slice(0, @no_of_seats)
+      counters = create_counters(simulation, threshold, coalition_list_threshold)
       result = create_empty_result(simulation)
-      add_seats_to_result(result, seats)
+      fill_result(counters, result)
       result
     end
 
     private
+
+    def create_counters(simulation, threshold, coalition_list_threshold)
+      counters = []
+      simulation.each_pair do |choice, new_value|
+        next if choice == OTHER && !@other_eligible
+        next unless @minority_lists.include?(choice) ||
+                    @coalition_lists.include?(choice) &&
+                    new_value >= coalition_list_threshold ||
+                    !@coalition_lists.include?(choice) &&
+                    new_value >= threshold
+        counters << [choice, new_value.to_f, 0, new_value.to_f / @denominators[0]]
+      end
+      counters
+    end
 
     def create_empty_result(simulation)
       result = {}
@@ -60,32 +72,18 @@ module Sapor
       result
     end
 
-    def add_seats_to_result(result, seats)
-      seats.each do |seat|
+    def fill_result(counters, result)
+      @no_of_seats.times do
+        next_seat = counters.max_by(&:last)
+        seat = next_seat.first
         if result.key?(seat)
           result[seat] += 1
         else
           result[seat] = 1
         end
+        next_seat[2] = next_seat[2] + 1
+        next_seat[3] = next_seat[1] / @denominators[next_seat[2]]
       end
-    end
-
-    def quotients(votes, threshold, coalition_list_threshold)
-      quotients = []
-      effective_threshold = votes.values.max.to_f / @denominators.last
-      votes.each_pair do |choice, new_value|
-        next if choice == OTHER && !@other_eligible
-        next unless @minority_lists.include?(choice) ||
-                    @coalition_lists.include?(choice) &&
-                    new_value >= coalition_list_threshold ||
-                    !@coalition_lists.include?(choice) &&
-                    new_value >= threshold
-        @denominators.each do |d|
-          break if new_value.to_f / d < effective_threshold
-          quotients << [choice, new_value.to_f / d]
-        end
-      end
-      quotients
     end
   end
 end

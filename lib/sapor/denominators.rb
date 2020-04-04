@@ -22,7 +22,7 @@ module Sapor
   #
   class DhondtDenominators
     def self.get(size)
-      Range.new(1, size)
+      Range.new(1, size).to_a
     end
   end
 
