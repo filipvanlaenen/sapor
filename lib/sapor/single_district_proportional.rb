@@ -33,6 +33,7 @@ module Sapor
       @coalition_list_threshold = coalition_list_threshold
       @coalition_lists = coalition_lists
       @minority_lists = minority_lists
+      @denominators = @denominators_class.get(@no_of_seats)
     end
 
     def project(simulation)
@@ -71,6 +72,7 @@ module Sapor
 
     def quotients(votes, threshold, coalition_list_threshold)
       quotients = []
+      effective_threshold = votes.values.max.to_f / @denominators.last
       votes.each_pair do |choice, new_value|
         next if choice == OTHER && !@other_eligible
         next unless @minority_lists.include?(choice) ||
@@ -78,7 +80,8 @@ module Sapor
                     new_value >= coalition_list_threshold ||
                     !@coalition_lists.include?(choice) &&
                     new_value >= threshold
-        @denominators_class.get(@no_of_seats).each do |d|
+        @denominators.each do |d|
+          break if new_value.to_f / d < effective_threshold
           quotients << [choice, new_value.to_f / d]
         end
       end

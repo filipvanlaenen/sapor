@@ -100,10 +100,13 @@ module Sapor
     def local_quotients(local_votes, local_threshold, no_of_seats,
                         allowed_parties)
       local_quotients = []
+      denominators = @denominators_class.get(no_of_seats)
+      effective_threshold = local_votes.values.max.to_f / denominators.last
       local_votes.each_pair do |choice, new_value|
         next unless allowed_parties.empty? || allowed_parties.include?(choice)
         next if new_value < local_threshold
-        @denominators_class.get(no_of_seats).each do |d|
+        denominators.each do |d|
+          break if new_value.to_f / d < effective_threshold
           local_quotients << [choice, new_value.to_f / d]
         end
       end
