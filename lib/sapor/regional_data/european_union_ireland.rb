@@ -1,4 +1,3 @@
-# encoding: utf-8
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -46,9 +45,10 @@ module Sapor
 
     private
 
-    COALITIONS = [['Catholic Democrats (*)', 'Direct Democracy Ireland (*)',
-                   'Fís Nua (*)', 'Independent Alliance (*)',
-                   'Independents (*)', 'Renua Ireland (*)'],
+    COALITIONS = [['Aontú (*)', 'Catholic Democrats (*)',
+                   'Direct Democracy Ireland (*)', 'Fís Nua (*)',
+                   'Independent Alliance (*)', 'Independents (*)',
+                   'Renua Ireland (*)'],
                   ['Fianna Fáil (RE)'],
                   ['Fine Gael (EPP)'],
                   ['Green Party (Greens/EFA)'],
@@ -64,12 +64,13 @@ module Sapor
     POPULATION_SIZE = 1_678_003
 
     SEAT_DISTRIBUTION = { 'Dublin' => 4, 'Midlands–North-West' => 4,
-                          'South' => 5 }
+                          'South' => 5 }.freeze
 
     def election_results_of_2019
       if @election_results_of_2019.nil?
         @election_results_of_2019 = load_election_results( \
-          'european-union-ireland-20190524.psv')
+          'european-union-ireland-20190524.psv'
+        )
       end
       @election_results_of_2019
     end
@@ -80,7 +81,8 @@ module Sapor
           overall_election_results_of_2019,
           election_results_of_2019,
           SEAT_DISTRIBUTION,
-          DhondtDenominators)
+          DhondtDenominators
+        )
       end
       @electoral_system
     end
@@ -91,6 +93,25 @@ module Sapor
           summarize_election_results(election_results_of_2019)
       end
       @overall_election_results_of_2019
+    end
+  end
+
+  #
+  # Extension of Ireland as a constituency to the European Parliament with
+  # Aontú.
+  #
+  class EuropeanUnionIrelandWithAon < EuropeanUnionIreland
+    def area_code
+      'EU[IE]∪{Aon}'
+    end
+
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results( \
+          'european-union-ireland-20190524-with-aon.psv'
+        )
+      end
+      @election_results_of_2019
     end
   end
 end

@@ -1,0 +1,58 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: "Live results from the 2019 Local Elections and European Elections | RTÉ".
+# Retrieved on 22 June 2019.
+# URL: https://www.rte.ie/news/elections-2019/results/#/european/
+
+# Changes:
+# Added Aontú (*) as a copy of Sinn Féin (GUE/NGL) 
+
+Dublin | Fine Gael (EPP)                           | 75,540
+Dublin | Green Party (Greens/EFA)                  | 63,849
+Dublin | Fianna Fáil (RE)                          | 51,420
+Dublin | Independents 4 Change (GUE/NGL)           | 42,305
+Dublin | Sinn Féin (GUE/NGL)                       | 39,387
+Dublin | Aontú (*)                                 | 39,387
+Dublin | Social Democrats (S&D)                    | 20,331
+Dublin | Labour Party (S&D)                        | 18,293
+Dublin | Solidarity–People Before Profit (GUE/NGL) | 15,831
+Dublin | Workers’ Party (NI)                       |  3,701
+Dublin | Independents (*)                          | 33,290
+
+Midlands–North-West | Fine Gael (EPP)                           | 199,130
+Midlands–North-West | Sinn Féin (GUE/NGL)                       |  77,619
+Midlands–North-West | Aontú (*)                                 |  77,619
+Midlands–North-West | Fianna Fáil (RE)                          |  73,034
+Midlands–North-West | Green Party (Greens/EFA)                  |  51,019
+Midlands–North-West | Labour Party (S&D)                        |  12,378
+Midlands–North-West | Solidarity–People Before Profit (GUE/NGL) |   8,130
+Midlands–North-West | Renua Ireland (*)                         |   6,897
+Midlands–North-West | Direct Democracy Ireland (*)              |   1,352
+Midlands–North-West | Independents (*)                          | 165,368
+
+South | Fine Gael (EPP)                           | 221,789
+South | Fianna Fáil (RE)                          | 153,251
+South | Independents 4 Change (GUE/NGL)           |  81,780
+South | Sinn Féin (GUE/NGL)                       |  78,995
+South | Aontú (*)                                 |  78,995
+South | Green Party (Greens/EFA)                  |  75,887
+South | Labour Party (S&D)                        |  22,082
+South | Solidarity–People Before Profit (GUE/NGL) |  14,810         
+South | Identity Ireland (*)                      |   3,685
+South | Direct Democracy Ireland (*)              |   1,421
+South | Independents (*)                          |  65,429
