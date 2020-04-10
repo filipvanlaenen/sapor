@@ -21,14 +21,17 @@ module Sapor
   # district.
   #
   class LargestRemainder
-    def initialize(no_of_seats, quota_class, threshold = 0, full_quota = false,
-                   bonus = 0, other_eligible = true)
+    def initialize(no_of_seats, quota_class, party_list_threshold = 0,
+                   full_quota = false, bonus = 0, other_eligible = true,
+                   coalition_list_threshold = 0, coalition_lists = [])
       @no_of_seats = no_of_seats
       @quota_class = quota_class
-      @threshold = threshold
       @full_quota = full_quota
       @bonus = bonus
       @other_eligible = other_eligible
+      @party_list_threshold = party_list_threshold
+      @coalition_list_threshold = coalition_list_threshold
+      @coalition_lists = coalition_lists
     end
 
     def project(simulation)
@@ -62,10 +65,22 @@ module Sapor
     end
 
     def apply_threshold(simulation)
-      threshold = simulation.values.inject(:+).to_f * @threshold
+      values_sum = simulation.values.inject(:+)
+      party_list_threshold = values_sum.to_f * @party_list_threshold
+      coalition_list_threshold = values_sum.to_f * @coalition_list_threshold
       thresholded_simulation = {}
       simulation.each_pair do |choice, votes|
-        thresholded_simulation[choice] = votes >= threshold ? votes : 0
+        thresholded_simulation[choice] = if @coalition_lists.include?(choice)
+                                           if votes >= coalition_list_threshold
+                                             votes
+                                           else
+                                             0
+                                           end
+                                         elsif votes >= party_list_threshold
+                                           votes
+                                         else
+                                           0
+                                         end
       end
       thresholded_simulation[OTHER] = 0 unless @other_eligible
       thresholded_simulation

@@ -48,7 +48,7 @@ module Sapor
     end
 
     private
-    
+
     KDH_PARTY = 'Kresťanskodemokratické hnutie'.freeze
     LSNS_PARTY = 'Kotleba–Ľudová strana Naše Slovensko'.freeze
     MH_PARTY = 'MOST–HÍD'.freeze
@@ -60,7 +60,7 @@ module Sapor
     SNS_PARTY = 'Slovenská národná strana'.freeze
     SR_PARTY = 'SME RODINA'.freeze
     ZL_PARTY = 'Za ľudí'.freeze
-    
+
     COALITIONS = [[KDH_PARTY, OLANO_PARTY, PS_SPOLU_PARTY, SAS_PARTY, SR_PARTY,
                    ZL_PARTY],
                   [KDH_PARTY, MH_PARTY, OLANO_PARTY, PS_SPOLU_PARTY, SAS_PARTY,
@@ -96,13 +96,16 @@ module Sapor
 
     PARTY_LIST_THRESHOLD = 0.05
     COALITION_LIST_THRESHOLD = 0.07
+    COALITION_LISTS = [PS_SPOLU_PARTY].freeze
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = LargestRemainder.new(NO_OF_SEATS,
                                                  HagenbachBischoffQuota,
                                                  PARTY_LIST_THRESHOLD,
-                                                 false, 0, false)
+                                                 false, 0, false,
+                                                 COALITION_LIST_THRESHOLD,
+                                                 COALITION_LISTS)
       end
       @electoral_system
     end
