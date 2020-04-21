@@ -49,6 +49,7 @@ module Sapor
     COALITIONS = [['Hrvatska demokratska zajednica (EPP)'],
                   ['Amsterdamska koalicija (RE)',
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
+                   'Hrvatska seljačka stranka (RE)',
                    'Pametno (RE)'],
                   ['Bandić Milan 365–Stranka rada i solidarnosti (*)',
                    'Stranka antikorupcije, razvoja i transparentnosti (*)'],
