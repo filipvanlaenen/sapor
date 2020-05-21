@@ -32,9 +32,9 @@ describe Sapor::EuropeanUnionCyprus, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionCyprus, '#population_size' do
-  it 'returns a population size of 258,914' do
+  it 'returns a population size of 280,935' do
     expect(Sapor::EuropeanUnionCyprus.instance.population_size).to \
-      eq(258_914)
+      eq(280_935)
   end
 end
 

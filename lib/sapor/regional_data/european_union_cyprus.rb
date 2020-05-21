@@ -47,6 +47,7 @@ module Sapor
     private
 
     COALITIONS = [['Ανορθωτικό Κόμμα Εργαζόμενου Λαού (GUE/NGL)'],
+                  ['Δημοκρατική Παράταξη (*)'],
                   ['Δημοκρατικό Κόμμα (S&D)', 'Κίνημα Σοσιαλδημοκρατών (S&D)'],
                   ['Δημοκρατικός Συναγερμός (EPP)'],
                   ['Εθνικό Λαϊκό Μέτωπο (NI)'],
@@ -56,11 +57,11 @@ module Sapor
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 25 May
-    # 2014, downloaded on 7 May 2018,
-    # https://en.wikipedia.org/wiki/European_Parliament_election,_2014_(Cyprus)
-    POPULATION_SIZE = 258_914
+    # Voter turnout on 26 May 2019
+    # Source: Web page with the official results of the elections of 26 May
+    # 2019, downloaded on 21 May 2020,
+    # https://fr.wikipedia.org/wiki/%C3%89lections_europ%C3%A9ennes_de_2019_%C3%A0_Chypre
+    POPULATION_SIZE = 280_935
 
     def electoral_system
       if @electoral_system.nil?
