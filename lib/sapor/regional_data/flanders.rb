@@ -69,21 +69,23 @@ module Sapor
     VB_PARTY = 'Vlaams Belang'.freeze
     VLD_PARTY = 'Open Vlaamse Liberalen en Democraten'.freeze
 
-    COALITIONS = [[CDV_PARTY, GROEN_PARTY, VLD_PARTY],
-                  [CDV_PARTY, GROEN_PARTY, VLD_PARTY, SPA_PARTY],
+    COALITIONS = [[CDV_PARTY, GROEN_PARTY, PVDA_PARTY, SPA_PARTY],
                   [CDV_PARTY, GROEN_PARTY, SPA_PARTY],
-                  [CDV_PARTY, GROEN_PARTY, PVDA_PARTY, SPA_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, SPA_PARTY, VLD_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, VLD_PARTY],
                   [CDV_PARTY, NVA_PARTY],
-                  [CDV_PARTY, NVA_PARTY, VLD_PARTY],
                   [CDV_PARTY, NVA_PARTY, SPA_PARTY],
-                  [CDV_PARTY, VLD_PARTY],
-                  [CDV_PARTY, VLD_PARTY, SPA_PARTY],
+                  [CDV_PARTY, NVA_PARTY, SPA_PARTY, VLD_PARTY],
+                  [CDV_PARTY, NVA_PARTY, VB_PARTY],
+                  [CDV_PARTY, NVA_PARTY, VLD_PARTY],
                   [CDV_PARTY, SPA_PARTY],
-                  [GROEN_PARTY, VLD_PARTY, SPA_PARTY],
-                  [VLD_PARTY, SPA_PARTY],
+                  [CDV_PARTY, SPA_PARTY, VLD_PARTY],
+                  [CDV_PARTY, VLD_PARTY],
+                  [GROEN_PARTY, SPA_PARTY, VLD_PARTY],
+                  [NVA_PARTY, SPA_PARTY, VLD_PARTY],
+                  [NVA_PARTY, VB_PARTY],
                   [NVA_PARTY, VLD_PARTY],
-                  [NVA_PARTY, VLD_PARTY, SPA_PARTY],
-                  [NVA_PARTY, VB_PARTY]].freeze    
+                  [SPA_PARTY, VLD_PARTY]].freeze    
 
     SEAT_DISTRIBUTION = { 'Antwerpen' => 33, 'Brussel' => 6,
                           'Limburg' => 16, 'Oost-Vlaanderen' => 27,
