@@ -21,6 +21,8 @@
 require 'net/http'
 require 'uri'
 
+TEST_RUN = true
+
 #
 # Enumerable class representing a set of constituencies.
 #
@@ -39,6 +41,7 @@ class Constituencies
       html_table = page.get_table_after_title(nation_name,
                                               HtmlDocument::HEADING3)
       instance.extract_and_add_from_html_table(html_table)
+      break if TEST_RUN
     end
     instance
   end
@@ -49,9 +52,43 @@ class Constituencies
 
   def extract_and_add_from_html_table(table)
     table.column(0).cells.each do |cell|
-      name = cell.extract_text
-      wikipedia_page_title = cell.extract_href
+      name = cell.extract_text.strip
+      wikipedia_page_title = cell.extract_href.gsub(%r{.*/}, '')
       @items << Constituency.new(name, wikipedia_page_title)
+      break if TEST_RUN
+    end
+  end
+end
+
+#
+# Class representing a constituency
+#
+class Constituency
+  def initialize(name, wikipedia_page_title)
+    @name = name
+    @wikipedia_page = WikipediaPage.new(wikipedia_page_title,
+                                        WikipediaPage::ENGLISH)
+    @election_results = {}
+  end
+
+  def local_result_as_psv
+    @election_results.map { |k, v| [@name, k.name, v].join(' | ') }.join("\n")
+  end
+
+  def extract_local_result(parties_dictionary)
+    table = @wikipedia_page.get_table_after_title('Elections in the 2010s', HtmlDocument::HEADING3)
+    table.rows.each do |row|
+      first_text = row[0].extract_text.strip
+      next if first_text == 'Party'
+      break if first_text == 'Majority'
+
+      party_name = row[1].extract_text.strip
+      unless parties_dictionary.key?(party_name)
+        raise "Party name '#{party_name}' found in constituency #{@name} missing in parties dictionary!"
+      end
+
+      votes = row[3].extract_text.strip
+      @election_results[parties_dictionary[party_name]] = votes
     end
   end
 end
@@ -62,19 +99,18 @@ end
 class ElectionResult
   OVERVIEW_PAGE_TITLE = 'Results_of_the_2019_United_Kingdom_general_election'
 
-  def download
+  def download(parties_dictionary)
     overview = WikipediaPage.new(OVERVIEW_PAGE_TITLE, WikipediaPage::ENGLISH)
     @constituencies = Constituencies.extract_from_wikipedia(overview)
     @constituencies.each do |constituency|
-      downloaded_local_result = constituency.download
-      add_downloaded_local_result(downloaded_local_result)
+      constituency.extract_local_result(parties_dictionary)
     end
   end
 
   def save(file_name)
     File.open(file_name, 'w') do |file|
       @constituencies.each do |constituency|
-        file.puts(constituency.election_result_as_psv)
+        file.puts(constituency.local_result_as_psv)
       end
     end
   end
@@ -143,6 +179,8 @@ end
 # Class representing an HTML table.
 #
 class HtmlTable
+  attr_reader :rows
+
   def initialize(content)
     @content = content
     @rows = extract_rows
@@ -244,6 +282,38 @@ class HtmlTableRow
 end
 
 #
+# Class representing a dictionary mapping keys to the parties
+#
+class PartiesDictionary
+  def initialize
+    @map = {}
+  end
+
+  def [](key)
+    @map[key]
+  end
+
+  def key?(key)
+    @map.key?(key)
+  end
+
+  def register(name, key)
+    @map[key] = Party.new(name)
+  end
+end
+
+#
+# Class representing a party
+#
+class Party
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+#
 # Class representing a web page
 #
 class WebPage
@@ -306,10 +376,16 @@ class WikipediaPage < WebPage
   end
 end
 
+parties_dictionary = PartiesDictionary.new
+parties_dictionary.register('Conservative Party', 'Conservative')
+parties_dictionary.register('Green Party', 'Green')
+parties_dictionary.register('Labour Party', 'Labour')
+parties_dictionary.register('Liberal Democrats', 'Liberal Democrats')
+
 puts 'Starting to download the 2019 election result from Wikipedia...'
 
 election_result = ElectionResult.new
-election_result.download
+election_result.download(parties_dictionary)
 election_result.save('great-britain-20191212.psv')
 
 puts 'Done.'
