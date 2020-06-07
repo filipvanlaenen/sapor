@@ -106,8 +106,8 @@ class HtmlDocument
       remaining_content = remaining_content.match(%r{</#{level}>(.*)}m)[1]
       next unless title_content == title
 
-      remaining_content = remaining_content.match(/(<table[^>]*>.*)/m)[1]
-      return HtmlTable.new(remaining_content.match(%r{(.+?</table>)}m)[1])
+      table_with_content = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
+      return HtmlTable.new(table_with_content)
     end
     raise "Couldn't find the title '#{title}' with level #{level} in #{@uri}!"
   end
@@ -118,24 +118,24 @@ class HtmlDocument
     new_content = ''
     remaining_content = @content
     while remaining_content =~ /<span[^>]*>/m
-      match = remaining_content.match(/(.*?)(<span[^>]*>)(.*)/m)
-      new_content += match[1]
-      span = match[2]
-      unless span =~ /class="#{span_class}"/m
-        new_content += span
-        remaining_content = match[3]
-        next
-      end
-      remaining_content = match[3]
-      match = remaining_content.match(%r{(.*?)</span>(.*)}m)
-      new_content += match[1] unless delete_content
-      remaining_content = match[2]
+      additional_new_content, remaining_content = \
+        process_next_span_for_deletion(remaining_content, span_class,
+                                       delete_content)
+      new_content += additional_new_content
     end
     new_content += remaining_content
     @content = new_content
   end
-  
-  def process_next_span_for_deletion(remaining_content, span_class, delete_content)
+
+  def process_next_span_for_deletion(content, span_class, delete_content)
+    match = content.match(/(.*?)(<span[^>]*>)(.*)/m)
+    new_content = match[1]
+    span = match[2]
+    return new_content + span, match[3] unless span =~ /class="#{span_class}"/m
+
+    match = match[3].match(%r{(.*?)</span>(.*)}m)
+    new_content += match[1] unless delete_content
+    [new_content, match[2]]
   end
 end
 
