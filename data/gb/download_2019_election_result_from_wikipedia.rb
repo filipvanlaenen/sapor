@@ -36,7 +36,8 @@ class Constituencies
   def self.extract_from_wikipedia(page)
     instance = Constituencies.new
     NATION_NAMES.each do |nation_name|
-      html_table = page.get_table_after_title(nation_name, HtmlPage::HEADING3)
+      html_table = page.get_table_after_title(nation_name,
+                                              HtmlDocument::HEADING3)
       instance.extract_and_add_from_html_table(html_table)
     end
     instance
@@ -80,43 +81,61 @@ class ElectionResult
 end
 
 #
-# Class representing an HTML page
+# Class representing an HTML document
 #
-class HtmlPage
+class HtmlDocument
   HEADING3 = :h3
 
-  def initialize(uri)
-    @uri = uri
-    @body = retrieve_body
+  def initialize(content)
+    @content = content
+  end
+
+  def delete_span_class!(span_class)
+    delete_span_class_possibly_with_content!(span_class, false)
+  end
+
+  def delete_span_class_with_content!(span_class)
+    delete_span_class_possibly_with_content!(span_class, true)
   end
 
   def get_table_after_title(title, level)
-    remaining_body = @body
-    while remaining_body =~ /<#{level}[^>]*>/m
-      remaining_body = remaining_body.match(/<#{level}[^>]*>(.*)/m)[1]
-      title_body = remaining_body.match(%r{(.+?)</#{level}>}m)[1]
-      remaining_body = remaining_body.match(%r{</#{level}>(.*)}m)[1]
-      next unless title_body.include?(title)
+    remaining_content = @content
+    while remaining_content =~ /<#{level}[^>]*>/m
+      remaining_content = remaining_content.match(/<#{level}[^>]*>(.*)/m)[1]
+      title_content = remaining_content.match(%r{(.+?)</#{level}>}m)[1].strip
+      remaining_content = remaining_content.match(%r{</#{level}>(.*)}m)[1]
+      next unless title_content == title
 
-      remaining_body = remaining_body.match(/(<table[^>]*>.*)/m)[1]
-      return HtmlTable.new(remaining_body.match(%r{(.+?</table>)}m)[1])
+      remaining_content = remaining_content.match(/(<table[^>]*>.*)/m)[1]
+      return HtmlTable.new(remaining_content.match(%r{(.+?</table>)}m)[1])
     end
     raise "Couldn't find the title '#{title}' with level #{level} in #{@uri}!"
   end
 
   private
 
-  def retrieve_body
-    uri = URI.parse(@uri)
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    request = Net::HTTP::Get.new(uri.request_uri)
-    response = http.request(request)
-    unless response.code.to_i == 200
-      raise "Something unexpected happened, response code was #{response.code}!"
+  def delete_span_class_possibly_with_content!(span_class, delete_content)
+    new_content = ''
+    remaining_content = @content
+    while remaining_content =~ /<span[^>]*>/m
+      match = remaining_content.match(/(.*?)(<span[^>]*>)(.*)/m)
+      new_content += match[1]
+      span = match[2]
+      unless span =~ /class="#{span_class}"/m
+        new_content += span
+        remaining_content = match[3]
+        next
+      end
+      remaining_content = match[3]
+      match = remaining_content.match(%r{(.*?)</span>(.*)}m)
+      new_content += match[1] unless delete_content
+      remaining_content = match[2]
     end
-
-    response.body.force_encoding('utf-8')
+    new_content += remaining_content
+    @content = new_content
+  end
+  
+  def process_next_span_for_deletion(remaining_content, span_class, delete_content)
   end
 end
 
@@ -128,21 +147,65 @@ class HtmlTable
 end
 
 #
+# Class representing a web page
+#
+class WebPage
+  def initialize(uri)
+    @uri = uri
+    @html_document = retrieve_content
+  end
+
+  private
+
+  def retrieve_content
+    uri = URI.parse(@uri)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    request = Net::HTTP::Get.new(uri.request_uri)
+    response = http.request(request)
+    unless response.code.to_i == 200
+      raise "Something unexpected happened, response code was #{response.code}!"
+    end
+
+    HtmlDocument.new(response.body.force_encoding('utf-8'))
+  end
+end
+
+#
 # Class representing a Wikipedia page
 #
-class WikipediaPage < HtmlPage
+class WikipediaPage < WebPage
   ENGLISH = :en
+
+  DECORATIONS_WITH_CONTENT = %w[mw-editsection-bracket mw-editsection].freeze
+  DECORATIONS_WITHOUT_CONTENT = ['mw-headline'].freeze
 
   def initialize(title, language)
     super(calculate_uri(title, language))
+    @undecorated_html_document = undecorate(@html_document)
     @title = title
     @language = language
+  end
+
+  def get_table_after_title(title, level)
+    @undecorated_html_document.get_table_after_title(title, level)
   end
 
   private
 
   def calculate_uri(title, language)
     "https://#{language}.wikipedia.org/wiki/#{title}"
+  end
+
+  def undecorate(html_document)
+    undecorated_html_document = html_document.clone
+    DECORATIONS_WITH_CONTENT.each do |decoration|
+      undecorated_html_document.delete_span_class_with_content!(decoration)
+    end
+    DECORATIONS_WITHOUT_CONTENT.each do |decoration|
+      undecorated_html_document.delete_span_class!(decoration)
+    end
+    undecorated_html_document
   end
 end
 
