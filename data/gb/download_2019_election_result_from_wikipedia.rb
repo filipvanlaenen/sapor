@@ -176,10 +176,30 @@ end
 class HtmlTableCell
   def initialize(content)
     @content = content
+    @inner_content = extract_inner_content
   end
 
   def cell?
     @content.start_with?('<td')
+  end
+
+  def extract_href
+    return nil unless @inner_content =~ /<a[^>]*>/m
+
+    link_tag = @inner_content.match(/<a([^>]*)>/m)[1]
+    return nil unless link_tag =~ /href=\"[^\"]*\"/m
+
+    link_tag.match(/href=\"([^\"]*)\"/m)[1]
+  end
+
+  def extract_text
+    @inner_content.gsub(/<[^>]*>/m, '').strip
+  end
+
+  private
+
+  def extract_inner_content
+    @content.match(%r{<t[dh][^>]*>(.*)</t[dh]>}m)[1]
   end
 end
 
