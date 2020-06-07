@@ -35,12 +35,12 @@ class Constituencies
     @items = []
   end
 
-  def self.extract_from_wikipedia(page)
+  def self.extract_from_wikipedia(parties_dictionary, page)
     instance = Constituencies.new
     NATION_NAMES.each do |nation_name|
       html_table = page.get_table_after_title(nation_name,
                                               HtmlDocument::HEADING3)
-      instance.extract_and_add_from_html_table(html_table)
+      instance.extract_and_add_from_html_table(parties_dictionary, html_table)
       break if TEST_RUN
     end
     instance
@@ -50,11 +50,13 @@ class Constituencies
     @items.each(&block)
   end
 
-  def extract_and_add_from_html_table(table)
+  def extract_and_add_from_html_table(parties_dictionary, table)
     table.column(0).cells.each do |cell|
       name = cell.extract_text.strip
       wikipedia_page_title = cell.extract_href.gsub(%r{.*/}, '')
-      @items << Constituency.new(name, wikipedia_page_title)
+      constituency = Constituency.new(name, wikipedia_page_title)
+      constituency.extract_local_result(parties_dictionary)
+      @items << constituency
       break if TEST_RUN
     end
   end
@@ -76,20 +78,28 @@ class Constituency
   end
 
   def extract_local_result(parties_dictionary)
-    table = @wikipedia_page.get_table_after_title('Elections in the 2010s', HtmlDocument::HEADING3)
+    table = @wikipedia_page.get_table_after_title('Elections in the 2010s',
+                                                  HtmlDocument::HEADING3)
     table.rows.each do |row|
       first_text = row[0].extract_text.strip
       next if first_text == 'Party'
       break if first_text == 'Majority'
 
-      party_name = row[1].extract_text.strip
-      unless parties_dictionary.key?(party_name)
-        raise "Party name '#{party_name}' found in constituency #{@name} missing in parties dictionary!"
-      end
-
-      votes = row[3].extract_text.strip
-      @election_results[parties_dictionary[party_name]] = votes
+      extract_result_from_row(parties_dictionary, row)
     end
+  end
+
+  private
+
+  def extract_result_from_row(parties_dictionary, row)
+    party_name = row[1].extract_text.strip
+    unless parties_dictionary.key?(party_name)
+      raise "Party name '#{party_name}' found in constituency #{@name}" \
+            ' missing in parties dictionary!'
+    end
+
+    votes = row[3].extract_text.strip
+    @election_results[parties_dictionary[party_name]] = votes
   end
 end
 
@@ -101,10 +111,8 @@ class ElectionResult
 
   def download(parties_dictionary)
     overview = WikipediaPage.new(OVERVIEW_PAGE_TITLE, WikipediaPage::ENGLISH)
-    @constituencies = Constituencies.extract_from_wikipedia(overview)
-    @constituencies.each do |constituency|
-      constituency.extract_local_result(parties_dictionary)
-    end
+    @constituencies = Constituencies.extract_from_wikipedia(parties_dictionary,
+                                                            overview)
   end
 
   def save(file_name)
