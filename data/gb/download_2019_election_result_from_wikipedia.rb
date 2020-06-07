@@ -106,8 +106,8 @@ class HtmlDocument
       remaining_content = remaining_content.match(%r{</#{level}>(.*)}m)[1]
       next unless title_content == title
 
-      table_with_content = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
-      return HtmlTable.new(table_with_content)
+      table = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
+      return HtmlTable.new(table)
     end
     raise "Couldn't find the title '#{title}' with level #{level} in #{@uri}!"
   end
@@ -143,7 +143,84 @@ end
 # Class representing an HTML table.
 #
 class HtmlTable
-  def initialize(body); end
+  def initialize(content)
+    @content = content
+    @rows = extract_rows
+  end
+
+  def column(index)
+    cells = []
+    @rows.each do |row|
+      cells << row[index]
+    end
+    HtmlTableColumn.new(cells)
+  end
+
+  private
+
+  def extract_rows
+    rows = []
+    remaining_content = @content.match(%r{<table[^>]*>(.*)</table>}m)[1]
+    while remaining_content =~ /<tr[^>]*>/m
+      match = remaining_content.match(%r{(<tr[^>]*>.*?</tr>)(.*)}m)
+      rows << HtmlTableRow.new(match[1])
+      remaining_content = match[2]
+    end
+    rows
+  end
+end
+
+#
+# Class representing a cell in an HTML table.
+#
+class HtmlTableCell
+  def initialize(content)
+    @content = content
+  end
+
+  def cell?
+    @content.start_with?('<td')
+  end
+end
+
+#
+# Class representing a column in an HTML table.
+#
+class HtmlTableColumn
+  def initialize(cells)
+    @cells = cells
+  end
+
+  def cells
+    @cells.select(&:cell?)
+  end
+end
+
+#
+# Class representing a row in an HTML table.
+#
+class HtmlTableRow
+  def initialize(content)
+    @content = content
+    @cells = extract_cells
+  end
+
+  def [](index)
+    @cells[index]
+  end
+
+  private
+
+  def extract_cells
+    cells = []
+    remaining_content = @content.match(%r{<tr[^>]*>(.*)</tr>}m)[1]
+    while remaining_content =~ /<t[dh][^>]*>/m
+      match = remaining_content.match(%r{(<t[dh][^>]*>.*?</t[dh]>)(.*)}m)
+      cells << HtmlTableCell.new(match[1])
+      remaining_content = match[2]
+    end
+    cells
+  end
 end
 
 #
