@@ -41,7 +41,6 @@ class Constituencies
       html_table = page.get_table_after_title(nation_name,
                                               HtmlDocument::HEADING3)
       instance.extract_and_add_from_html_table(parties_dictionary, html_table)
-      break if TEST_RUN
     end
     instance
   end
@@ -74,7 +73,7 @@ class Constituency
   end
 
   def local_result_as_psv
-    @election_results.map { |k, v| [@name, k.name, v].join(' | ') }.join("\n")
+    @election_results.map { |k, v| [@name, k.party_name, v].join(' | ') }.join("\n")
   end
 
   def extract_local_result(parties_dictionary)
@@ -83,7 +82,7 @@ class Constituency
     table.rows.each do |row|
       first_text = row[0].extract_text.strip
       next if first_text == 'Party'
-      break if first_text == 'Majority'
+      break if ['Majority', 'Rejected ballots'].include?(first_text)
 
       extract_result_from_row(parties_dictionary, row)
     end
@@ -93,13 +92,17 @@ class Constituency
 
   def extract_result_from_row(parties_dictionary, row)
     party_name = row[1].extract_text.strip
-    unless parties_dictionary.key?(party_name)
+    votes = row[3].extract_text.strip
+    if party_name == 'Independent'
+      candidate_name = row[2].extract_text.strip
+      independent_candidate = IndependentCandidate.new(candidate_name)
+      @election_results[independent_candidate] = votes
+    elsif !parties_dictionary.key?(party_name)
       raise "Party name '#{party_name}' found in constituency #{@name}" \
             ' missing in parties dictionary!'
+    else
+      @election_results[parties_dictionary[party_name]] = votes
     end
-
-    votes = row[3].extract_text.strip
-    @election_results[parties_dictionary[party_name]] = votes
   end
 end
 
@@ -290,6 +293,19 @@ class HtmlTableRow
 end
 
 #
+# Class representing an independent candidate
+#
+class IndependentCandidate
+  def initialize(candidate_name)
+    @candidate_name = candidate_name
+  end
+
+  def party_name
+    "Independent: #{@candidate_name}"
+  end
+end
+
+#
 # Class representing a dictionary mapping keys to the parties
 #
 class PartiesDictionary
@@ -314,10 +330,10 @@ end
 # Class representing a party
 #
 class Party
-  attr_reader :name
+  attr_reader :party_name
 
-  def initialize(name)
-    @name = name
+  def initialize(party_name)
+    @party_name = party_name
   end
 end
 
@@ -385,10 +401,17 @@ class WikipediaPage < WebPage
 end
 
 parties_dictionary = PartiesDictionary.new
+parties_dictionary.register('Alliance Party of Northern Ireland', 'Alliance')
+parties_dictionary.register('Brexit Party', 'Brexit Party')
 parties_dictionary.register('Conservative Party', 'Conservative')
-parties_dictionary.register('Green Party', 'Green')
+parties_dictionary.register('Democratic Unionist Party', 'DUP')
+parties_dictionary.register('Green Party of England and Wales', 'Green')
 parties_dictionary.register('Labour Party', 'Labour')
 parties_dictionary.register('Liberal Democrats', 'Liberal Democrats')
+parties_dictionary.register('Plaid Cymru', 'Plaid Cymru')
+parties_dictionary.register('Scottish Green Party', 'Scottish Green')
+parties_dictionary.register('Scottish National Party', 'SNP')
+parties_dictionary.register('Ulster Unionist Party', 'UUP')
 
 puts 'Starting to download the 2019 election result from Wikipedia...'
 
