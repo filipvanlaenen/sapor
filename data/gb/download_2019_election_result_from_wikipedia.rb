@@ -21,7 +21,7 @@
 require 'net/http'
 require 'uri'
 
-TEST_RUN = true
+TEST_RUN = false
 
 #
 # Enumerable class representing a set of constituencies.
@@ -53,6 +53,8 @@ class Constituencies
     table.column(0).cells.each do |cell|
       name = cell.extract_text.strip
       wikipedia_page_title = cell.extract_href.gsub(%r{.*/}, '')
+      print "(#{name}) "
+      $stdout.flush
       constituency = Constituency.new(name, wikipedia_page_title)
       constituency.extract_local_result(parties_dictionary)
       @items << constituency
@@ -156,7 +158,7 @@ class HtmlDocument
       table = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
       return HtmlTable.new(table)
     end
-    raise "Couldn't find the title '#{title}' with level #{level} in #{@uri}!"
+    raise "Couldn't find the title '#{title}' on level #{level}!"
   end
 
   private
@@ -402,12 +404,15 @@ end
 
 parties_dictionary = PartiesDictionary.new
 parties_dictionary.register('Alliance Party of Northern Ireland', 'Alliance')
+parties_dictionary.register('Ashfield Independents', 'Ashfield Independents')
 parties_dictionary.register('Brexit Party', 'Brexit Party')
 parties_dictionary.register('Conservative Party', 'Conservative')
 parties_dictionary.register('Democratic Unionist Party', 'DUP')
 parties_dictionary.register('Green Party of England and Wales', 'Green')
 parties_dictionary.register('Labour Party', 'Labour')
 parties_dictionary.register('Liberal Democrats', 'Liberal Democrats')
+parties_dictionary.register('Liberal Party', 'Liberal')
+parties_dictionary.register('Official Monster Raving Loony Party', 'Monster Raving Loony')
 parties_dictionary.register('Plaid Cymru', 'Plaid Cymru')
 parties_dictionary.register('Scottish Green Party', 'Scottish Green')
 parties_dictionary.register('Scottish National Party', 'SNP')
