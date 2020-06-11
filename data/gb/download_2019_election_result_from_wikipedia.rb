@@ -75,14 +75,19 @@ class Constituency
   end
 
   def local_result_as_psv
-    @election_results.map { |k, v| [@name, k.party_name, v].join(' | ') }.join("\n")
+    lines = @election_results.map do |k, v|
+      [@name, k.party_name, v].join(' | ')
+    end
+    lines.join("\n")
   end
 
   def extract_local_result(parties_dictionary)
-    table = @wikipedia_page.get_table_with_caption_including('General election 2019')
+    table = @wikipedia_page.get_table_with_caption_including(
+      'General election 2019'
+    )
     if table.nil?
       table = @wikipedia_page.get_table_after_title('Elections in the 2010s',
-                                                  HtmlDocument::HEADING3)
+                                                    HtmlDocument::HEADING3)
     end
     if table.nil?
       table = @wikipedia_page.get_table_after_title('Elections',
@@ -166,20 +171,22 @@ class HtmlDocument
       table = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
       return HtmlTable.new(table)
     end
-    return nil
+    nil
   end
 
   def get_table_with_caption_including(text)
     remaining_content = @content
     while remaining_content =~ /<table[^>]*>/m
       table = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
-      remaining_content = remaining_content.match(/<\/table>(.*)/m)[1]
+      remaining_content = remaining_content.match(%r{</table>(.*)}m)[1]
       next unless table =~ /<caption[^>]*>/m
+
       caption = table.match(%r{(<caption[^>]*>.*?</caption>)}m)[1]
       next unless caption.include?(text)
+
       return HtmlTable.new(table)
     end
-    return nil
+    nil
   end
 
   private
@@ -344,8 +351,12 @@ class PartiesDictionary
     @map.key?(key)
   end
 
-  def register(name, key)
-    @map[key] = Party.new(name)
+  def register(name, key = nil)
+    if key.nil?
+      @map[name] = Party.new(name)
+    else
+      @map[key] = Party.new(name)
+    end
   end
 end
 
@@ -404,7 +415,7 @@ class WikipediaPage < WebPage
   def get_table_after_title(title, level)
     @undecorated_html_document.get_table_after_title(title, level)
   end
-  
+
   def get_table_with_caption_including(text)
     @undecorated_html_document.get_table_with_caption_including(text)
   end
@@ -431,42 +442,46 @@ parties_dictionary = PartiesDictionary.new
 parties_dictionary.register('Advance Together', 'Advance')
 parties_dictionary.register('Alliance Party of Northern Ireland', 'Alliance')
 parties_dictionary.register('Animal Welfare Party', 'Animal Welfare')
-parties_dictionary.register('Ashfield Independents', 'Ashfield Independents')
-parties_dictionary.register('Birkenhead Social Justice Party', 'Birkenhead Social Justice')
-parties_dictionary.register('Brexit Party', 'Brexit Party')
+parties_dictionary.register('Ashfield Independents')
+parties_dictionary.register('Birkenhead Social Justice Party',
+                            'Birkenhead Social Justice')
+parties_dictionary.register('Brexit Party')
 parties_dictionary.register('Burnley and Padiham Independent Party', 'BAPIP')
-parties_dictionary.register('Christian Peoples Alliance', 'Christian Peoples Alliance')
-parties_dictionary.register('Church of the Militant Elvis Party', 'Militant Elvis Anti-HS2')
+parties_dictionary.register('Christian Peoples Alliance')
+parties_dictionary.register('Church of the Militant Elvis Party',
+                            'Militant Elvis Anti-HS2')
 parties_dictionary.register('Conservative Party', 'Conservative')
 parties_dictionary.register('Democratic Unionist Party', 'DUP')
 parties_dictionary.register('English Democrats', 'English Democrat')
 parties_dictionary.register('Green Party of England and Wales', 'Green')
-parties_dictionary.register('Heavy Woollen District Independents', 'Heavy Woollen District Independents')
+parties_dictionary.register('Heavy Woollen District Independents')
 parties_dictionary.register('Labour and Co-operative Party', 'Labour Co-op')
 parties_dictionary.register('Labour Party', 'Labour')
-parties_dictionary.register('Liberal Democrats', 'Liberal Democrats')
+parties_dictionary.register('Liberal Democrats')
 parties_dictionary.register('Liberal Party', 'Liberal')
 parties_dictionary.register('Libertarian Party', 'Libertarian')
-parties_dictionary.register('No description', 'No description')
-parties_dictionary.register('North East Party', 'North East Party')
-parties_dictionary.register('Official Monster Raving Loony Party', 'Monster Raving Loony')
-parties_dictionary.register('Patria', 'Patria')
-parties_dictionary.register('Plaid Cymru', 'Plaid Cymru')
-parties_dictionary.register('Rebooting Democracy', 'Rebooting Democracy')
+parties_dictionary.register('No description')
+parties_dictionary.register('North East Party')
+parties_dictionary.register('Official Monster Raving Loony Party',
+                            'Monster Raving Loony')
+parties_dictionary.register('Patria')
+parties_dictionary.register('Plaid Cymru')
+parties_dictionary.register('Rebooting Democracy')
 parties_dictionary.register('Renew Party', 'Renew')
 parties_dictionary.register('Scottish Green Party', 'Scottish Green')
 parties_dictionary.register('Scottish National Party', 'SNP')
 parties_dictionary.register('Social Democratic Party', 'SDP')
-parties_dictionary.register('Space Navies Party', 'Space Navies Party')
-parties_dictionary.register('Speaker', 'Speaker')
-parties_dictionary.register('The Independent Group for Change', 'The Independent Group for Change')
-parties_dictionary.register('The Universal Good Party', 'The Universal Good Party')
+parties_dictionary.register('Space Navies Party')
+parties_dictionary.register('Speaker')
+parties_dictionary.register('The Independent Group for Change')
+parties_dictionary.register('The Universal Good Party')
 parties_dictionary.register('UK Independence Party', 'UKIP')
 parties_dictionary.register('Ulster Unionist Party', 'UUP')
 parties_dictionary.register("Women's Equality Party", "Women's Equality")
-parties_dictionary.register('Workers Revolutionary Party', 'Workers Revolutionary')
-parties_dictionary.register('Yeshua', 'Yeshua')
-parties_dictionary.register('Yorkshire Party', 'Yorkshire Party')
+parties_dictionary.register('Workers Revolutionary Party',
+                            'Workers Revolutionary')
+parties_dictionary.register('Yeshua')
+parties_dictionary.register('Yorkshire Party')
 
 puts 'Starting to download the 2019 election result from Wikipedia...'
 
