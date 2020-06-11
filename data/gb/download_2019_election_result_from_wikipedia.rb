@@ -79,8 +79,11 @@ class Constituency
   end
 
   def extract_local_result(parties_dictionary)
-    table = @wikipedia_page.get_table_after_title('Elections in the 2010s',
+    table = @wikipedia_page.get_table_with_caption_including('General election 2019')
+    if table.nil?
+      table = @wikipedia_page.get_table_after_title('Elections in the 2010s',
                                                   HtmlDocument::HEADING3)
+    end
     if table.nil?
       table = @wikipedia_page.get_table_after_title('Elections',
                                                     HtmlDocument::HEADING2)
@@ -161,6 +164,19 @@ class HtmlDocument
       next unless title_content == title
 
       table = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
+      return HtmlTable.new(table)
+    end
+    return nil
+  end
+
+  def get_table_with_caption_including(text)
+    remaining_content = @content
+    while remaining_content =~ /<table[^>]*>/m
+      table = remaining_content.match(%r{(<table[^>]*>.*?</table>)}m)[1]
+      remaining_content = remaining_content.match(/<\/table>(.*)/m)[1]
+      next unless table =~ /<caption[^>]*>/m
+      caption = table.match(%r{(<caption[^>]*>.*?</caption>)}m)[1]
+      next unless caption.include?(text)
       return HtmlTable.new(table)
     end
     return nil
@@ -388,6 +404,10 @@ class WikipediaPage < WebPage
   def get_table_after_title(title, level)
     @undecorated_html_document.get_table_after_title(title, level)
   end
+  
+  def get_table_with_caption_including(text)
+    @undecorated_html_document.get_table_with_caption_including(text)
+  end
 
   private
 
@@ -437,6 +457,7 @@ parties_dictionary.register('The Universal Good Party', 'The Universal Good Part
 parties_dictionary.register('UK Independence Party', 'UKIP')
 parties_dictionary.register('Ulster Unionist Party', 'UUP')
 parties_dictionary.register("Women's Equality Party", "Women's Equality")
+parties_dictionary.register('Workers Revolutionary Party', 'Workers Revolutionary')
 parties_dictionary.register('Yeshua', 'Yeshua')
 parties_dictionary.register('Yorkshire Party', 'Yorkshire Party')
 
