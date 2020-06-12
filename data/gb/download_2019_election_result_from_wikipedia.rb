@@ -450,6 +450,7 @@ parties_dictionary.register('Burnley and Padiham Independent Party', 'BAPIP')
 parties_dictionary.register('Christian Peoples Alliance')
 parties_dictionary.register('Church of the Militant Elvis Party',
                             'Militant Elvis Anti-HS2')
+parties_dictionary.register('Citizens Movement Party UK')
 parties_dictionary.register('Communities United Party', 'Communities United')
 parties_dictionary.register('Conservative Party', 'Conservative')
 parties_dictionary.register('Democratic Unionist Party', 'DUP')
@@ -466,12 +467,16 @@ parties_dictionary.register('North East Party')
 parties_dictionary.register('Official Monster Raving Loony Party',
                             'Monster Raving Loony')
 parties_dictionary.register('Patria')
+parties_dictionary.register('Peace Party', 'Peace')
 parties_dictionary.register('Plaid Cymru')
 parties_dictionary.register('Rebooting Democracy')
 parties_dictionary.register('Renew Party', 'Renew')
 parties_dictionary.register('Scottish Green Party', 'Scottish Green')
 parties_dictionary.register('Scottish National Party', 'SNP')
 parties_dictionary.register('Social Democratic Party', 'SDP')
+parties_dictionary.register('Socialist Labour Party', 'Socialist Labour')
+parties_dictionary.register('Socialist Party of Great Britain',
+                            'Socialist (GB)')
 parties_dictionary.register('Space Navies Party')
 parties_dictionary.register('Speaker')
 parties_dictionary.register('The Independent Group for Change')
@@ -480,11 +485,14 @@ parties_dictionary.register('The Justice & Anti-Corruption Party',
 parties_dictionary.register('The Universal Good Party')
 parties_dictionary.register('UK Independence Party', 'UKIP')
 parties_dictionary.register('Ulster Unionist Party', 'UUP')
+parties_dictionary.register("Veterans and People's Party",
+                            "Veterans and People's")
 parties_dictionary.register("Women's Equality Party", "Women's Equality")
 parties_dictionary.register('Workers Revolutionary Party',
                             'Workers Revolutionary')
 parties_dictionary.register('Yeshua')
 parties_dictionary.register('Yorkshire Party')
+parties_dictionary.register("Young People's Party UK", "Young People's")
 
 puts 'Starting to download the 2019 election result from Wikipedia...'
 
