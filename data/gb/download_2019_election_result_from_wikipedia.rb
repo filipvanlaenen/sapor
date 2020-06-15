@@ -88,10 +88,6 @@ class Constituency
       table = @wikipedia_page.get_table_after_title('Elections in the 2010s',
                                                     HtmlDocument::HEADING3)
     end
-    if table.nil?
-      table = @wikipedia_page.get_table_after_title('Elections',
-                                                    HtmlDocument::HEADING2)
-    end
     table.rows.each do |row|
       first_text = row[0].extract_text.strip
       next if first_text == 'Party'
