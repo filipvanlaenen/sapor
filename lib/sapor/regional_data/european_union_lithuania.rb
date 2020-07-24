@@ -50,12 +50,13 @@ module Sapor
                    'Lietuvos lenkų rinkimų akcija (ECR)'],
                   ['Darbo Partija (RE)', 'Laisvės partija (RE)',
                    'Liberalų Sąjūdis (RE)',
-                   'Partija tvarka ir teisingumas (RE)'],
+                   'Partija „Laisvė ir teisingumas“ (RE)'],
                   ['Lietuvos socialdemokratų darbo partija (S&D)',
                    'Lietuvos socialdemokratų partija (S&D)'],
                   ['Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
                    'Lietuvos Žaliųjų Partija (Greens/EFA)'],
-                  ['Politinė partija “Lietuvos sąrašas” (*)'],
+                  ['Partija tvarka ir teisingumas (*)',
+                   'Politinė partija “Lietuvos sąrašas” (*)'],
                   ['Tėvynės sąjunga–Lietuvos krikščionys demokratai ' \
                      '(EPP)']].freeze
 
