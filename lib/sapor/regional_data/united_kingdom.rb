@@ -25,41 +25,51 @@ module Sapor
     include Singleton
 
     def area_code
-      'UK'
+      'GB'
     end
 
+    CON_PARTY = 'Conservative Party'.freeze
+    GREEN_PARTY = 'Green Party'.freeze
+    LAB_PARTY = 'Labour Party'.freeze
+    LD_PARTY = 'Liberal Democrats'.freeze
+    PC_PARTY = 'Plaid Cymru'.freeze
+    SNP_PARTY = 'Scottish National Party'.freeze
+
     def coalitions
-      [['Conservative Party'], ['Conservative Party', 'Liberal Democrats'],
-       ['Conservative Party', 'Plaid Cymru'],
-       ['Conservative Party', 'Plaid Cymru', 'Scottish National Party'],
-       ['Conservative Party', 'Scottish National Party'],
-       ['Labour Party'], ['Labour Party', 'Liberal Democrats'],
-       ['Labour Party', 'Liberal Democrats', 'Plaid Cymru'],
-       ['Labour Party', 'Liberal Democrats', 'Plaid Cymru',
-        'Scottish National Party'],
-       ['Labour Party', 'Liberal Democrats', 'Scottish National Party'],
-       ['Labour Party', 'Plaid Cymru'],
-       ['Labour Party', 'Plaid Cymru', 'Scottish National Party'],
-       ['Labour Party', 'Scottish National Party']]
+      [[CON_PARTY],
+       [CON_PARTY, LD_PARTY],
+       [CON_PARTY, LD_PARTY, CHUK_PARTY],
+       [CON_PARTY, PC_PARTY],
+       [CON_PARTY, PC_PARTY, SNP_PARTY],
+       [CON_PARTY, SNP_PARTY],
+       [LAB_PARTY],
+       [LAB_PARTY, GREEN_PARTY, LD_PARTY, PC_PARTY, SNP_PARTY],
+       [LAB_PARTY, LD_PARTY],
+       [LAB_PARTY, LD_PARTY, PC_PARTY],
+       [LAB_PARTY, LD_PARTY, PC_PARTY, SNP_PARTY],
+       [LAB_PARTY, LD_PARTY, SNP_PARTY],
+       [LAB_PARTY, PC_PARTY],
+       [LAB_PARTY, PC_PARTY, SNP_PARTY],
+       [LAB_PARTY, SNP_PARTY]]
     end
 
     def no_of_seats
-      election_results_of_2017.size
+      election_results_of_2019.size
     end
 
-    def overall_election_results_of_2017
-      if @overall_election_results_of_2017.nil?
-        @overall_election_results_of_2017 = \
-          summarize_election_results(election_results_of_2017)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2017
+      @overall_election_results_of_2019
     end
 
     def population_size
       # Source: Wikipedia article the general election in the United Kingdom,
-      # retrieved on 17 November 2018.
-      # URL: https://en.wikipedia.org/wiki/United_Kingdom_general_election,_2017
-      32_204_124
+      # retrieved on 12 August 2020.
+      # URL: https://en.wikipedia.org/wiki/2019_United_Kingdom_general_election
+      32_014_110
     end
 
     def seats(simulation)
@@ -72,20 +82,20 @@ module Sapor
 
     private
 
-    def election_results_of_2017
-      if @election_results_of_2017.nil?
-        @election_results_of_2017 = load_election_results(
-          'united_kingdom-20170608.psv'
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'united_kingdom-20191212.psv'
         )
       end
-      @election_results_of_2017
+      @election_results_of_2019
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = FirstPastThePost.new(
-          overall_election_results_of_2017,
-          election_results_of_2017
+          overall_election_results_of_2019,
+          election_results_of_2019
         )
       end
       @electoral_system
