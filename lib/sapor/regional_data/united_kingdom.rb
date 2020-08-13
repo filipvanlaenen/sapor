@@ -39,7 +39,6 @@ module Sapor
     def coalitions
       [[CON_PARTY],
        [CON_PARTY, LD_PARTY],
-       [CON_PARTY, LD_PARTY, CHUK_PARTY],
        [CON_PARTY, PC_PARTY],
        [CON_PARTY, PC_PARTY, SNP_PARTY],
        [CON_PARTY, SNP_PARTY],
