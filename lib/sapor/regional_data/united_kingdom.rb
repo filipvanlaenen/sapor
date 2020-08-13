@@ -1,4 +1,5 @@
-# encoding: utf-8
+# frozen_string_literal: true
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -28,12 +29,12 @@ module Sapor
       'GB'
     end
 
-    CON_PARTY = 'Conservative Party'.freeze
-    GREEN_PARTY = 'Green Party'.freeze
-    LAB_PARTY = 'Labour Party'.freeze
-    LD_PARTY = 'Liberal Democrats'.freeze
-    PC_PARTY = 'Plaid Cymru'.freeze
-    SNP_PARTY = 'Scottish National Party'.freeze
+    CON_PARTY = 'Conservative Party'
+    GREEN_PARTY = 'Green Party'
+    LAB_PARTY = 'Labour Party'
+    LD_PARTY = 'Liberal Democrats'
+    PC_PARTY = 'Plaid Cymru'
+    SNP_PARTY = 'Scottish National Party'
 
     def coalitions
       [[CON_PARTY],
@@ -51,6 +52,15 @@ module Sapor
        [LAB_PARTY, PC_PARTY],
        [LAB_PARTY, PC_PARTY, SNP_PARTY],
        [LAB_PARTY, SNP_PARTY]]
+    end
+
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'united_kingdom-20191212.psv'
+        )
+      end
+      @election_results_of_2019
     end
 
     def no_of_seats
@@ -82,15 +92,6 @@ module Sapor
 
     private
 
-    def election_results_of_2019
-      if @election_results_of_2019.nil?
-        @election_results_of_2019 = load_election_results(
-          'united_kingdom-20191212.psv'
-        )
-      end
-      @election_results_of_2019
-    end
-
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = FirstPastThePost.new(
@@ -99,6 +100,26 @@ module Sapor
         )
       end
       @electoral_system
+    end
+  end
+
+  # Extension of the United Kingdom to Great Britain without the Speaker.
+  class GreatBritainWithoutSpeaker < UnitedKingdom
+    def area_code
+      'GB[GBN]\{Speaker}'
+    end
+
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'great_britain-20191212-without-speaker.psv'
+        )
+      end
+      @election_results_of_2019
+    end
+
+    def population_size
+      31_215_076
     end
   end
 end

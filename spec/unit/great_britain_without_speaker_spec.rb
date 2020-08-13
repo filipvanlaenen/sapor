@@ -20,44 +20,44 @@
 
 require 'spec_helper'
 
-describe Sapor::UnitedKingdom, '#area_code' do
-  it 'returns GB as the area code' do
-    expect(Sapor::UnitedKingdom.instance.area_code).to eq('GB')
+describe Sapor::GreatBritainWithoutSpeaker, '#area_code' do
+  it 'returns GB[GBN]\{Speaker} as the area code' do
+    expect(Sapor::GreatBritainWithoutSpeaker.instance.area_code).to eq('GB[GBN]\{Speaker}')
   end
 end
 
-describe Sapor::UnitedKingdom, '#no_of_seats' do
-  it 'returns 650 as the number of seats' do
-    expect(Sapor::UnitedKingdom.instance.no_of_seats).to eq(650)
+describe Sapor::GreatBritainWithoutSpeaker, '#no_of_seats' do
+  it 'returns 631 as the number of seats' do
+    expect(Sapor::GreatBritainWithoutSpeaker.instance.no_of_seats).to eq(650 - 18 - 1)
   end
 end
 
-describe Sapor::UnitedKingdom, '#population_size' do
-  it 'returns a population size of 32,014,110' do
-    expect(Sapor::UnitedKingdom.instance.population_size).to eq(32_014_110)
+describe Sapor::GreatBritainWithoutSpeaker, '#population_size' do
+  it 'returns a population size of 32,014,110 - 799,034' do
+    expect(Sapor::GreatBritainWithoutSpeaker.instance.population_size).to eq(32_014_110 - 799_034)
   end
 end
 
-describe Sapor::UnitedKingdom, '#seats' do
+describe Sapor::GreatBritainWithoutSpeaker, '#seats' do
   it 'calculates the number of seats for the election of 12 December 2019' do
-    uk = Sapor::UnitedKingdom.instance
+    uk = Sapor::GreatBritainWithoutSpeaker.instance
     results = uk.overall_election_results_of_2019
     seats = uk.seats(results)
     expect(seats['Conservative Party']).to eq(365)
     expect(seats['Labour Party']).to eq(202)
     expect(seats['Scottish National Party']).to eq(48)
     expect(seats['Liberal Democrats']).to eq(11)
-    expect(seats['Democratic Unionist Party']).to eq(8)
-    expect(seats['Sinn Féin']).to eq(7)
+    expect(seats['Democratic Unionist Party']).to be_nil
+    expect(seats['Sinn Féin']).to be_nil
     expect(seats['Plaid Cymru']).to eq(4)
-    expect(seats['Social Democratic and Labour Party']).to eq(2)
-    expect(seats['Alliance Party of Northern Ireland']).to eq(1)
+    expect(seats['Social Democratic and Labour Party']).to be_nil
+    expect(seats['Alliance Party of Northern Ireland']).to be_nil
     expect(seats['Green Party of England and Wales']).to eq(1)
-    expect(seats['Speaker']).to eq(1)
+    expect(seats['Speaker']).to be_nil
     expect(seats['Advance Together']).to eq(0)
     expect(seats['Alliance for Green Socialism']).to eq(0)
     expect(seats['Animal Welfare Party']).to eq(0)
-    expect(seats['Aontú']).to eq(0)
+    expect(seats['Aontú']).to be_nil
     expect(seats['Ashfield Independents']).to eq(0)
     expect(seats['Best4Luton']).to eq(0)
     expect(seats['Birkenhead Social Justice Party']).to eq(0)
@@ -73,7 +73,7 @@ describe Sapor::UnitedKingdom, '#seats' do
     expect(seats['Communities United Party']).to eq(0)
     expect(seats['Constitution and Reform']).to eq(0)
     expect(seats['English Democrats']).to eq(0)
-    expect(seats['Green Party in Northern Ireland']).to eq(0)
+    expect(seats['Green Party in Northern Ireland']).to be_nil
     expect(seats['Gwlad Gwlad']).to eq(0)
     expect(seats['Heavy Woollen District Independents']).to eq(0)
     expect(seats['Independent Network']).to eq(0)
@@ -83,14 +83,14 @@ describe Sapor::UnitedKingdom, '#seats' do
     expect(seats['Mebyon Kernow']).to eq(0)
     expect(seats['Motherworld Party']).to eq(0)
     expect(seats['North East Party']).to eq(0)
-    expect(seats['Northern Ireland Conservatives']).to eq(0)
+    expect(seats['Northern Ireland Conservatives']).to be_nil
     expect(seats['Official Monster Raving Loony Party']).to eq(0)
     expect(seats['Patria']).to eq(0)
     expect(seats['Peace Party']).to eq(0)
     expect(seats['Proud of Oldham & Saddleworth']).to eq(0)
     expect(seats['Rebooting Democracy']).to eq(0)
     expect(seats['Renew Party']).to eq(0)
-    expect(seats['People Before Profit']).to eq(0)
+    expect(seats['People Before Profit']).to be_nil
     expect(seats['Psychedelic Future']).to eq(0)
     expect(seats['Putting Cumbria First']).to eq(0)
     expect(seats['Scottish Family']).to eq(0)
@@ -107,7 +107,7 @@ describe Sapor::UnitedKingdom, '#seats' do
     expect(seats['The Universal Good Party']).to eq(0)
     expect(seats['Touch Love Worldwide']).to eq(0)
     expect(seats['UK Independence Party']).to eq(0)
-    expect(seats['Ulster Unionist Party']).to eq(0)
+    expect(seats['Ulster Unionist Party']).to be_nil
     expect(seats['Veterans and People’s Party']).to eq(0)
     expect(seats['Women’s Equality Party']).to eq(0)
     expect(seats['Workers Revolutionary Party']).to eq(0)
@@ -118,8 +118,8 @@ describe Sapor::UnitedKingdom, '#seats' do
   end
 end
 
-describe Sapor::UnitedKingdom, '#threshold' do
+describe Sapor::GreatBritainWithoutSpeaker, '#threshold' do
   it 'returns there is no threshold' do
-    expect(Sapor::UnitedKingdom.instance.threshold).to be_nil
+    expect(Sapor::GreatBritainWithoutSpeaker.instance.threshold).to be_nil
   end
 end
