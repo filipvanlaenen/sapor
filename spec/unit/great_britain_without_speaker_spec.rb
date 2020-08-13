@@ -52,7 +52,8 @@ describe Sapor::GreatBritainWithoutSpeaker, '#seats' do
     expect(seats['Plaid Cymru']).to eq(4)
     expect(seats['Social Democratic and Labour Party']).to be_nil
     expect(seats['Alliance Party of Northern Ireland']).to be_nil
-    expect(seats['Green Party of England and Wales']).to eq(1)
+    expect(seats['Green Party']).to eq(1)
+    expect(seats['Green Party of England and Wales']).to be_nil
     expect(seats['Speaker']).to be_nil
     expect(seats['Advance Together']).to eq(0)
     expect(seats['Alliance for Green Socialism']).to eq(0)
@@ -94,7 +95,7 @@ describe Sapor::GreatBritainWithoutSpeaker, '#seats' do
     expect(seats['Psychedelic Future']).to eq(0)
     expect(seats['Putting Cumbria First']).to eq(0)
     expect(seats['Scottish Family']).to eq(0)
-    expect(seats['Scottish Green Party']).to eq(0)
+    expect(seats['Scottish Green Party']).to be_nil
     expect(seats['Shropshire Party']).to eq(0)
     expect(seats['Social Democratic Party']).to eq(0)
     expect(seats['Socialist Equality Party']).to eq(0)
