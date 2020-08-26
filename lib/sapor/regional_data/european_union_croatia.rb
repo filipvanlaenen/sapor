@@ -57,6 +57,7 @@ module Sapor
                    'Hrvatska konzervativna stranka (ECR)',
                    'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
                    'Most nezavisnih lista (ECR)'],
+                  ['Možemo! (GUE/NGL)'],
                   ['Nezavisna lista Mislava Kolakušića (NI)',
                    'Živi zid (NI)'],
                   ['Neovisni za Hrvatsku (ID)'],
