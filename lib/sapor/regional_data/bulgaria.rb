@@ -61,7 +61,8 @@ module Sapor
 
     COALITIONS = [].freeze
 
-    SEAT_DISTRIBUTION = { 'Благоевград' => 11, 'Бургас' => 14, 'Варна' => 15 }.freeze
+    SEAT_DISTRIBUTION = { 'Благоевград' => 11, 'Бургас' => 14, 'Варна' => 15,
+                          'Велико Търново' => 8, 'Видин' => 4, 'Враца' => 6 }.freeze
 
     THRESHOLD = 0.04
 
