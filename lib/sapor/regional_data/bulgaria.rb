@@ -76,9 +76,9 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = MultiDistrictProportional.new( \
+        @electoral_system = MultiDistrictLargestRemainder.new( \
           overall_election_results_of_2017, election_results_of_2017,
-          SEAT_DISTRIBUTION, DhondtDenominators, 0, THRESHOLD
+          SEAT_DISTRIBUTION, HareQuota, 0, THRESHOLD
         )
       end
       @electoral_system
