@@ -40,11 +40,11 @@ end
 describe Sapor::Bulgaria, '#seats' do
   it 'calculates the number of seats for the election of 2017' do
     seats = Sapor::Bulgaria.instance.seats(Sapor::Bulgaria.instance.overall_election_results_of_2017)
-    expect(seats['ПП ГЕРБ']).to eq(23)
-    expect(seats['БСП за БЪЛГАРИЯ']).to eq(18 + 1)
-    expect(seats['ОБЕДИНЕНИ ПАТРИОТИ – НФСБ, АТАКА и ВМРО']).to eq(8)
-    expect(seats['Движение за права и свободи – ДПС']).to eq(6)
-    expect(seats['ВОЛЯ']).to eq(3 - 1)
+    expect(seats['ПП ГЕРБ']).to eq(48)
+    expect(seats['БСП за БЪЛГАРИЯ']).to eq(39 + 1 + 1 + 1) # Data mismatch in Враца, Плевен and Пловдив Град
+    expect(seats['ОБЕДИНЕНИ ПАТРИОТИ – НФСБ, АТАКА и ВМРО']).to eq(14 - 1) # Data mismatch in Пловдив Град
+    expect(seats['Движение за права и свободи – ДПС']).to eq(14)
+    expect(seats['ВОЛЯ']).to eq(5 - 1 - 1) # Data mismatch in Враца and Плевен
     expect(seats['Обединение ДОСТ']).to eq(0)
     expect(seats['РЕФОРМАТОРСКИ БЛОК – ГЛАС НАРОДЕН']).to eq(0)
   end
