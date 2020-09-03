@@ -33,15 +33,7 @@ module Sapor
     end
 
     def no_of_seats
-      SEAT_DISTRIBUTION.values.inject(:+)
-    end
-
-    def overall_election_results_of_2017
-      if @overall_election_results_of_2017.nil?
-        @overall_election_results_of_2017 = \
-          summarize_election_results(election_results_of_2017)
-      end
-      @overall_election_results_of_2017
+      NO_OF_SEATS
     end
 
     def population_size
@@ -61,36 +53,14 @@ module Sapor
 
     COALITIONS = [].freeze
 
-    SEAT_DISTRIBUTION = { 'Благоевград' => 11, 'Бургас' => 14, 'Варна' => 15,
-                          'Велико Търново' => 8, 'Видин' => 4, 'Враца' => 6,
-                          'Габрово' => 4, 'Добрич' => 6, 'Кърджали' => 5,
-                          'Кюстендил' => 4, 'Ловеч' => 5, 'Монтана' => 5,
-                          'Пазарджик' => 9, 'Перник' => 4, 'Плевен' => 9,
-                          'Пловдив Град' => 11, 'Пловдив Област' => 11,
-                          'Разград' => 4, 'Русе' => 8, 'Силистра' => 4,
-                          'Сливен' => 6, 'Смолян' => 4, 'София 23 МИР' => 16,
-                          'София 24 МИР' => 12, 'София 25 МИР' => 14,
-                          'София Област' => 8, 'Стара Загора' => 11,
-                          'Търговище' => 4, 'Хасково' => 8, 'Шумен' => 6,
-                          'Ямбол' => 4 }.freeze
+    NO_OF_SEATS = 240
 
     THRESHOLD = 0.04
 
-    def election_results_of_2017
-      if @election_results_of_2017.nil?
-        @election_results_of_2017 = load_election_results(
-          'bulgaria-20170326.psv'
-        )
-      end
-      @election_results_of_2017
-    end
-
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = MultiDistrictLargestRemainder.new( \
-          overall_election_results_of_2017, election_results_of_2017,
-          SEAT_DISTRIBUTION, HareQuota, 0, THRESHOLD
-        )
+        @electoral_system = LargestRemainder.new(no_of_seats, HareQuota,
+                                                 THRESHOLD)
       end
       @electoral_system
     end

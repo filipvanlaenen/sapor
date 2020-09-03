@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -39,13 +41,46 @@ end
 
 describe Sapor::Bulgaria, '#seats' do
   it 'calculates the number of seats for the election of 2017' do
-    seats = Sapor::Bulgaria.instance.seats(Sapor::Bulgaria.instance.overall_election_results_of_2017)
-    expect(seats['ПП ГЕРБ']).to eq(95 + 1) # Data mismatch in Сливен
-    expect(seats['БСП за БЪЛГАРИЯ']).to eq(80 + 1 + 1 + 1 + 1) # Data mismatch in Враца, Плевен, Пловдив Град and Шумен
-    expect(seats['ОБЕДИНЕНИ ПАТРИОТИ – НФСБ, АТАКА и ВМРО']).to eq(27 - 1) # Data mismatch in Пловдив Град
-    expect(seats['Движение за права и свободи – ДПС']).to eq(25 + 1 + 1 - 1) # Data mismatch in Сливен, София Област and Шумен
-    expect(seats['ВОЛЯ']).to eq(12 - 1 - 1 - 1 - 1) # Data mismatch in Враца, Плевен, Сливен and София Област
+    results = { 'Граждани за европейско развитие на България' => 1_147_292,
+                'Българска социалистическа партия' => 955_490,
+                'Обединени Патриоти' => 318_513,
+                'Движение за права и свободи' => 315_976,
+                'Воля' => 145_637,
+                'Реформаторски блок' => 107_407,
+                'Да, България!' => 101_177,
+                'Обединение ДОСТ' => 100_479,
+                'Нова република'	=> 86_984,
+                'АБВ–Движение 21' => 54_412,
+                'Възраждане' => 37_896,
+                'Зелена партия' => 10_159,
+                'Българската пролет' => 9_232,
+                'Движение Напред България' => 6_644,
+                'Коалиция на недоволните' => 5_945,
+                'ДРОМ' => 4_989,
+                'Българско национално обединение' => 3_921,
+                'Български демократичен център' => 3_130,
+                'КОЙ–Българската левица и Зелена партия' => 2_916,
+                'Национална републиканска партия' => 2_325 }
+    seats = Sapor::Bulgaria.instance.seats(results)
+    expect(seats['Граждани за европейско развитие на България']).to eq(95)
+    expect(seats['Българска социалистическа партия']).to eq(80)
+    expect(seats['Обединени Патриоти']).to eq(27)
+    expect(seats['Движение за права и свободи']).to eq(26)
+    expect(seats['Воля']).to eq(12)
+    expect(seats['Реформаторски блок']).to eq(0)
+    expect(seats['Да, България!']).to eq(0)
     expect(seats['Обединение ДОСТ']).to eq(0)
-    expect(seats['РЕФОРМАТОРСКИ БЛОК – ГЛАС НАРОДЕН']).to eq(0)
+    expect(seats['Нова република']).to eq(0)
+    expect(seats['АБВ–Движение 21']).to eq(0)
+    expect(seats['Възраждане']).to eq(0)
+    expect(seats['Зелена партия']).to eq(0)
+    expect(seats['Българската пролет']).to eq(0)
+    expect(seats['Движение Напред България']).to eq(0)
+    expect(seats['Коалиция на недоволните']).to eq(0)
+    expect(seats['ДРОМ']).to eq(0)
+    expect(seats['Българско национално обединение']).to eq(0)
+    expect(seats['Български демократичен център']).to eq(0)
+    expect(seats['КОЙ–Българската левица и Зелена партия']).to eq(0)
+    expect(seats['Национална републиканска партия']).to eq(0)
   end
 end
