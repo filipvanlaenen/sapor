@@ -60,7 +60,7 @@ module Sapor
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = LargestRemainder.new(no_of_seats, HareQuota,
-                                                 THRESHOLD)
+                                                 THRESHOLD, false, 0, false)
       end
       @electoral_system
     end
