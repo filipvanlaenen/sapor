@@ -51,7 +51,13 @@ module Sapor
 
     private
 
-    COALITIONS = [].freeze
+    BSP_PARTY = 'Българска социалистическа партия'
+    DPS_PARTY = 'Движение за права и свободи'
+    GERB_PARTY = 'Граждани за европейско развитие на България'
+    OP_PARTY = 'Обединени Патриоти'
+    
+    COALITIONS = [[BSP_PARTY, DPS_PARTY],
+                  [GERB_PARTY, OP_PARTY]].freeze
 
     NO_OF_SEATS = 240
 
