@@ -91,9 +91,10 @@ module Sapor
       FinlandWithSin.instance, France.instance, Germany.instance,
       GreatBritainWithoutSpeaker.instance, Greece.instance, Hungary.instance,
       Iceland.instance, IcelandWithJ.instance, Ireland.instance,
-      Latvia.instance, Luxembourg.instance, Netherlands.instance,
-      Romania.instance, Slovakia.instance, Slovenia.instance, Spain.instance,
-      Sweden.instance, Sweden20140914.instance, UnitedKingdom.instance,
+      Latvia.instance, LithuaniaNationwideConstituency.instance,
+      Luxembourg.instance, Netherlands.instance, Romania.instance,
+      Slovakia.instance, Slovenia.instance, Spain.instance, Sweden.instance,
+      Sweden20140914.instance, UnitedKingdom.instance,
       Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
     end
