@@ -22,10 +22,10 @@ module Sapor
   #
   # The regional data for nationwide constituency of Lithuania.
   #
-  class LithuaniaNationwideConstituency < Area
+  class Lithuania < Area
     include Singleton
     def area_code
-      'LT[LR]'
+      'LT'
     end
 
     def coalitions
