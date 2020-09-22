@@ -51,7 +51,10 @@ module Sapor
 
     private
     
-    COALITIONS = [].freeze
+    LSDP_PARTY = 'Lietuvos socialdemokratų partija'
+    LVZS_PARTY = 'Lietuvos valstiečių ir žaliųjų sąjunga'
+    
+    COALITIONS = [[LSDP_PARTY, LVZS_PARTY]].freeze
 
     NO_OF_SEATS = 70
 
