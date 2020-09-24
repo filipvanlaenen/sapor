@@ -49,6 +49,7 @@ module Sapor
 
     private
 
+    HLAS_SD_PARTY = 'HLAS–sociálna demokracia'.freeze
     KDH_PARTY = 'Kresťanskodemokratické hnutie'.freeze
     LSNS_PARTY = 'Kotleba–Ľudová strana Naše Slovensko'.freeze
     MH_PARTY = 'MOST–HÍD'.freeze
@@ -61,7 +62,18 @@ module Sapor
     SR_PARTY = 'SME RODINA'.freeze
     ZL_PARTY = 'Za ľudí'.freeze
 
-    COALITIONS = [[KDH_PARTY, OLANO_PARTY, PS_SPOLU_PARTY, SAS_PARTY, SR_PARTY,
+    COALITIONS = [[HLAS_SD_PARTY, LSNS_PARTY, SMER_SD_PARTY, SNS_PARTY,
+                   SR_PARTY],
+                  [HLAS_SD_PARTY, LSNS_PARTY, SNS_PARTY, SR_PARTY],
+                  [HLAS_SD_PARTY, MH_PARTY, SMER_SD_PARTY, SNS_PARTY],
+                  [HLAS_SD_PARTY, MH_PARTY, SNS_PARTY],
+                  [HLAS_SD_PARTY, SMER_SD_PARTY, SNS_PARTY],
+                  [HLAS_SD_PARTY, SMER_SD_PARTY, SNS_PARTY, SR_PARTY],
+                  [HLAS_SD_PARTY, SMER_SD_PARTY, SR_PARTY],
+                  [HLAS_SD_PARTY, SNS_PARTY],
+                  [HLAS_SD_PARTY, SNS_PARTY, SR_PARTY],
+                  [HLAS_SD_PARTY, SR_PARTY],
+                  [KDH_PARTY, OLANO_PARTY, PS_SPOLU_PARTY, SAS_PARTY, SR_PARTY,
                    ZL_PARTY],
                   [KDH_PARTY, MH_PARTY, OLANO_PARTY, PS_SPOLU_PARTY, SAS_PARTY,
                    SMK_MKP_PARTY, SR_PARTY, ZL_PARTY],

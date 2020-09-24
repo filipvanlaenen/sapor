@@ -56,7 +56,8 @@ module Sapor
                    'Slovenská národná strana (ECR)'],
                   ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
                   ['SME RODINA (ID)'],
-                  ['SMER–sociálna demokracia (S&D)']].freeze
+                  ['HLAS–sociálna demokracia (S&D)',
+                   'SMER–sociálna demokracia (S&D)']].freeze
 
     NO_OF_SEATS = 14
 
