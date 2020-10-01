@@ -87,11 +87,11 @@ module Sapor
     (BELGIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + NORWEGIAN_AREAS + \
      POLISH_AREAS + PORTUGUESE_AREAS + \
      [Austria.instance, Bulgaria.instance, Catalonia.instance,
-      CataloniaWithVox.instance, Estonia.instance, Finland.instance,
-      FinlandWithSin.instance, France.instance, Germany.instance,
-      GreatBritainWithoutSpeaker.instance, Greece.instance, Hungary.instance,
-      Iceland.instance, IcelandWithJ.instance, Ireland.instance,
-      Latvia.instance, Lithuania.instance,
+      CataloniaWithVox.instance, Cyprus.instance, Estonia.instance,
+      Finland.instance, FinlandWithSin.instance, France.instance,
+      Germany.instance, GreatBritainWithoutSpeaker.instance, Greece.instance,
+      Hungary.instance, Iceland.instance, IcelandWithJ.instance,
+      Ireland.instance, Latvia.instance, Lithuania.instance,
       Luxembourg.instance, Netherlands.instance, Romania.instance,
       Slovakia.instance, Slovenia.instance, Spain.instance, Sweden.instance,
       Sweden20140914.instance, UnitedKingdom.instance,
