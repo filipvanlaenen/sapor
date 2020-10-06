@@ -64,7 +64,7 @@ module Sapor
     CS_PARTY = 'Ciutadans–Partido de la Ciudadanía'.freeze
     CUP_PARTY = 'Candidatura d’Unitat Popular'.freeze
     ERC_PARTY = 'Esquerra Republicana–Catalunya Sí'.freeze
-    JXCAT_PARTY = 'Junts pel Catalunya'.freeze
+    JXCAT_PARTY = 'Junts per Catalunya'.freeze
     PP_PARTY = 'Partit Popular'.freeze
     PSC_PARTY = 'Partit dels Socialistes de Catalunya (PSC-PSOE)'.freeze
     VOX_PARTY = 'Vox'.freeze
