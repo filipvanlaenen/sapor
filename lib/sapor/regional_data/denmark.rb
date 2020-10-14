@@ -56,7 +56,7 @@ module Sapor
     B_PARTY = 'Radikale Venstre'.freeze
     C_PARTY = 'Det Konservative Folkeparti'.freeze
     D_PARTY = 'Nye Borgerlige'.freeze
-    E_PARTY = 'Klaus Riskær Pedersen'.freeze
+    E_PARTY = 'Borgerlisten'.freeze
     F_PARTY = 'Socialistisk Folkeparti'.freeze
     I_PARTY = 'Liberal Alliance'.freeze
     K_PARTY = 'Kristendemokraterne'.freeze

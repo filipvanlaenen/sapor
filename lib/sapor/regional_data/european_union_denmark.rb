@@ -52,8 +52,8 @@ module Sapor
                   ['Det Konservative Folkeparti (EPP)',
                    'Kristendemokraterne (EPP)'],
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
-                  ['Klaus Riskær Pedersen (*)', 'Nye Borgerlige (*)',
-                   'Stram Kurs (*)'],
+                  ['Borgerlisten (*)', 'Nye Borgerlige (*)',
+                   'Stram Kurs (*)', 'Veganerpartiet (*)'],
                   ['Liberal Alliance (RE)', 'Radikale Venstre (RE)',
                    'Venstre (RE)'],
                   ['Socialdemokraterne (S&D)']].freeze
