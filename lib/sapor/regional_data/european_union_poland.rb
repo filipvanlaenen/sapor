@@ -58,7 +58,7 @@ module Sapor
                    'Wiosna (S&D)',
                    'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)'],
-                  ['Bezpartyjni Samorządowcy (*)'],
+                  ['Bezpartyjni Samorządowcy (*)', 'Polska 2050 (*)'],
                   ['Prawo i Sprawiedliwość (ECR)',
                    'Zjednoczona Prawica (ECR)']].freeze
 
