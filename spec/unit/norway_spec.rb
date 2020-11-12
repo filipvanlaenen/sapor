@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -44,11 +46,11 @@ describe Sapor::Norway, '#seats' do
     expect(seats['Arbeiderpartiet']).to eq(49)
     expect(seats['Høyre']).to eq(45)
     expect(seats['Fremskrittspartiet']).to eq(27)
-    expect(seats['Senterpartiet']).to eq(19)
+    expect(seats['Senterpartiet']).to eq(19 - 1)
     expect(seats['Sosialistisk Venstreparti']).to eq(11)
     expect(seats['Kristelig Folkeparti']).to eq(8)
     expect(seats['Venstre']).to eq(8)
-    expect(seats['Miljøpartiet De Grønne']).to eq(1)
+    expect(seats['Miljøpartiet De Grønne']).to eq(1 + 1)
     expect(seats['Rødt']).to eq(1)
     expect(seats['Alliansen']).to eq(0)
     expect(seats['Demokratene i Norge']).to eq(0)

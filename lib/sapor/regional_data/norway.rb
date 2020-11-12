@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Statistical Analysis of Polling Results (SAPoR)
 # Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
@@ -59,15 +61,15 @@ module Sapor
 
     private
 
-    AP_PARTY = 'Arbeiderpartiet'.freeze
-    FRP_PARTY = 'Fremskrittspartiet'.freeze
-    H_PARTY = 'Høyre'.freeze
-    KRF_PARTY = 'Kristelig Folkeparti'.freeze
-    MDG_PARTY = 'Miljøpartiet De Grønne'.freeze
-    R_PARTY = 'Rødt'.freeze
-    SP_PARTY = 'Senterpartiet'.freeze
-    SV_PARTY = 'Sosialistisk Venstreparti'.freeze
-    V_PARTY = 'Venstre'.freeze
+    AP_PARTY = 'Arbeiderpartiet'
+    FRP_PARTY = 'Fremskrittspartiet'
+    H_PARTY = 'Høyre'
+    KRF_PARTY = 'Kristelig Folkeparti'
+    MDG_PARTY = 'Miljøpartiet De Grønne'
+    R_PARTY = 'Rødt'
+    SP_PARTY = 'Senterpartiet'
+    SV_PARTY = 'Sosialistisk Venstreparti'
+    V_PARTY = 'Venstre'
 
     COALITIONS = [[AP_PARTY, KRF_PARTY, MDG_PARTY, SP_PARTY],
                   [AP_PARTY, KRF_PARTY, MDG_PARTY, SP_PARTY, SV_PARTY],
@@ -86,13 +88,14 @@ module Sapor
                   [H_PARTY, KRF_PARTY, V_PARTY],
                   [KRF_PARTY, SP_PARTY, V_PARTY]].freeze
 
-    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 1 May 2015.
-    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
-    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 16, 'Aust-Agder' => 3,
-                                 'Buskerud' => 8, 'Finnmark Finnmárku' => 4,
+    # Source: Stortingsvalget 2021, Valgdistrikt, Wikipedia, retrieved on 12
+    # November 2020.
+    # URL: https://no.wikipedia.org/wiki/Stortingsvalget_2021#Valgdistrikt
+    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 18, 'Aust-Agder' => 3,
+                                 'Buskerud' => 7, 'Finnmark Finnmárku' => 4,
                                  'Hedmark' => 6, 'Hordaland' => 15,
-                                 'Møre og Romsdal' => 8, 'Nord-Trøndelag' => 4,
-                                 'Nordland' => 8, 'Oppland' => 6, 'Oslo' => 18,
+                                 'Møre og Romsdal' => 7, 'Nord-Trøndelag' => 4,
+                                 'Nordland' => 8, 'Oppland' => 5, 'Oslo' => 19,
                                  'Rogaland' => 13, 'Sogn og Fjordane' => 3,
                                  'Sør-Trøndelag' => 9, 'Telemark' => 5,
                                  'Troms Romsa' => 5, 'Vest-Agder' => 5,
