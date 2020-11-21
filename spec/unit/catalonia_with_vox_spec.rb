@@ -42,7 +42,7 @@ describe Sapor::CataloniaWithVox, '#seats' do
     results = CataloniaWithVox.overall_election_results_of_2017
     seats = CataloniaWithVox.seats(results)
     expect(seats['Ciutadans–Partido de la Ciudadanía']).to eq(36 - 1)
-    expect(seats['Junts pel Catalunya']).to eq(34 - 1)
+    expect(seats['Junts per Catalunya']).to eq(34 - 1)
     expect(seats['Esquerra Republicana–Catalunya Sí']).to eq(32 - 1)
     expect(seats['Partit dels Socialistes de Catalunya (PSC-PSOE)']).to eq(17)
     expect(seats['Catalunya en Comú–Podem']).to eq(8)

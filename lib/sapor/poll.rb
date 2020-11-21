@@ -86,7 +86,7 @@ module Sapor
     AREAS_MAP = {}
     (BELGIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + NORWEGIAN_AREAS + \
      POLISH_AREAS + PORTUGUESE_AREAS + \
-     [Austria.instance, Bulgaria.instance, Catalonia.instance,
+     [Austria.instance, Bulgaria.instance, Catalonia.instance, CataloniaWithJuntsPdecatAndVox.instance,
       CataloniaWithVox.instance, Cyprus.instance, Estonia.instance,
       Finland.instance, FinlandWithSin.instance, France.instance,
       Germany.instance, GreatBritainWithoutSpeaker.instance, Greece.instance,

@@ -65,6 +65,7 @@ module Sapor
     CUP_PARTY = 'Candidatura d’Unitat Popular'.freeze
     ERC_PARTY = 'Esquerra Republicana–Catalunya Sí'.freeze
     JXCAT_PARTY = 'Junts per Catalunya'.freeze
+    PDCAT_PARTY = 'Partit Demòcrata Europeu Català'.freeze
     PP_PARTY = 'Partit Popular'.freeze
     PSC_PARTY = 'Partit dels Socialistes de Catalunya (PSC-PSOE)'.freeze
     VOX_PARTY = 'Vox'.freeze
@@ -76,7 +77,9 @@ module Sapor
                   [CS_PARTY, PSC_PARTY, PP_PARTY],
                   [CS_PARTY, PSC_PARTY, PP_PARTY, VOX_PARTY],
                   [CUP_PARTY, ERC_PARTY, JXCAT_PARTY],
-                  [ERC_PARTY, JXCAT_PARTY]].freeze
+                  [CUP_PARTY, ERC_PARTY, JXCAT_PARTY, PDCAT_PARTY],
+                  [ERC_PARTY, JXCAT_PARTY],
+                  [ERC_PARTY, JXCAT_PARTY, PDCAT_PARTY]].freeze
 
     SEAT_DISTRIBUTION = { 'Barcelona' => 85, 'Girona' => 17, 'Lleida' => 15,
                           'Tarragona' => 18 }.freeze
@@ -116,6 +119,22 @@ module Sapor
       if @election_results_of_2017.nil?
         @election_results_of_2017 = load_election_results(
           'catalonia-20171221-with-vox.psv'
+        )
+      end
+      @election_results_of_2017
+    end
+  end
+
+  # Extension of Catalonia with Vox, Junts and PDeCAT
+  class CataloniaWithJuntsPdecatAndVox < Catalonia
+    def area_code
+      'ES-CT∪{Junts,PDeCAT,Vox}\{JxCat}'
+    end
+
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'catalonia-20171221-with-junts-pdecat-and-vox-without-jxcat.psv'
         )
       end
       @election_results_of_2017
