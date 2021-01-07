@@ -140,4 +140,20 @@ module Sapor
       @election_results_of_2017
     end
   end
+
+  # Extension of Catalonia with Vox and Junts
+  class CataloniaWithJuntsAndVox < Catalonia
+    def area_code
+      'ES-CT∪{Junts,Vox}\{JxCat}'
+    end
+
+    def election_results_of_2017
+      if @election_results_of_2017.nil?
+        @election_results_of_2017 = load_election_results(
+          'catalonia-20171221-with-junts-and-vox-without-jxcat.psv'
+        )
+      end
+      @election_results_of_2017
+    end
+  end
 end
