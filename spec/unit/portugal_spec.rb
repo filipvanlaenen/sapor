@@ -42,24 +42,23 @@ describe Sapor::Portugal, '#seats' do
     results = Portugal.overall_election_results_of_2019
     seats = Sapor::Portugal.instance.seats(results)
     expect(seats['Partido Socialista']).to eq(108)
-    
+    expect(seats['Partido Social Democrata']).to eq(79)
     expect(seats['Bloco de Esquerda']).to eq(19)
-    expect(seats['Coligação Democrática Unitária']).to eq(17)
-    expect(seats['Partido Social Democrata']).to eq(5)
-    expect(seats['Pessoas–Animais–Natureza']).to eq(1)
-    expect(seats['CDS–Partido Popular']).to eq(0)
+    expect(seats['Coligação Democrática Unitária']).to eq(12)
+    expect(seats['CDS–Partido Popular']).to eq(5)
+    expect(seats['Pessoas–Animais–Natureza']).to eq(4)
+    expect(seats['Chega']).to eq(1)
+    expect(seats['Iniciativa Liberal']).to eq(1)
+    expect(seats['LIVRE']).to eq(1)
+    
     expect(seats['Partido Democrático Republicano']).to eq(0)
     expect(seats['Partido Comunista dos Trabalhadores Portugueses']).to eq(0)
-    expect(seats['LIVRE']).to eq(0)
     expect(seats['Partido Nacional Renovador']).to eq(0)
     expect(seats['Partido da Terra']).to eq(0)
-    expect(seats['AGIR']).to eq(0)
     expect(seats['Partido Trabalhista Português']).to eq(0)
     expect(seats['Nós, Cidadãos!']).to eq(0)
     expect(seats['Partido Popular Monárquico']).to eq(0)
     expect(seats['Juntos pelo Povo']).to eq(0)
     expect(seats['Partido Unido dos Reformados e Pensionistas']).to eq(0)
-    expect(seats['Aliança Açores']).to eq(0)
-    expect(seats['Partido Cidadania e Democracia Cristã']).to eq(0)
   end
 end
