@@ -35,12 +35,12 @@ module Sapor
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2015
-      if @overall_election_results_of_2015.nil?
-        @overall_election_results_of_2015 = \
-          summarize_election_results(election_results_of_2015)
+    def overall_election_results_of_2019
+      if @overall_election_results_of_2019.nil?
+        @overall_election_results_of_2019 = \
+          summarize_election_results(election_results_of_2019)
       end
-      @overall_election_results_of_2015
+      @overall_election_results_of_2019
     end
 
     def population_size
@@ -65,9 +65,9 @@ module Sapor
                   [CDU_PARTY, PS_PARTY],
                   [PS_PARTY]].freeze
 
-    # Voter turnout on 4 October 2015
-    # https://en.wikipedia.org/wiki/2015_Portuguese_legislative_election
-    POPULATION_SIZE = 5_206_113
+    # Voter turnout on 6 October 2019
+    # https://en.wikipedia.org/wiki/2019_Portuguese_legislative_election
+    POPULATION_SIZE = 4_982_609
 
     SEAT_DISTRIBUTION = { 'Açores' => 5, 'Aveiro' => 16, 'Beja' => 3,
                           'Braga' => 19, 'Bragança' => 3, 'Castelo Branco' => 4,
@@ -79,19 +79,19 @@ module Sapor
                           'Viseu' => 8, 'Europa' => 2,
                           'Fora da Europa' => 2 }.freeze
 
-    def election_results_of_2015
-      if @election_results_of_2015.nil?
-        @election_results_of_2015 = load_election_results(
-          'portugal-20151004.psv'
+    def election_results_of_2019
+      if @election_results_of_2019.nil?
+        @election_results_of_2019 = load_election_results(
+          'portugal-20191006.psv'
         )
       end
-      @election_results_of_2015
+      @election_results_of_2019
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2015, election_results_of_2015,
+          overall_election_results_of_2019, election_results_of_2019,
           SEAT_DISTRIBUTION, DhondtDenominators
         )
       end

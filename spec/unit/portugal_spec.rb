@@ -31,19 +31,18 @@ describe Sapor::Portugal, '#no_of_seats' do
 end
 
 describe Sapor::Portugal, '#population_size' do
-  it 'returns a population size of 5,206,113' do
-    expect(Sapor::Portugal.instance.population_size).to eq(5_206_113)
+  it 'returns a population size of 4,982,609' do
+    expect(Sapor::Portugal.instance.population_size).to eq(4_982_609)
   end
 end
 
 describe Sapor::Portugal, '#seats' do
-  it 'calculates the number of seats for the election of 2015 adjusted for' \
-     ' the seat distribution for 2019' do
+  it 'calculates the number of seats for the election of 2019' do
     Portugal = Sapor::Portugal.instance
-    results = Portugal.overall_election_results_of_2015
+    results = Portugal.overall_election_results_of_2019
     seats = Sapor::Portugal.instance.seats(results)
-    expect(seats['Portugal à Frente']).to eq(102 + 1)
-    expect(seats['Partido Socialista']).to eq(86 - 1)
+    expect(seats['Partido Socialista']).to eq(108)
+    
     expect(seats['Bloco de Esquerda']).to eq(19)
     expect(seats['Coligação Democrática Unitária']).to eq(17)
     expect(seats['Partido Social Democrata']).to eq(5)
