@@ -50,15 +50,17 @@ describe Sapor::Portugal, '#seats' do
     expect(seats['Chega']).to eq(1)
     expect(seats['Iniciativa Liberal']).to eq(1)
     expect(seats['LIVRE']).to eq(1)
-    
-    expect(seats['Partido Democrático Republicano']).to eq(0)
-    expect(seats['Partido Comunista dos Trabalhadores Portugueses']).to eq(0)
+    expect(seats['Aliança']).to eq(0)
+    expect(seats['Partido Trabalhista Português']).to eq(0)
+    expect(seats['Reagir Incluir Reciclar']).to eq(0)
     expect(seats['Partido Nacional Renovador']).to eq(0)
     expect(seats['Partido da Terra']).to eq(0)
-    expect(seats['Partido Trabalhista Português']).to eq(0)
     expect(seats['Nós, Cidadãos!']).to eq(0)
-    expect(seats['Partido Popular Monárquico']).to eq(0)
-    expect(seats['Juntos pelo Povo']).to eq(0)
+    expect(seats['Partido Democrático Republicano']).to eq(0)
     expect(seats['Partido Unido dos Reformados e Pensionistas']).to eq(0)
+    expect(seats['Juntos pelo Povo']).to eq(0)
+    expect(seats['Partido Popular Monárquico']).to eq(0)
+    expect(seats['Partido Comunista dos Trabalhadores Portugueses']).to eq(0)
+    expect(seats['Movimento Alternativa Socialista']).to eq(0)
   end
 end
