@@ -63,4 +63,28 @@ describe Sapor::Portugal, '#seats' do
     expect(seats['Partido Comunista dos Trabalhadores Portugueses']).to eq(0)
     expect(seats['Movimento Alternativa Socialista']).to eq(0)
   end
+
+  it 'does no allocate seats to Other' do
+    results = { 'Partido Socialista' => 1_903_687,
+                'Partido Social Democrata' => 1_454_283,
+                'Bloco de Esquerda' => 498_549,
+                'Coligação Democrática Unitária' => 332_018,
+                'CDS–Partido Popular' => 221_094,
+                'Pessoas–Animais–Natureza' => 173_931,
+                'Chega' => 67_502,
+                'Iniciativa Liberal' => 67_443,
+                'LIVRE' => 56_940,
+                'Other' => 40_175 + 36_006 + 35_169 + 16_992 + 12_888 + 12_346 + 11_674 + 11_457 + 10_552 + 8_389 + 8_271 + 3_243 }
+    seats = Sapor::Portugal.instance.seats(results)
+    expect(seats['Partido Socialista']).to eq(108)
+    expect(seats['Partido Social Democrata']).to eq(79)
+    expect(seats['Bloco de Esquerda']).to eq(19)
+    expect(seats['Coligação Democrática Unitária']).to eq(12)
+    expect(seats['CDS–Partido Popular']).to eq(5)
+    expect(seats['Pessoas–Animais–Natureza']).to eq(4)
+    expect(seats['Chega']).to eq(1)
+    expect(seats['Iniciativa Liberal']).to eq(1)
+    expect(seats['LIVRE']).to eq(1)
+    expect(seats['Other']).to eq(0)
+  end
 end
