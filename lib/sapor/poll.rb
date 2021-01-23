@@ -76,16 +76,9 @@ module Sapor
                     PolandWithKoSldAndWiWithoutNPoAndZl.instance,
                     PolandWithSldAndWiWithoutZL.instance,
                     PolandWithSldWithoutZL.instance].freeze
-    PORTUGUESE_AREAS = [Portugal.instance,
-                        PortugalWithAAndChWithoutPaf.instance,
-                        PortugalWithAAndIlWithoutPaf.instance,
-                        PortugalWithAChAndIlWithoutPaf.instance,
-                        PortugalWithAWithoutPaf.instance,
-                        PortugalWithChAndIlWithoutPaf.instance,
-                        PortugalWithoutPaf.instance].freeze
     AREAS_MAP = {}
     (BELGIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + NORWEGIAN_AREAS + \
-     POLISH_AREAS + PORTUGUESE_AREAS + \
+     POLISH_AREAS + \
      [Austria.instance, Bulgaria.instance, Catalonia.instance,
       CataloniaWithJuntsAndVox.instance,
       CataloniaWithJuntsPdecatAndVox.instance, CataloniaWithVox.instance,
@@ -94,8 +87,8 @@ module Sapor
       GreatBritainWithoutSpeaker.instance, Greece.instance, Hungary.instance,
       Iceland.instance, IcelandWithJ.instance, Ireland.instance,
       Latvia.instance, Lithuania.instance, Luxembourg.instance,
-      Netherlands.instance, Romania.instance, Slovakia.instance,
-      Slovenia.instance, Spain.instance, Sweden.instance,
+      Netherlands.instance, Portugal.instance, Romania.instance,
+      Slovakia.instance, Slovenia.instance, Spain.instance, Sweden.instance,
       Sweden20140914.instance, UnitedKingdom.instance,
       Utopia.instance]).map do |area|
       AREAS_MAP[area.area_code] = area
