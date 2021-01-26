@@ -48,6 +48,7 @@ module Sapor
 
     COALITIONS = [['ANO 2011 (RE)'],
                   ['Česká pirátská strana (Greens/EFA)',
+                   'Česká pirátská strana–Starostové a nezávislí (Greens/EFA)',
                    'Strana zelených (Greens/EFA)'],
                   ['Česká strana sociálně demokratická (S&D)'],
                   ['Komunistická strana Čech a Moravy (GUE/NGL)'],
@@ -55,7 +56,7 @@ module Sapor
                      ' lidová (EPP)',
                    'Starostové a nezávislí (EPP)',
                    'TOP 09 (EPP)'],
-                  ['Občanská demokratická strana (ECR)'],
+                  ['Občanská demokratická strana (ECR)', 'SPOLU (ECR)'],
                   ['Svoboda a přímá demokracie (ID)',
                    'Trikolóra hnutí občanů (ID)'],
                   ['Strana svobodných občanů (NI)']].freeze
