@@ -55,7 +55,7 @@ module Sapor
                   ['Forum voor Democratie (ECR)',
                    'Staatkundig Gereformeerde Partij (ECR)',
                    'Juiste Antwoord 2021 (ECR)'],
-                  ['GroenLinks (Greens/EFA)'],
+                  ['GroenLinks (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
                   ['Partij van de Arbeid (S&D)'],
                   ['Partij voor de Dieren (GUE/NGL)',
                    'Socialistische Partij (GUE/NGL)'],
