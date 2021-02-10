@@ -55,7 +55,8 @@ module Sapor
                   ['Latvijas Reģionu Apvienība (ECR)',
                    'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
-                  ['No sirds Latvijai (*)', 'Vienoti Latvijai (*)'],
+                  ['Likums un kārtība (*)', 'No sirds Latvijai (*)',
+                   'Vienoti Latvijai (*)'],
                   ['PROGRESĪVIE (S&D)',
                    'Sociāldemokrātiskā partija “Saskaņa” (S&D)']].freeze
 

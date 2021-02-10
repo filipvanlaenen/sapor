@@ -108,4 +108,20 @@ module Sapor
       @electoral_system
     end
   end
+
+  # Extension of Latvia with LuK
+  class LatviaWithLuk < Latvia
+    def area_code
+      'LV∪{LuK}'
+    end
+
+    def election_results_of_2018
+      if @election_results_of_2018.nil?
+        @election_results_of_2018 = load_election_results(
+          'latvia-20181006-with-luk.psv'
+        )
+      end
+      @election_results_of_2018
+    end
+  end
 end
