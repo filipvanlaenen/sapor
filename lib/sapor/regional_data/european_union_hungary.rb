@@ -48,7 +48,8 @@ module Sapor
 
     COALITIONS = [['Demokratikus Koalíció (S&D)',
                    'Magyar Szocialista Párt (S&D)',
-                   'Magyar Szocialista Párt–Párbeszéd (S&D)'],
+                   'Magyar Szocialista Párt–Párbeszéd (S&D)',
+                   'United Opposition (S&D)'],
                   ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)',
                    'Párbeszéd (Greens/EFA)'],
                   ['Fidesz–Kereszténydemokrata Néppárt (EPP)'],
