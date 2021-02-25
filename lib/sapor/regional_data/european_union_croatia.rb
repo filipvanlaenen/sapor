@@ -47,7 +47,7 @@ module Sapor
     private
 
     COALITIONS = [['Hrvatska demokratska zajednica (EPP)'],
-                  ['Amsterdamska koalicija (RE)',
+                  ['Amsterdamska koalicija (RE)', 'Centar (RE)',
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
                    'Hrvatska seljačka stranka (RE)',
                    'Pametno (RE)'],
