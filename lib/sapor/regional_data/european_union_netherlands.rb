@@ -50,7 +50,7 @@ module Sapor
                    'ChristenUnie (EPP)'],
                   ['Bij1 (*)', 'BoerBurgerBeweging (*)', 'Code Oranje (*)',
                    'DENK (*)', 'Partij voor de Toekomst (*)',
-                   'Piratenpartij (*)'],
+                   'Piratenpartij (*)', 'Splinter (*)'],
                   ['Democraten 66 (RE)',
                    'Volkspartij voor Vrijheid en Democratie (RE)'],
                   ['Forum voor Democratie (ECR)',
