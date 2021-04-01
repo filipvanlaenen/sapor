@@ -97,6 +97,8 @@ module Sapor
     TYPE_KEY = 'Type'.freeze
     REFERENDUM_TYPE_VALUE = 'Referendum'.freeze
     ELECTION_TYPE_VALUE = 'Election'.freeze
+    
+    EXTRA_INFORMATION_KEY = 'ExtraInformation'.freeze
 
     DEFAULT_CONFIDENCE_LEVEL = 0.95
 
@@ -105,6 +107,9 @@ module Sapor
       @logger = LogFacade.create_logger
       @area_code = metadata.delete(AREA_KEY)
       @area = Poll.lookup_area(@area_code)
+      if metadata.key?(EXTRA_INFORMATION_KEY)
+        @area.add_extra_information(metadata.delete(EXTRA_INFORMATION_KEY))
+      end
       @type = metadata.delete(TYPE_KEY)
       @results = interpret(results)
     end
