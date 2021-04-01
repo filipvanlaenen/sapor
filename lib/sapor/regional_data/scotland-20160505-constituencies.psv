@@ -1,320 +1,330 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
 Aberdeen Central                         | Scottish Conservative & Unionist Party    | 6022
-Aberdeen Donside                         | Scottish Conservative & Unionist Party    | 5709
-Aberdeen S. and N. Kincardine            | Scottish Conservative & Unionist Party    | 10849
-Aberdeenshire East                       | Scottish Conservative & Unionist Party    | 10075
-Aberdeenshire West                       | Scottish Conservative & Unionist Party    | 13400
-Airdrie & Shotts                         | Scottish Conservative & Unionist Party    | 4164
-Almond Valley                            | Scottish Conservative & Unionist Party    | 5308
-Angus North & Mearns                     | Scottish Conservative & Unionist Party    | 10945
-Angus South                              | Scottish Conservative & Unionist Party    | 11318
-Argyll & Bute                            | Scottish Conservative & Unionist Party    | 5840
-Ayr                                      | Scottish Conservative & Unionist Party    | 16183
-Banffshire & Buchan Coast                | Scottish Conservative & Unionist Party    | 9219
-Caithness Sutherland & Ross              | Scottish Conservative & Unionist Party    | 4912
-Carrick, Cumnock & Doon Valley           | Scottish Conservative & Unionist Party    | 7666
-Clackmannanshire & Dunblane              | Scottish Conservative & Unionist Party    | 6915
-Clydebank & Milngavie                    | Scottish Conservative & Unionist Party    | 6029
-Clydesdale                               | Scottish Conservative & Unionist Party    | 8842
-Coatbridge & Chryston                    | Scottish Conservative & Unionist Party    | 2868
-Cowdenbeath                              | Scottish Conservative & Unionist Party    | 4251
-Cumbernauld & Kilsyth                    | Scottish Conservative & Unionist Party    | 3068
-Cunninghame North                        | Scottish Conservative & Unionist Party    | 7863
-Cunninghame South                        | Scottish Conservative & Unionist Party    | 3940
-Dumbarton                                | Scottish Conservative & Unionist Party    | 4891
-Dumfriesshire                            | Scottish Conservative & Unionist Party    | 13536
-Dundee City East                         | Scottish Conservative & Unionist Party    | 4969
-Dundee City West                         | Scottish Conservative & Unionist Party    | 2826
-Dunfermline                              | Scottish Conservative & Unionist Party    | 5797
-East Kilbride                            | Scottish Conservative & Unionist Party    | 5857
-East Lothian                             | Scottish Conservative & Unionist Party    | 9045
-Eastwood                                 | Scottish Conservative & Unionist Party    | 12932
-Edinburgh Central                        | Scottish Conservative & Unionist Party    | 10399
-Edinburgh Eastern                        | Scottish Conservative & Unionist Party    | 5700
-Edinburgh Northern & Leith               | Scottish Conservative & Unionist Party    | 6081
-Edinburgh Pentlands                      | Scottish Conservative & Unionist Party    | 10725
-Edinburgh Southern                       | Scottish Conservative & Unionist Party    | 9972
-Edinburgh Western                        | Scottish Conservative & Unionist Party    | 5686
-Ettrick, Roxburgh & Berwickshire         | Scottish Conservative & Unionist Party    | 18257
-Falkirk East                             | Scottish Conservative & Unionist Party    | 6342
-Falkirk West                             | Scottish Conservative & Unionist Party    | 5877
-Galloway & West Dumfries                 | Scottish Conservative & Unionist Party    | 14527
-Glasgow Anniesland                       | Scottish Conservative & Unionist Party    | 4057
-Glasgow Cathcart                         | Scottish Conservative & Unionist Party    | 4514
-Glasgow Kelvin                           | Scottish Conservative & Unionist Party    | 3346
-Glasgow Maryhill & Springburn            | Scottish Conservative & Unionist Party    | 2305
-Glasgow Pollok                           | Scottish Conservative & Unionist Party    | 2653
-Glasgow Provan                           | Scottish Conservative & Unionist Party    | 2062
-Glasgow Shettleston                      | Scottish Conservative & Unionist Party    | 3151
-Glasgow Southside                        | Scottish Conservative & Unionist Party    | 3100
-Greenock & Inverclyde                    | Scottish Conservative & Unionist Party    | 4487
-Hamilton, Larkhall & Stonehouse          | Scottish Conservative & Unionist Party    | 5596
-Inverness & Nairn                        | Scottish Conservative & Unionist Party    | 7648
-Kilmarnock & Irvine Valley               | Scottish Conservative & Unionist Party    | 6597
-Kirkcaldy                                | Scottish Conservative & Unionist Party    | 4568
-Linlithgow                               | Scottish Conservative & Unionist Party    | 7699
-Mid Fife & Glenrothes                    | Scottish Conservative & Unionist Party    | 4427
-Midlothian North & Musselburgh           | Scottish Conservative & Unionist Party    | 6267
-Midlothian South, Tweeddale & Lauderdale | Scottish Conservative & Unionist Party    | 10163
-Moray                                    | Scottish Conservative & Unionist Party    | 12867
-Motherwell & Wishaw                      | Scottish Conservative & Unionist Party    | 3991
-Nah h-Eilanan an Iar                     | Scottish Conservative & Unionist Party    | 1499
-North East Fife                          | Scottish Conservative & Unionist Party    | 5646
-Orkney Islands                           | Scottish Conservative & Unionist Party    | 435
-Paisley                                  | Scottish Conservative & Unionist Party    | 3533
-Perthshire North                         | Scottish Conservative & Unionist Party    | 13190
-Perthshire South & Kinross-shire         | Scottish Conservative & Unionist Party    | 13893
-Renfrewshire North & West                | Scottish Conservative & Unionist Party    | 7345
-Renfrewshire South                       | Scottish Conservative & Unionist Party    | 4752
-Rutherglen                               | Scottish Conservative & Unionist Party    | 3718
-Shetland Islands                         | Scottish Conservative & Unionist Party    | 405
-Skye, Lochaber & Badenoch                | Scottish Conservative & Unionist Party    | 5887
-Stirling                                 | Scottish Conservative & Unionist Party    | 9585
-Strathkelvin & Bearsden                  | Scottish Conservative & Unionist Party    | 8960
-Uddingston & Bellshill                   | Scottish Conservative & Unionist Party    | 4693
-
 Aberdeen Central                         | Scottish Labour                           | 7299
-Aberdeen Donside                         | Scottish Labour                           | 5672
-Aberdeen S. and N. Kincardine            | Scottish Labour                           | 5603
-Aberdeenshire East                       | Scottish Labour                           | 2155
-Aberdeenshire West                       | Scottish Labour                           | 2036
-Airdrie & Shotts                         | Scottish Labour                           | 7762
-Almond Valley                            | Scottish Labour                           | 10082
-Angus North & Mearns                     | Scottish Labour                           | 2752
-Angus South                              | Scottish Labour                           | 3773
-Argyll & Bute                            | Scottish Labour                           | 2492
-Ayr                                      | Scottish Labour                           | 5283
-Banffshire & Buchan Coast                | Scottish Labour                           | 2372
-Caithness Sutherland & Ross              | Scottish Labour                           | 3334
-Carrick, Cumnock & Doon Valley           | Scottish Labour                           | 8684
-Clackmannanshire & Dunblane              | Scottish Labour                           | 7426
-Clydebank & Milngavie                    | Scottish Labour                           | 7726
-Clydesdale                               | Scottish Labour                           | 6995
-Coatbridge & Chryston                    | Scottish Labour                           | 9826
-Cowdenbeath                              | Scottish Labour                           | 10674
-Cumbernauld & Kilsyth                    | Scottish Labour                           | 7537
-Cunninghame North                        | Scottish Labour                           | 6735
-Cunninghame South                        | Scottish Labour                           | 7723
-Dumbarton                                | Scottish Labour                           | 13522
-Dumfriesshire                            | Scottish Labour                           | 9151
-Dundee City East                         | Scottish Labour                           | 5611
-Dundee City West                         | Scottish Labour                           | 7242
-Dunfermline                              | Scottish Labour                           | 9699
-East Kilbride                            | Scottish Labour                           | 8392
-East Lothian                             | Scottish Labour                           | 14329
-Eastwood                                 | Scottish Labour                           | 11081
-Edinburgh Central                        | Scottish Labour                           | 7546
-Edinburgh Eastern                        | Scottish Labour                           | 11673
-Edinburgh Northern & Leith               | Scottish Labour                           | 10576
-Edinburgh Pentlands                      | Scottish Labour                           | 7811
-Edinburgh Southern                       | Scottish Labour                           | 13597
-Edinburgh Western                        | Scottish Labour                           | 3750
-Ettrick, Roxburgh & Berwickshire         | Scottish Labour                           | 1766
-Falkirk East                             | Scottish Labour                           | 8408
-Falkirk West                             | Scottish Labour                           | 6980
-Galloway & West Dumfries                 | Scottish Labour                           | 4876
-Glasgow Anniesland                       | Scottish Labour                           | 8854
-Glasgow Cathcart                         | Scottish Labour                           | 6810
-Glasgow Kelvin                           | Scottish Labour                           | 5968
-Glasgow Maryhill & Springburn            | Scottish Labour                           | 7507
-Glasgow Pollok                           | Scottish Labour                           | 8834
-Glasgow Provan                           | Scottish Labour                           | 8357
-Glasgow Shettleston                      | Scottish Labour                           | 6875
-Glasgow Southside                        | Scottish Labour                           | 5694
-Greenock & Inverclyde                    | Scottish Labour                           | 8802
-Hamilton, Larkhall & Stonehouse          | Scottish Labour                           | 8508
-Inverness & Nairn                        | Scottish Labour                           | 6719
-Kilmarnock & Irvine Valley               | Scottish Labour                           | 7853
-Kirkcaldy                                | Scottish Labour                           | 8963
-Linlithgow                               | Scottish Labour                           | 10027
-Mid Fife & Glenrothes                    | Scottish Labour                           | 7279
-Midlothian North & Musselburgh           | Scottish Labour                           | 9913
-Midlothian South, Tweeddale & Lauderdale | Scottish Labour                           | 5701
-Moray                                    | Scottish Labour                           | 3547
-Motherwell & Wishaw                      | Scottish Labour                           | 9068
-Nah h-Eilanan an Iar                     | Scottish Labour                           | 3378
-North East Fife                          | Scottish Labour                           | 2026
-Orkney Islands                           | Scottish Labour                           | 304
-Paisley                                  | Scottish Labour                           | 9483
-Perthshire North                         | Scottish Labour                           | 2604
-Perthshire South & Kinross-shire         | Scottish Labour                           | 3389
-Renfrewshire North & West                | Scottish Labour                           | 7244
-Renfrewshire South                       | Scottish Labour                           | 9864
-Rutherglen                               | Scottish Labour                           | 11479
-Shetland Islands                         | Scottish Labour                           | 651
-Skye, Lochaber & Badenoch                | Scottish Labour                           | 3821
-Stirling                                 | Scottish Labour                           | 6885
-Strathkelvin & Bearsden                  | Scottish Labour                           | 8288
-Uddingston & Bellshill                   | Scottish Labour                           | 9615
-
 Aberdeen Central                         | Scottish Liberal Democrats                | 1735
-Aberdeen Donside                         | Scottish Liberal Democrats                | 2261
-Aberdeen S. and N. Kincardine            | Scottish Liberal Democrats                | 2284
-Aberdeenshire East                       | Scottish Liberal Democrats                | 6611
-Aberdeenshire West                       | Scottish Liberal Democrats                | 7262
-Airdrie & Shotts                         | Scottish Liberal Democrats                | 693
-Almond Valley                            | Scottish Liberal Democrats                | 1007
-Angus North & Mearns                     | Scottish Liberal Democrats                | 2265
-Angus South                              | Scottish Liberal Democrats                | 1216
-Argyll & Bute                            | Scottish Liberal Democrats                | 7583
-Ayr                                      | Scottish Liberal Democrats                | 716
-Banffshire & Buchan Coast                | Scottish Liberal Democrats                | 1290
-Caithness Sutherland & Ross              | Scottish Liberal Democrats                | 10024
-Carrick, Cumnock & Doon Valley           | Scottish Liberal Democrats                | 640
-Clackmannanshire & Dunblane              | Scottish Liberal Democrats                | 1258
-Clydebank & Milngavie                    | Scottish Liberal Democrats                | 2925
-Clydesdale                               | Scottish Liberal Democrats                | 820
-Coatbridge & Chryston                    | Scottish Liberal Democrats                | 423
-Cowdenbeath                              | Scottish Liberal Democrats                | 1094
-Cumbernauld & Kilsyth                    | Scottish Liberal Democrats                | 688
-Cunninghame North                        | Scottish Liberal Democrats                | 780
-Cunninghame South                        | Scottish Liberal Democrats                | 616
-Dumbarton                                | Scottish Liberal Democrats                | 1131
-Dumfriesshire                            | Scottish Liberal Democrats                | 1267
-Dundee City East                         | Scottish Liberal Democrats                | 911
-Dundee City West                         | Scottish Liberal Democrats                | 1008
-Dunfermline                              | Scottish Liberal Democrats                | 3156
-East Kilbride                            | Scottish Liberal Democrats                | 1009
-East Lothian                             | Scottish Liberal Democrats                | 1337
-Eastwood                                 | Scottish Liberal Democrats                | 921
-Edinburgh Central                        | Scottish Liberal Democrats                | 1672
-Edinburgh Eastern                        | Scottish Liberal Democrats                | 1264
-Edinburgh Northern & Leith               | Scottish Liberal Democrats                | 1779
-Edinburgh Pentlands                      | Scottish Liberal Democrats                | 1636
-Edinburgh Southern                       | Scottish Liberal Democrats                | 2216
-Edinburgh Western                        | Scottish Liberal Democrats                | 16645
-Ettrick, Roxburgh & Berwickshire         | Scottish Liberal Democrats                | 2551
-Falkirk East                             | Scottish Liberal Democrats                | 1054
-Falkirk West                             | Scottish Liberal Democrats                | 966
-Galloway & West Dumfries                 | Scottish Liberal Democrats                | 947
-Glasgow Anniesland                       | Scottish Liberal Democrats                | 1098
-Glasgow Cathcart                         | Scottish Liberal Democrats                | 1703
-Glasgow Kelvin                           | Scottish Liberal Democrats                | 1050
-Glasgow Maryhill & Springburn            | Scottish Liberal Democrats                | 691
-Glasgow Pollok                           | Scottish Liberal Democrats                | 585
-Glasgow Provan                           | Scottish Liberal Democrats                | 518
-Glasgow Shettleston                      | Scottish Liberal Democrats                | 568
-Glasgow Southside                        | Scottish Liberal Democrats                | 822
-Greenock & Inverclyde                    | Scottish Liberal Democrats                | 1404
-Hamilton, Larkhall & Stonehouse          | Scottish Liberal Democrats                | 836
-Inverness & Nairn                        | Scottish Liberal Democrats                | 5445
-Kilmarnock & Irvine Valley               | Scottish Liberal Democrats                | 888
-Kirkcaldy                                | Scottish Liberal Democrats                | 1219
-Linlithgow                               | Scottish Liberal Democrats                | 1319
-Mid Fife & Glenrothes                    | Scottish Liberal Democrats                | 1286
-Midlothian North & Musselburgh           | Scottish Liberal Democrats                | 1557
-Midlothian South, Tweeddale & Lauderdale | Scottish Liberal Democrats                | 3686
-Moray                                    | Scottish Liberal Democrats                | 1265
-Motherwell & Wishaw                      | Scottish Liberal Democrats                | 761
-Nah h-Eilanan an Iar                     | Scottish Liberal Democrats                | 293
-North East Fife                          | Scottish Liberal Democrats                | 14928
-Orkney Islands                           | Scottish Liberal Democrats                | 7096
-Paisley                                  | Scottish Liberal Democrats                | 1766
-Perthshire North                         | Scottish Liberal Democrats                | 1705
-Perthshire South & Kinross-shire         | Scottish Liberal Democrats                | 3008
-Renfrewshire North & West                | Scottish Liberal Democrats                | 888
-Renfrewshire South                       | Scottish Liberal Democrats                | 793
-Rutherglen                               | Scottish Liberal Democrats                | 2533
-Shetland Islands                         | Scottish Liberal Democrats                | 7440
-Skye, Lochaber & Badenoch                | Scottish Liberal Democrats                | 8319
-Stirling                                 | Scottish Liberal Democrats                | 1416
-Strathkelvin & Bearsden                  | Scottish Liberal Democrats                | 4880
-Uddingston & Bellshill                   | Scottish Liberal Democrats                | 811
-
 Aberdeen Central                         | Scottish National Party                   | 11648
+Aberdeen Donside                         | Scottish Conservative & Unionist Party    | 5709
+Aberdeen Donside                         | Scottish Labour                           | 5672
+Aberdeen Donside                         | Scottish Liberal Democrats                | 2261
 Aberdeen Donside                         | Scottish National Party                   | 17339
+Aberdeen S. and N. Kincardine            | Scottish Conservative & Unionist Party    | 10849
+Aberdeen S. and N. Kincardine            | Scottish Labour                           | 5603
+Aberdeen S. and N. Kincardine            | Scottish Liberal Democrats                | 2284
 Aberdeen S. and N. Kincardine            | Scottish National Party                   | 13604
+Aberdeenshire East                       | Scottish Conservative & Unionist Party    | 10075
+Aberdeenshire East                       | Scottish Labour                           | 2155
+Aberdeenshire East                       | Scottish Liberal Democrats                | 6611
 Aberdeenshire East                       | Scottish National Party                   | 15912
+Aberdeenshire West                       | Scottish Conservative & Unionist Party    | 13400
+Aberdeenshire West                       | Scottish Labour                           | 2036
+Aberdeenshire West                       | Scottish Liberal Democrats                | 7262
 Aberdeenshire West                       | Scottish National Party                   | 12500
+Airdrie & Shotts                         | Scottish Conservative & Unionist Party    | 4164
+Airdrie & Shotts                         | Scottish Labour                           | 7762
+Airdrie & Shotts                         | Scottish Liberal Democrats                | 693
 Airdrie & Shotts                         | Scottish National Party                   | 13954
+Almond Valley                            | Scottish Conservative & Unionist Party    | 5308
+Almond Valley                            | Scottish Labour                           | 10082
+Almond Valley                            | Scottish Liberal Democrats                | 1007
 Almond Valley                            | Scottish National Party                   | 18475
+Angus North & Mearns                     | Scottish Conservative & Unionist Party    | 10945
+Angus North & Mearns                     | Scottish Labour                           | 2752
+Angus North & Mearns                     | Scottish Liberal Democrats                | 2265
 Angus North & Mearns                     | Scottish National Party                   | 13417
+Angus South                              | Scottish Conservative & Unionist Party    | 11318
+Angus South                              | Scottish Labour                           | 3773
+Angus South                              | Scottish Liberal Democrats                | 1216
 Angus South                              | Scottish National Party                   | 15622
+Argyll & Bute                            | Scottish Conservative & Unionist Party    | 5840
+Argyll & Bute                            | Scottish Labour                           | 2492
+Argyll & Bute                            | Scottish Liberal Democrats                | 7583
 Argyll & Bute                            | Scottish National Party                   | 13561
+Ayr                                      | Scottish Conservative & Unionist Party    | 16183
+Ayr                                      | Scottish Labour                           | 5283
+Ayr                                      | Scottish Liberal Democrats                | 716
 Ayr                                      | Scottish National Party                   | 15433
+Banffshire & Buchan Coast                | Scottish Conservative & Unionist Party    | 9219
+Banffshire & Buchan Coast                | Scottish Labour                           | 2372
+Banffshire & Buchan Coast                | Scottish Liberal Democrats                | 1290
 Banffshire & Buchan Coast                | Scottish National Party                   | 15802
+Caithness Sutherland & Ross              | Scottish Conservative & Unionist Party    | 4912
+Caithness Sutherland & Ross              | Scottish Labour                           | 3334
+Caithness Sutherland & Ross              | Scottish Liberal Democrats                | 10024
 Caithness Sutherland & Ross              | Scottish National Party                   | 13937
+Carrick, Cumnock & Doon Valley           | Scottish Conservative & Unionist Party    | 7666
+Carrick, Cumnock & Doon Valley           | Scottish Labour                           | 8684
+Carrick, Cumnock & Doon Valley           | Scottish Liberal Democrats                | 640
 Carrick, Cumnock & Doon Valley           | Scottish National Party                   | 14690
+Clackmannanshire & Dunblane              | Scottish Conservative & Unionist Party    | 6915
+Clackmannanshire & Dunblane              | Scottish Labour                           | 7426
+Clackmannanshire & Dunblane              | Scottish Liberal Democrats                | 1258
 Clackmannanshire & Dunblane              | Scottish National Party                   | 14147
+Clydebank & Milngavie                    | Scottish Conservative & Unionist Party    | 6029
+Clydebank & Milngavie                    | Scottish Labour                           | 7726
+Clydebank & Milngavie                    | Scottish Liberal Democrats                | 2925
 Clydebank & Milngavie                    | Scottish National Party                   | 16158
-Clydesdale                               | Scottish National Party                   | 14821
-Coatbridge & Chryston                    | Scottish National Party                   | 13605
-Cowdenbeath                              | Scottish National Party                   | 13715
-Cumbernauld & Kilsyth                    | Scottish National Party                   | 17015
-Cunninghame North                        | Scottish National Party                   | 16587
-Cunninghame South                        | Scottish National Party                   | 13416
-Dumbarton                                | Scottish National Party                   | 13413
-Dumfriesshire                            | Scottish National Party                   | 12306
-Dundee City East                         | Scottish National Party                   | 16509
-Dundee City West                         | Scottish National Party                   | 16070
-Dunfermline                              | Scottish National Party                   | 14257
-East Kilbride                            | Scottish National Party                   | 19371
-East Lothian                             | Scottish National Party                   | 13202
-Eastwood                                 | Scottish National Party                   | 11322
-Edinburgh Central                        | Scottish National Party                   | 9789
-Edinburgh Eastern                        | Scottish National Party                   | 16760
-Edinburgh Northern & Leith               | Scottish National Party                   | 17322
-Edinburgh Pentlands                      | Scottish National Party                   | 13181
-Edinburgh Southern                       | Scottish National Party                   | 12474
-Edinburgh Western                        | Scottish National Party                   | 13685
-Ettrick, Roxburgh & Berwickshire         | Scottish National Party                   | 10521
-Falkirk East                             | Scottish National Party                   | 16720
-Falkirk West                             | Scottish National Party                   | 18260
-Galloway & West Dumfries                 | Scottish National Party                   | 13013
-Glasgow Anniesland                       | Scottish National Party                   | 15007
-Glasgow Cathcart                         | Scottish National Party                   | 16200
-Glasgow Kelvin                           | Scottish National Party                   | 10964
-Glasgow Maryhill & Springburn            | Scottish National Party                   | 13109
-Glasgow Pollok                           | Scottish National Party                   | 15316
-Glasgow Provan                           | Scottish National Party                   | 13140
-Glasgow Shettleston                      | Scottish National Party                   | 14198
-Glasgow Southside                        | Scottish National Party                   | 15287
-Greenock & Inverclyde                    | Scottish National Party                   | 17032
-Hamilton, Larkhall & Stonehouse          | Scottish National Party                   | 13945
-Inverness & Nairn                        | Scottish National Party                   | 18505
-Kilmarnock & Irvine Valley               | Scottish National Party                   | 19047
-Kirkcaldy                                | Scottish National Party                   | 16358
-Linlithgow                               | Scottish National Party                   | 19362
-Mid Fife & Glenrothes                    | Scottish National Party                   | 15555
-Midlothian North & Musselburgh           | Scottish National Party                   | 16948
-Midlothian South, Tweeddale & Lauderdale | Scottish National Party                   | 16031
-Moray                                    | Scottish National Party                   | 15742
-Motherwell & Wishaw                      | Scottish National Party                   | 15291
-Nah h-Eilanan an Iar                     | Scottish National Party                   | 6874
-North East Fife                          | Scottish National Party                   | 11463
-Orkney Islands                           | Scottish National Party                   | 2562
-Paisley                                  | Scottish National Party                   | 14682
-Perthshire North                         | Scottish National Party                   | 16526
-Perthshire South & Kinross-shire         | Scottish National Party                   | 15315
-Renfrewshire North & West                | Scottish National Party                   | 14718
-Renfrewshire South                       | Scottish National Party                   | 14272
-Rutherglen                               | Scottish National Party                   | 15222
-Shetland Islands                         | Scottish National Party                   | 2545
-Skye, Lochaber & Badenoch                | Scottish National Party                   | 17362
-Stirling                                 | Scottish National Party                   | 16303
-Strathkelvin & Bearsden                  | Scottish National Party                   | 17060
-Uddingston & Bellshill                   | Scottish National Party                   | 14424
-
-Clydesdale                               | Independent                               | 1332
-Dumbarton                                | Independent                               | 641
-Edinburgh Northern & Leith               | Independent                               | 1344
-Glasgow Cathcart                         | Independent                               | 501
-Glasgow Kelvin                           | Independent                               | 198
-Orkney Islands                           | Independent                               | 137
-Perthshire South & Kinross-shire         | Independent                               | 544
-Renfrewshire North & West                | Independent                               | 198
-Skye, Lochaber & Badenoch                | Independent                               | 1116
-
-Dundee City East                         | Trade Unionist and Socialist Coalition    | 437
-Dundee City West                         | Trade Unionist and Socialist Coalition    | 642
-Glasgow Cathcart                         | Trade Unionist and Socialist Coalition    | 909
-Glasgow Pollok                           | Trade Unionist and Socialist Coalition    | 555
-Glasgow Shettleston                      | Trade Unionist and Socialist Coalition    | 583
-Renfrewshire North & West                | Trade Unionist and Socialist Coalition    | 414
-
-Coatbridge & Chryston                    | Scottish Greens                           | 1612
-Edinburgh Central                        | Scottish Greens                           | 4644
-Glasgow Kelvin                           | Scottish Greens                           | 6916
-
 Clydesdale                               | Clydesdale and South Scotland Independent | 909
+Clydesdale                               | Independent                               | 1332
+Clydesdale                               | Scottish Conservative & Unionist Party    | 8842
+Clydesdale                               | Scottish Labour                           | 6995
+Clydesdale                               | Scottish Liberal Democrats                | 820
+Clydesdale                               | Scottish National Party                   | 14821
+Coatbridge & Chryston                    | Scottish Conservative & Unionist Party    | 2868
+Coatbridge & Chryston                    | Scottish Greens                           | 1612
+Coatbridge & Chryston                    | Scottish Labour                           | 9826
+Coatbridge & Chryston                    | Scottish Liberal Democrats                | 423
+Coatbridge & Chryston                    | Scottish National Party                   | 13605
+Cowdenbeath                              | Scottish Conservative & Unionist Party    | 4251
+Cowdenbeath                              | Scottish Labour                           | 10674
+Cowdenbeath                              | Scottish Liberal Democrats                | 1094
+Cowdenbeath                              | Scottish National Party                   | 13715
+Cumbernauld & Kilsyth                    | Scottish Conservative & Unionist Party    | 3068
+Cumbernauld & Kilsyth                    | Scottish Labour                           | 7537
+Cumbernauld & Kilsyth                    | Scottish Liberal Democrats                | 688
+Cumbernauld & Kilsyth                    | Scottish National Party                   | 17015
+Cunninghame North                        | Scottish Conservative & Unionist Party    | 7863
+Cunninghame North                        | Scottish Labour                           | 6735
+Cunninghame North                        | Scottish Liberal Democrats                | 780
+Cunninghame North                        | Scottish National Party                   | 16587
+Cunninghame South                        | Scottish Conservative & Unionist Party    | 3940
+Cunninghame South                        | Scottish Labour                           | 7723
+Cunninghame South                        | Scottish Liberal Democrats                | 616
+Cunninghame South                        | Scottish National Party                   | 13416
+Dumbarton                                | Independent                               | 641
+Dumbarton                                | Scottish Conservative & Unionist Party    | 4891
+Dumbarton                                | Scottish Labour                           | 13522
+Dumbarton                                | Scottish Liberal Democrats                | 1131
+Dumbarton                                | Scottish National Party                   | 13413
+Dumfriesshire                            | Scottish Conservative & Unionist Party    | 13536
+Dumfriesshire                            | Scottish Labour                           | 9151
+Dumfriesshire                            | Scottish Liberal Democrats                | 1267
+Dumfriesshire                            | Scottish National Party                   | 12306
+Dundee City East                         | Scottish Conservative & Unionist Party    | 4969
+Dundee City East                         | Scottish Labour                           | 5611
+Dundee City East                         | Scottish Liberal Democrats                | 911
+Dundee City East                         | Scottish National Party                   | 16509
+Dundee City East                         | Trade Unionist and Socialist Coalition    | 437
+Dundee City West                         | Scottish Conservative & Unionist Party    | 2826
+Dundee City West                         | Scottish Labour                           | 7242
+Dundee City West                         | Scottish Liberal Democrats                | 1008
+Dundee City West                         | Scottish National Party                   | 16070
+Dundee City West                         | Trade Unionist and Socialist Coalition    | 642
+Dunfermline                              | Scottish Conservative & Unionist Party    | 5797
+Dunfermline                              | Scottish Labour                           | 9699
+Dunfermline                              | Scottish Liberal Democrats                | 3156
+Dunfermline                              | Scottish National Party                   | 14257
+East Kilbride                            | Scottish Conservative & Unionist Party    | 5857
+East Kilbride                            | Scottish Labour                           | 8392
+East Kilbride                            | Scottish Liberal Democrats                | 1009
+East Kilbride                            | Scottish National Party                   | 19371
+East Lothian                             | Scottish Conservative & Unionist Party    | 9045
+East Lothian                             | Scottish Labour                           | 14329
+East Lothian                             | Scottish Liberal Democrats                | 1337
+East Lothian                             | Scottish National Party                   | 13202
+Eastwood                                 | Scottish Conservative & Unionist Party    | 12932
+Eastwood                                 | Scottish Labour                           | 11081
+Eastwood                                 | Scottish Liberal Democrats                | 921
+Eastwood                                 | Scottish National Party                   | 11322
+Edinburgh Central                        | Scottish Conservative & Unionist Party    | 10399
+Edinburgh Central                        | Scottish Greens                           | 4644
+Edinburgh Central                        | Scottish Labour                           | 7546
+Edinburgh Central                        | Scottish Liberal Democrats                | 1672
 Edinburgh Central                        | Scottish Libertarian                      | 119
+Edinburgh Central                        | Scottish National Party                   | 9789
+Edinburgh Eastern                        | Scottish Conservative & Unionist Party    | 5700
+Edinburgh Eastern                        | Scottish Labour                           | 11673
+Edinburgh Eastern                        | Scottish Liberal Democrats                | 1264
+Edinburgh Eastern                        | Scottish National Party                   | 16760
+Edinburgh Northern & Leith               | Independent                               | 1344
+Edinburgh Northern & Leith               | Scottish Conservative & Unionist Party    | 6081
+Edinburgh Northern & Leith               | Scottish Labour                           | 10576
+Edinburgh Northern & Leith               | Scottish Liberal Democrats                | 1779
+Edinburgh Northern & Leith               | Scottish National Party                   | 17322
+Edinburgh Pentlands                      | Scottish Conservative & Unionist Party    | 10725
+Edinburgh Pentlands                      | Scottish Labour                           | 7811
+Edinburgh Pentlands                      | Scottish Liberal Democrats                | 1636
+Edinburgh Pentlands                      | Scottish National Party                   | 13181
+Edinburgh Southern                       | Scottish Conservative & Unionist Party    | 9972
+Edinburgh Southern                       | Scottish Labour                           | 13597
+Edinburgh Southern                       | Scottish Liberal Democrats                | 2216
+Edinburgh Southern                       | Scottish National Party                   | 12474
+Edinburgh Western                        | Scottish Conservative & Unionist Party    | 5686
+Edinburgh Western                        | Scottish Labour                           | 3750
+Edinburgh Western                        | Scottish Liberal Democrats                | 16645
+Edinburgh Western                        | Scottish National Party                   | 13685
+Ettrick, Roxburgh & Berwickshire         | Scottish Conservative & Unionist Party    | 18257
+Ettrick, Roxburgh & Berwickshire         | Scottish Labour                           | 1766
+Ettrick, Roxburgh & Berwickshire         | Scottish Liberal Democrats                | 2551
+Ettrick, Roxburgh & Berwickshire         | Scottish National Party                   | 10521
+Falkirk East                             | Scottish Conservative & Unionist Party    | 6342
+Falkirk East                             | Scottish Labour                           | 8408
+Falkirk East                             | Scottish Liberal Democrats                | 1054
+Falkirk East                             | Scottish National Party                   | 16720
+Falkirk West                             | Scottish Conservative & Unionist Party    | 5877
+Falkirk West                             | Scottish Labour                           | 6980
+Falkirk West                             | Scottish Liberal Democrats                | 966
+Falkirk West                             | Scottish National Party                   | 18260
+Galloway & West Dumfries                 | Scottish Conservative & Unionist Party    | 14527
+Galloway & West Dumfries                 | Scottish Labour                           | 4876
+Galloway & West Dumfries                 | Scottish Liberal Democrats                | 947
+Galloway & West Dumfries                 | Scottish National Party                   | 13013
+Glasgow Anniesland                       | Scottish Conservative & Unionist Party    | 4057
+Glasgow Anniesland                       | Scottish Labour                           | 8854
+Glasgow Anniesland                       | Scottish Liberal Democrats                | 1098
+Glasgow Anniesland                       | Scottish National Party                   | 15007
+Glasgow Cathcart                         | Independent                               | 501
+Glasgow Cathcart                         | Scottish Conservative & Unionist Party    | 4514
+Glasgow Cathcart                         | Scottish Labour                           | 6810
+Glasgow Cathcart                         | Scottish Liberal Democrats                | 1703
+Glasgow Cathcart                         | Scottish National Party                   | 16200
+Glasgow Cathcart                         | Trade Unionist and Socialist Coalition    | 909
+Glasgow Kelvin                           | Independent                               | 198
+Glasgow Kelvin                           | Scottish Conservative & Unionist Party    | 3346
+Glasgow Kelvin                           | Scottish Greens                           | 6916
+Glasgow Kelvin                           | Scottish Labour                           | 5968
+Glasgow Kelvin                           | Scottish Liberal Democrats                | 1050
+Glasgow Kelvin                           | Scottish National Party                   | 10964
+Glasgow Maryhill & Springburn            | Scottish Conservative & Unionist Party    | 2305
+Glasgow Maryhill & Springburn            | Scottish Labour                           | 7507
+Glasgow Maryhill & Springburn            | Scottish Liberal Democrats                | 691
+Glasgow Maryhill & Springburn            | Scottish National Party                   | 13109
+Glasgow Pollok                           | Scottish Conservative & Unionist Party    | 2653
+Glasgow Pollok                           | Scottish Labour                           | 8834
+Glasgow Pollok                           | Scottish Liberal Democrats                | 585
+Glasgow Pollok                           | Scottish National Party                   | 15316
+Glasgow Pollok                           | Trade Unionist and Socialist Coalition    | 555
+Glasgow Provan                           | Scottish Conservative & Unionist Party    | 2062
+Glasgow Provan                           | Scottish Labour                           | 8357
+Glasgow Provan                           | Scottish Liberal Democrats                | 518
+Glasgow Provan                           | Scottish National Party                   | 13140
+Glasgow Shettleston                      | Scottish Conservative & Unionist Party    | 3151
+Glasgow Shettleston                      | Scottish Labour                           | 6875
+Glasgow Shettleston                      | Scottish Liberal Democrats                | 568
+Glasgow Shettleston                      | Scottish National Party                   | 14198
+Glasgow Shettleston                      | Trade Unionist and Socialist Coalition    | 583
+Glasgow Southside                        | Scottish Conservative & Unionist Party    | 3100
+Glasgow Southside                        | Scottish Labour                           | 5694
+Glasgow Southside                        | Scottish Liberal Democrats                | 822
+Glasgow Southside                        | Scottish National Party                   | 15287
+Greenock & Inverclyde                    | Scottish Conservative & Unionist Party    | 4487
+Greenock & Inverclyde                    | Scottish Labour                           | 8802
+Greenock & Inverclyde                    | Scottish Liberal Democrats                | 1404
+Greenock & Inverclyde                    | Scottish National Party                   | 17032
+Hamilton, Larkhall & Stonehouse          | Scottish Conservative & Unionist Party    | 5596
+Hamilton, Larkhall & Stonehouse          | Scottish Labour                           | 8508
+Hamilton, Larkhall & Stonehouse          | Scottish Liberal Democrats                | 836
+Hamilton, Larkhall & Stonehouse          | Scottish National Party                   | 13945
+Inverness & Nairn                        | Scottish Conservative & Unionist Party    | 7648
+Inverness & Nairn                        | Scottish Labour                           | 6719
+Inverness & Nairn                        | Scottish Liberal Democrats                | 5445
+Inverness & Nairn                        | Scottish National Party                   | 18505
+Kilmarnock & Irvine Valley               | Scottish Conservative & Unionist Party    | 6597
+Kilmarnock & Irvine Valley               | Scottish Labour                           | 7853
+Kilmarnock & Irvine Valley               | Scottish Liberal Democrats                | 888
+Kilmarnock & Irvine Valley               | Scottish National Party                   | 19047
+Kirkcaldy                                | Scottish Conservative & Unionist Party    | 4568
+Kirkcaldy                                | Scottish Labour                           | 8963
+Kirkcaldy                                | Scottish Liberal Democrats                | 1219
+Kirkcaldy                                | Scottish National Party                   | 16358
+Linlithgow                               | Scottish Conservative & Unionist Party    | 7699
+Linlithgow                               | Scottish Labour                           | 10027
+Linlithgow                               | Scottish Liberal Democrats                | 1319
+Linlithgow                               | Scottish National Party                   | 19362
+Mid Fife & Glenrothes                    | Scottish Conservative & Unionist Party    | 4427
+Mid Fife & Glenrothes                    | Scottish Labour                           | 7279
+Mid Fife & Glenrothes                    | Scottish Liberal Democrats                | 1286
+Mid Fife & Glenrothes                    | Scottish National Party                   | 15555
+Midlothian North & Musselburgh           | Scottish Conservative & Unionist Party    | 6267
+Midlothian North & Musselburgh           | Scottish Labour                           | 9913
+Midlothian North & Musselburgh           | Scottish Liberal Democrats                | 1557
+Midlothian North & Musselburgh           | Scottish National Party                   | 16948
+Midlothian South, Tweeddale & Lauderdale | Scottish Conservative & Unionist Party    | 10163
+Midlothian South, Tweeddale & Lauderdale | Scottish Labour                           | 5701
+Midlothian South, Tweeddale & Lauderdale | Scottish Liberal Democrats                | 3686
+Midlothian South, Tweeddale & Lauderdale | Scottish National Party                   | 16031
+Moray                                    | Scottish Conservative & Unionist Party    | 12867
+Moray                                    | Scottish Labour                           | 3547
+Moray                                    | Scottish Liberal Democrats                | 1265
+Moray                                    | Scottish National Party                   | 15742
+Motherwell & Wishaw                      | Scottish Conservative & Unionist Party    | 3991
+Motherwell & Wishaw                      | Scottish Labour                           | 9068
+Motherwell & Wishaw                      | Scottish Liberal Democrats                | 761
+Motherwell & Wishaw                      | Scottish National Party                   | 15291
 Nah h-Eilanan an Iar                     | Scottish Christian                        | 1162
+Nah h-Eilanan an Iar                     | Scottish Conservative & Unionist Party    | 1499
+Nah h-Eilanan an Iar                     | Scottish Labour                           | 3378
+Nah h-Eilanan an Iar                     | Scottish Liberal Democrats                | 293
+Nah h-Eilanan an Iar                     | Scottish National Party                   | 6874
+North East Fife                          | Scottish Conservative & Unionist Party    | 5646
+North East Fife                          | Scottish Labour                           | 2026
+North East Fife                          | Scottish Liberal Democrats                | 14928
+North East Fife                          | Scottish National Party                   | 11463
+Orkney Islands                           | Independent                               | 137
+Orkney Islands                           | Scottish Conservative & Unionist Party    | 435
+Orkney Islands                           | Scottish Labour                           | 304
+Orkney Islands                           | Scottish Liberal Democrats                | 7096
+Orkney Islands                           | Scottish National Party                   | 2562
+Paisley                                  | Scottish Conservative & Unionist Party    | 3533
+Paisley                                  | Scottish Labour                           | 9483
+Paisley                                  | Scottish Liberal Democrats                | 1766
+Paisley                                  | Scottish National Party                   | 14682
+Perthshire North                         | Scottish Conservative & Unionist Party    | 13190
+Perthshire North                         | Scottish Labour                           | 2604
+Perthshire North                         | Scottish Liberal Democrats                | 1705
+Perthshire North                         | Scottish National Party                   | 16526
+Perthshire South & Kinross-shire         | Independent                               | 544
+Perthshire South & Kinross-shire         | Scottish Conservative & Unionist Party    | 13893
+Perthshire South & Kinross-shire         | Scottish Labour                           | 3389
+Perthshire South & Kinross-shire         | Scottish Liberal Democrats                | 3008
+Perthshire South & Kinross-shire         | Scottish National Party                   | 15315
+Renfrewshire North & West                | Independent                               | 198
+Renfrewshire North & West                | Scottish Conservative & Unionist Party    | 7345
+Renfrewshire North & West                | Scottish Labour                           | 7244
+Renfrewshire North & West                | Scottish Liberal Democrats                | 888
+Renfrewshire North & West                | Scottish National Party                   | 14718
+Renfrewshire North & West                | Trade Unionist and Socialist Coalition    | 414
+Renfrewshire South                       | Scottish Conservative & Unionist Party    | 4752
+Renfrewshire South                       | Scottish Labour                           | 9864
+Renfrewshire South                       | Scottish Liberal Democrats                | 793
+Renfrewshire South                       | Scottish National Party                   | 14272
+Rutherglen                               | Scottish Conservative & Unionist Party    | 3718
+Rutherglen                               | Scottish Labour                           | 11479
+Rutherglen                               | Scottish Liberal Democrats                | 2533
+Rutherglen                               | Scottish National Party                   | 15222
+Shetland Islands                         | Scottish Conservative & Unionist Party    | 405
+Shetland Islands                         | Scottish Labour                           | 651
+Shetland Islands                         | Scottish Liberal Democrats                | 7440
+Shetland Islands                         | Scottish National Party                   | 2545
+Skye, Lochaber & Badenoch                | Independent                               | 1116
+Skye, Lochaber & Badenoch                | Scottish Conservative & Unionist Party    | 5887
+Skye, Lochaber & Badenoch                | Scottish Labour                           | 3821
+Skye, Lochaber & Badenoch                | Scottish Liberal Democrats                | 8319
+Skye, Lochaber & Badenoch                | Scottish National Party                   | 17362
+Stirling                                 | Scottish Conservative & Unionist Party    | 9585
+Stirling                                 | Scottish Labour                           | 6885
+Stirling                                 | Scottish Liberal Democrats                | 1416
+Stirling                                 | Scottish National Party                   | 16303
+Strathkelvin & Bearsden                  | Scottish Conservative & Unionist Party    | 8960
+Strathkelvin & Bearsden                  | Scottish Labour                           | 8288
+Strathkelvin & Bearsden                  | Scottish Liberal Democrats                | 4880
+Strathkelvin & Bearsden                  | Scottish National Party                   | 17060
+Uddingston & Bellshill                   | Scottish Conservative & Unionist Party    | 4693
+Uddingston & Bellshill                   | Scottish Labour                           | 9615
+Uddingston & Bellshill                   | Scottish Liberal Democrats                | 811
+Uddingston & Bellshill                   | Scottish National Party                   | 14424
