@@ -165,9 +165,22 @@ module Sapor
                                  'Strathkelvin & Bearsden' => 'West Scotland',
                                  'Uddingston & Bellshill' => 'Central Scotland' }.freeze
 
+    ALBA_PARTY = 'Alba Party'
+    CON_PARTY = 'Scottish Conservative & Unionist Party'
+    GREEN_PARTY = 'Scottish Greens'
+    LAB_PARTY = 'Scottish Labour'
+    LIB_DEM_PARTY = 'Scottish Liberal Democrats'
     SNP_PARTY = 'Scottish National Party'
 
-    COALITIONS = [[SNP_PARTY]].freeze
+    COALITIONS = [[ALBA_PARTY, GREEN_PARTY, SNP_PARTY],
+                  [ALBA_PARTY, SNP_PARTY],
+                  [CON_PARTY, LAB_PARTY],
+                  [CON_PARTY, LAB_PARTY, LIB_DEM_PARTY],
+                  [CON_PARTY, LIB_DEM_PARTY],
+                  [GREEN_PARTY, LAB_PARTY, LIB_DEM_PARTY],
+                  [GREEN_PARTY, SNP_PARTY],
+                  [LAB_PARTY, LIB_DEM_PARTY],
+                  [SNP_PARTY]].freeze
 
     def constituency_coefficients
       if @constituency_coefficients.nil?
