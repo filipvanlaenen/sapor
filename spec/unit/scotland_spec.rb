@@ -51,7 +51,7 @@ describe Sapor::Scotland, '#seats' do
     expect(seats['UK Independence Party']).to eq(0)
     expect(seats['Solidarity–Scotland’s Socialist Movement']).to eq(0)
     expect(seats['Scottish Christian']).to eq(0)
-    expect(seats['RISE–Scotland’s Left Alliance']).to eq(0)
+    expect(seats['Scottish Socialist Party']).to eq(0) # RISE–Scotland’s Left Alliance
     expect(seats['Women’s Equality Party']).to eq(0)
     expect(seats['British Unionist Party']).to eq(0)
     expect(seats['Clydesdale and South Scotland Independent']).to eq(0)
