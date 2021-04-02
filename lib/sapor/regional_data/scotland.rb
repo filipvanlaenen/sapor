@@ -25,6 +25,15 @@ module Sapor
   class Scotland < Area
     include Singleton
 
+    def add_extra_information(extra_information)    
+      c = constituency_coefficients
+      pairs = extra_information.split('|')
+      pairs.each do | pair |
+        elements = pair.split('~')
+        c[elements.first] = elements.last.to_f
+      end
+    end
+
     def area_code
       'GB-SCT'
     end
