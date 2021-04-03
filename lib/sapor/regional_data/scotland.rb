@@ -244,4 +244,20 @@ module Sapor
       @regional_election_results_of_2016
     end
   end
+
+  # Extension of Scotland with Reform UK
+  class ScotlandWithRefUK < Scotland
+    def area_code
+      'GB-SCT∪{RefUK}'
+    end
+
+    def regional_election_results_of_2016
+      if @regional_election_results_of_2016.nil?
+        @regional_election_results_of_2016 = load_election_results(
+          'scotland-20160505-regions-with-refuk.psv'
+        )
+      end
+      @regional_election_results_of_2016
+    end
+  end
 end
