@@ -1,0 +1,116 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Replaced RISE–Scotland’s Left Alliance with Scottish Socialist Party
+
+Central Scotland      | Scottish National Party                   | 129082
+Central Scotland      | Alba Party                                | 129082
+Central Scotland      | Scottish Labour                           | 67103
+Central Scotland      | Scottish Conservative & Unionist Party    | 43602
+Central Scotland      | Scottish Greens                           | 12722
+Central Scotland      | UK Independence Party                     | 6088
+Central Scotland      | Scottish Liberal Democrats                | 5015
+Central Scotland      | Solidarity–Scotland’s Socialist Movement  | 2684
+Central Scotland      | Scottish Christian                        | 2314
+Central Scotland      | Scottish Socialist Party                  | 1636
+Central Scotland      | Independent                               | 460
+
+Glasgow               | Scottish National Party                   | 111101
+Glasgow               | Alba Party                                | 111101
+Glasgow               | Scottish Labour                           | 59151
+Glasgow               | Scottish Conservative & Unionist Party    | 29533
+Glasgow               | Scottish Greens                           | 23398
+Glasgow               | Scottish Liberal Democrats                | 5850
+Glasgow               | UK Independence Party                     | 4889
+Glasgow               | Solidarity–Scotland’s Socialist Movement  | 3593
+Glasgow               | Scottish Socialist Party                  | 2454
+Glasgow               | British Unionist Party                    | 2453
+Glasgow               | Women’s Equality Party                    | 2091
+Glasgow               | Animal Welfare Party                      | 1819
+Glasgow               | Scottish Christian                        | 1506
+Glasgow               | Independent                               | 271
+
+Highlands and Islands | Scottish National Party                   | 81600
+Highlands and Islands | Alba Party                                | 81600
+Highlands and Islands | Scottish Conservative & Unionist Party    | 44693
+Highlands and Islands | Scottish Liberal Democrats                | 27223
+Highlands and Islands | Scottish Labour                           | 22894
+Highlands and Islands | Scottish Greens                           | 14781
+Highlands and Islands | UK Independence Party                     | 5344
+Highlands and Islands | Independent                               | 3689
+Highlands and Islands | Scottish Christian                        | 3407
+Highlands and Islands | Scottish Socialist Party                  | 889
+Highlands and Islands | Solidarity–Scotland’s Socialist Movement  | 793
+
+Lothian               | Scottish National Party                   | 118546
+Lothian               | Alba Party                                | 118546
+Lothian               | Scottish Conservative & Unionist Party    | 74972
+Lothian               | Scottish Labour                           | 67991
+Lothian               | Scottish Greens                           | 34551
+Lothian               | Scottish Liberal Democrats                | 18479
+Lothian               | UK Independence Party                     | 5802
+Lothian               | Women’s Equality Party                    | 3877
+Lothian               | Scottish Socialist Party                  | 1641
+Lothian               | Solidarity–Scotland’s Socialist Movement  | 1319
+
+Mid Scotland and Fife | Scottish National Party                   | 120128
+Mid Scotland and Fife | Alba Party                                | 120128
+Mid Scotland and Fife | Scottish Conservative & Unionist Party    | 73293
+Mid Scotland and Fife | Scottish Labour                           | 51373
+Mid Scotland and Fife | Scottish Liberal Democrats                | 20401
+Mid Scotland and Fife | Scottish Greens                           | 17860
+Mid Scotland and Fife | UK Independence Party                     | 5345
+Mid Scotland and Fife | Scottish Socialist Party                  | 1073
+Mid Scotland and Fife | Solidarity–Scotland’s Socialist Movement  | 1049
+Mid Scotland and Fife | Scottish Libertarian                      | 650
+
+North East Scotland   | Scottish National Party                   | 137086
+North East Scotland   | Alba Party                                | 137086
+North East Scotland   | Scottish Conservative & Unionist Party    | 85848
+North East Scotland   | Scottish Labour                           | 38791
+North East Scotland   | Scottish Liberal Democrats                | 18444
+North East Scotland   | Scottish Greens                           | 15123
+North East Scotland   | UK Independence Party                     | 6376
+North East Scotland   | Scottish Christian                        | 2068
+North East Scotland   | Solidarity–Scotland’s Socialist Movement  | 992
+North East Scotland   | National Front                            | 617
+North East Scotland   | Scottish Socialist Party                  | 599
+North East Scotland   | Scottish Libertarian                      | 552
+North East Scotland   | Communist Party of Britain                | 510
+
+South Scotland        | Scottish National Party                   | 120217
+South Scotland        | Alba Party                                | 120217
+South Scotland        | Scottish Conservative & Unionist Party    | 100753
+South Scotland        | Scottish Labour                           | 56072
+South Scotland        | Scottish Greens                           | 14773
+South Scotland        | Scottish Liberal Democrats                | 11775
+South Scotland        | UK Independence Party                     | 6726
+South Scotland        | Clydesdale and South Scotland Independent | 1485
+South Scotland        | Solidarity–Scotland’s Socialist Movement  | 1294
+South Scotland        | Scottish Socialist Party                  | 1097
+
+West Scotland         | Scottish National Party                   | 135827
+West Scotland         | Alba Party                                | 135827
+West Scotland         | Scottish Labour                           | 72544
+West Scotland         | Scottish Conservative & Unionist Party    | 71528
+West Scotland         | Scottish Greens                           | 17218
+West Scotland         | Scottish Liberal Democrats                | 12097
+West Scotland         | UK Independence Party                     | 5856
+West Scotland         | Solidarity–Scotland’s Socialist Movement  | 2609
+West Scotland         | Scottish Christian                        | 2391
+West Scotland         | Scottish Socialist Party                  | 1522
+West Scotland         | Scottish Libertarian                      | 484

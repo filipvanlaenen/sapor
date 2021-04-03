@@ -228,4 +228,20 @@ module Sapor
       @overall_individual_constituencies_election_results_of_2016
     end
   end
+
+  # Extension of Scotland with Alba Party
+  class ScotlandWithAlba < Scotland
+    def area_code
+      'GB-SCT∪{Alba}'
+    end
+
+    def regional_election_results_of_2016
+      if @regional_election_results_of_2016.nil?
+        @regional_election_results_of_2016 = load_election_results(
+          'scotland-20160505-regions-with-alba.psv'
+        )
+      end
+      @regional_election_results_of_2016
+    end
+  end
 end
