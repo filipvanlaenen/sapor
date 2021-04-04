@@ -89,7 +89,8 @@ module Sapor
       Latvia.instance, LatviaWithLuk.instance, Lithuania.instance,
       Luxembourg.instance, Netherlands.instance, Portugal.instance,
       Romania.instance, Scotland.instance, ScotlandWithAfuAndAlba.instance,
-      ScotlandWithAlba.instance, ScotlandWithRefUK.instance,
+      ScotlandWithAlba.instance, ScotlandWithAlbaAndRefUK.instance,
+      ScotlandWithRefUK.instance,
       Slovakia.instance, Slovenia.instance, Spain.instance, Sweden.instance,
       Sweden20140914.instance, UnitedKingdom.instance,
       Utopia.instance]).map do |area|
