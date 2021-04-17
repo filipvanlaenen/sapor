@@ -51,7 +51,7 @@ module Sapor
                   ['Lijst Dedecker (ECR)', 'Nieuw-Vlaamse Alliantie (ECR)'],
                   ['Open Vlaamse Liberalen en Democraten (RE)'],
                   ['Partij van de Arbeid van België (GUE/NGL)'],
-                  ['Socialistische Partij Anders (S&D)'],
+                  ['Vooruit (S&D)'],
                   ['Vlaams Belang (ID)']].freeze
 
     NO_OF_SEATS = 12

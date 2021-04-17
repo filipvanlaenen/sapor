@@ -53,7 +53,7 @@ module Sapor
     PS_PARTY = 'Parti Socialiste'.freeze
     PTB_PARTY = 'Parti du Travail de Belgique'.freeze
     PVDA_PARTY = 'Partij van de Arbeid van België'.freeze
-    SPA_PARTY = 'Socialistische Partij Anders'.freeze
+    SPA_PARTY = 'Vooruit'.freeze
 
     COALITIONS = [[CDH_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, MR_PARTY, 
                    OVLD_PARTY, PS_PARTY, SPA_PARTY],

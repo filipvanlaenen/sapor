@@ -65,7 +65,7 @@ module Sapor
     GROEN_PARTY = 'Groen'.freeze
     NVA_PARTY = 'Nieuw-Vlaamse Alliantie'.freeze
     PVDA_PARTY = 'Partij van de Arbeid van België'.freeze
-    SPA_PARTY = 'Socialistische Partij Anders'.freeze
+    SPA_PARTY = 'Vooruit'.freeze
     VB_PARTY = 'Vlaams Belang'.freeze
     VLD_PARTY = 'Open Vlaamse Liberalen en Democraten'.freeze
 
