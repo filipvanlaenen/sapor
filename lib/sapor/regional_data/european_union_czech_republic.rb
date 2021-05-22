@@ -57,8 +57,11 @@ module Sapor
                    'Starostové a nezávislí (EPP)',
                    'TOP 09 (EPP)'],
                   ['Občanská demokratická strana (ECR)', 'SPOLU (ECR)'],
+                  ['Přísaha (*)'],
                   ['Svoboda a přímá demokracie (ID)',
-                   'Trikolóra hnutí občanů (ID)'],
+                   'Trikolóra hnutí občanů (ID)',
+                   'Trikolóra hnutí občanů–Strana svobodných občanů–Strana' \
+                     ' soukromníků České republiky (ID)'],
                   ['Strana svobodných občanů (NI)']].freeze
 
     NO_OF_SEATS = 21
