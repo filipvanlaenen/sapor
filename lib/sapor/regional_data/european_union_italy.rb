@@ -51,13 +51,14 @@ module Sapor
 
     COALITIONS = [['Azione (S&D)', 'Liberi e Uguali (S&D)',
                    'Partito Democratico (S&D)'],
-                  ['Cambiamo! (*)', 'Insieme (*)'],
+                  ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)',
+                   'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['CasaPound Italia (NI)', 'Movimento 5 Stelle (NI)'],
                   ['Civica Popolare (RE)', 'Italia Viva (RE)',
                    'Più Europa (RE)'],
                   ['Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
-                  ['Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
+                  ['Insieme (*)'],
                   ['Lega Nord (ID)'],
                   ['Potere al Popolo (GUE/NGL)']].freeze
 
