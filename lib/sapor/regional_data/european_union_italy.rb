@@ -49,7 +49,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Azione (S&D)', 'Liberi e Uguali (S&D)',
+    COALITIONS = [['Articolo Uno (S&D)', 'Azione (S&D)', 'Liberi e Uguali (S&D)',
                    'Partito Democratico (S&D)'],
                   ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)',
                    'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
@@ -60,7 +60,8 @@ module Sapor
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Insieme (*)'],
                   ['Lega Nord (ID)'],
-                  ['Potere al Popolo (GUE/NGL)']].freeze
+                  ['Potere al Popolo (GUE/NGL)',
+                   'Sinistra Italiana (GUE/NGL)']].freeze
 
     NO_OF_SEATS = 76
 
