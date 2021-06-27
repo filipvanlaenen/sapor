@@ -75,6 +75,7 @@ module Sapor
                   [AP_PARTY, KRF_PARTY, MDG_PARTY, SP_PARTY, SV_PARTY],
                   [AP_PARTY, KRF_PARTY, SP_PARTY],
                   [AP_PARTY, MDG_PARTY, R_PARTY, SP_PARTY, SV_PARTY],
+                  [AP_PARTY, MDG_PARTY, R_PARTY, SV_PARTY],
                   [AP_PARTY, MDG_PARTY, SP_PARTY, SV_PARTY],
                   [AP_PARTY, R_PARTY, SP_PARTY, SV_PARTY],
                   [AP_PARTY, SP_PARTY, SV_PARTY],
