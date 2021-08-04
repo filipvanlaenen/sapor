@@ -32,7 +32,7 @@ module Sapor
     end
 
     def no_of_seats
-      NO_OF_SEATS
+      NO_OF_SEATS + BONUS_SEATS
     end
 
     def population_size
@@ -71,7 +71,8 @@ module Sapor
                   [GRUNEN_PARTY, SPD_PARTY],
                   [LINKEN_PARTY, SPD_PARTY]].freeze
 
-    NO_OF_SEATS = 709
+    BONUS_SEATS = 3
+    NO_OF_SEATS = 709 - BONUS_SEATS
 
     # Voter turnout on 24 September 2017
     # Source: Wikipedia page with the results of the elections of 24 September
@@ -83,12 +84,89 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(
-          NO_OF_SEATS, SainteLagueDenominators, THRESHOLD, 0, false, THRESHOLD,
-          [].freeze, [CSU_PARTY].freeze
+        @electoral_system = GermanSingleDistrictProportional.new(
+          NO_OF_SEATS, SainteLagueDenominators, THRESHOLD, BONUS_SEATS, false,
+          THRESHOLD, [].freeze, [CSU_PARTY].freeze, CSU_PARTY, 0.7
         )
       end
       @electoral_system
     end
   end
+
+  #
+  # Class representing a proportional electoral system with only one district,
+  # but adjusted for the 2021 German election.
+  #
+  class GermanSingleDistrictProportional
+    def initialize(no_of_seats, denominators_class, threshold = 0, bonus = 0,
+                   other_eligible = true, coalition_list_threshold = 1,
+                   coalition_lists = [], minority_lists = [], bonus_party,
+                   bonus_party_cutoff)
+      @no_of_seats = no_of_seats
+      @denominators_class = denominators_class
+      @threshold = threshold
+      @bonus = bonus
+      @other_eligible = other_eligible
+      @coalition_list_threshold = coalition_list_threshold
+      @coalition_lists = coalition_lists
+      @minority_lists = minority_lists
+      @denominators = @denominators_class.get(@no_of_seats)
+      @bonus_party = bonus_party
+      @bonus_party_cutoff = bonus_party_cutoff
+    end
+
+    def project(simulation)
+      votes_sum = simulation.values.inject(:+).to_f
+      threshold = votes_sum * @threshold
+      coalition_list_threshold = votes_sum * @coalition_list_threshold
+      counters = create_counters(simulation, threshold, coalition_list_threshold)
+      result = create_empty_result(simulation)
+      fill_result(counters, result)
+      result
+    end
+
+    private
+
+    def create_counters(simulation, threshold, coalition_list_threshold)
+      counters = []
+      simulation.each_pair do |choice, new_value|
+        next if choice == OTHER && !@other_eligible
+        next unless @minority_lists.include?(choice) ||
+                    @coalition_lists.include?(choice) &&
+                    new_value >= coalition_list_threshold ||
+                    !@coalition_lists.include?(choice) &&
+                    new_value >= threshold
+        counters << [choice, new_value.to_f, 0, new_value.to_f / @denominators[0]]
+      end
+      counters
+    end
+
+    def create_empty_result(simulation)
+      result = {}
+      simulation.each_key do |choice|
+        result[choice] = 0
+      end
+      if simulation[@bonus_party] < simulation.values.inject(:+).to_f * @bonus_party_cutoff
+        result[@bonus_party] = @bonus
+      else
+        result[simulation.max_by(&:last)[0]] = @bonus
+      end
+      result[OTHER] = 0
+      result
+    end
+
+    def fill_result(counters, result)
+      @no_of_seats.times do
+        next_seat = counters.max_by(&:last)
+        seat = next_seat.first
+        if result.key?(seat)
+          result[seat] += 1
+        else
+          result[seat] = 1
+        end
+        next_seat[2] = next_seat[2] + 1
+        next_seat[3] = next_seat[1] / @denominators[next_seat[2]]
+      end
+    end
+  end  
 end

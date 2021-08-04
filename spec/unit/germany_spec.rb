@@ -75,13 +75,13 @@ describe Sapor::Germany, '#seats' do
                 'Bergpartei, die Überpartei' => 911,
                 'Partei der Vernunft' => 533 }
     seats = Sapor::Germany.instance.seats(results)
-    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200)
-    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153)
+    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200 - 1)
+    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153 - 1)
     expect(seats['Alternative für Deutschland']).to eq(94)
     expect(seats['Freie Demokratische Partei']).to eq(80)
     expect(seats['Die Linke']).to eq(69)
-    expect(seats['Bündnis 90/Die Grünen']).to eq(67)
-    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46)
+    expect(seats['Bündnis 90/Die Grünen']).to eq(67 - 1)
+    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46 + 3)
     expect(seats['Freie Wähler']).to eq(0)
     expect(seats['Die PARTEI']).to eq(0)
     expect(seats['Partei Mensch Umwelt Tierschutz']).to eq(0)
@@ -125,13 +125,13 @@ describe Sapor::Germany, '#seats' do
                            11_661 + 10_009 + 9_631 + 6_693 + 5_991 + 5_617 +
                            3_032 + 2_054 + 1_291 + 911 + 533 }
     seats = Sapor::Germany.instance.seats(results)
-    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200)
-    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153)
+    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200 - 1)
+    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153 - 1)
     expect(seats['Alternative für Deutschland']).to eq(94)
     expect(seats['Freie Demokratische Partei']).to eq(80)
     expect(seats['Die Linke']).to eq(69)
-    expect(seats['Bündnis 90/Die Grünen']).to eq(67)
-    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46)
+    expect(seats['Bündnis 90/Die Grünen']).to eq(67 - 1)
+    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46 + 3)
     expect(seats['Other']).to eq(0)
   end
 end
