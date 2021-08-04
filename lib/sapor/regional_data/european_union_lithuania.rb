@@ -48,8 +48,8 @@ module Sapor
 
     COALITIONS = [['Centro partija „Gerovės Lietuva“ (ECR)',
                    'Lietuvos lenkų rinkimų akcija (ECR)'],
-                  ['Darbo Partija (RE)', 'Laisvės partija (RE)',
-                   'Liberalų Sąjūdis (RE)',
+                  ['Darbo Partija (NI)'],
+                  ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)',
                    'Partija „Laisvė ir teisingumas“ (RE)'],
                   ['Lietuvos socialdemokratų darbo partija (S&D)',
                    'Lietuvos socialdemokratų partija (S&D)'],
