@@ -51,7 +51,7 @@ module Sapor
                   ['Darbo Partija (NI)'],
                   ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)',
                    'Partija „Laisvė ir teisingumas“ (RE)'],
-                  ['Lietuvos socialdemokratų darbo partija (S&D)',
+                  ['Lietuvos regionų partija (S&D)',
                    'Lietuvos socialdemokratų partija (S&D)'],
                   ['Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
                    'Lietuvos Žaliųjų Partija (Greens/EFA)'],
