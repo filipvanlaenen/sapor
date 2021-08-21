@@ -46,19 +46,21 @@ module Sapor
 
     private
 
-    COALITIONS = [['Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
+    COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)',
+                   'Polska 2050 (*)'],
+                  ['Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['Koalicja Europejska (EPP)',
                    'Koalicja Obywatelska (EPP)',
                    'Koalicja Polska (EPP)',
                    'Platforma Obywatelska (EPP)',
-                   'Polskie Stronnictwo Ludowe (EPP)'],
+                   'Polskie Stronnictwo Ludowe (EPP)',
+                   'Porozumienie (EPP)'],
                   ['Lewica (S&D)',
                    'Lewica Razem (S&D)',
                    'Sojusz Lewicy Demokratycznej (S&D)',
                    'Wiosna (S&D)',
                    'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)'],
-                  ['Bezpartyjni Samorządowcy (*)', 'Polska 2050 (*)'],
                   ['Prawo i Sprawiedliwość (ECR)',
                    'Zjednoczona Prawica (ECR)']].freeze
 
