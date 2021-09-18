@@ -229,6 +229,22 @@ module Sapor
     end
   end
 
+  # Extension of Scotland with AFU, Alba Party and Reform UK
+  class ScotlandWithAfuAlbaAndRefUK < Scotland
+    def area_code
+      'GB-SCT∪{AFU,Alba,RefUK}'
+    end
+
+    def regional_election_results_of_2016
+      if @regional_election_results_of_2016.nil?
+        @regional_election_results_of_2016 = load_election_results(
+          'scotland-20160505-regions-with-afu-alba-and-refuk.psv'
+        )
+      end
+      @regional_election_results_of_2016
+    end
+  end
+
   # Extension of Scotland with AFU and Alba Party
   class ScotlandWithAfuAndAlba < Scotland
     def area_code
