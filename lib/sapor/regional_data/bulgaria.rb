@@ -56,13 +56,11 @@ module Sapor
     GERB_PARTY = 'Граждани за европейско развитие на България'
     ISB_PARTY = 'Изправи се БГ! Ние идваме'
     ITN_PARTY = 'Има такъв народ'
-    OP_PARTY = 'Българските патриоти'
     
     COALITIONS = [[BSP_PARTY, DPS_PARTY],
                   [BSP_PARTY, DPS_PARTY, ISB_PARTY],
                   [BSP_PARTY, DPS_PARTY, ISB_PARTY, ITN_PARTY],
-                  [BSP_PARTY, DPS_PARTY, ITN_PARTY],
-                  [GERB_PARTY, OP_PARTY]].freeze
+                  [BSP_PARTY, DPS_PARTY, ITN_PARTY]].freeze
 
     NO_OF_SEATS = 240
 
