@@ -33,9 +33,9 @@ describe Sapor::Bulgaria, '#no_of_seats' do
 end
 
 describe Sapor::Bulgaria, '#population_size' do
-  it 'returns a population size of 5,069,929' do
+  it 'returns a population size of 2,766,853' do
     expect(Sapor::Bulgaria.instance.population_size).to \
-      eq(3_682_499 - 169_009)
+      eq(2_766_853)
   end
 end
 

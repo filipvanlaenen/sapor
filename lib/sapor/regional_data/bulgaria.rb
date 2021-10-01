@@ -37,8 +37,8 @@ module Sapor
     end
 
     def population_size
-      # Voter turnout on 26 March 2017
-      3_513_490
+      # Voter turnout on 11 July 2021
+      2_766_853
     end
 
     def seats(simulation)
@@ -54,9 +54,9 @@ module Sapor
     BSP_PARTY = 'Българска социалистическа партия'
     DPS_PARTY = 'Движение за права и свободи'
     GERB_PARTY = 'Граждани за европейско развитие на България'
-    ISB_PARTY = 'Изправи се Бг'
+    ISB_PARTY = 'Изправи се БГ! Ние идваме'
     ITN_PARTY = 'Има такъв народ'
-    OP_PARTY = 'Обединени Патриоти'
+    OP_PARTY = 'Българските патриоти'
     
     COALITIONS = [[BSP_PARTY, DPS_PARTY],
                   [BSP_PARTY, DPS_PARTY, ISB_PARTY],
