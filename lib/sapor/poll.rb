@@ -33,8 +33,6 @@ module Sapor
     BELGIAN_AREAS = [BelgiumBrussels.instance, BelgiumFlanders.instance,
                      BelgiumWallonia.instance, Flanders.instance,
                      Wallonia.instance].freeze
-    DANISH_AREAS = [Denmark.instance, DenmarkWithE.instance,
-                    DenmarkWithEAndP.instance, DenmarkWithP.instance].freeze
     EUROPEAN_UNION_AREAS = [EuropeanUnionAustria.instance,
                             EuropeanUnionBulgaria.instance,
                             EuropeanUnionCroatia.instance,
@@ -77,12 +75,11 @@ module Sapor
                     PolandWithSldAndWiWithoutZL.instance,
                     PolandWithSldWithoutZL.instance].freeze
     AREAS_MAP = {}
-    (BELGIAN_AREAS + DANISH_AREAS + EUROPEAN_UNION_AREAS + NORWEGIAN_AREAS + \
-     POLISH_AREAS + \
+    (BELGIAN_AREAS + EUROPEAN_UNION_AREAS + NORWEGIAN_AREAS + POLISH_AREAS + \
      [Austria.instance, Bulgaria.instance, Catalonia.instance,
       CataloniaWithJuntsAndVox.instance,
       CataloniaWithJuntsPdecatAndVox.instance, CataloniaWithVox.instance,
-      Cyprus.instance, Estonia.instance, Finland.instance,
+      Cyprus.instance, Denmark.instance, Estonia.instance, Finland.instance,
       FinlandWithSin.instance, France.instance, Germany.instance,
       GreatBritainWithoutSpeaker.instance, Greece.instance, Hungary.instance,
       Iceland.instance, IcelandWithJ.instance, Ireland.instance,
