@@ -51,10 +51,10 @@ module Sapor
 
     private
 
-    BSP_PARTY = 'Българска социалистическа партия'
+    BSP_PARTY = 'БСП за България'
     DPS_PARTY = 'Движение за права и свободи'
     GERB_PARTY = 'Граждани за европейско развитие на България'
-    ISB_PARTY = 'Изправи се БГ! Ние идваме'
+    ISB_PARTY = 'Изправи се БГ! Ние идваме!'
     ITN_PARTY = 'Има такъв народ'
     
     COALITIONS = [[BSP_PARTY, DPS_PARTY],
