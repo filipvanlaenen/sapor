@@ -46,8 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)',
-                   'Polska 2050 (*)'],
+    COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)'],
                   ['Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['Koalicja Europejska (EPP)',
                    'Koalicja Obywatelska (EPP)',
@@ -60,7 +59,7 @@ module Sapor
                    'Sojusz Lewicy Demokratycznej (S&D)',
                    'Wiosna (S&D)',
                    'Wiosna–Partia Razem (S&D)'],
-                  ['.Nowoczesna (RE)'],
+                  ['.Nowoczesna (RE)', 'Polska 2050 (RE)'],
                   ['Prawo i Sprawiedliwość (ECR)',
                    'Zjednoczona Prawica (ECR)']].freeze
 
