@@ -223,7 +223,7 @@ module Sapor
                      '.')
         @logger.info(@analysis.progress_report)
         @analysis.write_outputs(@filename)
-        save_state
+        save_state unless @analysis.kind_of?(Dichotomies)
       end
     end
 
