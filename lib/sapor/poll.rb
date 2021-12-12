@@ -83,7 +83,7 @@ module Sapor
       FinlandWithSin.instance, France.instance, Germany.instance,
       GreatBritainWithoutSpeaker.instance, Greece.instance, Hungary.instance,
       Iceland.instance, IcelandWithJ.instance, Ireland.instance,
-      Latvia.instance, LatviaWithLpvLukAndR.instance, LatviaWithLuk.instance,
+      Latvia.instance, LatviaWithLpvAndLuk.instance, LatviaWithLpvLukAndR.instance, LatviaWithLuk.instance,
       Lithuania.instance, Luxembourg.instance, Netherlands.instance,
       Portugal.instance, Romania.instance, Scotland.instance,
       ScotlandWithAfuAlbaAndRefUK.instance,

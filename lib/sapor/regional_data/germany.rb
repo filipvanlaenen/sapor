@@ -56,6 +56,7 @@ module Sapor
     GRUNEN_PARTY = 'Bündnis 90/Die Grünen'.freeze
     LINKEN_PARTY = 'Die Linke'.freeze
     SPD_PARTY = 'Sozialdemokratische Partei Deutschlands'.freeze
+    SSW_PARTY = 'Südschleswigscher Wählerverband'.freeze
 
     COALITIONS = [[AFD_PARTY, CDU_PARTY, CSU_PARTY],
                   [AFD_PARTY, CDU_PARTY, CSU_PARTY, FDP_PARTY],
@@ -72,7 +73,7 @@ module Sapor
                   [LINKEN_PARTY, SPD_PARTY]].freeze
 
     BONUS_SEATS = 3
-    NO_OF_SEATS = 709 - BONUS_SEATS
+    NO_OF_SEATS = 735 - BONUS_SEATS
 
     # Voter turnout on 24 September 2017
     # Source: Wikipedia page with the results of the elections of 24 September
@@ -86,7 +87,7 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = GermanSingleDistrictProportional.new(
           NO_OF_SEATS, SainteLagueDenominators, THRESHOLD, BONUS_SEATS, false,
-          THRESHOLD, [].freeze, [CSU_PARTY].freeze, CSU_PARTY, 0.7
+          THRESHOLD, [].freeze, [CSU_PARTY, LINKEN_PARTY, SSW_PARTY].freeze, CSU_PARTY, 0.7
         )
       end
       @electoral_system

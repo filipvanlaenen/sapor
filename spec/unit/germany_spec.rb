@@ -26,8 +26,8 @@ describe Sapor::Germany, '#area_code' do
 end
 
 describe Sapor::Germany, '#no_of_seats' do
-  it 'returns 709 as the number of seats' do
-    expect(Sapor::Germany.instance.no_of_seats).to eq(709)
+  it 'returns 735 as the number of seats' do
+    expect(Sapor::Germany.instance.no_of_seats).to eq(735)
   end
 end
 
@@ -40,98 +40,65 @@ end
 
 describe Sapor::Germany, '#seats' do
   it 'calculates the number of seats for the election of 2017' do
-    results = { 'Christlich Demokratische Union Deutschlands' => 12_447_656,
-                'Sozialdemokratische Partei Deutschlands' => 9_539_381,
-                'Alternative für Deutschland' => 5_878_115,
-                'Freie Demokratische Partei' => 4_999_449,
-                'Die Linke' => 4_297_270,
-                'Bündnis 90/Die Grünen' => 4_158_400,
-                'Christlich-Soziale Union in Bayern' => 2_869_688,
-                'Freie Wähler' => 463_292,
-                'Die PARTEI' => 454_349,
-                'Partei Mensch Umwelt Tierschutz' => 374_179,
-                'Nationaldemokratische Partei Deutschlands' => 176_020,
-                'Piratenpartei Deutschland' => 173_476,
-                'Ökologisch-Demokratische Partei' => 144_809,
-                'Bündnis Grundeinkommen' => 97_539,
-                'V-Partei³' => 64_073,
-                'Deutsche Mitte' => 63_203,
-                'Demokratie in Bewegung' => 60_914,
-                'Bayernpartei' => 58_037,
-                'Allianz Deutscher Demokraten' => 41_251,
-                'Allianz für Menschenrechte, Tier- und Naturschutz' => 32_221,
-                'Marxistisch-Leninistische Partei Deutschlands' => 18_198,
-                'Partei für Gesundheitsforschung' => 23_404,
-                'Deutsche Kommunistische Partei' => 11_558,
-                'Menschliche Welt' => 11_661,
-                'Die Grauen–Für alle Generationen' => 10_009,
-                'Ab jetzt – Demokratie durch Volksabstimmung' => 9_631,
-                'Bürgerrechtsbewegung Solidarität' => 6_693,
-                'Partei der Humanisten' => 5_991,
-                'Magdeburger Gartenpartei' => 5_617,
-                'Die Urbane. Eine HipHop Partei' => 3_032,
-                'Die Rechte' => 2_054,
-                'Sozialistische Gleichheitspartei' => 1_291,
-                'Bergpartei, die Überpartei' => 911,
-                'Partei der Vernunft' => 533 }
+    results = { 'Sozialdemokratische Partei Deutschlands' => 11_955_434,
+                'Christlich Demokratische Union Deutschlands' => 8_775_471,
+                'Bündnis 90/Die Grünen' => 6_852_206,
+                'Freie Demokratische Partei' => 5_319_952,
+                'Alternative für Deutschland' => 4_803_902,
+                'Christlich-Soziale Union in Bayern' => 2_402_827,
+                'Die Linke' => 2_270_906,
+                'Freie Wähler' => 1_127_784,
+                'Partei Mensch Umwelt Tierschutz' => 675_353,
+                'dieBasis' => 630_153,
+                'Die PARTEI' => 461_570,
+                'Team Todenhöfer' => 214_535,
+                'Piratenpartei Deutschland' => 169_923,
+                'Volt' => 165_474,
+                'Ökologisch-Demokratische Partei' => 112_314,
+                'Nationaldemokratische Partei Deutschlands' => 64_574,
+                'Other' => 55_578 + 49_349 + 47_711 + 39_868 + 32_790 + 31_884 + 22_736 + 19_442 + 17_811 + 17_799 +
+                           14_925 + 13_672 + 12_967 + 11_159 + 9_189 + 7_832 + 7_611 + 7_491 + 7_184 + 3_786 + 3_488 +
+                           3_228 + 1_417 + 727 }
     seats = Sapor::Germany.instance.seats(results)
-    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200 - 1)
-    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153 - 1)
-    expect(seats['Alternative für Deutschland']).to eq(94)
-    expect(seats['Freie Demokratische Partei']).to eq(80)
-    expect(seats['Die Linke']).to eq(69)
-    expect(seats['Bündnis 90/Die Grünen']).to eq(67 - 1)
-    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46 + 3)
+    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(206)
+    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(152)
+    expect(seats['Bündnis 90/Die Grünen']).to eq(118)
+    expect(seats['Freie Demokratische Partei']).to eq(92)
+    expect(seats['Alternative für Deutschland']).to eq(83)
+    expect(seats['Christlich-Soziale Union in Bayern']).to eq(45)
+    expect(seats['Die Linke']).to eq(39)
     expect(seats['Freie Wähler']).to eq(0)
-    expect(seats['Die PARTEI']).to eq(0)
     expect(seats['Partei Mensch Umwelt Tierschutz']).to eq(0)
-    expect(seats['Nationaldemokratische Partei Deutschlands']).to eq(0)
+    expect(seats['dieBasis']).to eq(0)
+    expect(seats['Die PARTEI']).to eq(0)
+    expect(seats['Team Todenhöfer']).to eq(0)
     expect(seats['Piratenpartei Deutschland']).to eq(0)
+    expect(seats['Volt']).to eq(0)
     expect(seats['Ökologisch-Demokratische Partei']).to eq(0)
-    expect(seats['Bündnis Grundeinkommen']).to eq(0)
-    expect(seats['V-Partei³']).to eq(0)
-    expect(seats['Deutsche Mitte']).to eq(0)
-    expect(seats['Demokratie in Bewegung']).to eq(0)
-    expect(seats['Bayernpartei']).to eq(0)
-    expect(seats['Allianz Deutscher Demokraten']).to eq(0)
-    expect(seats['Allianz für Menschenrechte, Tier- und Naturschutz']).to eq(0)
-    expect(seats['Marxistisch-Leninistische Partei Deutschlands']).to eq(0)
-    expect(seats['Partei für Gesundheitsforschung']).to eq(0)
-    expect(seats['Deutsche Kommunistische Partei']).to eq(0)
-    expect(seats['Menschliche Welt']).to eq(0)
-    expect(seats['Die Grauen–Für alle Generationen']).to eq(0)
-    expect(seats['Ab jetzt – Demokratie durch Volksabstimmung']).to eq(0)
-    expect(seats['Bürgerrechtsbewegung Solidarität']).to eq(0)
-    expect(seats['Partei der Humanisten']).to eq(0)
-    expect(seats['Magdeburger Gartenpartei']).to eq(0)
-    expect(seats['Die Urbane. Eine HipHop Partei']).to eq(0)
-    expect(seats['Die Rechte']).to eq(0)
-    expect(seats['Sozialistische Gleichheitspartei']).to eq(0)
-    expect(seats['Bergpartei, die Überpartei']).to eq(0)
-    expect(seats['Partei der Vernunft']).to eq(0)
+    expect(seats['Nationaldemokratische Partei Deutschlands']).to eq(0)
+    expect(seats['Other']).to eq(0)
   end
 
-  it 'calculates the number of seats for the election of 2017' do
-    results = { 'Christlich Demokratische Union Deutschlands' => 12_447_656,
-                'Sozialdemokratische Partei Deutschlands' => 9_539_381,
-                'Alternative für Deutschland' => 5_878_115,
-                'Freie Demokratische Partei' => 4_999_449,
-                'Die Linke' => 4_297_270,
-                'Bündnis 90/Die Grünen' => 4_158_400,
-                'Christlich-Soziale Union in Bayern' => 2_869_688,
-                'Other' => 463_292 + 454_349 + 374_179 + 176_020 + 173_476 +
-                           144_809 + 97_539 + 64_073 + 63_203 + 60_914 +
-                           58_037 + 41_251 + 32_221 + 18_198 + 23_404 + 11_558 +
-                           11_661 + 10_009 + 9_631 + 6_693 + 5_991 + 5_617 +
-                           3_032 + 2_054 + 1_291 + 911 + 533 }
+  it 'calculates the number of seats for the election of 2017 with large other' do
+    results = { 'Sozialdemokratische Partei Deutschlands' => 11_955_434,
+                'Christlich Demokratische Union Deutschlands' => 8_775_471,
+                'Bündnis 90/Die Grünen' => 6_852_206,
+                'Freie Demokratische Partei' => 5_319_952,
+                'Alternative für Deutschland' => 4_803_902,
+                'Christlich-Soziale Union in Bayern' => 2_402_827,
+                'Die Linke' => 2_270_906,
+                'Other' => 1_127_784 + 675_353 + 630_153 + 461_570 + 214_535 + 169_923 + 165_474 + 112_314 + 64_574 +
+                           55_578 + 49_349 + 47_711 + 39_868 + 32_790 + 31_884 + 22_736 + 19_442 + 17_811 + 17_799 +
+                           14_925 + 13_672 + 12_967 + 11_159 + 9_189 + 7_832 + 7_611 + 7_491 + 7_184 + 3_786 + 3_488 +
+                           3_228 + 1_417 + 727 }
     seats = Sapor::Germany.instance.seats(results)
-    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(200 - 1)
-    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(153 - 1)
-    expect(seats['Alternative für Deutschland']).to eq(94)
-    expect(seats['Freie Demokratische Partei']).to eq(80)
-    expect(seats['Die Linke']).to eq(69)
-    expect(seats['Bündnis 90/Die Grünen']).to eq(67 - 1)
-    expect(seats['Christlich-Soziale Union in Bayern']).to eq(46 + 3)
+    expect(seats['Sozialdemokratische Partei Deutschlands']).to eq(206)
+    expect(seats['Christlich Demokratische Union Deutschlands']).to eq(152)
+    expect(seats['Bündnis 90/Die Grünen']).to eq(118)
+    expect(seats['Freie Demokratische Partei']).to eq(92)
+    expect(seats['Alternative für Deutschland']).to eq(83)
+    expect(seats['Christlich-Soziale Union in Bayern']).to eq(45)
+    expect(seats['Die Linke']).to eq(39)
     expect(seats['Other']).to eq(0)
   end
 end
