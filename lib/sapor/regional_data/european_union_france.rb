@@ -57,10 +57,11 @@ module Sapor
                   ['La France insoumise (GUE/NGL)',
                    'Nouveau Parti anticapitaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
-                  ['Les Républicains (EPP)'],
-                  ['Les Patriotes (*)', 'Lutte Ouvrière (*)',
-                   'Mouvement des gilets jaunes (*)', 'Résistons! (*)',
-                   'Union populaire républicaine (*)']].freeze
+                  ['L’Engagement (*)', 'Lutte Ouvrière (*)',
+                   'Mouvement des gilets jaunes (*)', 'Reconquête (*)', 'Résistons! (*)',
+                   'Union populaire républicaine (*)'],
+                  ['Les Patriotes (NI)'],
+                  ['Les Républicains (EPP)']].freeze
 
     NO_OF_SEATS = 79
 
