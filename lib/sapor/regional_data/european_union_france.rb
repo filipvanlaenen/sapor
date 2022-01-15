@@ -59,7 +59,7 @@ module Sapor
                    'Parti communiste français (GUE/NGL)'],
                   ['L’Engagement (*)', 'Lutte Ouvrière (*)',
                    'Mouvement des gilets jaunes (*)', 'Reconquête (*)', 'Résistons! (*)',
-                   'Union populaire républicaine (*)'],
+                   'Union populaire républicaine (*)', 'Walwari (*)'],
                   ['Les Patriotes (NI)'],
                   ['Les Républicains (EPP)']].freeze
 
