@@ -49,13 +49,13 @@ module Sapor
 
     private
 
-    COALITIONS = [['Articolo Uno (S&D)', 'Azione (S&D)', 'Liberi e Uguali (S&D)',
+    COALITIONS = [['Articolo Uno (S&D)', 'Liberi e Uguali (S&D)',
                    'Partito Democratico (S&D)'],
                   ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)',
                    'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['CasaPound Italia (NI)', 'Movimento 5 Stelle (NI)'],
-                  ['Civica Popolare (RE)', 'Italia Viva (RE)',
-                   'Più Europa (RE)'],
+                  ['Azione (RE)', 'Civica Popolare (RE)', 'Italia Viva (RE)',
+                   'Più Europa (RE)', 'Più Europa–Azione (RE)'],
                   ['Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Insieme (*)'],
