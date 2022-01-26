@@ -58,9 +58,9 @@ module Sapor
                    'Nouveau Parti anticapitaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
                   ['L’Engagement (*)', 'Lutte Ouvrière (*)',
-                   'Mouvement des gilets jaunes (*)', 'Reconquête (*)', 'Résistons! (*)',
+                   'Mouvement des gilets jaunes (*)', 'Résistons! (*)',
                    'Union populaire républicaine (*)', 'Walwari (*)'],
-                  ['Les Patriotes (NI)'],
+                  ['Les Patriotes (NI)', 'Reconquête (NI)'],
                   ['Les Républicains (EPP)']].freeze
 
     NO_OF_SEATS = 79
