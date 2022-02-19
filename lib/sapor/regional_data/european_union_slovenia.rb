@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Andrej Čuš in Zeleni Slovenije (*)', 'Dobra država (*)',
+    COALITIONS = [['Gibanje Svoboda (*)', 'Dobra država (*)',
                    'Glas za otroke in družine (*)',
                    'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Naša dežela (*)',
                    'Nova ljudska stranka Slovenije (*)',
