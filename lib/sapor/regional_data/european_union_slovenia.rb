@@ -46,11 +46,12 @@ module Sapor
 
     private
 
-    COALITIONS = [['Gibanje Svoboda (*)', 'Dobra država (*)',
+    COALITIONS = [['Andrej Čuš in Zeleni Slovenije (*)', 'Dobra država (*)', 'Gibanje Svoboda (*)',
                    'Glas za otroke in družine (*)',
-                   'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Naša dežela (*)',
+                   'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Liberalni demokrati (*)',
+                   'Naša dežela (*)',
                    'Nova ljudska stranka Slovenije (*)',
-                   'Pozitivna Slovenija (*)', 'Lista Roberta Goloba (*)', 'Zelena dejanja (*)'],
+                   'Pozitivna Slovenija (*)', 'Resni.ca (*)', 'Zelena dejanja (*)'],
                   ['Demokratična stranka upokojencev Slovenije (RE)',
                    'Državljanska lista (RE)', 'Konkretno (RE)',
                    'Lista Marjana Šarca (RE)',
@@ -60,7 +61,7 @@ module Sapor
                   ['Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
                    'Slovenska demokratska stranka (EPP)',
                    'Slovenska ljudska stranka (EPP)'],
-                  ['Piratska stranka Slovenije (Greens/EFA)'],
+                  ['Piratska stranka Slovenije (Greens/EFA)', 'VESNA–Zelena stranka (Greens/EFA)'],
                   ['Slovenska nacionalna stranka (NI)'],
                   ['Socialni demokrati (S&D)']].freeze
 
