@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alternattiva Demokratika (Greens/EFA)'],
+    COALITIONS = [['Alternattiva Demokratika (Greens/EFA)', 'Alternattiva Demokratika–Partit Demokratiku (Greens/EFA)'],
                   ['Moviment Patrijotti Maltin (ID)'],
                   ['Partit Demokratiku (RE)'],
                   ['Partit Laburista (S&D)'],
