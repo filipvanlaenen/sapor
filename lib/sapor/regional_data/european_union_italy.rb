@@ -58,7 +58,7 @@ module Sapor
                    'Più Europa (RE)', 'Più Europa–Azione (RE)'],
                   ['Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Südtiroler Volkspartei (EPP)'],
-                  ['Insieme (*)'],
+                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)'],
                   ['Lega Nord (ID)'],
                   ['Potere al Popolo (GUE/NGL)',
                    'Sinistra Italiana (GUE/NGL)']].freeze
