@@ -141,6 +141,22 @@ module Sapor
     end
   end
 
+  # Extension of Latvia with LPV, LuK, R and S
+  class LatviaWithLpvLukRAndS < Latvia
+    def area_code
+      'LV∪{LPV,LuK,R,S}'
+    end
+
+    def election_results_of_2018
+      if @election_results_of_2018.nil?
+        @election_results_of_2018 = load_election_results(
+          'latvia-20181006-with-lpv-luk-r-and-s.psv'
+        )
+      end
+      @election_results_of_2018
+    end
+  end
+
   # Extension of Latvia with LuK
   class LatviaWithLuk < Latvia
     def area_code
