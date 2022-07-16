@@ -53,7 +53,7 @@ module Sapor
                    'Partito Democratico (S&D)'],
                   ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)',
                    'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
-                  ['CasaPound Italia (NI)', 'Movimento 5 Stelle (NI)'],
+                  ['CasaPound Italia (NI)', 'Insieme per il Futuro (NI)', 'Movimento 5 Stelle (NI)'],
                   ['Azione (RE)', 'Civica Popolare (RE)', 'Italia Viva (RE)',
                    'Più Europa (RE)', 'Più Europa–Azione (RE)'],
                   ['Europa Verde (Greens/EFA)'],
