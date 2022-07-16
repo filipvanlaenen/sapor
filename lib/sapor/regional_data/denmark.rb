@@ -66,6 +66,7 @@ module Sapor
     V_PARTY = 'Venstre'.freeze
     OE_PARTY = 'Enhedslisten–De Rød-Grønne'.freeze
     AA_PARTY = 'Alternativet'.freeze
+    AE_PARTY = 'Danmarksdemokraterne'.freeze
 
     COALITIONS = [[A_PARTY, B_PARTY],
                   [A_PARTY, B_PARTY, F_PARTY],
@@ -77,10 +78,13 @@ module Sapor
                    P_PARTY, V_PARTY],
                   [C_PARTY, D_PARTY, E_PARTY, I_PARTY, K_PARTY, M_PARTY,
                    O_PARTY, V_PARTY],
+                  [C_PARTY, D_PARTY, E_PARTY, I_PARTY, K_PARTY, M_PARTY,
+                   O_PARTY, V_PARTY, AE_PARTY],
                   [C_PARTY, D_PARTY, E_PARTY, I_PARTY, K_PARTY, O_PARTY,
                    V_PARTY],
                   [C_PARTY, D_PARTY, E_PARTY, I_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, D_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY],
+                  [C_PARTY, D_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY, AE_PARTY],
                   [C_PARTY, D_PARTY, I_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, I_PARTY, K_PARTY, O_PARTY, V_PARTY],
                   [C_PARTY, I_PARTY, O_PARTY, V_PARTY],
