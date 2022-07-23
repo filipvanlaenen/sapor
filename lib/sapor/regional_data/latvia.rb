@@ -84,8 +84,8 @@ module Sapor
                   [KPVLV_PARTY, SDPS_PARTY, ZZS_PARTY],
                   [NA_PARTY, JV_PARTY, ZZS_PARTY]].freeze
 
-    SEAT_DISTRIBUTION = { 'Kurzeme' => 12, 'Latgale' => 14, 'Rīga' => 35,
-                          'Vidzeme' => 25, 'Zemgale' => 14 }.freeze
+    SEAT_DISTRIBUTION = { 'Kurzeme' => 12, 'Latgale' => 13, 'Rīga' => 36,
+                          'Vidzeme' => 26, 'Zemgale' => 13 }.freeze
 
     THRESHOLD = 0.05
 
@@ -135,6 +135,22 @@ module Sapor
       if @election_results_of_2018.nil?
         @election_results_of_2018 = load_election_results(
           'latvia-20181006-with-lpv-luk-and-r.psv'
+        )
+      end
+      @election_results_of_2018
+    end
+  end
+
+  # Extension of Latvia with LPV, LuK, NST, R and S
+  class LatviaWithLpvLukNstRAndS < Latvia
+    def area_code
+      'LV∪{LPV,LuK,NST,R,S}'
+    end
+
+    def election_results_of_2018
+      if @election_results_of_2018.nil?
+        @election_results_of_2018 = load_election_results(
+          'latvia-20181006-with-lpv-luk-nst-r-and-s.psv'
         )
       end
       @election_results_of_2018

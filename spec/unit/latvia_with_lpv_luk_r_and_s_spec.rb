@@ -37,20 +37,20 @@ describe Sapor::LatviaWithLpvLukRAndS, '#population_size' do
 end
 
 describe Sapor::LatviaWithLpvLukRAndS, '#seats' do
-  it 'calculates the number of seats for the election of 2018 correctly' do
+  it 'calculates the number of seats for the election of 2018 adjusted to 2022 seats correctly' do
     LatviaWithLpvLukRAndS = Sapor::LatviaWithLpvLukRAndS.instance
     results = LatviaWithLpvLukRAndS.overall_election_results_of_2018
     seats = LatviaWithLpvLukRAndS.seats(results)
-    expect(seats['Sociāldemokrātiskā partija “Saskaņa”']).to eq(23 - 8)
-    expect(seats['Stabilitātei!']).to eq(23 - 8)
+    expect(seats['Sociāldemokrātiskā partija “Saskaņa”']).to eq(23 - 8 + 1)
+    expect(seats['Stabilitātei!']).to eq(23 - 8 - 1)
     expect(seats['Politiskā partija „KPV LV”']).to eq(16 - 5)
     expect(seats['Likums un kārtība']).to eq(16 - 5)
     expect(seats['Latvija pirmajā vietā']).to eq(16 - 6)
-    expect(seats['Republika']).to eq(16 - 6)
+    expect(seats['Republika']).to eq(16 - 6 - 1)
     expect(seats['Jaunā konservatīvā partija']).to eq(16 - 7)
     expect(seats['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                  'Brīvībai/LNNK”']).to eq(13 - 7)
-    expect(seats['Attīstībai/Par!']).to eq(13 - 6)
+    expect(seats['Attīstībai/Par!']).to eq(13 - 6 + 1)
     expect(seats['Zaļo un Zemnieku savienība']).to eq(11 - 5)
     expect(seats['Jaunā VIENOTĪBA']).to eq(8 - 8)
     expect(seats['Latvijas Reģionu Apvienība']).to eq(0)
