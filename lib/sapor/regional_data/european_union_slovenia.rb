@@ -46,13 +46,14 @@ module Sapor
 
     private
 
-    COALITIONS = [['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)', 'Konkretno (RE)',
+    COALITIONS = [['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)',
+                   'Gibanje Svoboda (RE)', 'Konkretno (RE)',
                    'Lista Marjana Šarca (RE)', 'Stranka Alenke Bratušek (RE)', 'Stranka modernega centra (RE)'],
                   ['Dobra država (*)', 'Glas za otroke in družine (*)',
                    'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Liberalni demokrati (*)',
                    'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Nova ljudska stranka Slovenije (*)',
                    'Pozitivna Slovenija (*)', 'Resni.ca (*)', 'Zeleni Slovenije (*)'],
-                  ['Gibanje Svoboda (Greens/EFA)', 'Piratska stranka Slovenije (Greens/EFA)',
+                  ['Piratska stranka Slovenije (Greens/EFA)',
                    'VESNA–Zelena stranka (Greens/EFA)'],
                   ['Levica (GUE/NGL)'],
                   ['Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
