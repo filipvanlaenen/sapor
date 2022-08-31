@@ -73,6 +73,7 @@ module Sapor
                   [MP_PARTY, S_PARTY, V_PARTY],
                   [M_PARTY, SD_PARTY],
                   [M_PARTY, S_PARTY],
+                  [S_PARTY],
                   [S_PARTY, V_PARTY]].freeze
 
     NO_OF_SEATS = 349
