@@ -62,7 +62,7 @@ module Sapor
                   ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)'],
                   ['Lega Nord (ID)'],
                   ['Potere al Popolo (GUE/NGL)',
-                   'Sinistra Italiana (GUE/NGL)']].freeze
+                   'Sinistra Italiana (GUE/NGL)', 'Unione Popolare (GUE/NGL)']].freeze
 
     NO_OF_SEATS = 76
 
