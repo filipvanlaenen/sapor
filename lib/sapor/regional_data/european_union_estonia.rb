@@ -50,7 +50,7 @@ module Sapor
                    'Eesti Reformierakond (RE)',
                    'Raimond Kaljulaid (RE)'],
                   ['Eesti Konservatiivne Rahvaerakond (ID)'],
-                  ['Eesti Vabaerakond (*)'],
+                  ['Eesti Vabaerakond (*)', 'Erakond Parempoolsed (*)'],
                   ['Erakond Eestimaa Rohelised (Greens/EFA)'],
                   ['Erakond Isamaa (EPP)'],
                   ['Sotsiaaldemokraatlik Erakond (S&D)']].freeze
