@@ -89,8 +89,8 @@ module Sapor
 
     SEAT_DISTRIBUTION = { 'Antwerpen' => 33, 'Brussel' => 6,
                           'Limburg' => 16, 'Oost-Vlaanderen' => 27,
-                          'Vlaams-Brabant' => 20,
-                          'West-Vlaanderen' => 22 }
+                          'Vlaams-Brabant' => 21,
+                          'West-Vlaanderen' => 21 }
 
     THRESHOLD = 0.05
 

@@ -42,9 +42,9 @@ describe Sapor::Flanders, '#seats' do
     flanders = Sapor::Flanders.instance
     results = flanders.overall_election_results_of_2019
     seats = flanders.seats(results)
-    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(35)
+    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(35 - 1)
     expect(seats['Christen-Democratisch en Vlaams']).to eq(19)
-    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(16)
+    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(16 + 1)
     expect(seats['Vooruit']).to eq(13)
     expect(seats['Groen']).to eq(14)
     expect(seats['Vlaams Belang']).to eq(23)
