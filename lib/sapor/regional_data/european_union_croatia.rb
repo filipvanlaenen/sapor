@@ -51,17 +51,18 @@ module Sapor
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
                    'Hrvatska seljačka stranka (RE)',
                    'Pametno (RE)'],
-                  ['Bandić Milan 365–Stranka rada i solidarnosti (*)',
-                   'Stranka antikorupcije, razvoja i transparentnosti (*)'],
+                  ['Bandić Milan 365–Stranka rada i solidarnosti (*)', 'Fokus na bitno (*)',
+                   'Hrvatska stranka umirovljenika (*)', 'Stranka antikorupcije, razvoja i transparentnosti (*)'],
                   ['Domovinski pokret Miroslava Škore (ECR)',
                    'Hrvatska konzervativna stranka (ECR)',
                    'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
                    'Most nezavisnih lista (ECR)'],
-                  ['Možemo! (Greens/EFA)'],
-                  ['Nezavisna lista Mislava Kolakušića (NI)',
+                  ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)',
                    'Živi zid (NI)'],
+                  ['Možemo! (Greens/EFA)'],
                   ['Neovisni za Hrvatsku (ID)'],
-                  ['Socijaldemokratska partija Hrvatske (S&D)']].freeze
+                  ['Radnička fronta (GUE/NGL)'],
+                  ['Socijaldemokrati (S&D)', 'Socijaldemokratska partija Hrvatske (S&D)']].freeze
 
     NO_OF_SEATS = 12
 
