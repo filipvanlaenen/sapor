@@ -43,7 +43,7 @@ module Sapor
     def seats(simulation)
       seats = electoral_system.project(simulation)
       seats['Südtiroler Volkspartei (EPP)'] = NO_OF_SVP_SEATS
-      seats['Partito Democratico (S&D)'] -= NO_OF_SVP_SEATS
+      seats['Forza Italia (EPP)'] -= NO_OF_SVP_SEATS
       seats
     end
 
