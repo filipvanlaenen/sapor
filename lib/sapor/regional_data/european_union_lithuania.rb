@@ -51,12 +51,12 @@ module Sapor
                   ['Darbo Partija (NI)'],
                   ['Demokratų sąjunga „Vardan Lietuvos“ (S&D)', 'Lietuvos regionų partija (S&D)',
                    'Lietuvos socialdemokratų partija (S&D)'],
+                  ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
+                   'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)'],
                   ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)',
                    'Partija „Laisvė ir teisingumas“ (RE)'],
                   ['Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
                    'Lietuvos Žaliųjų Partija (Greens/EFA)'],
-                  ['Partija tvarka ir teisingumas (*)',
-                   'Politinė partija “Lietuvos sąrašas” (*)'],
                   ['Tėvynės sąjunga–Lietuvos krikščionys demokratai ' \
                      '(EPP)']].freeze
 
