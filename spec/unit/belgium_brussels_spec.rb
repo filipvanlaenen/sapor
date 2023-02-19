@@ -47,7 +47,7 @@ describe Sapor::BelgiumBrussels, '#seats' do
     expect(seats['Mouvement Réformateur']).to eq(3)
     expect(seats['Parti du Travail de Belgique']).to eq(2)
     expect(seats['DéFI']).to eq(2)
-    expect(seats['Centre démocrate humaniste']).to eq(1)
+    expect(seats['Les Engagés']).to eq(1)
     expect(seats['Nieuw-Vlaamse Alliantie']).to eq(0)
     expect(seats['Listes Destexhe']).to eq(0)
     expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(0)

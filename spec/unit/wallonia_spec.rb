@@ -45,7 +45,7 @@ describe Sapor::Wallonia, '#seats' do
     expect(seats['Parti Socialiste']).to eq(23)
     expect(seats['Mouvement Réformateur']).to eq(20)
     expect(seats['Ecolo']).to eq(12)
-    expect(seats['Centre démocrate humaniste']).to eq(10)
+    expect(seats['Les Engagés']).to eq(10)
     expect(seats['Parti du Travail de Belgique']).to eq(10)
     expect(seats['AGIR']).to eq(0)
     expect(seats['Collectif Citoyen']).to eq(0)

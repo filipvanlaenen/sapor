@@ -45,7 +45,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Centre démocrate humaniste (EPP)'],
+    COALITIONS = [['Les Engagés (EPP)'],
                   ['Debout les Belges (*)', 'DéFI (*)', 'La Droite (*)',
                    'FW (*)', 'ISLAM (*)', 'Parti Populaire (*)', 'R.W.F. (*)',
                    'Wallonie d’Abord (*)'],

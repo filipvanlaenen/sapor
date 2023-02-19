@@ -43,7 +43,7 @@ module Sapor
 
     THRESHOLD = 0.05
     
-    CDH_PARTY = 'Centre démocrate humaniste'.freeze
+    LE_PARTY = 'Les Engagés'.freeze
     CDV_PARTY = 'Christen-Democratisch en Vlaams'.freeze
     ECOLO_PARTY = 'Ecolo'.freeze
     GROEN_PARTY = 'Groen'.freeze
@@ -55,21 +55,21 @@ module Sapor
     PVDA_PARTY = 'Partij van de Arbeid van België'.freeze
     SPA_PARTY = 'Vooruit'.freeze
 
-    COALITIONS = [[CDH_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, MR_PARTY, 
+    COALITIONS = [[LE_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, MR_PARTY, 
                    OVLD_PARTY, PS_PARTY, SPA_PARTY],
-                  [CDH_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, MR_PARTY,
+                  [LE_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, MR_PARTY,
                    OVLD_PARTY],
-                  [CDH_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, PS_PARTY,
+                  [LE_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, PS_PARTY,
                    PTB_PARTY, PVDA_PARTY, SPA_PARTY],
-                  [CDH_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, PS_PARTY,
+                  [LE_PARTY, CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, PS_PARTY,
                    SPA_PARTY],
-                  [CDH_PARTY, CDV_PARTY, MR_PARTY, NVA_PARTY, OVLD_PARTY],
-                  [CDH_PARTY, CDV_PARTY, MR_PARTY, OVLD_PARTY],
-                  [CDH_PARTY, CDV_PARTY, MR_PARTY, OVLD_PARTY, PS_PARTY,
+                  [LE_PARTY, CDV_PARTY, MR_PARTY, NVA_PARTY, OVLD_PARTY],
+                  [LE_PARTY, CDV_PARTY, MR_PARTY, OVLD_PARTY],
+                  [LE_PARTY, CDV_PARTY, MR_PARTY, OVLD_PARTY, PS_PARTY,
                    SPA_PARTY],
-                  [CDH_PARTY, CDV_PARTY, MR_PARTY, OVLD_PARTY, PS_PARTY],
-                  [CDH_PARTY, CDV_PARTY, PS_PARTY, SPA_PARTY],
-                  [CDH_PARTY, ECOLO_PARTY, GROEN_PARTY, PS_PARTY, PTB_PARTY,
+                  [LE_PARTY, CDV_PARTY, MR_PARTY, OVLD_PARTY, PS_PARTY],
+                  [LE_PARTY, CDV_PARTY, PS_PARTY, SPA_PARTY],
+                  [LE_PARTY, ECOLO_PARTY, GROEN_PARTY, PS_PARTY, PTB_PARTY,
                    PVDA_PARTY, SPA_PARTY],
                   [CDV_PARTY, ECOLO_PARTY, GROEN_PARTY, MR_PARTY, OVLD_PARTY,
                    PS_PARTY, SPA_PARTY],

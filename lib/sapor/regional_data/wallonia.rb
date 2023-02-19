@@ -27,18 +27,18 @@ module Sapor
       'BE-WAL'
     end
 
-    CDH_PARTY = 'Centre démocrate humaniste'.freeze
+    LE_PARTY = 'Les Engagés'.freeze
     ECOLO_PARTY = 'Ecolo'.freeze
     MR_PARTY = 'Mouvement Réformateur'.freeze
     PS_PARTY = 'Parti Socialiste'.freeze
     PTB_PARTY = 'Parti du Travail de Belgique'.freeze
 
     def coalitions
-      [[CDH_PARTY, ECOLO_PARTY, MR_PARTY],
-       [CDH_PARTY, ECOLO_PARTY, PS_PARTY],
-       [CDH_PARTY, MR_PARTY],
-       [CDH_PARTY, PS_PARTY],
-       [CDH_PARTY, PS_PARTY, PTB_PARTY],
+      [[LE_PARTY, ECOLO_PARTY, MR_PARTY],
+       [LE_PARTY, ECOLO_PARTY, PS_PARTY],
+       [LE_PARTY, MR_PARTY],
+       [LE_PARTY, PS_PARTY],
+       [LE_PARTY, PS_PARTY, PTB_PARTY],
        [ECOLO_PARTY, MR_PARTY],
        [ECOLO_PARTY, MR_PARTY, PS_PARTY],
        [ECOLO_PARTY, PS_PARTY],
