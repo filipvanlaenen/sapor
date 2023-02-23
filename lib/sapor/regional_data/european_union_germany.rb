@@ -53,7 +53,7 @@ module Sapor
                    'Ökologisch-Demokratische Partei (Greens/EFA)',
                    'Piratenpartei Deutschland (Greens/EFA)',
                    'Volt Europa (Greens/EFA)'],
-                  ['Bürgerbewegung pro NRW (*)', 'BüSo (*)',
+                  ['Basisdemokratische Partei Deutschland (*)', 'Bürgerbewegung pro NRW (*)', 'BüSo (*)',
                    'Christliche Mitte (*)', 'Die Republikaner (*)', 'MLPD (*)',
                    'NPD (*)', 'Sozialistische Gleichheitspartei (*)',
                    'Volksabstimmung (*)'],
