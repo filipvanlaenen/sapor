@@ -46,7 +46,8 @@ module Sapor
 
     private
 
-    COALITIONS = [['Attīstībai/Par! (RE)', 'Zaļo un Zemnieku savienība (RE)'],
+    COALITIONS = [['Attīstībai/Par! (RE)', 'Kustība Par! (RE)', 'Latvijas attīstībai (RE)',
+                   'Zaļo un Zemnieku savienība (RE)'],
                   ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
                    'Politiskā partija „KPV LV” (EPP)'],
