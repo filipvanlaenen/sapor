@@ -56,7 +56,7 @@ module Sapor
                    'Coalición por Europa (RE)',
                    'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)'],
                   ['Euskal Herria Bildu (GUE/NGL)',
-                   'Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
+                   'Partido Animalista Contra el Maltrato Animal (GUE/NGL)', 'Sumar (GUE/NGL)',
                    'Unidos Podemos (GUE/NGL)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
