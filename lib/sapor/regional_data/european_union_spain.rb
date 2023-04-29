@@ -54,13 +54,14 @@ module Sapor
                   ['Ciudadanos–Partido de la Ciudadanía (RE)',
                    'Coalición Canaria–Partido Nacionalista Canario (RE)',
                    'Coalición por Europa (RE)',
-                   'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)'],
-                  ['Euskal Herria Bildu (GUE/NGL)',
-                   'Partido Animalista Contra el Maltrato Animal (GUE/NGL)', 'Sumar (GUE/NGL)',
+                   'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)', 'Partido Regionalista de Cantabria (RE)'],
+                  ['Candidatura d’Unitat Popular (GUE/NGL)', 'Euskal Herria Bildu (GUE/NGL)',
+                   'Partido Animalista Contra el Maltrato Animal (GUE/NGL)', 'Podemos (GUE/NGL)', 'Sumar (GUE/NGL)',
                    'Unidos Podemos (GUE/NGL)'],
+                  ['España Vaciada (NI)', 'Partit Demòcrata Europeu Català (NI)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
-                  ['Partit Demòcrata Europeu Català (NI)'],
+                  ['Unión del Pueblo Navarro (*)'],
                   ['Vox (ECR)']].freeze
 
     NO_OF_SEATS = 59
