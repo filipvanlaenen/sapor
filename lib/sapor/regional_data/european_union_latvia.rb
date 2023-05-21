@@ -50,10 +50,9 @@ module Sapor
                    'Zaļo un Zemnieku savienība (RE)'],
                   ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
-                   'Politiskā partija „KPV LV” (EPP)'],
+                   'Latvijas Reģionu Apvienība (EPP)', 'Politiskā partija „KPV LV” (EPP)'],
                   ['Latvijas Krievu savienība (NI)', 'Latvija pirmajā vietā (NI)'],
-                  ['Latvijas Reģionu Apvienība (ECR)',
-                   'Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
+                  ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['Likums un kārtība (*)', 'Nacionālā Savienība Taisnīgums (*)',
                    'No sirds Latvijai (*)', 'Republika (*)', 'Stabilitātei! (*)', 'Suverēnā vara (*)',
