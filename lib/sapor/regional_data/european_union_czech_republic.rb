@@ -57,7 +57,7 @@ module Sapor
                    'Starostové a nezávislí (EPP)',
                    'TOP 09 (EPP)'],
                   ['Občanská demokratická strana (ECR)', 'SPOLU (ECR)'],
-                  ['Přísaha (*)'],
+                  ['Právo Respekt Odbornost (*)', 'Přísaha (*)'],
                   ['Svoboda a přímá demokracie (ID)',
                    'Trikolóra hnutí občanů (ID)',
                    'Trikolóra hnutí občanů–Strana svobodných občanů–Strana' \
