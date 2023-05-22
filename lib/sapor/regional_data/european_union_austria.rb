@@ -46,13 +46,13 @@ module Sapor
 
     private
 
-    COALITIONS = [['Die Grünen–Die Grüne Alternative (Greens/EFA)',
+    COALITIONS = [['Bierpartei (*)', 'Meine Stimme Gilt! (*)',
+                   'MFG–Österreich Menschen–Freiheit–Grundrechte (*)',
+                   'Team HC Strache–Allianz für Österreich (*)'],
+                  ['Die Grünen–Die Grüne Alternative (Greens/EFA)',
                    'JETZT–Liste Pilz (Greens/EFA)'],
                   ['Freiheitliche Partei Österreichs (ID)'],
                   ['Kommunistische Partei Österreichs (GUE/NGL)'],
-                  ['Meine Stimme Gilt! (*)',
-                   'MFG–Österreich Menschen–Freiheit–Grundrechte (*)',
-                   'Team HC Strache–Allianz für Österreich (*)'],
                   ['NEOS–Das Neue Österreich und Liberales Forum (RE)'],
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
