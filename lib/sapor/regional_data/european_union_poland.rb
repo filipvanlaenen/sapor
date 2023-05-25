@@ -59,7 +59,7 @@ module Sapor
                    'Sojusz Lewicy Demokratycznej (S&D)',
                    'Wiosna (S&D)',
                    'Wiosna–Partia Razem (S&D)'],
-                  ['.Nowoczesna (RE)', 'Polska 2050 (RE)'],
+                  ['.Nowoczesna (RE)', 'Polska 2050 (RE)', 'Trzecia Droga (RE)'],
                   ['Prawo i Sprawiedliwość (ECR)',
                    'Zjednoczona Prawica (ECR)']].freeze
 
