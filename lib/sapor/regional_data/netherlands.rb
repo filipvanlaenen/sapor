@@ -55,6 +55,7 @@ module Sapor
     FIFTY_PARTY = '50Plus'.freeze
     FVD_PARTY = 'Forum voor Democratie'.freeze
     GL_PARTY = 'GroenLinks'.freeze
+    GL_PVDA_PARTY = 'GroenLinks–Partij van de Arbeid'.freeze
     PVDA_PARTY = 'Partij van de Arbeid'.freeze
     PVV_PARTY = 'Partij voor de Vrijheid'.freeze
     SGP_PARTY = 'Staatkundig Gereformeerde Partij'.freeze
@@ -62,8 +63,9 @@ module Sapor
     VVD_PARTY = 'Volkspartij voor Vrijheid en Democratie'.freeze
 
     COALITIONS = [[CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY],
-                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY,
-                   SP_PARTY],
+                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PVDA_PARTY],
+                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY, SP_PARTY],
+                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PVDA_PARTY, SP_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, VVD_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, PVDA_PARTY, VVD_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, VVD_PARTY],
