@@ -49,6 +49,7 @@ module Sapor
 
     private
     
+    BBB_PARTY = 'BoerBurgerBeweging'.freeze
     CDA_PARTY = 'Christen-Democratisch Appèl'.freeze
     CU_PARTY = 'ChristenUnie'.freeze
     D66_PARTY = 'Democraten 66'.freeze
@@ -62,16 +63,23 @@ module Sapor
     SP_PARTY = 'Socialistische Partij'.freeze
     VVD_PARTY = 'Volkspartij voor Vrijheid en Democratie'.freeze
 
-    COALITIONS = [[CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY],
+    COALITIONS = [[BBB_PARTY, CDA_PARTY, VVD_PARTY],
+                  [BBB_PARTY, CDA_PARTY, GL_PVDA_PARTY, VVD_PARTY],
+                  [BBB_PARTY, CDA_PARTY, GL_PARTY, PVDA_PARTY, VVD_PARTY],
+                  [BBB_PARTY, GL_PVDA_PARTY],
+                  [BBB_PARTY, GL_PARTY, PVDA_PARTY],
+                  [BBB_PARTY, GL_PVDA_PARTY, VVD_PARTY],
+                  [BBB_PARTY, GL_PARTY, PVDA_PARTY, VVD_PARTY],
+                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PVDA_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY, SP_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PVDA_PARTY, SP_PARTY],
-                  [CDA_PARTY, CU_PARTY, D66_PARTY, GL_PARTY, VVD_PARTY],
-                  [CDA_PARTY, CU_PARTY, D66_PARTY, PVDA_PARTY, VVD_PARTY],
                   [CDA_PARTY, CU_PARTY, D66_PARTY, VVD_PARTY],
-                  [CDA_PARTY, CU_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, CU_PARTY, GL_PVDA_PARTY],
+                  [CDA_PARTY, CU_PARTY, GL_PARTY, PVDA_PARTY],
                   [CDA_PARTY, D66_PARTY],
-                  [CDA_PARTY, D66_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, D66_PARTY, GL_PVDA_PARTY],
+                  [CDA_PARTY, D66_PARTY, GL_PARTY, PVDA_PARTY],
                   [CDA_PARTY, D66_PARTY, VVD_PARTY],
                   [CDA_PARTY, FIFTY_PARTY, FVD_PARTY, VVD_PARTY],
                   [CDA_PARTY, FIFTY_PARTY, FVD_PARTY, VVD_PARTY, SGP_PARTY],
@@ -79,12 +87,16 @@ module Sapor
                   [CDA_PARTY, FVD_PARTY, PVV_PARTY, VVD_PARTY],
                   [CDA_PARTY, FVD_PARTY, SGP_PARTY, VVD_PARTY],
                   [CDA_PARTY, FVD_PARTY, VVD_PARTY],
-                  [CDA_PARTY, PVDA_PARTY],
-                  [CDA_PARTY, PVDA_PARTY, VVD_PARTY],
+                  [CDA_PARTY, GL_PVDA_PARTY],
+                  [CDA_PARTY, GL_PARTY, PVDA_PARTY],
+                  [CDA_PARTY, GL_PVDA_PARTY, VVD_PARTY],
+                  [CDA_PARTY, GL_PARTY, PVDA_PARTY, VVD_PARTY],
                   [CDA_PARTY, PVV_PARTY, VVD_PARTY],
                   [CDA_PARTY, VVD_PARTY],
-                  [D66_PARTY, PVDA_PARTY, VVD_PARTY],
-                  [PVDA_PARTY, VVD_PARTY]].freeze
+                  [D66_PARTY, GL_PVDA_PARTY, VVD_PARTY],
+                  [D66_PARTY, GL_PARTY, PVDA_PARTY, VVD_PARTY],
+                  [GL_PVDA_PARTY, VVD_PARTY],
+                  [GL_PARTY, PVDA_PARTY, VVD_PARTY]].freeze
 
     NO_OF_SEATS = 150
 
