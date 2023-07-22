@@ -49,7 +49,7 @@ module Sapor
     COALITIONS = [['Dobrá voľba (*)', 'VLASŤ (*)'],
                   ['Kotleba–Ľudová strana Naše Slovensko (NI)',
                    'REPUBLIKA (NI)'],
-                  ['Kresťanskodemokratické hnutie (EPP)', 'MODRÍ–Európske Slovensko (EPP)',
+                  ['Kresťanskodemokratické hnutie (EPP)', 'Magyar Fórum (EPP)', 'MODRÍ–Európske Slovensko (EPP)',
                    'MODRÍ–Európske Slovensko–MOST–HÍD (EPP)', 'MOST–HÍD (EPP)',
                    'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (EPP)',
                    'OBYČAJNÍ ĽUDIA a nezávislé osobnosti–Kresťanská únia–Za ľudí (EPP)',
