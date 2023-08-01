@@ -54,3 +54,32 @@ describe Sapor::EuropeanUnionFlanders, '#seats' do
     expect(seats['PVDA+ (GUE/NGL)']).to eq(0)
   end
 end
+
+describe Sapor::EuropeanUnion720Flanders, '#area_code' do
+  it 'returns EU720[BE-VLG] as the area code' do
+    expect(Sapor::EuropeanUnion720Flanders.instance.area_code).to eq('EU720[BE-VLG]')
+  end
+end
+
+describe Sapor::EuropeanUnion720Flanders, '#no_of_seats' do
+  it 'returns 13 as the number of seats' do
+    expect(Sapor::EuropeanUnion720Flanders.instance.no_of_seats).to eq(13)
+  end
+end
+
+describe Sapor::EuropeanUnion720Flanders, '#seats' do
+  it 'calculates the number of seats for the election of 2014' do
+    results = { 'N-VA (ECR)' => 1_123_363, 'Open Vld (ALDE)' => 859_254,
+                'CD&V (EPP)' => 840_814, 'sp.a (S&D)' => 555_354,
+                'Groen (Greens/EFA)' => 447_449,
+                'Vlaams Belang (ENF)' => 284_891, 'PVDA+ (GUE/NGL)' => 101_246 }
+    seats = Sapor::EuropeanUnion720Flanders.instance.seats(results)
+    expect(seats['N-VA (ECR)']).to eq(4)
+    expect(seats['Open Vld (ALDE)']).to eq(3)
+    expect(seats['CD&V (EPP)']).to eq(2 + 1)
+    expect(seats['sp.a (S&D)']).to eq(1)
+    expect(seats['Groen (Greens/EFA)']).to eq(1)
+    expect(seats['Vlaams Belang (ENF)']).to eq(1)
+    expect(seats['PVDA+ (GUE/NGL)']).to eq(0)
+  end
+end
