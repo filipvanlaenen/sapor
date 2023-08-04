@@ -75,11 +75,23 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS,
+        @electoral_system = SingleDistrictProportional.new(no_of_seats,
                                                            DhondtDenominators,
                                                            THRESHOLD)
       end
       @electoral_system
+    end
+  end
+
+  # Extension of France as a constituency for the European Parliament with the number of seats according to the
+  # proposal for 2024.
+  class EuropeanUnion720France < EuropeanUnionFrance
+    def area_code
+      'EU720[FR]'
+    end
+
+    def no_of_seats
+      81
     end
   end
 end
