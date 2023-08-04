@@ -74,11 +74,23 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = LargestRemainder.new(NO_OF_SEATS,
+        @electoral_system = LargestRemainder.new(no_of_seats,
                                                  HagenbachBischoffQuota,
                                                  THRESHOLD, false, 0, false)
       end
       @electoral_system
+    end
+  end
+
+  # Extension of Slovakia as a constituency for the European Parliament with the number of seats according to the
+  # proposal for 2024.
+  class EuropeanUnion720Slovakia < EuropeanUnionSlovakia
+    def area_code
+      'EU720[SK]'
+    end
+
+    def no_of_seats
+      15
     end
   end
 end
