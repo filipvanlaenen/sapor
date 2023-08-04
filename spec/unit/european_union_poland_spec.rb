@@ -67,3 +67,45 @@ describe Sapor::EuropeanUnionPoland, '#seats' do
     expect(seats['Samoobrona (—)']).to eq(0)
   end
 end
+
+describe Sapor::EuropeanUnion720Poland, '#area_code' do
+  it 'returns EU720[PL] as the area code' do
+    expect(Sapor::EuropeanUnion720Poland.instance.area_code).to eq('EU720[PL]')
+  end
+end
+
+describe Sapor::EuropeanUnion720Poland, '#no_of_seats' do
+  it 'returns 53 as the number of seats' do
+    expect(Sapor::EuropeanUnion720Poland.instance.no_of_seats).to eq(53)
+  end
+end
+
+describe Sapor::EuropeanUnion720Poland, '#seats' do
+  it 'calculates the number of seats for the election of 2014' do
+    results = { 'Platforma Obywatelska (EPP)' => 2_271_215,
+                'Prawo i Sprawiedliwość (ECR)' => 2_246_870,
+                'Sojusz Lewicy Demokratycznej–Unia Pracy (S&D)' => 667_319,
+                'Kongres Nowej Prawicy (ENF)' => 505_586,
+                'Polskie Stronnictwo Ludowe (EPP)' => 480_846,
+                'Solidarna Polska Zbigniewa Ziobro (EFDD)' => 281_079,
+                'Europa Plus–Twój Ruch (ALDE)' => 252_779,
+                'Polska Razem (ECR)' => 223_733,
+                'Ruch Narodowy (—)' => 98_626,
+                'Partia Zieloni (Greens/EFA)' => 22_481,
+                'Demokracja Bezpośrednia (—)' => 16_222,
+                'Samoobrona (—)' => 2_729 }
+    seats = Sapor::EuropeanUnion720Poland.instance.seats(results)
+    expect(seats['Platforma Obywatelska (EPP)']).to eq(19 + 1)
+    expect(seats['Prawo i Sprawiedliwość (ECR)']).to eq(19 + 1)
+    expect(seats['Sojusz Lewicy Demokratycznej–Unia Pracy (S&D)']).to eq(5)
+    expect(seats['Kongres Nowej Prawicy (ENF)']).to eq(4)
+    expect(seats['Polskie Stronnictwo Ludowe (EPP)']).to eq(4)
+    expect(seats['Solidarna Polska Zbigniewa Ziobro (EFDD)']).to eq(0)
+    expect(seats['Europa Plus–Twój Ruch (ALDE)']).to eq(0)
+    expect(seats['Polska Razem (ECR)']).to eq(0)
+    expect(seats['Ruch Narodowy (—)']).to eq(0)
+    expect(seats['Partia Zieloni (Greens/EFA)']).to eq(0)
+    expect(seats['Demokracja Bezpośrednia (—)']).to eq(0)
+    expect(seats['Samoobrona (—)']).to eq(0)
+  end
+end

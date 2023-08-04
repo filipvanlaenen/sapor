@@ -59,3 +59,37 @@ describe Sapor::EuropeanUnionAustria, '#seats' do
     expect(seats['Kommunistische Partei Österreichs (*)']).to eq(0)
   end
 end
+
+describe Sapor::EuropeanUnion720Austria, '#area_code' do
+  it 'returns EU720[AT] as the area code' do
+    expect(Sapor::EuropeanUnion720Austria.instance.area_code).to eq('EU720[AT]')
+  end
+end
+
+describe Sapor::EuropeanUnion720Austria, '#no_of_seats' do
+  it 'returns 20 as the number of seats' do
+    expect(Sapor::EuropeanUnion720Austria.instance.no_of_seats).to eq(20)
+  end
+end
+
+describe Sapor::EuropeanUnion720Austria, '#seats' do
+  it 'calculates the number of seats for the election of 2019' do
+    results = { 'Österreichische Volkspartei (EPP)' => 1_305_956,
+                'Sozialdemokratische Partei Österreichs (S&D)' => 903_151,
+                'Freiheitliche Partei Österreichs (ENF)' => 650_114,
+                'Die Grünen–Die Grüne Alternative (Greens/EFA)' => 532_193,
+                'NEOS–Das Neue Österreich und Liberales Forum (ALDE)' => \
+                  319_024,
+                'EUROPA JETZT (*)' => 39_087,
+                'Kommunistische Partei Österreichs (*)' => 30_087 }
+    seats = Sapor::EuropeanUnion720Austria.instance.seats(results)
+    expect(seats['Österreichische Volkspartei (EPP)']).to eq(7 + 1)
+    expect(seats['Sozialdemokratische Partei Österreichs (S&D)']).to eq(5)
+    expect(seats['Freiheitliche Partei Österreichs (ENF)']).to eq(3)
+    expect(seats['Die Grünen–Die Grüne Alternative (Greens/EFA)']).to eq(2 + 1)
+    expect(seats['NEOS–Das Neue Österreich und Liberales Forum (ALDE)']).to \
+      eq(1)
+    expect(seats['EUROPA JETZT (*)']).to eq(0)
+    expect(seats['Kommunistische Partei Österreichs (*)']).to eq(0)
+  end
+end
