@@ -44,6 +44,10 @@ module Sapor
       electoral_system.project(simulation)
     end
 
+	def threshold
+	  1 / no_of_seats.to_f
+	end
+
     private
 
     COALITIONS = [['50Plus (EPP)', 'Christen-Democratisch Appèl (EPP)',
@@ -71,15 +75,25 @@ module Sapor
     # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_the_Netherlands
     POPULATION_SIZE = 5_497_813
 
-    THRESHOLD = 1 / NO_OF_SEATS.to_f
-
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS,
+        @electoral_system = SingleDistrictProportional.new(no_of_seats,
                                                            DhondtDenominators,
-                                                           THRESHOLD)
+                                                           threshold)
       end
       @electoral_system
+    end
+  end
+
+  # Extension of Netherlands as a constituency for the European Parliament with the number of seats according to the
+  # proposal for 2024.
+  class EuropeanUnion720Netherlands < EuropeanUnionNetherlands
+    def area_code
+      'EU720[NL]'
+    end
+
+    def no_of_seats
+      31
     end
   end
 end
