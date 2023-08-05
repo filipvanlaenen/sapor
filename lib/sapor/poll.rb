@@ -70,6 +70,7 @@ module Sapor
                                 EuropeanUnion720Finland.instance,
                                 EuropeanUnion720Flanders.instance,
                                 EuropeanUnion720France.instance,
+                                EuropeanUnion720IrelandWithAon.instance,
                                 EuropeanUnion720Latvia.instance,
                                 EuropeanUnion720Netherlands.instance,
                                 EuropeanUnion720Poland.instance,

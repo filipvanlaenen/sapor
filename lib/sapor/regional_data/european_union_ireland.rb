@@ -32,7 +32,7 @@ module Sapor
     end
 
     def no_of_seats
-      SEAT_DISTRIBUTION.values.inject(:+)
+      seat_distribution.values.inject(:+)
     end
 
     def population_size
@@ -63,8 +63,9 @@ module Sapor
     # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Ireland
     POPULATION_SIZE = 1_678_003
 
-    SEAT_DISTRIBUTION = { 'Dublin' => 4, 'Midlands–North-West' => 4,
-                          'South' => 5 }.freeze
+    def seat_distribution
+      { 'Dublin' => 4, 'Midlands–North-West' => 4, 'South' => 5 }.freeze
+    end
 
     def election_results_of_2019
       if @election_results_of_2019.nil?
@@ -80,7 +81,7 @@ module Sapor
         @electoral_system = MultiDistrictProportional.new( \
           overall_election_results_of_2019,
           election_results_of_2019,
-          SEAT_DISTRIBUTION,
+          seat_distribution,
           DhondtDenominators
         )
       end
@@ -112,6 +113,18 @@ module Sapor
         )
       end
       @election_results_of_2019
+    end
+  end
+
+  # Extension of Ireland with Aontu as a constituency for the European Parliament with the number of seats according to the
+  # proposal for 2024.
+  class EuropeanUnion720IrelandWithAon < EuropeanUnionIrelandWithAon
+    def area_code
+      'EU720[IE]∪{Aon}'
+    end
+
+    def seat_distribution
+      { 'Dublin' => 4, 'Midlands–North-West' => 4 + 1, 'South' => 5 }.freeze
     end
   end
 end
