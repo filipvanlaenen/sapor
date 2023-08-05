@@ -73,10 +73,22 @@ module Sapor
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(
-          NO_OF_SEATS, SainteLagueDenominators, THRESHOLD
+          no_of_seats, SainteLagueDenominators, THRESHOLD
         )
       end
       @electoral_system
+    end
+  end
+
+  # Extension of Latvia as a constituency for the European Parliament with the number of seats according to the
+  # proposal for 2024.
+  class EuropeanUnion720Latvia < EuropeanUnionLatvia
+    def area_code
+      'EU720[LV]'
+    end
+
+    def no_of_seats
+      9
     end
   end
 end
