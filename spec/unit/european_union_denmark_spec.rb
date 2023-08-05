@@ -60,3 +60,38 @@ describe Sapor::EuropeanUnionDenmark, '#seats' do
     expect(seats['Liberal Alliance (ALDE)']).to eq(0)
   end
 end
+
+describe Sapor::EuropeanUnion720Denmark, '#area_code' do
+  it 'returns EU720[DK] as the area code' do
+    expect(Sapor::EuropeanUnion720Denmark.instance.area_code).to \
+      eq('EU720[DK]')
+  end
+end
+
+describe Sapor::EuropeanUnion720Denmark, '#no_of_seats' do
+  it 'returns 15 as the number of seats' do
+    expect(Sapor::EuropeanUnion720Denmark.instance.no_of_seats).to eq(15)
+  end
+end
+
+describe Sapor::EuropeanUnion720Denmark, '#seats' do
+  it 'calculates the number of seats for the election of 2014' do
+    results = { 'Dansk Folkeparti (EFDD)' => 605_766,
+                'Socialdemokraterne (S&D)' => 434_894,
+                'Venstre (ALDE)' => 378_772,
+                'Socialistisk Folkeparti (Greens/EFA)' => 248_244,
+                'Det Konservative Folkeparti (EPP)' => 208_067,
+                'Folkebevægelsen mod EU (GUE/NGL)' => 183_493,
+                'Radikale Venstre (ALDE)' => 148_006,
+                'Liberal Alliance (ALDE)' => 65_776 }
+    seats = Sapor::EuropeanUnion720Denmark.instance.seats(results)
+    expect(seats['Dansk Folkeparti (EFDD)']).to eq(4)
+    expect(seats['Socialdemokraterne (S&D)']).to eq(3)
+    expect(seats['Venstre (ALDE)']).to eq(2 + 1)
+    expect(seats['Socialistisk Folkeparti (Greens/EFA)']).to eq(1 + 1)
+    expect(seats['Det Konservative Folkeparti (EPP)']).to eq(1)
+    expect(seats['Folkebevægelsen mod EU (GUE/NGL)']).to eq(1)
+    expect(seats['Radikale Venstre (ALDE)']).to eq(1)
+    expect(seats['Liberal Alliance (ALDE)']).to eq(0)
+  end
+end
