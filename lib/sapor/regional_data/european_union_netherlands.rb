@@ -52,19 +52,15 @@ module Sapor
 
     COALITIONS = [['50Plus (EPP)', 'Christen-Democratisch Appèl (EPP)',
                    'ChristenUnie (EPP)', 'Nieuw Sociaal Contract (EPP)'],
-                  ['Belang van Nederland (*)', 'Bij1 (*)',
-                   'BoerBurgerBeweging (*)', 'Code Oranje (*)', 'DENK (*)',
+                  ['Belang van Nederland (*)', 'Bij1 (*)', 'Code Oranje (*)', 'DENK (*)',
                    'Partij voor de Toekomst (*)', 'Piratenpartij (*)',
                    'Splinter (*)'],
-                  ['Democraten 66 (RE)',
-                   'Volkspartij voor Vrijheid en Democratie (RE)'],
-                  ['Forum voor Democratie (ECR)',
-                   'Staatkundig Gereformeerde Partij (ECR)',
-                   'Juiste Antwoord 2021 (ECR)'],
+                  ['BoerBurgerBeweging (NI)', 'Forum voor Democratie (NI)'],
+                  ['Democraten 66 (RE)', 'Volkspartij voor Vrijheid en Democratie (RE)'],
+                  ['Staatkundig Gereformeerde Partij (ECR)', 'Juiste Antwoord 2021 (ECR)'],
                   ['GroenLinks (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
                   ['Partij van de Arbeid (S&D)'],
-                  ['Partij voor de Dieren (GUE/NGL)',
-                   'Socialistische Partij (GUE/NGL)'],
+                  ['Partij voor de Dieren (GUE/NGL)', 'Socialistische Partij (GUE/NGL)'],
                   ['Partij voor de Vrijheid (ID)']].freeze
 
     NO_OF_SEATS = 29
