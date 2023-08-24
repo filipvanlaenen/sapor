@@ -49,16 +49,14 @@ module Sapor
     COALITIONS = [['Centro partija „Gerovės Lietuva“ (ECR)',
                    'Lietuvos lenkų rinkimų akcija (ECR)'],
                   ['Darbo Partija (NI)'],
-                  ['Demokratų sąjunga „Vardan Lietuvos“ (S&D)', 'Lietuvos regionų partija (S&D)',
-                   'Lietuvos socialdemokratų partija (S&D)'],
+                  ['Demokratų sąjunga „Vardan Lietuvos“ (Greens/EFA)', 'Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
+                   'Lietuvos Žaliųjų Partija (Greens/EFA)'],
                   ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
                    'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)'],
                   ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)',
                    'Partija „Laisvė ir teisingumas“ (RE)'],
-                  ['Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
-                   'Lietuvos Žaliųjų Partija (Greens/EFA)'],
-                  ['Tėvynės sąjunga–Lietuvos krikščionys demokratai ' \
-                     '(EPP)']].freeze
+                  ['Lietuvos regionų partija (S&D)', 'Lietuvos socialdemokratų partija (S&D)'],
+                  ['Tėvynės sąjunga–Lietuvos krikščionys demokratai (EPP)']].freeze
 
     NO_OF_SEATS = 11
 
