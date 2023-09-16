@@ -54,7 +54,7 @@ module Sapor
                   ['Vooruit (S&D)'],
                   ['Vlaams Belang (ID)']].freeze
 
-    NO_OF_SEATS = 12
+    NO_OF_SEATS = 13
 
     # Voter turnout on 25 May 2014
     # Source: Web page with the official results of the elections of 25 May
@@ -69,18 +69,6 @@ module Sapor
                                                            DhondtDenominators)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Flanders as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Flanders < EuropeanUnionFlanders
-    def area_code
-      'EU720[BE-VLG]'
-    end
-
-    def no_of_seats
-      13
     end
   end
 end

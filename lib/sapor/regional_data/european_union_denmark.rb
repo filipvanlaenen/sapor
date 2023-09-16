@@ -58,7 +58,7 @@ module Sapor
                    'Venstre (RE)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
-    NO_OF_SEATS = 14
+    NO_OF_SEATS = 15
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
@@ -72,18 +72,6 @@ module Sapor
                                                            DhondtDenominators)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Denmark as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Denmark < EuropeanUnionDenmark
-    def area_code
-      'EU720[DK]'
-    end
-
-    def no_of_seats
-      15
     end
   end
 end
