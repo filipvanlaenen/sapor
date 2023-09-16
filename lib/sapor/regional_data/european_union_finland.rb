@@ -54,7 +54,7 @@ module Sapor
                   ['Vasemmistoliitto (GUE/NGL)'],
                   ['Vihreä liitto (Greens/EFA)']].freeze
 
-    NO_OF_SEATS = 14
+    NO_OF_SEATS = 15
 
     # Voter turnout on 25 May 2014
     # Source: Web page with the official results of the elections of 26 May
@@ -68,18 +68,6 @@ module Sapor
                                                            DhondtDenominators)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Finland as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Finland < EuropeanUnionFinland
-    def area_code
-      'EU720[FI]'
-    end
-
-    def no_of_seats
-      15
     end
   end
 end

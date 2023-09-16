@@ -64,7 +64,7 @@ module Sapor
                   ['Unión del Pueblo Navarro (*)'],
                   ['Vox (ECR)']].freeze
 
-    NO_OF_SEATS = 59
+    NO_OF_SEATS = 61
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
@@ -78,18 +78,6 @@ module Sapor
                                                            DhondtDenominators)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Spain as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Spain < EuropeanUnionSpain
-    def area_code
-      'EU720[ES]'
-    end
-
-    def no_of_seats
-      61
     end
   end
 end
