@@ -57,7 +57,7 @@ module Sapor
                   ['Österreichische Volkspartei (EPP)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
 
-    NO_OF_SEATS = 19
+    NO_OF_SEATS = 20
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
@@ -74,18 +74,6 @@ module Sapor
                                                            THRESHOLD)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Austria as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Austria < EuropeanUnionAustria
-    def area_code
-      'EU720[AT]'
-    end
-
-    def no_of_seats
-      20
     end
   end
 end
