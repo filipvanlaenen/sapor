@@ -26,8 +26,8 @@ describe Sapor::EuropeanUnionAustria, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionAustria, '#no_of_seats' do
-  it 'returns 19 as the number of seats' do
-    expect(Sapor::EuropeanUnionAustria.instance.no_of_seats).to eq(19)
+  it 'returns 20 as the number of seats' do
+    expect(Sapor::EuropeanUnionAustria.instance.no_of_seats).to eq(20)
   end
 end
 
@@ -49,7 +49,7 @@ describe Sapor::EuropeanUnionAustria, '#seats' do
                 'EUROPA JETZT (*)' => 39_087,
                 'Kommunistische Partei Österreichs (*)' => 30_087 }
     seats = Sapor::EuropeanUnionAustria.instance.seats(results)
-    expect(seats['Österreichische Volkspartei (EPP)']).to eq(7)
+    expect(seats['Österreichische Volkspartei (EPP)']).to eq(7 + 1)
     expect(seats['Sozialdemokratische Partei Österreichs (S&D)']).to eq(5)
     expect(seats['Freiheitliche Partei Österreichs (ENF)']).to eq(3)
     expect(seats['Die Grünen–Die Grüne Alternative (Greens/EFA)']).to eq(2 + 1)
