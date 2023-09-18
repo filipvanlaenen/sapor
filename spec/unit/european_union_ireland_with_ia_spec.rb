@@ -27,8 +27,8 @@ describe Sapor::EuropeanUnionIrelandWithIa, '#area_code' do
 end
 
 describe Sapor::EuropeanUnionIrelandWithIa, '#no_of_seats' do
-  it 'returns 13 as the number of seats' do
-    expect(Sapor::EuropeanUnionIrelandWithIa.instance.no_of_seats).to eq(13)
+  it 'returns 14 as the number of seats' do
+    expect(Sapor::EuropeanUnionIrelandWithIa.instance.no_of_seats).to eq(14)
   end
 end
 
@@ -68,7 +68,7 @@ describe Sapor::EuropeanUnionIrelandWithIa, '#seats' do
     expect(seats['Workers’ Party (NI)']).to eq(0)
     expect(seats['Identity Ireland (*)']).to eq(0)
     expect(seats['Direct Democracy Ireland (*)']).to eq(0)
-    expect(seats['Independents (*)']).to eq(1 + 1 - 1)
+    expect(seats['Independents (*)']).to eq(1 + 1 - 1 + 1)
     expect(seats['Independent Alliance (*)']).to eq(1 + 1 - 1)
   end
 end

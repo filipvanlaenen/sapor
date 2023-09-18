@@ -64,7 +64,7 @@ module Sapor
     POPULATION_SIZE = 1_678_003
 
     def seat_distribution
-      { 'Dublin' => 4, 'Midlands–North-West' => 4, 'South' => 5 }.freeze
+      { 'Dublin' => 4, 'Midlands–North-West' => 4 + 1, 'South' => 5 }.freeze
     end
 
     def election_results_of_2019
@@ -113,18 +113,6 @@ module Sapor
         )
       end
       @election_results_of_2019
-    end
-  end
-
-  # Extension of Ireland with Aontu as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720IrelandWithAon < EuropeanUnionIrelandWithAon
-    def area_code
-      'EU720[IE]∪{Aon}'
-    end
-
-    def seat_distribution
-      { 'Dublin' => 4, 'Midlands–North-West' => 4 + 1, 'South' => 5 }.freeze
     end
   end
 end

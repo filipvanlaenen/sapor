@@ -65,9 +65,7 @@ module Sapor
                             EuropeanUnionSlovenia.instance,
                             EuropeanUnionSpain.instance,
                             EuropeanUnionSweden.instance].freeze
-    EUROPEAN_UNION_720_AREAS = [EuropeanUnion720France.instance,
-                                EuropeanUnion720IrelandWithAon.instance,
-                                EuropeanUnion720Latvia.instance,
+    EUROPEAN_UNION_720_AREAS = [EuropeanUnion720Latvia.instance,
                                 EuropeanUnion720Netherlands.instance,
                                 EuropeanUnion720Poland.instance,
                                 EuropeanUnion720Slovakia.instance,

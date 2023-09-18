@@ -63,7 +63,7 @@ module Sapor
                   ['Les Patriotes (NI)', 'Reconquête (NI)'],
                   ['Les Républicains (EPP)']].freeze
 
-    NO_OF_SEATS = 79
+    NO_OF_SEATS = 81
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 25-26 May
@@ -80,18 +80,6 @@ module Sapor
                                                            THRESHOLD)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of France as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720France < EuropeanUnionFrance
-    def area_code
-      'EU720[FR]'
-    end
-
-    def no_of_seats
-      81
     end
   end
 end
