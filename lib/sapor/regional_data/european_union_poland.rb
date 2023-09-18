@@ -63,7 +63,7 @@ module Sapor
                   ['Prawo i Sprawiedliwość (ECR)',
                    'Zjednoczona Prawica (ECR)']].freeze
 
-    NO_OF_SEATS = 52
+    NO_OF_SEATS = 53
 
     # Voter turnout on 26 May 2019
     # Source: Web page with the official results of the elections of 26 May
@@ -80,18 +80,6 @@ module Sapor
                                                            THRESHOLD)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Poland as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Poland < EuropeanUnionPoland
-    def area_code
-      'EU720[PL]'
-    end
-
-    def no_of_seats
-      53
     end
   end
 end
