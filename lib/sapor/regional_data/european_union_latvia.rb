@@ -60,7 +60,7 @@ module Sapor
                   ['PROGRESĪVIE (Greens/EFA)'],
                   ['Sociāldemokrātiskā partija “Saskaņa” (S&D)']].freeze
 
-    NO_OF_SEATS = 8
+    NO_OF_SEATS = 9
 
     # Voter turnout on 25 May 2019
     # Source: Web page with the official results of the elections of 25 May
@@ -77,18 +77,6 @@ module Sapor
         )
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Latvia as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Latvia < EuropeanUnionLatvia
-    def area_code
-      'EU720[LV]'
-    end
-
-    def no_of_seats
-      9
     end
   end
 end

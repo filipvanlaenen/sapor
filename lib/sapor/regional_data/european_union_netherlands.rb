@@ -63,7 +63,7 @@ module Sapor
                   ['Partij voor de Dieren (GUE/NGL)', 'Socialistische Partij (GUE/NGL)'],
                   ['Partij voor de Vrijheid (ID)']].freeze
 
-    NO_OF_SEATS = 29
+    NO_OF_SEATS = 31
 
     # Voter turnout on 23 May 2019
     # Source: Web page with the official results of the elections of 23 May
@@ -78,18 +78,6 @@ module Sapor
                                                            threshold)
       end
       @electoral_system
-    end
-  end
-
-  # Extension of Netherlands as a constituency for the European Parliament with the number of seats according to the
-  # proposal for 2024.
-  class EuropeanUnion720Netherlands < EuropeanUnionNetherlands
-    def area_code
-      'EU720[NL]'
-    end
-
-    def no_of_seats
-      31
     end
   end
 end
