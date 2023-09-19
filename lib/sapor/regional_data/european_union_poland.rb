@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)'],
+    COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Tak! Dla Polski (*)'],
                   ['Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)',
                    'Koalicja Obywatelska (EPP)',
