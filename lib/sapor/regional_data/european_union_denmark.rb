@@ -56,7 +56,7 @@ module Sapor
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
                   ['Liberal Alliance (RE)', 'Moderaterne (RE)', 'Radikale Venstre (RE)',
                    'Venstre (RE)'],
-                  ['Socialdemokraterne (S&D)']].freeze
+                  ['Socialdemokraterne (S&D)', 'Socialdemokraterne–Socialistisk Folkeparti–Alternativet (S&D)']].freeze
 
     NO_OF_SEATS = 15
 
