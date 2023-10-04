@@ -24,7 +24,7 @@ module Sapor
   class SingleDistrictProportional
     def initialize(no_of_seats, denominators_class, threshold = 0, bonus = 0,
                    other_eligible = true, coalition_list_threshold = 1,
-                   coalition_lists = [], minority_lists = [])
+                   coalition_lists = [], minority_lists = [], electoral_alliances = [])
       @no_of_seats = no_of_seats
       @denominators_class = denominators_class
       @threshold = threshold
@@ -33,6 +33,8 @@ module Sapor
       @coalition_list_threshold = coalition_list_threshold
       @coalition_lists = coalition_lists
       @minority_lists = minority_lists
+      @electoral_alliances = electoral_alliances
+      @electoral_alliance_members = electoral_alliances.flatten
       @denominators = @denominators_class.get(@no_of_seats)
     end
 
@@ -51,13 +53,24 @@ module Sapor
     def create_counters(simulation, threshold, coalition_list_threshold)
       counters = []
       simulation.each_pair do |choice, new_value|
-        next if choice == OTHER && !@other_eligible
+        next if choice == OTHER && !@other_eligible || @electoral_alliance_members.include?(choice)
         next unless @minority_lists.include?(choice) ||
-                    @coalition_lists.include?(choice) &&
-                    new_value >= coalition_list_threshold ||
-                    !@coalition_lists.include?(choice) &&
-                    new_value >= threshold
+                    @coalition_lists.include?(choice) && new_value >= coalition_list_threshold ||
+                    !@coalition_lists.include?(choice) && new_value >= threshold
         counters << [choice, new_value.to_f, 0, new_value.to_f / @denominators[0]]
+      end
+      @electoral_alliances.each do | electoral_alliance |
+        value = 0
+        members_and_weights = {}
+        electoral_alliance.each do | member |
+          if simulation.has_key?(member)
+            value += simulation[member] 
+            members_and_weights[member] = simulation[member] 
+          end
+        end
+        if value >= threshold
+          counters << [members_and_weights, value.to_f, 0, value.to_f / @denominators[0]]
+        end
       end
       counters
     end
@@ -73,16 +86,40 @@ module Sapor
     end
 
     def fill_result(counters, result)
+      alliance_seats = {}
       @no_of_seats.times do
         next_seat = counters.max_by(&:last)
         seat = next_seat.first
-        if result.key?(seat)
+        if seat.kind_of?(Hash)
+          if alliance_seats.has_key?(seat)
+            alliance_seats[seat] += 1
+          else
+            alliance_seats[seat] = 1
+          end
+        elsif result.key?(seat)
           result[seat] += 1
         else
           result[seat] = 1
         end
         next_seat[2] = next_seat[2] + 1
         next_seat[3] = next_seat[1] / @denominators[next_seat[2]]
+      end
+      alliance_seats.each_pair do | alliance, seats |
+        alliance_counters = []
+        alliance.each_pair do | member, value |
+          alliance_counters << [member, value.to_f, 0, value.to_f]
+        end
+        seats.times do
+          next_seat = alliance_counters.max_by(&:last)
+          seat = next_seat.first
+          if result.key?(seat)
+            result[seat] += 1
+          else
+            result[seat] = 1
+          end
+          next_seat[2] = next_seat[2] + 1
+          next_seat[3] = next_seat[1] / (next_seat[2] + 1)
+        end
       end
     end
   end

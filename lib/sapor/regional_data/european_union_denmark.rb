@@ -31,6 +31,7 @@ module Sapor
     def coalitions
       COALITIONS
     end
+    
 
     def no_of_seats
       NO_OF_SEATS
@@ -56,7 +57,10 @@ module Sapor
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
                   ['Liberal Alliance (RE)', 'Moderaterne (RE)', 'Radikale Venstre (RE)',
                    'Venstre (RE)'],
-                  ['Socialdemokraterne (S&D)', 'Socialdemokraterne–Socialistisk Folkeparti–Alternativet (S&D)']].freeze
+                  ['Socialdemokraterne (S&D)']].freeze
+
+    ELECTORAL_ALLIANCES = [['Socialdemokraterne (S&D)', 'Socialistisk Folkeparti (Greens/EFA)',
+                            'Alternativet (Greens/EFA)']]
 
     NO_OF_SEATS = 15
 
@@ -68,8 +72,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats, \
-                                                           DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end

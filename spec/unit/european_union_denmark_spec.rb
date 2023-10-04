@@ -48,15 +48,17 @@ describe Sapor::EuropeanUnionDenmark, '#seats' do
                 'Det Konservative Folkeparti (EPP)' => 208_067,
                 'Folkebevægelsen mod EU (GUE/NGL)' => 183_493,
                 'Radikale Venstre (ALDE)' => 148_006,
-                'Liberal Alliance (ALDE)' => 65_776 }
+                'Liberal Alliance (ALDE)' => 65_776,
+                'Alternativet (Greens/EFA)' => 110_000 }
     seats = Sapor::EuropeanUnionDenmark.instance.seats(results)
     expect(seats['Dansk Folkeparti (EFDD)']).to eq(4)
     expect(seats['Socialdemokraterne (S&D)']).to eq(3)
-    expect(seats['Venstre (ALDE)']).to eq(2 + 1)
+    expect(seats['Venstre (ALDE)']).to eq(2 + 1 - 1)
     expect(seats['Socialistisk Folkeparti (Greens/EFA)']).to eq(1 + 1)
     expect(seats['Det Konservative Folkeparti (EPP)']).to eq(1)
     expect(seats['Folkebevægelsen mod EU (GUE/NGL)']).to eq(1)
     expect(seats['Radikale Venstre (ALDE)']).to eq(1)
     expect(seats['Liberal Alliance (ALDE)']).to eq(0)
+    expect(seats['Alternativet (Greens/EFA)']).to eq(0 + 1)
   end
 end
