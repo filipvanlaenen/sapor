@@ -46,17 +46,15 @@ module Sapor
 
     private
 
-    COALITIONS = [['Demokratikus Koalíció (S&D)',
-                   'Magyar Szocialista Párt (S&D)',
-                   'Magyar Szocialista Párt–Párbeszéd (S&D)',
-                   'United Opposition (S&D)'],
-                  ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)',
-                   'Párbeszéd (Greens/EFA)'],
+    COALITIONS = [['Demokratikus Koalíció (S&D)', 'Magyar Szocialista Párt (S&D)',
+                   'Magyar Szocialista Párt–Párbeszéd (S&D)', 'United Opposition (S&D)'],
+                  ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)', 'Párbeszéd (Greens/EFA)'],
+                  ['Fidesz (NI)', 'Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)', 'Magyar Kétfarkú Kutya Párt (NI)'],
                   ['HNEM (*)', 'SMS (*)', 'Mindenki Magyarországa Mozgalom (*)', 'Nép Pártján (*)'],
-                  ['Fidesz–Kereszténydemokrata Néppárt (NI)', 'Jobbik (NI)',
-                   'Mi Hazánk Mozgalom (NI)',
-                   'Magyar Kétfarkú Kutya Párt (NI)'],
+                  ['Kereszténydemokrata Néppárt (EPP)'],
                   ['MLP (RE)', 'Momentum Mozgalom (RE)']].freeze
+
+    ELECTORAL_ALLIANCES = [['Fidesz (NI)', 'Kereszténydemokrata Néppárt (EPP)']]
 
     NO_OF_SEATS = 21
 
@@ -68,8 +66,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, \
-                                                           DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, 0, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
