@@ -50,7 +50,8 @@ module Sapor
                    'Magyar Szocialista Párt–Párbeszéd (S&D)', 'United Opposition (S&D)'],
                   ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)', 'Párbeszéd (Greens/EFA)'],
                   ['Fidesz (NI)', 'Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)', 'Magyar Kétfarkú Kutya Párt (NI)'],
-                  ['HNEM (*)', 'SMS (*)', 'Mindenki Magyarországa Mozgalom (*)', 'Nép Pártján (*)'],
+                  ['HNEM (*)', 'Második Reformkor (*)', 'Mindenki Magyarországa Mozgalom (*)', 'Nép Pártján (*)',
+                   'SMS (*)'],
                   ['Kereszténydemokrata Néppárt (EPP)'],
                   ['MLP (RE)', 'Momentum Mozgalom (RE)']].freeze
 
