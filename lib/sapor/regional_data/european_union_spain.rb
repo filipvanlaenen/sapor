@@ -48,6 +48,7 @@ module Sapor
 
     COALITIONS = [['Ahora Repúblicas (Greens/EFA)',
                    'Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
+                   'Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
                    'Coalició Compromís (Greens/EFA)',
                    'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
                    'Primavera Europea (Greens/EFA)'],
@@ -56,12 +57,12 @@ module Sapor
                    'Coalición por Europa (RE)',
                    'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)', 'Partido Regionalista de Cantabria (RE)'],
                   ['Candidatura d’Unitat Popular (GUE/NGL)', 'Euskal Herria Bildu (GUE/NGL)',
-                   'Partido Animalista Contra el Maltrato Animal (GUE/NGL)', 'Podemos (GUE/NGL)', 'Sumar (GUE/NGL)',
-                   'Unidos Podemos (GUE/NGL)'],
+                   'Partido Animalista Contra el Maltrato Animal (GUE/NGL)', 'Podemos (GUE/NGL)',
+                   'Podemos–Izquierda Unida (GUE/NGL)', 'Unidos Podemos (GUE/NGL)'],
                   ['España Vaciada (NI)', 'Partit Demòcrata Europeu Català (NI)'],
+                  ['Movimiento Sumar (*)', 'Unión del Pueblo Navarro (*)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
-                  ['Unión del Pueblo Navarro (*)'],
                   ['Vox (ECR)']].freeze
 
     NO_OF_SEATS = 61
