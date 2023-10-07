@@ -107,16 +107,13 @@ module Sapor
       alliance_seats.each_pair do | alliance, seats |
         alliance_counters = []
         alliance.each_pair do | member, value |
+          result[member] = 0
           alliance_counters << [member, value.to_f, 0, value.to_f]
         end
         seats.times do
           next_seat = alliance_counters.max_by(&:last)
           seat = next_seat.first
-          if result.key?(seat)
-            result[seat] += 1
-          else
-            result[seat] = 1
-          end
+          result[seat] += 1
           next_seat[2] = next_seat[2] + 1
           next_seat[3] = next_seat[1] / (next_seat[2] + 1)
         end

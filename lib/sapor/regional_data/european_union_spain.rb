@@ -65,6 +65,9 @@ module Sapor
                   ['Partido Socialista Obrero Español (S&D)'],
                   ['Vox (ECR)']].freeze
 
+    ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)', 'Movimiento Sumar (*)',
+                            'Podemos–Izquierda Unida (GUE/NGL)']]
+
     NO_OF_SEATS = 61
 
     # Voter turnout on 26 May 2019
@@ -75,8 +78,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats, \
-                                                           DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end

@@ -56,14 +56,15 @@ module Sapor
                    'Воля–Национален фронт за спасение на България (ID)'],
                   ['Да, България! (*)', 'Левицата! (*)', 'Национален фронт за спасение на България (*)',
                    'Републиканци за България (*)'],
-                  ['Движение за права и свободи (RE)', 'Продължаваме промяната–Демократична България (RE)',
+                  ['Движение за права и свободи (RE)', 'Продължаваме промяната (RE)',
                    'Национално движение за стабилност и възход (RE)'],
                   ['Демократи за силна България (EPP)',
                    'Демократична България (EPP)',
                    'Граждани за европейско развитие на България (EPP)',
                    'Изправи се Бг (EPP)',
-                   'Реформаторски блок (EPP)'],
-                  ['Продължаваме промяната (Greens/EFA)']].freeze
+                   'Реформаторски блок (EPP)']].freeze
+
+    ELECTORAL_ALLIANCES = [['Да, България! (*)', 'Демократична България (EPP)', 'Продължаваме промяната (RE)']]
 
     NO_OF_SEATS = 17
 
@@ -77,8 +78,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota,
-                                                 THRESHOLD)
+        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false, 0, true, 0, [],
+                                                 ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
