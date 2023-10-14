@@ -65,6 +65,8 @@ module Sapor
                   ['Lega Nord (ID)'],
                   ['Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)', 'Unione Popolare (GUE/NGL)']].freeze
 
+	ELECTORAL_ALLIANCES = [['Europa Verde (Greens/EFA)', 'Sinistra Italiana (GUE/NGL)', 'Partito Progressista (*)']]
+    
     NO_OF_SEATS = 76
 
     NO_OF_SVP_SEATS = 1
@@ -79,8 +81,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota,
-                                                 THRESHOLD)
+        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false, 0, true, 0, [],
+                                                 ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
