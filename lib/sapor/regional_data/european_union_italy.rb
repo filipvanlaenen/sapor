@@ -61,10 +61,9 @@ module Sapor
                    'Più Europa (RE)', 'Più Europa–Azione (RE)'],
                   ['Alleanza Verdi e Sinistra (Greens/EFA)', 'Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Noi Moderati (EPP)', 'Südtiroler Volkspartei (EPP)'],
-                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)'],
+                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Partito Progressista (*)'],
                   ['Lega Nord (ID)'],
-                  ['Potere al Popolo (GUE/NGL)',
-                   'Sinistra Italiana (GUE/NGL)', 'Unione Popolare (GUE/NGL)']].freeze
+                  ['Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)', 'Unione Popolare (GUE/NGL)']].freeze
 
     NO_OF_SEATS = 76
 
