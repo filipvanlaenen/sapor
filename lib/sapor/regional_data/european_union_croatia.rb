@@ -46,18 +46,18 @@ module Sapor
 
     private
 
-    COALITIONS = [['Hrvatska demokratska zajednica (EPP)'],
+    COALITIONS = [['Akcija za promjene (*)', 'Bandić Milan 365–Stranka rada i solidarnosti (*)', 'Fokus na bitno (*)',
+                   'Hrvatska stranka umirovljenika (*)', 'Odlučnost i Pravednost (*)',
+                   'Stranka antikorupcije, razvoja i transparentnosti (*)'],
                   ['Amsterdamska koalicija (RE)', 'Centar (RE)',
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
                    'Hrvatska seljačka stranka (RE)',
                    'Pametno (RE)'],
-                  ['Bandić Milan 365–Stranka rada i solidarnosti (*)', 'Fokus na bitno (*)',
-                   'Hrvatska stranka umirovljenika (*)', 'Odlučnost i Pravednost (*)',
-                   'Stranka antikorupcije, razvoja i transparentnosti (*)'],
                   ['Domovinski pokret Miroslava Škore (ECR)',
                    'Hrvatska konzervativna stranka (ECR)',
                    'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
                    'Most nezavisnih lista (ECR)'],
+                  ['Hrvatska demokratska zajednica (EPP)'],
                   ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)',
                    'Živi zid (NI)'],
                   ['Možemo! (Greens/EFA)'],
