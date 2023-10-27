@@ -48,11 +48,11 @@ module Sapor
 
     COALITIONS = [['Demokratikus Koalíció (S&D)', 'Magyar Szocialista Párt (S&D)',
                    'Magyar Szocialista Párt–Párbeszéd (S&D)', 'United Opposition (S&D)'],
-                  ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)', 'Párbeszéd (Greens/EFA)'],
-                  ['Fidesz (NI)', 'Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)', 'Magyar Kétfarkú Kutya Párt (NI)'],
-                  ['HNEM (*)', 'Második Reformkor (*)', 'Mindenki Magyarországa Mozgalom (*)', 'Nép Pártján (*)',
-                   'SMS (*)'],
-                  ['Kereszténydemokrata Néppárt (EPP)'],
+                  ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)',
+                   'Magyar Kétfarkú Kutya Párt (Greens/EFA)', 'Párbeszéd (Greens/EFA)'],
+                  ['Fidesz (NI)', 'Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)'],
+                  ['HNEM (*)', 'Második Reformkor (*)', 'Nép Pártján (*)', 'SMS (*)'],
+                  ['Kereszténydemokrata Néppárt (EPP)', 'Mindenki Magyarországa Mozgalom (EPP)'],
                   ['MLP (RE)', 'Momentum Mozgalom (RE)']].freeze
 
     ELECTORAL_ALLIANCES = [['Fidesz (NI)', 'Kereszténydemokrata Néppárt (EPP)']]
