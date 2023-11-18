@@ -51,7 +51,7 @@ module Sapor
                    'Stranka antikorupcije, razvoja i transparentnosti (*)'],
                   ['Amsterdamska koalicija (RE)', 'Centar (RE)',
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
-                   'Hrvatska seljačka stranka (RE)',
+                   'Hrvatska seljačka stranka (RE)', 'Hrvatska socijalno-liberalna stranka (RE)',
                    'Pametno (RE)'],
                   ['Domovinski pokret Miroslava Škore (ECR)',
                    'Hrvatska konzervativna stranka (ECR)',
