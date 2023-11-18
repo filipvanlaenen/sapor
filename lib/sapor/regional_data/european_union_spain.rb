@@ -57,7 +57,7 @@ module Sapor
                    'Coalición por Europa (RE)',
                    'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)', 'Partido Regionalista de Cantabria (RE)'],
                   ['Candidatura d’Unitat Popular (GUE/NGL)', 'Euskal Herria Bildu (GUE/NGL)',
-                   'Izquierda Unida (GUE/NGL)', 'Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
+                   'Movimiento Sumar–Izquierda Unida (GUE/NGL)', 'Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
                    'Podemos (GUE/NGL)', 'Movimiento Sumar–Podemos–Izquierda Unida (GUE/NGL)', 'Unidos Podemos (GUE/NGL)'],
                   ['España Vaciada (NI)', 'Partit Demòcrata Europeu Català (NI)'],
                   ['Unión del Pueblo Navarro (*)'],
