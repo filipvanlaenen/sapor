@@ -59,7 +59,7 @@ module Sapor
 
     ELECTORAL_ALLIANCES = [['Socialdemokraterne (S&D)', 'Socialistisk Folkeparti (Greens/EFA)',
                             'Alternativet (Greens/EFA)'],
-                           ['Det Konservative Folkeparti (EPP)', 'Liberal Alliance (RE)']]
+                           ['Det Konservative Folkeparti (EPP)', 'Liberal Alliance (EPP)']]
 
     NO_OF_SEATS = 15
 
