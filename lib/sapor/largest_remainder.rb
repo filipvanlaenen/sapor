@@ -86,13 +86,15 @@ module Sapor
                                            0
                                          end
       end
+      electoral_alliance_threshold = coalition_list_threshold == 0 ? party_list_threshold : coalition_list_threshold
       @electoral_alliances.each do | electoral_alliance |
-        thresholded_simulation[electoral_alliance] = 0
+        votes = 0
         electoral_alliance.each do | member |
           if simulation.has_key?(member)
-            thresholded_simulation[electoral_alliance] += simulation[member]
+            votes += simulation[member]
           end
         end
+        thresholded_simulation[electoral_alliance] = votes >= electoral_alliance_threshold ? votes : 0
       end
       thresholded_simulation[OTHER] = 0 unless @other_eligible
       thresholded_simulation
