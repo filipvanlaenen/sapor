@@ -47,23 +47,24 @@ module Sapor
     private
 
     COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
-                   'Lewica Razem (*)', 'Konfederacja Korony Polskiej (*)', 'Polska Jest Jedna (*)',
+                   'Lewica Razem (*)', 'Polska Jest Jedna (*)',
                     'Tak! Dla Polski (*)'],
                   ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)',
                    'Nowa Nadzieja–Ruch Narodowy (NI)'],
-                  ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)',
-                   'Koalicja Obywatelska (EPP)',
-                   'Koalicja Polska (EPP)',
-                   'Platforma Obywatelska (EPP)',
-                   'Polskie Stronnictwo Ludowe (EPP)',
+                  ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)', 'Koalicja Obywatelska (EPP)',
+                   'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)', 'Polskie Stronnictwo Ludowe (EPP)',
                    'Porozumienie (EPP)'],
-                  ['Lewica (S&D)', 'Sojusz Lewicy Demokratycznej (S&D)',
-                   'Wiosna (S&D)',
-                   'Wiosna–Partia Razem (S&D)'],
+                  ['Konfederacja Korony Polskiej (ID)'],
+                  ['Nowa Lewica (S&D)', 'Sojusz Lewicy Demokratycznej (S&D)', 'Wiosna (S&D)', 'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)', 'Polska 2050 (RE)', 'Trzecia Droga (RE)'],
                   ['Partia Zieloni (Greens/EFA)'],
-                  ['Prawo i Sprawiedliwość (ECR)',
-                   'Zjednoczona Prawica (ECR)']].freeze
+                  ['Prawo i Sprawiedliwość (ECR)', 'Zjednoczona Prawica (ECR)']].freeze
+
+    ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (NI)',
+                            'Partia Zieloni (Greens/EFA)'],
+                           ['Nowa Lewica (S&D)', 'Lewica Razem (*)'],
+                           ['Nowa Nadzieja–Ruch Narodowy (NI)', 'Konfederacja Korony Polskiej (ID)'],
+                           ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
     NO_OF_SEATS = 53
 
@@ -77,9 +78,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats,
-                                                           DhondtDenominators,
-                                                           THRESHOLD)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, THRESHOLD, 0, false, 1, [],
+                                                           [], ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
