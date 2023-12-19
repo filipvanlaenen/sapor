@@ -49,13 +49,17 @@ module Sapor
     COALITIONS = [['Alianța 2020 USR-PLUS (RE)', 'Partidul Libertății, Unității și Solidarității (RE)',
                    'Reînnoim Proiectul European al României (RE)', 'Uniunea Salvați România (RE)'],
                   ['Alianța pentru Patrie (*)', 'Partidul Alianța Liberalilor și Democraților (*)',
-                   'Partidul Ecologist Român (*)', 'Partidul S.O.S. România (*)'],
+                   'Partidul Ecologist Român (*)'],
                   ['Alianța pentru Unirea Românilor (ECR)'], 
-                  ['Forța Dreptei (EPP)', 'Partidul Mișcarea Populară (EPP)', 'Partidul Național Liberal (EPP)',
+                  ['Forța Dreptei (EPP)', 'Forța Dreptei–Partidul Mișcarea Populară (EPP)',
+                   'Partidul Mișcarea Populară (EPP)', 'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Partidul Puterii Umaniste (social-liberal) (S&D)',
-                   'Partidul Social Democrat (S&D)',
-                   'PRO România (S&D)']].freeze
+                  ['Partidul Puterii Umaniste (social-liberal) (S&D)', 'Partidul Social Democrat (S&D)',
+                   'PRO România (S&D)'],
+                  ['Partidul S.O.S. România (ID)'],
+                  ['Partidul Verde (Greens/EFA)']].freeze
+
+    ELECTORAL_ALLIANCES = [['Uniunea Salvați România (RE)', 'Forța Dreptei–Partidul Mișcarea Populară (EPP)']]
 
     NO_OF_SEATS = 33
 
@@ -69,9 +73,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS,
-                                                           DhondtDenominators,
-                                                           THRESHOLD)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false, 1, [],
+                                                           [], ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
