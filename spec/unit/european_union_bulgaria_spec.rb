@@ -100,13 +100,13 @@ describe Sapor::EuropeanUnionBulgaria, '#seats' do
   it 'calculates the number of seats for an electoral alliance' do
     results = { 'Граждани за европейско развитие на България (EPP)' => 500_000,
                 'КОАЛИЦИЯ ЗА БЪЛГАРИЯ (S&D)' => 400_000,
-                'Да, България! (*)' => 50_000,
+                'Да, България! (EPP)' => 50_000,
                 'Демократична България (EPP)' => 200_000,
                 'Продължаваме промяната (RE)' => 100_000 }
     seats = Sapor::EuropeanUnionBulgaria.instance.seats(results)
     expect(seats['Граждани за европейско развитие на България (EPP)']).to eq(7)
     expect(seats['КОАЛИЦИЯ ЗА БЪЛГАРИЯ (S&D)']).to eq(5)
-    expect(seats['Да, България! (*)']).to eq(1)
+    expect(seats['Да, България! (EPP)']).to eq(1)
     expect(seats['Демократична България (EPP)']).to eq(3)
     expect(seats['Продължаваме промяната (RE)']).to eq(1)
   end
