@@ -60,6 +60,9 @@ module Sapor
                    'Trikolóra hnutí občanů–Strana svobodných občanů–Strana soukromníků České republiky (ID)'],
                   ['Strana svobodných občanů (NI)']].freeze
 
+    ELECTORAL_ALLIANCES = [['Občanská demokratická strana (ECR)',
+                            'Křesťanská a demokratická unie–Československá strana lidová (EPP)', 'TOP 09 (EPP)']]
+
     NO_OF_SEATS = 21
 
     # Voter turnout on 24 and 25 May 2019
@@ -74,7 +77,8 @@ module Sapor
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS,
                                                            DhondtDenominators,
-                                                           THRESHOLD)
+                                                           THRESHOLD, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
