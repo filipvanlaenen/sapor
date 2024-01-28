@@ -51,6 +51,7 @@ module Sapor
                   ['Perussuomalaiset (ECR)', 'Sininen tulevaisuus (ECR)'],
                   ['Suomen Keskusta (RE)', 'Svenska folkpartiet i Finland (RE)'],
                   ['Suomen Sosialidemokraattinen Puolue (S&D)'],
+                  ['Valta kuuluu kansalle (*)'],
                   ['Vasemmistoliitto (GUE/NGL)'],
                   ['Vihreä liitto (Greens/EFA)']].freeze
 
