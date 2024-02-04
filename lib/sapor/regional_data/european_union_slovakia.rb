@@ -54,10 +54,9 @@ module Sapor
                    'OBYČAJNÍ ĽUDIA a nezávislé osobnosti–Kresťanská únia–Za ľudí (EPP)',
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)',
                    'Za ľudí (EPP)'],
-                  ['Kresťanská únia (ECR)', 'NOVA (ECR)', 'Sloboda a Solidarita (ECR)',
-                   'Slovenská národná strana (ECR)'],
+                  ['Kresťanská únia (ECR)', 'NOVA (ECR)', 'Sloboda a Solidarita (ECR)'],
                   ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
-                  ['SME RODINA (ID)'],
+                  ['Slovenská národná strana (ID)', 'SME RODINA (ID)'],
                   ['HLAS–sociálna demokracia (S&D)', 'HLAS–sociálna demokracia–Dobrá voľba (S&D)']].freeze
 
     NO_OF_SEATS = 15
