@@ -48,11 +48,10 @@ module Sapor
 
     COALITIONS = [['Alternativ Demokratesch Reformpartei (ECR)'],
                   ['Chrëschtlech-Sozial Vollekspartei (EPP)'],
-                  ['déi gréng (Greens/EFA)',
-                   'Piratepartei Lëtzebuerg (Greens/EFA)'],
+                  ['déi gréng (Greens/EFA)', 'Piratepartei Lëtzebuerg (Greens/EFA)', 'Volt Lëtzebuerg (Greens/EFA)'],
                   ['déi Lénk (GUE/NGL)'],
                   ['Demokratesch Partei (RE)'],
-                  ['Kommunistesch Partei Lëtzebuerg (*)',
+                  ['Déi Konservativ (*)', 'Demokratie (*)', 'Fokus (*)', 'Kommunistesch Partei Lëtzebuerg (*)',
                    'Partei fir Integral Demokratie (*)'],
                   ['Lëtzebuerger Sozialistesch Aarbechterpartei (S&D)']].freeze
 
