@@ -49,18 +49,18 @@ module Sapor
     COALITIONS = [['Agir, la droite constructive–Union des démocrates et' \
                    ' indépendants (RE)',
                    'La République en marche–Mouvement démocrate (RE)'],
-                  ['Debout la France (ECR)'],
-                  ['Europe Écologie Les Verts (Greens/EFA)'],
+                  ['Debout la France (ECR)', 'Reconquête (ECR)'],
+                  ['Écologie au centre (Greens/EFA)', 'Europe Écologie Les Verts (Greens/EFA)'],
                   ['Rassemblement national (ID)'],
-                  ['Génération·s, le mouvement (S&D)',
-                   'Parti socialiste (S&D)'],
-                  ['La France insoumise (GUE/NGL)',
-                   'Nouveau Parti anticapitaliste (GUE/NGL)',
+                  ['Génération·s, le mouvement (S&D)', 'Parti radical de gauche (S&D)',
+                   'Parti radical de gauche–La Convention (S&D)', 'Parti socialiste (S&D)'],
+                  ['La France insoumise (GUE/NGL)', 'Lutte Ouvrière–Nouveau Parti anticapitaliste (GUE/NGL)',
+                   'Nouveau Parti anticapitaliste (GUE/NGL)', 'Parti animaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
-                  ['L’Engagement (*)', 'Lutte Ouvrière (*)',
-                   'Mouvement des gilets jaunes (*)', 'Parti radical de gauche–La Convention (*)', 'Résistons! (*)',
+                  ['Alliance Rurale (*)', 'L’Engagement (*)', 'Lutte Ouvrière (*)',
+                   'Mouvement des gilets jaunes (*)', 'Résistons! (*)',
                    'Union populaire républicaine (*)', 'Walwari (*)'],
-                  ['Les Patriotes (NI)', 'Reconquête (NI)'],
+                  ['Les Patriotes (NI)'],
                   ['Les Républicains (EPP)']].freeze
 
     NO_OF_SEATS = 81
