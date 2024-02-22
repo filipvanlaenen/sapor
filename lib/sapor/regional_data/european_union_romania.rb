@@ -59,7 +59,8 @@ module Sapor
                   ['Partidul S.O.S. România (ID)'],
                   ['Alianța AER pentru România (Greens/EFA)', 'Partidul Verde (Greens/EFA)']].freeze
 
-    ELECTORAL_ALLIANCES = [['Uniunea Salvați România (RE)', 'Forța Dreptei–Partidul Mișcarea Populară (EPP)']]
+    ELECTORAL_ALLIANCES = [['Uniunea Salvați România (RE)', 'Forța Dreptei–Partidul Mișcarea Populară (EPP)'],
+                           ['Partidul Social Democrat (S&D)', 'Partidul Național Liberal (EPP)']]
 
     NO_OF_SEATS = 33
 
