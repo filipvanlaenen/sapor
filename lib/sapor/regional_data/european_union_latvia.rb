@@ -51,11 +51,11 @@ module Sapor
                   ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
                    'Latvijas Reģionu Apvienība (EPP)', 'Politiskā partija „KPV LV” (EPP)'],
-                  ['Latvijas Krievu savienība (NI)', 'Latvija pirmajā vietā (NI)'],
+                  ['Latvijas Krievu savienība (NI)', 'Latvija pirmajā vietā (NI)', 'Stabilitātei! (NI)'],
                   ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['Likums un kārtība (*)', 'Nacionālā Savienība Taisnīgums (*)',
-                   'No sirds Latvijai (*)', 'Republika (*)', 'Stabilitātei! (*)', 'Suverēnā vara (*)',
+                   'No sirds Latvijai (*)', 'Republika (*)', 'Suverēnā vara (*)',
                    'Vienoti Latvijai (*)'],
                   ['PROGRESĪVIE (Greens/EFA)'],
                   ['Sociāldemokrātiskā partija “Saskaņa” (S&D)']].freeze
