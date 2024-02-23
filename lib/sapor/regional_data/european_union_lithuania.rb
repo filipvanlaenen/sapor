@@ -52,7 +52,7 @@ module Sapor
                   ['Demokratų sąjunga „Vardan Lietuvos“ (Greens/EFA)', 'Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
                    'Lietuvos Žaliųjų Partija (Greens/EFA)'],
                   ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
-                   'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)'],
+                   'Nemuno aušra (*)', 'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)'],
                   ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)',
                    'Partija „Laisvė ir teisingumas“ (RE)'],
                   ['Lietuvos regionų partija (S&D)', 'Lietuvos socialdemokratų partija (S&D)'],
