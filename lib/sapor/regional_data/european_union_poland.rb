@@ -47,9 +47,8 @@ module Sapor
     private
 
     COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
-                   'Lewica Razem (*)', 'Polska Jest Jedna (*)',
-                    'Tak! Dla Polski (*)'],
-                  ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)',
+                   'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)'],
+                  ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)', 'Lewica Razem (NI)', 
                    'Nowa Nadzieja–Ruch Narodowy (NI)'],
                   ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)', 'Koalicja Obywatelska (EPP)',
                    'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)', 'Polskie Stronnictwo Ludowe (EPP)',
@@ -62,7 +61,7 @@ module Sapor
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (NI)',
                             'Partia Zieloni (Greens/EFA)'],
-                           ['Nowa Lewica (S&D)', 'Lewica Razem (*)'],
+                           ['Nowa Lewica (S&D)', 'Lewica Razem (NI)'],
                            ['Nowa Nadzieja–Ruch Narodowy (NI)', 'Konfederacja Korony Polskiej (ID)'],
                            ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
