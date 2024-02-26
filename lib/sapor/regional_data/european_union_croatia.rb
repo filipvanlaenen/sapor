@@ -53,15 +53,14 @@ module Sapor
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
                    'Hrvatska seljačka stranka (RE)', 'Hrvatska socijalno-liberalna stranka (RE)',
                    'Pametno (RE)'],
-                  ['Domovinski pokret Miroslava Škore (ECR)',
-                   'Hrvatska konzervativna stranka (ECR)',
+                  ['Hrvatska konzervativna stranka (ECR)',
                    'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
                    'Most nezavisnih lista (ECR)'],
                   ['Hrvatska demokratska zajednica (EPP)'],
                   ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)',
                    'Živi zid (NI)'],
                   ['Možemo! (Greens/EFA)'],
-                  ['Neovisni za Hrvatsku (ID)'],
+                  ['Domovinski pokret Miroslava Škore (ID)', 'Neovisni za Hrvatsku (ID)'],
                   ['Radnička fronta (GUE/NGL)'],
                   ['Socijaldemokrati (S&D)', 'Socijaldemokratska partija Hrvatske (S&D)']].freeze
 
