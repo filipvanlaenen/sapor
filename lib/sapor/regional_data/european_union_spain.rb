@@ -66,7 +66,10 @@ module Sapor
                   ['Vox (ECR)']].freeze
 
     ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)', 'Movimiento Sumar (*)',
-                            'Podemos–Izquierda Unida (GUE/NGL)']]
+                            'Podemos–Izquierda Unida (GUE/NGL)'],
+                           ['Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
+                            'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
+                            'Euskal Herria Bildu (GUE/NGL)']]
 
     NO_OF_SEATS = 61
 
