@@ -58,9 +58,8 @@ module Sapor
                    'MLPD (*)', 'NPD (*)', 'Sozialistische Gleichheitspartei (*)', 'Volksabstimmung (*)'],
                   ['Christlich Demokratische Union Deutschlands (EPP)', 'Christlich-Soziale Union in Bayern (EPP)',
                    'Familienpartei Deutschlands (EPP)'],
-                  ['Bündnis Sahra Wagenknecht (GUE/NGL)', 'Die Linke (GUE/NGL)', 'DKP (GUE/NGL)',
-                   'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['Die PARTEI (NI)'],
+                  ['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)', 'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
+                  ['Bündnis Sahra Wagenknecht (NI)', 'Die PARTEI (NI)'],
                   ['Freie Demokratische Partei (RE)', 'Freie Wähler (RE)'],
                   ['Sozialdemokratische Partei Deutschlands (S&D)']].freeze
 
