@@ -49,11 +49,11 @@ module Sapor
     COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
                    'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)'],
                   ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)', 'Lewica Razem (NI)', 
-                   'Nowa Nadzieja–Ruch Narodowy (NI)'],
+                   'Nowa Nadzieja (NI)'],
                   ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)', 'Koalicja Obywatelska (EPP)',
                    'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)', 'Polskie Stronnictwo Ludowe (EPP)',
                    'Porozumienie (EPP)'],
-                  ['Konfederacja Korony Polskiej (ID)'],
+                  ['Konfederacja Korony Polskiej (ID)', 'Ruch Narodowy (ID)'],
                   ['Nowa Lewica (S&D)', 'Sojusz Lewicy Demokratycznej (S&D)', 'Wiosna (S&D)', 'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)', 'Polska 2050 (RE)', 'Trzecia Droga (RE)'],
                   ['Partia Zieloni (Greens/EFA)'],
@@ -62,7 +62,7 @@ module Sapor
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (NI)',
                             'Partia Zieloni (Greens/EFA)'],
                            ['Nowa Lewica (S&D)', 'Lewica Razem (NI)'],
-                           ['Nowa Nadzieja–Ruch Narodowy (NI)', 'Konfederacja Korony Polskiej (ID)'],
+                           ['Nowa Nadzieja (NI)', 'Konfederacja Korony Polskiej (ID)', 'Ruch Narodowy (ID)'],
                            ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
     NO_OF_SEATS = 53
