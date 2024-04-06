@@ -55,7 +55,8 @@ module Sapor
                   ['Kereszténydemokrata Néppárt (EPP)', 'Mindenki Magyarországa Mozgalom (EPP)'],
                   ['MLP (RE)', 'Momentum Mozgalom (RE)']].freeze
 
-    ELECTORAL_ALLIANCES = [['Fidesz (NI)', 'Kereszténydemokrata Néppárt (EPP)']]
+    ELECTORAL_ALLIANCES = [['Fidesz (NI)', 'Kereszténydemokrata Néppárt (EPP)'],
+                           ['Demokratikus Koalíció (S&D)', 'Magyar Szocialista Párt (S&D)', 'Párbeszéd (Greens/EFA)']]
 
     NO_OF_SEATS = 21
 
