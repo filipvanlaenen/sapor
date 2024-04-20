@@ -58,12 +58,12 @@ module Sapor
                   ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Impegno Civico (NI)',
                    'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)', 'Movimento 5 Stelle (NI)'],
                   ['Azione (RE)', 'Azione–Italia Viva (RE)', 'Civica Popolare (RE)', 'Italia Viva (RE)',
-                   'Più Europa (RE)', 'Più Europa–Azione (RE)'],
+                   'Più Europa (RE)', 'Più Europa–Azione (RE)', 'Stati Uniti d’Europa (RE)'],
                   ['Alleanza Verdi e Sinistra (Greens/EFA)', 'Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Noi Moderati (EPP)', 'Südtiroler Volkspartei (EPP)'],
-                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Partito Progressista (*)'],
+                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Libertà (*)', 'Partito Progressista (*)'],
                   ['Lega Nord (ID)'],
-                  ['Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)', 'Unione Popolare (GUE/NGL)']].freeze
+                  ['Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)', 'Pace Terra Dignità (GUE/NGL)']].freeze
 
 	ELECTORAL_ALLIANCES = [['Europa Verde (Greens/EFA)', 'Sinistra Italiana (GUE/NGL)', 'Partito Progressista (*)']]
     
