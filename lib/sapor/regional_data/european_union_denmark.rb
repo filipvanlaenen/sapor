@@ -50,11 +50,12 @@ module Sapor
     COALITIONS = [['Alternativet (Greens/EFA)',
                    'Socialistisk Folkeparti (Greens/EFA)'],
                   ['Borgerlisten (*)', 'Frie Grønne (*)', 'Stram Kurs (*)', 'Veganerpartiet (*)'],
-                  ['Danmarksdemokraterne (NI)', 'Nye Borgerlige (NI)'],
+                  ['Danmarksdemokraterne (ECR)'],
                   ['Dansk Folkeparti (ID)'],
                   ['Det Konservative Folkeparti (EPP)', 'Kristendemokraterne (EPP)', 'Liberal Alliance (EPP)'],
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
                   ['Moderaterne (RE)', 'Radikale Venstre (RE)', 'Venstre (RE)'],
+                  ['Nye Borgerlige (NI)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
     ELECTORAL_ALLIANCES = [['Socialdemokraterne (S&D)', 'Socialistisk Folkeparti (Greens/EFA)',
