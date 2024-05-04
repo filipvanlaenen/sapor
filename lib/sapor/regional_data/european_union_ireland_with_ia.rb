@@ -49,12 +49,12 @@ module Sapor
 
     COALITIONS = [['Aontú (*)', 'Catholic Democrats (*)',
                    'Direct Democracy Ireland (*)', 'Fís Nua (*)',
-                   'Independent Alliance (*)', 'Independents (*)',
+                   'Independent Alliance (*)',
                    'Renua Ireland (*)'],
                   ['Fianna Fáil (RE)'],
                   ['Fine Gael (EPP)'],
                   ['Green Party (Greens/EFA)'],
-                  ['Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',
+                  ['Independents (GUE/NGL)', 'Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',
                    'Socialist Party (GUE/NGL)',
                    'Solidarity–People Before Profit (GUE/NGL)'],
                   ['Labour Party (S&D)', 'Social Democrats (S&D)']].freeze

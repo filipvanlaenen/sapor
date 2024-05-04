@@ -53,7 +53,7 @@ describe Sapor::EuropeanUnionIrelandWithIa, '#seats' do
                 'Workers’ Party (NI)' => 3_701,
                 'Identity Ireland (*)' => 3_685,
                 'Direct Democracy Ireland (*)' => 2_773,
-                'Independents (*)' => 264_087,
+                'Independents (GUE/NGL)' => 264_087,
                 'Independent Alliance (*)' => 264_087 }
     seats = Sapor::EuropeanUnionIrelandWithIa.instance.seats(results)
     expect(seats['Fine Gael (EPP)']).to eq(4 + 1)
@@ -68,7 +68,7 @@ describe Sapor::EuropeanUnionIrelandWithIa, '#seats' do
     expect(seats['Workers’ Party (NI)']).to eq(0)
     expect(seats['Identity Ireland (*)']).to eq(0)
     expect(seats['Direct Democracy Ireland (*)']).to eq(0)
-    expect(seats['Independents (*)']).to eq(1 + 1 - 1 + 1)
+    expect(seats['Independents (GUE/NGL)']).to eq(1 + 1 - 1 + 1)
     expect(seats['Independent Alliance (*)']).to eq(1 + 1 - 1)
   end
 end
