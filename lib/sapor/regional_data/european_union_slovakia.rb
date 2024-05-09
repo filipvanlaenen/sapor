@@ -46,13 +46,14 @@ module Sapor
 
     private
     
-    COALITIONS = [['Dobrá voľba (*)', 'VLASŤ (*)'],
+    COALITIONS = [['Dobrá voľba (*)', 'VLASŤ (*)', 'ZDRAVÝ ROZUM (*)'],
                   ['HLAS–sociálna demokracia (NI)', 'HLAS–sociálna demokracia–Dobrá voľba (NI)',
                    'Kotleba–Ľudová strana Naše Slovensko (NI)', 'REPUBLIKA (NI)', 'SMER–sociálna demokracia (NI)'],
                   ['Kresťanskodemokratické hnutie (EPP)', 'Magyar Fórum (EPP)', 'MODRÍ–Európske Slovensko (EPP)',
                    'MODRÍ–Európske Slovensko–MOST–HÍD (EPP)', 'MOST–HÍD (EPP)',
-                   'OBYČAJNÍ ĽUDIA a nezávislé osobnosti (EPP)',
-                   'OBYČAJNÍ ĽUDIA a nezávislé osobnosti–Kresťanská únia–Za ľudí (EPP)',
+                   'Slovensko (EPP)',
+                   'Slovensko–Za ľudí (EPP)',
+                   'Slovensko–Kresťanská únia–Za ľudí (EPP)',
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)',
                    'Za ľudí (EPP)'],
                   ['Kresťanská únia (ECR)', 'NOVA (ECR)', 'Sloboda a Solidarita (ECR)'],
