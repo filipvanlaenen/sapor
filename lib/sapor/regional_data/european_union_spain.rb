@@ -60,7 +60,7 @@ module Sapor
                    'Movimiento Sumar–Izquierda Unida (GUE/NGL)', 'Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
                    'Podemos (GUE/NGL)', 'Movimiento Sumar–Podemos–Izquierda Unida (GUE/NGL)', 'Unidos Podemos (GUE/NGL)'],
                   ['España Vaciada (NI)', 'Partit Demòcrata Europeu Català (NI)'],
-                  ['Unión del Pueblo Navarro (*)'],
+                  ['Se Acabó La Fiesta (*)', 'Unión del Pueblo Navarro (*)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
                   ['Vox (ECR)']].freeze
