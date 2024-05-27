@@ -46,8 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alternative für Deutschland (ID)'],
-                  ['AUF (ECR)', 'Partei Bibeltreuer Christen (ECR)'],
+    COALITIONS = [['AUF (ECR)', 'Partei Bibeltreuer Christen (ECR)'],
                   ['Bayernpartei (Greens/EFA)',
                    'Bündnis 90/Die Grünen (Greens/EFA)',
                    'Ökologisch-Demokratische Partei (Greens/EFA)',
@@ -59,7 +58,7 @@ module Sapor
                   ['Christlich Demokratische Union Deutschlands (EPP)', 'Christlich-Soziale Union in Bayern (EPP)',
                    'Familienpartei Deutschlands (EPP)'],
                   ['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)', 'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['Bündnis Sahra Wagenknecht (NI)', 'Die PARTEI (NI)'],
+                  ['Alternative für Deutschland (NI)', 'Bündnis Sahra Wagenknecht (NI)', 'Die PARTEI (NI)'],
                   ['Freie Demokratische Partei (RE)', 'Freie Wähler (RE)'],
                   ['Sozialdemokratische Partei Deutschlands (S&D)']].freeze
 
