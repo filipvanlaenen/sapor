@@ -71,7 +71,7 @@ module Sapor
     # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Bulgaria
     POPULATION_SIZE = 2_015_320
 
-    THRESHOLD = 0.05
+    THRESHOLD = 1 / NO_OF_SEATS
 
     def electoral_system
       if @electoral_system.nil?
