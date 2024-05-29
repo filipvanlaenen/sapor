@@ -68,9 +68,11 @@ module Sapor
     # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Hungary
     POPULATION_SIZE = 3_470_257
 
+    THRESHOLD = 0.05
+
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, 0, 0, false, 1, [], [],
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false, 1, [], [],
                                                            ELECTORAL_ALLIANCES)
       end
       @electoral_system
