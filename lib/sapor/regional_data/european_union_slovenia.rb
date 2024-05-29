@@ -70,13 +70,10 @@ module Sapor
     # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Slovenia#Results
     POPULATION_SIZE = 471_525
 
-    THRESHOLD = 0.05
-
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = SingleDistrictProportional.new(no_of_seats,
-                                                           DhondtDenominators,
-                                                           THRESHOLD)
+                                                           DhondtDenominators)
       end
       @electoral_system
     end
