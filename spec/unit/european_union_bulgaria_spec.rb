@@ -67,14 +67,14 @@ describe Sapor::EuropeanUnionBulgaria, '#seats' do
                 'Християндемократическа партия на България (—)' => 2_964,
                 'Коалиция НАЦИОНАЛИСТИЧЕСКИ ПАРТИИ НА БЪЛГАРИЯ (—)' => 2_499 }
     seats = Sapor::EuropeanUnionBulgaria.instance.seats(results)
-    expect(seats['Граждани за европейско развитие на България (EPP)']).to eq(6 - 1)
-    expect(seats['КОАЛИЦИЯ ЗА БЪЛГАРИЯ (S&D)']).to eq(4 - 1)
-    expect(seats['Движение за права и свободи (ALDE)']).to eq(4 - 1)
+    expect(seats['Граждани за европейско развитие на България (EPP)']).to eq(6)
+    expect(seats['КОАЛИЦИЯ ЗА БЪЛГАРИЯ (S&D)']).to eq(4)
+    expect(seats['Движение за права и свободи (ALDE)']).to eq(4)
     expect(seats['БЪЛГАРИЯ БЕЗ ЦЕНЗУРА, ВМРО, ЗНС, ГЕРГЬОВДЕН (ECR)']).to eq(2)
     expect(seats['РЕФОРМАТОРСКИ БЛОК (EPP)']).to eq(1)
-    expect(seats['АЛТЕРНАТИВА ЗА БЪЛГАРСКО ВЪЗРАЖДАНЕ (—)']).to eq(0 + 1)
-    expect(seats['НАЦИОНАЛЕН ФРОНТ ЗА СПАСЕНИЕ НА БЪЛГАРИЯ (EFDD)']).to eq(0 + 1)
-    expect(seats['АТАКА (—)']).to eq(0 + 1)
+    expect(seats['АЛТЕРНАТИВА ЗА БЪЛГАРСКО ВЪЗРАЖДАНЕ (—)']).to eq(0)
+    expect(seats['НАЦИОНАЛЕН ФРОНТ ЗА СПАСЕНИЕ НА БЪЛГАРИЯ (EFDD)']).to eq(0)
+    expect(seats['АТАКА (—)']).to eq(0)
     expect(seats['ГЛАС НАРОДЕН (—)']).to eq(0)
     expect(seats['Коалиция КОД–Антония Първанова, Илиана Раева–ОБ, НДСВ, СДП' \
                  ' (—)']).to eq(0)
