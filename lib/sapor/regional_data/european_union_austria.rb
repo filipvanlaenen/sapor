@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Bierpartei (*)', 'Meine Stimme Gilt! (*)',
+    COALITIONS = [['Bierpartei (*)', 'Demokratisch – Neutral – Authentisch (*)', 'Meine Stimme Gilt! (*)',
                    'MFG–Österreich Menschen–Freiheit–Grundrechte (*)',
                    'Team HC Strache–Allianz für Österreich (*)'],
                   ['Die Grünen–Die Grüne Alternative (Greens/EFA)',
