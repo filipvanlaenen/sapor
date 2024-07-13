@@ -58,11 +58,6 @@ module Sapor
                   ['Nye Borgerlige (NI)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
-    ELECTORAL_ALLIANCES = [['Socialdemokraterne (S&D)', 'Socialistisk Folkeparti (Greens/EFA)',
-                            'Alternativet (Greens/EFA)'],
-                           ['Det Konservative Folkeparti (EPP)', 'Liberal Alliance (EPP)'],
-                           ['Moderaterne (RE)', 'Radikale Venstre (RE)', 'Venstre (RE)']]
-
     NO_OF_SEATS = 15
 
     # Voter turnout on 26 May 2019
@@ -73,8 +68,7 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
-                                                           ELECTORAL_ALLIANCES)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false)
       end
       @electoral_system
     end
