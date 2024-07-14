@@ -58,11 +58,9 @@ module Sapor
 
     NO_OF_SEATS = 7
 
-    # Voter turnout on 26 May 2019
+    # Voter turnout on 9 June 2024
     # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 10 June 2019,
-    # https://de.wikipedia.org/wiki/Europawahl_in_Estland_2019
-    POPULATION_SIZE = 332_859
+    POPULATION_SIZE = 368_125
 
     def electoral_system
       if @electoral_system.nil?

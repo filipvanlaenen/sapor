@@ -33,9 +33,9 @@ describe Sapor::EuropeanUnionEstonia, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionEstonia, '#population_size' do
-  it 'returns a population size of 332,859' do
+  it 'returns a population size of 368,125' do
     expect(Sapor::EuropeanUnionEstonia.instance.population_size).to \
-      eq(332_859)
+      eq(368_125)
   end
 end
 
