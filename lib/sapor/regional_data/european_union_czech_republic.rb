@@ -63,11 +63,9 @@ module Sapor
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 24 and 25 May 2019
-    # Source: Web page with the official results of the elections of 24 and 25
-    # May 2019, downloaded on 15 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_the_Czech_Republic#Results
-    POPULATION_SIZE = 1_007_398
+    # Voter turnout on 8 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_the_Czech_Republic#Results
+    POPULATION_SIZE = 2_968_889
 
     THRESHOLD = 0.05
 

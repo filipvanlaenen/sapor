@@ -60,11 +60,9 @@ module Sapor
 
     NO_OF_SEATS = 15
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 10 June 2019,
-    # https://da.wikipedia.org/wiki/Europa-Parlamentsvalget_2019_i_Danmark
-    POPULATION_SIZE = 2_800_029
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Denmark#Results
+    POPULATION_SIZE = 2_447_587
 
     def electoral_system
       if @electoral_system.nil?
