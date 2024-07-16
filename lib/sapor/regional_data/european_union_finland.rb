@@ -57,11 +57,9 @@ module Sapor
 
     NO_OF_SEATS = 15
 
-    # Voter turnout on 25 May 2014
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 12 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Finland
-    POPULATION_SIZE = 1_830_045
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Finland#Results
+    POPULATION_SIZE = 1_829_249
 
     def electoral_system
       if @electoral_system.nil?
