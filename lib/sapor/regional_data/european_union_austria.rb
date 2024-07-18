@@ -51,7 +51,7 @@ module Sapor
                    'Team HC Strache–Allianz für Österreich (*)'],
                   ['Die Grünen–Die Grüne Alternative (Greens/EFA)',
                    'JETZT–Liste Pilz (Greens/EFA)'],
-                  ['Freiheitliche Partei Österreichs (ID)'],
+                  ['Freiheitliche Partei Österreichs (PfE)'],
                   ['Kommunistische Partei Österreichs (GUE/NGL)'],
                   ['NEOS–Das Neue Österreich und Liberales Forum (RE)'],
                   ['Österreichische Volkspartei (EPP)'],
