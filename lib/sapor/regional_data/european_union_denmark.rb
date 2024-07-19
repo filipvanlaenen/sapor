@@ -51,7 +51,7 @@ module Sapor
                    'Socialistisk Folkeparti (Greens/EFA)'],
                   ['Borgerlisten (*)', 'Frie Grønne (*)', 'Stram Kurs (*)', 'Veganerpartiet (*)'],
                   ['Danmarksdemokraterne (ECR)'],
-                  ['Dansk Folkeparti (ID)'],
+                  ['Dansk Folkeparti (PfE)'],
                   ['Det Konservative Folkeparti (EPP)', 'Kristendemokraterne (EPP)', 'Liberal Alliance (EPP)'],
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
                   ['Moderaterne (RE)', 'Radikale Venstre (RE)', 'Venstre (RE)'],
