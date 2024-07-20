@@ -63,26 +63,17 @@ module Sapor
                   ['Se Acabó La Fiesta (*)', 'Unión del Pueblo Navarro (*)'],
                   ['Partido Popular (EPP)'],
                   ['Partido Socialista Obrero Español (S&D)'],
-                  ['Vox (ECR)']].freeze
-
-    ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)', 'Movimiento Sumar (*)',
-                            'Podemos–Izquierda Unida (GUE/NGL)'],
-                           ['Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
-                            'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
-                            'Euskal Herria Bildu (GUE/NGL)']]
+                  ['Vox (PfE)']].freeze
 
     NO_OF_SEATS = 61
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 10 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Spain
-    POPULATION_SIZE = 22_410_049
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Spain#Overall
+    POPULATION_SIZE = 17_527_438 	
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
-                                                           ELECTORAL_ALLIANCES)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false)
       end
       @electoral_system
     end
