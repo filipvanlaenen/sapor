@@ -48,10 +48,10 @@ module Sapor
 
     COALITIONS = [['Ανεξάρτητοι Έλληνες (ECR)', 'Ελληνική Λύση (ECR)'],
                   ['Αντικαπιταλιστική Αριστερή Συνεργασία για την Ανατροπή (*)', 'Δημιουργία, Ξανά (*)', 'ΕΑΝ… (*)',
-                   'Εθνικό Κόμμα – Έλληνες (*)', 'Πλεύση Ελευθερίας (*)', 'Σπαρτιάτες (*)', 'Φωνή Λογικής (*)'],
+                   'Εθνική Δημιουργία (*)', 'Εθνικό Κόμμα – Έλληνες (*)', 'Πλεύση Ελευθερίας (*)', 'Σπαρτιάτες (*)'],
                   ['Δημοκράτες (RE)', 'Ένωση Κεντρώων (RE)'],
                   ['Δημοκρατικό Πατριωτικό Κίνημα ΝΙΚΗ (NI)', 'Κομμουνιστικό Κόμμα Ελλάδας (NI)', 'Χρυσή Αυγή (NI)'],
-                  ['Εθνική Δημιουργία (ID)'],
+                  ['Φωνή Λογικής (PfE)'],
                   ['Κίνημα Αλλαγής (S&D)', 'Το Ποτάμι (S&D)'],
                   ['Κόσμος (Greens/EFA)'],
                   ['Νέα Δημοκρατία (EPP)'],
@@ -60,11 +60,9 @@ module Sapor
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 12 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Greece
-    POPULATION_SIZE = 5_656_122
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Greece#Results
+    POPULATION_SIZE = 3_976_085
 
     THRESHOLD = 0.03
 
