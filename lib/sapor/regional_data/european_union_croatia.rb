@@ -53,24 +53,22 @@ module Sapor
                    'Hrvatska narodna stranka–liberalni demokrati (RE)',
                    'Hrvatska seljačka stranka (RE)', 'Hrvatska socijalno-liberalna stranka (RE)',
                    'Pametno (RE)'],
-                  ['Hrvatska konzervativna stranka (ECR)',
+                  ['Domovinski pokret (ECR)', 'Hrvatska konzervativna stranka (ECR)',
                    'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
                    'Most nezavisnih lista (ECR)'],
                   ['Hrvatska demokratska zajednica (EPP)'],
                   ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)',
                    'Živi zid (NI)'],
                   ['Možemo! (Greens/EFA)'],
-                  ['Domovinski pokret Miroslava Škore (ID)', 'Neovisni za Hrvatsku (ID)'],
+                  ['Neovisni za Hrvatsku (PfE)'],
                   ['Radnička fronta (GUE/NGL)'],
                   ['Socijaldemokrati (S&D)', 'Socijaldemokratska partija Hrvatske (S&D)']].freeze
 
     NO_OF_SEATS = 12
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 22 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Croatia
-    POPULATION_SIZE = 1_073_954
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Croatia#Results
+    POPULATION_SIZE = 752_661
 
     THRESHOLD = 0.05
 
