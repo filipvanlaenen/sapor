@@ -56,33 +56,29 @@ module Sapor
                   ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)',
                    'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Impegno Civico (NI)',
-                   'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)', 'Movimento 5 Stelle (NI)'],
+                   'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)'],
                   ['Azione (RE)', 'Azione–Italia Viva (RE)', 'Civica Popolare (RE)', 'Italia Viva (RE)',
                    'Più Europa (RE)', 'Più Europa–Azione (RE)', 'Stati Uniti d’Europa (RE)'],
                   ['Alleanza Verdi e Sinistra (Greens/EFA)', 'Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Noi Moderati (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Libertà (*)', 'Partito Progressista (*)'],
-                  ['Lega Nord (ID)'],
-                  ['Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)', 'Pace Terra Dignità (GUE/NGL)']].freeze
-
-	ELECTORAL_ALLIANCES = [['Europa Verde (Greens/EFA)', 'Sinistra Italiana (GUE/NGL)', 'Partito Progressista (*)']]
+                  ['Lega Nord (PfE)'],
+                  ['Movimento 5 Stelle (GUE/NGL)', 'Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)',
+                   'Pace Terra Dignità (GUE/NGL)']].freeze
     
     NO_OF_SEATS = 76
 
     NO_OF_SVP_SEATS = 1
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 12 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Italy
-    POPULATION_SIZE = 26_783_732
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Italy#Results
+    POPULATION_SIZE = 23_414_083
 
     THRESHOLD = 0.04
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false, 0, true, 0, [],
-                                                 ELECTORAL_ALLIANCES)
+        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false, 0, true)
       end
       @electoral_system
     end
