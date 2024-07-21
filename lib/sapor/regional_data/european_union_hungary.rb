@@ -51,29 +51,24 @@ module Sapor
                    'United Opposition (S&D)'],
                   ['Együtt (Greens/EFA)', 'Lehet Más a Politika (Greens/EFA)',
                    'Magyar Kétfarkú Kutya Párt (Greens/EFA)', 'Párbeszéd (Greens/EFA)'],
-                  ['Fidesz (NI)', 'Jobbik (NI)', 'Mi Hazánk Mozgalom (NI)'],
+                  ['Fidesz–Kereszténydemokrata Néppárt (PfE)'],
+                  ['Jobbik (NI)'],
+                  ['Mi Hazánk Mozgalom (ESN)'],
                   ['HNEM (*)', 'Második Reformkor (*)', 'Nép Pártján (*)', 'SMS (*)'],
-                  ['Kereszténydemokrata Néppárt (EPP)', 'Mindenki Magyarországa Mozgalom (EPP)',
-                   'Tisztelet és Szabadság (EPP)'],
+                  ['Mindenki Magyarországa Mozgalom (EPP)', 'Tisztelet és Szabadság (EPP)'],
                   ['MLP (RE)', 'Momentum Mozgalom (RE)']].freeze
-
-    ELECTORAL_ALLIANCES = [['Fidesz (NI)', 'Kereszténydemokrata Néppárt (EPP)'],
-                           ['Demokratikus Koalíció (S&D)', 'Magyar Szocialista Párt (S&D)', 'Párbeszéd (Greens/EFA)']]
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 22 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Hungary
-    POPULATION_SIZE = 3_470_257
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Hungary#Results
+    POPULATION_SIZE = 4_569_620
 
     THRESHOLD = 0.05
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false, 1, [], [],
-                                                           ELECTORAL_ALLIANCES)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false)
       end
       @electoral_system
     end
