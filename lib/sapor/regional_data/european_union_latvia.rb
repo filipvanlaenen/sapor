@@ -50,11 +50,11 @@ module Sapor
                    'No sirds Latvijai (*)', 'Republika (*)', 'Suverēnā vara (*)', 'Vienoti Latvijai (*)'],
                   ['Attīstībai/Par! (RE)', 'Kustība Par! (RE)', 'Latvijas attīstībai (RE)',
                    'Zaļo un Zemnieku savienība (RE)'],
-                  ['Centra partija (NI)', 'Latvijas Krievu savienība (NI)', 'Latvija pirmajā vietā (NI)',
-                   'Stabilitātei! (NI)'],
+                  ['Centra partija (NI)', 'Latvijas Krievu savienība (NI)', 'Stabilitātei! (NI)'],
                   ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
                    'Latvijas Reģionu Apvienība (EPP)', 'Politiskā partija „KPV LV” (EPP)'],
+                  ['Latvija pirmajā vietā (PfE)'],
                   ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
                      'Brīvībai/LNNK” (ECR)'],
                   ['PROGRESĪVIE (Greens/EFA)'],
@@ -62,11 +62,9 @@ module Sapor
 
     NO_OF_SEATS = 9
 
-    # Voter turnout on 25 May 2019
-    # Source: Web page with the official results of the elections of 25 May
-    # 2019, downloaded on 13 June 2019,
-    # https://es.wikipedia.org/wiki/Elecciones_al_Parlamento_Europeo_de_2019_(Letonia)
-    POPULATION_SIZE = 470_460
+    # Voter turnout on 8 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Latvia#Results
+    POPULATION_SIZE = 514_585
 
     THRESHOLD = 0.05
 
