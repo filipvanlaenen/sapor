@@ -46,8 +46,8 @@ module Sapor
 
     private
 
-    COALITIONS = [['Centro partija „Gerovės Lietuva“ (ECR)',
-                   'Lietuvos lenkų rinkimų akcija (ECR)'],
+    COALITIONS = [['Tautos ir teisingumo sąjunga (centristai, tautininkai) (ESN)'],
+                  ['Lietuvos lenkų rinkimų akcija (ECR)'],
                   ['Darbo Partija (NI)'],
                   ['Demokratų sąjunga „Vardan Lietuvos“ (Greens/EFA)', 'Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
                    'Lietuvos Žaliųjų Partija (Greens/EFA)'],
@@ -60,11 +60,9 @@ module Sapor
 
     NO_OF_SEATS = 11
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 23 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Lithuania
-    POPULATION_SIZE = 1_322_036
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Lithuania#Results
+    POPULATION_SIZE = 678_319
 
     THRESHOLD = 0.05
 
