@@ -61,17 +61,15 @@ module Sapor
                   ['GroenLinks (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
                   ['Partij van de Arbeid (S&D)'],
                   ['Partij voor de Dieren (GUE/NGL)', 'Socialistische Partij (GUE/NGL)'],
-                  ['Partij voor de Vrijheid (ID)']].freeze
+                  ['Partij voor de Vrijheid (PfE)']].freeze
 
     ELECTORAL_ALLIANCES = [['GroenLinks (Greens/EFA)', 'Partij van de Arbeid (S&D)']]
 
     NO_OF_SEATS = 31
 
-    # Voter turnout on 23 May 2019
-    # Source: Web page with the official results of the elections of 23 May
-    # 2019, downloaded on 13 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_the_Netherlands
-    POPULATION_SIZE = 5_497_813
+    # Voter turnout on 6 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_the_Netherlands#Results
+    POPULATION_SIZE = 6_232_198
 
     def electoral_system
       if @electoral_system.nil?
