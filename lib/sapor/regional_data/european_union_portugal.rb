@@ -50,18 +50,16 @@ module Sapor
                   ['Bloco de Esquerda (GUE/NGL)',
                    'Coligação Democrática Unitária (GUE/NGL)'],
                   ['Aliança Democrática (EPP)', 'CDS–Partido Popular (EPP)', 'Partido Social Democrata (EPP)'],
-                  ['Chega (ID)'],
+                  ['Chega (PfE)'],
                   ['Partido Socialista (S&D)'],
                   ['LIVRE (Greens/EFA)',
                    'Pessoas–Animais–Natureza (Greens/EFA)']].freeze
 
     NO_OF_SEATS = 21
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 23 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Portugal
-    POPULATION_SIZE = 3_084_505
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Portugal#Results
+    POPULATION_SIZE = 3_951_979
 
     def electoral_system
       if @electoral_system.nil?
