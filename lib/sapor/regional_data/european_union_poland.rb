@@ -48,12 +48,12 @@ module Sapor
 
     COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
                    'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)'],
-                  ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)', 'Lewica Razem (NI)', 
-                   'Nowa Nadzieja (NI)'],
+                  ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)',
+                   'Kukiz’15 (NI)', 'Lewica Razem (NI)', 'Ruch Narodowy (NI)'],
                   ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)', 'Koalicja Obywatelska (EPP)',
                    'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)', 'Polskie Stronnictwo Ludowe (EPP)',
                    'Porozumienie (EPP)'],
-                  ['Konfederacja Korony Polskiej (ID)', 'Ruch Narodowy (ID)'],
+                  ['Nowa Nadzieja (ESN)'],
                   ['Nowa Lewica (S&D)', 'Sojusz Lewicy Demokratycznej (S&D)', 'Wiosna (S&D)', 'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)', 'Polska 2050 (RE)', 'Trzecia Droga (RE)'],
                   ['Partia Zieloni (Greens/EFA)'],
@@ -62,16 +62,14 @@ module Sapor
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (NI)',
                             'Partia Zieloni (Greens/EFA)'],
                            ['Nowa Lewica (S&D)', 'Lewica Razem (NI)'],
-                           ['Nowa Nadzieja (NI)', 'Konfederacja Korony Polskiej (ID)', 'Ruch Narodowy (ID)'],
+                           ['Nowa Nadzieja (ESN)', 'Konfederacja Korony Polskiej (NI)', 'Ruch Narodowy (NI)'],
                            ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
     NO_OF_SEATS = 53
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 25 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Poland
-    POPULATION_SIZE = 13_647_311
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Poland#Results
+    POPULATION_SIZE = 11_761_825	
 
     THRESHOLD = 0.05
 
