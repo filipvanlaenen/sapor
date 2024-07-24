@@ -52,23 +52,22 @@ module Sapor
                   ['Dobra država (*)', 'Glas za otroke in družine (*)',
                    'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Liberalni demokrati (*)',
                    'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Nova ljudska stranka Slovenije (*)',
-                   'Pozitivna Slovenija (*)', 'Resni.ca (*)', 'Zeleni Slovenije (*)'],
+                   'Pozitivna Slovenija (*)', 'Zeleni Slovenije (*)'],
                   ['Piratska stranka Slovenije (Greens/EFA)',
                    'VESNA–Zelena stranka (Greens/EFA)'],
                   ['Levica (GUE/NGL)'],
                   ['Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
                    'Slovenska demokratska stranka (EPP)',
                    'Slovenska ljudska stranka (EPP)'],
-                  ['Slovenska nacionalna stranka (NI)'],
+                  ['Resni.ca (NI)'],
+                  ['Slovenska nacionalna stranka (PfE)'],
                   ['Socialni demokrati (S&D)']].freeze
 
     NO_OF_SEATS = 9
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 24 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Slovenia#Results
-    POPULATION_SIZE = 471_525
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Slovenia
+    POPULATION_SIZE = 674_111
 
     def electoral_system
       if @electoral_system.nil?
