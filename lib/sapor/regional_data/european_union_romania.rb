@@ -55,7 +55,7 @@ module Sapor
                    'Uniunea Democrată Maghiară din România (EPP)'],
                   ['Partidul Puterii Umaniste (social-liberal) (S&D)', 'Partidul Social Democrat (S&D)',
                    'PRO România (S&D)'],
-                  ['Partidul S.O.S. România (ID)'],
+                  ['Partidul S.O.S. România (NI)'],
                   ['Alianța AER pentru România (Greens/EFA)', 'Partidul Verde (Greens/EFA)']].freeze
 
     NO_OF_SEATS = 33
