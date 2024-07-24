@@ -51,31 +51,24 @@ module Sapor
                   ['Alianța pentru Patrie (*)', 'Blocul Suveranist Român (*)',
                    'Partidul Alianța Liberalilor și Democraților (*)', 'Partidul Ecologist Român (*)'],
                   ['Alianța pentru Unirea Românilor (ECR)'], 
-                  ['Forța Dreptei (EPP)', 'Forța Dreptei–Partidul Mișcarea Populară (EPP)',
-                   'Partidul Mișcarea Populară (EPP)', 'Partidul Național Liberal (EPP)',
+                  ['Forța Dreptei (EPP)', 'Partidul Mișcarea Populară (EPP)', 'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
                   ['Partidul Puterii Umaniste (social-liberal) (S&D)', 'Partidul Social Democrat (S&D)',
                    'PRO România (S&D)'],
                   ['Partidul S.O.S. România (ID)'],
                   ['Alianța AER pentru România (Greens/EFA)', 'Partidul Verde (Greens/EFA)']].freeze
 
-    ELECTORAL_ALLIANCES = [['Uniunea Salvați România (RE)', 'Forța Dreptei–Partidul Mișcarea Populară (EPP)'],
-                           ['Partidul Social Democrat (S&D)', 'Partidul Național Liberal (EPP)']]
-
     NO_OF_SEATS = 33
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 28 July 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Romania
-    POPULATION_SIZE = 9_352_472
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Romania#Results
+    POPULATION_SIZE = 8_942_099
 
     THRESHOLD = 0.05
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false, 1, [],
-                                                           [], ELECTORAL_ALLIANCES)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false)
       end
       @electoral_system
     end
