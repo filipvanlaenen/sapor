@@ -48,25 +48,23 @@ module Sapor
     
     COALITIONS = [['Dobrá voľba (*)', 'VLASŤ (*)', 'ZDRAVÝ ROZUM (*)'],
                   ['HLAS–sociálna demokracia (NI)', 'HLAS–sociálna demokracia–Dobrá voľba (NI)',
-                   'Kotleba–Ľudová strana Naše Slovensko (NI)', 'REPUBLIKA (NI)', 'SMER–sociálna demokracia (NI)'],
+                   'Kotleba–Ľudová strana Naše Slovensko (NI)', 'SMER–sociálna demokracia (NI)'],
                   ['Kresťanskodemokratické hnutie (EPP)', 'Magyar Fórum (EPP)', 'MODRÍ–Európske Slovensko (EPP)',
                    'MODRÍ–Európske Slovensko–MOST–HÍD (EPP)', 'MOST–HÍD (EPP)',
                    'Slovensko (EPP)',
                    'Slovensko–Za ľudí (EPP)',
-                   'Slovensko–Kresťanská únia–Za ľudí (EPP)',
                    'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)',
                    'Za ľudí (EPP)'],
                   ['Kresťanská únia (ECR)', 'NOVA (ECR)', 'Sloboda a Solidarita (ECR)'],
                   ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
-                  ['Slovenská národná strana (ID)', 'SME RODINA (ID)']].freeze
+                  ['REPUBLIKA (ESN)'], 
+                  ['Slovenská národná strana (PfE)', 'SME RODINA (PfE)']].freeze
 
     NO_OF_SEATS = 15
 
-    # Voter turnout on 25 May 2019
-    # Source: Web page with the official results of the elections of 25 May
-    # 2019, downloaded on 24 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Slovakia
-    POPULATION_SIZE = 1_007_398
+    # Voter turnout on 8 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Slovakia#Results
+    POPULATION_SIZE = 1_476_968
 
     THRESHOLD = 0.05
 
