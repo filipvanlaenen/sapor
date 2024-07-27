@@ -1,0 +1,94 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: https://www.rte.ie/news/elections-2024/results/#/european/national
+
+Dublin | Fianna Fáil (RE)                          | 62,147
+Dublin | Fine Gael (EPP)                           | 61,344
+Dublin | Sinn Féin (GUE/NGL)                       | 35,431
+Dublin | Green Party (Greens/EFA)                  | 32,204
+Dublin | Labour Party (S&D)                        | 30,733
+Dublin | Independent Ireland (RE)                  | 30,637
+Dublin | Independents 4 Change (GUE/NGL)           | 26,855
+Dublin | Solidarity–People Before Profit (GUE/NGL) | 21,577
+Dublin | Social Democrats (S&D)                    | 16,319
+Dublin | Sinn Féin 2 (GUE/NGL)                     | 10,766
+Dublin | Aontú (*)                                 | 10,693
+Dublin | Independents (*)                          |  7,128
+Dublin | Independents 2 (*)                        |  4,707
+Dublin | Ireland First (*)                         |  4,479
+Dublin | Irish Freedom Party (*)                   |  3,546
+Dublin | Independents 3 (*)                        |  3,148
+Dublin | The National Party (*)                    |  2,997
+Dublin | The National Party 2 (*)                  |  2,595
+Dublin | Rabharta (*)                              |  2,514
+Dublin | Independents 4 (*)                        |  2,250
+Dublin | The Irish People  (*)                     |  2,028
+Dublin | Independents 5 (*)                        |  1,557
+Dublin | Independents 6 (*)                        |  1,065
+
+Midlands–North-West | Independents (GUE/NGL)                    |  78,214
+Midlands–North-West | Fianna Fáil (RE)                          |  73,908
+Midlands–North-West | Fine Gael (EPP)                           |  73,888
+Midlands–North-West | Fine Gael 2 (EPP)                         |  71,476
+Midlands–North-West | Independent Ireland (RE)                  |  57,297
+Midlands–North-West | Sinn Féin (GUE/NGL)                       |  45,807
+Midlands–North-West | Fianna Fáil 2 (RE)                        |  44,069
+Midlands–North-West | Aontú (*)                                 |  40,742
+Midlands–North-West | Fianna Fáil 3 (RE)                        |  30,387
+Midlands–North-West | Sinn Féin 2 (GUE/NGL)                     |  29,427
+Midlands–North-West | Independents (*)                          |  21,102
+Midlands–North-West | Independents 2 (*)                        |  18,976
+Midlands–North-West | Social Democrats (S&D)                    |  15,023
+Midlands–North-West | Irish Freedom Party (*)                   |  13,904
+Midlands–North-West | Green Party (Greens/EFA)                  |  13,710
+Midlands–North-West | Independents 3 (*)                        |  13,692
+Midlands–North-West | Labour Party (S&D)                        |   6,970
+Midlands–North-West | Independents 4 (*)                        |   6,713
+Midlands–North-West | The Irish People  (*)                     |   4,535
+Midlands–North-West | The National Party (*)                    |   4,086
+Midlands–North-West | Solidarity–People Before Profit (GUE/NGL) |   3,982
+Midlands–North-West | The National Party 2 (*)                  |   3,201
+Midlands–North-West | Ireland First (*)                         |   3,117
+Midlands–North-West | Independents 5 (*)                        |   3,015
+Midlands–North-West | Independents 6 (*)                        |   1,102
+Midlands–North-West | Independents 7 (*)                        |   1,079
+Midlands–North-West | Independents 8 (*)                        |     524
+
+South | Fine Gael (EPP)                           | 122,777
+South | Fianna Fáil (RE)                          |  91,074
+South | Independents (RE)                         |  56,339
+South | Fianna Fáil 2 (RE)                        |  55,209
+South | Independents 4 Change (GUE/NGL)           |  52,803
+South | Sinn Féin (GUE/NGL)                       |  50,580
+South | Green Party (Greens/EFA)                  |  47,661
+South | Fine Gael 2 (EPP)                         |  33,281
+South | Ireland First (*)                         |  25,071
+South | Sinn Féin 2 (GUE/NGL)                     |  22,392
+South | Labour Party (S&D)                        |  21,272
+South | Independent Ireland (RE)                  |  20,751
+South | Social Democrats (S&D)                    |  20,229
+South | Aontú (*)                                 |  14,124
+South | Irish Freedom Party (*)                   |  12,259
+South | Rabharta (*)                              |   8,788
+South | Independents (*)                          |   6,387
+South | Independents 2 (*)                        |   6,281
+South | Solidarity–People Before Profit (GUE/NGL) |   6,243
+South | Independents 3 (*)                        |   4,575
+South | The Irish People  (*)                     |   4,461
+South | Independents 4 (*)                        |   3,530
+South | Independents 5 (*)                        |   2,477

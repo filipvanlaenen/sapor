@@ -45,74 +45,74 @@ module Sapor
 
     private
 
-    COALITIONS = [['Aontú (*)', 'Catholic Democrats (*)',
-                   'Direct Democracy Ireland (*)', 'Fís Nua (*)',
-                   'Independent Alliance (*)',
-                   'Renua Ireland (*)'],
-                  ['Fianna Fáil (RE)'],
-                  ['Fine Gael (EPP)'],
+    COALITIONS = [['Independents (GUE/NGL)', 'Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',
+                   'Socialist Party (GUE/NGL)', 'Solidarity–People Before Profit (GUE/NGL)'],
                   ['Green Party (Greens/EFA)'],
-                  ['Independents (GUE/NGL)', 'Independents 4 Change (GUE/NGL)', 'Sinn Féin (GUE/NGL)',
-                   'Socialist Party (GUE/NGL)',
-                   'Solidarity–People Before Profit (GUE/NGL)'],
-                  ['Labour Party (S&D)', 'Social Democrats (S&D)']].freeze
+                  ['Labour Party (S&D)', 'Social Democrats (S&D)'],
+                  ['Fianna Fáil (RE)', 'Independent Ireland (RE)', 'Independents (RE)'],
+                  ['Fine Gael (EPP)'],
+                  ['Aontú (*)', 'Catholic Democrats (*)', 'Direct Democracy Ireland (*)', 'Fís Nua (*)',
+                   'Independent Alliance (*)', 'Independents (*)', 'Renua Ireland (*)']].freeze
 
-    # Voter turnout on 24 May 2019
-    # Source: Web page with the official results of the elections of 24 May
-    # 2019, downloaded on 23 June 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Ireland
-    POPULATION_SIZE = 1_678_003
+    # Voter turnout on 7 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Ireland#Results
+    POPULATION_SIZE = 1_745_230
+
+    WEIGHTS = [ [1.0],
+                [0.643, 0.357],
+                [0.498, 0.297, 0.205],
+                [0.354, 0.300, 0.214, 0.132],
+                [0.328, 0.279, 0.198, 0.122, 0.073] ].freeze
 
     def seat_distribution
-      { 'Dublin' => 4, 'Midlands–North-West' => 4 + 1, 'South' => 5 }.freeze
+      { 'Dublin' => 4, 'Midlands–North-West' => 5, 'South' => 5 }.freeze
     end
 
-    def election_results_of_2019
-      if @election_results_of_2019.nil?
-        @election_results_of_2019 = load_election_results( \
-          'european-union-ireland-20190524.psv'
+    #def election_results_of_2024
+      #if @election_results_of_2024.nil?
+        #@election_results_of_2024 = load_election_results( \
+          #'european-union-ireland-20240607.psv'
+        #)
+      #end
+      #@election_results_of_2024
+    #end
+
+    def election_results_of_2024
+      if @election_results_of_2024.nil?
+        @election_results_of_2024, @candidates_of_2024 = load_capped_election_results(
+          'european-union-ireland-20240607.psv'
         )
       end
-      @election_results_of_2019
+      @election_results_of_2024
     end
+
+    #def electoral_system
+      #if @electoral_system.nil?
+        #@electoral_system = MultiDistrictProportional.new( \
+          #overall_election_results_of_2024,
+          #election_results_of_2024,
+          #seat_distribution,
+          #DhondtDenominators
+        #)
+      #end
+      #@electoral_system
+    #end
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2019,
-          election_results_of_2019,
-          seat_distribution,
-          DhondtDenominators
+        @electoral_system = ManyPastThePost.new( \
+          overall_election_results_of_2024, election_results_of_2024,
+          seat_distribution, @candidates_of_2024, WEIGHTS
         )
       end
       @electoral_system
     end
 
-    def overall_election_results_of_2019
-      if @overall_election_results_of_2019.nil?
-        @overall_election_results_of_2019 = \
-          summarize_election_results(election_results_of_2019)
+    def overall_election_results_of_2024
+      if @overall_election_results_of_2024.nil?
+        @overall_election_results_of_2024 = summarize_election_results(election_results_of_2024)
       end
-      @overall_election_results_of_2019
-    end
-  end
-
-  #
-  # Extension of Ireland as a constituency to the European Parliament with
-  # Aontú.
-  #
-  class EuropeanUnionIrelandWithAon < EuropeanUnionIreland
-    def area_code
-      'EU[IE]∪{Aon}'
-    end
-
-    def election_results_of_2019
-      if @election_results_of_2019.nil?
-        @election_results_of_2019 = load_election_results( \
-          'european-union-ireland-20190524-with-aon.psv'
-        )
-      end
-      @election_results_of_2019
+      @overall_election_results_of_2024
     end
   end
 end

@@ -33,40 +33,46 @@ describe Sapor::EuropeanUnionIreland, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionIreland, '#population_size' do
-  it 'returns a population size of 1,678,003' do
+  it 'returns a population size of 1,745,230' do
     expect(Sapor::EuropeanUnionIreland.instance.population_size).to \
-      eq(1_678_003)
+      eq(1_745_230)
   end
 end
 
 describe Sapor::EuropeanUnionIreland, '#seats' do
   it 'calculates the number of seats for the election of 2019' do
-    results = { 'Fine Gael (EPP)' => 496_459,
-                'Green Party (Greens/EFA)' => 190_755,
-                'Independents 4 Change (GUE/NGL)' => 124_085,
-                'Fianna Fáil (RE)' => 277_705,
-                'Sinn Féin (GUE/NGL)' => 196_001,
-                'Labour Party (S&D)' => 52_753,
-                'Solidarity–People Before Profit (GUE/NGL)' => 38_771,
-                'Social Democrats (S&D)' => 20_331,
-                'Renua Ireland (*)' => 6_897,
-                'Workers’ Party (NI)' => 3_701,
-                'Identity Ireland (*)' => 3_685,
-                'Direct Democracy Ireland (*)' => 2_773,
-                'Independents (GUE/NGL)' => 264_087 }
+    results = { 'Fine Gael (EPP)' => 362_766,
+                'Fianna Fáil (RE)' => 356_794,
+                'Sinn Féin (GUE/NGL)' => 194_403,
+                'Labour Party (S&D)' => 58_975,
+                'Green Party (Greens/EFA)' => 93_575,
+                'Independents 4 Change (GUE/NGL)' => 79_658,
+                'Aontú (*)' => 65_559,
+                'Social Democrats (S&D)' => 51_571,
+                'Solidarity–People Before Profit (GUE/NGL)' => 31_802,
+                'Independent Ireland (RE)' => 108_685,
+                'Independents (GUE/NGL)' => 78_214,
+                'Independents (RE)' => 56_339,
+                'Ireland First (*)' => 32_667,
+                'Irish Freedom Party (*)' => 29_709,
+                'The National Party' => 12_879,
+                'Rabharta (*)' => 11_302,
+                'The Irish People  (*)' => 11_024,
+                'Independents (*)' => 243_861 - 78_214 - 56_339 }
     seats = Sapor::EuropeanUnionIreland.instance.seats(results)
     expect(seats['Fine Gael (EPP)']).to eq(4 + 1)
-    expect(seats['Green Party (Greens/EFA)']).to eq(2 - 1)
-    expect(seats['Independents 4 Change (GUE/NGL)']).to eq(2 - 1 + 1)
-    expect(seats['Fianna Fáil (RE)']).to eq(1 + 1)
-    expect(seats['Sinn Féin (GUE/NGL)']).to eq(1 - 1 + 1 + 1)
-    expect(seats['Labour Party (S&D)']).to eq(0)
+    expect(seats['Fianna Fáil (RE)']).to eq(4 - 1)
+    expect(seats['Sinn Féin (GUE/NGL)']).to eq(2 - 2)
+    expect(seats['Independent Ireland (RE)']).to eq(1)
+    expect(seats['Labour Party (S&D)']).to eq(1)
+    expect(seats['Independents (GUE/NGL)']).to eq(1)
+    expect(seats['Independents (RE)']).to eq(1)
+    expect(seats['Independents (*)']).to eq(0)
+    expect(seats['Ireland First (*)']).to eq(0)
+    expect(seats['Green Party (Greens/EFA)']).to eq(0 + 1)
+    expect(seats['Independents 4 Change (GUE/NGL)']).to eq(0 + 1)
     expect(seats['Solidarity–People Before Profit (GUE/NGL)']).to eq(0)
     expect(seats['Social Democrats (S&D)']).to eq(0)
-    expect(seats['Renua Ireland (*)']).to eq(0)
-    expect(seats['Workers’ Party (NI)']).to eq(0)
-    expect(seats['Identity Ireland (*)']).to eq(0)
-    expect(seats['Direct Democracy Ireland (*)']).to eq(0)
-    expect(seats['Independents (GUE/NGL)']).to eq(1 + 1)
+    puts seats
   end
 end
