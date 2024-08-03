@@ -46,20 +46,19 @@ module Sapor
 
     private
 
-    COALITIONS = [['ANO 2011 (PfE)', 'Přísaha (PfE)'],
-                  ['Česká pirátská strana (Greens/EFA)',
-                   'Česká pirátská strana–Starostové a nezávislí (Greens/EFA)',
+    COALITIONS = [['Stačilo! (GUE/NGL)'],
+                  ['Česká pirátská strana (Greens/EFA)', 'Česká pirátská strana–Starostové a nezávislí (Greens/EFA)',
                    'Strana zelených (Greens/EFA)'],
-                  ['Česká strana sociálně demokratická (S&D)'],
-                  ['Komunistická strana Čech a Moravy (GUE/NGL)', 'Stačilo! (GUE/NGL)'],
-                  ['Křesťanská a demokratická unie–Československá strana lidová (EPP)',
-                   'Starostové a nezávislí (EPP)', 'TOP 09 (EPP)'],
+                  ['Sociální demokracie (S&D)'],
+                  ['Křesťanská a demokratická unie–Československá strana lidová (EPP)', 'Starostové a nezávislí (EPP)',
+                   'TOP 09 (EPP)'],
                   ['Občanská demokratická strana (ECR)', 'SPOLU (ECR)'],
-                  ['Právo Respekt Odbornost (*)'],
+                  ['ANO 2011 (PfE)', 'Přísaha (PfE)'],
                   ['Svoboda a přímá demokracie (ESN)', 'Svoboda a přímá demokracie–Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů–Strana svobodných občanů–Strana soukromníků České republiky (ESN)'],
-                  ['Strana svobodných občanů (NI)']].freeze
+                  ['Právo Respekt Odbornost (*)'],
+                  ['Komunistická strana Čech a Moravy (NI)', 'Strana svobodných občanů (NI)']].freeze
 
     NO_OF_SEATS = 21
 
