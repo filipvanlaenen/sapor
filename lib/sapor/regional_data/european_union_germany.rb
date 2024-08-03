@@ -46,22 +46,19 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alternative für Deutschland (ESN)'],
+    COALITIONS = [['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)', 'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
+                  ['Bayernpartei (Greens/EFA)', 'Bündnis 90/Die Grünen (Greens/EFA)',
+                   'Piratenpartei Deutschland (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
+                  ['Sozialdemokratische Partei Deutschlands (S&D)'],
+                  ['Freie Demokratische Partei (RE)', 'Freie Wähler (RE)'],
+                  ['Christlich Demokratische Union Deutschlands (EPP)', 'Christlich-Soziale Union in Bayern (EPP)',
+                   'Familienpartei Deutschlands (EPP)', 'Ökologisch-Demokratische Partei (EPP)'],
                   ['AUF (ECR)', 'Partei Bibeltreuer Christen (ECR)'],
-                  ['Bayernpartei (Greens/EFA)',
-                   'Bündnis 90/Die Grünen (Greens/EFA)',
-                   'Ökologisch-Demokratische Partei (Greens/EFA)',
-                   'Piratenpartei Deutschland (Greens/EFA)',
-                   'Volt Europa (Greens/EFA)'],
+                  ['Alternative für Deutschland (ESN)'],
+                  ['Bündnis Sahra Wagenknecht (NI)', 'Die PARTEI (NI)'],
                   ['Basisdemokratische Partei Deutschland (*)', 'Bürgerbewegung pro NRW (*)', 'BüSo (*)',
                    'Christliche Mitte (*)', 'Die Republikaner (*)', 'MLPD (*)', 'NPD (*)',
-                   'Partei des Fortschritts (*)', 'Sozialistische Gleichheitspartei (*)', 'Volksabstimmung (*)'],
-                  ['Bündnis Sahra Wagenknecht (NI)', 'Die PARTEI (NI)'],
-                  ['Christlich Demokratische Union Deutschlands (EPP)', 'Christlich-Soziale Union in Bayern (EPP)',
-                   'Familienpartei Deutschlands (EPP)'],
-                  ['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)', 'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
-                  ['Freie Demokratische Partei (RE)', 'Freie Wähler (RE)'],
-                  ['Sozialdemokratische Partei Deutschlands (S&D)']].freeze
+                   'Partei des Fortschritts (*)', 'Sozialistische Gleichheitspartei (*)', 'Volksabstimmung (*)']].freeze
 
     NO_OF_SEATS = 96
 
