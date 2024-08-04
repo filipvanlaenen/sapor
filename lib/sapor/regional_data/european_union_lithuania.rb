@@ -46,17 +46,15 @@ module Sapor
 
     private
 
-    COALITIONS = [['Tautos ir teisingumo sąjunga (centristai, tautininkai) (ESN)'],
-                  ['Lietuvos lenkų rinkimų akcija (ECR)'],
-                  ['Darbo Partija (NI)'],
-                  ['Demokratų sąjunga „Vardan Lietuvos“ (Greens/EFA)', 'Lietuvos valstiečių ir žaliųjų sąjunga (Greens/EFA)',
-                   'Lietuvos Žaliųjų Partija (Greens/EFA)'],
-                  ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
-                   'Nemuno aušra (*)', 'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)'],
-                  ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)',
-                   'Partija „Laisvė ir teisingumas“ (RE)'],
+    COALITIONS = [['Demokratų sąjunga „Vardan Lietuvos“ (Greens/EFA)', 'Lietuvos Žaliųjų Partija (Greens/EFA)'],
                   ['Lietuvos regionų partija (S&D)', 'Lietuvos socialdemokratų partija (S&D)'],
-                  ['Tėvynės sąjunga–Lietuvos krikščionys demokratai (EPP)']].freeze
+                  ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)', 'Partija „Laisvė ir teisingumas“ (RE)'],
+                  ['Tėvynės sąjunga–Lietuvos krikščionys demokratai (EPP)'],
+                  ['Lietuvos lenkų rinkimų akcija (ECR)', 'Lietuvos valstiečių ir žaliųjų sąjunga (ECR)'],
+                  ['Tautos ir teisingumo sąjunga (centristai, tautininkai) (ESN)'],
+                  ['Darbo Partija (NI)'],
+                  ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
+                   'Nemuno aušra (*)', 'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)']].freeze
 
     NO_OF_SEATS = 11
 
