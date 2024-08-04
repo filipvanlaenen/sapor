@@ -46,23 +46,20 @@ module Sapor
 
     private
 
-    COALITIONS = [['Akcija za promjene (*)', 'Bandić Milan 365–Stranka rada i solidarnosti (*)', 'Fokus na bitno (*)',
-                   'Hrvatska stranka umirovljenika (*)', 'Odlučnost i Pravednost (*)',
-                   'Stranka antikorupcije, razvoja i transparentnosti (*)'],
-                  ['Amsterdamska koalicija (RE)', 'Centar (RE)',
-                   'Hrvatska narodna stranka–liberalni demokrati (RE)',
-                   'Hrvatska seljačka stranka (RE)', 'Hrvatska socijalno-liberalna stranka (RE)',
-                   'Pametno (RE)'],
-                  ['Domovinski pokret (ECR)', 'Hrvatska konzervativna stranka (ECR)',
-                   'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
-                   'Most nezavisnih lista (ECR)'],
-                  ['Hrvatska demokratska zajednica (EPP)'],
-                  ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)',
-                   'Živi zid (NI)'],
+    COALITIONS = [['Radnička fronta (GUE/NGL)'],
                   ['Možemo! (Greens/EFA)'],
+                  ['Socijaldemokrati (S&D)', 'Socijaldemokratska partija Hrvatske (S&D)'],
+                  ['Amsterdamska koalicija (RE)', 'Centar (RE)', 'Fokus na bitno (RE)',
+                   'Hrvatska narodna stranka–liberalni demokrati (RE)', 'Hrvatska socijalno-liberalna stranka (RE)',
+                   'Pametno (RE)'],
+                  ['Hrvatska demokratska zajednica (EPP)'],
+                  ['Domovinski pokret (ECR)', 'Hrvatska konzervativna stranka (ECR)', 'Hrvatski rast (ECR)',
+                   'Hrvatski suverenisti (ECR)', 'Most nezavisnih lista (ECR)'],
                   ['Neovisni za Hrvatsku (PfE)'],
-                  ['Radnička fronta (GUE/NGL)'],
-                  ['Socijaldemokrati (S&D)', 'Socijaldemokratska partija Hrvatske (S&D)']].freeze
+                  ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)', 'Živi zid (NI)'],
+                  ['Akcija za promjene (*)', 'Bandić Milan 365–Stranka rada i solidarnosti (*)',
+                   'Hrvatska seljačka stranka (*)', 'Hrvatska stranka umirovljenika (*)', 'Odlučnost i Pravednost (*)',
+                   'Stranka antikorupcije, razvoja i transparentnosti (*)']].freeze
 
     NO_OF_SEATS = 12
 
