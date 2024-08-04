@@ -46,24 +46,21 @@ module Sapor
 
     private
 
-    COALITIONS = [['Ahora Repúblicas (Greens/EFA)',
-                   'Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
-                   'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
-                   'Coalició Compromís (Greens/EFA)',
-                   'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
-                   'Primavera Europea (Greens/EFA)'],
-                  ['Ciudadanos–Partido de la Ciudadanía (RE)',
-                   'Coalición Canaria–Partido Nacionalista Canario (RE)',
-                   'Coalición por Europa (RE)',
-                   'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)', 'Partido Regionalista de Cantabria (RE)'],
-                  ['Candidatura d’Unitat Popular (GUE/NGL)', 'Euskal Herria Bildu (GUE/NGL)',
+    COALITIONS = [['Candidatura d’Unitat Popular (GUE/NGL)', 'Euskal Herria Bildu (GUE/NGL)',
                    'Movimiento Sumar–Izquierda Unida (GUE/NGL)', 'Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
                    'Podemos (GUE/NGL)', 'Movimiento Sumar–Podemos–Izquierda Unida (GUE/NGL)', 'Unidos Podemos (GUE/NGL)'],
-                  ['España Vaciada (NI)', 'Partit Demòcrata Europeu Català (NI)'],
-                  ['Se Acabó La Fiesta (*)', 'Unión del Pueblo Navarro (*)'],
-                  ['Partido Popular (EPP)'],
+                  ['Ahora Repúblicas (Greens/EFA)', 'Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
+                   'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
+                   'Coalició Compromís (Greens/EFA)', 'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
+                   'Primavera Europea (Greens/EFA)'],
                   ['Partido Socialista Obrero Español (S&D)'],
-                  ['Vox (PfE)']].freeze
+                  ['Ciudadanos–Partido de la Ciudadanía (RE)', 'Coalición Canaria–Partido Nacionalista Canario (RE)',
+                   'Coalición por Europa (RE)', 'Euzko Alderdi Jeltzalea/Partido Nacionalista Vasco (RE)',
+                   'Partido Regionalista de Cantabria (RE)'],
+                  ['Partido Popular (EPP)'],
+                  ['Vox (PfE)'],
+                  ['España Vaciada (NI)', 'Junts per Catalunya (NI)', 'Se Acabó La Fiesta (NI)'],
+                  ['Unión del Pueblo Navarro (*)']].freeze
 
     NO_OF_SEATS = 61
 
