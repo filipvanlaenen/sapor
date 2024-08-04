@@ -46,19 +46,18 @@ module Sapor
 
     private
 
-    COALITIONS = [['Apvienība Jaunlatvieši (*)', 'Likums un kārtība (*)', 'Nacionālā Savienība Taisnīgums (*)',
-                   'No sirds Latvijai (*)', 'Republika (*)', 'Suverēnā vara (*)', 'Vienoti Latvijai (*)'],
+    COALITIONS = [['Jaunā Saskaņa (GUE/NGL)'],
+                  ['PROGRESĪVIE (Greens/EFA)'],
+                  ['Sociāldemokrātiskā partija “Saskaņa” (S&D)'],
                   ['Attīstībai/Par! (RE)', 'Kustība Par! (RE)', 'Latvijas attīstībai (RE)',
                    'Zaļo un Zemnieku savienība (RE)'],
-                  ['Centra partija (NI)', 'Latvijas Krievu savienība (NI)', 'Stabilitātei! (NI)'],
-                  ['Jaunā Saskaņa (GUE/NGL)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
                    'Latvijas Reģionu Apvienība (EPP)', 'Politiskā partija „KPV LV” (EPP)'],
+                  ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” (ECR)', 'Suverēnā vara (ECR)'],
                   ['Latvija pirmajā vietā (PfE)'],
-                  ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un ' \
-                     'Brīvībai/LNNK” (ECR)'],
-                  ['PROGRESĪVIE (Greens/EFA)'],
-                  ['Sociāldemokrātiskā partija “Saskaņa” (S&D)']].freeze
+                  ['Centra partija (NI)', 'Latvijas Krievu savienība (NI)', 'Stabilitātei! (NI)'],
+                  ['Apvienība Jaunlatvieši (*)', 'Nacionālā Savienība Taisnīgums (*)', 'No sirds Latvijai (*)',
+                   'Platforma 21 (*)', 'Republika (*)', 'Vienoti Latvijai (*)']].freeze
 
     NO_OF_SEATS = 9
 
