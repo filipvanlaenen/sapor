@@ -46,20 +46,20 @@ module Sapor
 
     private
 
-    COALITIONS = [['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
-                   'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)'],
-                  ['Inicjatywa Polska (NI)', 'Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)',
-                   'Kukiz’15 (NI)', 'Lewica Razem (NI)', 'Ruch Narodowy (NI)'],
-                  ['AGROunia–Porozumienie (EPP)', 'Koalicja Europejska (EPP)', 'Koalicja Obywatelska (EPP)',
-                   'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)', 'Polskie Stronnictwo Ludowe (EPP)',
-                   'Porozumienie (EPP)'],
-                  ['Nowa Nadzieja (ESN)'],
+    COALITIONS = [['Partia Zieloni (Greens/EFA)'],
                   ['Nowa Lewica (S&D)', 'Sojusz Lewicy Demokratycznej (S&D)', 'Wiosna (S&D)', 'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)', 'Polska 2050 (RE)', 'Trzecia Droga (RE)'],
-                  ['Partia Zieloni (Greens/EFA)'],
-                  ['Prawo i Sprawiedliwość (ECR)', 'Zjednoczona Prawica (ECR)']].freeze
+                  ['AGROunia–Porozumienie (EPP)', 'Inicjatywa Polska (EPP)', 'Koalicja Europejska (EPP)',
+                   'Koalicja Obywatelska (EPP)', 'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)',
+                   'Polskie Stronnictwo Ludowe (EPP)', 'Porozumienie (EPP)'],
+                  ['Prawo i Sprawiedliwość (ECR)', 'Zjednoczona Prawica (ECR)'],
+                  ['Nowa Nadzieja (ESN)'],
+                  ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)',
+                   'Kukiz’15 (NI)', 'Lewica Razem (NI)', 'Ruch Narodowy (NI)'],
+                  ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
+                   'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)']].freeze
 
-    ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (NI)',
+    ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
                            ['Nowa Lewica (S&D)', 'Lewica Razem (NI)'],
                            ['Nowa Nadzieja (ESN)', 'Konfederacja Korony Polskiej (NI)', 'Ruch Narodowy (NI)'],
