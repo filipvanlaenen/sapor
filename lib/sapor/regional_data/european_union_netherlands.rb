@@ -50,18 +50,17 @@ module Sapor
 
     private
 
-    COALITIONS = [['50Plus (EPP)', 'BoerBurgerBeweging (EPP)', 'Christen-Democratisch Appèl (EPP)',
-                   'ChristenUnie (EPP)', 'Nieuw Sociaal Contract (EPP)'],
-                  ['Belang van Nederland (*)', 'Bij1 (*)', 'Code Oranje (*)', 'DENK (*)',
-                   'Partij voor de Toekomst (*)', 'Piratenpartij (*)',
-                   'Splinter (*)'],
-                  ['Forum voor Democratie (NI)'],
-                  ['Democraten 66 (RE)', 'Volkspartij voor Vrijheid en Democratie (RE)'],
-                  ['Staatkundig Gereformeerde Partij (ECR)', 'Juiste Antwoord 2021 (ECR)'],
+    COALITIONS = [['Partij voor de Dieren (GUE/NGL)', 'Socialistische Partij (GUE/NGL)'],
                   ['GroenLinks (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
                   ['Partij van de Arbeid (S&D)'],
-                  ['Partij voor de Dieren (GUE/NGL)', 'Socialistische Partij (GUE/NGL)'],
-                  ['Partij voor de Vrijheid (PfE)']].freeze
+                  ['Democraten 66 (RE)', 'Volkspartij voor Vrijheid en Democratie (RE)'],
+                  ['50Plus (EPP)', 'BoerBurgerBeweging (EPP)', 'Christen-Democratisch Appèl (EPP)',
+                   'ChristenUnie (EPP)', 'Nieuw Sociaal Contract (EPP)'],
+                  ['Staatkundig Gereformeerde Partij (ECR)', 'Juiste Antwoord 2021 (ECR)'],
+                  ['Partij voor de Vrijheid (PfE)'],
+                  ['Forum voor Democratie (ESN)'],
+                  ['Belang van Nederland (*)', 'Bij1 (*)', 'Code Oranje (*)', 'DENK (*)', 'Partij voor de Toekomst (*)',
+                   'Piratenpartij (*)', 'Splinter (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['GroenLinks (Greens/EFA)', 'Partij van de Arbeid (S&D)']]
 
