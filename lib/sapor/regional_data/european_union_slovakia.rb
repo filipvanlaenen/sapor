@@ -46,19 +46,16 @@ module Sapor
 
     private
     
-    COALITIONS = [['Dobrá voľba (*)', 'VLASŤ (*)', 'ZDRAVÝ ROZUM (*)'],
+    COALITIONS = [['Progresívne Slovensko (RE)'],
+                  ['Demokrati (EPP)', 'Kresťanskodemokratické hnutie (EPP)', 'Magyar Fórum (EPP)',
+                   'MODRÍ–Európske Slovensko (EPP)', 'MODRÍ–Európske Slovensko–MOST–HÍD (EPP)', 'MOST–HÍD (EPP)',
+                   'Slovensko (EPP)', 'Slovensko–Za ľudí (EPP)', 'Magyar Szövetség (EPP)', 'Za ľudí (EPP)'],
+                  ['Kresťanská únia (ECR)', 'NOVA (ECR)', 'Sloboda a Solidarita (ECR)'],
+                  ['Slovenská národná strana (PfE)', 'SME RODINA (PfE)'],
+                  ['REPUBLIKA (ESN)'], 
                   ['HLAS–sociálna demokracia (NI)', 'HLAS–sociálna demokracia–Dobrá voľba (NI)',
                    'Kotleba–Ľudová strana Naše Slovensko (NI)', 'SMER–sociálna demokracia (NI)'],
-                  ['Kresťanskodemokratické hnutie (EPP)', 'Magyar Fórum (EPP)', 'MODRÍ–Európske Slovensko (EPP)',
-                   'MODRÍ–Európske Slovensko–MOST–HÍD (EPP)', 'MOST–HÍD (EPP)',
-                   'Slovensko (EPP)',
-                   'Slovensko–Za ľudí (EPP)',
-                   'Strana maďarskej koalície–Magyar Koalíció Pártja (EPP)',
-                   'Za ľudí (EPP)'],
-                  ['Kresťanská únia (ECR)', 'NOVA (ECR)', 'Sloboda a Solidarita (ECR)'],
-                  ['Progresívne Slovensko–SPOLU–Občianska Demokracia (RE)'],
-                  ['REPUBLIKA (ESN)'], 
-                  ['Slovenská národná strana (PfE)', 'SME RODINA (PfE)']].freeze
+                  ['Dobrá voľba (*)', 'VLASŤ (*)', 'ZDRAVÝ ROZUM (*)']].freeze
 
     NO_OF_SEATS = 15
 
