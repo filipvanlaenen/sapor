@@ -46,18 +46,17 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alianța 2020 USR-PLUS (RE)', 'Partidul Libertății, Unității și Solidarității (RE)',
+    COALITIONS = [['Alianța AER pentru România (Greens/EFA)', 'Partidul Ecologist Român (Greens/EFA)',
+                   'Partidul Verde (Greens/EFA)'],
+                  ['Partidul Umanist Social Liberal (S&D)', 'Partidul Social Democrat (S&D)', 'PRO România (S&D)'],
+                  ['Alianța 2020 USR-PLUS (RE)', 'Partidul Libertății, Unității și Solidarității (RE)',
                    'Reînnoim Proiectul European al României (RE)', 'Uniunea Salvați România (RE)'],
-                  ['Alianța pentru Patrie (*)', 'Blocul Suveranist Român (*)',
-                   'Partidul Alianța Liberalilor și Democraților (*)'],
-                  ['Alianța pentru Unirea Românilor (ECR)'], 
                   ['Forța Dreptei (EPP)', 'Partidul Mișcarea Populară (EPP)', 'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Partidul Puterii Umaniste (social-liberal) (S&D)', 'Partidul Social Democrat (S&D)',
-                   'PRO România (S&D)'],
+                  ['Alianța pentru Unirea Românilor (ECR)'], 
                   ['Partidul S.O.S. România (NI)'],
-                  ['Alianța AER pentru România (Greens/EFA)', 'Partidul Ecologist Român (Greens/EFA)',
-                   'Partidul Verde (Greens/EFA)']].freeze
+                  ['Alianța pentru Patrie (*)', 'Blocul Suveranist Român (*)',
+                   'Partidul Alianța Liberalilor și Democraților (*)']].freeze
 
     NO_OF_SEATS = 33
 
