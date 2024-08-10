@@ -35,20 +35,20 @@ module Sapor
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2019
-      if @overall_election_results_of_2019.nil?
-        @overall_election_results_of_2019 = \
-          summarize_election_results(election_results_of_2019)
+    def overall_election_results_of_2024
+      if @overall_election_results_of_2024.nil?
+        @overall_election_results_of_2024 = \
+          summarize_election_results(election_results_of_2024)
       end
-      @overall_election_results_of_2019
+      @overall_election_results_of_2024
     end
 
     def population_size
-      # Voter turnout on 26 May 2019
-      # Source: Official page with the results of the elections of 26 May 2019
-      #         in Flanders, downloaded on 2 November 2019
-      # https://verkiezingen2019.belgium.be/nl/verkiezingen?el=VL
-      4_238_274
+      # Voter turnout on 9 June 2024
+      # Source: Official page with the results of the elections of 9 June 2024
+      #         in Flanders, downloaded on 10 August 2024
+      # https://verkiezingsresultaten.belgium.be/nl/election-results/vlaams-parlement/2024/gewest/251714
+      4_379_440
     end
 
     def seats(simulation)
@@ -65,27 +65,27 @@ module Sapor
     GROEN_PARTY = 'Groen'.freeze
     NVA_PARTY = 'Nieuw-Vlaamse Alliantie'.freeze
     PVDA_PARTY = 'Partij van de Arbeid van België'.freeze
-    SPA_PARTY = 'Vooruit'.freeze
+    VOORUIT_PARTY = 'Vooruit'.freeze
     VB_PARTY = 'Vlaams Belang'.freeze
     VLD_PARTY = 'Open Vlaamse Liberalen en Democraten'.freeze
 
-    COALITIONS = [[CDV_PARTY, GROEN_PARTY, PVDA_PARTY, SPA_PARTY],
-                  [CDV_PARTY, GROEN_PARTY, SPA_PARTY],
-                  [CDV_PARTY, GROEN_PARTY, SPA_PARTY, VLD_PARTY],
+    COALITIONS = [[CDV_PARTY, GROEN_PARTY, PVDA_PARTY, VOORUIT_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, VOORUIT_PARTY],
+                  [CDV_PARTY, GROEN_PARTY, VOORUIT_PARTY, VLD_PARTY],
                   [CDV_PARTY, GROEN_PARTY, VLD_PARTY],
                   [CDV_PARTY, NVA_PARTY],
-                  [CDV_PARTY, NVA_PARTY, SPA_PARTY],
-                  [CDV_PARTY, NVA_PARTY, SPA_PARTY, VLD_PARTY],
+                  [CDV_PARTY, NVA_PARTY, VOORUIT_PARTY],
+                  [CDV_PARTY, NVA_PARTY, VOORUIT_PARTY, VLD_PARTY],
                   [CDV_PARTY, NVA_PARTY, VB_PARTY],
                   [CDV_PARTY, NVA_PARTY, VLD_PARTY],
-                  [CDV_PARTY, SPA_PARTY],
-                  [CDV_PARTY, SPA_PARTY, VLD_PARTY],
+                  [CDV_PARTY, VOORUIT_PARTY],
+                  [CDV_PARTY, VOORUIT_PARTY, VLD_PARTY],
                   [CDV_PARTY, VLD_PARTY],
-                  [GROEN_PARTY, SPA_PARTY, VLD_PARTY],
-                  [NVA_PARTY, SPA_PARTY, VLD_PARTY],
+                  [GROEN_PARTY, VOORUIT_PARTY, VLD_PARTY],
+                  [NVA_PARTY, VOORUIT_PARTY, VLD_PARTY],
                   [NVA_PARTY, VB_PARTY],
                   [NVA_PARTY, VLD_PARTY],
-                  [SPA_PARTY, VLD_PARTY]].freeze    
+                  [VOORUIT_PARTY, VLD_PARTY]].freeze    
 
     SEAT_DISTRIBUTION = { 'Antwerpen' => 33, 'Brussel' => 6,
                           'Limburg' => 16, 'Oost-Vlaanderen' => 27,
@@ -94,19 +94,19 @@ module Sapor
 
     THRESHOLD = 0.05
 
-    def election_results_of_2019
-      if @election_results_of_2019.nil?
-        @election_results_of_2019 = load_election_results( \
-          'flanders-20190526.psv')
+    def election_results_of_2024
+      if @election_results_of_2024.nil?
+        @election_results_of_2024 = load_election_results( \
+          'flanders-20240609.psv')
       end
-      @election_results_of_2019
+      @election_results_of_2024
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2019,
-          election_results_of_2019,
+          overall_election_results_of_2024,
+          election_results_of_2024,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
           THRESHOLD)

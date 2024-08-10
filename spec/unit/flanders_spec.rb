@@ -32,34 +32,31 @@ describe Sapor::Flanders, '#no_of_seats' do
 end
 
 describe Sapor::Flanders, '#population_size' do
-  it 'returns a population size of 4,238,274' do
-    expect(Sapor::Flanders.instance.population_size).to eq(4_238_274)
+  it 'returns a population size of 4,379,440' do
+    expect(Sapor::Flanders.instance.population_size).to eq(4_379_440)
   end
 end
 
 describe Sapor::Flanders, '#seats' do
   it 'calculates the number of seats for the election of 2019' do
     flanders = Sapor::Flanders.instance
-    results = flanders.overall_election_results_of_2019
+    results = flanders.overall_election_results_of_2024
     seats = flanders.seats(results)
-    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(35 - 1)
-    expect(seats['Christen-Democratisch en Vlaams']).to eq(19)
-    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(16 + 1)
-    expect(seats['Vooruit']).to eq(13)
-    expect(seats['Groen']).to eq(14)
-    expect(seats['Vlaams Belang']).to eq(23)
-    expect(seats['Partij van de Arbeid van België']).to eq(4)
-    expect(seats['BE.ONE']).to eq(0)
-    expect(seats['Burgerlijst']).to eq(0)
-    expect(seats['de coöperatie']).to eq(0)
-    expect(seats['Democratisch-Solidair Appèl']).to eq(0)
-    expect(seats['DierAnimal']).to eq(0)
-    expect(seats['Genoeg voor iedereen']).to eq(0)
-    expect(seats['Piratenpartij']).to eq(0)
-    expect(seats['Partij Vrede en Solidariteit']).to eq(0)
-    expect(seats['PRO']).to eq(0)
-    expect(seats['Referendumpartij']).to eq(0)
+    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(31)
+    expect(seats['Vlaams Belang']).to eq(31)
+    expect(seats['Vooruit']).to eq(18)
+    expect(seats['Christen-Democratisch en Vlaams']).to eq(16)
+    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(9)
+    expect(seats['Partij van de Arbeid van België']).to eq(9)
+    expect(seats['Groen']).to eq(9)
+    expect(seats['Voor U']).to eq(0)
     expect(seats['Union des Francophones']).to eq(0)
+    expect(seats['Team Fouad Ahidar']).to eq(1)
+    expect(seats['BBB']).to eq(0)
+    expect(seats['DierAnimal']).to eq(0)
+    expect(seats['Volt Europa']).to eq(0)
+    expect(seats['Partij voor de Bomen']).to eq(0)
+    expect(seats['L99']).to eq(0)
   end
 end
 
