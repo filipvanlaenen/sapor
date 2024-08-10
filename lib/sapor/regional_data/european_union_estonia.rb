@@ -46,15 +46,14 @@ module Sapor
 
     private
 
-    COALITIONS = [['Eesti Keskerakond (RE)',
-                   'Eesti Reformierakond (RE)',
-                   'Raimond Kaljulaid (RE)'],
-                  ['Eesti Konservatiivne Rahvaerakond (PfE)'],
-                  ['Eesti Vabaerakond (*)', 'Koos (*)'],
-                  ['Eestimaa Ühendatud Vasakpartei (GUE/NGL)'],
+    COALITIONS = [['Eestimaa Ühendatud Vasakpartei (GUE/NGL)'],
                   ['Erakond Eestimaa Rohelised (Greens/EFA)'],
+                  ['Sotsiaaldemokraatlik Erakond (S&D)'],
+                  ['Eesti Keskerakond (RE)', 'Eesti Reformierakond (RE)', 'Raimond Kaljulaid (RE)'],
                   ['Eesti 200 (EPP)', 'Erakond Isamaa (EPP)', 'Erakond Parempoolsed (EPP)'],
-                  ['Sotsiaaldemokraatlik Erakond (S&D)']].freeze
+                  ['Eesti Rahvuslased ja Konservatiivid (ERC)'],
+                  ['Eesti Konservatiivne Rahvaerakond (PfE)'],
+                  ['Eesti Vabaerakond (*)', 'Koos (*)']].freeze
 
     NO_OF_SEATS = 7
 
