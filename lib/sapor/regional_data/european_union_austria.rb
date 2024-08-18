@@ -46,16 +46,15 @@ module Sapor
 
     private
 
-    COALITIONS = [['Bierpartei (*)', 'Demokratisch – Neutral – Authentisch (*)', 'Meine Stimme Gilt! (*)',
-                   'MFG–Österreich Menschen–Freiheit–Grundrechte (*)',
-                   'Team HC Strache–Allianz für Österreich (*)'],
-                  ['Die Grünen–Die Grüne Alternative (Greens/EFA)',
-                   'JETZT–Liste Pilz (Greens/EFA)'],
-                  ['Freiheitliche Partei Österreichs (PfE)'],
-                  ['Kommunistische Partei Österreichs (GUE/NGL)'],
+    COALITIONS = [['Kommunistische Partei Österreichs (GUE/NGL)'],
+                  ['Die Grünen–Die Grüne Alternative (Greens/EFA)', 'JETZT–Liste Pilz (Greens/EFA)'],
+                  ['Sozialdemokratische Partei Österreichs (S&D)'],
                   ['NEOS–Das Neue Österreich und Liberales Forum (RE)'],
                   ['Österreichische Volkspartei (EPP)'],
-                  ['Sozialdemokratische Partei Österreichs (S&D)']].freeze
+                  ['Freiheitliche Partei Österreichs (PfE)'],
+                  ['Bierpartei (*)', 'Demokratisch – Neutral – Authentisch (*)', 'Liste Madeleine Petrovic (*)',
+                   'Meine Stimme Gilt! (*)', 'MFG–Österreich Menschen–Freiheit–Grundrechte (*)',
+                   'Team HC Strache–Allianz für Österreich (*)']].freeze
 
     NO_OF_SEATS = 20
 
