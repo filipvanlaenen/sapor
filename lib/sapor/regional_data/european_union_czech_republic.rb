@@ -53,7 +53,7 @@ module Sapor
                   ['Křesťanská a demokratická unie–Československá strana lidová (EPP)', 'Starostové a nezávislí (EPP)',
                    'TOP 09 (EPP)'],
                   ['Občanská demokratická strana (ECR)', 'SPOLU (ECR)'],
-                  ['ANO 2011 (PfE)', 'Přísaha (PfE)'],
+                  ['ANO 2011 (PfE)', 'Motoristé sobě (PfE)', 'Přísaha (PfE)'],
                   ['Svoboda a přímá demokracie (ESN)', 'Svoboda a přímá demokracie–Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů–Strana svobodných občanů–Strana soukromníků České republiky (ESN)'],
