@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Kommunistische Partei Österreichs (GUE/NGL)'],
+    COALITIONS = [['Kommunistische Partei Österreichs (GUE/NGL)', 'Wandel (GUE/NGL)'],
                   ['Die Grünen–Die Grüne Alternative (Greens/EFA)', 'JETZT–Liste Pilz (Greens/EFA)'],
                   ['Sozialdemokratische Partei Österreichs (S&D)'],
                   ['NEOS–Das Neue Österreich und Liberales Forum (RE)'],
