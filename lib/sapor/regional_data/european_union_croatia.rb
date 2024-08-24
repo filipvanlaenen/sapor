@@ -56,7 +56,8 @@ module Sapor
                   ['Domovinski pokret (ECR)', 'Hrvatska konzervativna stranka (ECR)', 'Hrvatski rast (ECR)',
                    'Hrvatski suverenisti (ECR)', 'Most nezavisnih lista (ECR)'],
                   ['Neovisni za Hrvatsku (PfE)'],
-                  ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)', 'Živi zid (NI)'],
+                  ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)', 'Pravo i Pravda (NI)',
+                   'Živi zid (NI)'],
                   ['Akcija za promjene (*)', 'Bandić Milan 365–Stranka rada i solidarnosti (*)',
                    'Hrvatska seljačka stranka (*)', 'Hrvatska stranka umirovljenika (*)', 'Odlučnost i Pravednost (*)',
                    'Stranka antikorupcije, razvoja i transparentnosti (*)']].freeze
