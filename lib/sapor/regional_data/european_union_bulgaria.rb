@@ -60,6 +60,8 @@ module Sapor
                   ['Левицата! (*)', 'Национален фронт за спасение на България (*)',
                    'Републиканци за България (*)']].freeze
 
+    ELECTORAL_ALLIANCES = [['Да, България! (EPP)', 'Демократична България (EPP)', 'Продължаваме промяната (RE)']]
+
     NO_OF_SEATS = 17
 
     # Voter turnout on 9 June 2024
@@ -70,7 +72,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false)
+        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false, 0, true, 0, [],
+                                                 ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
