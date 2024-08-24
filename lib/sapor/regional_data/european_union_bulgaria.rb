@@ -46,37 +46,31 @@ module Sapor
 
     private
 
-    COALITIONS = [['Алтернатива за българско възраждане (S&D)',
-                   'Българска социалистическа партия (S&D)'],
-                  ['Атака (NI)', 'Български възход (NI)', 'Възраждане (NI)'],
-                  ['Българските патриоти (ECR)', 'ВМРО–Българско Национално Движение (ECR)', 'Има такъв народ (ECR)',
-                   'Обединени Патриоти (ECR)'],
-                  ['Воля (ID)', 'Воля–Национален фронт за спасение на България (ID)'],
-                  ['Левицата! (*)', 'Национален фронт за спасение на България (*)',
-                   'Републиканци за България (*)'],
+    COALITIONS = [['Алтернатива за българско възраждане (S&D)', 'Българска социалистическа партия (S&D)'],
                   ['Движение за права и свободи (RE)', 'Продължаваме промяната (RE)',
                    'Национално движение за стабилност и възход (RE)'],
                   ['Да, България! (EPP)', 'Демократи за силна България (EPP)', 'Демократична България (EPP)',
-                   'Граждани за европейско развитие на България (EPP)',
-                   'Изправи се Бг (EPP)',
-                   'Реформаторски блок (EPP)']].freeze
-
-    ELECTORAL_ALLIANCES = [['Да, България! (EPP)', 'Демократична България (EPP)', 'Продължаваме промяната (RE)']]
+                   'Граждани за европейско развитие на България (EPP)', 'Изправи се Бг (EPP)',
+                   'Реформаторски блок (EPP)'],
+                  ['Българските патриоти (ECR)', 'ВМРО–Българско Национално Движение (ECR)', 'Има такъв народ (ECR)',
+                   'Обединени Патриоти (ECR)'],
+                  ['Воля (PfE)', 'Воля–Национален фронт за спасение на България (PfE)'],
+                  ['Възраждане (ESN)'],
+                  ['Атака (NI)', 'Български възход (NI)'],
+                  ['Левицата! (*)', 'Национален фронт за спасение на България (*)',
+                   'Републиканци за България (*)']].freeze
 
     NO_OF_SEATS = 17
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 27 September 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Bulgaria
-    POPULATION_SIZE = 2_015_320
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Bulgaria#Results
+    POPULATION_SIZE = 2_013_060
 
     THRESHOLD = 1 / NO_OF_SEATS.to_f
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false, 0, true, 0, [],
-                                                 ELECTORAL_ALLIANCES)
+        @electoral_system = LargestRemainder.new(NO_OF_SEATS, HareQuota, THRESHOLD, false)
       end
       @electoral_system
     end
