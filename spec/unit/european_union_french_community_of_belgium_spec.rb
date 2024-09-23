@@ -35,10 +35,10 @@ describe Sapor::EuropeanUnionFrenchCommunityOfBelgium, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionFrenchCommunityOfBelgium, '#population_size' do
-  it 'returns a population size of 2,439,775' do
+  it 'returns a population size of 2,581,399' do
     expect(
       Sapor::EuropeanUnionFrenchCommunityOfBelgium.instance.population_size
-    ).to eq(2_439_775)
+    ).to eq(2_581_399)
   end
 end
 

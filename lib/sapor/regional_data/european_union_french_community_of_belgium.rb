@@ -45,22 +45,18 @@ module Sapor
 
     private
 
-    COALITIONS = [['Les Engagés (EPP)'],
-                  ['Debout les Belges (*)', 'DéFI (*)', 'La Droite (*)',
-                   'FW (*)', 'ISLAM (*)', 'Parti Populaire (*)', 'R.W.F. (*)',
-                   'Wallonie d’Abord (*)'],
-                  ['Mouvement Réformateur (RE)'],
+    COALITIONS = [['Parti du Travail de Belgique (GUE/NGL)'],
                   ['Ecolo (Greens/EFA)', 'PIRATE (Greens/EFA)'],
+                  ['Les Engagés (RE)', 'Mouvement Réformateur (RE)'],
                   ['Parti Socialiste (S&D)'],
-                  ['Parti du Travail de Belgique (GUE/NGL)']].freeze
+                  ['Debout les Belges (*)', 'DéFI (*)', 'La Droite (*)', 'FW (*)', 'ISLAM (*)', 'Parti Populaire (*)',
+                   'R.W.F. (*)', 'Wallonie d’Abord (*)']].freeze
 
     NO_OF_SEATS = 8
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 24 September 2019,
+    # Voter turnout on 9 June 2024
     # https://verkiezingen2019.belgium.be/nl/resultaten-cijfers?el=EU&id=EUL92094
-    POPULATION_SIZE = 2_439_775
+    POPULATION_SIZE = 2_581_399
 
     def electoral_system
       if @electoral_system.nil?
