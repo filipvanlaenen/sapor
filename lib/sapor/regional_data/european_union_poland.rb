@@ -46,7 +46,8 @@ module Sapor
 
     private
 
-    COALITIONS = [['Partia Zieloni (Greens/EFA)'],
+    COALITIONS = [['Lewica Razem (GUE/NGL)'],
+                  ['Partia Zieloni (Greens/EFA)'],
                   ['Nowa Lewica (S&D)', 'Sojusz Lewicy Demokratycznej (S&D)', 'Wiosna (S&D)', 'Wiosna–Partia Razem (S&D)'],
                   ['.Nowoczesna (RE)', 'Polska 2050 (RE)', 'Trzecia Droga (RE)'],
                   ['AGROunia–Porozumienie (EPP)', 'Inicjatywa Polska (EPP)', 'Koalicja Europejska (EPP)',
@@ -54,14 +55,14 @@ module Sapor
                    'Polskie Stronnictwo Ludowe (EPP)', 'Porozumienie (EPP)'],
                   ['Prawo i Sprawiedliwość (ECR)', 'Zjednoczona Prawica (ECR)'],
                   ['Nowa Nadzieja (ESN)'],
-                  ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)',
-                   'Kukiz’15 (NI)', 'Lewica Razem (NI)', 'Ruch Narodowy (NI)'],
+                  ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)',
+                   'Ruch Narodowy (NI)'],
                   ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
                    'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
-                           ['Nowa Lewica (S&D)', 'Lewica Razem (NI)'],
+                           ['Nowa Lewica (S&D)', 'Lewica Razem (GUE/NGL)'],
                            ['Nowa Nadzieja (ESN)', 'Konfederacja Korony Polskiej (NI)', 'Ruch Narodowy (NI)'],
                            ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
