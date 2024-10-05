@@ -54,16 +54,16 @@ module Sapor
                    'Koalicja Obywatelska (EPP)', 'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)', 'Porozumienie (EPP)'],
                   ['Prawo i Sprawiedliwość (ECR)', 'Zjednoczona Prawica (ECR)'],
+                  ['Ruch Narodowy (PfE)'],
                   ['Nowa Nadzieja (ESN)'],
-                  ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)',
-                   'Ruch Narodowy (NI)'],
+                  ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
                    'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
                            ['Nowa Lewica (S&D)', 'Lewica Razem (GUE/NGL)'],
-                           ['Nowa Nadzieja (ESN)', 'Konfederacja Korony Polskiej (NI)', 'Ruch Narodowy (NI)'],
+                           ['Nowa Nadzieja (ESN)', 'Konfederacja Korony Polskiej (NI)', 'Ruch Narodowy (PfE)'],
                            ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
     NO_OF_SEATS = 53
