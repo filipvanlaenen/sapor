@@ -46,38 +46,33 @@ module Sapor
 
     private
 
-    COALITIONS = [['Agir, la droite constructive–Union des démocrates et' \
-                   ' indépendants (RE)',
-                   'La République en marche–Mouvement démocrate (RE)'],
-                  ['Debout la France (ECR)', 'Reconquête (ECR)'],
-                  ['Écologie au centre (Greens/EFA)', 'Europe Écologie Les Verts (Greens/EFA)'],
-                  ['Rassemblement national (ID)'],
-                  ['Génération·s, le mouvement (S&D)', 'Parti radical de gauche (S&D)',
-                   'Parti radical de gauche–La Convention (S&D)', 'Parti socialiste (S&D)'],
-                  ['La France insoumise (GUE/NGL)', 'Lutte Ouvrière–Nouveau Parti anticapitaliste (GUE/NGL)',
+    COALITIONS = [['La France insoumise (GUE/NGL)', 'Lutte Ouvrière–Nouveau Parti anticapitaliste (GUE/NGL)',
                    'Nouveau Parti anticapitaliste (GUE/NGL)', 'Parti animaliste (GUE/NGL)',
                    'Parti communiste français (GUE/NGL)'],
-                  ['Alliance Rurale (*)', 'L’Engagement (*)', 'Lutte Ouvrière (*)',
-                   'Mouvement des gilets jaunes (*)', 'Résistons! (*)',
-                   'Union populaire républicaine (*)', 'Walwari (*)'],
+                  ['Écologie au centre (Greens/EFA)', 'Les Écologistes – Europe Écologie Les Verts (Greens/EFA)'],
+                  ['Génération·s, le mouvement (S&D)', 'Parti radical de gauche (S&D)',
+                   'Parti radical de gauche–La Convention (S&D)', 'Parti socialiste–Place Publique (S&D)'],
+                  ['Agir, la droite constructive–Union des démocrates et indépendants (RE)',
+                   'Renaissance–Mouvement démocrate–Horizons (RE)'],
+                  ['Les Républicains (EPP)'],
+                  ['Debout la France (ECR)'],
+                  ['Rassemblement national (PfE)'],
+                  ['Reconquête (ESN)'],
                   ['Les Patriotes (NI)'],
-                  ['Les Républicains (EPP)']].freeze
+                  ['Alliance Rurale (*)', 'L’Engagement (*)', 'Lutte Ouvrière (*)', 'Mouvement des gilets jaunes (*)',
+                   'Résistons! (*)', 'Union populaire républicaine (*)', 'Walwari (*)']].freeze
 
     NO_OF_SEATS = 81
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 25-26 May
-    # 2019, downloaded on 30 December 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_France
-    POPULATION_SIZE = 22_655_174
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_France#Results
+    POPULATION_SIZE = 24_655_839
 
     THRESHOLD = 0.05
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats,
-                                                           DhondtDenominators,
-                                                           THRESHOLD)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, THRESHOLD)
       end
       @electoral_system
     end
