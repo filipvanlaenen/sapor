@@ -51,20 +51,19 @@ module Sapor
 
     private
 
-    COALITIONS = [['Articolo Uno (S&D)', 'Liberi e Uguali (S&D)',
-                   'Partito Democratico (S&D)'],
-                  ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)',
-                   'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
-                  ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Impegno Civico (NI)',
-                   'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)'],
+    COALITIONS = [['Movimento 5 Stelle (GUE/NGL)', 'Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)',
+                   'Pace Terra Dignità (GUE/NGL)'],
+                  ['Alleanza Verdi e Sinistra (Greens/EFA)', 'Europa Verde (Greens/EFA)'],
+                  ['Articolo Uno (S&D)', 'Liberi e Uguali (S&D)', 'Partito Democratico (S&D)'],
                   ['Azione (RE)', 'Azione–Italia Viva (RE)', 'Civica Popolare (RE)', 'Italia Viva (RE)',
                    'Più Europa (RE)', 'Più Europa–Azione (RE)', 'Stati Uniti d’Europa (RE)'],
-                  ['Alleanza Verdi e Sinistra (Greens/EFA)', 'Europa Verde (Greens/EFA)'],
                   ['Forza Italia (EPP)', 'Noi Moderati (EPP)', 'Südtiroler Volkspartei (EPP)'],
-                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Libertà (*)', 'Partito Progressista (*)'],
+                  ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)', 'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['Lega Nord (PfE)'],
-                  ['Movimento 5 Stelle (GUE/NGL)', 'Potere al Popolo (GUE/NGL)', 'Sinistra Italiana (GUE/NGL)',
-                   'Pace Terra Dignità (GUE/NGL)']].freeze
+                  ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Impegno Civico (NI)',
+                   'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)'],
+                  ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Libertà (*)', 'Partito Progressista (*)',
+                   'Sud chiama Nord (*)']].freeze
     
     NO_OF_SEATS = 76
 
