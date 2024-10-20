@@ -33,9 +33,9 @@ describe Sapor::EuropeanUnionMalta, '#no_of_seats' do
 end
 
 describe Sapor::EuropeanUnionMalta, '#population_size' do
-  it 'returns a population size of 251,851' do
+  it 'returns a population size of 260,258' do
     expect(Sapor::EuropeanUnionMalta.instance.population_size).to \
-      eq(260_160)
+      eq(260_258)
   end
 end
 

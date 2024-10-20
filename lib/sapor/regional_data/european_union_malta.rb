@@ -47,24 +47,21 @@ module Sapor
     private
 
     COALITIONS = [['Alternattiva Demokratika (Greens/EFA)', 'Alternattiva Demokratika–Partit Demokratiku (Greens/EFA)'],
-                  ['Imperium Europa (*)'],
-                  ['Moviment Patrijotti Maltin (ID)'],
-                  ['Partit Demokratiku (RE)'],
                   ['Partit Laburista (S&D)'],
-                  ['Partit Nazzjonalista (EPP)']].freeze
+                  ['Partit Demokratiku (RE)'],
+                  ['Partit Nazzjonalista (EPP)'],
+                  ['Moviment Patrijotti Maltin (PfE)'],
+                  ['Imperium Europa (*)']].freeze
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 25 May 2019
-    # Source: Web page with the official results of the elections of 25 May
-    # 2019, downloaded on 25 September 2019,
-    # https://en.wikipedia.org/wiki/2019_European_Parliament_election_in_Malta
-    POPULATION_SIZE = 260_160
+    # Voter turnout on 8 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Malta#Results
+    POPULATION_SIZE = 260_258
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, \
-                                                           DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators)
       end
       @electoral_system
     end
