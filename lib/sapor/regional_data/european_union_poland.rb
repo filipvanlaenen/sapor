@@ -62,7 +62,6 @@ module Sapor
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
-                           ['Nowa Lewica (S&D)', 'Lewica Razem (GUE/NGL)'],
                            ['Nowa Nadzieja (ESN)', 'Konfederacja Korony Polskiej (NI)', 'Ruch Narodowy (PfE)'],
                            ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
 
