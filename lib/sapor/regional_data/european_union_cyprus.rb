@@ -46,23 +46,22 @@ module Sapor
 
     private
 
-    COALITIONS = [['Ανεξάρτητοι (*)', 'Ενεργοί Πολίτες–Κίνημα Ενωμένων Κυπρίων Κυνηγών (*)', 'Φειδίας Παναγιώτου (*)'],
-                  ['Ανορθωτικό Κόμμα Εργαζόμενου Λαού (GUE/NGL)', 'Κόμμα για τα Ζώα Κύπρου (GUE/NGL)'],
+    COALITIONS = [['Ανορθωτικό Κόμμα Εργαζόμενου Λαού (GUE/NGL)', 'Κόμμα για τα Ζώα Κύπρου (GUE/NGL)'],
+                  ['Βολτ Κύπρος (Greens/EFA)', 'Βολτ Κύπρος–Νέο Κύμα–Η Άλλη Κύπρος (Greens/EFA)',
+                   'Κίνημα Οικολόγων—Συνεργασία Πολιτών (Greens/EFA)'],
                   ['Δημοκρατική Παράταξη (RE)', 'Συμμαχία Πολιτών (RE)'],
                   ['Δημοκρατικό Κόμμα (S&D)', 'Κίνημα Σοσιαλδημοκρατών (S&D)',
                    'Κίνημα Σοσιαλδημοκρατών–Συνεργασία Πολιτών (S&D)'],
                   ['Δημοκρατικός Συναγερμός (EPP)'],
                   ['Εθνικό Λαϊκό Μέτωπο (ECR)', 'Κίνημα Αλληλεγγύη (ECR)'],
-                  ['Βολτ Κύπρος (Greens/EFA)', 'Βολτ Κύπρος–Νέο Κύμα–Η Άλλη Κύπρος (Greens/EFA)',
-                   'Κίνημα Οικολόγων—Συνεργασία Πολιτών (Greens/EFA)']].freeze
+                  ['Ανεξάρτητοι (*)', 'Ενεργοί Πολίτες–Κίνημα Ενωμένων Κυπρίων Κυνηγών (*)',
+                   'Φειδίας Παναγιώτου (*)']].freeze
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 21 May 2020,
-    # https://fr.wikipedia.org/wiki/%C3%89lections_europ%C3%A9ennes_de_2019_%C3%A0_Chypre
-    POPULATION_SIZE = 280_935
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Cyprus#Results
+    POPULATION_SIZE = 368_455
 
     def electoral_system
       if @electoral_system.nil?
