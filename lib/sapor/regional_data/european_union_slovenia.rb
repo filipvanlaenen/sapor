@@ -46,22 +46,20 @@ module Sapor
 
     private
 
-    COALITIONS = [['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)',
+    COALITIONS = [['Levica (GUE/NGL)'],
+                  ['Piratska stranka Slovenije (Greens/EFA)', 'VESNA–Zelena stranka (Greens/EFA)'],
+                  ['Socialni demokrati (S&D)'],
+                  ['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)',
                    'Gibanje Svoboda (RE)', 'Konkretno (RE)',
                    'Lista Marjana Šarca (RE)', 'Stranka Alenke Bratušek (RE)', 'Stranka modernega centra (RE)'],
+                  ['Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
+                   'Slovenska demokratska stranka (EPP)', 'Slovenska ljudska stranka (EPP)'],
+                  ['Slovenska nacionalna stranka (PfE)'],
+                  ['Resni.ca (NI)'],
                   ['Dobra država (*)', 'Glas za otroke in družine (*)',
                    'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Liberalni demokrati (*)',
-                   'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Nova ljudska stranka Slovenije (*)',
-                   'Pozitivna Slovenija (*)', 'Zeleni Slovenije (*)'],
-                  ['Piratska stranka Slovenije (Greens/EFA)',
-                   'VESNA–Zelena stranka (Greens/EFA)'],
-                  ['Levica (GUE/NGL)'],
-                  ['Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
-                   'Slovenska demokratska stranka (EPP)',
-                   'Slovenska ljudska stranka (EPP)'],
-                  ['Resni.ca (NI)'],
-                  ['Slovenska nacionalna stranka (PfE)'],
-                  ['Socialni demokrati (S&D)']].freeze
+                   'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Naša prihodnost (*)',
+                   'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)', 'Zeleni Slovenije (*)']].freeze
 
     NO_OF_SEATS = 9
 
