@@ -59,7 +59,8 @@ module Sapor
                   ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)', 'Pravo i Pravda (NI)',
                    'Živi zid (NI)'],
                   ['Akcija za promjene (*)', 'Bandić Milan 365–Stranka rada i solidarnosti (*)',
-                   'Hrvatska seljačka stranka (*)', 'Hrvatska stranka umirovljenika (*)', 'Odlučnost i Pravednost (*)',
+                   'Hrvatska seljačka stranka (*)', 'Hrvatska stranka umirovljenika (*)',
+                   'Nezavisna Platforma Sjever (*)', 'Odlučnost i Pravednost (*)',
                    'Stranka antikorupcije, razvoja i transparentnosti (*)']].freeze
 
     NO_OF_SEATS = 12
