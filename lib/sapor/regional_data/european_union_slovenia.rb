@@ -56,7 +56,7 @@ module Sapor
                    'Slovenska demokratska stranka (EPP)', 'Slovenska ljudska stranka (EPP)'],
                   ['Slovenska nacionalna stranka (PfE)'],
                   ['Resni.ca (NI)'],
-                  ['Dobra država (*)', 'Glas za otroke in družine (*)',
+                  ['Demokrati (*)', 'Dobra država (*)', 'Glas za otroke in družine (*)',
                    'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)', 'Liberalni demokrati (*)',
                    'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Naša prihodnost (*)',
                    'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)', 'Zeleni Slovenije (*)']].freeze
