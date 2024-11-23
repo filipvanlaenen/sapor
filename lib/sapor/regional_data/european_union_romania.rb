@@ -47,14 +47,14 @@ module Sapor
     private
 
     COALITIONS = [['Alianța AER pentru România (Greens/EFA)', 'Partidul Ecologist Român (Greens/EFA)',
-                   'Partidul Verde (Greens/EFA)'],
+                   'Partidul Verde (Greens/EFA)', 'Sănătate, Educație, Natură, Sustenabilitate (Greens/EFA)'],
                   ['Partidul Umanist Social Liberal (S&D)', 'Partidul Social Democrat (S&D)', 'PRO România (S&D)'],
-                  ['Alianța 2020 USR-PLUS (RE)', 'Partidul Libertății, Unității și Solidarității (RE)',
-                   'Partidul Mișcarea Populară (RE)', 'Reînnoim Proiectul European al României (RE)',
-                   'Uniunea Salvați România (RE)'],
+                  ['Alianța 2020 USR-PLUS (RE)', 'Dreptate și Respect în Europa Pentru Toți (RE)',
+                   'Partidul Libertății, Unității și Solidarității (RE)', 'Partidul Mișcarea Populară (RE)',
+                   'Reînnoim Proiectul European al României (RE)', 'Uniunea Salvați România (RE)'],
                   ['Forța Dreptei (EPP)', 'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Alianța pentru Unirea Românilor (ECR)'], 
+                  ['Alianța pentru Unirea Românilor (ECR)', 'Partidul Național Conservator Român (ECR)'], 
                   ['Partidul S.O.S. România (NI)'],
                   ['Alianța pentru Patrie (*)', 'Blocul Suveranist Român (*)',
                    'Partidul Alianța Liberalilor și Democraților (*)']].freeze
