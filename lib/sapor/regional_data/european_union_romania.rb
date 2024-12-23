@@ -57,7 +57,7 @@ module Sapor
                   ['Alianța pentru Unirea Românilor (ECR)', 'Partidul Național Conservator Român (ECR)'], 
                   ['Partidul S.O.S. România (NI)'],
                   ['Alianța pentru Patrie (*)', 'Blocul Suveranist Român (*)',
-                   'Partidul Alianța Liberalilor și Democraților (*)']].freeze
+                   'Partidul Alianța Liberalilor și Democraților (*)', 'Partidul Oamenilor Tineri (*)']].freeze
 
     NO_OF_SEATS = 33
 
