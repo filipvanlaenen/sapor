@@ -57,6 +57,7 @@ describe Sapor::Norway, '#seats' do
     expect(seats['Feministisk Initiativ']).to eq(0)
     expect(seats['Folkets parti']).to eq(0)
     expect(seats['Generasjonspartiet']).to eq(0)
+    expect(seats['Helsepartiet']).to eq(0)
     expect(seats['Industri- og Næringspartiet']).to eq(0)
     expect(seats['Konservativt']).to eq(0)
     expect(seats['Kystpartiet']).to eq(0)
