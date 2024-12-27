@@ -33,39 +33,39 @@ describe Sapor::Norway, '#no_of_seats' do
 end
 
 describe Sapor::Norway, '#population_size' do
-  it 'returns a population size of 2,926,836' do
-    expect(Sapor::Norway.instance.population_size).to eq(2_926_836)
+  it 'returns a population size of 2,984,187' do
+    expect(Sapor::Norway.instance.population_size).to eq(2_984_187)
   end
 end
 
 describe Sapor::Norway, '#seats' do
   it 'calculates the number of seats for the election of 2017 correctly' do
     norway = Sapor::Norway.instance
-    results = norway.overall_election_results_of_2017
+    results = norway.overall_election_results_of_2021
     seats = norway.seats(results)
-    expect(seats['Arbeiderpartiet']).to eq(49)
-    expect(seats['Høyre']).to eq(45)
-    expect(seats['Fremskrittspartiet']).to eq(27)
-    expect(seats['Senterpartiet']).to eq(19 - 1)
-    expect(seats['Sosialistisk Venstreparti']).to eq(11)
-    expect(seats['Kristelig Folkeparti']).to eq(8)
+    expect(seats['Arbeiderpartiet']).to eq(48)
+    expect(seats['Høyre']).to eq(36)
+    expect(seats['Senterpartiet']).to eq(28)
+    expect(seats['Fremskrittspartiet']).to eq(21)
+    expect(seats['Sosialistisk Venstreparti']).to eq(13 + 1)
+    expect(seats['Rødt']).to eq(8)
     expect(seats['Venstre']).to eq(8)
-    expect(seats['Miljøpartiet De Grønne']).to eq(1 + 1)
-    expect(seats['Rødt']).to eq(1)
-    expect(seats['Alliansen']).to eq(0)
-    expect(seats['Demokratene i Norge']).to eq(0)
+    expect(seats['Kristelig Folkeparti']).to eq(3)
+    expect(seats['Miljøpartiet De Grønne']).to eq(3)
+    expect(seats['Pasientfokus']).to eq(1 - 1)
+    expect(seats['Alliansen - Alternativ for Norge']).to eq(0)
     expect(seats['Feministisk Initiativ']).to eq(0)
-    expect(seats['Helsepartiet']).to eq(0)
+    expect(seats['Folkeaksjonen Nei til mer bompenger']).to eq(0)
+    expect(seats['Generasjonspartiet']).to eq(0)
+    expect(seats['Industri- og Næringspartiet']).to eq(0)
+    expect(seats['Konservativt']).to eq(0)
     expect(seats['Kystpartiet']).to eq(0)
     expect(seats['Liberalistene']).to eq(0)
-    expect(seats['Nordmørslista']).to eq(0)
-    expect(seats['Nordting']).to eq(0)
+    expect(seats['Norgesdemokratene']).to eq(0)
     expect(seats['Norges Kommunistiske Parti']).to eq(0)
-    expect(seats['Norgespartiet']).to eq(0)
-    expect(seats['Partiet De Kristne']).to eq(0)
+    expect(seats['Partiet Sentrum']).to eq(0)
     expect(seats['Pensjonistpartiet']).to eq(0)
     expect(seats['Piratpartiet']).to eq(0)
-    expect(seats['Samfunnspartiet']).to eq(0)
-    expect(seats['Verdipartiet']).to eq(0)
+    expect(seats['Redd Naturen']).to eq(0)
   end
 end

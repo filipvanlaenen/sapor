@@ -37,18 +37,18 @@ module Sapor
       NO_OF_SEATS
     end
 
-    def overall_election_results_of_2017
-      if @overall_election_results_of_2017.nil?
-        @overall_election_results_of_2017 = \
-          summarize_election_results(election_results_of_2017)
+    def overall_election_results_of_2021
+      if @overall_election_results_of_2021.nil?
+        @overall_election_results_of_2021 = \
+          summarize_election_results(election_results_of_2021)
       end
-      @overall_election_results_of_2017
+      @overall_election_results_of_2021
     end
 
     def population_size
-      # Source: Valgresultat.no, retrieved on 1 January 2020.
-      # URL: https://valgresultat.no/?type=st&year=2017
-      2_926_836
+      # Source: Valgresultat.no, retrieved on 27 December 2024.
+      # URL: https://valgresultat.no/valg/2021/st
+      2_984_187
     end
 
     def seats(simulation)
@@ -89,11 +89,10 @@ module Sapor
                   [H_PARTY, KRF_PARTY, V_PARTY],
                   [KRF_PARTY, SP_PARTY, V_PARTY]].freeze
 
-    # Source: Stortingsvalget 2021, Valgdistrikt, Wikipedia, retrieved on 12
-    # November 2020.
-    # URL: https://no.wikipedia.org/wiki/Stortingsvalget_2021#Valgdistrikt
-    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 18, 'Aust-Agder' => 3,
-                                 'Buskerud' => 7, 'Finnmark Finnmárku' => 4,
+    # Source: Stortingsvalget 2025, Valgdistrikt, Wikipedia, retrieved on 27 December 2024.
+    # URL: https://no.wikipedia.org/wiki/Stortingsvalget_2025
+    DIRECT_SEAT_DISTRIBUTION = { 'Akershus' => 19, 'Aust-Agder' => 3,
+                                 'Buskerud' => 7, 'Finnmark Finnmárku' => 3,
                                  'Hedmark' => 6, 'Hordaland' => 15,
                                  'Møre og Romsdal' => 7, 'Nord-Trøndelag' => 4,
                                  'Nordland' => 8, 'Oppland' => 5, 'Oslo' => 19,
@@ -104,26 +103,26 @@ module Sapor
 
     LEVELING_THRESHOLD = 0.04
 
-    # Source: Valg i Norge, Valgkretser, Wikipedia, retrieved on 16 April 2015.
-    # URL: http://no.wikipedia.org/wiki/Valg_i_Norge#Valgkretser
+    # Source: Stortingsvalget 2025, Valgdistrikt, Wikipedia, retrieved on 27 December 2024.
+    # URL: https://no.wikipedia.org/wiki/Stortingsvalget_2025
     NO_OF_LEVELING_SEATS = 19
 
     NO_OF_SEATS = NO_OF_LEVELING_SEATS + \
                   DIRECT_SEAT_DISTRIBUTION.values.inject(:+)
 
-    def election_results_of_2017
-      if @election_results_of_2017.nil?
-        @election_results_of_2017 = load_election_results(
-          'norway-20170911.psv'
+    def election_results_of_2021
+      if @election_results_of_2021.nil?
+        @election_results_of_2021 = load_election_results(
+          'norway-20210913.psv'
         )
       end
-      @election_results_of_2017
+      @election_results_of_2021
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictLeveledProportional.new(
-          overall_election_results_of_2017, election_results_of_2017,
+          overall_election_results_of_2021, election_results_of_2021,
           DIRECT_SEAT_DISTRIBUTION, NO_OF_LEVELING_SEATS, LEVELING_THRESHOLD,
           SainteLague14Denominators
         )

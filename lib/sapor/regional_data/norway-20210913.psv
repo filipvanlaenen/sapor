@@ -1,0 +1,377 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+Østfold | Arbeiderpartiet | 49345
+Østfold | Sosialistisk Venstreparti | 9840
+Østfold | Rødt | 7418
+Østfold | Senterpartiet | 22849
+Østfold | Kristelig Folkeparti | 5414
+Østfold | Miljøpartiet De Grønne | 4782
+Østfold | Venstre | 4771
+Østfold | Høyre | 30211
+Østfold | Fremskrittspartiet | 20527
+Østfold | Alliansen - Alternativ for Norge | 172
+Østfold | Norgesdemokratene | 2348
+Østfold | Folkeaksjonen Nei til mer bompenger | 285
+Østfold | Helsepartiet | 393
+Østfold | Industri- og Næringspartiet | 230
+Østfold | Konservativt | 688
+Østfold | Liberalistene | 263
+Østfold | Piratpartiet | 155
+Østfold | Pensjonistpartiet | 1869
+Østfold | Partiet Sentrum | 336
+Akershus | Arbeiderpartiet | 95609
+Akershus | Sosialistisk Venstreparti | 25240
+Akershus | Rødt | 14572
+Akershus | Senterpartiet | 32584
+Akershus | Kristelig Folkeparti | 7580
+Akershus | Miljøpartiet De Grønne | 17461
+Akershus | Venstre | 25393
+Akershus | Høyre | 101439
+Akershus | Fremskrittspartiet | 38779
+Akershus | Alliansen - Alternativ for Norge | 309
+Akershus | Norgesdemokratene | 4007
+Akershus | Folkeaksjonen Nei til mer bompenger | 634
+Akershus | Helsepartiet | 1161
+Akershus | Industri- og Næringspartiet | 489
+Akershus | Konservativt | 719
+Akershus | Liberalistene | 636
+Akershus | Piratpartiet | 338
+Akershus | Pensjonistpartiet | 2286
+Akershus | Partiet Sentrum | 953
+Akershus | Generasjonspartiet | 112
+Oslo | Arbeiderpartiet | 87158
+Oslo | Sosialistisk Venstreparti | 50382
+Oslo | Rødt | 31352
+Oslo | Senterpartiet | 11953
+Oslo | Kristelig Folkeparti | 6922
+Oslo | Miljøpartiet De Grønne | 32198
+Oslo | Venstre | 38142
+Oslo | Høyre | 89342
+Oslo | Fremskrittspartiet | 22784
+Oslo | Alliansen - Alternativ for Norge | 232
+Oslo | Norgesdemokratene | 2585
+Oslo | Folkeaksjonen Nei til mer bompenger | 1072
+Oslo | Helsepartiet | 593
+Oslo | Industri- og Næringspartiet | 234
+Oslo | Konservativt | 474
+Oslo | Kystpartiet | 64
+Oslo | Liberalistene | 665
+Oslo | Norges Kommunistiske Parti | 123
+Oslo | Piratpartiet | 336
+Oslo | Pensjonistpartiet | 1312
+Oslo | Partiet Sentrum | 1367
+Oslo | Feministisk Initiativ | 275
+Hedmark | Arbeiderpartiet | 38136
+Hedmark | Sosialistisk Venstreparti | 7902
+Hedmark | Rødt | 3876
+Hedmark | Senterpartiet | 32286
+Hedmark | Kristelig Folkeparti | 1876
+Hedmark | Miljøpartiet De Grønne | 2382
+Hedmark | Venstre | 2642
+Hedmark | Høyre | 12191
+Hedmark | Fremskrittspartiet | 9696
+Hedmark | Alliansen - Alternativ for Norge | 100
+Hedmark | Norgesdemokratene | 1355
+Hedmark | Folkeaksjonen Nei til mer bompenger | 81
+Hedmark | Helsepartiet | 293
+Hedmark | Industri- og Næringspartiet | 172
+Hedmark | Konservativt | 219
+Hedmark | Liberalistene | 135
+Hedmark | Pensjonistpartiet | 1482
+Hedmark | Partiet Sentrum | 210
+Hedmark | Redd Naturen | 97
+Oppland | Arbeiderpartiet | 34552
+Oppland | Sosialistisk Venstreparti | 5508
+Oppland | Rødt | 3534
+Oppland | Senterpartiet | 25619
+Oppland | Kristelig Folkeparti | 1537
+Oppland | Miljøpartiet De Grønne | 2289
+Oppland | Venstre | 2370
+Oppland | Høyre | 12323
+Oppland | Fremskrittspartiet | 8459
+Oppland | Alliansen - Alternativ for Norge | 81
+Oppland | Norgesdemokratene | 930
+Oppland | Folkeaksjonen Nei til mer bompenger | 66
+Oppland | Helsepartiet | 185
+Oppland | Industri- og Næringspartiet | 128
+Oppland | Konservativt | 212
+Oppland | Liberalistene | 91
+Oppland | Piratpartiet | 65
+Oppland | Pensjonistpartiet | 528
+Oppland | Partiet Sentrum | 184
+Buskerud | Arbeiderpartiet | 40575
+Buskerud | Sosialistisk Venstreparti | 8062
+Buskerud | Rødt | 4941
+Buskerud | Senterpartiet | 23068
+Buskerud | Kristelig Folkeparti | 3319
+Buskerud | Miljøpartiet De Grønne | 4251
+Buskerud | Venstre | 5207
+Buskerud | Høyre | 31544
+Buskerud | Fremskrittspartiet | 17509
+Buskerud | Alliansen - Alternativ for Norge | 147
+Buskerud | Norgesdemokratene | 1976
+Buskerud | Folkeaksjonen Nei til mer bompenger | 126
+Buskerud | Helsepartiet | 421
+Buskerud | Industri- og Næringspartiet | 275
+Buskerud | Konservativt | 330
+Buskerud | Liberalistene | 244
+Buskerud | Piratpartiet | 115
+Buskerud | Pensjonistpartiet | 520
+Buskerud | Partiet Sentrum | 440
+Vestfold | Arbeiderpartiet | 37518
+Vestfold | Sosialistisk Venstreparti | 8670
+Vestfold | Rødt | 6155
+Vestfold | Senterpartiet | 13775
+Vestfold | Kristelig Folkeparti | 4861
+Vestfold | Miljøpartiet De Grønne | 5428
+Vestfold | Venstre | 5771
+Vestfold | Høyre | 34831
+Vestfold | Fremskrittspartiet | 17271
+Vestfold | Alliansen - Alternativ for Norge | 146
+Vestfold | Norgesdemokratene | 1826
+Vestfold | Folkeaksjonen Nei til mer bompenger | 71
+Vestfold | Helsepartiet | 383
+Vestfold | Industri- og Næringspartiet | 403
+Vestfold | Konservativt | 662
+Vestfold | Liberalistene | 198
+Vestfold | Piratpartiet | 125
+Vestfold | Pensjonistpartiet | 562
+Vestfold | Partiet Sentrum | 381
+Telemark | Arbeiderpartiet | 29883
+Telemark | Sosialistisk Venstreparti | 5934
+Telemark | Rødt | 4506
+Telemark | Senterpartiet | 15963
+Telemark | Kristelig Folkeparti | 4327
+Telemark | Miljøpartiet De Grønne | 2729
+Telemark | Venstre | 2203
+Telemark | Høyre | 15198
+Telemark | Fremskrittspartiet | 12297
+Telemark | Alliansen - Alternativ for Norge | 107
+Telemark | Norgesdemokratene | 1379
+Telemark | Folkeaksjonen Nei til mer bompenger | 87
+Telemark | Helsepartiet | 193
+Telemark | Industri- og Næringspartiet | 596
+Telemark | Konservativt | 631
+Telemark | Liberalistene | 110
+Telemark | Piratpartiet | 85
+Telemark | Pensjonistpartiet | 419
+Telemark | Partiet Sentrum | 263
+Aust-Agder | Arbeiderpartiet | 16147
+Aust-Agder | Sosialistisk Venstreparti | 3644
+Aust-Agder | Rødt | 2456
+Aust-Agder | Senterpartiet | 8907
+Aust-Agder | Kristelig Folkeparti | 5749
+Aust-Agder | Miljøpartiet De Grønne | 1976
+Aust-Agder | Venstre | 2136
+Aust-Agder | Høyre | 13305
+Aust-Agder | Fremskrittspartiet | 8728
+Aust-Agder | Alliansen - Alternativ for Norge | 45
+Aust-Agder | Norgesdemokratene | 917
+Aust-Agder | Helsepartiet | 190
+Aust-Agder | Industri- og Næringspartiet | 279
+Aust-Agder | Konservativt | 573
+Aust-Agder | Liberalistene | 102
+Aust-Agder | Piratpartiet | 71
+Aust-Agder | Pensjonistpartiet | 380
+Aust-Agder | Partiet Sentrum | 230
+Vest-Agder | Arbeiderpartiet | 21845
+Vest-Agder | Sosialistisk Venstreparti | 5615
+Vest-Agder | Rødt | 3355
+Vest-Agder | Senterpartiet | 10859
+Vest-Agder | Kristelig Folkeparti | 14598
+Vest-Agder | Miljøpartiet De Grønne | 3330
+Vest-Agder | Venstre | 3834
+Vest-Agder | Høyre | 22359
+Vest-Agder | Fremskrittspartiet | 13821
+Vest-Agder | Alliansen - Alternativ for Norge | 53
+Vest-Agder | Norgesdemokratene | 2709
+Vest-Agder | Folkeaksjonen Nei til mer bompenger | 62
+Vest-Agder | Helsepartiet | 167
+Vest-Agder | Industri- og Næringspartiet | 360
+Vest-Agder | Konservativt | 969
+Vest-Agder | Liberalistene | 164
+Vest-Agder | Piratpartiet | 78
+Vest-Agder | Pensjonistpartiet | 492
+Vest-Agder | Partiet Sentrum | 478
+Rogaland | Arbeiderpartiet | 57969
+Rogaland | Sosialistisk Venstreparti | 13261
+Rogaland | Rødt | 9620
+Rogaland | Senterpartiet | 26955
+Rogaland | Kristelig Folkeparti | 20859
+Rogaland | Miljøpartiet De Grønne | 6152
+Rogaland | Venstre | 9106
+Rogaland | Høyre | 61992
+Rogaland | Fremskrittspartiet | 43382
+Rogaland | Alliansen - Alternativ for Norge | 212
+Rogaland | Norgesdemokratene | 2634
+Rogaland | Folkeaksjonen Nei til mer bompenger | 316
+Rogaland | Helsepartiet | 500
+Rogaland | Industri- og Næringspartiet | 1646
+Rogaland | Konservativt | 1400
+Rogaland | Liberalistene | 424
+Rogaland | Piratpartiet | 202
+Rogaland | Pensjonistpartiet | 1327
+Rogaland | Partiet Sentrum | 911
+Hordaland | Arbeiderpartiet | 68945
+Hordaland | Sosialistisk Venstreparti | 26901
+Hordaland | Rødt | 14150
+Hordaland | Senterpartiet | 29981
+Hordaland | Kristelig Folkeparti | 14724
+Hordaland | Miljøpartiet De Grønne | 11940
+Hordaland | Venstre | 13163
+Hordaland | Høyre | 74282
+Hordaland | Fremskrittspartiet | 38352
+Hordaland | Alliansen - Alternativ for Norge | 206
+Hordaland | Norgesdemokratene | 2876
+Hordaland | Folkeaksjonen Nei til mer bompenger | 403
+Hordaland | Helsepartiet | 490
+Hordaland | Industri- og Næringspartiet | 1738
+Hordaland | Konservativt | 1384
+Hordaland | Kystpartiet | 107
+Hordaland | Liberalistene | 527
+Hordaland | Norges Kommunistiske Parti | 77
+Hordaland | Piratpartiet | 262
+Hordaland | Pensjonistpartiet | 2286
+Hordaland | Partiet Sentrum | 591
+Hordaland | Generasjonspartiet | 87
+Sogn og Fjordane | Arbeiderpartiet | 16426
+Sogn og Fjordane | Sosialistisk Venstreparti | 3675
+Sogn og Fjordane | Rødt | 2489
+Sogn og Fjordane | Senterpartiet | 17634
+Sogn og Fjordane | Kristelig Folkeparti | 2389
+Sogn og Fjordane | Miljøpartiet De Grønne | 1542
+Sogn og Fjordane | Venstre | 2135
+Sogn og Fjordane | Høyre | 8529
+Sogn og Fjordane | Fremskrittspartiet | 5771
+Sogn og Fjordane | Alliansen - Alternativ for Norge | 43
+Sogn og Fjordane | Norgesdemokratene | 453
+Sogn og Fjordane | Helsepartiet | 89
+Sogn og Fjordane | Industri- og Næringspartiet | 293
+Sogn og Fjordane | Konservativt | 253
+Sogn og Fjordane | Liberalistene | 47
+Sogn og Fjordane | Pensjonistpartiet | 173
+Sogn og Fjordane | Partiet Sentrum | 141
+Møre og Romsdal | Arbeiderpartiet | 29928
+Møre og Romsdal | Sosialistisk Venstreparti | 9341
+Møre og Romsdal | Rødt | 4933
+Møre og Romsdal | Senterpartiet | 25938
+Møre og Romsdal | Kristelig Folkeparti | 7905
+Møre og Romsdal | Miljøpartiet De Grønne | 3697
+Møre og Romsdal | Venstre | 4364
+Møre og Romsdal | Høyre | 24123
+Møre og Romsdal | Fremskrittspartiet | 32746
+Møre og Romsdal | Alliansen - Alternativ for Norge | 126
+Møre og Romsdal | Norgesdemokratene | 1752
+Møre og Romsdal | Folkeaksjonen Nei til mer bompenger | 79
+Møre og Romsdal | Helsepartiet | 280
+Møre og Romsdal | Industri- og Næringspartiet | 1096
+Møre og Romsdal | Konservativt | 812
+Møre og Romsdal | Liberalistene | 175
+Møre og Romsdal | Pensjonistpartiet | 790
+Møre og Romsdal | Partiet Sentrum | 325
+Sør-Trøndelag | Arbeiderpartiet | 57621
+Sør-Trøndelag | Sosialistisk Venstreparti | 17635
+Sør-Trøndelag | Rødt | 10852
+Sør-Trøndelag | Senterpartiet | 29181
+Sør-Trøndelag | Kristelig Folkeparti | 4211
+Sør-Trøndelag | Miljøpartiet De Grønne | 9268
+Sør-Trøndelag | Venstre | 8435
+Sør-Trøndelag | Høyre | 31837
+Sør-Trøndelag | Fremskrittspartiet | 16650
+Sør-Trøndelag | Alliansen - Alternativ for Norge | 216
+Sør-Trøndelag | Norgesdemokratene | 1723
+Sør-Trøndelag | Helsepartiet | 330
+Sør-Trøndelag | Industri- og Næringspartiet | 658
+Sør-Trøndelag | Konservativt | 305
+Sør-Trøndelag | Liberalistene | 247
+Sør-Trøndelag | Norges Kommunistiske Parti | 63
+Sør-Trøndelag | Piratpartiet | 212
+Sør-Trøndelag | Pensjonistpartiet | 3351
+Sør-Trøndelag | Partiet Sentrum | 442
+Nord-Trøndelag | Arbeiderpartiet | 25730
+Nord-Trøndelag | Sosialistisk Venstreparti | 4389
+Nord-Trøndelag | Rødt | 3035
+Nord-Trøndelag | Senterpartiet | 22089
+Nord-Trøndelag | Kristelig Folkeparti | 1726
+Nord-Trøndelag | Miljøpartiet De Grønne | 1424
+Nord-Trøndelag | Venstre | 1557
+Nord-Trøndelag | Høyre | 8121
+Nord-Trøndelag | Fremskrittspartiet | 6146
+Nord-Trøndelag | Alliansen - Alternativ for Norge | 79
+Nord-Trøndelag | Norgesdemokratene | 754
+Nord-Trøndelag | Folkeaksjonen Nei til mer bompenger | 23
+Nord-Trøndelag | Helsepartiet | 145
+Nord-Trøndelag | Industri- og Næringspartiet | 359
+Nord-Trøndelag | Konservativt | 179
+Nord-Trøndelag | Liberalistene | 60
+Nord-Trøndelag | Piratpartiet | 55
+Nord-Trøndelag | Pensjonistpartiet | 643
+Nord-Trøndelag | Partiet Sentrum | 129
+Nordland | Arbeiderpartiet | 38611
+Nordland | Sosialistisk Venstreparti | 9620
+Nordland | Rødt | 7273
+Nordland | Senterpartiet | 28465
+Nordland | Kristelig Folkeparti | 2637
+Nordland | Miljøpartiet De Grønne | 3138
+Nordland | Venstre | 3342
+Nordland | Høyre | 20532
+Nordland | Fremskrittspartiet | 16338
+Nordland | Alliansen - Alternativ for Norge | 99
+Nordland | Norgesdemokratene | 1807
+Nordland | Helsepartiet | 339
+Nordland | Industri- og Næringspartiet | 577
+Nordland | Konservativt | 314
+Nordland | Liberalistene | 175
+Nordland | Norges Kommunistiske Parti | 38
+Nordland | Piratpartiet | 126
+Nordland | Pensjonistpartiet | 586
+Nordland | Partiet Sentrum | 211
+Troms Romsa | Arbeiderpartiet | 25168
+Troms Romsa | Sosialistisk Venstreparti | 10029
+Troms Romsa | Rødt | 4455
+Troms Romsa | Senterpartiet | 17698
+Troms Romsa | Kristelig Folkeparti | 2062
+Troms Romsa | Miljøpartiet De Grønne | 2768
+Troms Romsa | Venstre | 2298
+Troms Romsa | Høyre | 12493
+Troms Romsa | Fremskrittspartiet | 12998
+Troms Romsa | Alliansen - Alternativ for Norge | 66
+Troms Romsa | Norgesdemokratene | 1370
+Troms Romsa | Folkeaksjonen Nei til mer bompenger | 130
+Troms Romsa | Helsepartiet | 225
+Troms Romsa | Industri- og Næringspartiet | 319
+Troms Romsa | Konservativt | 186
+Troms Romsa | Liberalistene | 187
+Troms Romsa | Piratpartiet | 83
+Troms Romsa | Partiet Sentrum | 175
+Finnmark Finnmárku | Arbeiderpartiet | 12228
+Finnmark Finnmárku | Sosialistisk Venstreparti | 2415
+Finnmark Finnmárku | Rødt | 1959
+Finnmark Finnmárku | Senterpartiet | 7157
+Finnmark Finnmárku | Kristelig Folkeparti | 648
+Finnmark Finnmárku | Miljøpartiet De Grønne | 892
+Finnmark Finnmárku | Venstre | 564
+Finnmark Finnmárku | Høyre | 2664
+Finnmark Finnmárku | Fremskrittspartiet | 4220
+Finnmark Finnmárku | Alliansen - Alternativ for Norge | 50
+Finnmark Finnmárku | Norgesdemokratene | 667
+Finnmark Finnmárku | Helsepartiet | 113
+Finnmark Finnmárku | Industri- og Næringspartiet | 179
+Finnmark Finnmárku | Konservativt | 138
+Finnmark Finnmárku | Liberalistene | 70
+Finnmark Finnmárku | Partiet Sentrum | 69
+Finnmark Finnmárku | Pasientfokus | 4950
