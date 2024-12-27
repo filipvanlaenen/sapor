@@ -55,7 +55,7 @@ describe Sapor::Norway, '#seats' do
     expect(seats['Pasientfokus']).to eq(1 - 1)
     expect(seats['Alliansen - Alternativ for Norge']).to eq(0)
     expect(seats['Feministisk Initiativ']).to eq(0)
-    expect(seats['Folkeaksjonen Nei til mer bompenger']).to eq(0)
+    expect(seats['Folkets parti']).to eq(0)
     expect(seats['Generasjonspartiet']).to eq(0)
     expect(seats['Industri- og Næringspartiet']).to eq(0)
     expect(seats['Konservativt']).to eq(0)

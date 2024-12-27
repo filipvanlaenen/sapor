@@ -25,7 +25,7 @@
 Østfold | Fremskrittspartiet | 20527
 Østfold | Alliansen - Alternativ for Norge | 172
 Østfold | Norgesdemokratene | 2348
-Østfold | Folkeaksjonen Nei til mer bompenger | 285
+Østfold | Folkets parti | 285
 Østfold | Helsepartiet | 393
 Østfold | Industri- og Næringspartiet | 230
 Østfold | Konservativt | 688
@@ -44,7 +44,7 @@ Akershus | Høyre | 101439
 Akershus | Fremskrittspartiet | 38779
 Akershus | Alliansen - Alternativ for Norge | 309
 Akershus | Norgesdemokratene | 4007
-Akershus | Folkeaksjonen Nei til mer bompenger | 634
+Akershus | Folkets parti | 634
 Akershus | Helsepartiet | 1161
 Akershus | Industri- og Næringspartiet | 489
 Akershus | Konservativt | 719
@@ -64,7 +64,7 @@ Oslo | Høyre | 89342
 Oslo | Fremskrittspartiet | 22784
 Oslo | Alliansen - Alternativ for Norge | 232
 Oslo | Norgesdemokratene | 2585
-Oslo | Folkeaksjonen Nei til mer bompenger | 1072
+Oslo | Folkets parti | 1072
 Oslo | Helsepartiet | 593
 Oslo | Industri- og Næringspartiet | 234
 Oslo | Konservativt | 474
@@ -86,7 +86,7 @@ Hedmark | Høyre | 12191
 Hedmark | Fremskrittspartiet | 9696
 Hedmark | Alliansen - Alternativ for Norge | 100
 Hedmark | Norgesdemokratene | 1355
-Hedmark | Folkeaksjonen Nei til mer bompenger | 81
+Hedmark | Folkets parti | 81
 Hedmark | Helsepartiet | 293
 Hedmark | Industri- og Næringspartiet | 172
 Hedmark | Konservativt | 219
@@ -105,7 +105,7 @@ Oppland | Høyre | 12323
 Oppland | Fremskrittspartiet | 8459
 Oppland | Alliansen - Alternativ for Norge | 81
 Oppland | Norgesdemokratene | 930
-Oppland | Folkeaksjonen Nei til mer bompenger | 66
+Oppland | Folkets parti | 66
 Oppland | Helsepartiet | 185
 Oppland | Industri- og Næringspartiet | 128
 Oppland | Konservativt | 212
@@ -124,7 +124,7 @@ Buskerud | Høyre | 31544
 Buskerud | Fremskrittspartiet | 17509
 Buskerud | Alliansen - Alternativ for Norge | 147
 Buskerud | Norgesdemokratene | 1976
-Buskerud | Folkeaksjonen Nei til mer bompenger | 126
+Buskerud | Folkets parti | 126
 Buskerud | Helsepartiet | 421
 Buskerud | Industri- og Næringspartiet | 275
 Buskerud | Konservativt | 330
@@ -143,7 +143,7 @@ Vestfold | Høyre | 34831
 Vestfold | Fremskrittspartiet | 17271
 Vestfold | Alliansen - Alternativ for Norge | 146
 Vestfold | Norgesdemokratene | 1826
-Vestfold | Folkeaksjonen Nei til mer bompenger | 71
+Vestfold | Folkets parti | 71
 Vestfold | Helsepartiet | 383
 Vestfold | Industri- og Næringspartiet | 403
 Vestfold | Konservativt | 662
@@ -162,7 +162,7 @@ Telemark | Høyre | 15198
 Telemark | Fremskrittspartiet | 12297
 Telemark | Alliansen - Alternativ for Norge | 107
 Telemark | Norgesdemokratene | 1379
-Telemark | Folkeaksjonen Nei til mer bompenger | 87
+Telemark | Folkets parti | 87
 Telemark | Helsepartiet | 193
 Telemark | Industri- og Næringspartiet | 596
 Telemark | Konservativt | 631
@@ -199,7 +199,7 @@ Vest-Agder | Høyre | 22359
 Vest-Agder | Fremskrittspartiet | 13821
 Vest-Agder | Alliansen - Alternativ for Norge | 53
 Vest-Agder | Norgesdemokratene | 2709
-Vest-Agder | Folkeaksjonen Nei til mer bompenger | 62
+Vest-Agder | Folkets parti | 62
 Vest-Agder | Helsepartiet | 167
 Vest-Agder | Industri- og Næringspartiet | 360
 Vest-Agder | Konservativt | 969
@@ -218,7 +218,7 @@ Rogaland | Høyre | 61992
 Rogaland | Fremskrittspartiet | 43382
 Rogaland | Alliansen - Alternativ for Norge | 212
 Rogaland | Norgesdemokratene | 2634
-Rogaland | Folkeaksjonen Nei til mer bompenger | 316
+Rogaland | Folkets parti | 316
 Rogaland | Helsepartiet | 500
 Rogaland | Industri- og Næringspartiet | 1646
 Rogaland | Konservativt | 1400
@@ -237,7 +237,7 @@ Hordaland | Høyre | 74282
 Hordaland | Fremskrittspartiet | 38352
 Hordaland | Alliansen - Alternativ for Norge | 206
 Hordaland | Norgesdemokratene | 2876
-Hordaland | Folkeaksjonen Nei til mer bompenger | 403
+Hordaland | Folkets parti | 403
 Hordaland | Helsepartiet | 490
 Hordaland | Industri- og Næringspartiet | 1738
 Hordaland | Konservativt | 1384
@@ -276,7 +276,7 @@ Møre og Romsdal | Høyre | 24123
 Møre og Romsdal | Fremskrittspartiet | 32746
 Møre og Romsdal | Alliansen - Alternativ for Norge | 126
 Møre og Romsdal | Norgesdemokratene | 1752
-Møre og Romsdal | Folkeaksjonen Nei til mer bompenger | 79
+Møre og Romsdal | Folkets parti | 79
 Møre og Romsdal | Helsepartiet | 280
 Møre og Romsdal | Industri- og Næringspartiet | 1096
 Møre og Romsdal | Konservativt | 812
@@ -313,7 +313,7 @@ Nord-Trøndelag | Høyre | 8121
 Nord-Trøndelag | Fremskrittspartiet | 6146
 Nord-Trøndelag | Alliansen - Alternativ for Norge | 79
 Nord-Trøndelag | Norgesdemokratene | 754
-Nord-Trøndelag | Folkeaksjonen Nei til mer bompenger | 23
+Nord-Trøndelag | Folkets parti | 23
 Nord-Trøndelag | Helsepartiet | 145
 Nord-Trøndelag | Industri- og Næringspartiet | 359
 Nord-Trøndelag | Konservativt | 179
@@ -351,7 +351,7 @@ Troms Romsa | Høyre | 12493
 Troms Romsa | Fremskrittspartiet | 12998
 Troms Romsa | Alliansen - Alternativ for Norge | 66
 Troms Romsa | Norgesdemokratene | 1370
-Troms Romsa | Folkeaksjonen Nei til mer bompenger | 130
+Troms Romsa | Folkets parti | 130
 Troms Romsa | Helsepartiet | 225
 Troms Romsa | Industri- og Næringspartiet | 319
 Troms Romsa | Konservativt | 186
