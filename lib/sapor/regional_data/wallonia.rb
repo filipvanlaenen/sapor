@@ -52,19 +52,18 @@ module Sapor
       SEAT_DISTRIBUTION.values.inject(:+)
     end
 
-    def overall_election_results_of_2019
-      if @overall_election_results_of_2019.nil?
-        @overall_election_results_of_2019 = \
-          summarize_election_results(election_results_of_2019)
+    def overall_election_results_of_2024
+      if @overall_election_results_of_2024.nil?
+        @overall_election_results_of_2024 = summarize_election_results(election_results_of_2024)
       end
-      @overall_election_results_of_2019
+      @overall_election_results_of_2024
     end
 
     def population_size
-      # Voter turnout on 26 May 2019
-      # Source: https://verkiezingen2019.belgium.be/nl/verkiezingen?el=WL
-      # Retrieved on 7 December 2019
-      2_034_813
+      # Voter turnout on 9 June 2024
+      # Source: https://verkiezingsresultaten.belgium.be/nl/election-results/waals-parlement/2024/gewest/253626
+      # Retrieved on 2 January 2025
+       2_068_766
     end
 
     def seats(simulation)
@@ -87,20 +86,20 @@ module Sapor
 
     THRESHOLD = 0.05
 
-    def election_results_of_2019
-      if @election_results_of_2019.nil?
-        @election_results_of_2019 = load_election_results( \
-          'wallonia-20190526.psv'
+    def election_results_of_2024
+      if @election_results_of_2024.nil?
+        @election_results_of_2024 = load_election_results( \
+          'wallonia-20240609.psv'
         )
       end
-      @election_results_of_2019
+      @election_results_of_2024
     end
 
     def electoral_system
       if @electoral_system.nil?
         @electoral_system = MultiDistrictProportional.new( \
-          overall_election_results_of_2019,
-          election_results_of_2019,
+          overall_election_results_of_2024,
+          election_results_of_2024,
           SEAT_DISTRIBUTION,
           DhondtDenominators,
           THRESHOLD

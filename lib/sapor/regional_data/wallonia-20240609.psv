@@ -1,0 +1,63 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 9 June 2024,
+#         downloaded on 2 January 2025,
+# URL: https://verkiezingsresultaten.belgium.be/nl/election-results/waals-parlement/2024/gewest/253626
+
+Brabant wallon | Mouvement Réformateur        | 94,100
+Brabant wallon | Les Engagés                  | 58,593
+Brabant wallon | Parti Socialiste             | 32,144
+Brabant wallon | Ecolo                        | 23,593
+Brabant wallon | Parti du Travail de Belgique | 22,037
+Brabant wallon | DéFI                         |  9,593
+Brabant wallon | Collectif Citoyen            |  8,222
+
+Hainaut | Parti Socialiste             | 212,604
+Hainaut | Mouvement Réformateur        | 196,251
+Hainaut | Les Engagés                  | 120,059
+Hainaut | Parti du Travail de Belgique | 108,527
+Hainaut | Ecolo                        |  37,353
+Hainaut | Chez Nous                    |  31,796
+Hainaut | DéFI                         |  17,469
+Hainaut | Collectif Citoyen            |   4,440
+
+Liège | Mouvement Réformateur        | 176,772
+Liège | Parti Socialiste             | 146,120
+Liège | Les Engagés                  | 110,565
+Liège | Parti du Travail de Belgique |  85,015
+Liège | Ecolo                        |  46,813
+Liège | Chez Nous                    |  26,769
+Liège | DéFI                         |  14,287
+Liège | Collectif Citoyen            |   7,839
+Liège | Reprise en Main Citoyenne    |   4,700
+
+Luxembourg | Mouvement Réformateur        | 58,034
+Luxembourg | Les Engagés                  | 52,200
+Luxembourg | Parti Socialiste             | 31,326
+Luxembourg | Ecolo                        | 13,136
+Luxembourg | Collectif Citoyen            |  7,740
+Luxembourg | DéFI                         |  4,653
+
+Namur | Mouvement Réformateur        | 87,333
+Namur | Les Engagés                  | 86,062
+Namur | Parti Socialiste             | 58,224
+Namur | Parti du Travail de Belgique | 34,782
+Namur | Ecolo                        | 23,294
+Namur | DéFI                         |  9,792
+Namur | Collectif Citoyen            |  4,959
+Namur | Reprise en Main Citoyenne    |  1,570

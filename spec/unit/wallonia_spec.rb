@@ -32,34 +32,25 @@ describe Sapor::Wallonia, '#no_of_seats' do
 end
 
 describe Sapor::Wallonia, '#population_size' do
-  it 'returns a population size of 2,034,813' do
-    expect(Sapor::Wallonia.instance.population_size).to eq(2_034_813)
+  it 'returns a population size of 2,068,766' do
+    expect(Sapor::Wallonia.instance.population_size).to eq(2_068_766)
   end
 end
 
 describe Sapor::Wallonia, '#seats' do
   it 'calculates the number of seats for the election of 2019' do
     Wallonia = Sapor::Wallonia.instance
-    results = Wallonia.overall_election_results_of_2019
+    results = Wallonia.overall_election_results_of_2024
     seats = Wallonia.seats(results)
-    expect(seats['Parti Socialiste']).to eq(23)
-    expect(seats['Mouvement Réformateur']).to eq(20)
-    expect(seats['Ecolo']).to eq(12)
-    expect(seats['Les Engagés']).to eq(10)
-    expect(seats['Parti du Travail de Belgique']).to eq(10)
-    expect(seats['AGIR']).to eq(0)
-    expect(seats['Collectif Citoyen']).to eq(0)
+    expect(seats['Mouvement Réformateur']).to eq(26)
+    expect(seats['Parti Socialiste']).to eq(19)
+    expect(seats['Les Engagés']).to eq(17)
+    expect(seats['Parti du Travail de Belgique']).to eq(8)
+    expect(seats['Ecolo']).to eq(5)
+    expect(seats['Chez Nous']).to eq(0)
     expect(seats['DéFI']).to eq(0)
-    expect(seats['Demain']).to eq(0)
-    expect(seats['DierAnimal']).to eq(0)
-    expect(seats['La Droite']).to eq(0)
-    expect(seats['Listes Destexhe']).to eq(0)
-    expect(seats['NATION']).to eq(0)
-    expect(seats['Parti Communiste de Belgique']).to eq(0)
-    expect(seats['Parti Populaire']).to eq(0)
-    expect(seats['REFERENDUM']).to eq(0)
-    expect(seats['Turquoise']).to eq(0)
-    expect(seats['Wallonie Insoumise']).to eq(0)
+    expect(seats['Collectif Citoyen']).to eq(0)
+    expect(seats['Reprise en Main Citoyenne']).to eq(0)
   end
 end
 
