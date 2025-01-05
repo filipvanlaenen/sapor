@@ -1,0 +1,84 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 9 June 2024,
+#         downloaded on 5 January 2025,
+# URL: https://verkiezingsresultaten.belgium.be/nl/election-results/kamer-van-volksvertegenwoordigers/2024/kieskring/250990
+
+Brabant wallon | Mouvement Réformateur        | 90,486
+Brabant wallon | Les Engagés                  | 58,077
+Brabant wallon | Parti Socialiste             | 31,741
+Brabant wallon | Ecolo                        | 23,587
+Brabant wallon | Parti du Travail de Belgique | 20,221
+Brabant wallon | DéFI                         |  8,750
+Brabant wallon | Nieuw-Vlaamse Alliantie      |  5,753
+Brabant wallon | BLANCO                       |  4,830
+Brabant wallon | Collectif Citoyen            |  4,781
+Brabant wallon | Chez Nous                    |  4,659
+Brabant wallon | Belgische Unie – Union Belge |  1,003
+Brabant wallon | l’Unie                       |    918
+Brabant wallon | Agora                        |    802
+Brabant wallon | Reprise en Main Citoyenne    |    664
+
+Hainaut | Parti Socialiste             | 213,501
+Hainaut | Mouvement Réformateur        | 192,759
+Hainaut | Les Engagés                  | 114,559
+Hainaut | Parti du Travail de Belgique | 103,339
+Hainaut | Ecolo                        |  36,750
+Hainaut | Chez Nous                    |  22,039
+Hainaut | DéFI                         |  15,189
+Hainaut | Nieuw-Vlaamse Alliantie      |  14,184
+Hainaut | BLANCO                       |  13,224
+Hainaut | Collectif Citoyen            |   7,201
+Hainaut | Lutte Ouvrière               |   4,680
+Hainaut | Belgische Unie – Union Belge |   2,426
+
+Liège | Mouvement Réformateur        | 179,296
+Liège | Parti Socialiste             | 137,443
+Liège | Les Engagés                  | 103,711
+Liège | Parti du Travail de Belgique |  91,188
+Liège | Ecolo                        |  49,936
+Liège | Chez Nous                    |  21,877
+Liège | DéFI                         |  13,816
+Liège | Nieuw-Vlaamse Alliantie      |  10,840
+Liège | BLANCO                       |  10,656
+Liège | Collectif Citoyen            |   8,289
+Liège | Reprise en Main Citoyenne    |   3,361
+Liège | Belgische Unie – Union Belge |   1,502
+
+Luxembourg | Les Engagés                  | 56,289
+Luxembourg | Mouvement Réformateur        | 54,196
+Luxembourg | Parti Socialiste             | 29,488
+Luxembourg | Ecolo                        | 13,506
+Luxembourg | Chez Nous                    |  5,888
+Luxembourg | Nieuw-Vlaamse Alliantie      |  4,413
+Luxembourg | Collectif Citoyen            |  4,300
+Luxembourg | DéFI                         |  3,975
+Luxembourg | BLANCO                       |  3,354
+
+Namur | Les Engagés                  | 90,694
+Namur | Mouvement Réformateur        | 80,042
+Namur | Parti Socialiste             | 52,913
+Namur | Parti du Travail de Belgique | 31,463
+Namur | Ecolo                        | 22,014
+Namur | Chez Nous                    |  9,595
+Namur | DéFI                         |  8,151
+Namur | Nieuw-Vlaamse Alliantie      |  5,526
+Namur | BLANCO                       |  5,357
+Namur | Collectif Citoyen            |  4,556
+Namur | Agora                        |    983
+Namur | Belgische Unie – Union Belge |    881
