@@ -26,33 +26,30 @@ describe Sapor::BelgiumBrussels, '#area_code' do
 end
 
 describe Sapor::BelgiumBrussels, '#no_of_seats' do
-  it 'returns 15 as the number of seats' do
-    expect(Sapor::BelgiumBrussels.instance.no_of_seats).to eq(15)
+  it 'returns 16 as the number of seats' do
+    expect(Sapor::BelgiumBrussels.instance.no_of_seats).to eq(16)
   end
 end
 
 describe Sapor::BelgiumBrussels, '#population_size' do
-  it 'returns a population size of 501,459' do
-    expect(Sapor::BelgiumBrussels.instance.population_size).to eq(501_459)
+  it 'returns a population size of 518,926' do
+    expect(Sapor::BelgiumBrussels.instance.population_size).to eq(518_926)
   end
 end
 
 describe Sapor::BelgiumBrussels, '#seats' do
   it 'calculates the number of seats for the election of 2014' do
     belgium_brussels = Sapor::BelgiumBrussels.instance
-    results = belgium_brussels.overall_election_results_of_2019
+    results = belgium_brussels.overall_election_results_of_2024
     seats = belgium_brussels.seats(results)
-    expect(seats['Ecolo']).to eq(4)
-    expect(seats['Parti Socialiste']).to eq(3)
-    expect(seats['Mouvement Réformateur']).to eq(3)
-    expect(seats['Parti du Travail de Belgique']).to eq(2)
-    expect(seats['DéFI']).to eq(2)
-    expect(seats['Les Engagés']).to eq(1)
+    expect(seats['Mouvement Réformateur']).to eq(4)
+    expect(seats['Parti Socialiste']).to eq(4)
+    expect(seats['Parti du Travail de Belgique']).to eq(3)
+    expect(seats['Ecolo']).to eq(2)
+    expect(seats['Les Engagés']).to eq(2)
+    expect(seats['DéFI']).to eq(1)
+    expect(seats['Team Fouad Ahidar']).to eq(0)
     expect(seats['Nieuw-Vlaamse Alliantie']).to eq(0)
-    expect(seats['Listes Destexhe']).to eq(0)
-    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(0)
-    expect(seats['Parti Populaire']).to eq(0)
     expect(seats['Vlaams Belang']).to eq(0)
-    expect(seats['Christen-Democratisch en Vlaams']).to eq(0)
   end
 end

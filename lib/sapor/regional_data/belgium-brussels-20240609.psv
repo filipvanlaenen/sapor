@@ -1,0 +1,38 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 9 June 2024,
+#         downloaded on 5 January 2025,
+# URL: https://verkiezingsresultaten.belgium.be/nl/election-results/kamer-van-volksvertegenwoordigers/2024/kieskring/250990
+    
+Bruxelles-Capitale / Brussel-Hoofdstad | Mouvement Réformateur                | 120,155
+Bruxelles-Capitale / Brussel-Hoofdstad | Parti Socialiste                     |  96,516
+Bruxelles-Capitale / Brussel-Hoofdstad | Parti du Travail de Belgique         |  86,927
+Bruxelles-Capitale / Brussel-Hoofdstad | Ecolo                                |  58,645
+Bruxelles-Capitale / Brussel-Hoofdstad | Les Engagés                          |  49,425
+Bruxelles-Capitale / Brussel-Hoofdstad | DéFI                                 |  34,143
+Bruxelles-Capitale / Brussel-Hoofdstad | Team Fouad Ahidar                    |  24,826
+Bruxelles-Capitale / Brussel-Hoofdstad | Nieuw-Vlaamse Alliantie              |  14,472
+Bruxelles-Capitale / Brussel-Hoofdstad | Vlaams Belang                        |  12,754
+Bruxelles-Capitale / Brussel-Hoofdstad | Collectif Citoyen                    |   6,579
+Bruxelles-Capitale / Brussel-Hoofdstad | Partij BLANCO                        |   3,287
+Bruxelles-Capitale / Brussel-Hoofdstad | Volt Europa                          |   3,032
+Bruxelles-Capitale / Brussel-Hoofdstad | Lutte Ouvrière                       |   1,872
+Bruxelles-Capitale / Brussel-Hoofdstad | Agora                                |   1,688
+Bruxelles-Capitale / Brussel-Hoofdstad | Belgische Unie – Union Belge         |   1,604
+Bruxelles-Capitale / Brussel-Hoofdstad | Voor U                               |   1,534
+Bruxelles-Capitale / Brussel-Hoofdstad | l’Unie                               |   1,467
