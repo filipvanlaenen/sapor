@@ -47,8 +47,9 @@ module Sapor
 
     COALITIONS = [['Parti du Travail de Belgique (GUE/NGL)'],
                   ['Ecolo (Greens/EFA)', 'PIRATE (Greens/EFA)'],
-                  ['Les Engagés (RE)', 'Mouvement Réformateur (RE)'],
                   ['Parti Socialiste (S&D)'],
+                  ['Les Engagés (RE)', 'Mouvement Réformateur (RE)'],
+                  ['Chez Nous (PfE)'],
                   ['Debout les Belges (*)', 'DéFI (*)', 'La Droite (*)', 'FW (*)', 'ISLAM (*)', 'Parti Populaire (*)',
                    'R.W.F. (*)', 'Wallonie d’Abord (*)']].freeze
 
