@@ -1,0 +1,78 @@
+# Statistical Analysis of Polling Results (SAPoR)
+# Copyright (C) 2020 Filip van Laenen <f.a.vanlaenen@ieee.org>
+#
+# This file is part of SAPoR.
+#
+# SAPoR is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# SAPoR is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in /doc/gpl.txt
+#
+
+# Source: Web page with the official results of the elections of 26 May 2019,
+#         downloaded on 7 August 2019,
+# URL: https://verkiezingen2019.belgium.be/nl/verkiezingen?el=CK
+
+Antwerpen | Nieuw-Vlaamse Alliantie              | 368,877
+Antwerpen | Vlaams Belang                        | 249,826
+Antwerpen | Vooruit                              | 127,973
+Antwerpen | Christen-Democratisch en Vlaams      | 125,894
+Antwerpen | Partij van de Arbeid van België      | 125,257
+Antwerpen | Groen                                |  90,370
+Antwerpen | Open Vlaamse Liberalen en Democraten |  70,890
+Antwerpen | DierAnimal                           |  10,341
+Antwerpen | Voor U                               |   8,639
+Antwerpen | Partij BLANCO                        |   7,221
+Antwerpen | Volt Europa                          |   4,213
+Antwerpen | Belgische Unie – Union Belge         |   1,686
+
+Limburg | Vlaams Belang                        | 141,988
+Limburg | Nieuw-Vlaamse Alliantie              | 136,606
+Limburg | Christen-Democratisch en Vlaams      |  90,715
+Limburg | Vooruit                              |  75,191
+Limburg | Partij van de Arbeid van België      |  52,303
+Limburg | Open Vlaamse Liberalen en Democraten |  40,985
+Limburg | Groen                                |  27,619
+Limburg | Voor U                               |   5,505
+Limburg | Partij BLANCO                        |   4,660
+Limburg | Belgische Unie – Union Belge         |   1,202
+
+Oost-Vlaanderen | Vlaams Belang                        | 234,888
+Oost-Vlaanderen | Nieuw-Vlaamse Alliantie              | 231,470
+Oost-Vlaanderen | Vooruit                              | 127,758
+Oost-Vlaanderen | Christen-Democratisch en Vlaams      | 125,871
+Oost-Vlaanderen | Open Vlaamse Liberalen en Democraten | 119,200
+Oost-Vlaanderen | Groen                                | 103,722
+Oost-Vlaanderen | Partij van de Arbeid van België      |  75,942
+Oost-Vlaanderen | Partij BLANCO                        |   8,057
+Oost-Vlaanderen | Voor U                               |   8,007
+Oost-Vlaanderen | Gezond Verstand                      |   2,352
+Oost-Vlaanderen | Belgische Unie – Union Belge         |   1,390
+
+Vlaams-Brabant | Nieuw-Vlaamse Alliantie              | 182,883
+Vlaams-Brabant | Vlaams Belang                        | 119,345
+Vlaams-Brabant | Vooruit                              |  98,092
+Vlaams-Brabant | Christen-Democratisch en Vlaams      |  93,465
+Vlaams-Brabant | Open Vlaamse Liberalen en Democraten |  83,744
+Vlaams-Brabant | Partij van de Arbeid van België      |  57,600
+Vlaams-Brabant | Groen                                |  57,395
+Vlaams-Brabant | Voor U                               |   9,961
+Vlaams-Brabant | Partij BLANCO                        |   6,859
+Vlaams-Brabant | Belgische Unie – Union Belge         |   4,086
+Vlaams-Brabant | l’Unie                               |   3,255
+
+West-Vlaanderen | Vlaams Belang                        | 202,800
+West-Vlaanderen | Nieuw-Vlaamse Alliantie              | 192,037
+West-Vlaanderen | Vooruit                              | 137,422
+West-Vlaanderen | Christen-Democratisch en Vlaams      | 121,447
+West-Vlaanderen | Open Vlaamse Liberalen en Democraten |  65,840
+West-Vlaanderen | Groen                                |  45,502
+West-Vlaanderen | Partij van de Arbeid van België      |  44,129
+West-Vlaanderen | Voor U                               |   9,700
+West-Vlaanderen | Partij BLANCO                        |   8,178

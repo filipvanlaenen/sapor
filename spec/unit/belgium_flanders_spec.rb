@@ -32,31 +32,23 @@ describe Sapor::BelgiumFlanders, '#no_of_seats' do
 end
 
 describe Sapor::BelgiumFlanders, '#population_size' do
-  it 'returns a population size of 4,206,305' do
-    expect(Sapor::BelgiumFlanders.instance.population_size).to eq(4_206_305)
+  it 'returns a population size of 4,350,358' do
+    expect(Sapor::BelgiumFlanders.instance.population_size).to eq(4_350_358)
   end
 end
 
 describe Sapor::BelgiumFlanders, '#seats' do
-  it 'calculates the number of seats for the election of 2019' do
+  it 'calculates the number of seats for the election of 2024' do
     belgium_flanders = Sapor::BelgiumFlanders.instance
-    results = belgium_flanders.overall_election_results_of_2019
+    results = belgium_flanders.overall_election_results_of_2024
     seats = belgium_flanders.seats(results)
-    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(25)
-    expect(seats['Vlaams Belang']).to eq(18)
-    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(12)
-    expect(seats['Christen-Democratisch en Vlaams']).to eq(12)
-    expect(seats['Vooruit']).to eq(9)
-    expect(seats['Groen']).to eq(8)
-    expect(seats['Partij van de Arbeid van België']).to eq(3)
+    expect(seats['Nieuw-Vlaamse Alliantie']).to eq(24)
+    expect(seats['Vlaams Belang']).to eq(20)
+    expect(seats['Vooruit']).to eq(13)
+    expect(seats['Christen-Democratisch en Vlaams']).to eq(11)
+    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(7)
+    expect(seats['Partij van de Arbeid van België']).to eq(6)
+    expect(seats['Groen']).to eq(6)
     expect(seats['Belgische Unie – Union Belge']).to eq(0)
-    expect(seats['de coöperatie']).to eq(0)
-    expect(seats['DéFI']).to eq(0)
-    expect(seats['Democratisch-Solidair Appèl']).to eq(0)
-    expect(seats['DierAnimal']).to eq(0)
-    expect(seats['Partij Vrede en Solidariteit']).to eq(0)
-    expect(seats['Piratenpartij']).to eq(0)
-    expect(seats['PRO']).to eq(0)
-    expect(seats['Volt']).to eq(0)
   end
 end
