@@ -55,7 +55,7 @@ module Sapor
                   ['Det Konservative Folkeparti (EPP)', 'Kristendemokraterne (EPP)', 'Liberal Alliance (EPP)'],
                   ['Enhedslisten–De Rød-Grønne (GUE/NGL)'],
                   ['Moderaterne (RE)', 'Radikale Venstre (RE)', 'Venstre (RE)'],
-                  ['Nye Borgerlige (NI)'],
+                  ['Borgernes Parti (NI)', 'Nye Borgerlige (NI)'],
                   ['Socialdemokraterne (S&D)']].freeze
 
     NO_OF_SEATS = 15
