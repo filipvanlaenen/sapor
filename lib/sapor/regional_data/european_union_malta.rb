@@ -51,7 +51,7 @@ module Sapor
                   ['Partit Demokratiku (RE)'],
                   ['Partit Nazzjonalista (EPP)'],
                   ['Moviment Patrijotti Maltin (PfE)'],
-                  ['Imperium Europa (*)']].freeze
+                  ['Imperium Europa (*)', 'Partit Momentum (*)']].freeze
 
     NO_OF_SEATS = 6
 
