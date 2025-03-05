@@ -52,9 +52,9 @@ module Sapor
                   ['Tėvynės sąjunga–Lietuvos krikščionys demokratai (EPP)'],
                   ['Lietuvos lenkų rinkimų akcija (ECR)', 'Lietuvos valstiečių ir žaliųjų sąjunga (ECR)'],
                   ['Tautos ir teisingumo sąjunga (centristai, tautininkai) (ESN)'],
-                  ['Darbo Partija (NI)'],
+                  ['Darbo Partija (NI)', 'Nemuno aušra (NI)'],
                   ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
-                   'Nemuno aušra (*)', 'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)']].freeze
+                   'Partija tvarka ir teisingumas (*)', 'Politinė partija “Lietuvos sąrašas” (*)']].freeze
 
     NO_OF_SEATS = 11
 
