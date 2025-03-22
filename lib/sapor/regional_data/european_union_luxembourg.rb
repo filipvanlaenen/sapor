@@ -46,22 +46,20 @@ module Sapor
 
     private
 
-    COALITIONS = [['Alternativ Demokratesch Reformpartei (ECR)'],
-                  ['Chrëschtlech-Sozial Vollekspartei (EPP)'],
+    COALITIONS = [['déi Lénk (GUE/NGL)'],
                   ['déi gréng (Greens/EFA)', 'Piratepartei Lëtzebuerg (Greens/EFA)', 'Volt Lëtzebuerg (Greens/EFA)'],
-                  ['déi Lénk (GUE/NGL)'],
+                  ['Lëtzebuerger Sozialistesch Aarbechterpartei (S&D)'],
                   ['Demokratesch Partei (RE)'],
+                  ['Chrëschtlech-Sozial Vollekspartei (EPP)'],
+                  ['Alternativ Demokratesch Reformpartei (ECR)'],
                   ['Déi Konservativ (*)', 'Demokratie (*)', 'Fokus (*)', 'Kommunistesch Partei Lëtzebuerg (*)',
-                   'Partei fir Integral Demokratie (*)'],
-                  ['Lëtzebuerger Sozialistesch Aarbechterpartei (S&D)']].freeze
+                   'Liberté – Fräiheet! (*)', 'Partei fir Integral Demokratie (*)']].freeze
 
     NO_OF_SEATS = 6
 
-    # Voter turnout on 26 May 2019
-    # Source: Web page with the official results of the elections of 26 May
-    # 2019, downloaded on 18 December 2019,
-    # https://lb.wikipedia.org/wiki/Wale_fir_d%27Europ%C3%A4escht_Parlament_2019_(L%C3%ABtzebuerg)
-    POPULATION_SIZE = 1_254_363
+    # Voter turnout on 9 June 2024
+    # https://en.wikipedia.org/wiki/2024_European_Parliament_election_in_Luxembourg#Results
+    POPULATION_SIZE = 1_385_139
 
     def electoral_system
       if @electoral_system.nil?
