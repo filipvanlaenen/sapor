@@ -62,8 +62,7 @@ module Sapor
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
-                           ['Nowa Nadzieja (ESN)', 'Ruch Narodowy (PfE)'],
-                           ['Polska 2050 (RE)', 'Polskie Stronnictwo Ludowe (EPP)', 'Centrum dla Polski (*)']]
+                           ['Nowa Nadzieja (ESN)', 'Ruch Narodowy (PfE)']]
 
     NO_OF_SEATS = 53
 
