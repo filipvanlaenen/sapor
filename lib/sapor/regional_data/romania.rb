@@ -67,6 +67,7 @@ module Sapor
                   [PNL_PARTY],
                   [PNL_PARTY, PSD_PARTY],
                   [PNL_PARTY, PSD_PARTY, RMDSZ_PARTY],
+                  [PNL_PARTY, PSD_PARTY, RMDSZ_PARTY, USR_PARTY],
                   [PNL_PARTY, PSD_PARTY, USR_PARTY],
                   [PNL_PARTY, RMDSZ_PARTY],
                   [PNL_PARTY, USR_PARTY],
