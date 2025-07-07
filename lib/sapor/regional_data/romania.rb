@@ -61,10 +61,14 @@ module Sapor
     SENS_PARTY = 'Sănătate, Educație, Natură, Sustenabilitate'.freeze
     SOS_PARTY = 'Partidul S.O.S. România'.freeze
     USR_PARTY = 'Uniunea Salvați România'.freeze
+    
+    MINOR_PARTY = 'Parties of ethnic minorities'.freeze
 
     COALITIONS = [[AUR_PARTY],
-                  [PMP_PARTY, PNL_PARTY],
-                  [PMP_PARTY, PNL_PARTY, RMDSZ_PARTY],
+                  [MINOR_PARTY, PNL_PARTY, PSD_PARTY, RMDSZ_PARTY],
+                  [MINOR_PARTY, PNL_PARTY, PSD_PARTY, RMDSZ_PARTY, USR_PARTY],
+                  [MINOR_PARTY, PNL_PARTY, RMDSZ_PARTY],
+                  [MINOR_PARTY, PNL_PARTY, RMDSZ_PARTY, USR_PARTY],
                   [PNL_PARTY],
                   [PNL_PARTY, PSD_PARTY],
                   [PNL_PARTY, PSD_PARTY, RMDSZ_PARTY],
@@ -72,6 +76,7 @@ module Sapor
                   [PNL_PARTY, PSD_PARTY, USR_PARTY],
                   [PNL_PARTY, RMDSZ_PARTY],
                   [PNL_PARTY, USR_PARTY],
+                  [PNL_PARTY, RMDSZ_PARTY, USR_PARTY],
                   [PSD_PARTY],
                   [PSD_PARTY, USR_PARTY]].freeze
 
