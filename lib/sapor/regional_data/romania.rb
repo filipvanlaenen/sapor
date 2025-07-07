@@ -49,50 +49,40 @@ module Sapor
 
     private
 
-    A2020_COALITION = 'Alianța 2020 USR-PLUS'.freeze
-    ALDE_PARTY = 'Partidul Alianța Liberalilor și Democraților'.freeze
-    # PLUS_PARTY = 'Partidul Libertății, Unității și Solidarității'.freeze
+    AUR_PARTY = 'Alianța pentru Unirea Românilor'.freeze
+    DREPT_PARTY = 'Dreptate și Respect în Europa Pentru Toți'.freeze
+    FD_PARTY = 'Forța Dreptei'.freeze
     PMP_PARTY = 'Partidul Mișcarea Populară'.freeze
     PNL_PARTY = 'Partidul Național Liberal'.freeze
-    PRO_PARTY = 'PRO România'.freeze
+    POT_PARTY = 'Partidul Oamenilor Tineri'.freeze
     PSD_PARTY = 'Partidul Social Democrat'.freeze
-    UDMR_PARTY = 'Uniunea Democrată Maghiară din România'.freeze
-    # USR_PARTY = 'Uniunea Salvați România'.freeze
+    REPER_PARTY = 'Reînnoim Proiectul European al României'.freeze
+    RMDSZ_PARTY = 'Romániai Magyar Demokrata Szövetség'.freeze
+    SENS_PARTY = 'Sănătate, Educație, Natură, Sustenabilitate'.freeze
+    SOS_PARTY = 'Partidul S.O.S. România'.freeze
+    USR_PARTY = 'Uniunea Salvați România'.freeze
 
-    COALITIONS = [[A2020_COALITION, ALDE_PARTY, PMP_PARTY, PNL_PARTY],
-                  [A2020_COALITION, ALDE_PARTY, PMP_PARTY, PNL_PARTY,
-                   UDMR_PARTY],
-                  [A2020_COALITION, ALDE_PARTY, PNL_PARTY],
-                  [A2020_COALITION, ALDE_PARTY, PNL_PARTY, UDMR_PARTY],
-                  [A2020_COALITION, PMP_PARTY],
-                  [A2020_COALITION, PMP_PARTY, PNL_PARTY],
-                  [A2020_COALITION, PMP_PARTY, PNL_PARTY, UDMR_PARTY],
-                  [A2020_COALITION, PNL_PARTY],
-                  [A2020_COALITION, PNL_PARTY, UDMR_PARTY],
-                  [ALDE_PARTY, PMP_PARTY, PNL_PARTY, UDMR_PARTY],
-                  [ALDE_PARTY, PNL_PARTY, UDMR_PARTY],
-                  [ALDE_PARTY, PRO_PARTY, PSD_PARTY],
-                  [ALDE_PARTY, PSD_PARTY],
-                  [PMP_PARTY, PNL_PARTY],
-                  [PMP_PARTY, PNL_PARTY, UDMR_PARTY],
-                  [PNL_PARTY, UDMR_PARTY],
-                  # [ALDE_PARTY, PLUS_PARTY, PMP_PARTY, PNL_PARTY, UDMR_PARTY,
-                  #  USR_PARTY],
+    COALITIONS = [[PMP_PARTY, PNL_PARTY],
+                  [PMP_PARTY, PNL_PARTY, RMDSZ_PARTY],
                   [PNL_PARTY],
-                  [PRO_PARTY, PSD_PARTY]].freeze
+                  [PNL_PARTY, PSD_PARTY],
+                  [PNL_PARTY, PSD_PARTY, RMDSZ_PARTY],
+                  [PNL_PARTY, PSD_PARTY, USR_PARTY],
+                  [PNL_PARTY, RMDSZ_PARTY],
+                  [PNL_PARTY, USR_PARTY],
+                  [PSD_PARTY],
+                  [PSD_PARTY, USR_PARTY]].freeze
 
     NO_OF_SEATS = 312
 
-    # Voter turnout on 11 December 2016
-    # Source: Web page with the official results of the elections of 11 December
-    # 2016, downloaded on 22 February 2020,
-    # https://en.wikipedia.org/wiki/2016_Romanian_legislative_election
-    POPULATION_SIZE = 7_047_384
+    # Voter turnout on 1 December 2024
+    # https://en.wikipedia.org/wiki/2024_Romanian_parliamentary_election
+    POPULATION_SIZE = 9_243_641
 
     THRESHOLD = 0.05
     COALITION_LIST_THRESHOLD = 0.08
-    COALITION_LISTS = [A2020_COALITION].freeze
-    MINORITY_LISTS = [UDMR_PARTY].freeze
+    COALITION_LISTS = [].freeze
+    MINORITY_LISTS = [RMDSZ_PARTY].freeze
 
     def electoral_system
       if @electoral_system.nil?
