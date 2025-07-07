@@ -62,7 +62,8 @@ module Sapor
     SOS_PARTY = 'Partidul S.O.S. România'.freeze
     USR_PARTY = 'Uniunea Salvați România'.freeze
 
-    COALITIONS = [[PMP_PARTY, PNL_PARTY],
+    COALITIONS = [[AUR_PARTY],
+                  [PMP_PARTY, PNL_PARTY],
                   [PMP_PARTY, PNL_PARTY, RMDSZ_PARTY],
                   [PNL_PARTY],
                   [PNL_PARTY, PSD_PARTY],
