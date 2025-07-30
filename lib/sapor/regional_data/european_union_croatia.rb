@@ -55,7 +55,7 @@ module Sapor
                   ['Hrvatska demokratska zajednica (EPP)'],
                   ['Dom i Nacionalno Okupljanje (ECR)', 'Domovinski pokret (ECR)',
                    'Hrvatska konzervativna stranka (ECR)', 'Hrvatski rast (ECR)', 'Hrvatski suverenisti (ECR)',
-                   'Most nezavisnih lista (ECR)'],
+                   'Most nezavisnih lista (ECR)', 'NL Marija Selak Raspudić (ECR)'],
                   ['Neovisni za Hrvatsku (PfE)'],
                   ['Ključ Hrvatske (NI)', 'Nezavisna lista Mislava Kolakušića (NI)', 'Pravo i Pravda (NI)',
                    'Živi zid (NI)'],
