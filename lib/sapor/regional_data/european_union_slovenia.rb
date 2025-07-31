@@ -59,7 +59,8 @@ module Sapor
                   ['Dobra država (*)', 'FOKUS – za Slovenijo s ciljem (*)', 'Glas upokojencev (*)',
                    'Glas za otroke in družine (*)', 'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)',
                    'Liberalni demokrati (*)', 'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Naša prihodnost (*)',
-                   'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)', 'Stranka ZAUPANJE (*)']].freeze
+                   'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)', 'Stranka ZAUPANJE (*)',
+                   'Vladimir Prebilič (*)']].freeze
 
     NO_OF_SEATS = 9
 
