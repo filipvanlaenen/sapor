@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Eestimaa Ühendatud Vasakpartei (GUE/NGL)'],
+    COALITIONS = [['Eesti Vasakliit (GUE/NGL)'],
                   ['Erakond Eestimaa Rohelised (Greens/EFA)'],
                   ['Sotsiaaldemokraatlik Erakond (S&D)'],
                   ['Eesti Keskerakond (RE)', 'Eesti Reformierakond (RE)', 'Raimond Kaljulaid (RE)'],
@@ -63,8 +63,7 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, \
-                                                           DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators)
       end
       @electoral_system
     end
