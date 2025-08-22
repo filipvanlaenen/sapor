@@ -46,9 +46,8 @@ module Sapor
 
     private
 
-    COALITIONS = [['Stačilo! (GUE/NGL)'],
-                  ['Česká pirátská strana (Greens/EFA)', 'Česká pirátská strana–Starostové a nezávislí (Greens/EFA)',
-                   'Strana zelených (Greens/EFA)'],
+    COALITIONS = [['Česká pirátská strana (Greens/EFA)', 'Česká pirátská strana–Starostové a nezávislí (Greens/EFA)',
+                   'Moravané (Greens/EFA)', 'Strana zelených (Greens/EFA)'],
                   ['Sociální demokracie (S&D)'],
                   ['Křesťanská a demokratická unie–Československá strana lidová (EPP)', 'Starostové a nezávislí (EPP)',
                    'TOP 09 (EPP)'],
@@ -57,8 +56,13 @@ module Sapor
                   ['Svoboda a přímá demokracie (ESN)', 'Svoboda a přímá demokracie–Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů–Strana svobodných občanů–Strana soukromníků České republiky (ESN)'],
-                  ['Právo Respekt Odbornost (*)'],
-                  ['Komunistická strana Čech a Moravy (NI)', 'Strana svobodných občanů (NI)']].freeze
+                  ['Česká strana národně sociální (*)', 'Právo Respekt Odbornost (*)'],
+                  ['Komunistická strana Čech a Moravy (NI)',
+                   'Komunistická strana Čech a Moravy–Spojení demokraté - Sdružení nezávislých–Stačilo! (NI)',
+                   'Stačilo! (NI)', 'Strana svobodných občanů (NI)']].freeze
+
+    ELECTORAL_ALLIANCES = [['Komunistická strana Čech a Moravy–Spojení demokraté - Sdružení nezávislých–Stačilo! (NI)',
+                            'Sociální demokracie (S&D)', 'Česká strana národně sociální (*)', 'Moravané (Greens/EFA)']]
 
     NO_OF_SEATS = 21
 
@@ -70,7 +74,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false)
+        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators, THRESHOLD, 0, false, 1, [],
+                                                           [], ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
