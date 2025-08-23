@@ -47,7 +47,8 @@ module Sapor
     private
 
     COALITIONS = [['Levica (GUE/NGL)'],
-                  ['Piratska stranka Slovenije (Greens/EFA)', 'VESNA–Zelena stranka (Greens/EFA)'],
+                  ['Piratska stranka Slovenije (Greens/EFA)', 'VESNA–Zelena stranka (Greens/EFA)',
+                   'Vladimir Prebilič (Greens/EFA)'],
                   ['Socialni demokrati (S&D)'],
                   ['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)', 'Gibanje Svoboda (RE)',
                    'Konkretno (RE)', 'Lista Marjana Šarca (RE)', 'Stranka Alenke Bratušek (RE)',
@@ -59,8 +60,7 @@ module Sapor
                   ['Dobra država (*)', 'FOKUS – za Slovenijo s ciljem (*)', 'Glas upokojencev (*)',
                    'Glas za otroke in družine (*)', 'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)',
                    'Liberalni demokrati (*)', 'Lista Roberta Goloba (*)', 'Naša dežela (*)', 'Naša prihodnost (*)',
-                   'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)', 'Stranka ZAUPANJE (*)',
-                   'Vladimir Prebilič (*)']].freeze
+                   'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)', 'Stranka ZAUPANJE (*)']].freeze
 
     NO_OF_SEATS = 9
 
