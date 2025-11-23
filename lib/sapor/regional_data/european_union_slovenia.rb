@@ -47,8 +47,8 @@ module Sapor
     private
 
     COALITIONS = [['Levica (GUE/NGL)'],
-                  ['Piratska stranka Slovenije (Greens/EFA)', 'VESNA–Zelena stranka (Greens/EFA)',
-                   'Vladimir Prebilič (Greens/EFA)'],
+                  ['Piratska stranka Slovenije (Greens/EFA)', 'Prerod – Stranka Vladimirja Prebiliča (Greens/EFA)',
+                   'VESNA–Zelena stranka (Greens/EFA)'], 
                   ['Socialni demokrati (S&D)'],
                   ['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)', 'Gibanje Svoboda (RE)',
                    'Konkretno (RE)', 'Lista Marjana Šarca (RE)', 'Stranka Alenke Bratušek (RE)',
