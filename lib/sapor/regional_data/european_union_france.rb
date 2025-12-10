@@ -59,8 +59,9 @@ module Sapor
                   ['Rassemblement national (PfE)'],
                   ['Reconquête (ESN)'],
                   ['Les Patriotes (NI)'],
-                  ['Alliance Rurale (*)', 'L’Engagement (*)', 'Lutte Ouvrière (*)', 'Mouvement des gilets jaunes (*)',
-                   'Résistons! (*)', 'Union populaire républicaine (*)', 'Walwari (*)']].freeze
+                  ['Alliance Rurale (*)', 'La France humaniste (*)', 'L’Engagement (*)', 'Lutte Ouvrière (*)',
+                   'Mouvement des gilets jaunes (*)', 'Résistons! (*)', 'Union populaire républicaine (*)',
+                   'Walwari (*)']].freeze
 
     NO_OF_SEATS = 81
 
