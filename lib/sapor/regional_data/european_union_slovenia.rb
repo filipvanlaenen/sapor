@@ -61,7 +61,7 @@ module Sapor
                    'Glas za otroke in družine (*)', 'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)',
                    'Liberalni demokrati (*)', 'Lista Roberta Goloba (*)', 'Mi, socialisti! (*)', 'Naša dežela (*)',
                    'Naša prihodnost (*)', 'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)',
-                   'Stranka ZAUPANJE (*)']].freeze
+                   'Stranka generacij (*)', 'Stranka ZAUPANJE (*)']].freeze
 
     NO_OF_SEATS = 9
 
