@@ -55,7 +55,7 @@ module Sapor
                   ['REPUBLIKA (ESN)'], 
                   ['HLAS–sociálna demokracia (NI)', 'HLAS–sociálna demokracia–Dobrá voľba (NI)',
                    'Kotleba–Ľudová strana Naše Slovensko (NI)', 'SMER–sociálna demokracia (NI)'],
-                  ['Dobrá voľba (*)', 'VLASŤ (*)', 'ZDRAVÝ ROZUM (*)']].freeze
+                  ['Dobrá voľba (*)', 'Právo na pravdu (*)', 'VLASŤ (*)', 'ZDRAVÝ ROZUM (*)']].freeze
 
     NO_OF_SEATS = 15
 
