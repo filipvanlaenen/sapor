@@ -67,7 +67,7 @@ module Sapor
     PVDA_PARTY = 'Partij van de Arbeid van België'.freeze
     VOORUIT_PARTY = 'Vooruit'.freeze
     VB_PARTY = 'Vlaams Belang'.freeze
-    VLD_PARTY = 'Open Vlaamse Liberalen en Democraten'.freeze
+    VLD_PARTY = 'Anders'.freeze
 
     COALITIONS = [[CDV_PARTY, GROEN_PARTY, PVDA_PARTY, VOORUIT_PARTY],
                   [CDV_PARTY, GROEN_PARTY, VOORUIT_PARTY],

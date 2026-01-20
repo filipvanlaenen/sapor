@@ -49,7 +49,7 @@ module Sapor
     LE_PARTY = 'Les Engagés'.freeze
     MR_PARTY = 'Mouvement Réformateur'.freeze
     NVA_PARTY = 'Nieuw-Vlaamse Alliantie'.freeze
-    OVLD_PARTY = 'Open Vlaamse Liberalen en Democraten'.freeze
+    OVLD_PARTY = 'Anders'.freeze
     PS_PARTY = 'Parti Socialiste'.freeze
     PTB_PARTY = 'Parti du Travail de Belgique'.freeze
     PVDA_PARTY = 'Partij van de Arbeid van België'.freeze

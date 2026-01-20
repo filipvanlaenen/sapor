@@ -49,7 +49,7 @@ module Sapor
     COALITIONS = [['Partij van de Arbeid van België (GUE/NGL)'],
                   ['Groen (Greens/EFA)', 'Piratenpartij (Greens/EFA)'],
                   ['Vooruit (S&D)'],
-                  ['Open Vlaamse Liberalen en Democraten (RE)'],
+                  ['Anders (RE)'],
                   ['Christen-Democratisch en Vlaams (EPP)'],
                   ['Lijst Dedecker (ECR)', 'Nieuw-Vlaamse Alliantie (ECR)'],
                   ['Vlaams Belang (PfE)']].freeze

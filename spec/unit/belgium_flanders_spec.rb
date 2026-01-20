@@ -46,7 +46,7 @@ describe Sapor::BelgiumFlanders, '#seats' do
     expect(seats['Vlaams Belang']).to eq(20)
     expect(seats['Vooruit']).to eq(13)
     expect(seats['Christen-Democratisch en Vlaams']).to eq(11)
-    expect(seats['Open Vlaamse Liberalen en Democraten']).to eq(7)
+    expect(seats['Anders']).to eq(7)
     expect(seats['Partij van de Arbeid van België']).to eq(6)
     expect(seats['Groen']).to eq(6)
     expect(seats['Belgische Unie – Union Belge']).to eq(0)
