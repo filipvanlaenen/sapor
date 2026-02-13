@@ -61,8 +61,8 @@ module Sapor
                   ['Forza Italia (EPP)', 'Noi Moderati (EPP)', 'Südtiroler Volkspartei (EPP)'],
                   ['Cambiamo! (ECR)', 'Coraggio Italia (ECR)', 'Fratelli d’Italia (ECR)', 'Noi con l’Italia (ECR)'],
                   ['Lega Nord (PfE)'],
-                  ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Impegno Civico (NI)',
-                   'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)'],
+                  ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Futuro Nazionale (NI)',
+                   'Impegno Civico (NI)', 'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)'],
                   ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Libertà (*)', 'Partito Progressista (*)',
                    'Sud chiama Nord (*)']].freeze
     
