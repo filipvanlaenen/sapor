@@ -52,7 +52,7 @@ module Sapor
                   ['Socialni demokrati (S&D)'],
                   ['Demokratična stranka upokojencev Slovenije (RE)', 'Državljanska lista (RE)', 'Gibanje Svoboda (RE)',
                    'Konkretno (RE)', 'Lista Marjana Šarca (RE)', 'Stranka Alenke Bratušek (RE)',
-                   'Stranka modernega centra (RE)', 'Zeleni Slovenije (RE)'],
+                   'Stranka generacij–Zeleni Slovenije (RE)', 'Stranka modernega centra (RE)', 'Zeleni Slovenije (RE)'],
                   ['Demokrati (EPP)', 'Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
                    'Slovenska demokratska stranka (EPP)', 'Slovenska ljudska stranka (EPP)'],
                   ['Slovenska nacionalna stranka (PfE)'],
