@@ -47,10 +47,11 @@ module Sapor
     private
 
     COALITIONS = [['Demokratų sąjunga „Vardan Lietuvos“ (Greens/EFA)', 'Lietuvos Žaliųjų Partija (Greens/EFA)'],
-                  ['Lietuvos regionų partija (S&D)', 'Lietuvos socialdemokratų partija (S&D)', 'Nemuno aušra (S&D)'],
+                  ['Lietuvos regionų partija (S&D)', 'Lietuvos socialdemokratų partija (S&D)'],
                   ['Laisvės partija (RE)', 'Liberalų Sąjūdis (RE)', 'Partija „Laisvė ir teisingumas“ (RE)'],
                   ['Tėvynės sąjunga–Lietuvos krikščionys demokratai (EPP)'],
                   ['Lietuvos lenkų rinkimų akcija (ECR)', 'Lietuvos valstiečių ir žaliųjų sąjunga (ECR)'],
+                  ['Nemuno aušra (PfE)'],
                   ['Tautos ir teisingumo sąjunga (centristai, tautininkai) (ESN)'],
                   ['Darbo Partija (NI)'],
                   ['Jaunoji Lietuva (*)', 'Krikščionių sąjunga (*)', 'Nacionalinis Susivienijimas (*)',
