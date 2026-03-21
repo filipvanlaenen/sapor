@@ -56,10 +56,10 @@ module Sapor
                   ['Svoboda a přímá demokracie (ESN)', 'Svoboda a přímá demokracie–Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů (ESN)',
                    'Trikolóra hnutí občanů–Strana svobodných občanů–Strana soukromníků České republiky (ESN)'],
-                  ['Česká strana národně sociální (*)', 'Právo Respekt Odbornost (*)'],
                   ['Komunistická strana Čech a Moravy (NI)',
                    'Komunistická strana Čech a Moravy–Spojení demokraté - Sdružení nezávislých–Stačilo! (NI)',
-                   'Stačilo! (NI)', 'Strana svobodných občanů (NI)']].freeze
+                   'Stačilo! (NI)', 'Strana svobodných občanů (NI)'],
+                  ['Česká strana národně sociální (*)', 'Naše Česko (*)', 'Právo Respekt Odbornost (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['Komunistická strana Čech a Moravy–Spojení demokraté - Sdružení nezávislých–Stačilo! (NI)',
                             'Sociální demokracie (S&D)', 'Česká strana národně sociální (*)', 'Moravané (Greens/EFA)']]
