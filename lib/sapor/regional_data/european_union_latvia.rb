@@ -56,9 +56,9 @@ module Sapor
                   ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” (ECR)', 'Suverēnā vara (ECR)'],
                   ['Latvija pirmajā vietā (PfE)'],
                   ['Centra partija (NI)', 'Latvijas Krievu savienība (NI)', 'Stabilitātei! (NI)'],
-                  ['Apvienība Jaunlatvieši (*)', 'Austošā Saule Latvijai (*)', 'Nacionālā Savienība Taisnīgums (*)',
-                   'No sirds Latvijai (*)', 'Platforma 21 (*)', 'Politiskā kustība „Bez partijām“ (*)', 'Republika (*)',
-                   'Vienoti Latvijai (*)']].freeze
+                  ['Apvienība Jaunlatvieši (*)', 'Austošā Saule Latvijai (*)', 'Mēs mainām noteikumus (*)',
+                   'Nacionālā Savienība Taisnīgums (*)', 'No sirds Latvijai (*)', 'Platforma 21 (*)',
+                   'Politiskā kustība „Bez partijām“ (*)', 'Vienoti Latvijai (*)']].freeze
 
     NO_OF_SEATS = 9
 
