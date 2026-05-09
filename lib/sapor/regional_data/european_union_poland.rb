@@ -58,7 +58,7 @@ module Sapor
                   ['Nowa Nadzieja (ESN)'],
                   ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
                   ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
-                   'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)']].freeze
+                   'Partia Mateusza Morawieckiego (*)', 'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
