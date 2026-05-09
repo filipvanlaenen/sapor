@@ -59,8 +59,8 @@ module Sapor
                   ['Staatkundig Gereformeerde Partij (ECR)', 'Juiste Antwoord 2021 (ECR)'],
                   ['Partij voor de Vrijheid (PfE)'],
                   ['Forum voor Democratie (ESN)'],
-                  ['Belang van Nederland (*)', 'Bij1 (*)', 'Code Oranje (*)', 'DENK (*)', 'Partij voor de Toekomst (*)',
-                   'Piratenpartij (*)', 'Splinter (*)']].freeze
+                  ['Belang van Nederland (*)', 'Bij1 (*)', 'Code Oranje (*)', 'De Nederlandse Alliantie (*)',
+                   'DENK (*)', 'Partij voor de Toekomst (*)', 'Piratenpartij (*)', 'Splinter (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['GroenLinks (Greens/EFA)', 'Partij van de Arbeid (S&D)']]
 
