@@ -48,6 +48,7 @@ module Sapor
                             EuropeanUnionGreatBritain.instance,
                             EuropeanUnionGreece.instance,
                             EuropeanUnionHungary.instance,
+                            EuropeanUnionIceland.instance,
                             EuropeanUnionIreland.instance,
                             EuropeanUnionItaly.instance,
                             EuropeanUnionLatvia.instance,
