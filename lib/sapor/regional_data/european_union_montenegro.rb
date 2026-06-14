@@ -48,13 +48,15 @@ module Sapor
 
     COALITIONS = [['Građanski pokret Ujedinjena reformska akcija (Greens/EFA)'],
                   ['Demokratska partija socijalista Crne Gore (S&D)', 'Evropski savez (S&D)',
-                   'За будућност Црне Горе (S&D)', 'Социјалистичка народна партија Црне Горе (S&D)'],
+                   'Социјалистичка народна партија Црне Горе (S&D)'],
                   ['Bošnjačka stranka (EPP)', 'Demokratska Crna Gora (EPP)', 'Pokret Evropa sad (EPP)'],
                   ['Pokret za promjene (ECR)'],
                   ['Alternativa Shqiptare (NI)', 'Демократска народна партија (NI)', 'Нова српска демократија (NI)'],
                   ['Forca e Re Demokratike (*)', 'Pozitivna Crna Gora (*)', 'Pravda za sve (*)',
                    'Preokret za sigurnu Crnu Goru (*)', 'Unioni Demokratik i Shqiptarëve (*)',
                    'Покрет народног повјерења (*)', 'Уједињена Црна Гора (*)']].freeze
+
+	ELECTORAL_ALLIANCES = [['Демократска народна партија (NI)', 'Нова српска демократија (NI)']]
 
     NO_OF_SEATS = 6
 
@@ -66,7 +68,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, THRESHOLD)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, threshold, 0, false, 1, [],
+                                                           [], ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
