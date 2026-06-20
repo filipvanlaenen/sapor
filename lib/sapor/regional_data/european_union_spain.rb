@@ -50,8 +50,9 @@ module Sapor
                    'Movimiento Sumar–Izquierda Unida (GUE/NGL)', 'Partido Animalista Contra el Maltrato Animal (GUE/NGL)',
                    'Podemos (GUE/NGL)', 'Movimiento Sumar–Podemos–Izquierda Unida (GUE/NGL)', 'Unidos Podemos (GUE/NGL)'],
                   ['Ahora Repúblicas (Greens/EFA)', 'Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
-                   'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
+                   'Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
                    'Coalició Compromís (Greens/EFA)', 'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
+                   'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
                    'Primavera Europea (Greens/EFA)'],
                   ['Partido Socialista Obrero Español (S&D)'],
                   ['Ciudadanos–Partido de la Ciudadanía (RE)', 'Coalición Canaria–Partido Nacionalista Canario (RE)',
@@ -62,6 +63,10 @@ module Sapor
                   ['España Vaciada (NI)', 'Junts per Catalunya (NI)', 'Se Acabó La Fiesta (NI)'],
                   ['Unión del Pueblo Navarro (*)']].freeze
 
+	ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
+	                        'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
+	                        'Movimiento Sumar–Izquierda Unida (GUE/NGL)']]
+
     NO_OF_SEATS = 61
 
     # Voter turnout on 9 June 2024
@@ -70,7 +75,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
