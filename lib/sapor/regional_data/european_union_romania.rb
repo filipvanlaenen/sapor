@@ -54,8 +54,9 @@ module Sapor
                    'Reînnoim Proiectul European al României (RE)', 'Uniunea Salvați România (RE)'],
                   ['Forța Dreptei (EPP)', 'Partidul Mișcarea Populară (EPP)', 'Partidul Național Liberal (EPP)',
                    'Uniunea Democrată Maghiară din România (EPP)'],
-                  ['Alianța pentru Unirea Românilor (ECR)', 'Partidul Național Conservator Român (ECR)'], 
-                  ['Partidul Oamenilor Tineri (NI)', 'Partidul S.O.S. România (NI)'],
+                  ['Alianța pentru Unirea Românilor (ECR)', 'Partidul Național Conservator Român (ECR)',
+                   'Partidul Oamenilor Tineri (ECR)'],
+                  ['Partidul S.O.S. România (NI)'],
                   ['Alianța pentru Patrie (*)', 'Blocul Suveranist Român (*)',
                    'Partidul Alianța Liberalilor și Democraților (*)']].freeze
 
