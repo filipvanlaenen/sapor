@@ -46,7 +46,7 @@ module Sapor
 
     private
 
-    COALITIONS = [['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)', 'Partei Mensch Umwelt Tierschutz (GUE/NGL)'],
+    COALITIONS = [['Die Linke (GUE/NGL)', 'DKP (GUE/NGL)', 'Partei Mensch Klima Tierschutz (GUE/NGL)'],
                   ['Bayernpartei (Greens/EFA)', 'Bündnis 90/Die Grünen (Greens/EFA)',
                    'Piratenpartei Deutschland (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
                   ['Sozialdemokratische Partei Deutschlands (S&D)'],
