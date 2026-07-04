@@ -48,7 +48,7 @@ module Sapor
 
     COALITIONS = [['Jaunā Saskaņa (GUE/NGL)'],
                   ['PROGRESĪVIE (Greens/EFA)'],
-                  ['Sociāldemokrātiskā partija “Saskaņa” (S&D)'],
+                  ['Saskaņas Centrs (S&D)', 'Sociāldemokrātiskā partija “Saskaņa” (S&D)'],
                   ['Attīstībai/Par! (RE)', 'Kustība Par! (RE)', 'Latvijas attīstībai (RE)',
                    'Zaļo un Zemnieku savienība (RE)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
