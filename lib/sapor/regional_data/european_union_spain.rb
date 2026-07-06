@@ -61,7 +61,7 @@ module Sapor
                   ['Partido Popular (EPP)'],
                   ['Vox (PfE)'],
                   ['España Vaciada (NI)', 'Junts per Catalunya (NI)', 'Se Acabó La Fiesta (NI)'],
-                  ['Unión del Pueblo Navarro (*)']].freeze
+                  ['Adelante Andalucía (*)', 'Unión del Pueblo Navarro (*)']].freeze
 
 	ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
 	                        'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
