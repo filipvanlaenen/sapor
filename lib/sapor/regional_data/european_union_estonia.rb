@@ -51,9 +51,11 @@ module Sapor
                   ['Sotsiaaldemokraatlik Erakond (S&D)'],
                   ['Eesti Keskerakond (RE)', 'Eesti Reformierakond (RE)', 'Raimond Kaljulaid (RE)'],
                   ['Eesti 200 (EPP)', 'Erakond Isamaa (EPP)', 'Erakond Parempoolsed (EPP)'],
-                  ['Eesti Rahvuslased ja Konservatiivid (ECR)'],
+                  ['Eesti Keskerakond (ECR)', 'Eesti Rahvuslased ja Konservatiivid (ECR)'],
                   ['Eesti Konservatiivne Rahvaerakond (PfE)'],
                   ['Eesti Vabaerakond (*)', 'Koos (*)']].freeze
+
+	ELECTORAL_ALLIANCES = [['Eesti Keskerakond (ECR)', 'Eesti Keskerakond (RE)']]
 
     NO_OF_SEATS = 7
 
@@ -63,7 +65,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(NO_OF_SEATS, DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
