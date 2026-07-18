@@ -56,12 +56,14 @@ module Sapor
                   ['Demokrati (EPP)', 'Nova Slovenija–Krščanski demokrati (EPP)', 'Povežimo Slovenijo (EPP)',
                    'Slovenska demokratska stranka (EPP)', 'Slovenska ljudska stranka (EPP)'],
                   ['Slovenska nacionalna stranka (PfE)'],
-                  ['Resni.ca (NI)'],
+                  ['Resni.ca (NI)', 'Slovenska demokratska stranka (NI)'],
                   ['Dobra država (*)', 'FOKUS – za Slovenijo s ciljem (*)', 'Glas upokojencev (*)',
                    'Glas za otroke in družine (*)', 'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)',
                    'Liberalni demokrati (*)', 'Lista Roberta Goloba (*)', 'Mi, socialisti! (*)', 'Naša dežela (*)',
                    'Naša prihodnost (*)', 'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)',
                    'Stranka generacij (*)', 'Stranka ZAUPANJE (*)']].freeze
+
+	ELECTORAL_ALLIANCES = [['Slovenska demokratska stranka (EPP)', 'Slovenska demokratska stranka (NI)']]
 
     NO_OF_SEATS = 9
 
@@ -71,8 +73,8 @@ module Sapor
 
     def electoral_system
       if @electoral_system.nil?
-        @electoral_system = SingleDistrictProportional.new(no_of_seats,
-                                                           DhondtDenominators)
+        @electoral_system = SingleDistrictProportional.new(no_of_seats, DhondtDenominators, 0, 0, false, 1, [], [],
+                                                           ELECTORAL_ALLIANCES)
       end
       @electoral_system
     end
