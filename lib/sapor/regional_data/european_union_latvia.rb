@@ -53,12 +53,13 @@ module Sapor
                    'Zaļo un Zemnieku savienība (RE)'],
                   ['Jaunā VIENOTĪBA (EPP)', 'Jaunā konservatīvā partija (EPP)',
                    'Latvijas Reģionu Apvienība (EPP)', 'Politiskā partija „KPV LV” (EPP)'],
-                  ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” (ECR)', 'Suverēnā vara (ECR)'],
+                  ['Nacionālā apvienība „Visu Latvijai!”–„Tēvzemei un Brīvībai/LNNK” (ECR)'],
                   ['Latvija pirmajā vietā (PfE)'],
                   ['Centra partija (NI)', 'Latvijas Krievu savienība (NI)', 'Stabilitātei! (NI)'],
                   ['Apvienība Jaunlatvieši (*)', 'Austošā Saule Latvijai (*)', 'Gobzema saraksts (*)',
                    'Mēs mainām noteikumus (*)', 'Nacionālā Savienība Taisnīgums (*)', 'No sirds Latvijai (*)',
-                   'Politiskā kustība „Bez partijām“ (*)', 'Vienoti Latvijai (*)']].freeze
+                   'Politiskā kustība „Bez partijām“ (*)', 'Suverēnā vara (*)',
+                   'Suverēnā vara–Apvienība Jaunlatvieši (*)', 'Vienoti Latvijai (*)']].freeze
 
     NO_OF_SEATS = 9
 
