@@ -53,12 +53,12 @@ module Sapor
                   ['AGROunia–Porozumienie (EPP)', 'Inicjatywa Polska (EPP)', 'Koalicja Europejska (EPP)',
                    'Koalicja Obywatelska (EPP)', 'Koalicja Polska (EPP)', 'Platforma Obywatelska (EPP)',
                    'Polskie Stronnictwo Ludowe (EPP)', 'Porozumienie (EPP)'],
-                  ['Prawo i Sprawiedliwość (ECR)', 'Zjednoczona Prawica (ECR)'],
+                  ['Prawo i Sprawiedliwość (ECR)', 'Rozwój Plus (ECR)', 'Zjednoczona Prawica (ECR)'],
                   ['Ruch Narodowy (PfE)'],
                   ['Nowa Nadzieja (ESN)'],
                   ['Konfederacja (NI)', 'Konfederacja Korony Polskiej (NI)', 'KORWiN (NI)', 'Kukiz’15 (NI)'],
-                  ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)',
-                   'Partia Mateusza Morawieckiego (*)', 'Polska Jest Jedna (*)', 'Tak! Dla Polski (*)']].freeze
+                  ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)', 'Polska Jest Jedna (*)',
+                   'Tak! Dla Polski (*)']].freeze
 
     ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
