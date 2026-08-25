@@ -60,8 +60,8 @@ module Sapor
                   ['Dobra država (*)', 'FOKUS – za Slovenijo s ciljem (*)', 'Glas upokojencev (*)',
                    'Glas za otroke in družine (*)', 'Glas za otroke in družine–Nova ljudska stranka Slovenije (*)',
                    'Liberalni demokrati (*)', 'Lista Roberta Goloba (*)', 'Mi, socialisti! (*)', 'Naša dežela (*)',
-                   'Naša prihodnost (*)', 'Nova ljudska stranka Slovenije (*)', 'Pozitivna Slovenija (*)',
-                   'Stranka generacij (*)', 'Stranka ZAUPANJE (*)']].freeze
+                   'Naša prihodnost (*)', 'Nič od tega (*)', 'Nova ljudska stranka Slovenije (*)',
+                   'Pozitivna Slovenija (*)', 'Stranka generacij (*)', 'Stranka ZAUPANJE (*)']].freeze
 
 	ELECTORAL_ALLIANCES = [['Slovenska demokratska stranka (EPP)', 'Slovenska demokratska stranka (NI)']]
 
