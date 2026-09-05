@@ -51,8 +51,8 @@ module Sapor
     private
 
     COALITIONS = [['Partij voor de Dieren (GUE/NGL)', 'Socialistische Partij (GUE/NGL)'],
-                  ['GroenLinks (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
-                  ['Partij van de Arbeid (S&D)'],
+                  ['GroenLinks (Greens/EFA)', 'Progressief Nederland (Greens/EFA)', 'Volt Europa (Greens/EFA)'],
+                  ['Partij van de Arbeid (S&D)', 'Progressief Nederland (S&D)'],
                   ['Democraten 66 (RE)', 'Volkspartij voor Vrijheid en Democratie (RE)'],
                   ['50Plus (EPP)', 'BoerBurgerBeweging (EPP)', 'Christen-Democratisch Appèl (EPP)',
                    'ChristenUnie (EPP)', 'Nieuw Sociaal Contract (EPP)'],
@@ -60,9 +60,11 @@ module Sapor
                   ['Partij voor de Vrijheid (PfE)'],
                   ['Forum voor Democratie (ESN)'],
                   ['Belang van Nederland (*)', 'Bij1 (*)', 'Code Oranje (*)', 'De Nederlandse Alliantie (*)',
-                   'DENK (*)', 'Partij voor de Toekomst (*)', 'Piratenpartij (*)', 'Splinter (*)']].freeze
+                   'DENK (*)', 'Partij voor de Toekomst (*)', 'Piratenpartij (*)', 'Project 2029 (*)',
+                   'Splinter (*)']].freeze
 
-    ELECTORAL_ALLIANCES = [['GroenLinks (Greens/EFA)', 'Partij van de Arbeid (S&D)']]
+    ELECTORAL_ALLIANCES = [['GroenLinks (Greens/EFA)', 'Partij van de Arbeid (S&D)'],
+                           ['Progressief Nederland (Greens/EFA)', 'Progressief Nederland (S&D)']]
 
     NO_OF_SEATS = 31
 
