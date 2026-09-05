@@ -60,7 +60,7 @@ module Sapor
                   ['AGROunia (*)','Bezpartyjni Samorządowcy (*)', 'Centrum dla Polski (*)', 'Polska Jest Jedna (*)',
                    'Tak! Dla Polski (*)']].freeze
 
-    ELECTORAL_ALLIANCES = [['Platforma Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
+    ELECTORAL_ALLIANCES = [['Koalicja Obywatelska (EPP)', '.Nowoczesna (RE)', 'Inicjatywa Polska (EPP)',
                             'Partia Zieloni (Greens/EFA)'],
                            ['Nowa Nadzieja (ESN)', 'Ruch Narodowy (PfE)']]
 
