@@ -66,7 +66,7 @@ module Sapor
                   ['CasaPound Italia (NI)', 'Democrazia Sovrana e Popolare (NI)', 'Impegno Civico (NI)',
                    'Insieme per il Futuro (NI)', 'Italia Sovrana e Popolare (NI)'],
                   ['Insieme (*)', 'Italexit–Per l’Italia con Paragone (*)', 'Libertà (*)', 'Ora! (*)',
-                   'Partito Progressista (*)', 'Sud chiama Nord (*)']].freeze
+                   'Partito Progressista (*)', 'Progetto Civico Italia (*)', 'Sud chiama Nord (*)']].freeze
     
     ELECTORAL_ALLIANCES = [['Europa Verde (Greens/EFA)', 'Sinistra Italiana (GUE/NGL)', 'Partito Progressista (*)']]
     
