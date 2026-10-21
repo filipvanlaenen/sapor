@@ -51,6 +51,7 @@ module Sapor
                    'Podemos (GUE/NGL)', 'Movimiento Sumar–Podemos–Izquierda Unida (GUE/NGL)', 'Unidos Podemos (GUE/NGL)'],
                   ['Ahora Repúblicas (Greens/EFA)', 'Bloque Nacionalista Galego–Nós Candidatura Galega (Greens/EFA)',
                    'Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
+                   'Catalunya en Comú–Més–Más País–Chunta (Greens/EFA)',
                    'Coalició Compromís (Greens/EFA)', 'Esquerra Republicana de Catalunya–Catalunya Sí (Greens/EFA)',
                    'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
                    'Primavera Europea (Greens/EFA)'],
@@ -64,6 +65,7 @@ module Sapor
                   ['Adelante Andalucía (*)', 'Unión del Pueblo Navarro (*)']].freeze
 
 	ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
+	                        'Catalunya en Comú–Més–Más País–Chunta (Greens/EFA)',
 	                        'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
 	                        'Movimiento Sumar–Izquierda Unida (GUE/NGL)']]
 
