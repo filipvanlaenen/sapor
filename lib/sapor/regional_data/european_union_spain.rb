@@ -65,7 +65,6 @@ module Sapor
                   ['Adelante Andalucía (*)', 'Unión del Pueblo Navarro (*)']].freeze
 
 	ELECTORAL_ALLIANCES = [['Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
-	                        'Catalunya en Comú–Més–Más País–Chunta (Greens/EFA)',
 	                        'Movimiento Sumar–Catalunya en Comú–Més–Compromís–Más País–Chunta (Greens/EFA)',
 	                        'Movimiento Sumar–Izquierda Unida (GUE/NGL)']]
 
